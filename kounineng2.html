@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>英検2級・高認英文法　Unit 2　時制</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'BIZ UDGothic','Hiragino Kaku Gothic Pro','Meiryo',sans-serif;background:#eef2f7;color:#1a1a2e;min-height:100vh;font-size:15px}
+.top-header{background:linear-gradient(135deg,#1B3A6B 0%,#0097A7 100%);color:#fff;padding:14px 16px 12px;text-align:center}
+.top-header h1{font-size:17px;font-weight:700;letter-spacing:.05em}
+.top-header p{font-size:12px;margin-top:3px;opacity:.85}
+
+.main-nav::-webkit-scrollbar{height:3px}
+.nav,.main-nav{background:#fff;border-bottom:3px solid #0097A7;padding:8px 10px;display:flex;overflow-x:auto;gap:4px;-webkit-overflow-scrolling:touch;align-items:stretch}
+.nav::-webkit-scrollbar,.main-nav::-webkit-scrollbar{height:3px}
+.pair{display:flex;gap:0;flex-shrink:0;border-radius:22px;overflow:hidden;box-shadow:0 0 0 1.5px #ccd}
+.pair.active-pair{box-shadow:0 0 0 2.5px #1B3A6B}
+.nb,.nav-btn{padding:8px 14px;border:none;background:#f5f7fa;color:#555;font-size:13px;font-family:inherit;cursor:pointer;white-space:nowrap;border-right:1px solid #dde;transition:.2s;font-weight:500;flex-shrink:0}
+.nb:hover,.nav-btn:hover{background:#e8eaf6;color:#1B3A6B}
+.nb.on,.nav-btn.active{background:#1B3A6B;color:#fff}
+.pb{padding:8px 14px;border:none;background:#fff3e0;color:#c84500;font-size:13px;font-family:inherit;cursor:pointer;white-space:nowrap;font-weight:700;transition:.2s;flex-shrink:0}
+.pb:hover{background:#e65100;color:#fff}
+.nav-sep{width:6px;flex-shrink:0}
+.sec{display:none;padding:12px;max-width:820px;margin:0 auto;padding-bottom:40px}
+.sec.active{display:block}
+.card{background:#fff;border-radius:14px;border:1px solid #dde3ee;padding:14px 16px;margin-bottom:14px;box-shadow:0 1px 4px rgba(0,0,0,.05)}
+.card-title{font-size:15px;font-weight:700;color:#1B3A6B;margin-bottom:10px;padding-bottom:8px;border-bottom:2px solid #0097A7}
+.sh{background:linear-gradient(90deg,#1B3A6B,#1B5E8B);color:#fff;border-radius:10px;padding:9px 16px;font-size:15px;font-weight:700;margin-bottom:12px;margin-top:6px}
+.pt{background:#fffde7;border-left:5px solid #f9a825;border-radius:0 10px 10px 0;padding:10px 14px;margin:8px 0;font-size:14px;line-height:1.8}
+.kb{background:#f1f8e9;border-left:5px solid #2e7d32;border-radius:0 10px 10px 0;padding:10px 14px;margin:8px 0;font-size:14px;line-height:1.8}
+.wb{background:#fff3e0;border-left:5px solid #e65100;border-radius:0 10px 10px 0;padding:10px 14px;margin:8px 0;font-size:14px;line-height:1.8}
+.ex{background:#f0f8ff;border:1px solid #b3d9f7;border-radius:10px;padding:12px 14px;margin:8px 0;font-size:14px;line-height:1.9}
+.spk{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:#e8f4ff;border:1.5px solid #0097A7;cursor:pointer;margin-left:5px;vertical-align:middle;flex-shrink:0;transition:.2s}
+.spk:hover{background:#0097A7}.spk:hover svg{fill:#fff}
+.spk svg{width:14px;height:14px;fill:#0097A7;pointer-events:none}
+.q-box{background:#fff;border-radius:12px;border:1px solid #dde3ee;padding:14px;margin-bottom:14px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.q-hd{display:flex;align-items:flex-start;gap:8px;margin-bottom:10px}
+.q-num{flex-shrink:0;width:26px;height:26px;background:#1B3A6B;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700}
+.q-txt{flex:1;font-size:14px;line-height:1.7}
+.hint{font-size:12px;color:#0097A7;background:#f0faff;border-radius:6px;padding:3px 8px;display:inline-block;margin-bottom:8px}
+.ub{font-size:11px;background:#e3f2fd;color:#1565c0;padding:2px 8px;border-radius:10px;font-weight:700;margin-left:6px;vertical-align:middle}
+.az{display:flex;flex-wrap:wrap;gap:7px;min-height:44px;padding:7px 10px;background:#f0faff;border-radius:8px;border:2px dashed #0097A7;margin-bottom:10px;align-items:center}
+.az.ok{border-color:#2e7d32;background:#f1f8e9}
+.az.ng{border-color:#e53935;background:#fff5f5;animation:fl .4s}
+@keyframes fl{0%,100%{opacity:1}50%{opacity:.5}}
+.wb2{display:flex;flex-wrap:wrap;gap:7px;min-height:36px;padding:6px 8px;background:#f7f9fc;border-radius:8px;border:1px dashed #ccd;margin-bottom:10px}
+.chip{display:inline-flex;align-items:center;padding:6px 12px;border-radius:20px;border:1.5px solid #0097A7;background:#fff;color:#0097A7;font-size:13px;cursor:pointer;user-select:none;transition:.15s;font-family:inherit;white-space:nowrap}
+.chip:hover{background:#e0f7fa}.chip:active{transform:scale(.94)}
+.chip.used{opacity:.25;pointer-events:none;background:#f0f0f0;border-color:#bbb;color:#999}
+.chip.ac{background:#0097A7;color:#fff;border-color:#007a8a}
+.chip.ac:hover{background:#007a8a}
+.check-btn{background:#1B3A6B;color:#fff;border:none;border-radius:8px;padding:9px 20px;font-size:14px;font-family:inherit;cursor:pointer}
+.reset-btn{background:#fff;color:#555;border:1.5px solid #ccd;border-radius:8px;padding:9px 14px;font-size:13px;font-family:inherit;cursor:pointer}
+.exp-btn{background:#fff;color:#e65100;border:1.5px solid #e65100;border-radius:8px;padding:9px 14px;font-size:13px;font-family:inherit;cursor:pointer}
+.btn-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:8px}
+.fb{font-size:13px;font-weight:700;padding:3px 0}
+.fb.ok{color:#2e7d32}.fb.ng{color:#e53935}
+.ep{background:#fff8e1;border:1.5px solid #ffc107;border-radius:10px;padding:12px 14px;margin-top:10px;font-size:13px;line-height:1.8;display:none}
+.ep.show{display:block}
+.cb{width:100%;text-align:left;padding:10px 14px;margin:4px 0;border-radius:8px;border:1.5px solid #dde;background:#fff;font-size:14px;font-family:inherit;cursor:pointer;transition:.15s;line-height:1.4}
+.cb:hover:not(.dis){border-color:#0097A7;background:#f0faff}
+.cb.ca{background:#e8f5e9;border-color:#2e7d32;color:#1b5e20;font-weight:700}
+.cb.wa{background:#ffebee;border-color:#e53935;color:#b71c1c}
+.cb.dis{pointer-events:none}
+.sb{background:#fff;border-radius:10px;border:1px solid #dde;padding:10px 14px;margin-bottom:12px;display:flex;align-items:center;gap:12px}
+.sn{font-size:20px;font-weight:700;color:#1B3A6B;min-width:48px}
+.pw{flex:1;height:10px;background:#eee;border-radius:6px;overflow:hidden}
+.pf{height:100%;background:linear-gradient(90deg,#0097A7,#1B3A6B);border-radius:6px;transition:.5s}
+.tbl{width:100%;border-collapse:collapse;font-size:13px}
+.tbl th{background:#1B3A6B;color:#fff;padding:7px 8px;text-align:left}
+.tbl td{padding:7px 8px;border-bottom:1px solid #eef;vertical-align:top}
+.tbl tr:nth-child(even) td{background:#f7f9ff}
+.correct-mark{color:#2e7d32;font-weight:700;font-size:15px}
+.wrong-mark{color:#e53935;font-weight:700;font-size:15px}
+/* ===== 単語ポップアップ ===== */
+.vw{border-bottom:2px dashed #0097A7;color:inherit;cursor:pointer;position:relative;white-space:nowrap;font-weight:inherit}
+.vw:hover{background:#e0f7fa;border-radius:3px}
+.vpop{display:none;position:fixed;z-index:2000;background:#fff;border-radius:14px;box-shadow:0 6px 30px rgba(0,0,0,.22);padding:0;width:260px;max-width:90vw}
+.vpop.show{display:block}
+.vpop-hd{background:linear-gradient(135deg,#1B3A6B,#0097A7);color:#fff;padding:12px 14px 10px;border-radius:14px 14px 0 0;display:flex;align-items:center;justify-content:space-between}
+.vpop-word{font-size:18px;font-weight:700;letter-spacing:.02em}
+.vpop-pos{font-size:11px;background:rgba(255,255,255,.25);border-radius:8px;padding:2px 8px;margin-left:6px}
+.vpop-close{background:rgba(255,255,255,.2);border:none;color:#fff;width:26px;height:26px;border-radius:50%;font-size:16px;cursor:pointer;line-height:1;display:flex;align-items:center;justify-content:center}
+.vpop-body{padding:12px 14px}
+.vpop-mean{font-size:16px;font-weight:700;color:#1B3A6B;margin-bottom:8px}
+.vpop-kana{font-size:12px;color:#888;margin-bottom:10px}
+.vpop-btns{display:flex;gap:8px}
+.vpop-spk{flex:1;padding:8px;border-radius:8px;border:1.5px solid #0097A7;background:#f0faff;color:#0097A7;font-size:13px;font-family:inherit;cursor:pointer;font-weight:700}
+.vpop-spk:hover{background:#0097A7;color:#fff}
+.vpop-save{flex:1;padding:8px;border-radius:8px;border:1.5px solid #e65100;background:#fff3e0;color:#c84500;font-size:13px;font-family:inherit;cursor:pointer;font-weight:700}
+.vpop-save:hover{background:#e65100;color:#fff}
+.vpop-save.saved{background:#e8f5e9;border-color:#2e7d32;color:#2e7d32}
+.vpop-saved-lbl{font-size:11px;color:#2e7d32;text-align:center;margin-top:6px;display:none}
+.vpop-saved-lbl.show{display:block}
+/* 単語帳バッジ */
+.vocab-badge{display:none;position:absolute;top:-6px;right:-6px;background:#e53935;color:#fff;border-radius:50%;width:18px;height:18px;font-size:11px;font-weight:700;align-items:center;justify-content:center}
+.vocab-badge.show{display:flex}
+/* 単語帳モーダル */
+.vbook-empty{text-align:center;color:#999;padding:24px;font-size:14px}
+.vcard{background:#f8faff;border-radius:10px;border:1px solid #dde;padding:10px 12px;margin-bottom:8px;display:flex;align-items:center;gap:10px}
+.vcard-word{font-size:15px;font-weight:700;color:#1B3A6B;flex:1}
+.vcard-mean{font-size:13px;color:#555;flex:1}
+.vcard-del{background:#fff;border:1.5px solid #dde;color:#aaa;border-radius:6px;padding:4px 10px;font-size:12px;cursor:pointer;font-family:inherit}
+.vcard-del:hover{border-color:#e53935;color:#e53935}
+/* 復習テスト */
+.vtest-q{font-size:16px;font-weight:700;color:#1B3A6B;text-align:center;padding:16px;background:#e8f4ff;border-radius:10px;margin-bottom:12px}
+.vtest-opt{width:100%;text-align:left;padding:11px 14px;margin:5px 0;border-radius:8px;border:1.5px solid #dde;background:#fff;font-size:14px;font-family:inherit;cursor:pointer;transition:.15s}
+.vtest-opt:hover:not(.dis){border-color:#0097A7;background:#f0faff}
+.vtest-opt.ca{background:#e8f5e9;border-color:#2e7d32;color:#1b5e20;font-weight:700}
+.vtest-opt.wa{background:#ffebee;border-color:#e53935;color:#b71c1c}
+.vtest-opt.dis{pointer-events:none}
+.vtest-result{text-align:center;padding:8px;font-size:13px;font-weight:700;margin-top:4px}
+.vtest-result.ok{color:#2e7d32}.vtest-result.ng{color:#e53935}
+</style>
+</head>
+<body>
+<canvas id="cc"></canvas>
+<div class="top-header">
+  <h1>🎓 英検2級・高認英文法　Unit 2　時制</h1>
+  <p>こうげんよびこう（江原予備校）　― スピーカーボタンで音声再生 ―</p>
+</div>
+<nav class="main-nav" id="nav">
+  <div class="pair active-pair">
+    <button class="nb on" onclick="ss('s1',this)">① 時・条件の副詞節</button>
+    <button class="pb" onclick="ss('p1',this)">✏️ 練習①</button>
+  </div>
+  <div class="nav-sep"></div>
+  <div class="pair">
+    <button class="nb" onclick="ss('s2',this)">② 未来表現</button>
+    <button class="pb" onclick="ss('p2',this)">✏️ 練習②</button>
+  </div>
+  <div class="nav-sep"></div>
+  <div class="pair">
+    <button class="nb" onclick="ss('s3',this)">③ 現在完了</button>
+    <button class="pb" onclick="ss('p3',this)">✏️ 練習③</button>
+  </div>
+  <div class="nav-sep"></div>
+  <div class="pair">
+    <button class="nb" onclick="ss('s4',this)">④ 過去完了・完了進行形</button>
+    <button class="pb" onclick="ss('p4',this)">✏️ 練習④</button>
+  </div>
+  <div class="nav-sep"></div>
+  <div class="pair">
+    <button class="nb" onclick="ss('s5',this)">⑤ 時制の一致</button>
+    <button class="pb" onclick="ss('p5',this)">✏️ 練習⑤</button>
+  </div>
+  <div class="nav-sep"></div>
+  <div class="pair">
+    <button class="nb" onclick="ss('s6',this)">⑥ よく出る熟語</button>
+    <button class="pb" onclick="ss('p6',this)">✏️ 練習⑥実戦</button>
+  </div>
+  <div class="nav-sep" style="width:12px"></div>
+  <div style="flex-shrink:0;position:relative">
+    <button onclick="openM('mvocab')" style="padding:8px 16px;border-radius:22px;border:2px solid #7b1fa2;background:#f3e5f5;color:#7b1fa2;font-size:13px;font-family:inherit;cursor:pointer;font-weight:700;white-space:nowrap">📚 単語帳</button>
+    <span class="vocab-badge" id="vocab-badge">0</span>
+  </div>
+</nav>
+
+<!-- ①時・条件の副詞節 -->
+<div id="s1" class="sec active">
+  <div class="sh">① 時・条件の副詞節　― 未来でも現在形！ ―</div>
+  <div class="card">
+    <div class="card-title">副詞節とは</div>
+    <div class="kb">
+      まず、<b>「節」</b>とは何かを確認しましょう。「節」とは、主語（S）と動詞（V）を含む2語以上のまとまりのことです。節には大きく分けて2種類あります。<br><br>
+      ◆ <b>名詞節</b>：文の中で主語・目的語・補語の働きをする節です。<br>
+      　　I know <b>that he is a doctor</b>.（私は彼が医者であることを知っています）<br>
+      　　この「that he is a doctor」が名詞節で、know の目的語になっています。<br>
+      　　試しにこの節を取り去ると「I know.」だけになって意味が通りません。<br><br>
+      ◆ <b>副詞節</b>：動詞や文全体を修飾する節です。when / if / because / as soon as などが導きます。<br>
+      　　<b>If it is fine tomorrow</b>, I will go out.（もし明日晴れならば、外出しよう）<br>
+      　　この「If it is fine tomorrow」が副詞節です。取り去っても「I will go out.」で意味は通じます。<br>
+      　　「副詞」というのは「動詞・形容詞・文全体などを修飾する語」のことです。この副詞節も同じ役割を果たしています。
+    </div>
+    <div class="wb">
+      <b>★ 最重要ルール！</b>　時・条件の<b>副詞節</b>の中では、未来のことであっても<b>現在形</b>を使います。<br><br>
+      なぜでしょう？副詞節の中は「仮定の世界」なので、まだ起きていないことを表すのに will は使わないというルールがあるのです。入試でも定期テストでも必ずといっていいほど出る超重要ポイントです！<br><br>
+      × If it <b>will rain</b> tomorrow, we won't go there.（× will は不可）<br>
+      ○ If it <b>rains</b> tomorrow, we won't go there.（○ 現在形 rains を使う）
+      <button class="spk" onclick="sp('If it rains tomorrow, we won\'t go there.')">▶</button>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-title">代表的な副詞節を導く接続詞</div>
+    <table class="tbl">
+      <tr><th>接続詞</th><th>意味</th><th>例文</th></tr>
+      <tr><td><b>when</b></td><td>〜するとき</td><td>Please tell me <b>when she comes</b>. <button class="spk" onclick="sp('Please tell me when she comes.')">▶</button></td></tr>
+      <tr><td><b>if</b>（条件）</td><td>もし〜ならば</td><td><b>If it rains</b>, stay home. <button class="spk" onclick="sp('If it rains, stay home.')">▶</button></td></tr>
+      <tr><td><b>until / till</b></td><td>〜まで</td><td>Wait <b>till he comes</b>. <button class="spk" onclick="sp('Wait till he comes.')">▶</button></td></tr>
+      <tr><td><b>before</b></td><td>〜する前に</td><td>Go home <b>before it gets</b> dark. <button class="spk" onclick="sp('Go home before it gets dark.')">▶</button></td></tr>
+      <tr><td><b>as soon as</b></td><td>〜するとすぐに</td><td><b>As soon as she comes</b>, we'll begin. <button class="spk" onclick="sp('As soon as she comes, we will begin.')">▶</button></td></tr>
+    </table>
+    <div class="wb" style="margin-top:10px">
+      <b>注意！ if の使い分けに気をつけましょう。</b><br><br>
+      「if」には2つの用法があります。混同しやすいので丁寧に確認しましょう。<br><br>
+      ① 条件「もし〜ならば」→ 副詞節 → <b>will は使えない（現在形）</b><br>
+      　 If it <b>rains</b> tomorrow, we won't go.（もし雨なら行かない）<br><br>
+      ② 「〜かどうか」→ 名詞節 → <b>will が使える</b><br>
+      　 I <span class="vw" data-w="wonder" data-pos="動詞" data-mean="〜かと思う・不思議に思う" data-kana="ワンダー" data-opts='["〜かと思う・不思議に思う", "知る", "信じる", "忘れる"]' onclick="showVpop(this)">wonder</span> if it <b>will rain</b> tomorrow.（明日雨が降るかどうかわからない）
+      <button class="spk" onclick="sp('I wonder if it will rain tomorrow.')">▶</button><br>
+      　 この if は「<span class="vw" data-w="wonder" data-pos="動詞" data-mean="〜かと思う・不思議に思う" data-kana="ワンダー" data-opts='["〜かと思う・不思議に思う", "知る", "信じる", "忘れる"]' onclick="showVpop(this)">wonder</span>（わからない）」の目的語になっている<b>名詞節</b>です。<br>
+      　 <span class="vw" data-w="whether" data-pos="接続詞" data-mean="〜かどうか" data-kana="ウェザー" data-opts='["〜かどうか", "もし", "〜のとき", "〜なので"]' onclick="showVpop(this)">whether</span>（〜かどうか）と置き換えても意味が通じることで名詞節と判断できます。
+    </div>
+  </div>
+
+  <!-- ★ インライン確認問題①-A -->
+  <div class="card" style="border:2px solid #0097A7">
+    <div class="card-title" style="color:#0097A7">🖊 確認問題①　― 副詞節と名詞節 ―</div>
+    <div id="iq1q"></div>
+  </div>
+</div>
+
+<!-- 練習① -->
+<div id="p1" class="sec">
+  <div class="sh">練習①　副詞節・名詞節　正しい形を選ぼう（入試問題つき）</div>
+  <div class="sb"><div class="sn" id="p1sn">0 / 6</div><div class="pw"><div class="pf" id="p1p" style="width:0%"></div></div><button class="reset-btn" onclick="iC('p1')">リセット</button></div>
+  <div id="p1q"></div>
+</div>
+
+<!-- ②未来表現 -->
+<div id="s2" class="sec">
+  <div class="sh">② 未来を表す表現　― 6つの形を整理 ―</div>
+  <div class="card">
+    <div class="card-title">未来表現の比較</div>
+    <div class="pt">
+      英語で「未来のこと」を表す方法は will だけではありません。状況によって6通りの表現を使い分けます。どんな場面でどの表現を使うかが重要です。まず全体を表で確認しましょう。
+    </div>
+    <table class="tbl">
+      <tr><th>形</th><th>意味・使い方</th><th>例文</th></tr>
+      <tr><td><b>will ＋原形</b></td><td>その場で思いついた意志・推量</td><td>I <b>will play</b> tennis with you. <button class="spk" onclick="sp('I will play tennis with you.')">▶</button><br><small>（今思いついた）</small></td></tr>
+      <tr><td><b>be going to ＋原形</b></td><td>前もって計画・予定が決まっている</td><td>We <b>are going to go</b> <span class="vw" data-w="camping" data-pos="名詞" data-mean="キャンプ・野営" data-kana="キャンピング" data-opts='["キャンプ・野営", "旅行", "遠足", "ハイキング"]' onclick="showVpop(this)">camping</span>. <button class="spk" onclick="sp('We are going to go camping.')">▶</button><br><small>（以前から予定）</small></td></tr>
+      <tr><td><b>現在形</b></td><td>時刻表・予定表など確定した未来</td><td>Our <span class="vw" data-w="flight" data-pos="名詞" data-mean="フライト・飛行" data-kana="フライト" data-opts='["フライト・飛行", "列車", "バス", "船"]' onclick="showVpop(this)">flight</span> <b>leaves</b> at 11:45. <button class="spk" onclick="sp('Our flight leaves at 11:45.')">▶</button></td></tr>
+      <tr><td><b>現在進行形</b></td><td>近い未来の個人的予定</td><td>I <b>am leaving</b> for Tokyo tomorrow. <button class="spk" onclick="sp('I am leaving for Tokyo tomorrow.')">▶</button></td></tr>
+      <tr><td><b>be about to ＋原形</b></td><td>今にも〜しようとしている（直近）</td><td>The sun <b>is about to set</b>. <button class="spk" onclick="sp('The sun is about to set.')">▶</button></td></tr>
+      <tr><td><b>be on the point of ＋〜ing</b></td><td>まさに〜しようとしていた</td><td>He was <b>on the point of leaving</b>. <button class="spk" onclick="sp('He was on the point of leaving.')">▶</button></td></tr>
+    </table>
+  </div>
+  <div class="card">
+    <div class="card-title">will と be going to の使い分け（重要！）</div>
+    <div class="wb">
+      <b>例で違いを感じてみましょう。</b><br><br>
+      友達から「今夜暇？」と聞かれた場合：<br>
+      　「そうだ、映画でも行こうかな（今思いついた）」→ I <b>will</b> go to the movies.<br>
+      　「ごめん、もう予定がある（前から決めていた）」→ I <b>am going to</b> visit my aunt.<br><br>
+      このように、<b>will</b> はその場で決めた意志、<b>be going to</b> はすでに頭の中で計画されていた予定、というニュアンスの違いがあります。<br><br>
+      また、<b>be about to ～</b>（まさに〜しようとしている）と <b>be on the point of ～ing</b> はどちらも「今まさに」という極めて近い未来を表します。ほぼ同じ意味の書き換え表現として覚えておきましょう。
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-title">will / shall の用法</div>
+    <div class="kb">
+      will や shall には、単純な「未来」以外にも大切な用法がいくつかあります。整理して覚えましょう。<br><br>
+      ◆ <b>Will you ～?</b>「〜してくれませんか」（相手への依頼）<br>
+      　 Will you pass me the salt? <button class="spk" onclick="sp('Will you pass me the salt?')">▶</button>（塩を取ってくれませんか）<br>
+      　 答え方：Sure. Here you are.（いいですよ。はいどうぞ）<br><br>
+      ◆ <b>Shall I ～?</b>「〜してあげましょうか」（こちらから申し出る場合）<br>
+      　 Shall I open the window? <button class="spk" onclick="sp('Shall I open the window?')">▶</button>（窓を開けてあげましょうか）<br>
+      　 答え方：Yes, please. / No, thank you.<br><br>
+      ◆ <b>Shall we ～?</b>「一緒に〜しませんか」（相手を誘う提案）<br>
+      　 Shall we dance? <button class="spk" onclick="sp('Shall we dance?')">▶</button>（踊りませんか）<br>
+      　 答え方：Yes, let's.（ええ、そうしましょう）/ No, let's not.（いや、やめておきましょう）<br><br>
+      ◆ <b>won't（強い拒絶・固執）</b>：物が「どうしても〜しない」という意味になることがあります。<br>
+      　 The door won't open.（そのドアはどうしても開こうとしない）<button class="spk" onclick="sp('The door won\'t open.')">▶</button><br><br>
+      ◆ <b>will（習性・傾向）</b>：「〜するものだ」という習性・傾向を表すこともあります。<br>
+      　 Accidents will happen.（事故は起こるものだ）<button class="spk" onclick="sp('Accidents will happen.')">▶</button>
+    </div>
+  </div>
+  <!-- ★ インライン確認問題② -->
+  <div class="card" style="border:2px solid #0097A7">
+    <div class="card-title" style="color:#0097A7">🖊 確認問題②　― 未来表現 ―</div>
+    <div id="iq2q"></div>
+  </div>
+</div>
+
+<!-- 練習② -->
+<div id="p2" class="sec">
+  <div class="sh">練習②　未来表現を並び替えよう</div>
+  <div class="sb"><div class="sn" id="p2sn">0 / 6</div><div class="pw"><div class="pf" id="p2p" style="width:0%"></div></div><button class="reset-btn" onclick="iS('p2','p2q',d2)">リセット</button></div>
+  <div id="p2q"></div>
+</div>
+
+<!-- ③現在完了 -->
+<div id="s3" class="sec">
+  <div class="sh">③ 現在完了　have(has) ＋ 過去分詞</div>
+  <div class="card">
+    <div class="card-title">現在完了の3用法</div>
+    <div class="pt">
+      現在完了（have/has ＋ 過去分詞）は「過去のある時点から今につながる出来事」を表します。単純な過去形と何が違うのでしょうか。<br><br>
+      過去形：He came to my house.（彼は私の家に来た）← 単に過去の事実<br>
+      現在完了：He has come to my house.（彼は私の家にちょうど来たところです）← 今もここにいる<br><br>
+      現在完了には3つの用法があります。どの語句が一緒に使われているかで用法を判断しましょう。
+    </div>
+    <table class="tbl">
+      <tr><th>用法</th><th>訳し方</th><th>よく使う語</th><th>例文</th></tr>
+      <tr><td><b>完了</b></td><td>〜してしまった<br>〜したところだ</td><td>just（ちょうど）<br>already（すでに）<br>yet（まだ/もう）</td><td>I have <b>just</b> finished the work. <button class="spk" onclick="sp('I have just finished the work.')">▶</button></td></tr>
+      <tr><td><b>継続</b></td><td>ずっと〜している</td><td>for（〜の間）<br>since（〜以来）<br>How long（どのくらい）</td><td>I have lived here <b>for</b> ten years. <button class="spk" onclick="sp('I have lived here for ten years.')">▶</button></td></tr>
+      <tr><td><b>経験</b></td><td>〜したことがある</td><td>ever（今までに）<br>never（一度も〜ない）<br>once / twice / before</td><td>I have <b>never</b> been to Paris. <button class="spk" onclick="sp('I have never been to Paris.')">▶</button></td></tr>
+    </table>
+    <div class="wb" style="margin-top:10px">
+      <b>⚠ 注意！現在完了と一緒に使えない語句があります。</b><br><br>
+      現在完了形（have/has ＋ 過去分詞）は、「過去のある時点」を特定する語句と一緒には使えません。なぜなら、現在完了は「過去〜現在」の幅のある時間を表すのに対し、ago・yesterday・when などは「ある一点の過去」を指すからです。<br><br>
+      × When <b>has</b> he got to England.　→ ○ When <b>did</b> he get to London?<br>
+      　（when は「いつ」という特定の過去の時点を尋ねているので、完了形は不可）<br><br>
+      × I have met him <b>two years ago</b>.　→ ○ I met him two years ago.<br>
+      　（two years ago は「2年前という特定の時点」なので、完了形は使えない）<br><br>
+      <b>過去の特定時点を示す語句</b>（ago / yesterday / last year / when / just now など）が文中にあれば、必ず<b>過去形</b>を使いましょう。
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-title">have been to vs have gone to</div>
+    <div class="kb">
+      <b>have been to</b> と <b>have gone to</b> は形が似ていますが、意味がまったく違います。<br>混同しやすいので注意しましょう！<br><br>
+      ◆ <b>have been to ～</b>「〜に行ったことがある」（経験用法）<br>
+      　 行って<b>戻ってきた</b>経験を表します。今は話している場所にいます。<br>
+      　 I have been to Kyoto. <button class="spk" onclick="sp('I have been to Kyoto.')">▶</button>（私は京都に行ったことがあります）<br><br>
+      ◆ <b>have gone to ～</b>「〜へ行ってしまった」（完了用法）<br>
+      　 行ったまま<b>まだ戻っていない</b>ことを表します。今はその場にいません。<br>
+      　 He has gone to London. <button class="spk" onclick="sp('He has gone to London.')">▶</button>（彼はロンドンへ行ってしまった）<br><br>
+      「have gone to」は一人称（I / We）では普通使いません。「He / She / Tom」など第三者について使います。
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-title">「〜して○年になる」の3パターン</div>
+    <div class="kb">
+      「〜してから○年になる」という表現は、入試で書き換え問題として非常によく出ます。3つのパターンをセットで覚えておきましょう。<br><br>
+      ① <b>have been ～ for ○ years</b>（現在完了・継続）<br>
+      　 We have been friends for five years.<br>
+      　（私たちは5年間ずっと友達です）<br><br>
+      ② <b>○ years have <span class="vw" data-w="passed" data-pos="動詞" data-mean="過ぎた・経過した" data-kana="パスト" data-opts='["過ぎた・経過した", "始まった", "止まった", "終わった"]' onclick="showVpop(this)">passed</span> since ～</b>（〜してから○年が過ぎた）<br>
+      　 Five years have <span class="vw" data-w="passed" data-pos="動詞" data-mean="過ぎた・経過した" data-kana="パスト" data-opts='["過ぎた・経過した", "始まった", "止まった", "終わった"]' onclick="showVpop(this)">passed</span> since we became friends. <button class="spk" onclick="sp('Five years have passed since we became friends.')">▶</button><br>
+      　（私たちが友達になってから5年が経ちました）<br><br>
+      ③ <b>It is ○ years since ～</b>（〜して○年になる）<br>
+      　 It is five years since we became friends.<br>
+      　（私たちが友達になって5年になります）<br><br>
+      ⚠ since の後ろは「過去形」になることに注意しましょう。
+    </div>
+  </div>
+  <!-- ★ インライン確認問題③ -->
+  <div class="card" style="border:2px solid #0097A7">
+    <div class="card-title" style="color:#0097A7">🖊 確認問題③　― 現在完了 ―</div>
+    <div id="iq3q"></div>
+  </div>
+</div>
+
+<!-- 練習③ -->
+<div id="p3" class="sec">
+  <div class="sh">練習③　現在完了（選択・並び替え）　入試問題つき</div>
+  <div class="sb"><div class="sn" id="p3sn">0 / 8</div><div class="pw"><div class="pf" id="p3p" style="width:0%"></div></div><button class="reset-btn" onclick="iC('p3')">リセット</button></div>
+  <div id="p3q"></div>
+</div>
+
+<!-- ④過去完了・完了進行形 -->
+<div id="s4" class="sec">
+  <div class="sh">④ 過去完了・完了進行形</div>
+  <div class="card">
+    <div class="card-title">過去完了　had ＋ 過去分詞</div>
+    <div class="pt">
+      過去完了（had ＋ 過去分詞）は、「過去よりもさらに前のこと（大過去）」を表します。<br><br>
+      日本語でも「もうすでに〜していた」「〜してしまっていた」という表現がありますね。英語ではこれを過去完了で表します。<br>
+      「過去のある時点」を基準にして、それよりも<b>さらに前</b>に起きたことを表すときに使います。
+    </div>
+    <div class="ex">
+      When the teacher came in, Tom had not come in yet.<br>
+      <button class="spk" onclick="sp('When the teacher came in, Tom had not come in yet.')">▶</button><br>
+      先生が教室に入ったとき、トムはまだ来ていなかった。<br>
+      　　　　　↑過去　　　　　　↑大過去（さらに前）<br><br>
+      <b>時間の流れをイメージしてください：</b><br>
+      　【過去】─────────【現在】<br>
+      　　　↑大過去（had done）　↑過去（came in）<br><br>
+      「先生が来た（過去）」より<b>さらに前</b>に「トムがまだ来ていなかった（大過去）」という関係を、過去完了 had not come in で表しています。
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-title">完了進行形</div>
+    <div class="kb">
+      「完了形（have ＋ p.p.）」と「進行形（be ＋ ～ing）」を組み合わせた形です。「過去のある時点から今まで、ずっと動作が続いている」ことを強調したいときに使います。<br><br>
+      たとえば「1週間ずっと雨が降り続いている」という場合、現在完了（has rained）よりも現在完了進行形（has been raining）のほうが「今もまだ続いている」というニュアンスが強く出ます。
+    </div>
+    <table class="tbl">
+      <tr><th>形</th><th>意味</th><th>例文</th></tr>
+      <tr><td><b>現在完了進行形</b><br>have been ～ing</td><td>ずっと〜し続けている</td><td>It <b>has been raining</b> for a week. <button class="spk" onclick="sp('It has been raining for a week.')">▶</button></td></tr>
+      <tr><td><b>過去完了進行形</b><br>had been ～ing</td><td>ずっと〜し続けていた</td><td>I <b>had been working</b> all day. <button class="spk" onclick="sp('I had been working all day.')">▶</button></td></tr>
+      <tr><td><b>未来完了進行形</b><br>will have been ～ing</td><td>ずっと〜し続けているだろう</td><td>I <b>will have been teaching</b> for 20 years this year. <button class="spk" onclick="sp('I will have been teaching for twenty years this year.')">▶</button></td></tr>
+    </table>
+  </div>
+  <!-- ★ インライン確認問題④ -->
+  <div class="card" style="border:2px solid #0097A7">
+    <div class="card-title" style="color:#0097A7">🖊 確認問題④　― 過去完了・完了進行形 ―</div>
+    <div id="iq4q"></div>
+  </div>
+</div>
+
+<!-- 練習④ -->
+<div id="p4" class="sec">
+  <div class="sh">練習④　完了形を並び替えよう（入試問題つき）</div>
+  <div class="sb"><div class="sn" id="p4sn">0 / 6</div><div class="pw"><div class="pf" id="p4p" style="width:0%"></div></div><button class="reset-btn" onclick="iS('p4','p4q',d4)">リセット</button></div>
+  <div id="p4q"></div>
+</div>
+
+<!-- ⑤時制の一致 -->
+<div id="s5" class="sec">
+  <div class="sh">⑤ 時制の一致</div>
+  <div class="card">
+    <div class="card-title">主節が過去形になると従属節も変わる</div>
+    <div class="kb">
+      「時制の一致」とは、主節（文の中心となるS＋Vの節）が過去形に変わると、従属節（その文の中に含まれる別の節）の時制も「過去側にずれる」というルールです。<br><br>
+      たとえば日本語でも「彼女は正しい<b>と思う</b>」→「彼女は正しい<b>と思った</b>」にすると、従属節も自然に「正しかった」などに変わりますね。英語でも同じことが起きます。<br><br>
+      主節が過去形になると、従属節の動詞も次のようにずれます：<br>
+      　is / am / are → <b>was / were</b>　　do / does → <b>did</b>　　can → <b>could</b><br>
+      　will → <b>would</b>　　shall → <b>should</b>　　may → <b>might</b>　　must → <b>had to</b><br>
+      　has / have done → <b>had done</b>　　is doing → <b>was doing</b>
+    </div>
+    <div class="ex">
+      I <b>think</b> that she <b>is</b> right.（私は彼女が正しいと思う）<br>
+      　↓ 主節を過去形に<br>
+      I <b>thought</b> that she <b>was</b> right. <button class="spk" onclick="sp('I thought that she was right.')">▶</button>
+    </div>
+    <div class="ex">
+      <b>もう少し具体的な例で確認してみましょう。</b><br><br>
+      He says that he <b>can</b> swim.（彼は泳げると言っています）<br>
+      　↓ says を said に変えると<br>
+      He said that he <b>could</b> swim.（彼は泳げると言いました）<br>
+      　can → could にずれます。<br><br>
+      She says that she <b>will</b> come.（彼女は来ると言っています）<br>
+      　↓ says を said に変えると<br>
+      She said that she <b>would</b> come.（彼女は来ると言いました）<br>
+      　will → would にずれます。<br><br>
+      このように「主節が過去になると、従属節も過去側にずれる」のが時制の一致のルールです。
+    </div>
+    <div class="wb">
+      <b>⚠ 時制の一致を受けない（ずれない）場合があります！</b><br><br>
+      以下の3つの場合は、主節が過去形になっても従属節の時制はそのままでかまいません。<br><br>
+      ① <b>現在の習慣</b>：今も続いている習慣はそのまま現在形で表します。<br>
+      　 She said that she usually <b>gets</b> up at six every morning.<br>
+      　（彼女は毎朝6時に起きる習慣がある → 今も同じなので現在形のまま）<br><br>
+      ② <b>科学的・数学的真理</b>：「地球は太陽のまわりを回る」のようないつでも正しい事実は現在形のまま。<br>
+      　 He said that the earth <b>goes</b> around the sun.<br><br>
+      ③ <b>歴史的事実</b>：歴史上の出来事は過去形のまま変わりません。<br>
+      　 He said that Columbus <b>discovered</b> America in 1492.
+    </div>
+  </div>
+  <!-- ★ インライン確認問題⑤ -->
+  <div class="card" style="border:2px solid #0097A7">
+    <div class="card-title" style="color:#0097A7">🖊 確認問題⑤　― 時制の一致 ―</div>
+    <div id="iq5q"></div>
+  </div>
+</div>
+
+<!-- 練習⑤ -->
+<div id="p5" class="sec">
+  <div class="sh">練習⑤　時制の一致を選ぼう</div>
+  <div class="sb"><div class="sn" id="p5sn">0 / 6</div><div class="pw"><div class="pf" id="p5p" style="width:0%"></div></div><button class="reset-btn" onclick="iC('p5')">リセット</button></div>
+  <div id="p5q"></div>
+</div>
+
+<!-- ⑥よく出る熟語 -->
+<div id="s6" class="sec">
+  <div class="sh">⑥ よく出る熟語</div>
+  <div class="card">
+    <div class="card-title">No sooner ～ than …「〜するとすぐに…する」</div>
+    <div class="kb">
+      「No sooner ～ than …」は「〜するとすぐに…する」という意味の重要表現です。<br>
+      入試でよく問われる「倒置（とうち）」という現象が起きるので、しっかり理解しましょう。<br><br>
+      ◆ 普通の語順：She had no sooner heard the news than she <span class="vw" data-w="fainted" data-pos="動詞" data-mean="気を失った（faintの過去形）" data-kana="フェインテッド" data-opts='["気を失った（faintの過去形）", "眠った", "叫んだ", "走った"]' onclick="showVpop(this)">fainted</span>.<br>
+      　（彼女はそのニュースを聞くとすぐに気を失った）<br><br>
+      ◆ 強調のための倒置（入試ではこちらが主流！）：<br>
+      　 <b>No sooner had she heard the news than she <span class="vw" data-w="fainted" data-pos="動詞" data-mean="気を失った（faintの過去形）" data-kana="フェインテッド" data-opts='["気を失った（faintの過去形）", "眠った", "叫んだ", "走った"]' onclick="showVpop(this)">fainted</span>.</b> <button class="spk" onclick="sp('No sooner had she heard the news than she fainted.')">▶</button><br>
+      　「No（否定語）」が文頭に来ると、<b>主語と動詞（had）が入れ替わる</b>のが倒置のルールです。<br>
+      　「No sooner ... than」のあとは<b>過去完了＋主節は過去形</b>という時制のパターンも合わせて覚えましょう。<br><br>
+      　 ※faint（フェイント）= 動詞「気を失う」
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-title">重要熟語一覧</div>
+    <div class="kb">
+      前置詞 of を使った熟語が多いので、まとめて覚えましょう。<b>be ～ of ～</b> のパターンはとくに頻出です。また、これらの熟語は後ろに動名詞（〜ing）が続く場合が多いことも一緒に覚えておくと役立ちます。
+    </div>
+    <table class="tbl">
+      <tr><th>熟語</th><th>意味</th><th>例文・注意</th></tr>
+      <tr><td><b>make a <span class="vw" data-w="mistake" data-pos="名詞" data-mean="間違い・誤り" data-kana="ミステイク" data-opts='["間違い・誤り", "正解", "成功", "勝利"]' onclick="showVpop(this)">mistake</span></b></td><td>間違いをする</td><td>Don't be <span class="vw" data-w="afraid" data-pos="形容詞" data-mean="怖い・心配して" data-kana="アフレイド" data-opts='["怖い・心配して", "嬉しい", "悲しい", "驚いた"]' onclick="showVpop(this)">afraid</span> of making mistakes. <button class="spk" onclick="sp('Don't be afraid of making mistakes.')">▶</button><br><small>失敗を恐れるな。</small></td></tr>
+      <tr><td><b>be <span class="vw" data-w="afraid" data-pos="形容詞" data-mean="怖い・心配して" data-kana="アフレイド" data-opts='["怖い・心配して", "嬉しい", "悲しい", "驚いた"]' onclick="showVpop(this)">afraid</span> of ～</b></td><td>〜を恐れる・〜が怖い</td><td>後ろは名詞または動名詞（〜ing）が来ます。</td></tr>
+      <tr><td><b>be <span class="vw" data-w="fond" data-pos="形容詞" data-mean="好きで（be fond of）" data-kana="フォンド" data-opts='["好きで（be fond of）", "嫌いで", "得意で", "上手で"]' onclick="showVpop(this)">fond</span> of ～</b></td><td>〜が好きだ（＝like）</td><td>He is <span class="vw" data-w="fond" data-pos="形容詞" data-mean="好きで（be fond of）" data-kana="フォンド" data-opts='["好きで（be fond of）", "嫌いで", "得意で", "上手で"]' onclick="showVpop(this)">fond</span> of taking a walk along the river. <button class="spk" onclick="sp('He is fond of taking a walk along the river.')">▶</button></td></tr>
+      <tr><td><b>be <span class="vw" data-w="different" data-pos="形容詞" data-mean="異なる・違う" data-kana="ディファレント" data-opts='["異なる・違う", "同じ", "似ている", "正しい"]' onclick="showVpop(this)">different</span> from ～</b></td><td>〜と異なる</td><td>This is <span class="vw" data-w="different" data-pos="形容詞" data-mean="異なる・違う" data-kana="ディファレント" data-opts='["異なる・違う", "同じ", "似ている", "正しい"]' onclick="showVpop(this)">different</span> from that. <button class="spk" onclick="sp('This is different from that.')">▶</button><br><small>⚠ <span class="vw" data-w="different" data-pos="形容詞" data-mean="異なる・違う" data-kana="ディファレント" data-opts='["異なる・違う", "同じ", "似ている", "正しい"]' onclick="showVpop(this)">different</span> from（× <span class="vw" data-w="different" data-pos="形容詞" data-mean="異なる・違う" data-kana="ディファレント" data-opts='["異なる・違う", "同じ", "似ている", "正しい"]' onclick="showVpop(this)">different</span> with）</small></td></tr>
+      <tr><td><b>do one's best</b></td><td>ベストを尽くす</td><td>Do your best! <button class="spk" onclick="sp('Do your best!')">▶</button><br><small>one's の部分は主語に合わせて変える（my / his / her など）</small></td></tr>
+    </table>
+  </div>
+  <!-- ★ インライン確認問題⑥ -->
+  <div class="card" style="border:2px solid #0097A7">
+    <div class="card-title" style="color:#0097A7">🖊 確認問題⑥　― よく出る熟語 ―</div>
+    <div id="iq6q"></div>
+  </div>
+</div>
+
+<!-- 練習⑥実戦 -->
+<div id="p6" class="sec">
+  <div class="sh">練習⑥　実戦問題（入試問題）を解こう</div>
+  <div class="sb"><div class="sn" id="p6sn">0 / 7</div><div class="pw"><div class="pf" id="p6p" style="width:0%"></div></div><button class="reset-btn" onclick="iC('p6')">リセット</button></div>
+  <div id="p6q"></div>
+</div>
+
+<script>
+/* ===== モーダル・花吹雪（共通） ===== */
+function openM(id){
+  document.getElementById(id).classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeM(id){
+  document.getElementById(id).classList.remove('open');
+  document.body.style.overflow='';
+}
+// オーバーレイクリックで閉じる
+document.querySelectorAll('.mo').forEach(function(mo){
+  mo.addEventListener('click',function(e){
+    if(e.target===mo)closeM(mo.id);
+  });
+});
+
+function confetti(){
+  var cv=document.getElementById('cc');
+  cv.width=window.innerWidth;cv.height=window.innerHeight;
+  cv.style.display='block';
+  var ctx=cv.getContext('2d');
+  var cols=['#f9a825','#0097A7','#1B3A6B','#e53935','#2e7d32','#ff6f00','#7b1fa2','#ff4081'];
+  var ps=[];
+  for(var k=0;k<130;k++){
+    ps.push({x:Math.random()*cv.width,y:-20-Math.random()*180,
+      w:7+Math.random()*9,h:3+Math.random()*5,
+      c:cols[Math.floor(Math.random()*cols.length)],
+      s:2+Math.random()*4,a:Math.random()*360,sp:3-Math.random()*6,
+      d:(Math.random()-.5)*2.5});
+  }
+  var fr=0;
+  function draw(){
+    ctx.clearRect(0,0,cv.width,cv.height);
+    ps.forEach(function(p){
+      ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.a*Math.PI/180);
+      ctx.fillStyle=p.c;ctx.fillRect(-p.w/2,-p.h/2,p.w,p.h);ctx.restore();
+      p.y+=p.s;p.x+=p.d;p.a+=p.sp;
+    });
+    fr++;
+    if(fr<100)requestAnimationFrame(draw);
+    else{ctx.clearRect(0,0,cv.width,cv.height);cv.style.display='none';}
+  }
+  draw();
+}
+
+function updS(mid,n,t){
+  document.getElementById(mid+'sn').textContent=n+' / '+t;
+  document.getElementById(mid+'pf').style.width=(n/t*100)+'%';
+  if(n===t&&t>0)confetti();
+}
+
+
+function sp(t){if(!window.speechSynthesis)return;speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang='en-US';u.rate=0.88;speechSynthesis.speak(u);}
+function ss(id,btn){
+  document.querySelectorAll('.sec').forEach(function(s){s.classList.remove('active','on');});
+  document.querySelectorAll('.nb,.nav-btn').forEach(function(b){b.classList.remove('active','on');});
+  document.querySelectorAll('.pair').forEach(function(p){p.classList.remove('active-pair');});
+  document.getElementById(id).classList.add('active','on');
+  btn.classList.add('active','on');
+  if(btn.parentElement&&btn.parentElement.classList.contains('pair')){
+    btn.parentElement.classList.add('active-pair');
+  }
+}
+function upd(id,n,t){var sn=document.getElementById(id+'sn');var p=document.getElementById(id+'p');if(sn)sn.textContent=n+' / '+t;if(p)p.style.width=(n/t*100)+'%';}
+function sh(n){return`<button class="spk" style="width:26px;height:26px;margin-left:4px" onclick="sp('${n.replace(/'/g,"\\\\'")}')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button>`;}
+function ub(u){return u?'<span class="ub">'+u+'</span>':'';}
+
+// 選択問題エンジン
+function iC(id){
+  const data=window['c'+id];
+  const total=data.length;
+  let score=0;const done=new Array(total).fill(false);
+  upd(id,0,total);
+  const c=document.getElementById(id+'q');c.innerHTML='';
+  data.forEach((d,i)=>{
+    const div=document.createElement('div');div.className='q-box';
+    div.innerHTML=`<div class="q-hd"><span class="q-num">${i+1}</span><span class="q-txt"><b>${d.q}</b>${ub(d.u)}${sh(d.s)}</span></div>
+    <div style="font-size:13px;color:#555;margin-bottom:8px">${d.j||''}</div>
+    ${d.h?`<span class="hint">${d.h}</span>`:''}
+    <div id="${id}ch${i}"></div><div class="ep" id="${id}ep${i}">📝 解説：${d.e}</div>`;
+    c.appendChild(div);
+    d.c.forEach((ch,ci)=>{
+      const btn=document.createElement('button');btn.className='cb';btn.textContent=ch;
+      btn.onclick=()=>{
+        if(done[i])return;done[i]=true;
+        div.querySelectorAll('.cb').forEach((b,bi)=>{b.classList.add('dis');if(bi===d.a)b.classList.add('ca');else if(bi===ci&&ci!==d.a)b.classList.add('wa');});
+        document.getElementById(id+'ep'+i).classList.add('show');
+        if(ci===d.a){score++;upd(id,score,total);}
+      };
+      document.getElementById(id+'ch'+i).appendChild(btn);
+    });
+  });
+}
+
+// 並び替えエンジン
+function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+function iS(sid,cid,data){
+  const total=data.length;
+  upd(sid,0,total);
+  const c=document.getElementById(cid);c.innerHTML='';
+  data.forEach((d,i)=>{
+    const words=shuffle([...d.w]);
+    const sel=[];let done=false;
+    const div=document.createElement('div');div.className='q-box';div.dataset.i=i;
+    div.innerHTML=`<div class="q-hd"><span class="q-num">${i+1}</span><span class="q-txt">${d.j}${ub(d.u)}</span></div>
+    ${d.h?`<span class="hint">${d.h}</span>`:''}
+    <div class="az" id="${cid}az${i}"></div>
+    <div class="wb2" id="${cid}wb${i}"></div>
+    <div class="btn-row">
+      <button class="check-btn" id="${cid}cb${i}">確認</button>
+      <button class="reset-btn" id="${cid}rb${i}">やり直し</button>
+      <button class="exp-btn" id="${cid}eb${i}">解説</button>
+      <span class="fb" id="${cid}fb${i}"></span>
+    </div>
+    <div class="ep" id="${cid}ep${i}">📝 解説：${d.e}<br>✅ 正解：<b>${d.w.join(' ')}</b> ${sh(d.s)}</div>`;
+    c.appendChild(div);
+    function render(){
+      const wb=document.getElementById(`${cid}wb${i}`);
+      const az=document.getElementById(`${cid}az${i}`);
+      wb.innerHTML='';az.innerHTML='';
+      words.forEach((w,wi)=>{
+        const chip=document.createElement('span');chip.className='chip'+(sel.includes(wi)?' used':'');
+        chip.textContent=w;chip.onclick=()=>{if(!sel.includes(wi)&&!done){sel.push(wi);render();}};
+        wb.appendChild(chip);
+      });
+      sel.forEach((wi,si)=>{
+        const chip=document.createElement('span');chip.className='chip ac';chip.textContent=words[wi];
+        chip.onclick=()=>{if(!done){sel.splice(si,1);render();}};
+        az.appendChild(chip);
+      });
+    }
+    render();
+    document.getElementById(`${cid}cb${i}`).onclick=()=>{
+      if(done)return;
+      const ans=sel.map(wi=>words[wi]);
+      const fb=document.getElementById(`${cid}fb${i}`);
+      const ep=document.getElementById(`${cid}ep${i}`);
+      if(ans.length===0){fb.textContent='単語を選んでください。';fb.className='fb ng';return;}
+      ep.classList.add('show');
+      if(JSON.stringify(ans)===JSON.stringify(d.w)){
+        fb.textContent='✓ 正解！';fb.className='fb ok';
+        document.getElementById(`${cid}az${i}`).classList.add('ok');
+        done=true;div._done=true;
+        const cnt=Array.from(document.querySelectorAll(`#${cid} .q-box`)).filter(q=>q._done).length;
+        upd(sid,cnt,total);
+      } else {
+        fb.textContent='✗ もう一度！';fb.className='fb ng';
+        const az=document.getElementById(`${cid}az${i}`);
+        az.classList.add('ng');setTimeout(()=>az.classList.remove('ng'),500);
+      }
+    };
+    document.getElementById(`${cid}rb${i}`).onclick=()=>{
+      if(done)return;sel.length=0;
+      document.getElementById(`${cid}fb${i}`).textContent='';
+      document.getElementById(`${cid}ep${i}`).classList.remove('show');
+      render();
+    };
+    document.getElementById(`${cid}eb${i}`).onclick=()=>{document.getElementById(`${cid}ep${i}`).classList.toggle('show');};
+  });
+}
+
+// ===== 練習①：副詞節・名詞節 =====
+window.cp1=[
+  {q:"Let's have lunch as soon as he ( ).",s:"Let's have lunch as soon as he comes.",j:'彼が来たらすぐに昼食にしましょう。',u:'熊本看護',a:2,c:['come','will come','comes','came'],e:'<b>as soon as</b> は副詞節を導く。→ 副詞節中は未来でも現在形 → <b>comes</b>'},
+  {q:'The rocket will be launched when the wind ( ) blowing.',s:'The rocket will be launched when the wind stops blowing.',j:'風がやんだときに、ロケットは発射されるだろう。',u:'東海大学',a:0,c:['stops','will stop','is stopping','will be stopping'],e:'<b>when</b> は時の副詞節 → 未来でも現在形 → <b>stops</b>'},
+  {q:'You had better go home before it ( ) dark.',s:'You had better go home before it gets dark.',j:'暗くなる前に帰ったほうがよい。',u:'国立病院機構九州医療センター',a:1,c:['will get','gets',"doesn't get","hasn't got"],e:'<b>before</b> は時の副詞節 → 現在形 → <b>gets</b>'},
+  {q:'I wonder when Jane ( ) next time.',s:'I wonder when Jane will come next time.',j:'ジェーンが次回いつ来るかわからない。',u:'国立病院機構埼玉',a:1,c:['comes','will come','coming','had come'],e:'<b>I wonder when ～</b> の when 節は名詞節（wonders の目的語） → will が使える → <b>will come</b>'},
+  {q:'I wonder if it ( ) tomorrow.',s:'I wonder if it will rain tomorrow.',j:'明日は雨が降るかどうかわからない。',a:1,c:['rains','will rain','rained','has rained'],e:'<b>I wonder if ～</b> の if 節は名詞節 → will が使える → <b>will rain</b>'},
+  {q:'If it ( ) fine tomorrow, we will go camping.',s:'If it is fine tomorrow, we will go camping.',j:'もし明日晴れるならば、私たちはキャンプに行きます。',a:0,c:['is','will be','was','would be'],e:'<b>if</b>「もし」= 条件の副詞節 → 現在形 → <b>is</b>'},
+];
+
+// ===== 練習②：未来表現並び替え =====
+window.d2=[
+  {j:'私の父はもうすぐ帰ってきます。',s:'My father is coming back soon.',w:['My','father','is','coming','back','soon','.'],h:'現在進行形で近い未来を表す',e:'近い未来の予定は現在進行形で表せる。→ My father <b>is coming</b> back soon.'},
+  {j:'その汽車は11:40に出発します。',s:'The train leaves at 11:40.',w:['The','train','leaves','at','11:40','.'],h:'時刻表など確定した未来 → 現在形',e:'確定した予定は現在形で表す。→ The train <b>leaves</b> at 11:40.'},
+  {j:'私たちは来週の日曜日にキャンプに行くつもりです。',s:'We are going to go camping next Sunday.',w:['We','are','going','to','go','camping','next','Sunday','.'],h:'前もって計画 → be going to',e:'前もって計画されている未来 → <b>be going to</b> → We are going to go camping next Sunday.'},
+  {j:'列車はまさに出発しようとしていた。',s:'The train was about to start.',w:['The','train','was','about','to','start','.'],h:'be about to ＋ 原形',e:'「今にも〜しようとしている」= <b>be about to</b> + 原形 → The train was about to start.'},
+  {j:'窓を開けてあげましょうか。',s:'Shall I open the window?',w:['Shall','I','open','the','window','?'],h:'申し出 → Shall I ～?',e:'「〜してあげましょうか」（申し出）= <b>Shall I ～?</b>'},
+  {j:'踊りませんか。（一緒に〜しませんか）',s:'Shall we dance?',w:['Shall','we','dance','?'],h:'提案 → Shall we ～?',e:'「一緒に〜しませんか」（提案）= <b>Shall we ～?</b>'},
+];
+
+// ===== 練習③：現在完了 =====
+window.cp3=[
+  {q:'私はちょうどその仕事を終えたところです。\nI have ( ) finished the work.',s:'I have just finished the work.',j:'',a:0,c:['just','already','yet','ever'],e:'<b>just</b>「ちょうど〜したところだ」（完了用法）'},
+  {q:'あなたはもうその宿題を終えたのですか。\nHave you finished your homework ( )?',s:'Have you finished your homework yet?',j:'',a:2,c:['just','already','yet','ever'],e:'疑問文で「もう〜しましたか」= <b>yet</b> を文末に置く（完了用法）'},
+  {q:'She\'s been in Tokyo ( ) last summer.',s:"She's been in Tokyo since last summer.",j:'彼女は昨年の夏からずっと東京にいます。',a:1,c:['for','since','before','ever'],e:'<b>last summer</b>（過去の時点）→ <b>since</b>（継続用法）'},
+  {q:'I\'ve been in Kyoto ( ) three years.',s:"I've been in Kyoto for three years.",j:'私は京都に3年間ずっといます。',a:0,c:['for','since','before','until'],e:'<b>three years</b>（期間）→ <b>for</b>（継続用法）'},
+  {q:'I have ( ) been to Hawaii.',s:'I have never been to Hawaii.',j:'私はハワイに一度も行ったことがない。',a:1,c:['ever','never','just','already'],e:'「一度も〜ない」= <b>never</b>（経験用法）'},
+  {q:'He has ( ) to London.',s:'He has gone to London.',j:'彼はロンドンへ行ってしまった。（今ここにいない）',a:1,c:['been','gone','come','got'],e:'「〜へ行ってしまった（今ここにいない）」= <b>have gone to</b>。have been to は「行ったことがある」で今は戻っている。'},
+  {q:'It ( ) three years since I saw Tom last.',s:'It has been three years since I saw Tom last.',j:'トムに最後に会ってから3年になる。',u:'熊本医師会看護',a:0,c:['has been','has passed','is passed','passed'],e:'「〜して○年になる」= <b>It has been ～ since ...</b>'},
+  {q:'By the end of the month he ( ) here for twenty years.',s:'By the end of the month he will have been teaching here for twenty years.',j:'来月には彼がここで教えて20年になる。',u:'北九州市立看護',a:3,c:['will teach','will be teaching','has been teaching','will have been teaching'],e:'「未来のある時点までに〜し続けている」= <b>will have been ～ing</b>（未来完了進行形）'},
+];
+
+// ===== 練習④：完了形並び替え =====
+window.d4=[
+  {j:'昨日からずっと雨が降り続いている。',s:'It has been raining since yesterday.',w:['It','has','been','raining','since','yesterday','.'],h:'現在完了進行形：have been ～ing',e:'現在完了進行形 → It <b>has been raining</b> since yesterday.'},
+  {j:'昨日私が電話をかけたとき、ジョンはすでに出かけていた。',s:'When I phoned yesterday, John had already left.',w:['When','I','phoned','yesterday',',','John','had','already','left','.'],h:'過去完了：had ＋ p.p.（過去の大過去）',u:'静岡中部看護',e:'「電話した（過去）」より前に「出かけていた（大過去）」→ had already left'},
+  {j:'私が駅についたとき、列車は出てしまっていた。',s:'When I arrived at the station, the train had already left.',w:['When','I','arrived','at','the','station',',','the','train','had','already','left','.'],h:'had ＋ already ＋ 過去分詞',u:'福井県立看護',e:'駅についた（過去）より前に列車が出た（大過去）→ the train <b>had already left</b>.'},
+  {j:'来月で彼と知り合って3年になります。',s:'Next month I will have known him for three years.',w:['Next','month','I','will','have','known','him','for','three','years','.'],h:'未来完了形：will have ＋ 過去分詞',e:'未来のある時点での完了・継続 → <b>will have known</b>'},
+  {j:'私はこの携帯電話を3年間使い続けています。',s:'I have been using this mobile phone for three years.',w:['I','have','been','using','this','mobile','phone','for','three','years','.'],h:'現在完了進行形：have been ～ing',e:'継続中の動作 → I <b>have been using</b> this mobile phone for three years.'},
+  {j:'明日で、5日間ずっと雨が降り続けていることになる。',s:'It will have been raining for five days tomorrow.',w:['It','will','have','been','raining','for','five','days','tomorrow','.'],h:'未来完了進行形：will have been ～ing',e:'未来のある時点での継続 → <b>will have been raining</b>'},
+];
+
+// ===== 練習⑤：時制の一致 =====
+window.cp5=[
+  {q:'I wonder if he ( ) it.\n→主節を過去形にした場合：I wondered if he ( ) it.',s:'I wondered if he understood it.',j:'私は彼がそれを理解したかどうかわからなかった。',a:1,c:['understand','understood','has understood','would understand'],e:'wonder → wondered（過去形）→ 従属節も過去形 understand → <b>understood</b>'},
+  {q:'I know that he ( ) the book.\n→主節を過去形にした場合：I knew that he ( ) the book.',s:'I knew that he had read the book.',j:'私は彼がその本を読んでしまったことを知っていた。',a:2,c:['read','reads','had read','has read'],e:'knew（過去）→ 従属節「完了」は大過去に → <b>had read</b>'},
+  {q:'She says that she will live in Kyoto some day.\n→主節を過去形にした場合：She said that she ( ) in Kyoto some day.',s:'She said that she would live in Kyoto some day.',j:'彼女はいつか京都に住むつもりと言った。',a:1,c:['will live','would live','lives','had lived'],e:'said（過去）→ will → <b>would</b>（時制の一致）'},
+  {q:'He says that the earth ( ) around the sun.\n→主節を過去形にした場合：He said that the earth ( ) around the sun.',s:'He said that the earth goes around the sun.',j:'彼は地球が太陽のまわりを回っていると言った。',a:1,c:['went','goes','would go','had gone'],e:'「地球が太陽のまわりを回る」は科学的真理 → 時制の一致を受けない → 現在形 <b>goes</b>'},
+  {q:'The teacher says that Mozart was born in 1756.\n→主節を過去形にした場合：The teacher said that Mozart ( ) born in 1756.',s:'The teacher said that Mozart was born in 1756.',j:'先生はモーツァルトが1756年に生まれたと言った。',a:0,c:['was','had been','is','were'],e:'「モーツァルトが生まれた」は歴史的事実 → 時制の一致を受けない → 過去形 <b>was</b>'},
+  {q:'She says that she usually gets up at six every morning.\n→主節を過去形にした場合：She said that she usually ( ) up at six every morning.',s:'She said that she usually gets up at six every morning.',j:'彼女は毎朝6時にたいてい起きると言った。',a:1,c:['got','gets','had got','would get'],e:'「毎朝6時に起きる」は現在の習慣 → 時制の一致を受けない → 現在形 <b>gets</b>'},
+];
+
+// ===== 練習⑥：実戦問題 =====
+window.cp6=[
+  {q:'あの人たちが帰ったら、すぐにお電話します。\n{ As, you, will, as, return, soon, I, telephone, they }.',s:'As soon as they return, I will telephone you.',j:'',u:'大垣女子大学歯科衛生学科',a:0,c:['As soon as they return, I will telephone you.','As soon as they will return, I will telephone you.','As soon as they returned, I telephoned you.','As they return soon, I will telephone you.'],e:'as soon as 節は副詞節 → 現在形 return。→ As soon as they <b>return</b>, I will telephone you.'},
+  {q:'We started to repair the machine at 10 o\'clock. We are still doing the work.\n＝ We ( ) the machine since 10 o\'clock.',s:"We have been repairing the machine since 10 o'clock.",j:'',u:'熊本看護',a:1,c:['have repaired','have been repairing','had repaired','are repairing'],e:'「10時から今もずっと修理中」= 現在完了進行形 → <b>have been repairing</b>'},
+  {q:'My grandfather died five years ago.\n＝ My grandfather has been ( ) for five years.',s:'My grandfather has been dead for five years.',j:'祖父が亡くなって5年になる。',u:'白楡看護',a:1,c:['dying','dead','death','die'],e:'「亡くなって○年」= have been <b>dead</b> for ～（dead は形容詞）'},
+  {q:'No ( ) had she heard the news ( ) she fainted.',s:'No sooner had she heard the news than she fainted.',j:'彼女はそのニュースを聞くや否や気を失った。',u:'熊本歯科衛生士',a:2,c:['sooner / that','longer / than','sooner / than','sooner / when'],e:'<b>No sooner ～ than</b>「〜するとすぐに」否定語 No が文頭 → 倒置が起きる'},
+  {q:'彼は道に迷ったのかもしれない。\n He ( ) lost his way.',s:'He may have lost his way.',j:'',a:1,c:['may lost','may have','must have','should have'],e:'過去への推量「〜だったかもしれない」= <b>may have ＋ 過去分詞</b>'},
+  {q:'He is fond ( ) taking a walk along the river.',s:'He is fond of taking a walk along the river.',j:'彼は川沿いの散歩が好きだ。',a:2,c:['to','for','of','with'],e:'be fond <b>of</b> ～「〜が好き」（前置詞 of が続く）'},
+  {q:'Don\'t be afraid ( ) making mistakes.',s:"Don't be afraid of making mistakes.",j:'失敗を恐れるな。',a:2,c:['to','for','of','about'],e:'be afraid <b>of</b> ～「〜を恐れる」（前置詞 of が続く）'},
+];
+
+// ===== インライン確認問題データ =====
+// 確認問題①：副詞節・名詞節
+window.ciq1=[
+  {q:'If it ( ) tomorrow, we won\'t go there.',s:'If it rains tomorrow, we won\'t go there.',j:'もし明日雨なら、私たちはそこへ行きません。',a:1,c:['will rain','rains','rained','has rained'],e:'「もし〜ならば」の <b>if</b> は条件の副詞節 → 未来でも現在形 → <b>rains</b>'},
+  {q:'Please tell me when she ( ).',s:'Please tell me when she comes.',j:'彼女が来たら私に教えてください。',a:0,c:['comes','will come','came','has come'],e:'<b>when</b> は時の副詞節 → 未来でも現在形 → <b>comes</b>'},
+  {q:'I wonder if it ( ) tomorrow.',s:'I wonder if it will rain tomorrow.',j:'明日は雨が降るかどうかわからない。',a:1,c:['rains','will rain','rained','has rained'],e:'<b>I wonder if ～</b> の if は名詞節（「〜かどうか」）→ will が使える → <b>will rain</b>'},
+  {q:'I will wait here until she ( ).',s:'I will wait here until she comes.',j:'彼女が来るまでここで待ちます。',a:0,c:['comes','will come','came','would come'],e:'<b>until</b>「〜まで」は時の副詞節 → 現在形 → <b>comes</b>'},
+  {q:'As soon as she ( ), we will begin.',s:'As soon as she comes, we will begin.',j:'彼女が来たらすぐに始めよう。',a:0,c:['comes','will come','came','has come'],e:'<b>as soon as</b> は時の副詞節 → 現在形 → <b>comes</b>'},
+  {q:'He will return your book when he ( ) it.',s:'He will return your book when he reads it.',j:'彼はあなたの本を読んだら返すでしょう。',a:0,c:['reads','will read','read','has read'],e:'<b>when</b> は時の副詞節 → 現在形 → <b>reads</b>'},
+  {q:'Go home before it ( ) dark.',s:'Go home before it gets dark.',j:'暗くなる前に帰りなさい。',a:1,c:['will get','gets','got','is getting'],e:'<b>before</b> は時の副詞節 → 現在形 → <b>gets</b>'},
+  {q:'I don\'t know whether she ( ) come.',s:"I don't know whether she will come.",j:'彼女が来るかどうかわかりません。',a:1,c:['comes','will come','came','would come'],e:'<b>whether</b>「〜かどうか」は名詞節（I don\'t know の目的語）→ will が使える → <b>will come</b>'},
+  {q:'She will wait till he ( ) back.',s:'She will wait till he comes back.',j:'彼女は彼が戻るまで待つでしょう。',a:0,c:['comes','will come','came','would come'],e:'<b>till</b>「〜まで」は時の副詞節 → 現在形 → <b>comes</b>'},
+  {q:'Let\'s start as soon as everyone ( ) here.',s:"Let's start as soon as everyone is here.",j:'全員が揃ったらすぐに始めましょう。',a:1,c:['will be','is','was','has been'],e:'<b>as soon as</b> は時の副詞節 → 現在形 → <b>is</b>'},
+];
+
+// 確認問題②：未来表現
+window.ciq2=[
+  {q:'（友人から「今夜暇？」と聞かれ、今思いついて）「映画に行こうかな」',s:'I will go to the movies.',j:'',a:0,c:['I will go to the movies.','I am going to go to the movies.','I am about to go to the movies.','I go to the movies.'],e:'その場で思いついた意志・決定 → <b>will</b>'},
+  {q:'（以前から計画していた予定）「来週の日曜日にキャンプに行く予定です」',s:'We are going to go camping next Sunday.',j:'',a:1,c:['We will go camping next Sunday.','We are going to go camping next Sunday.','We go camping next Sunday.','We are going camping next Sunday.'],e:'前もって計画・予定済み → <b>be going to</b>'},
+  {q:'（太陽が今にも沈もうとしている）The sun ( ) set.',s:'The sun is about to set.',j:'',a:2,c:['will','is going to','is about to','sets'],e:'「今にも〜しようとしている」極めて近い未来 → <b>be about to</b> ＋ 原形'},
+  {q:'Shall ( ) open the window?',s:'Shall I open the window?',j:'窓を開けてあげましょうか。',a:0,c:['I','we','you','he'],e:'「〜してあげましょうか」（申し出）→ <b>Shall I ～?</b>'},
+  {q:'Shall ( ) dance?',s:'Shall we dance?',j:'踊りませんか。',a:1,c:['I','we','you','they'],e:'「一緒に〜しませんか」（提案）→ <b>Shall we ～?</b>'},
+  {q:'( ) you pass me the salt?',s:'Will you pass me the salt?',j:'塩を取ってくれませんか。',a:1,c:['Shall','Will','Would not','Must'],e:'「〜してくれませんか」（依頼）→ <b>Will you ～?</b>'},
+  {q:'私の父はもうすぐ帰ってきます。\nMy father ( ) back soon.',s:'My father is coming back soon.',j:'',a:2,c:['will come','comes','is coming','has come'],e:'近い未来の個人的予定 → 現在進行形 → <b>is coming</b>'},
+  {q:'列車は今まさに出発しようとしていた。\nThe train was ( ) to start.',s:'The train was about to start.',j:'',a:1,c:['going','about','on','just'],e:'「今にも〜しようとしていた」→ be <b>about</b> to ＋ 原形'},
+  {q:'その飛行機は11:45に出発します。（時刻表）\nOur flight ( ) at 11:45.',s:'Our flight leaves at 11:45.',j:'',a:0,c:['leaves','will leave','is leaving','is going to leave'],e:'時刻表・予定表など確定した未来 → <b>現在形</b> leaves'},
+  {q:'He was on the point of ( ) when the phone rang.',s:'He was on the point of leaving when the phone rang.',j:'電話が鳴ったとき、彼はまさに出発しようとしていた。',a:1,c:['leave','leaving','left','to leave'],e:'be on the point of ＋ <b>〜ing</b>（動名詞）→ <b>leaving</b>'},
+];
+
+// 確認問題③：現在完了
+window.ciq3=[
+  {q:'私はちょうどその仕事を終えたところです。\nI have ( ) finished the work.',s:'I have just finished the work.',j:'',a:0,c:['just','already','yet','never'],e:'「ちょうど〜したところ」完了用法 → <b>just</b>'},
+  {q:'私はまだその仕事を終えていません。\nI haven\'t finished the work ( ).',s:"I haven't finished the work yet.",j:'',a:2,c:['just','already','yet','never'],e:'否定文「まだ〜ない」→ <b>yet</b> を文末に'},
+  {q:'She has ( ) in Tokyo since last summer.',s:'She has been in Tokyo since last summer.',j:'彼女は昨年の夏からずっと東京にいます。',a:1,c:['gone','been','come','lived'],e:'継続「ずっと〜にいる」→ <b>have been in</b>。since は過去の時点'},
+  {q:'He has ( ) to London.',s:'He has gone to London.',j:'彼はロンドンへ行ってしまった。（今ここにいない）',a:1,c:['been','gone','came','come'],e:'「行ってしまって今ここにいない」→ <b>have gone to</b>。have been to は「行ったことがある」'},
+  {q:'It ( ) three years since I saw him last.',s:'It has been three years since I saw him last.',j:'彼に最後に会ってから3年になる。',a:0,c:['has been','has passed','is passed','passed'],e:'「〜してから○年になる」→ <b>It has been ～ since</b>'},
+  {q:'I ( ) met him two years ago.',s:'I met him two years ago.',j:'私は2年前に彼に会った。',a:1,c:['have','—（haveなし）','had','will have'],e:'<b>two years ago</b> は過去の特定時点 → 現在完了は不可 → <b>過去形</b> met のみ（have は不要）'},
+  {q:'I have lived in Kumamoto ( ) ten years.',s:'I have lived in Kumamoto for ten years.',j:'私は10年間ずっと熊本に住んでいます。',a:0,c:['for','since','before','during'],e:'<b>ten years</b> は期間 → <b>for</b>（継続用法）'},
+  {q:'I have lived in Kumamoto ( ) 2015.',s:'I have lived in Kumamoto since 2015.',j:'私は2015年からずっと熊本に住んでいます。',a:1,c:['for','since','before','in'],e:'<b>2015</b> は過去の時点 → <b>since</b>（継続用法）'},
+  {q:'Have you ( ) been to Kyoto?',s:'Have you ever been to Kyoto?',j:'あなたは今までに京都に行ったことがありますか。',a:1,c:['just','ever','never','yet'],e:'疑問文で「今までに〜したことがありますか」→ <b>ever</b>（経験用法）'},
+  {q:'I have ( ) visited Nara. 私は一度も奈良を訪れたことがない。',s:'I have never visited Nara.',j:'',a:2,c:['ever','just','never','already'],e:'「一度も〜ない」→ <b>never</b>（経験用法）'},
+];
+
+// 確認問題④：過去完了・完了進行形
+window.ciq4=[
+  {q:'When I arrived at the station, the train ( ) already left.',s:'When I arrived at the station, the train had already left.',j:'私が駅についたとき、列車はすでに出てしまっていた。',a:1,c:['has','had','have','was'],e:'「駅に着いた（過去）」よりさらに前に「列車が出た（大過去）」→ <b>had</b> ＋ 過去分詞'},
+  {q:'It ( ) raining for a week.',s:'It has been raining for a week.',j:'1週間ずっと雨が降り続いている。',a:1,c:['is','has been','was','had been'],e:'現在まで継続中の動作 → 現在完了進行形 <b>has been ～ing</b>'},
+  {q:'I ( ) working all day.',s:'I had been working all day.',j:'私は一日中ずっと働き続けていた。',a:2,c:['have been','was','had been','will have been'],e:'過去において継続中だった動作 → 過去完了進行形 <b>had been ～ing</b>'},
+  {q:'I ( ) using this phone for three years.',s:'I have been using this phone for three years.',j:'私はこの電話を3年間使い続けています。',a:0,c:['have been','had been','will have been','am'],e:'今も続いている → 現在完了進行形 <b>have been ～ing</b>'},
+  {q:'He ( ) to Tokyo before he moved to Osaka.',s:'He had lived in Tokyo before he moved to Osaka.',j:'彼は大阪に引っ越す前は東京に住んでいた。',a:2,c:['has lived','lived','had lived','was living'],e:'「引っ越した（過去）」より前のこと → 過去完了 <b>had lived</b>'},
+  {q:'I lost the CD that I ( ) from her.',s:'I lost the CD that I had borrowed from her.',j:'私は彼女から借りたCDをなくした。',a:2,c:['borrow','have borrowed','had borrowed','borrowed'],e:'「なくした（過去）」より前に「借りていた（大過去）」→ <b>had borrowed</b>'},
+  {q:'Next month I ( ) English for six years.',s:'Next month I will have been studying English for six years.',j:'来月で英語を勉強し続けて6年になる。',a:3,c:['have studied','have been studying','had been studying','will have been studying'],e:'未来のある時点での継続 → 未来完了進行形 <b>will have been ～ing</b>'},
+  {q:'She ( ) piano since this morning.',s:'She has been playing piano since this morning.',j:'彼女は今朝からずっとピアノを弾き続けている。',a:1,c:['plays','has been playing','had been playing','will have been playing'],e:'今朝から今もずっと続いている → 現在完了進行形 <b>has been ～ing</b>'},
+  {q:'When the teacher came in, Tom ( ) not come in yet.',s:'When the teacher came in, Tom had not come in yet.',j:'先生が教室に入ったとき、トムはまだ来ていなかった。',a:2,c:['has','have','had','did'],e:'「先生が来た（過去）」より前の状態（大過去）→ <b>had</b> not come in'},
+];
+
+// 確認問題⑤：時制の一致
+window.ciq5=[
+  {q:'I think that she ( ) right. → I thought that she ( ) right.',s:'I thought that she was right.',j:'私は彼女が正しいと思った。',a:1,c:['is','was','has been','would be'],e:'主節 think → thought（過去）→ 従属節 is → <b>was</b>（時制の一致）'},
+  {q:'He says that he ( ) swim. → He said that he ( ) swim.',s:'He said that he could swim.',j:'彼は泳げると言った。',a:2,c:['can','will','could','shall'],e:'said（過去）→ can → <b>could</b>（時制の一致）'},
+  {q:'She says that she ( ) come. → She said that she ( ) come.',s:'She said that she would come.',j:'彼女は来ると言った。',a:3,c:['will','shall','can','would'],e:'said（過去）→ will → <b>would</b>（時制の一致）'},
+  {q:'He said that the earth ( ) around the sun.',s:'He said that the earth goes around the sun.',j:'彼は地球が太陽のまわりを回っていると言った。',a:1,c:['went','goes','would go','had gone'],e:'科学的真理は時制の一致を受けない → 現在形 <b>goes</b> のまま'},
+  {q:'She said that she usually ( ) up at six every morning.',s:'She said that she usually gets up at six every morning.',j:'彼女は毎朝6時に起きると言った。',a:1,c:['got','gets','had got','would get'],e:'現在の習慣は時制の一致を受けない → 現在形 <b>gets</b> のまま'},
+  {q:'I know that he ( ) the book. → I knew that he ( ) the book.',s:'I knew that he had read the book.',j:'私は彼がその本を読んでしまったことを知っていた。',a:2,c:['read','reads','had read','has read'],e:'knew（過去）→ 従属節「現在完了」は大過去に → <b>had read</b>'},
+  {q:'I am afraid that I ( ) a mistake. → I was afraid that I ( ) a mistake.',s:'I was afraid that I had made a mistake.',j:'私は間違いをしたのではないかと心配だった。',a:2,c:['make','made','had made','would make'],e:'was afraid（過去）→ 従属節「過去」は大過去に → <b>had made</b>'},
+  {q:'He said that Columbus ( ) America in 1492.',s:'He said that Columbus discovered America in 1492.',j:'彼はコロンブスが1492年にアメリカを発見したと言った。',a:0,c:['discovered','had discovered','discovers','would discover'],e:'歴史的事実は時制の一致を受けない → 過去形 <b>discovered</b> のまま'},
+  {q:'He runs as fast as he ( ). → He ran as fast as he ( ).',s:'He ran as fast as he could.',j:'彼はできる限り速く走った。',a:2,c:['can','will','could','may'],e:'ran（過去）→ can → <b>could</b>（時制の一致）'},
+];
+
+// 確認問題⑥：よく出る熟語
+window.ciq6=[
+  {q:'No sooner ( ) she heard the news than she fainted.',s:'No sooner had she heard the news than she fainted.',j:'彼女はそのニュースを聞くや否や気を失った。',a:1,c:['has','had','did','was'],e:'<b>No sooner ～ than</b> は否定語 No が文頭 → 倒置 → had が主語の前へ'},
+  {q:'He is fond ( ) taking a walk.',s:'He is fond of taking a walk.',j:'彼は散歩が好きだ。',a:2,c:['to','for','of','with'],e:'be fond <b>of</b> ～「〜が好き」前置詞 of が続く'},
+  {q:'Don\'t be afraid ( ) making mistakes.',s:"Don't be afraid of making mistakes.",j:'失敗を恐れるな。',a:2,c:['to','for','of','about'],e:'be afraid <b>of</b> ～「〜を恐れる」前置詞 of が続く'},
+  {q:'This opinion is different ( ) mine.',s:'This opinion is different from mine.',j:'この意見は私のものと異なる。',a:0,c:['from','to','with','than'],e:'be different <b>from</b> ～「〜と異なる」（× different with）'},
+  {q:'Do your ( )!',s:'Do your best!',j:'ベストを尽くしなさい！',a:1,c:['good','best','hard','most'],e:'do one\'s <b>best</b>「ベストを尽くす」'},
+  {q:'No sooner had he arrived ( ) he fell sick.',s:'No sooner had he arrived than he fell sick.',j:'彼は到着するやいなや病気になった。',a:2,c:['when','that','than','and'],e:'No sooner ～ <b>than</b> …（〜するとすぐに）than を使う。when は不可'},
+  {q:'She is fond ( ) reading novels.',s:'She is fond of reading novels.',j:'彼女は小説を読むのが好きだ。',a:1,c:['to','of','for','at'],e:'be fond <b>of</b> ＋ 動名詞（〜ing）→ <b>of</b> reading'},
+  {q:'He is afraid ( ) dogs.',s:'He is afraid of dogs.',j:'彼は犬が怖い。',a:2,c:['to','for','of','about'],e:'be afraid <b>of</b> ～「〜が怖い」→ <b>of</b> dogs'},
+  {q:'My hobby is quite different ( ) yours.',s:'My hobby is quite different from yours.',j:'私の趣味はあなたのものとかなり異なります。',a:0,c:['from','to','with','than'],e:'be different <b>from</b> ～（× different with / than）'},
+  {q:'次の文の空欄に入る語を選べ。\nI made a ( ) in the test.',s:'I made a mistake in the test.',j:'私はテストで間違いをした。',a:1,c:['fault','mistake','wrong','error'],e:'make a <b>mistake</b>「間違いをする」（mistake が正しい名詞）'},
+];
+
+// インライン確認問題を初期化
+iC('iq1');iC('iq2');iC('iq3');iC('iq4');iC('iq5');iC('iq6');
+
+// 初期化
+iC('p1');iC('p3');iC('p5');iC('p6');
+iS('p2','p2q',d2);iS('p4','p4q',d4);
+/* ===== 単語帳システム ===== */
+var vocabDB = {};  // {word: {pos,mean,kana,opts}}
+var savedWords = {};  // localStorage代替（メモリ内）
+var currentVword = null;
+
+// ポップアップ表示
+function showVpop(el) {
+  var w = el.dataset.w;
+  var pos = el.dataset.pos;
+  var mean = el.dataset.mean;
+  var kana = el.dataset.kana;
+  var opts = JSON.parse(el.dataset.opts);
+  vocabDB[w] = {pos:pos, mean:mean, kana:kana, opts:opts};
+  currentVword = w;
+  document.getElementById('vpop-word').textContent = w;
+  document.getElementById('vpop-pos').textContent = pos;
+  document.getElementById('vpop-mean').textContent = mean;
+  document.getElementById('vpop-kana').textContent = '発音：' + kana;
+  var saveBtn = document.getElementById('vpop-save-btn');
+  var savedLbl = document.getElementById('vpop-saved-lbl');
+  if (savedWords[w]) {
+    saveBtn.textContent = '✓ 保存済み';
+    saveBtn.className = 'vpop-save saved';
+    savedLbl.className = 'vpop-saved-lbl show';
+  } else {
+    saveBtn.textContent = '📖 単語帳へ';
+    saveBtn.className = 'vpop-save';
+    savedLbl.className = 'vpop-saved-lbl';
+  }
+  // ポップアップ位置決め
+  var pop = document.getElementById('vpop');
+  pop.className = 'vpop show';
+  var rect = el.getBoundingClientRect();
+  var top = rect.bottom + 6;
+  var left = rect.left;
+  var pw = 260;
+  if (left + pw > window.innerWidth - 8) left = window.innerWidth - pw - 8;
+  if (top + 160 > window.innerHeight) top = rect.top - 170;
+  pop.style.top = top + 'px';
+  pop.style.left = left + 'px';
+}
+
+function closeVpop() {
+  document.getElementById('vpop').className = 'vpop';
+  currentVword = null;
+}
+
+// ポップアップ外クリックで閉じる
+document.addEventListener('click', function(e) {
+  var pop = document.getElementById('vpop');
+  if (pop.classList.contains('show') && !pop.contains(e.target) && !e.target.classList.contains('vw')) {
+    closeVpop();
+  }
+});
+
+// 音声再生
+function vpopSpeak() {
+  if (currentVword) sp(currentVword);
+}
+
+// 単語帳に保存
+function vpopSave() {
+  if (!currentVword) return;
+  var w = currentVword;
+  if (!savedWords[w]) {
+    savedWords[w] = vocabDB[w];
+    updateVocabBadge();
+    var saveBtn = document.getElementById('vpop-save-btn');
+    var savedLbl = document.getElementById('vpop-saved-lbl');
+    saveBtn.textContent = '✓ 保存済み';
+    saveBtn.className = 'vpop-save saved';
+    savedLbl.className = 'vpop-saved-lbl show';
+  }
+}
+
+// バッジ更新
+function updateVocabBadge() {
+  var cnt = Object.keys(savedWords).length;
+  var badge = document.getElementById('vocab-badge');
+  badge.textContent = cnt;
+  badge.className = cnt > 0 ? 'vocab-badge show' : 'vocab-badge';
+}
+
+// 単語一覧表示
+function showVocabList() {
+  document.getElementById('vocab-list-area').style.display = 'block';
+  document.getElementById('vocab-test-area').style.display = 'none';
+  renderVocabList();
+}
+
+function renderVocabList() {
+  var area = document.getElementById('vocab-list-area');
+  var words = Object.keys(savedWords);
+  if (words.length === 0) {
+    area.innerHTML = '<div class="vbook-empty">📖 まだ単語が保存されていません。<br>本文中の<span style="border-bottom:2px dashed #0097A7;color:#0097A7">点線下線</span>の単語をタップして保存しましょう。</div>';
+    return;
+  }
+  var html = '<div style="font-size:12px;color:#888;margin-bottom:8px">保存済み：' + words.length + '語　　「覚えた」を押すと削除できます</div>';
+  words.forEach(function(w) {
+    var v = savedWords[w];
+    html += '<div class="vcard">'
+      + '<span class="vcard-word">' + w + '</span>'
+      + '<span class="vcard-mean">' + v.mean + '</span>'
+      + '<button class="vcard-del" onclick="removeWord(\'' + w + '\')">覚えた ✓</button>'
+      + '</div>';
+  });
+  area.innerHTML = html;
+}
+
+// 単語を削除
+function removeWord(w) {
+  delete savedWords[w];
+  updateVocabBadge();
+  renderVocabList();
+  // テスト中なら再生成
+  if (document.getElementById('vocab-test-area').style.display !== 'none') {
+    renderVocabTest();
+  }
+}
+
+// 復習テスト
+var testQueue = [];
+var testIdx = 0;
+var testScore = 0;
+
+function startVocabTest() {
+  document.getElementById('vocab-list-area').style.display = 'none';
+  document.getElementById('vocab-test-area').style.display = 'block';
+  renderVocabTest();
+}
+
+function renderVocabTest() {
+  var area = document.getElementById('vocab-test-area');
+  var words = Object.keys(savedWords);
+  if (words.length < 1) {
+    area.innerHTML = '<div class="vbook-empty">単語が保存されていません。</div>';
+    return;
+  }
+  // シャッフル
+  testQueue = words.slice().sort(function(){return Math.random()-.5;});
+  testIdx = 0; testScore = 0;
+  renderTestQuestion(area);
+}
+
+function renderTestQuestion(area) {
+  if (testIdx >= testQueue.length) {
+    area.innerHTML = '<div style="text-align:center;padding:24px">'
+      + '<div style="font-size:40px;margin-bottom:12px">🎉</div>'
+      + '<div style="font-size:18px;font-weight:700;color:#1B3A6B;margin-bottom:8px">テスト完了！</div>'
+      + '<div style="font-size:14px;color:#555;margin-bottom:16px">正解：' + testScore + ' / ' + testQueue.length + '問</div>'
+      + '<div style="display:flex;gap:8px;justify-content:center">'
+      + '<button onclick="renderVocabTest()" style="padding:10px 20px;border-radius:8px;border:none;background:#1B3A6B;color:#fff;font-size:14px;font-family:inherit;cursor:pointer">もう一度</button>'
+      + '<button onclick="showVocabList()" style="padding:10px 20px;border-radius:8px;border:1.5px solid #ccd;background:#fff;color:#555;font-size:14px;font-family:inherit;cursor:pointer">単語一覧へ</button>'
+      + '</div></div>';
+    return;
+  }
+  var w = testQueue[testIdx];
+  var v = savedWords[w];
+  if (!v) { testIdx++; renderTestQuestion(area); return; }
+  // 選択肢（正解＋ダミー3つ）
+  var opts = v.opts.slice();
+  // シャッフル
+  opts.sort(function(){return Math.random()-.5;});
+  var prog = (testIdx+1) + ' / ' + testQueue.length;
+  var html = '<div style="text-align:right;font-size:12px;color:#888;margin-bottom:8px">' + prog + '</div>'
+    + '<div class="vtest-q">' + w + ' <span style="font-size:12px;font-weight:400;color:#667">（' + v.pos + '）</span></div>';
+  opts.forEach(function(opt) {
+    html += '<button class="vtest-opt" onclick="checkTestAns(this,\'' + w + '\',\'' + opt.replace(/'/g, "\\'") + '\')">' + opt + '</button>';
+  });
+  html += '<div class="vtest-result" id="vtest-res"></div>';
+  area.innerHTML = html;
+}
+
+function checkTestAns(btn, word, selected) {
+  var v = savedWords[word];
+  if (!v) return;
+  var correct = v.mean;
+  area = document.getElementById('vocab-test-area');
+  area.querySelectorAll('.vtest-opt').forEach(function(b) {
+    b.classList.add('dis');
+    if (b.textContent === correct) b.classList.add('ca');
+    else if (b === btn && selected !== correct) b.classList.add('wa');
+  });
+  var res = document.getElementById('vtest-res');
+  if (selected === correct) {
+    testScore++;
+    res.textContent = '✓ 正解！';
+    res.className = 'vtest-result ok';
+    if (testScore > 0) launchConfetti && launchConfetti();
+  } else {
+    res.textContent = '✗ 正解は「' + correct + '」';
+    res.className = 'vtest-result ng';
+  }
+  // 次の問題へボタン
+  var nextBtn = document.createElement('button');
+  nextBtn.style.cssText = 'display:block;width:100%;margin-top:10px;padding:10px;border-radius:8px;border:none;background:#1B3A6B;color:#fff;font-size:14px;font-family:inherit;cursor:pointer';
+  nextBtn.textContent = testIdx + 1 < testQueue.length ? '次の問題 →' : '結果を見る';
+  nextBtn.onclick = function() {
+    testIdx++;
+    renderTestQuestion(document.getElementById('vocab-test-area'));
+  };
+  res.after(nextBtn);
+}
+
+// 単語帳モーダルを開いたとき一覧を表示
+var origOpenM = openM;
+openM = function(id) {
+  origOpenM(id);
+  if (id === 'mvocab') showVocabList();
+};
+</script>
+<!-- 単語ポップアップ -->
+<div class="vpop" id="vpop">
+  <div class="vpop-hd">
+    <span>
+      <span class="vpop-word" id="vpop-word"></span>
+      <span class="vpop-pos" id="vpop-pos"></span>
+    </span>
+    <button class="vpop-close" onclick="closeVpop()">✕</button>
+  </div>
+  <div class="vpop-body">
+    <div class="vpop-mean" id="vpop-mean"></div>
+    <div class="vpop-kana" id="vpop-kana"></div>
+    <div class="vpop-btns">
+      <button class="vpop-spk" id="vpop-spk-btn" onclick="vpopSpeak()">🔊 発音</button>
+      <button class="vpop-save" id="vpop-save-btn" onclick="vpopSave()">📖 単語帳へ</button>
+    </div>
+    <div class="vpop-saved-lbl" id="vpop-saved-lbl">✓ 単語帳に保存しました</div>
+  </div>
+</div>
+
+<!-- 単語帳モーダル -->
+<div class="mo" id="mvocab">
+  <div class="mb">
+    <div class="mh">
+      <h2>📚 単語帳</h2>
+      <button class="mhc" onclick="closeM('mvocab')">✕</button>
+    </div>
+    <div class="mbody">
+      <div style="display:flex;gap:8px;margin-bottom:12px">
+        <button onclick="showVocabList()" id="vt-list-btn" style="flex:1;padding:9px;border-radius:8px;border:2px solid #1B3A6B;background:#1B3A6B;color:#fff;font-size:13px;font-family:inherit;cursor:pointer;font-weight:700">📋 単語一覧</button>
+        <button onclick="startVocabTest()" id="vt-test-btn" style="flex:1;padding:9px;border-radius:8px;border:2px solid #0097A7;background:#f0faff;color:#0097A7;font-size:13px;font-family:inherit;cursor:pointer;font-weight:700">✏️ 復習テスト</button>
+      </div>
+      <div id="vocab-list-area"></div>
+      <div id="vocab-test-area" style="display:none"></div>
+    </div>
+  </div>
+</body>
+</html>

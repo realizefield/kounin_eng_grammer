@@ -1,0 +1,2208 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+<title>英検2級・高認英文法 Unit 1 品詞と文の成り立ち</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'BIZ UDGothic','Hiragino Kaku Gothic Pro','Meiryo',sans-serif;background:#eef2f7;color:#1a1a2e;font-size:15px}
+.hdr{background:linear-gradient(135deg,#1B3A6B,#0097A7);color:#fff;padding:14px 16px;text-align:center}
+.hdr h1{font-size:17px;font-weight:700}
+.hdr p{font-size:12px;opacity:.85;margin-top:3px}
+.nav{background:#fff;border-bottom:3px solid #0097A7;padding:8px 10px;display:flex;overflow-x:auto;gap:4px;-webkit-overflow-scrolling:touch;align-items:stretch}
+.nav::-webkit-scrollbar{height:3px}
+.pair{display:flex;gap:0;flex-shrink:0;border-radius:22px;overflow:hidden;box-shadow:0 0 0 1.5px #ccd}
+.pair.active-pair{box-shadow:0 0 0 2.5px #1B3A6B}
+.nb{padding:8px 14px;border:none;background:#f5f7fa;color:#555;font-size:13px;font-family:inherit;cursor:pointer;white-space:nowrap;border-right:1px solid #dde;transition:.2s;font-weight:500}
+.nb:hover{background:#e8eaf6;color:#1B3A6B}
+.nb.on{background:#1B3A6B;color:#fff}
+.pb{padding:8px 14px;border:none;background:#fff3e0;color:#c84500;font-size:13px;font-family:inherit;cursor:pointer;white-space:nowrap;font-weight:700;transition:.2s}
+.pb:hover{background:#e65100;color:#fff}
+.nav-sep{width:6px;flex-shrink:0}
+.sec{display:none;padding:12px;max-width:820px;margin:0 auto;padding-bottom:40px}
+.sec.on{display:block}
+.card{background:#fff;border-radius:14px;border:1px solid #dde3ee;padding:14px 16px;margin-bottom:14px;box-shadow:0 1px 4px rgba(0,0,0,.05)}
+.ct{font-size:15px;font-weight:700;color:#1B3A6B;margin-bottom:10px;padding-bottom:8px;border-bottom:2px solid #0097A7}
+.sh{background:linear-gradient(90deg,#1B3A6B,#1B5E8B);color:#fff;border-radius:10px;padding:9px 16px;font-size:15px;font-weight:700;margin-bottom:12px}
+.pt{background:#fffde7;border-left:5px solid #f9a825;border-radius:0 10px 10px 0;padding:10px 14px;margin:8px 0;font-size:14px;line-height:1.8}
+.kb{background:#f1f8e9;border-left:5px solid #2e7d32;border-radius:0 10px 10px 0;padding:10px 14px;margin:8px 0;font-size:14px;line-height:1.8}
+.wb{background:#fff3e0;border-left:5px solid #e65100;border-radius:0 10px 10px 0;padding:10px 14px;margin:8px 0;font-size:14px;line-height:1.8}
+.ex{background:#f0f8ff;border:1px solid #b3d9f7;border-radius:10px;padding:12px 14px;margin:8px 0;font-size:14px;line-height:1.9}
+.tbl{width:100%;border-collapse:collapse;font-size:13px}
+.tbl th{background:#1B3A6B;color:#fff;padding:7px 8px;text-align:left}
+.tbl td{padding:7px 8px;border-bottom:1px solid #eef;vertical-align:top}
+.tbl tr:nth-child(even) td{background:#f7f9ff}
+.hn{font-weight:700;color:#1B3A6B}
+.hex{color:#666;font-size:12px}
+.svl{background:#f0f8ff;border:1px solid #b3d9f7;border-radius:10px;padding:10px 14px;margin:8px 0;font-size:14px;line-height:2.2}
+.svl .jt{font-size:13px;color:#555;margin-top:3px}
+.sw{font-weight:700;color:#1B3A6B}.sl{background:#1B3A6B;color:#fff;border-radius:4px;font-size:11px;padding:2px 5px;margin-left:3px;vertical-align:middle}
+.vw{font-weight:700;color:#007a8a}.vl{background:#007a8a;color:#fff;border-radius:4px;font-size:11px;padding:2px 5px;margin-left:3px;vertical-align:middle}
+.ow{font-weight:700;color:#b84300}.ol{background:#b84300;color:#fff;border-radius:4px;font-size:11px;padding:2px 5px;margin-left:3px;vertical-align:middle}
+.cw{font-weight:700;color:#6a00aa}.cl{background:#6a00aa;color:#fff;border-radius:4px;font-size:11px;padding:2px 5px;margin-left:3px;vertical-align:middle}
+.mw{color:#666}.ml{background:#888;color:#fff;border-radius:4px;font-size:11px;padding:2px 5px;margin-left:3px;vertical-align:middle}
+.spk{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:#e8f4ff;border:1.5px solid #0097A7;cursor:pointer;margin-left:5px;vertical-align:middle;flex-shrink:0}
+.spk:hover{background:#0097A7}.spk:hover svg{fill:#fff}
+.spk svg{width:14px;height:14px;fill:#0097A7;pointer-events:none}
+.ub{font-size:11px;background:#e3f2fd;color:#1565c0;padding:2px 8px;border-radius:10px;font-weight:700;margin-left:6px;vertical-align:middle}
+
+/* モーダル */
+.mo{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:1000;align-items:flex-end;justify-content:center;padding:0}
+.mo.open{display:flex}
+@media(min-width:600px){.mo{align-items:center;padding:16px}}
+.mb{background:#fff;border-radius:20px 20px 0 0;width:100%;max-width:700px;max-height:92vh;overflow-y:auto;display:flex;flex-direction:column}
+@media(min-width:600px){.mb{border-radius:18px;max-height:88vh}}
+.mh{background:linear-gradient(135deg,#1B3A6B,#0097A7);color:#fff;padding:14px 18px;border-radius:20px 20px 0 0;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;position:sticky;top:0}
+@media(min-width:600px){.mh{border-radius:18px 18px 0 0}}
+.mh h2{font-size:16px;font-weight:700}
+.mhc{background:rgba(255,255,255,.25);border:none;color:#fff;width:34px;height:34px;border-radius:50%;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;line-height:1}
+.mbody{padding:14px;flex:1}
+.msb{display:flex;align-items:center;gap:10px;background:#f5f7fa;border-radius:10px;padding:10px 14px;margin-bottom:14px}
+.msn{font-size:22px;font-weight:700;color:#1B3A6B;min-width:52px}
+.pw{flex:1;height:10px;background:#ddd;border-radius:6px;overflow:hidden}
+.pf{height:100%;background:linear-gradient(90deg,#0097A7,#1B3A6B);border-radius:6px;transition:.5s}
+.mrb{background:#fff;color:#555;border:1.5px solid #ccd;border-radius:8px;padding:7px 14px;font-size:13px;font-family:inherit;cursor:pointer}
+
+/* 問題 */
+.qb{background:#f8faff;border-radius:12px;border:1px solid #dde;padding:13px;margin-bottom:10px}
+.qh{display:flex;align-items:flex-start;gap:8px;margin-bottom:8px}
+.qn{flex-shrink:0;width:26px;height:26px;background:#1B3A6B;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700}
+.qt{flex:1;font-size:14px;line-height:1.7}
+.hint{font-size:12px;color:#0097A7;background:#f0faff;border-radius:6px;padding:3px 8px;display:inline-block;margin-bottom:8px}
+.az{display:flex;flex-wrap:wrap;gap:6px;min-height:42px;padding:7px 10px;background:#fff;border-radius:8px;border:2px dashed #0097A7;margin-bottom:9px;align-items:center}
+.az.ok{border-color:#2e7d32;background:#f1f8e9}
+.az.ng{border-color:#e53935;background:#fff5f5}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+.az.ng{animation:shake .3s}
+.wbk{display:flex;flex-wrap:wrap;gap:6px;min-height:34px;padding:6px 8px;background:#fff;border-radius:8px;border:1px dashed #ccd;margin-bottom:9px}
+.chip{display:inline-flex;align-items:center;padding:6px 12px;border-radius:20px;border:1.5px solid #0097A7;background:#fff;color:#0097A7;font-size:13px;cursor:pointer;user-select:none;transition:.15s;font-family:inherit;white-space:nowrap}
+.chip:active{transform:scale(.93)}
+.chip.used{opacity:.2;pointer-events:none}
+.chip.ac{background:#0097A7;color:#fff}
+.cb{width:100%;text-align:left;padding:9px 13px;margin:3px 0;border-radius:8px;border:1.5px solid #dde;background:#fff;font-size:14px;font-family:inherit;cursor:pointer;transition:.15s;line-height:1.4}
+.cb:hover:not(.dis){border-color:#0097A7;background:#f0faff}
+.cb.ca{background:#e8f5e9;border-color:#2e7d32;color:#1b5e20;font-weight:700}
+.cb.wa{background:#ffebee;border-color:#e53935;color:#b71c1c}
+.cb.dis{pointer-events:none}
+.br{display:flex;align-items:center;gap:7px;flex-wrap:wrap;margin-top:8px}
+.chkb{background:#1B3A6B;color:#fff;border:none;border-radius:8px;padding:9px 20px;font-size:14px;font-family:inherit;cursor:pointer}
+.rstb{background:#fff;color:#555;border:1.5px solid #ccd;border-radius:8px;padding:9px 14px;font-size:13px;font-family:inherit;cursor:pointer}
+.expb{background:#fff;color:#e65100;border:1.5px solid #e65100;border-radius:8px;padding:9px 14px;font-size:13px;font-family:inherit;cursor:pointer}
+.fb{font-size:13px;font-weight:700;padding:2px 0}
+.fb.ok{color:#2e7d32}.fb.ng{color:#e53935}
+.ep{background:#fff8e1;border:1.5px solid #ffc107;border-radius:10px;padding:11px 13px;margin-top:8px;font-size:13px;line-height:1.8;display:none}
+.ep.show{display:block}
+
+/* 花吹雪 */
+#cc{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9999;display:none}
+
+/* ===== 単語ポップアップ ===== */
+.vw{border-bottom:2px dashed #0097A7;color:inherit;cursor:pointer;position:relative;white-space:nowrap;font-weight:inherit}
+.vw:hover{background:#e0f7fa;border-radius:3px}
+.vpop{display:none;position:fixed;z-index:2000;background:#fff;border-radius:14px;box-shadow:0 6px 30px rgba(0,0,0,.22);padding:0;width:260px;max-width:90vw}
+.vpop.show{display:block}
+.vpop-hd{background:linear-gradient(135deg,#1B3A6B,#0097A7);color:#fff;padding:12px 14px 10px;border-radius:14px 14px 0 0;display:flex;align-items:center;justify-content:space-between}
+.vpop-word{font-size:18px;font-weight:700;letter-spacing:.02em}
+.vpop-pos{font-size:11px;background:rgba(255,255,255,.25);border-radius:8px;padding:2px 8px;margin-left:6px}
+.vpop-close{background:rgba(255,255,255,.2);border:none;color:#fff;width:26px;height:26px;border-radius:50%;font-size:16px;cursor:pointer;line-height:1;display:flex;align-items:center;justify-content:center}
+.vpop-body{padding:12px 14px}
+.vpop-mean{font-size:16px;font-weight:700;color:#1B3A6B;margin-bottom:8px}
+.vpop-kana{font-size:12px;color:#888;margin-bottom:10px}
+.vpop-btns{display:flex;gap:8px}
+.vpop-spk{flex:1;padding:8px;border-radius:8px;border:1.5px solid #0097A7;background:#f0faff;color:#0097A7;font-size:13px;font-family:inherit;cursor:pointer;font-weight:700}
+.vpop-spk:hover{background:#0097A7;color:#fff}
+.vpop-save{flex:1;padding:8px;border-radius:8px;border:1.5px solid #e65100;background:#fff3e0;color:#c84500;font-size:13px;font-family:inherit;cursor:pointer;font-weight:700}
+.vpop-save:hover{background:#e65100;color:#fff}
+.vpop-save.saved{background:#e8f5e9;border-color:#2e7d32;color:#2e7d32}
+.vpop-saved-lbl{font-size:11px;color:#2e7d32;text-align:center;margin-top:6px;display:none}
+.vpop-saved-lbl.show{display:block}
+/* 単語帳バッジ */
+.vocab-badge{display:none;position:absolute;top:-6px;right:-6px;background:#e53935;color:#fff;border-radius:50%;width:18px;height:18px;font-size:11px;font-weight:700;align-items:center;justify-content:center}
+.vocab-badge.show{display:flex}
+/* 単語帳モーダル */
+.vbook-empty{text-align:center;color:#999;padding:24px;font-size:14px}
+.vcard{background:#f8faff;border-radius:10px;border:1px solid #dde;padding:10px 12px;margin-bottom:8px;display:flex;align-items:center;gap:10px}
+.vcard-word{font-size:15px;font-weight:700;color:#1B3A6B;flex:1}
+.vcard-mean{font-size:13px;color:#555;flex:1}
+.vcard-del{background:#fff;border:1.5px solid #dde;color:#aaa;border-radius:6px;padding:4px 10px;font-size:12px;cursor:pointer;font-family:inherit}
+.vcard-del:hover{border-color:#e53935;color:#e53935}
+/* 復習テスト */
+.vtest-q{font-size:16px;font-weight:700;color:#1B3A6B;text-align:center;padding:16px;background:#e8f4ff;border-radius:10px;margin-bottom:12px}
+.vtest-opt{width:100%;text-align:left;padding:11px 14px;margin:5px 0;border-radius:8px;border:1.5px solid #dde;background:#fff;font-size:14px;font-family:inherit;cursor:pointer;transition:.15s}
+.vtest-opt:hover:not(.dis){border-color:#0097A7;background:#f0faff}
+.vtest-opt.ca{background:#e8f5e9;border-color:#2e7d32;color:#1b5e20;font-weight:700}
+.vtest-opt.wa{background:#ffebee;border-color:#e53935;color:#b71c1c}
+.vtest-opt.dis{pointer-events:none}
+.vtest-result{text-align:center;padding:8px;font-size:13px;font-weight:700;margin-top:4px}
+.vtest-result.ok{color:#2e7d32}.vtest-result.ng{color:#e53935}
+</style>
+</head>
+<body>
+<canvas id="cc"></canvas>
+
+<div class="hdr">
+  <h1>🎓 英検2級・高認英文法　Unit 1　品詞と文の成り立ち</h1>
+  <p>こうげんよびこう（江原予備校）　― ▶ボタンで英語音声 ―</p>
+</div>
+
+<nav class="nav">
+  <div class="pair active-pair">
+    <button class="nb on" onclick="ss('s1',this)">① 10の品詞</button>
+    <button class="pb" onclick="openM('m1')">✏️ 練習①</button>
+  </div>
+  <div class="nav-sep"></div>
+  <div class="pair">
+    <button class="nb" onclick="ss('s2',this)">② SVOC</button>
+    <button class="pb" onclick="openM('m2')">✏️ 練習②</button>
+  </div>
+  <div class="nav-sep"></div>
+  <div class="pair">
+    <button class="nb" onclick="ss('s3',this)">③ 5文型</button>
+    <button class="pb" onclick="openM('m3')">✏️ 練習③</button>
+  </div>
+  <div class="nav-sep"></div>
+  <div class="pair">
+    <button class="nb" onclick="ss('s4',this)">④ 第4→第3</button>
+    <button class="pb" onclick="openM('m4')">✏️ 並替</button>
+    <button class="pb" style="border-left:1px solid #ffcc99" onclick="openM('m4b')">✏️ 前置詞</button>
+  </div>
+  <div class="nav-sep"></div>
+  <div class="pair">
+    <button class="nb" onclick="ss('s5a',this)">⑤-1 疑問文(1)</button>
+    <button class="pb" onclick="openM('m5c')">✏️ 練習⑤-1</button>
+  </div>
+  <div class="nav-sep"></div>
+  <div class="pair">
+    <button class="nb" onclick="ss('s5b',this)">⑤-3 疑問慣用・命令文</button>
+    <button class="pb" onclick="openM('m5d')">✏️ 練習⑤-3</button>
+  </div>
+  <div class="nav-sep"></div>
+  <div class="pair">
+    <button class="nb" onclick="ss('s5',this)">⑤-2 付加・間接疑問</button>
+    <button class="pb" onclick="openM('m5a')">✏️ 付加疑問</button>
+    <button class="pb" style="border-left:1px solid #ffcc99" onclick="openM('m5b')">✏️ 間接疑問</button>
+  </div>
+  <div class="nav-sep"></div>
+  <div class="pair">
+    <button class="nb" onclick="ss('s6',this)">⑥ 感嘆文</button>
+    <button class="pb" onclick="openM('m6')">✏️ 練習⑥</button>
+  </div>
+  <div class="nav-sep" style="width:12px"></div>
+  <div style="flex-shrink:0;position:relative">
+    <button onclick="openM('mvocab')" style="padding:8px 16px;border-radius:22px;border:2px solid #7b1fa2;background:#f3e5f5;color:#7b1fa2;font-size:13px;font-family:inherit;cursor:pointer;font-weight:700;white-space:nowrap">📚 単語帳</button>
+    <span class="vocab-badge" id="vocab-badge">0</span>
+  </div>
+</nav>
+
+<!-- ①10の品詞 -->
+<div id="s1" class="sec on">
+  <div class="sh">① 10個の品詞</div>
+  <div class="card">
+    <div class="ct">品詞とは</div>
+    <div class="pt">英語の単語はその<b>働き・役割</b>によって10種類に分けられます。これを<b>品詞</b>といいます。各単語がどんな役割をするかを知ることで、文の意味が正確に読み取れるようになります。</div>
+    <table class="tbl">
+      <tr><th>品詞名</th><th>説明</th><th>例</th></tr>
+      <tr><td><span class="hn">①名詞</span></td><td>人や物の<b>名前</b>を表す</td><td><span class="hex">student, Tom, school, coffee</span></td></tr>
+      <tr><td><span class="hn">②代名詞</span></td><td>名詞の<b>代わり</b>をする語</td><td><span class="hex">I, you, he, she, they, it, this</span></td></tr>
+      <tr><td><span class="hn">③形容詞</span></td><td>性質・状態・数量などを表す。主に<b>名詞を修飾</b></td><td><span class="hex">new, big, beautiful, many, five</span></td></tr>
+      <tr><td><span class="hn">④冠詞</span></td><td>名詞の前に置く。<b>a(an)</b>「一つの」 <b>the</b>「その」</td><td><span class="hex">a book, the book</span></td></tr>
+      <tr><td><span class="hn">⑤動詞</span></td><td>主語の<b>状態・動作</b>を表す。文の中心！</td><td><span class="hex">am, is, play, study, run</span></td></tr>
+      <tr><td><span class="hn">⑥助動詞</span></td><td>動詞の前について<b>意味をつけ加える</b></td><td><span class="hex">can, may, must, should, will</span></td></tr>
+      <tr><td><span class="hn">⑦副詞</span></td><td>様態・時・場所などを表す。主に<b>名詞以外を修飾</b></td><td><span class="hex">fast, <span class="vw" data-w="carefully" data-pos="副詞" data-mean="注意深く・丁寧に" data-kana="ケアフリー" data-opts='["注意深く・丁寧に", "速く", "静かに", "楽しく"]' onclick="showVpop(this)">carefully</span>, here, very, often</span></td></tr>
+      <tr><td><span class="hn">⑧前置詞</span></td><td>名詞の前に置かれ、<b>場所・時・方向</b>などを表す</td><td><span class="hex">at, by, for, in, of, on, to, with</span></td></tr>
+      <tr><td><span class="hn">⑨接続詞</span></td><td>語と語、節と節を<b>結びつける</b></td><td><span class="hex">and, but, or, when, because, if</span></td></tr>
+      <tr><td><span class="hn">⑩間投詞</span></td><td>驚き・喜びなどの<b>感情</b>を表す</td><td><span class="hex">Oh! Well, Wow, Oops</span></td></tr>
+    </table>
+  </div>
+  <div class="card" style="border:2px solid #e65100">
+    <div class="ct" style="color:#e65100">✏️ すぐに確認！　― 10の品詞 ―</div>
+    <div id="mini_s1a_q"></div>
+  </div>
+  <div class="card">
+    <div class="ct">形容詞と副詞の違い（重要！）</div>
+    <div class="kb">
+      <b>形容詞</b>：名詞を修飾 → a <b>fast</b> car（速い車）<br>
+      <b>副詞</b>：動詞・形容詞などを修飾 → He runs <b>fast</b>.（速く走る）
+    </div>
+    <div class="svl"><span class="sw">He</span><span class="sl">S</span> <span class="vw">runs</span><span class="vl">V</span> <span class="mw">fast</span><span class="ml">M（副詞）</span>.<button class="spk" onclick="sp('He runs fast.')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button><div class="jt">彼は速く走る。fast は動詞 runs を修飾する副詞</div></div>
+  </div>
+  <div class="card" style="border:2px solid #e65100">
+    <div class="ct" style="color:#e65100">✏️ すぐに確認！　― 形容詞 vs 副詞 ―</div>
+    <div id="mini_s1b_q"></div>
+  </div>
+  <div class="card">
+    <div class="ct">句と節の違い</div>
+    <div class="kb">
+      <b>句</b>：2語以上・内部にS・Vが<u>ない</u> → 名詞句・形容詞句・副詞句<br>
+      <b>節</b>：2語以上・内部にS・Vが<u>ある</u> → 名詞節・形容詞節・副詞節
+    </div>
+    <div class="svl"><b>To speak English</b>（名詞句）is easy.<button class="spk" onclick="sp('To speak English is easy.')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button><div class="jt">英語を話すことは易しい。← 内部にS・Vなし → 句</div></div>
+    <div class="svl">I know <b>that he is <span class="vw" data-w="honest" data-pos="形容詞" data-mean="正直な・誠実な" data-kana="オーネスト" data-opts='["正直な・誠実な", "元気な", "勇気ある", "親切な"]' onclick="showVpop(this)">honest</span></b>.（名詞節）<button class="spk" onclick="sp('I know that he is honest.')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button><div class="jt">私は彼が正直者であることを知っている。← S（he）+V（is）がある → 節</div></div>
+  </div>
+</div>
+
+<!-- ②SVOC -->
+<div id="s2" class="sec">
+  <div class="sh">② 文型の要素　Ｓ・Ｖ・Ｏ・Ｃ・Ｍ</div>
+  <div class="card">
+    <div class="ct">各記号の意味</div>
+    <table class="tbl">
+      <tr><th>記号</th><th>名前</th><th>意味・見分け方</th></tr>
+      <tr><td><b class="sw">Ｓ</b><span class="sl">S</span></td><td>主語</td><td>「〜が・〜は」にあたる語</td></tr>
+      <tr><td><b class="vw">Ｖ</b><span class="vl">V</span></td><td>動詞</td><td>主語の動作・状態を表す。<b>文の心臓部！</b></td></tr>
+      <tr><td><b class="ow">Ｏ</b><span class="ol">O</span></td><td>目的語</td><td>「〜を・〜に」にあたる語。<b>S ≠ O</b></td></tr>
+      <tr><td><b class="cw">Ｃ</b><span class="cl">C</span></td><td>補語</td><td>主語や目的語を補う語。<b>S = C</b> または <b>O = C</b></td></tr>
+      <tr><td><b class="mw">Ｍ</b><span class="ml">M</span></td><td>修飾語</td><td>文型の要素にならない飾りの部分</td></tr>
+    </table>
+    <div class="wb" style="margin-top:10px">
+      <b>★ OとCの見分け方</b>：S ＝ C の関係 → 補語（C）　　S ≠ O の関係 → 目的語（O）
+    </div>
+    <div class="svl"><span class="sw">I</span><span class="sl">S</span> <span class="vw">read</span><span class="vl">V</span> <span class="ow">a book</span><span class="ol">O</span>.<button class="spk" onclick="sp('I read a book.')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button><div class="jt">私は本を読む。I ≠ a book → Ｏ</div></div>
+    <div class="svl"><span class="sw">I</span><span class="sl">S</span> <span class="vw">am</span><span class="vl">V</span> <span class="cw">a father</span><span class="cl">C</span>.<button class="spk" onclick="sp('I am a father.')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button><div class="jt">私は父です。I ＝ a father → Ｃ</div></div>
+  </div>
+
+  <div class="card">
+    <div class="ct">ア．補語 C（Complement コンプリメント）</div>
+    <div class="pt">
+      文の中で、<b>主語の意味を補って説明する語</b>のことです。<br>
+      complement（補完する）の頭文字をとって <b>C</b> と表します。
+    </div>
+    <div class="kb">
+      次の2つの文を比べてみましょう。<br><br>
+      ① <b>Birds fly.</b>　←　これだけで「鳥は飛ぶ」と意味が通じます。<br>
+      ② <b>This is</b> ___. 　←　「これは…です」で終わると意味がわかりません。<br>
+      　　 <b>This is my bag.</b>　←　bag があって初めて意味が完成します！<br><br>
+      このように、<b>動詞だけでは意味が完結しないとき</b>に補いが必要です。<br>
+      この補いの語（my bag）を<b>補語（C）</b>といいます。
+    </div>
+    <div class="svl"><span class="sw">This</span><span class="sl">S</span> <span class="vw">is</span><span class="vl">V</span> <span class="cw">my bag</span><span class="cl">C</span>.<button class="spk" onclick="sp('This is my bag.')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button><div class="jt">これは私のバッグです。This ＝ my bag → Ｃ</div></div>
+    <div class="svl"><span class="sw">She</span><span class="sl">S</span> <span class="vw">became</span><span class="vl">V</span> <span class="cw">a doctor</span><span class="cl">C</span>.<button class="spk" onclick="sp('She became a doctor.')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button><div class="jt">彼女は医者になった。She ＝ a doctor → Ｃ</div></div>
+    <div class="svl"><span class="sw">He</span><span class="sl">S</span> <span class="vw">looks</span><span class="vl">V</span> <span class="cw">happy</span><span class="cl">C</span>.<button class="spk" onclick="sp('He looks happy.')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button><div class="jt">彼は幸せそうに見える。He ＝ happy → Ｃ</div></div>
+    <div class="wb" style="margin-top:8px">
+      <b>★ 補語の見分け方：S ＝ C の関係が成り立てば補語！</b><br><br>
+      This <b>＝</b> my bag ✓　／　She <b>＝</b> a doctor ✓　／　He <b>＝</b> happy ✓<br><br>
+      補語になれる品詞：<b>名詞</b>（a doctor）/ <b>形容詞</b>（happy）<br>
+      ※ 副詞は補語になれません。
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="ct">イ．目的語 O（Object オブジェクト）</div>
+    <div class="pt">
+      「プレゼントを」のように、<b>「〜に・〜を」にあたる語</b>を<b>目的語（O）</b>といいます。<br>
+      object（対象）の頭文字をとって <b>O</b> と表します。<br><br>
+      目的語は<b>S ≠ O</b>（主語とは別のもの）というのがポイントです。
+    </div>
+    <div class="svl"><span class="sw">I</span><span class="sl">S</span> <span class="vw">gave</span><span class="vl">V</span> <span class="ow">a present</span><span class="ol">O</span>.<button class="spk" onclick="sp('I gave a present.')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button><div class="jt">私はプレゼントをあげた。「プレゼントを」→ Ｏ（目的語）</div></div>
+    <div class="svl"><span class="sw">She</span><span class="sl">S</span> <span class="vw">loves</span><span class="vl">V</span> <span class="ow">music</span><span class="ol">O</span>.<button class="spk" onclick="sp('She loves music.')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button><div class="jt">彼女は音楽を愛する。「音楽を」→ Ｏ（目的語）</div></div>
+    <div class="wb" style="margin-top:8px">
+      <b>★ OとCの見分け方まとめ</b><br><br>
+      S ＝ C の関係 → <b>補語（C）</b>　例：I am <b>a father</b>.（私 ＝ 父）<br>
+      S ≠ O の関係 → <b>目的語（O）</b>　例：I read <b>a book</b>.（私 ≠ 本）
+    </div>
+  </div>
+  <div class="card" style="border:2px solid #e65100">
+    <div class="ct" style="color:#e65100">✏️ すぐに確認！　― S・V・O・C・Mの見分け方 ―</div>
+    <div id="mini_s2a_q"></div>
+  </div>
+  <div class="card">
+    <div class="ct">Vが2語以上になる場合</div>
+    <div class="pt">助動詞＋動詞、進行形（be+～ing）、完了形（have+p.p.）は<b>2語以上でひとつのＶ</b>とみなします。</div>
+    <div class="svl"><span class="sw">She</span><span class="sl">S</span> <span class="vw">can play</span><span class="vl">V</span> <span class="ow">the piano</span><span class="ol">O</span> <span class="mw">well</span><span class="ml">M</span>.<button class="spk" onclick="sp('She can play the piano well.')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button><div class="jt">彼女はピアノが上手に弾ける。can play → 2語でＶ</div></div>
+    <div class="svl"><span class="sw">He</span><span class="sl">S</span> <span class="vw">is running</span><span class="vl">V</span> <span class="mw">around the park</span><span class="ml">M</span>.<button class="spk" onclick="sp('He is running around the park.')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button><div class="jt">彼は公園のまわりを走っている。is running → 2語でＶ</div></div>
+  </div>
+</div>
+
+<!-- ③5文型 -->
+<div id="s3" class="sec">
+  <div class="sh">③ 英語の5文型</div>
+  <div class="card">
+    <div class="ct">5文型一覧</div>
+    <table class="tbl">
+      <tr><th>文型</th><th>構造</th><th>ポイント</th></tr>
+      <tr><td><b>第１</b></td><td><span style="color:#007a8a;font-weight:700">S+V</span></td><td>主語が動く・存在する</td></tr>
+      <tr><td><b>第２</b></td><td><span style="color:#007a8a;font-weight:700">S+V+C</span></td><td>S＝C（主語＝補語）</td></tr>
+      <tr><td><b>第３</b></td><td><span style="color:#007a8a;font-weight:700">S+V+O</span></td><td>S≠O（主語≠目的語）</td></tr>
+      <tr><td><b>第４</b></td><td><span style="color:#007a8a;font-weight:700">S+V+O+O</span></td><td>目的語が2つ（人・物）</td></tr>
+      <tr><td><b>第５</b></td><td><span style="color:#007a8a;font-weight:700">S+V+O+C</span></td><td>O＝C（目的語＝補語）</td></tr>
+    </table>
+  </div>
+  <div class="card" style="border:2px solid #e65100">
+    <div class="ct" style="color:#e65100">✏️ すぐに確認！　― 5文型の名前と構造 ―</div>
+    <div id="mini_s3a_q"></div>
+  </div>
+  <div class="card">
+    <div class="ct">第１文型　S+V（＋M）</div>
+    <div class="pt">主語が「動く・ある・存在する」だけを表す最もシンプルな文型です。<br>修飾語（M）がついても文型には影響しません。</div>
+    <div class="svl"><span class="sw">Birds</span><span class="sl">S</span> <span class="vw">fly</span><span class="vl">V</span> <span class="mw">in the sky</span><span class="ml">M</span>.<button class="spk" onclick="sp('Birds fly in the sky.')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button><div class="jt">鳥は空を飛ぶ。V（fly）だけで文が成立。M（in the sky）は飾り</div></div>
+    <div class="svl"><span class="sw">He</span><span class="sl">S</span> <span class="vw">runs</span><span class="vl">V</span> <span class="mw">fast</span><span class="ml">M</span>.<button class="spk" onclick="sp('He runs fast.')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button><div class="jt">彼は速く走る。fast は副詞（M）。「He runs.」だけでも文が成立</div></div>
+    <div class="kb" style="margin-top:8px">第１文型でよく使う動詞：<b>run / fly / go / come / live / exist / appear / work</b> など</div>
+  </div>
+  <div class="card">
+    <div class="ct">第２文型　S+V+C　（S＝C）</div>
+    <div class="svl"><span class="sw">English</span><span class="sl">S</span> <span class="vw">is</span><span class="vl">V</span> <span class="cw"><span class="vw" data-w="difficult" data-pos="形容詞" data-mean="難しい・困難な" data-kana="ディフィカルト" data-opts='["難しい・困難な", "簡単な", "楽しい", "長い"]' onclick="showVpop(this)">difficult</span></span><span class="cl">C</span>.<button class="spk" onclick="sp('English is difficult.')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button><div class="jt">英語は難しい。English＝<span class="vw" data-w="difficult" data-pos="形容詞" data-mean="難しい・困難な" data-kana="ディフィカルト" data-opts='["難しい・困難な", "簡単な", "楽しい", "長い"]' onclick="showVpop(this)">difficult</span> → Ｃ</div></div>
+  </div>
+  <div class="card">
+    <div class="ct">第３文型　S+V+O　（S≠O）</div>
+    <div class="pt">「〜を…する」という動作を表す文型です。目的語（O）には「〜を・〜に」があてはまります。<br>S ≠ O（主語と目的語は別のもの）というのがポイントです。</div>
+    <div class="svl"><span class="sw">She</span><span class="sl">S</span> <span class="vw">plays</span><span class="vl">V</span> <span class="ow">the piano</span><span class="ol">O</span>.<button class="spk" onclick="sp('She plays the piano.')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button><div class="jt">彼女はピアノを弾く。She ≠ the piano → O（目的語）</div></div>
+    <div class="svl"><span class="sw">I</span><span class="sl">S</span> <span class="vw">love</span><span class="vl">V</span> <span class="ow">English</span><span class="ol">O</span>.<button class="spk" onclick="sp('I love English.')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button><div class="jt">私は英語が好きだ。I ≠ English → O（目的語）</div></div>
+    <div class="kb" style="margin-top:8px">第３文型でよく使う動詞：<b>love / like / eat / read / study / watch / use / make / take</b> など</div>
+  </div>
+  <div class="card">
+    <div class="ct">第４文型　S+V+O+O</div>
+    <div class="pt">目的語が2つある文型です。<b>S+V ＋ 人 ＋ 物</b>という語順になります。<br>「人に物を〜する」という意味を表します。</div>
+    <div class="svl"><span class="sw">He</span><span class="sl">S</span> <span class="vw">gave</span><span class="vl">V</span> <span class="ow">me</span><span class="ol">O</span> <span class="ow">a present</span><span class="ol">O</span>.<button class="spk" onclick="sp('He gave me a present.')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button><div class="jt">彼は私にプレゼントをあげた。S+V ＋ 人（me）＋ 物（a present）</div></div>
+  </div>
+  <div class="card">
+    <div class="ct">第５文型　S+V+O+C　（O＝C）</div>
+    <div class="pt">O＝Cの関係が成り立つ文型です。call / name / make / find などで使います。</div>
+    <div class="svl"><span class="sw">We</span><span class="sl">S</span> <span class="vw">call</span><span class="vl">V</span> <span class="ow">him</span><span class="ol">O</span> <span class="cw">Tom</span><span class="cl">C</span>.<button class="spk" onclick="sp('We call him Tom.')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button><div class="jt">私たちは彼をトムと呼ぶ。him＝Tom → Ｃ</div></div>
+    <div class="svl"><span class="sw">The news</span><span class="sl">S</span> <span class="vw">made</span><span class="vl">V</span> <span class="ow">me</span><span class="ol">O</span> <span class="cw">happy</span><span class="cl">C</span>.<button class="spk" onclick="sp('The news made me happy.')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button><div class="jt">そのニュースは私を嬉しくさせた。me＝happy → Ｃ</div></div>
+  </div>
+  <div class="card" style="border:2px solid #e65100">
+    <div class="ct" style="color:#e65100">✏️ すぐに確認！　― 第4・第5文型 ―</div>
+    <div id="mini_s3b_q"></div>
+  </div>
+</div>
+
+<!-- ④第4→第3 -->
+<div id="s4" class="sec">
+  <div class="sh">④ 第４文型を第３文型にする</div>
+
+  <div class="card">
+    <div class="ct">なぜ第４文型を第３文型に書き換えるの？</div>
+    <div class="pt">
+      英語では、文の<b>後ろに置かれた語ほど重要・新しい情報</b>として際立つ傾向があります。<br>
+      第４文型と第３文型を使い分けることで、伝えたい情報を文末に持ってきて強調できます。<br><br>
+      ◆ <b>第４文型</b>：I gave <b>Mary</b> a present.<br>
+      　→「Mary に」が動詞の直後にあり、目立ちにくい。「何をあげたか（a present）」が文末で際立つ。<br><br>
+      ◆ <b>第３文型</b>：I gave a present <b>to Mary</b>.<br>
+      　→「Mary に」が文末に来て、<b>「誰に渡したか（Mary）」が際立つ</b>。<br><br>
+      このように、<b>「誰に」を強調したいとき</b>は第３文型（to / for / of ＋ 人）を使うと伝わりやすくなります。<br>
+      「人を強調したいときに第３文型にする」と覚えておきましょう。
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="ct">① give型 → <span style="color:#b84300">to</span> を使う</div>
+    <div class="kb">
+      <b>give / tell / show / teach / send / write / pay / lend</b> など<br>
+      <b>S+V+人+物</b>（第４）→ <b>S+V+物＋<span style="color:#b84300;font-size:15px">to</span> 人</b>（第３）
+    </div>
+    <div class="pt">
+      <b>なぜ to を使うのか？</b><br>
+      to には「ある目標・目的地に向かって到達する」というイメージがあります。<br>
+      give型の動詞はどれも、<b>物が相手に確実に届く（渡される）</b>動作を表します。<br>
+      「give（渡す）」「tell（伝える）」「send（送る）」「teach（教える）」など、<br>
+      いずれも相手のところまで<b>確実に届く</b>ことを前提とした動詞です。<br>
+      だから「〜へ向かって届く」という意味の <b>to</b> が使われます。
+    </div>
+    <div class="ex">
+      I gave Mary a present.（第４文型）<br>
+      → I gave a present <b>to</b> Mary.（第３文型）
+      <button class="spk" onclick="sp('I gave a present to Mary.')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button><br>
+      私はメアリーにプレゼントをあげました。← 確実に渡した
+    </div>
+  </div>
+  <div class="card" style="border:2px solid #e65100">
+    <div class="ct" style="color:#e65100">✏️ すぐに確認！　― give型（to）―</div>
+    <div id="mini_s4a_q"></div>
+  </div>
+
+  <div class="card">
+    <div class="ct">② buy型 → <span style="color:#b84300">for</span> を使う</div>
+    <div class="kb">
+      <b>buy / make / cook / find / get / choose / prepare</b> など<br>
+      <b>S+V+人+物</b>（第４）→ <b>S+V+物＋<span style="color:#b84300;font-size:15px">for</span> 人</b>（第３）
+    </div>
+    <div class="pt">
+      <b>なぜ for を使うのか？</b><br>
+      for には「〜のために（してあげる）」というイメージがあります。<br>
+      buy型の動詞はどれも、<b>相手のために何かをする</b>動作ですが、<br>
+      実際に相手に渡ったかどうかはわかりません。<br><br>
+      例えば「I bought a dress for her.」は「彼女のためにドレスを買った」ですが、<br>
+      まだ渡していないかもしれません。プレゼントとして準備しただけかもしれません。<br>
+      このように<b>相手への到達が保証されていない</b>ので、to ではなく <b>for</b> を使います。
+    </div>
+    <div class="wb">
+      <b>buy型の動詞を例文で覚えましょう！</b><br><br>
+      <b>make ～ for</b>：I made a cake <b>for</b> her.（彼女のためにケーキを作った）
+      <button class="spk" onclick="sp('I made a cake for her.')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button><br>
+      <b>buy ～ for</b>：He bought a bike <b>for</b> me.（彼は私のために自転車を買った）
+      <button class="spk" onclick="sp('He bought a bike for me.')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button><br>
+      <b>cook ～ for</b>：She cooked dinner <b>for</b> us.（彼女は私たちのために夕食を作った）
+      <button class="spk" onclick="sp('She cooked dinner for us.')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button><br>
+      <b>find ～ for</b>：I'll find a seat <b>for</b> you.（あなたのために席を見つけましょう）
+      <button class="spk" onclick="sp("I'll find a seat for you.")"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button>
+    </div>
+    <div class="ex">
+      He bought his daughter a dress.（第４文型）<br>
+      → He bought a dress <b>for</b> his daughter.（第３文型）
+      <button class="spk" onclick="sp('He bought a dress for his daughter.')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button><br>
+      彼は娘のためにドレスを買った。← 渡したかどうかはわからない
+    </div>
+  </div>
+  <div class="card" style="border:2px solid #e65100">
+    <div class="ct" style="color:#e65100">✏️ すぐに確認！　― buy型（for）―</div>
+    <div id="mini_s4b_q"></div>
+  </div>
+
+  <div class="card">
+    <div class="ct">③ ask型 → <span style="color:#b84300">of</span> を使う</div>
+    <div class="kb">
+      ask だけが特別に <b>of</b> を使います。<br>
+      <b>ask 人 物</b>（第４）→ <b>ask 物 <span style="color:#b84300;font-size:15px">of</span> 人</b>（第３）<br><br>
+      of には「〜から・〜に対して」という意味があります。<br>
+      「頼む・尋ねる」は相手から何かを<b>引き出す</b>イメージなので of を使います。
+    </div>
+    <div class="ex">
+      I asked him a question.（第４文型）<br>
+      → I asked a question <b>of</b> him.（第３文型）
+      <button class="spk" onclick="sp('I asked a question of him.')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button><br>
+      私は彼に質問した。
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="ct">📝 確認問題　to・for・of　どれを使う？</div>
+    <div style="font-size:13px;color:#555;margin-bottom:12px">
+      各文の空欄に入る前置詞を選んでください。「答えを見る」ボタンで正解と理由が表示されます。
+    </div>
+    <div id="tfo-quiz"></div>
+  </div>
+
+</div>
+
+<!-- ⑤-1 疑問文(1) -->
+<div id="s5a" class="sec">
+  <div class="sh">⑤-1 疑問文(1)　― 一般疑問文・疑問詞疑問文 ―</div>
+
+  <!-- 一般疑問文 -->
+  <div class="card">
+    <div class="ct">一般疑問文　― Yes / No で答える疑問文 ―</div>
+    <div class="pt">
+      be動詞・助動詞を文頭に出すか、一般動詞の場合は Do / Does / Did を使って作ります。<br>
+      答えるときは、聞かれた動詞に合わせて答えます。
+    </div>
+    <div class="ex">
+      Are you hungry? <button class="spk" onclick="sp('Are you hungry?')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button>　→ Yes, I am. / No, I'm not.<br>
+      <span style="color:#555;font-size:13px">　あなたはお腹がすいていますか？</span><br>
+      Do you know her name? <button class="spk" onclick="sp('Do you know her name?')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button>　→ Yes, I do. / No, I don't.<br>
+      <span style="color:#555;font-size:13px">　あなたは彼女の名前を知っていますか？</span><br>
+      Can you play the <span class="vw" data-w="violin" data-pos="名詞" data-mean="バイオリン" data-kana="ヴァイオリン" data-opts='["バイオリン", "ピアノ", "フルート", "ギター"]' onclick="showVpop(this)">violin</span>? <button class="spk" onclick="sp('Can you play the violin?')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button>　→ Yes, I can. / No, I can't.<br>
+      <span style="color:#555;font-size:13px">　あなたはバイオリンが弾けますか？</span>
+    </div>
+  </div>
+  <div class="card" style="border:2px solid #e65100">
+    <div class="ct" style="color:#e65100">✏️ すぐに確認！　― 一般疑問文 ―</div>
+    <div id="mini_s5a1_q"></div>
+  </div>
+
+  <div class="card">
+    <div class="ct">否定疑問文　― 「〜できないの？」「〜ではないの？」 ―</div>
+    <div class="pt">
+      相手が出来ないことに気づいたとき、または当然そうだと思ったのに「違うの？」と意外な気持ちを表すときに使います。相手に確認するときにも使います。
+    </div>
+    <div class="wb">
+      <b>答え方に注意！　日本語と英語で Yes / No が逆になります。</b><br><br>
+      Can't you swim?（泳げないの？）<button class="spk" onclick="sp("Can't you swim?")"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button><br>
+      　→ <b>Yes, I can.</b>（いいえ、泳げます）<br>
+      　→ <b>No, I can't.</b>（はい、泳げません）<br><br>
+      Aren't you Mr. Jones?（ジョーンズさんではないのですか？）<button class="spk" onclick="sp("Aren't you Mr. Jones?")"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button><br>
+      　→ <b>Yes, I am.</b>（いいえ、私です）<br>
+      　→ <b>No, I am not.</b>（はい、私ではありません）<br><br>
+      ポイント：<b>事実が肯定 → Yes　事実が否定 → No</b>
+    </div>
+  </div>
+
+  <!-- 疑問詞 -->
+  <div class="card">
+    <div class="ct">疑問詞の種類　― 3種類ある ―</div>
+    <div class="pt">
+      疑問詞には「疑問代名詞」「疑問形容詞」「疑問副詞」の3種類があります。<br>
+      どれも文頭に置いて、知りたい情報を尋ねます。
+    </div>
+    <table class="tbl">
+      <tr><th colspan="3">① 疑問代名詞　― 「人」や「もの」を尋ねる（主語・目的語になる）</th></tr>
+      <tr><td><b>who</b></td><td>だれ？</td><td>Who is that girl?　That's Linda. <button class="spk" onclick="sp('Who is that girl?')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button><br><span style="color:#555;font-size:12px">あの少女は誰ですか？　リンダです。</span></td></tr>
+      <tr><td><b>what</b></td><td>何・何を</td><td>What is that tower?　That's Tokyo Sky Tree. <button class="spk" onclick="sp('What is that tower?')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button><br><span style="color:#555;font-size:12px">あの塔は何ですか？　東京スカイツリーです。</span></td></tr>
+      <tr><td><b>which</b></td><td>どちら？</td><td>Which is your coat, this or that? <button class="spk" onclick="sp('Which is your coat, this or that?')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button><br><span style="color:#555;font-size:12px">あなたのコートはどちらですか？</span></td></tr>
+      <tr><td><b>whom</b></td><td>誰を</td><td>Whom are you planning to <span class="vw" data-w="invite" data-pos="動詞" data-mean="招待する" data-kana="インヴァイト" data-opts='["招待する", "断る", "訪問する", "会う"]' onclick="showVpop(this)">invite</span>?（口語では Who も可）<button class="spk" onclick="sp('Whom are you planning to invite?')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button><br><span style="color:#555;font-size:12px">あなたは誰を招待しようと思っていますか？</span></td></tr>
+      <tr><td><b>whose</b></td><td>誰のもの</td><td>Whose is that pen?　It's mine. <button class="spk" onclick="sp('Whose is that pen?')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button><br><span style="color:#555;font-size:12px">あのペンは誰のですか？　私のです。</span></td></tr>
+    </table>
+    <div class="kb" style="margin-top:8px">
+      <b>Whoが「誰が」（主語）の場合 → 代動詞を使う</b><br>
+      Who broke the window?<span style="color:#555;font-size:13px">（誰がその窓を割ったのですか？）</span>　→　Tom <b>did</b>.<button class="spk" onclick="sp('Who broke the window? Tom did.')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button>　（動詞の繰り返しを避けて do / does / did で答える）<br>
+      Who lives in this house?<span style="color:#555;font-size:13px">（誰がこの家に住んでいますか？）</span>　→　Tom <b>does</b>.<button class="spk" onclick="sp('Who lives in this house? Tom does.')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button>　※ Who は三人称単数として扱う<br><br>
+      <b>前置詞＋Whom（フォーマルな表現）</b><br>
+      Who did you go with?<span style="color:#555;font-size:13px">（あなたは誰と一緒に行きましたか？）</span>　→ <b>With whom</b> did you go? <button class="spk" onclick="sp('With whom did you go?')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="ct">② 疑問形容詞　― 名詞の前に置いて「どの〜・何の〜」を尋ねる ―</div>
+    <div class="kb">
+      疑問形容詞は <b>疑問詞 ＋ 名詞</b> の形で使います。
+    </div>
+    <table class="tbl">
+      <tr><th>疑問形容詞</th><th>意味</th><th>例文</th></tr>
+      <tr><td><b>whose ＋ 名詞</b></td><td>だれの〜</td><td>Whose shoes are these?　They're mine. <button class="spk" onclick="sp('Whose shoes are these?')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button><br><span style="color:#555;font-size:12px">これらは誰の靴ですか？　私のです。</span></td></tr>
+      <tr><td><b>what ＋ 名詞</b></td><td>どんな〜・何の〜</td><td>What color do you like?　I like blue. <button class="spk" onclick="sp('What color do you like?')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button><br><span style="color:#555;font-size:12px">何色が好きですか？　青が好きです。</span></td></tr>
+      <tr><td><b>which ＋ 名詞</b></td><td>どちらの〜</td><td>Which bus should we take?　The number 4. <button class="spk" onclick="sp('Which bus should we take?')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button><br><span style="color:#555;font-size:12px">どちらのバスに乗ればよいですか？　4番です。</span></td></tr>
+      <tr><td><b>What kind of ＋ 名詞</b></td><td>どんな種類の〜</td><td>What kind of car do you like? <button class="spk" onclick="sp('What kind of car do you like?')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button><br><span style="color:#555;font-size:12px">どんな種類の車が好きですか？</span></td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <div class="ct">③ 疑問副詞　― 場所・時・理由・方法などを尋ねる ―</div>
+    <table class="tbl">
+      <tr><th>疑問副詞</th><th>意味</th><th>例文</th></tr>
+      <tr><td><b>when</b></td><td>いつ？</td><td>When did you come to Japan? <button class="spk" onclick="sp('When did you come to Japan?')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button><br><span style="color:#555;font-size:12px">あなたはいつ日本に来ましたか？</span></td></tr>
+      <tr><td><b>where</b></td><td>どこ？</td><td>Where did you go last Sunday? <button class="spk" onclick="sp('Where did you go last Sunday?')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button><br><span style="color:#555;font-size:12px">先週の日曜日はどこへ行きましたか？</span></td></tr>
+      <tr><td><b>why</b></td><td>どうして？</td><td>Why do you want to study English? <button class="spk" onclick="sp('Why do you want to study English?')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button><br><span style="color:#555;font-size:12px">なぜ英語を勉強したいのですか？</span></td></tr>
+      <tr><td><b>how</b></td><td>どのように？</td><td>How was your <span class="vw" data-w="vacation" data-pos="名詞" data-mean="休暇・バカンス" data-kana="ヴェイケイション" data-opts='["休暇・バカンス", "旅行", "授業", "仕事"]' onclick="showVpop(this)">vacation</span>? <button class="spk" onclick="sp('How was your vacation?')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button><br><span style="color:#555;font-size:12px">休暇はどうでしたか？</span></td></tr>
+    </table>
+    <div class="kb" style="margin-top:8px">
+      <b>How ＋ 形容詞・副詞　でさまざまな疑問文が作れます</b>
+    </div>
+    <table class="tbl" style="margin-top:4px">
+      <tr><th>表現</th><th>意味</th><th>例文・答え方</th></tr>
+      <tr><td><b>How long</b></td><td>どのくらいの長さ（時間）</td><td>How long did you wait? → For half an hour. <button class="spk" onclick="sp('How long did you wait?')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button><br><span style="color:#555;font-size:12px">どのくらい待ちましたか？　30分です。</span></td></tr>
+      <tr><td><b>How far</b></td><td>どのくらいの距離</td><td>How far is it from here to the station? <button class="spk" onclick="sp('How far is it from here to the station?')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button><br><span style="color:#555;font-size:12px">ここから駅までどのくらい離れていますか？</span></td></tr>
+      <tr><td><b>How soon</b></td><td>どのくらいすぐに</td><td>How soon can I have the book? → In a week. <button class="spk" onclick="sp('How soon can I have the book?')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button><br><span style="color:#555;font-size:12px">いつごろその本を手に入れられますか？　1週間以内です。</span></td></tr>
+      <tr><td><b>How many ＋複数名詞</b></td><td>いくつの</td><td>How many CDs do you have? → About fifty. <button class="spk" onclick="sp('How many CDs do you have?')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button><br><span style="color:#555;font-size:12px">何枚のCDを持っていますか？　約50枚です。</span></td></tr>
+      <tr><td><b>How much</b></td><td>いくら・どのくらい</td><td>How much is this cake? → 100 yen. <button class="spk" onclick="sp('How much is this cake?')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button><br><span style="color:#555;font-size:12px">このケーキはいくらですか？　100円です。</span></td></tr>
+      <tr><td><b>How old</b></td><td>何歳</td><td>How old are you? → Seventeen. <button class="spk" onclick="sp('How old are you?')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button><br><span style="color:#555;font-size:12px">あなたは何歳ですか？　17歳です。</span></td></tr>
+    </table>
+  </div>
+
+  <!-- ④選択疑問文 -->
+  <div class="card">
+    <div class="ct">④ 選択疑問文　― 「A ですか、それとも B ですか」 ―</div>
+    <div class="pt">
+      「…, A <b>or</b> B ?」の形で、相手にどちらかを選んでもらう疑問文です。<br>
+      Yes / No では答えず、選んだほうを答えます。
+    </div>
+    <div class="ex">
+      Did you come here by bike <b>or</b> on foot? <button class="spk" onclick="sp('Did you come here by bike or on foot?')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button><br>
+      　あなたはここへ自転車それとも歩いて来たのですか。→ <b>By bike.</b>（自転車です）<br><br>
+      Which do you like better, cats <b>or</b> dogs? <button class="spk" onclick="sp('Which do you like better, cats or dogs?')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button><br>
+      　あなたは猫と犬のどちらが好きですか。→ <b>I like dogs better.</b>
+    </div>
+    <div class="kb">
+      <b>by car / by bike / by plane</b>（手段を表す）　　<b>on foot</b>「歩いて」
+    </div>
+  </div>
+
+  <!-- インライン確認問題 -->
+  <div class="card" style="border:2px solid #0097A7;background:#f0faff">
+    <div class="ct" style="color:#0097A7">📝 確認問題　疑問詞を選ぼう（4択）</div>
+    <div id="gimon-quiz"></div>
+  </div>
+
+</div>
+
+<!-- モーダル⑤-1 -->
+<div class="mo" id="m5c">
+  <div class="mb">
+    <div class="mh"><h2>📝 練習⑤-1　疑問詞疑問文（入試問題）</h2><button class="mhc" onclick="closeM('m5c')">✕</button></div>
+    <div class="mbody">
+      <div class="msb"><div class="msn" id="m5csn">0 / 8</div><div class="pw"><div class="pf" id="m5cpf" style="width:0%"></div></div><button class="mrb" onclick="resetM('m5c')">リセット</button></div>
+      <div id="m5cq"></div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ⑤-3 疑問慣用表現・命令文 -->
+<div id="s5b" class="sec">
+  <div class="sh">⑤-3　疑問文の慣用表現・命令文</div>
+
+  <div class="card">
+    <div class="ct">疑問詞 ＋ do you think ～ ?「〜だと思いますか」</div>
+    <div class="pt">
+      「彼は誰ですか」という疑問文に「〜だと思いますか」を加えたいとき、<b>do you think</b> を疑問詞の直後に入れ、残りは <b>S ＋ V</b> の普通の語順にします。
+    </div>
+    <div class="kb">
+      <b>疑問詞 ＋ do you think ＋ S ＋ V ?</b><br><br>
+      Who is he? → <b>Who do you think he is?</b><button class="spk" onclick="sp('Who do you think he is?')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button><br>
+      <span style="color:#555;font-size:13px">「彼は誰ですか」→「彼は誰だと思いますか」</span><br><br>
+      What did he say? → <b>What do you think he said?</b><button class="spk" onclick="sp('What do you think he said?')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button><br>
+      <span style="color:#555;font-size:13px">「彼は何と言いましたか」→「彼は何と言ったと思いますか」</span><br><br>
+      When will she be back? → <b>When do you think she will be back?</b><button class="spk" onclick="sp('When do you think she will be back?')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button><br>
+      <span style="color:#555;font-size:13px">「彼女はいつ帰りますか」→「彼女はいつ帰ってくると思いますか」</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="ct">疑問文の慣用表現（入試頻出）</div>
+    <table class="tbl">
+      <tr><th>表現</th><th>意味</th><th>例文</th></tr>
+      <tr><td><b>What ～ for?</b></td><td>何のために〜？</td><td>What did you go there <b>for</b>?<br><span style="color:#555;font-size:12px">何のためにそこへ行ったのですか？</span><button class="spk" onclick="sp('What did you go there for?')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button></td></tr>
+      <tr><td><b>What is S like?</b></td><td>S はどんな感じ？<br>（様子・外見・性格）</td><td>What is she <b>like</b>?<br><span style="color:#555;font-size:12px">彼女はどんな感じの人ですか？</span><button class="spk" onclick="sp('What is she like?')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button></td></tr>
+      <tr><td><b>How come S V?</b></td><td>どうして〜なの？<br>（Whyと同意、語順はS＋V）</td><td>How come you didn't call me?<br><span style="color:#555;font-size:12px">どうして私に電話しなかったの？</span><button class="spk" onclick="sp('How come you didn\'t call me?')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button></td></tr>
+      <tr><td><b>How about ～ing?</b><br><b>How about 名詞?</b></td><td>〜はいかがですか？</td><td>How about going to the movies?<br><span style="color:#555;font-size:12px">映画を見に行きませんか？</span><button class="spk" onclick="sp('How about going to the movies?')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button></td></tr>
+      <tr><td><b>What do you say to ～ing?</b></td><td>〜はいかがですか？<br>（＝ How about ～ing?）</td><td>What do you say to taking a walk?<br><span style="color:#555;font-size:12px">散歩に行きませんか？</span><button class="spk" onclick="sp('What do you say to taking a walk?')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button></td></tr>
+      <tr><td><b>Why don't you ～?</b></td><td>〜してはいかがですか？<br>（＝ How about ～ing?）</td><td>Why don't you come with me?<br><span style="color:#555;font-size:12px">私と一緒に来ませんか？</span><button class="spk" onclick="sp('Why don\'t you come with me?')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button></td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <div class="ct">命令文のつくり方</div>
+    <div class="pt">You（あなたは）が省略され、<b>動詞の原形</b>が文頭に来ます。</div>
+    <div class="kb">
+      ① <b>基本の命令文</b>「〜しなさい」<br>
+      　Be kind to old people.（老人には親切にしなさい）<button class="spk" onclick="sp('Be kind to old people.')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button><br><br>
+      ② <b>Please ＋ 命令文</b>「どうぞ〜してください」（やわらかな口調）<br>
+      　Please read the questions <span class="vw" data-w="carefully" data-pos="副詞" data-mean="注意深く・丁寧に" data-kana="ケアフリー" data-opts='["注意深く・丁寧に", "速く", "静かに", "楽しく"]' onclick="showVpop(this)">carefully</span>.（問題を注意して読んでください）<button class="spk" onclick="sp('Please read the questions carefully.')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button><br>
+      　Write your name, please.（文末 please の前には<b>コンマ必須</b>）<button class="spk" onclick="sp('Write your name, please.')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button><br><br>
+      ③ <b>Don't ＋ 原形</b>「〜するな」（否定の命令）<br>
+      　Don't be <span class="vw" data-w="noisy" data-pos="形容詞" data-mean="うるさい・騒がしい" data-kana="ノイジー" data-opts='["うるさい・騒がしい", "静かな", "楽しい", "大きな"]' onclick="showVpop(this)">noisy</span> in the class.（クラスでは騒ぐな）<button class="spk" onclick="sp("Don't be noisy in the class.")"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button><br>
+      　Please don't leave me <span class="vw" data-w="alone" data-pos="副詞" data-mean="一人で・孤独に" data-kana="アローン" data-opts='["一人で・孤独に", "一緒に", "急いで", "静かに"]' onclick="showVpop(this)">alone</span>.（どうか私を一人にしないで）<button class="spk" onclick="sp("Please don't leave me alone.")"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button><br><br>
+      ④ <b>Let's ＋ 原形</b>「〜しましょう」（勧誘）<br>
+      　Let's go for a walk.（散歩しましょう）<button class="spk" onclick="sp("Let's go for a walk.")"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button><br>
+      　→ <b>Yes, let's.</b>（そうしましょう）　<b>No, let's not.</b>（よしましょう）<br><br>
+      ⑤ <b>Let's not ～.</b>「〜するのはやめましょう」<br>
+      　Let's not talk about it any more.（それについてもう話すのはやめましょう）<button class="spk" onclick="sp("Let's not talk about it any more.")"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="ct">覚えたい口語表現（入試頻出！）</div>
+    <table class="tbl">
+      <tr><th>表現</th><th>意味</th><th>音声</th></tr>
+      <tr><td><b>Take it easy.</b></td><td>くよくよするな。気にするな。</td><td><button class="spk" onclick="sp('Take it easy.')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button></td></tr>
+      <tr><td><b>Mind your own <span class="vw" data-w="business" data-pos="名詞" data-mean="仕事・事業・関係" data-kana="ビジネス" data-opts='["仕事・事業・関係", "遊び", "学校", "家族"]' onclick="showVpop(this)">business</span>.</b><br>= None of your <span class="vw" data-w="business" data-pos="名詞" data-mean="仕事・事業・関係" data-kana="ビジネス" data-opts='["仕事・事業・関係", "遊び", "学校", "家族"]' onclick="showVpop(this)">business</span>.</td><td>大きなお世話だ。</td><td><button class="spk" onclick="sp('Mind your own business.')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button></td></tr>
+      <tr><td><b>Please make yourself at home.</b></td><td>どうぞお楽になさってください。</td><td><button class="spk" onclick="sp('Please make yourself at home.')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button></td></tr>
+      <tr><td><b>Please help yourself (to the cake).</b></td><td>どうぞご自由にお取りください。</td><td><button class="spk" onclick="sp('Please help yourself to the cake.')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button></td></tr>
+      <tr><td><b>Remember me to him.</b><br><b>Give my best <span class="vw" data-w="regards" data-pos="名詞" data-mean="よろしくという気持ち・敬意" data-kana="リガーズ" data-opts='["よろしくという気持ち・敬意", "贈り物", "返事", "命令"]' onclick="showVpop(this)">regards</span> to your family.</b></td><td>彼によろしく。<br>ご家族によろしくお伝えください。</td><td><button class="spk" onclick="sp('Give my best regards to your family.')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button></td></tr>
+    </table>
+  </div>
+
+  <div class="card" style="border:2px solid #0097A7;background:#f0faff">
+    <div class="ct" style="color:#0097A7">📝 確認問題①　慣用表現を選ぼう（4択）</div>
+    <div id="kanyou-quiz"></div>
+  </div>
+
+  <div class="card" style="border:2px solid #0097A7;background:#f0faff">
+    <div class="ct" style="color:#0097A7">📝 確認問題②　命令文を完成させよう（4択）</div>
+    <div id="meirei-quiz"></div>
+  </div>
+
+</div>
+
+<!-- モーダル⑤-3 -->
+<div class="mo" id="m5d">
+  <div class="mb">
+    <div class="mh"><h2>📝 練習⑤-3　慣用表現・命令文（入試問題）</h2><button class="mhc" onclick="closeM('m5d')">✕</button></div>
+    <div class="mbody">
+      <div class="msb"><div class="msn" id="m5dsn">0 / 10</div><div class="pw"><div class="pf" id="m5dpf" style="width:0%"></div></div><button class="mrb" onclick="resetM('m5d')">リセット</button></div>
+      <div id="m5dq"></div>
+    </div>
+  </div>
+</div>
+
+<div id="s5" class="sec">
+  <div class="sh">⑤ 付加疑問文・間接疑問文</div>
+
+  <!-- 付加疑問文 -->
+  <div class="card">
+    <div class="ct">付加疑問文とは</div>
+    <div class="pt">
+      平叙文の後ろに短い疑問文をつけて「〜ですよね？」と<b>念を押したり・確認したり</b>するときに使います。<br>
+      コンマ（,）の後ろにつける短い疑問文の部分を<b>付加疑問</b>といいます。
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="ct">付加疑問文のつくり方（4つのルール）</div>
+    <div class="kb">
+      <b>ルール①　肯定文の後 → 否定の疑問形</b><br>
+      　主語を代名詞に変え、動詞を否定形・疑問形にします。<br>
+      　Tom likes cakes, <b>doesn't he?</b>（トムはケーキが好きですよね）<button class="spk" onclick="sp('Tom likes cakes, doesn\'t he?')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button><br>
+      　She is a nurse, <b>isn't she?</b>（彼女は看護師ですよね）<button class="spk" onclick="sp('She is a nurse, isn\'t she?')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button><br>
+      　They can swim, <b>can't they?</b>（彼らは泳げますよね）<button class="spk" onclick="sp('They can swim, can\'t they?')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button>
+    </div>
+    <div class="kb" style="margin-top:8px">
+      <b>ルール②　否定文の後 → 肯定の疑問形</b><br>
+      　You aren't tired, <b>are you?</b>（疲れてないですよね）<button class="spk" onclick="sp('You aren\'t tired, are you?')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button><br>
+      　Your father doesn't work for a bank, <b>does he?</b>（お父さんは銀行員ではないですよね）<button class="spk" onclick="sp('Your father doesn\'t work for a bank, does he?')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button>
+    </div>
+    <div class="kb" style="margin-top:8px">
+      <b>ルール③　命令文の後 → will you?</b>（〜してくださいよ）<br>
+      　Speak more slowly, <b>will you?</b>（もっとゆっくり話してくださいよ）<button class="spk" onclick="sp('Speak more slowly, will you?')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button><br>
+      　Don't open the window, <b>will you?</b>（窓を開けないでくださいよ）<button class="spk" onclick="sp('Don\'t open the window, will you?')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button><br>
+      　※ 否定命令文（Don't〜）の後ろも <b>will you?</b> を使います。
+    </div>
+    <div class="kb" style="margin-top:8px">
+      <b>ルール④　Let's 〜の後 → shall we?</b>（〜しましょうよ）<br>
+      　Let's have lunch, <b>shall we?</b>（昼食にしましょうよ）<button class="spk" onclick="sp('Let\'s have lunch, shall we?')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="ct">否定疑問文の答え方（注意！）</div>
+    <div class="wb">
+      否定疑問文とは「〜ではないの？」「〜できないの？」のように、<b>否定形で尋ねる疑問文</b>です。<br>
+      日本語と<b>Yes / No が逆になる</b>ので注意しましょう！<br><br>
+      Aren't you hungry?（お腹すいてないの？）<button class="spk" onclick="sp('Aren\'t you hungry?')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button><br>
+      　→ <b>Yes, I am.</b>（いいえ、すいています）　<b>No, I'm not.</b>（はい、すいていません）<br><br>
+      ポイント：<b>事実が肯定 → Yes　事実が否定 → No</b>（英語は「事実」で答える）
+    </div>
+  </div>
+
+  <!-- インライン確認問題：付加疑問 -->
+  <div class="card" style="border:2px solid #0097A7;background:#f0faff">
+    <div class="ct" style="color:#0097A7">📝 確認問題　付加疑問文を完成させよう（4択）</div>
+    <div id="fuka-quiz"></div>
+  </div>
+
+  <!-- 間接疑問文 -->
+  <div class="card" style="margin-top:8px">
+    <div class="ct">間接疑問文とは</div>
+    <div class="pt">
+      疑問文（「〜ですか？」という文）を、別の文の<b>中に組み込む</b>形です。<br>
+      「私は〜を知りません」「〜を教えてください」などの文の中で使います。<br><br>
+      組み込まれた疑問文は<b>疑問文ではなくなる</b>ので、語順が普通の文と同じになります。
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="ct">間接疑問文のつくり方（語順が変わる！）</div>
+    <div class="kb">
+      疑問文をそのまま組み込まず、<b>疑問詞 ＋ 主語 ＋ 動詞</b>の語順に変えます。<br><br>
+      ① <b>疑問詞がある疑問文</b>の場合<br>
+      　What is that?（あれは何ですか？）<br>
+      　→ I don't know <b>what that is</b>.<button class="spk" onclick="sp('I don\'t know what that is.')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button>（あれが何なのかわかりません）<br>
+      　　「What is that?」の語順 → 「what that is」の語順に<b>入れ替え</b>
+    </div>
+    <div class="kb" style="margin-top:8px">
+      ② <b>三単現の s に注意！</b><br>
+      　Where does she live?（彼女はどこに住んでいますか？）<br>
+      　→ I don't know <b>where she lives</b>.<button class="spk" onclick="sp('I don\'t know where she lives.')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button>（彼女がどこに住んでいるか知りません）<br>
+      　　does she live → she <b>lives</b>（三単現の s を忘れずに！）
+    </div>
+    <div class="kb" style="margin-top:8px">
+      ③ <b>疑問詞が主語の場合はそのまま</b><br>
+      　Who broke the window?（誰が窓を割ったの？）<br>
+      　→ I don't know <b>who broke the window</b>.<button class="spk" onclick="sp('I don\'t know who broke the window.')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button><br>
+      　　who がすでに主語なので語順変更なし
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="ct">間接疑問文の例文まとめ</div>
+    <div class="ex">
+      I don't know <b>when the movie starts</b>.<button class="spk" onclick="sp('I don\'t know when the movie starts.')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button><br>
+      その映画がいつ始まるのか知りません。（When does the movie start? → when the movie starts）<br><br>
+      I don't know <b>what kind of music she likes</b>.<button class="spk" onclick="sp('I don\'t know what kind of music she likes.')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button><br>
+      私は彼女がどんな種類の音楽が好きか知りません。<br><br>
+      Tell me <b>when she will come to the party</b>.<button class="spk" onclick="sp('Tell me when she will come to the party.')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button><br>
+      彼女がそのパーティーにいつ来るのか教えてください。
+    </div>
+    <div class="wb" style="margin-top:8px">
+      <b>覚えておきたい表現</b><br>
+      I wonder 〜「〜かなあ・〜かどうかわからない」<br>
+      I have no idea 〜「〜の見当もつかない」<br>
+      Tell me 〜「〜を教えてください」<br>
+      Do you know 〜?「〜を知っていますか」
+    </div>
+  </div>
+
+  <!-- インライン確認問題：間接疑問 -->
+  <div class="card" style="border:2px solid #0097A7;background:#f0faff">
+    <div class="ct" style="color:#0097A7">📝 確認問題　間接疑問文を完成させよう（4択）</div>
+    <div id="kansetsu-quiz"></div>
+  </div>
+
+</div>
+
+<!-- ⑥感嘆文 -->
+<div id="s6" class="sec">
+  <div class="sh">⑥ 感嘆文　How 〜! / What 〜!</div>
+
+  <div class="card">
+    <div class="ct">感嘆文とは</div>
+    <div class="pt">
+      「なんて〜なんだ！」と驚きや感動を強く表す文です。<br>
+      作り方のコツは <b>very のあとを見ること</b>です。<br><br>
+      very のあとが <b>形容詞・副詞の1語だけ</b> → <span style="color:#1B3A6B;font-weight:700;font-size:15px">How</span> で引っ張る<br>
+      very のあとが <b>形容詞＋名詞のカタマリ</b> → <span style="color:#b84300;font-weight:700;font-size:15px">What</span> で引っ張る
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="ct">How 型　― 形容詞・副詞が1語だけのとき ―</div>
+    <div class="kb">
+      <b>How ＋ 形容詞（副詞）1語 ＋ 主語 ＋ 動詞 !</b><br><br>
+      ① 元の文の <b>very ＋ 形容詞（副詞）</b> を見つける<br>
+      ② <b>very を取り除き、How に変える</b><br>
+      ③ <b>How ＋ 形容詞（副詞）</b> を文頭に移動する<br>
+      ④ 残りは <b>主語 ＋ 動詞</b> の語順のまま
+    </div>
+    <div class="ex">
+      He is <u>very <b>tall</b></u>.<br>
+      　　　　↑ very ＋ 形容詞1語 → <b>How</b> で引っ張る！<br>
+      → <b>How tall</b> he is! <button class="spk" onclick="sp('How tall he is!')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button>　（なんて背が高いんだ！）<br><br>
+      We are <u>very <b>happy</b></u>.<br>
+      → <b>How happy</b> we are! <button class="spk" onclick="sp('How happy we are!')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button>　（なんて幸せなんだ私たちは！）<br><br>
+      I am <u>very <b><span class="vw" data-w="lucky" data-pos="形容詞" data-mean="運のよい・ラッキーな" data-kana="ラッキー" data-opts='["運のよい・ラッキーな", "不幸な", "悲しい", "疲れた"]' onclick="showVpop(this)">lucky</span></b></u>.<br>
+      → <b>How <span class="vw" data-w="lucky" data-pos="形容詞" data-mean="運のよい・ラッキーな" data-kana="ラッキー" data-opts='["運のよい・ラッキーな", "不幸な", "悲しい", "疲れた"]' onclick="showVpop(this)">lucky</span></b> I am! <button class="spk" onclick="sp('How lucky I am!')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button>　（なんてついているんだ！）<br><br>
+      Kumi speaks English <u>very <b>well</b></u>.<br>
+      → <b>How well</b> Kumi speaks English! <button class="spk" onclick="sp('How well Kumi speaks English!')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button>　（クミはなんて上手に英語を話すんだ！）
+    </div>
+  </div>
+  <div class="card" style="border:2px solid #e65100">
+    <div class="ct" style="color:#e65100">✏️ すぐに確認！　― How 型 ―</div>
+    <div id="mini_s6a_q"></div>
+  </div>
+
+  <div class="card">
+    <div class="ct">What 型　― 形容詞＋名詞のカタマリのとき ―</div>
+    <div class="kb">
+      <b>What (a/an) ＋ 形容詞 ＋ 名詞 ＋ 主語 ＋ 動詞 !</b><br><br>
+      ① 元の文の <b>very ＋ 形容詞 ＋ 名詞</b> を見つける<br>
+      ② <b>形容詞＋名詞のカタマリ</b> → <b>What</b> で引っ張る！<br>
+      ③ 名詞が <b>単数可算名詞</b> なら <b>a / an</b> をつける（複数・不可算名詞は不要）<br>
+      ④ 残りは <b>主語 ＋ 動詞</b> の語順のまま
+    </div>
+    <div class="ex">
+      She is <u>a very <b>pretty girl</b></u>.<br>
+      　　　　↑ 形容詞（pretty）＋ 名詞（girl）のカタマリ → <b>What</b> で引っ張る！<br>
+      → <b>What a pretty girl</b> she is! <button class="spk" onclick="sp('What a pretty girl she is!')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button>　（なんてきれいな少女なんだ！）<br><br>
+      Betty is <u>a very <b>good <span class="vw" data-w="pianist" data-pos="名詞" data-mean="ピアニスト" data-kana="ピアニスト" data-opts='["ピアニスト", "歌手", "画家", "教師"]' onclick="showVpop(this)">pianist</span></b></u>.<br>
+      → <b>What a good <span class="vw" data-w="pianist" data-pos="名詞" data-mean="ピアニスト" data-kana="ピアニスト" data-opts='["ピアニスト", "歌手", "画家", "教師"]' onclick="showVpop(this)">pianist</span></b> Betty is! <button class="spk" onclick="sp('What a good pianist Betty is!')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button>　（ベティはなんて上手なピアニストなんだ！）<br><br>
+      This is <u>a very <b>easy question</b></u>.　← easy は <b>a</b> で始まらないが an は不要<br>
+      → <b>What an easy question</b> this is! <button class="spk" onclick="sp('What an easy question this is!')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button>　（なんて簡単な問題なんだ！）　← easy は母音始まり → an<br><br>
+      They are <u>very <b>tall men</b></u>.　← 複数名詞 → a/an なし<br>
+      → <b>What tall men</b> they are! <button class="spk" onclick="sp('What tall men they are!')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button>　（なんて背の高い男性たちなんだ！）
+    </div>
+    <div class="wb">
+      <b>a と an の使い分け：</b>次に来る単語の発音が母音（a / e / i / o / u）で始まるとき → <b>an</b><br>
+      What <b>a</b> kind boy … / What <b>an</b> easy question … / What <b>an</b> old <span class="vw" data-w="coin" data-pos="名詞" data-mean="コイン・硬貨" data-kana="コイン" data-opts='["コイン・硬貨", "紙幣", "宝石", "切手"]' onclick="showVpop(this)">coin</span> …
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="ct">副詞から書き換えるとき ―「well → good <span class="vw" data-w="swimmer" data-pos="名詞" data-mean="泳ぎ手・水泳選手" data-kana="スウィマー" data-opts='["泳ぎ手・水泳選手", "走者", "歌手", "画家"]' onclick="showVpop(this)">swimmer</span>」―</div>
+    <div class="kb">
+      副詞（well / fast など）を含む文を What 型に書き換えるときは、<br>
+      <b>副詞を形容詞に変えて名詞をつくる</b>必要があります。
+    </div>
+    <div class="ex">
+      How well she swims!<br>
+      → <b>What a good <span class="vw" data-w="swimmer" data-pos="名詞" data-mean="泳ぎ手・水泳選手" data-kana="スウィマー" data-opts='["泳ぎ手・水泳選手", "走者", "歌手", "画家"]' onclick="showVpop(this)">swimmer</span></b> she is! <button class="spk" onclick="sp('What a good swimmer she is!')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button><br>
+      　well（上手に）→ good（上手な）＋ <span class="vw" data-w="swimmer" data-pos="名詞" data-mean="泳ぎ手・水泳選手" data-kana="スウィマー" data-opts='["泳ぎ手・水泳選手", "走者", "歌手", "画家"]' onclick="showVpop(this)">swimmer</span>（泳ぎ手）<br><br>
+      How tall he is!<br>
+      → <b>What a tall man</b> he is! <button class="spk" onclick="sp('What a tall man he is!')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button><br>
+      　tall（背が高い）はそのまま ＋ man（男性）を補う
+    </div>
+  </div>
+
+  <div class="card" style="border:2px solid #0097A7;background:#f0faff">
+    <div class="ct" style="color:#0097A7">📝 確認問題①　How か What か選ぼう（4択）</div>
+    <div id="kantanA-quiz"></div>
+  </div>
+
+  <div class="card" style="border:2px solid #0097A7;background:#f0faff">
+    <div class="ct" style="color:#0097A7">📝 確認問題②　感嘆文を完成させよう〈練習26・27〉（4択）</div>
+    <div id="kantanB-quiz"></div>
+  </div>
+
+</div>
+
+<!-- ===== モーダル群 ===== -->
+
+<!-- モーダル① 品詞選択 -->
+<div class="mo" id="m1">
+  <div class="mb">
+    <div class="mh"><h2>📝 練習①　品詞を答えよう</h2><button class="mhc" onclick="closeM('m1')">✕</button></div>
+    <div class="mbody">
+      <div class="msb"><div class="msn" id="m1sn">0 / 8</div><div class="pw"><div class="pf" id="m1pf" style="width:0%"></div></div><button class="mrb" onclick="resetM('m1')">リセット</button></div>
+      <div id="m1q"></div>
+    </div>
+  </div>
+</div>
+
+<!-- モーダル② SVOC判定 -->
+<div class="mo" id="m2">
+  <div class="mb">
+    <div class="mh"><h2>📝 練習②　SVOCを判定しよう</h2><button class="mhc" onclick="closeM('m2')">✕</button></div>
+    <div class="mbody">
+      <div class="msb"><div class="msn" id="m2sn">0 / 7</div><div class="pw"><div class="pf" id="m2pf" style="width:0%"></div></div><button class="mrb" onclick="resetM('m2')">リセット</button></div>
+      <div id="m2q"></div>
+    </div>
+  </div>
+</div>
+
+<!-- モーダル③ 文型判定 -->
+<div class="mo" id="m3">
+  <div class="mb">
+    <div class="mh"><h2>📝 練習③　文型を判定しよう</h2><button class="mhc" onclick="closeM('m3')">✕</button></div>
+    <div class="mbody">
+      <div class="msb"><div class="msn" id="m3sn">0 / 8</div><div class="pw"><div class="pf" id="m3pf" style="width:0%"></div></div><button class="mrb" onclick="resetM('m3')">リセット</button></div>
+      <div id="m3q"></div>
+    </div>
+  </div>
+</div>
+
+<!-- モーダル④-A 並び替え -->
+<div class="mo" id="m4">
+  <div class="mb">
+    <div class="mh"><h2>📝 練習④-A　第4→第3文型 並び替え</h2><button class="mhc" onclick="closeM('m4')">✕</button></div>
+    <div class="mbody">
+      <div class="msb"><div class="msn" id="m4sn">0 / 6</div><div class="pw"><div class="pf" id="m4pf" style="width:0%"></div></div><button class="mrb" onclick="resetM('m4')">リセット</button></div>
+      <div id="m4q"></div>
+    </div>
+  </div>
+</div>
+
+<!-- モーダル④-B 前置詞選択 -->
+<div class="mo" id="m4b">
+  <div class="mb">
+    <div class="mh"><h2>📝 練習④-B　to / for / of を選ぼう</h2><button class="mhc" onclick="closeM('m4b')">✕</button></div>
+    <div class="mbody">
+      <div class="msb"><div class="msn" id="m4bsn">0 / 8</div><div class="pw"><div class="pf" id="m4bpf" style="width:0%"></div></div><button class="mrb" onclick="resetM('m4b')">リセット</button></div>
+      <div id="m4bq"></div>
+    </div>
+  </div>
+</div>
+
+<!-- モーダル⑤-A 付加疑問 -->
+<div class="mo" id="m5a">
+  <div class="mb">
+    <div class="mh"><h2>📝 練習⑤　付加疑問文（入試問題）</h2><button class="mhc" onclick="closeM('m5a')">✕</button></div>
+    <div class="mbody">
+      <div class="msb"><div class="msn" id="m5asn">0 / 4</div><div class="pw"><div class="pf" id="m5apf" style="width:0%"></div></div><button class="mrb" onclick="resetM('m5a')">リセット</button></div>
+      <div id="m5aq"></div>
+    </div>
+  </div>
+</div>
+
+<!-- モーダル⑤-B 間接疑問 -->
+<div class="mo" id="m5b">
+  <div class="mb">
+    <div class="mh"><h2>📝 練習⑤　間接疑問文（入試問題）</h2><button class="mhc" onclick="closeM('m5b')">✕</button></div>
+    <div class="mbody">
+      <div class="msb"><div class="msn" id="m5bsn">0 / 4</div><div class="pw"><div class="pf" id="m5bpf" style="width:0%"></div></div><button class="mrb" onclick="resetM('m5b')">リセット</button></div>
+      <div id="m5bq"></div>
+    </div>
+  </div>
+</div>
+
+<!-- モーダル⑥ 感嘆文 -->
+<div class="mo" id="m6">
+  <div class="mb">
+    <div class="mh"><h2>📝 練習⑥　感嘆文 並び替え</h2><button class="mhc" onclick="closeM('m6')">✕</button></div>
+    <div class="mbody">
+      <div class="msb"><div class="msn" id="m6sn">0 / 6</div><div class="pw"><div class="pf" id="m6pf" style="width:0%"></div></div><button class="mrb" onclick="resetM('m6')">リセット</button></div>
+      <div id="m6q"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ===== 音声 ===== */
+function sp(t){
+  if(!window.speechSynthesis)return;
+  speechSynthesis.cancel();
+  var u=new SpeechSynthesisUtterance(t);
+  u.lang='en-US';u.rate=0.88;
+  speechSynthesis.speak(u);
+}
+
+/* ===== タブ切り替え ===== */
+function ss(id,btn){
+  document.querySelectorAll('.sec').forEach(function(s){s.classList.remove('on');});
+  document.querySelectorAll('.nb').forEach(function(b){b.classList.remove('on');});
+  document.querySelectorAll('.pair').forEach(function(p){p.classList.remove('active-pair');});
+  document.getElementById(id).classList.add('on');
+  btn.classList.add('on');
+  if(btn.parentElement&&btn.parentElement.classList.contains('pair')){
+    btn.parentElement.classList.add('active-pair');
+  }
+}
+
+/* ===== モーダル ===== */
+function openM(id){
+  document.getElementById(id).classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeM(id){
+  document.getElementById(id).classList.remove('open');
+  document.body.style.overflow='';
+}
+// オーバーレイクリックで閉じる
+document.querySelectorAll('.mo').forEach(function(mo){
+  mo.addEventListener('click',function(e){
+    if(e.target===mo)closeM(mo.id);
+  });
+});
+
+/* ===== 花吹雪 ===== */
+function confetti(){
+  var cv=document.getElementById('cc');
+  cv.width=window.innerWidth;cv.height=window.innerHeight;
+  cv.style.display='block';
+  var ctx=cv.getContext('2d');
+  var cols=['#f9a825','#0097A7','#1B3A6B','#e53935','#2e7d32','#ff6f00','#7b1fa2','#ff4081'];
+  var ps=[];
+  for(var k=0;k<130;k++){
+    ps.push({x:Math.random()*cv.width,y:-20-Math.random()*180,
+      w:7+Math.random()*9,h:3+Math.random()*5,
+      c:cols[Math.floor(Math.random()*cols.length)],
+      s:2+Math.random()*4,a:Math.random()*360,sp:3-Math.random()*6,
+      d:(Math.random()-.5)*2.5});
+  }
+  var fr=0;
+  function draw(){
+    ctx.clearRect(0,0,cv.width,cv.height);
+    ps.forEach(function(p){
+      ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.a*Math.PI/180);
+      ctx.fillStyle=p.c;ctx.fillRect(-p.w/2,-p.h/2,p.w,p.h);ctx.restore();
+      p.y+=p.s;p.x+=p.d;p.a+=p.sp;
+    });
+    fr++;
+    if(fr<100)requestAnimationFrame(draw);
+    else{ctx.clearRect(0,0,cv.width,cv.height);cv.style.display='none';}
+  }
+  draw();
+}
+
+/* ===== スコア更新 ===== */
+function updS(mid,n,t){
+  document.getElementById(mid+'sn').textContent=n+' / '+t;
+  document.getElementById(mid+'pf').style.width=(n/t*100)+'%';
+  if(n===t&&t>0)confetti();
+}
+
+/* ===== 選択問題エンジン ===== */
+function buildC(mid,data){
+  var total=data.length,score=0,done=new Array(total).fill(false);
+  updS(mid,0,total);
+  var c=document.getElementById(mid+'q');
+  c.innerHTML='';
+  data.forEach(function(d,i){
+    var div=document.createElement('div');
+    div.className='qb';
+    // ヘッダー
+    var hd=document.createElement('div');hd.className='qh';
+    var num=document.createElement('span');num.className='qn';num.textContent=i+1;
+    var txt=document.createElement('span');txt.className='qt';
+    txt.innerHTML='<b>'+d.q+'</b>'+(d.u?'<span class="ub">'+d.u+'</span>':'');
+    // 音声ボタン
+    var sb=document.createElement('button');sb.className='spk';
+    sb.innerHTML='<svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg>';
+    sb.onclick=(function(s){return function(){sp(s);};})(d.s);
+    txt.appendChild(sb);
+    hd.appendChild(num);hd.appendChild(txt);div.appendChild(hd);
+    // 日本語訳
+    if(d.j){var jd=document.createElement('div');jd.style.cssText='font-size:13px;color:#555;margin-bottom:8px';jd.textContent=d.j;div.appendChild(jd);}
+    // ヒント
+    if(d.h){var hnt=document.createElement('span');hnt.className='hint';hnt.textContent=d.h;div.appendChild(hnt);}
+    // 選択肢エリア
+    var ca=document.createElement('div');div.appendChild(ca);
+    // 解説
+    var ep=document.createElement('div');ep.className='ep';
+    ep.innerHTML='📝 解説：'+d.e;
+    div.appendChild(ep);
+    c.appendChild(div);
+    // ボタン生成
+    d.c.forEach(function(ch,ci){
+      var btn=document.createElement('button');btn.className='cb';btn.textContent=ch;
+      btn.onclick=(function(myci){
+        return function(){
+          if(done[i])return;
+          done[i]=true;
+          ca.querySelectorAll('.cb').forEach(function(b,bi){
+            b.classList.add('dis');
+            if(bi===d.a)b.classList.add('ca');
+            else if(bi===myci&&myci!==d.a)b.classList.add('wa');
+          });
+          ep.classList.add('show');
+          if(myci===d.a){score++;updS(mid,score,total);}
+        };
+      })(ci);
+      ca.appendChild(btn);
+    });
+  });
+}
+
+/* ===== 並び替えエンジン ===== */
+function shuf(a){
+  var b=a.slice();
+  for(var i=b.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=b[i];b[i]=b[j];b[j]=t;}
+  return b;
+}
+function buildS(mid,data){
+  var total=data.length,score=0;
+  updS(mid,0,total);
+  var c=document.getElementById(mid+'q');
+  c.innerHTML='';
+  data.forEach(function(d,i){
+    var words=shuf(d.w),sel=[],done=false;
+    var div=document.createElement('div');div.className='qb';
+    // ヘッダー
+    var hd=document.createElement('div');hd.className='qh';
+    var num=document.createElement('span');num.className='qn';num.textContent=i+1;
+    var txt=document.createElement('span');txt.className='qt';
+    txt.innerHTML=d.j.replace(/\n/,'<br>')+(d.u?'<span class="ub">'+d.u+'</span>':'');
+    hd.appendChild(num);hd.appendChild(txt);div.appendChild(hd);
+    if(d.h){var hnt=document.createElement('span');hnt.className='hint';hnt.textContent=d.h;div.appendChild(hnt);}
+    // 解答欄
+    var az=document.createElement('div');az.className='az';div.appendChild(az);
+    // 語群
+    var wb=document.createElement('div');wb.className='wbk';div.appendChild(wb);
+    // ボタン行
+    var br=document.createElement('div');br.className='br';
+    var chkb=document.createElement('button');chkb.className='chkb';chkb.textContent='確認';
+    var rstb=document.createElement('button');rstb.className='rstb';rstb.textContent='やり直し';
+    var expb=document.createElement('button');expb.className='expb';expb.textContent='解説';
+    var fb=document.createElement('span');fb.className='fb';
+    br.appendChild(chkb);br.appendChild(rstb);br.appendChild(expb);br.appendChild(fb);
+    div.appendChild(br);
+    // 解説
+    var ep=document.createElement('div');ep.className='ep';
+    ep.innerHTML='📝 解説：'+d.e+'<br>✅ 正解：<b>'+d.w.join(' ')+'</b>';
+    // 正解文の音声ボタン
+    var sb=document.createElement('button');sb.className='spk';sb.style.cssText='width:24px;height:24px;margin-left:6px;vertical-align:middle';
+    sb.innerHTML='<svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg>';
+    sb.onclick=(function(s){return function(){sp(s);};})(d.s);
+    ep.appendChild(sb);
+    div.appendChild(ep);
+    c.appendChild(div);
+    function render(){
+      wb.innerHTML='';az.innerHTML='';
+      words.forEach(function(w,wi){
+        var chip=document.createElement('span');chip.className='chip'+(sel.indexOf(wi)>=0?' used':'');
+        chip.textContent=w;
+        chip.onclick=(function(wii){return function(){if(sel.indexOf(wii)<0&&!done){sel.push(wii);render();}};})(wi);
+        wb.appendChild(chip);
+      });
+      sel.forEach(function(wi,si){
+        var chip=document.createElement('span');chip.className='chip ac';chip.textContent=words[wi];
+        chip.onclick=(function(sii){return function(){if(!done){sel.splice(sii,1);render();}};})(si);
+        az.appendChild(chip);
+      });
+    }
+    render();
+    chkb.onclick=function(){
+      if(done)return;
+      var ans=sel.map(function(wi){return words[wi];});
+      if(ans.length===0){fb.textContent='単語を選んでください';fb.className='fb ng';return;}
+      ep.classList.add('show');
+      if(JSON.stringify(ans)===JSON.stringify(d.w)){
+        fb.textContent='✓ 正解！';fb.className='fb ok';
+        az.classList.remove('ng');az.classList.add('ok');
+        done=true;div._done=true;
+        var cnt=Array.from(c.querySelectorAll('._done')).length;
+        // 実際の完了数を数える
+        var doneCount=0;
+        c.querySelectorAll('.qb').forEach(function(q){if(q._done)doneCount++;});
+        score=doneCount;updS(mid,score,total);
+      } else {
+        fb.textContent='✗ もう一度！';fb.className='fb ng';
+        az.classList.add('ng');
+        setTimeout(function(){az.classList.remove('ng');},400);
+      }
+    };
+    rstb.onclick=function(){
+      if(done)return;
+      sel.length=0;fb.textContent='';fb.className='fb';
+      ep.classList.remove('show');render();
+    };
+    expb.onclick=function(){ep.classList.toggle('show');};
+  });
+}
+
+/* ===== リセット ===== */
+function resetM(mid){
+  var fn=window['_init'+mid];
+  if(fn)fn();
+}
+
+/* ===== 問題データ ===== */
+
+// --- 練習① 品詞 ---
+var d1=[
+  {q:'She <u>studies</u> English every day.',s:'She studies English every day.',j:'下線の studies の品詞は？',a:2,c:['名詞','形容詞','動詞','副詞'],e:'studies は「勉強する」という動作を表します。→ <b>動詞</b>'},
+  {q:'He is a <u>very</u> kind man.',s:'He is a very kind man.',j:'下線の very の品詞は？',a:3,c:['名詞','形容詞','動詞','副詞'],e:'very は形容詞 kind の程度を修飾します。名詞以外を修飾 → <b>副詞</b>'},
+  {q:'<u>A</u> dog is sleeping.',s:'A dog is sleeping.',j:'下線の A の品詞は？',a:4,c:['名詞','代名詞','動詞','副詞','冠詞'],e:'A は名詞 dog の前に置かれる不定冠詞です。→ <b>冠詞</b>'},
+  {q:'She is a <u>beautiful</u> singer.',s:'She is a beautiful singer.',j:'下線の beautiful の品詞は？',a:1,c:['名詞','形容詞','動詞','副詞'],e:'beautiful は名詞 singer を修飾します。名詞を修飾 → <b>形容詞</b>'},
+  {q:'The book is <u>on</u> the desk.',s:'The book is on the desk.',j:'下線の on の品詞は？',a:2,c:['名詞','副詞','前置詞','接続詞'],e:'on は名詞 the desk の前に置かれ場所を表します。→ <b>前置詞</b>'},
+  {q:'I like cats <u>and</u> dogs.',s:'I like cats and dogs.',j:'下線の and の品詞は？',a:3,c:['名詞','副詞','前置詞','接続詞'],e:'and は cats と dogs を結びつけています。→ <b>接続詞</b>'},
+  {q:'<u>Can</u> you swim?',s:'Can you swim?',j:'下線の Can の品詞は？',a:0,c:['助動詞','名詞','動詞','副詞'],e:'Can は動詞 swim の前について「できる」の意味を加えます。→ <b>助動詞</b>'},
+  {q:'<u>Oh</u>! I\'m sorry.',s:"Oh! I'm sorry.",j:'下線の Oh の品詞は？',a:4,c:['名詞','副詞','前置詞','形容詞','間投詞'],e:'Oh は驚きの感情を表します。→ <b>間投詞</b>'},
+];
+
+// --- 練習② SVOC ---
+var d2=[
+  {q:'Tom <u>runs</u> fast.',s:'Tom runs fast.',j:'"runs" はS・V・O・C・Mのどれ？',a:1,c:['S','V','O','C','M'],e:'runs は主語 Tom の動作を表す動詞です。→ <b>V（動詞）</b>'},
+  {q:'I am <u>a teacher</u>.',s:'I am a teacher.',j:'"a teacher" はS・V・O・C・Mのどれ？',a:3,c:['S','V','O','C','M'],e:'I ＝ a teacher の関係が成り立つので → <b>C（補語）</b>'},
+  {q:'She loves <u>music</u>.',s:'She loves music.',j:'"music" はS・V・O・C・Mのどれ？',a:2,c:['S','V','O','C','M'],e:'She ≠ music なので「〜を」にあたる目的語です。→ <b>O（目的語）</b>'},
+  {q:'He plays the piano <u>well</u>.',s:'He plays the piano well.',j:'"well" はS・V・O・C・Mのどれ？',a:4,c:['S','V','O','C','M'],e:'well は「上手に」という副詞で、なくても文が成り立ちます。→ <b>M（修飾語）</b>'},
+  {q:'We call <u>him</u> Tom.',s:'We call him Tom.',j:'"him" はS・V・O・C・Mのどれ？',a:2,c:['S','V','O','C','M'],e:'him は目的語（O）です。その後ろの Tom が him の補語（C）になります。→ <b>O（目的語）</b>'},
+  {q:'We call him <u>Tom</u>.',s:'We call him Tom.',j:'"Tom" はS・V・O・C・Mのどれ？',a:3,c:['S','V','O','C','M'],e:'him ＝ Tom の関係が成り立ちます。→ <b>C（目的格補語）</b>'},
+  {q:'She became <u>a doctor</u>.',s:'She became a doctor.',j:'"a doctor" はS・V・O・C・Mのどれ？',a:3,c:['S','V','O','C','M'],e:'She ＝ a doctor なので補語（C）。became は第２文型の動詞です。→ <b>C（補語）</b>'},
+];
+
+// --- 練習③ 文型 ---
+var d3=[
+  {q:'Birds fly in the sky.',s:'Birds fly in the sky.',j:'鳥は空を飛ぶ。',a:0,c:['第１','第２','第３','第４','第５'],e:'<b>S(Birds)+V(fly)+M(in the sky)</b>。MはなくてもOK → <b>第１文型 S+V</b>'},
+  {q:'English is difficult.',s:'English is difficult.',j:'英語は難しい。',a:1,c:['第１','第２','第３','第４','第５'],e:'English(S)＝difficult(C) → <b>第２文型 S+V+C</b>'},
+  {q:'She plays the piano.',s:'She plays the piano.',j:'彼女はピアノを弾く。',a:2,c:['第１','第２','第３','第４','第５'],e:'She(S)≠the piano(O) → <b>第３文型 S+V+O</b>'},
+  {q:'He gave me a present.',s:'He gave me a present.',j:'彼は私にプレゼントをあげた。',a:3,c:['第１','第２','第３','第４','第５'],e:'me(IO)≠a present(DO)。目的語が2つ → <b>第４文型 S+V+O+O</b>'},
+  {q:'I found the question easy.',s:'I found the question easy.',j:'私はその問題が簡単だとわかった。',a:4,c:['第１','第２','第３','第４','第５'],e:'the question(O)＝easy(C)。目的格補語 → <b>第５文型 S+V+O+C</b>'},
+  {q:'She looks very happy.',s:'She looks very happy.',j:'彼女はとても幸せそうに見える。',a:1,c:['第１','第２','第３','第４','第５'],e:'She(S)＝very happy(C)。looks は第２文型の動詞 → <b>第２文型 S+V+C</b>'},
+  {q:'We call him Tom.',s:'We call him Tom.',j:'私たちは彼をトムと呼ぶ。',a:4,c:['第１','第２','第３','第４','第５'],e:'him(O)＝Tom(C)。目的格補語 → <b>第５文型 S+V+O+C</b>'},
+  {q:'I asked the teacher a question.',s:'I asked the teacher a question.',j:'私は先生に質問した。',a:3,c:['第１','第２','第３','第４','第５'],e:'the teacher(IO)≠a question(DO)。目的語が2つ → <b>第４文型 S+V+O+O</b>'},
+];
+
+// --- 練習④-A 並び替え ---
+var d4=[
+  {j:'He told me a story. → 第３文型に（give型）',s:'He told a story to me.',w:['He','told','a','story','to','me','.'],h:'tell → to',e:'tell は give型。→ He told a story <b>to</b> me.'},
+  {j:'I gave him some advice. → 第３文型に（give型）',s:'I gave some advice to him.',w:['I','gave','some','advice','to','him','.'],h:'give → to',e:'give は give型。→ gave some advice <b>to</b> him.'},
+  {j:'She sent me a letter. → 第３文型に（give型）',s:'She sent a letter to me.',w:['She','sent','a','letter','to','me','.'],h:'send → to',e:'send は give型。→ sent a letter <b>to</b> me.'},
+  {j:'He bought me a bike. → 第３文型に（buy型）',s:'He bought a bike for me.',w:['He','bought','a','bike','for','me','.'],h:'buy → for',e:'buy は buy型。→ bought a bike <b>for</b> me.'},
+  {j:'I made him a dog house. → 第３文型に（buy型）',s:'I made a dog house for him.',w:['I','made','a','dog','house','for','him','.'],h:'make → for',e:'make は buy型。→ made a dog house <b>for</b> him.'},
+  {j:'May I ask you a favor? → 第３文型に（ask型）',s:'May I ask a favor of you?',w:['May','I','ask','a','favor','of','you','?'],h:'ask → of',e:'ask は ask型。→ ask a favor <b>of</b> you.'},
+];
+
+// --- 練習④-B 前置詞 to/for/of ---
+var d4b=[
+  {q:'He showed me the photos. → 第３文型に\nHe showed the photos ___ me.',s:'He showed the photos to me.',j:'',a:0,c:['to','for','of'],e:'show は give型の動詞。→ showed the photos <b>to</b> me.'},
+  {q:'She cooked us a nice dinner. → 第３文型に\nShe cooked a nice dinner ___ us.',s:'She cooked a nice dinner for us.',j:'',a:1,c:['to','for','of'],e:'cook は buy型の動詞。→ cooked a nice dinner <b>for</b> us.'},
+  {q:'I asked him a question. → 第３文型に\nI asked a question ___ him.',s:'I asked a question of him.',j:'',a:2,c:['to','for','of'],e:'ask は ask型の動詞。→ asked a question <b>of</b> him.'},
+  {q:'My aunt sent me some presents. → 第３文型に\nMy aunt sent some presents ___ me.',s:'My aunt sent some presents to me.',u:'入試頻出',j:'',a:0,c:['to','for','of'],e:'send は give型の動詞。→ sent some presents <b>to</b> me.'},
+  {q:'My father made me a kite. → 第３文型に\nMy father made a kite ___ me.',s:'My father made a kite for me.',j:'（凧）',a:1,c:['to','for','of'],e:'make は buy型の動詞。→ made a kite <b>for</b> me.'},
+  {q:'She wrote him a long letter. → 第３文型に\nShe wrote a long letter ___ him.',s:'She wrote a long letter to him.',u:'入試頻出',j:'',a:0,c:['to','for','of'],e:'write は give型の動詞。→ wrote a long letter <b>to</b> him.'},
+  {q:'He taught me math. → 第３文型に\nHe taught math ___ me.',s:'He taught math to me.',j:'',a:0,c:['to','for','of'],e:'teach は give型の動詞。→ taught math <b>to</b> me.'},
+  {q:'May I ask you a favor? → 第３文型に\nMay I ask a favor ___ you?',s:'May I ask a favor of you?',j:'お願いがあるのですが',a:2,c:['to','for','of'],e:'ask は ask型の動詞。→ ask a favor <b>of</b> you.'},
+];
+
+// --- 練習⑤-A 付加疑問 ---
+var d5a=[
+  {q:'You and your sister like Chinese food ___?',s:"You and your sister like Chinese food, don't they?",j:'あなたとあなたの妹は中華料理が好きなのですね。',u:'湘南工科大',a:1,c:["doesn't she","don't they","don't we","don't you"],e:'主語 You and your sister = they（複数）。→ <b>don\'t they?</b>'},
+  {q:"You didn't know I was an artist, ___?",s:"You didn't know I was an artist, did you?",j:'あなたは私が画家だと知らなかったのですね。',a:0,c:['did you',"didn't you",'am I',"aren't you"],e:'否定文（didn\'t）の後は肯定の疑問形 → <b>did you?</b>'},
+  {q:"Let's go fishing, ___?",s:"Let's go fishing, shall we?",j:'魚釣りにいきましょうね。',u:'愛知女子大',a:1,c:["don't we","shall we",'will you','do we'],e:'Let\'s 〜 の付加疑問は必ず → <b>shall we?</b>'},
+  {q:"Don't touch the ring, ___?",s:"Don't touch the ring, will you?",j:'その指輪に触れないでくださいよ。',a:0,c:['will you',"won't you",'shall we','do you'],e:'命令文（Don\'t含む）の後は → <b>will you?</b>'},
+];
+
+// --- 練習⑤-B 間接疑問 ---
+var d5b=[
+  {j:'私は彼が誰だか知っています。',s:'I know who she is.',w:['I','know','who','she','is','.'],h:'who + S + V の語順',u:'姫路獨協大',e:'Who is she? → who she is（疑問詞＋S＋Vの普通の語順）'},
+  {j:'このカメラはいくらか教えてくれませんか。',s:'Can you tell me how much this camera is?',w:['Can','you','tell','me','how','much','this','camera','is','?'],h:'tell me + 疑問詞 + S + V',u:'神奈川工科大',e:'How much is this camera? → how much this camera is'},
+  {j:'彼が私にどんなことを言ったと思いますか。',s:'What do you think he said to me?',w:['What','do','you','think','he','said','to','me','?'],h:'疑問詞 + do you think + S + V',u:'帝京大',e:'疑問詞が文頭、do you think が続く → What do you think he said to me?'},
+  {j:'明日のお天気はどうかしら？',s:'What will the weather be like tomorrow?',w:['What','will','the','weather','be','like','tomorrow','?'],h:'What will S be like?（〜はどんな感じ？）',u:'静岡県大',e:'What is S like?の未来形 → What will the weather be like tomorrow?'},
+];
+
+// --- 練習⑥ 感嘆文 ---
+var d6=[
+  {j:'なんて速いんだ彼の走りは！\nHe runs very fast. → How型に',s:'How fast he runs!',w:['How','fast','he','runs','!'],h:'How + 副詞 + S + V !',e:'very fast → How fast。副詞1語なので How型 → <b>How fast he runs!</b>'},
+  {j:'なんて幸せなんだ私たちは！\nWe are very happy. → How型に',s:'How happy we are!',w:['How','happy','we','are','!'],h:'How + 形容詞 + S + V !',e:'very happy → How happy → <b>How happy we are!</b>'},
+  {j:'なんてきれいな少女なんだ！\nShe is a very pretty girl. → What型に',s:'What a pretty girl she is!',w:['What','a','pretty','girl','she','is','!'],h:'What a + 形容詞 + 名詞 + S + V !',e:'a very pretty girl → What a pretty girl → <b>What a pretty girl she is!</b>'},
+  {j:'なんて素晴らしい景色だろう！\nThat is a very wonderful view. → What型に',s:'What a wonderful view that is!',w:['What','a','wonderful','view','that','is','!'],h:'What a + 形容詞 + 名詞 + S + V !',e:'a very wonderful view → <b>What a wonderful view that is!</b>'},
+  {j:'なんて背の高い男性たちなんだろう！\nThey are very tall men. → What型に',s:'What tall men they are!',w:['What','tall','men','they','are','!'],h:'複数名詞なので a/an なし！',e:'tall men（複数）なので a は不要 → <b>What tall men they are!</b>'},
+  {j:'なんて背が高いんだ彼は！（How→Whatへ書き換え）\nHow tall he is! →',s:'What a tall man he is!',w:['What','a','tall','man','he','is','!'],h:'tall → tall man（名詞を作る）',e:'How tall → What a tall man（tall + man で名詞を作る）→ <b>What a tall man he is!</b>'},
+];
+
+/* ===== ⑤-1 インライン確認問題：疑問詞 ===== */
+(function(){
+  var gimon=[
+    {sent:'___ cooked lunch?  Keiko did.',spk:'Who cooked lunch?',
+     ja:'誰が昼食を作りましたか？',ans:'Who',
+     c:['Who','What','Which','Whose'],
+     r:'「誰が〜したか」と主語を尋ねる → <b>Who</b>。答えに代動詞 did を使います。'},
+    {sent:'___ is this red car?  It\'s Tom\'s.',spk:"Whose is this red car? It's Tom's.",
+     ja:'この赤い車は誰のですか？',ans:'Whose',
+     c:['Who','What','Which','Whose'],
+     r:'「誰のもの」と所有を尋ねる疑問代名詞 → <b>Whose</b>'},
+    {sent:'___ shirt do you like?',spk:'Which shirt do you like?',
+     ja:'どちらのシャツが好きですか？',ans:'Which',
+     c:['Who','What','Which','Whose'],
+     r:'「どちらの〜」と名詞を修飾する疑問形容詞 → <b>Which</b>（Which ＋ 名詞）'},
+    {sent:'___ kind of car do you like?',spk:'What kind of car do you like?',
+     ja:'どんな種類の車が好きですか？',ans:'What',
+     c:['Who','What','Which','Whose'],
+     r:'「どんな種類の〜」= <b>What kind of ＋ 名詞</b>'},
+    {sent:'___ did you go last Sunday?',spk:'Where did you go last Sunday?',
+     ja:'先週の日曜日はどこへ行きましたか？',ans:'Where',
+     c:['When','Where','Why','How'],
+     r:'「どこへ・どこに」と場所を尋ねる疑問副詞 → <b>Where</b>'},
+    {sent:'___ were you late for school?  Because I missed the bus.',spk:'Why were you late for school?',
+     ja:'どうして学校に遅刻したのですか？',ans:'Why',
+     c:['When','Where','Why','How'],
+     r:'「どうして・なぜ」と理由を尋ねる疑問副詞 → <b>Why</b>'},
+    {sent:'___ many CDs do you have?',spk:'How many CDs do you have?',
+     ja:'何枚のCDを持っていますか？',ans:'How many',
+     c:['How many','How much','How long','How far'],
+     r:'数を尋ねる場合 → <b>How many</b> ＋ 複数名詞'},
+    {sent:'___ is it from here to the station?',spk:'How far is it from here to the station?',
+     ja:'ここから駅までどのくらい離れていますか？',ans:'How far',
+     c:['How long','How far','How soon','How much'],
+     r:'距離を尋ねる場合 → <b>How far</b>'},
+  ];
+  buildInlineQuiz('gimon-quiz', gimon);
+})();
+
+/* ===== ⑥ インライン確認問題A：How か What か ===== */
+(function(){
+  var kantanA=[
+    {sent:'He runs very fast. → ___ fast he runs!',
+     spk:'How fast he runs!',
+     ja:'なんて速いんだ彼の走りは！',
+     ans:'How',
+     c:['How','What','What a','What an'],
+     r:'fast（副詞）は<b>1語だけ</b>です。形容詞・副詞1語 → <b>How</b> で引っ張ります。'},
+    {sent:'We are very happy. → ___ happy we are!',
+     spk:'How happy we are!',
+     ja:'なんて幸せなんだ私たちは！',
+     ans:'How',
+     c:['How','What','What a','What an'],
+     r:'happy（形容詞）は<b>1語だけ</b>。形容詞1語 → <b>How</b> で引っ張ります。'},
+    {sent:'She is a very pretty girl. → ___ pretty girl she is!',
+     spk:'What a pretty girl she is!',
+     ja:'なんてきれいな少女なんだ！',
+     ans:'What a',
+     c:['How','What','What a','What an'],
+     r:'pretty girl（形容詞＋名詞の<b>カタマリ</b>）→ <b>What</b> で引っ張ります。girl は単数可算名詞なので <b>a</b> をつけます。'},
+    {sent:'This is a very easy question. → ___ easy question this is!',
+     spk:'What an easy question this is!',
+     ja:'なんて簡単な問題なんだ！',
+     ans:'What an',
+     c:['How','What','What a','What an'],
+     r:'easy question（形容詞＋名詞の<b>カタマリ</b>）→ <b>What</b>。easy は <b>e（母音）</b>で始まるので <b>an</b> をつけます。'},
+    {sent:'That is a very old coin. → ___ old coin that is!',
+     spk:'What an old coin that is!',
+     ja:'なんて古いコインなんだ！',
+     ans:'What an',
+     c:['How','What','What a','What an'],
+     r:'old coin（形容詞＋名詞の<b>カタマリ</b>）→ <b>What</b>。old は <b>o（母音）</b>で始まるので <b>an</b> をつけます。'},
+    {sent:'They are very tall men. → ___ tall men they are!',
+     spk:'What tall men they are!',
+     ja:'なんて背の高い男性たちなんだ！',
+     ans:'What',
+     c:['How','What','What a','What an'],
+     r:'tall men（形容詞＋名詞の<b>カタマリ</b>）→ <b>What</b>。men は<b>複数名詞</b>なので a / an はつけません。'},
+  ];
+  buildInlineQuiz('kantanA-quiz', kantanA);
+})();
+
+/* ===== ⑥ インライン確認問題B：感嘆文の完成（練習26・27） ===== */
+(function(){
+  var kantanB=[
+    {sent:'He runs very fast.\n→ How ___ he ___!',
+     spk:'How fast he runs!',
+     ja:'なんて速いんだ彼の走りは！〈練習26(1)〉',
+     ans:'fast / runs',
+     c:['fast / runs','fast / run','quickly / runs','fast / is'],
+     r:'very fast の fast（副詞1語）を How の直後に置き、主語＋動詞の順に。→ How <b>fast he runs</b>!'},
+    {sent:'I am very lucky.\n→ How ___ I ___!',
+     spk:'How lucky I am!',
+     ja:'なんてついているんだ！〈練習26(3)〉',
+     ans:'lucky / am',
+     c:['lucky / am','lucky / be','luck / am','luckily / am'],
+     r:'very lucky の lucky（形容詞1語）→ How。→ How <b>lucky I am</b>!'},
+    {sent:'Betty is a very good pianist.\n→ What a ___ Betty ___!',
+     spk:'What a good pianist Betty is!',
+     ja:'ベティはなんて上手なピアニストなんだ！〈練習27(2)〉',
+     ans:'good pianist / is',
+     c:['good pianist / is','good pianist / be','pianist good / is','well pianist / is'],
+     r:'good pianist（形容詞＋名詞のカタマリ）→ What a。→ What a <b>good pianist Betty is</b>!'},
+    {sent:'This is a very easy question.\n→ What ___ question this ___!',
+     spk:'What an easy question this is!',
+     ja:'なんて簡単な問題なんだ！〈練習27(3)〉',
+     ans:'an easy / is',
+     c:['an easy / is','a easy / is','an easy / be','the easy / is'],
+     r:'easy（母音始まり）→ <b>an</b>。easy question（カタマリ）→ What。→ What <b>an easy</b> question this is!'},
+    {sent:'That is a very old coin.\n→ What ___ coin that ___!',
+     spk:'What an old coin that is!',
+     ja:'なんて古いコインなんだ！〈練習27(4)〉',
+     ans:'an old / is',
+     c:['an old / is','a old / is','an old / be','the old / is'],
+     r:'old（母音始まり）→ <b>an</b>。→ What <b>an old</b> coin that is!'},
+    {sent:'How well she swims!\n→ What a ___ swimmer she ___!',
+     spk:'What a good swimmer she is!',
+     ja:'なんて上手な泳ぎ手なんだ！',
+     ans:'good / is',
+     c:['good / is','well / is','good / swims','great / swims'],
+     r:'How 型を What 型に書き換え。副詞 well → 形容詞 <b>good</b> に変える。→ What a <b>good swimmer</b> she is!'},
+  ];
+  buildInlineQuiz('kantanB-quiz', kantanB);
+})();
+
+/* ===== ⑤-3 インライン確認問題①：慣用表現 ===== */
+(function(){
+  var kanyou=[
+    {sent:'___ does she want to go to the country ___?',
+     spk:'What does she want to go to the country for?',
+     ja:'なぜ彼女はその国に行きたがっているのですか？',
+     ans:'What / for',
+     c:['What / for','Why / because','How / come','Which / to'],
+     r:'「何のために〜？」= <b>What ～ for?</b>（for が文末に来ます）'},
+    {sent:'___ is your grandfather ___?',
+     spk:'What is your grandfather like?',
+     ja:'あなたのおじいちゃんはどんな人ですか？',
+     ans:'What / like',
+     c:['How / like','What / like','Which / as','What / look'],
+     r:'「〜はどんな感じ・どんな人？」= <b>What is S like?</b>（like が文末）'},
+    {sent:'___ come you went to her house?',
+     spk:'How come you went to her house?',
+     ja:'どうして彼女の家に行ったのですか？',
+     ans:'How',
+     c:['Why','How','What','Where'],
+     r:'「どうして〜？」= <b>How come S V?</b>（Why と同意。come のあとは S＋V の語順）'},
+    {sent:'___ eating dinner at a Japanese restaurant?',
+     spk:'How about eating dinner at a Japanese restaurant?',
+     ja:'日本料理の店で夕食を食べるのはどうですか？',
+     ans:'How about',
+     c:['How about','What about','Why not','Would you'],
+     r:'「〜するのはいかがですか？」= <b>How about ～ing?</b>（about のあとは動名詞）'},
+    {sent:"___ ___ ___ going to the movies with us?",
+     spk:"What do you say to going to the movies with us?",
+     ja:'私たちと一緒に映画を見に行きませんか？',
+     ans:'What do you say to',
+     c:['What do you say to','How do you feel about','Why do you go','What are you thinking of'],
+     r:'「〜するのはいかがですか？」= <b>What do you say to ～ing?</b>（to のあとは動名詞）'},
+    {sent:"___ ___ you come with me?",
+     spk:"Why don't you come with me?",
+     ja:'私と一緒に来ませんか？',
+     ans:"Why don't",
+     c:["Why don't","How about","What do","Why not to"],
+     r:'「〜してはいかがですか？」= <b>Why don\'t you ～?</b>（後ろは動詞原形）'},
+  ];
+  buildInlineQuiz('kanyou-quiz', kanyou);
+})();
+
+/* ===== ⑤-3 インライン確認問題②：命令文 ===== */
+(function(){
+  var meirei=[
+    {sent:'図書館では騒ぐな。\n___ be noisy in the library.',
+     spk:"Don't be noisy in the library.",
+     ja:'（You must not be noisy in the library. を命令文に）',
+     ans:"Don't",
+     c:["Don't","Not","Please don't","Never"],
+     r:'否定の命令文は <b>Don\'t ＋ 動詞の原形</b>。be動詞の場合も Don\'t be ～。'},
+    {sent:'川で魚つりをしましょう。\n___ go fishing in the river.',
+     spk:"Let's go fishing in the river.",
+     ja:'（Shall we go fishing? → Let\'s を使って）',
+     ans:"Let's",
+     c:["Let's","Shall","Please","We should"],
+     r:'「〜しましょう」の勧誘は <b>Let\'s ＋ 動詞の原形</b>。Shall we ～? と書き換えられます。'},
+    {sent:'パーティをしましょうよ。\n___ have a party, ___ we?',
+     spk:"Let's have a party, shall we?",
+     ja:'（付加疑問で口調をやわらげる）',
+     ans:"Let's / shall",
+     c:["Let's / shall","We can / will","Shall / will","Let us / do"],
+     r:'<b>Let\'s ～, shall we?</b>「〜しましょうよ」勧誘の付加疑問形。'},
+    {sent:'あなたの家族によろしく伝えてください。\n___ hello to your family.',
+     spk:"Say hello to your family.",
+     ja:'',
+     ans:'Say',
+     c:['Say','Give','Tell','Send'],
+     r:'<b>Say hello to ～</b>「〜によろしく伝える」。give / tell との混同注意。'},
+    {sent:'どうぞお楽になさってください。\nPlease make yourself at ___.',
+     spk:"Please make yourself at home.",
+     ja:'',
+     ans:'home',
+     c:['home','rest','ease','free'],
+     r:'<b>make yourself at home</b>「くつろいでください・お楽に」。at home で固定表現。'},
+    {sent:'ケーキをどうぞ自由にお取りください。\nPlease ___ yourself to the cake.',
+     spk:"Please help yourself to the cake.",
+     ja:'',
+     ans:'help',
+     c:['help','make','take','give'],
+     r:'<b>help yourself to ～</b>「〜をご自由に取る」。help ＋ yourself ＋ to の語順。'},
+  ];
+  buildInlineQuiz('meirei-quiz', meirei);
+})();
+
+/* ===== モーダル⑤-3データ ===== */
+var d5d=[
+  {q:'なぜ彼女はその国に行きたがっているのですか？\n___ does she want to go to the country ___?',
+   s:'What does she want to go to the country for?',
+   j:'',u:'拓殖大学',a:1,
+   c:['Why / because','What / for','How / come','Which / to'],
+   e:'「何のために〜」= <b>What ～ for?</b>（for が文末に来る）'},
+  {q:'あなたの家はどんな感じですか？\n___ is your house ___?',
+   s:'What is your house like?',
+   j:'',a:0,
+   c:['What / like','How / like','What / as','Which / like'],
+   e:'「〜はどんな感じ？」= <b>What is S like?</b>（like が文末）'},
+  {q:'何のために彼はそんなことをしたのか？\n___ did he do it ___?',
+   s:'What did he do it for?',
+   j:'',u:'姫路獨協大',a:0,
+   c:['What / for','Why / because','How / come','What / like'],
+   e:'「何のために〜」= <b>What ～ for?</b>'},
+  {q:'どうして彼女の家に行ったのですか？\n___ come you went to her house?',
+   s:'How come you went to her house?',
+   j:'',a:1,
+   c:['Why / -','How / -','What / -','Where / -'],
+   e:'「どうして〜？」= <b>How come S V?</b>（Why と同じ意味。語順は S＋V のまま）'},
+  {q:'日本料理の店で夕食を食べるのはどうですか？\n___ eating dinner at a Japanese restaurant?',
+   s:'How about eating dinner at a Japanese restaurant?',
+   j:'',a:0,
+   c:['How about','What about doing','Why not to','How for'],
+   e:'「〜するのはいかがですか？」= <b>How about ～ing?</b>'},
+  {q:'私たちと一緒にそのパーティーに行きませんか？\n___ go to the party with us?',
+   s:"Why don't you go to the party with us?",
+   j:'',a:2,
+   c:["How about you","What do you say","Why don't you","Would you like"],
+   e:'「〜してはいかがですか？」= <b>Why don\'t you ～?</b>（後ろは動詞原形）'},
+  {q:'お父さんにくれぐれもよろしくお伝えください。\nPlease be sure to ___ my best ___ to your father.',
+   s:'Please be sure to give my best regards to your father.',
+   j:'',u:'名城大',a:1,
+   c:['send / greetings','give / regards','tell / wishes','bring / love'],
+   e:'<b>give my best regards to ～</b>「〜によろしくお伝えする」'},
+  {q:'どうぞ座ってケーキを自由にお取りください。\nPlease sit down and ___ yourself to the cake.',
+   s:'Please sit down and help yourself to the cake.',
+   j:'',u:'湘南工科大',a:0,
+   c:['help','have','let','make'],
+   e:'<b>help yourself to ～</b>「〜をご自由にどうぞ」'},
+  {q:'どうぞお楽になさってください。\nPlease ___ yourself at ___.',
+   s:'Please make yourself at home.',
+   j:'',u:'和洋女大',a:2,
+   c:['put / rest','take / ease','make / home','get / comfortable'],
+   e:'<b>make yourself at home</b>「お楽にどうぞ」'},
+  {q:'私たちと一緒に映画を見に行きませんか？\nWhat do you ___ ___ going to the movies with us?',
+   s:'What do you say to going to the movies with us?',
+   j:'',a:0,
+   c:['say to','think of','feel about','know about'],
+   e:'<b>What do you say to ～ing?</b>「〜するのはいかがですか？」（to のあとは動名詞）'},
+];
+
+window._initm5d=function(){buildC('m5d',d5d);};
+
+/* ===== モーダル⑤-1データ ===== */
+var d5c=[
+  {q:'___ camera is this?　これは誰のカメラですか？',s:'Whose camera is this?',j:'',
+   a:2,c:['Who','What','Whose','Which'],
+   e:'「誰の〜」と名詞を修飾する疑問形容詞 → <b>Whose</b> camera'},
+  {q:'___ shirt do you like?　どちらのシャツが好きですか？',s:'Which shirt do you like?',j:'',
+   a:3,c:['Who','What','Whose','Which'],
+   e:'「どちらの〜」と選ぶ疑問形容詞 → <b>Which</b> shirt'},
+  {q:'___ time will you leave for Hakata?　何時に博多へ出発しますか？',s:'What time will you leave for Hakata?',j:'',
+   a:1,c:['Which','What','When','How'],
+   e:'「何時」= <b>What time</b>（What ＋ 名詞）'},
+  {q:'___ did you come to Japan?　いつ日本に来ましたか？',s:'When did you come to Japan?',j:'',
+   a:0,c:['When','Where','Why','How'],
+   e:'「いつ」と時を尋ねる疑問副詞 → <b>When</b>'},
+  {q:'___ much is this suitcase?　このスーツケースはいくらですか？',s:'How much is this suitcase?',j:'',
+   a:0,c:['How much','How many','How long','How far'],
+   e:'値段・量を尋ねる → <b>How much</b>'},
+  {q:'___ did she wait for him?　彼女はどのくらい長く彼を待っていたのですか？',s:'How long did she wait for him?',j:'',
+   a:0,c:['How long','How far','How soon','How many'],
+   e:'時間の長さを尋ねる → <b>How long</b>'},
+  {q:'Do you go to the station by bus ___ by car?',s:'Do you go to the station by bus or by car?',
+   j:'あなたは駅へバスで行きますか、車で行きますか。',
+   a:2,c:['and','but','or','for'],
+   e:'選択疑問文「A か B か」の選択を表す接続詞 → <b>or</b>'},
+  {q:'Which do you like ___, soccer or baseball?',s:'Which do you like better, soccer or baseball?',
+   j:'サッカーと野球、どちらが好きですか。',
+   a:1,c:['more','better','best','well'],
+   e:'どちらが「より好き」かを聞く比較表現 → like <b>better</b>'},
+];
+
+window._initm5c=function(){buildC('m5c',d5c);};
+
+/* ===== ⑤ インライン確認問題：付加疑問文 ===== */
+(function(){
+  var fuka=[
+    {sent:'Nick comes from Canada, ___?',spk:"Nick comes from Canada, doesn't he?",
+     ja:'ニックはカナダ出身ですよね？',ans:"doesn't he",
+     c:["doesn't he","don't he","isn't he","does he"],
+     r:'comes（3人称単数現在・肯定）の後は否定の疑問形 → <b>doesn\'t he?</b>'},
+    {sent:"You aren't a high school student, ___?",spk:"You aren't a high school student, are you?",
+     ja:'あなたは高校生ではないのですね。',ans:'are you',
+     c:['are you',"aren't you",'do you',"don't you"],
+     r:'否定文（aren\'t）の後は肯定の疑問形 → <b>are you?</b>'},
+    {sent:"Let's dance, ___?",spk:"Let's dance, shall we?",
+     ja:'踊りましょうよ。',ans:'shall we',
+     c:['will you','do we','shall we',"don't we"],
+     r:'Let\'s 〜 の後は必ず → <b>shall we?</b>'},
+    {sent:"Your father doesn't work for a bank, ___?",spk:"Your father doesn't work for a bank, does he?",
+     ja:"あなたのお父さんは銀行で働いていないのですね。",ans:'does he',
+     c:["doesn't he",'does he',"isn't he",'is he'],
+     r:'否定文（doesn\'t）の後は肯定の疑問形 → <b>does he?</b>'},
+    {sent:'He always tells a lie, ___?',spk:"He always tells a lie, doesn't he?",
+     ja:'彼はいつもうそをついていますよね。　※tell a lie＝うそを言う',ans:"doesn't he",
+     c:["doesn't he","isn't he","don't he",'does he'],
+     r:'tells（3人称単数現在・肯定）の後は否定の疑問形 → <b>doesn\'t he?</b>'},
+    {sent:"Don't open the window, ___?",spk:"Don't open the window, will you?",
+     ja:'窓を開けないで下さいよ。',ans:'will you',
+     c:['shall we','will you','do you',"don't you"],
+     r:'否定命令文（Don\'t 〜）の後も → <b>will you?</b>'},
+  ];
+  buildInlineQuiz('fuka-quiz', fuka);
+})();
+
+/* ===== ⑤ インライン確認問題：間接疑問文 ===== */
+(function(){
+  var kansetsu=[
+    {sent:"I don't know ___ the movie starts.",spk:"I don't know when the movie starts.",
+     ja:'その映画がいつ始まるのか知りません。\n元の文：When does the movie start?',
+     ans:'when',c:['when','where','what','how'],
+     r:'When does the movie start? の when を使います。→ <b>when</b> the movie starts（三単現のs に注意）'},
+    {sent:"I don't know what kind of music ___ .",spk:"I don't know what kind of music she likes.",
+     ja:"私は彼女がどんな種類の音楽が好きか知りません。\n元の文：What kind of music does she like?",
+     ans:'she likes',
+     c:['she likes','does she like','she liked','did she like'],
+     r:'does she like → <b>she likes</b>（語順を普通の文に。三単現の s も忘れずに）'},
+    {sent:"Tell me when ___ to the party.",spk:"Tell me when she will come to the party.",
+     ja:"彼女がそのパーティーにいつ来るのか教えてください。\n元の文：When will she come to the party?",
+     ans:'she will come',
+     c:['she will come','will she come','she comes','does she come'],
+     r:'When will she come? → when <b>she will come</b>（will はそのまま残す。語順だけ S+V に）'},
+    {sent:"I don't know ___ the window.",spk:"I don't know who broke the window.",
+     ja:"誰が窓を割ったのか知りません。\n元の文：Who broke the window?",
+     ans:'who broke',
+     c:['who broke','who did break','who was broken','who breaks'],
+     r:'Who が主語の疑問文は語順変更なし → <b>who broke</b>（do/does/did は消える）'},
+  ];
+  buildInlineQuiz('kansetsu-quiz', kansetsu);
+})();
+
+function buildInlineQuiz(containerId, data){
+  var c=document.getElementById(containerId);
+  if(!c)return;
+  data.forEach(function(d,i){
+    var div=document.createElement('div');
+    div.style.cssText='background:#fff;border-radius:10px;border:1px solid #dde;padding:13px 14px;margin-bottom:10px';
+    // ヘッダー
+    var hd=document.createElement('div');hd.style.cssText='display:flex;align-items:flex-start;gap:8px;margin-bottom:6px';
+    var num=document.createElement('span');
+    num.style.cssText='flex-shrink:0;width:26px;height:26px;background:#0097A7;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700';
+    num.textContent=i+1;
+    var qtxt=document.createElement('span');
+    qtxt.style.cssText='font-size:14px;font-weight:700;flex:1;line-height:1.7';
+    qtxt.innerHTML=d.sent.replace('___','<span style="display:inline-block;min-width:50px;border-bottom:2px solid #1B3A6B;color:#b84300">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>');
+    var sb=document.createElement('button');sb.className='spk';
+    sb.innerHTML='<svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg>';
+    sb.onclick=(function(s){return function(){sp(s);};})(d.spk);
+    qtxt.appendChild(sb);
+    hd.appendChild(num);hd.appendChild(qtxt);div.appendChild(hd);
+    // 日本語
+    var ja=document.createElement('div');
+    ja.style.cssText='font-size:13px;color:#666;margin-bottom:10px;padding-left:34px;white-space:pre-line';
+    ja.textContent=d.ja;div.appendChild(ja);
+    // 選択肢
+    var nums='①②③④';
+    var ca=document.createElement('div');ca.style.cssText='display:flex;flex-direction:column;gap:5px;padding-left:34px';
+    div.appendChild(ca);
+    // 解説
+    var ep=document.createElement('div');
+    ep.style.cssText='display:none;background:#fff8e1;border:1px solid #ffc107;border-radius:8px;padding:9px 12px;font-size:13px;line-height:1.8;margin-top:8px;margin-left:34px';
+    ep.innerHTML='📝 解説：'+d.r+'<br>✅ 正解：<b>'+d.ans+'</b>';
+    div.appendChild(ep);
+    c.appendChild(div);
+    var answered=false;
+    d.c.forEach(function(opt,ci){
+      var btn=document.createElement('button');
+      btn.style.cssText='text-align:left;padding:9px 14px;border-radius:8px;border:1.5px solid #dde;background:#fff;font-size:13px;cursor:pointer;font-family:inherit;transition:.15s;line-height:1.4;width:100%;display:flex;align-items:center;gap:8px';
+      var badge=document.createElement('span');
+      badge.style.cssText='flex-shrink:0;width:22px;height:22px;border-radius:50%;background:#eee;color:#555;font-size:12px;font-weight:700;text-align:center;line-height:22px';
+      badge.textContent=nums[ci];
+      btn.appendChild(badge);
+      btn.appendChild(document.createTextNode(opt));
+      btn.onclick=(function(myopt,mybtn,mybadge){
+        return function(){
+          if(answered)return;answered=true;
+          ca.querySelectorAll('button').forEach(function(b){
+            b.style.pointerEvents='none';
+            var bopt=b.textContent.trim();
+            var isCorrectBtn=(bopt===d.ans||bopt.slice(1)===d.ans);
+            if(b===mybtn&&myopt===d.ans){
+              b.style.background='#e8f5e9';b.style.borderColor='#2e7d32';b.style.color='#1b5e20';b.style.fontWeight='700';
+              b.querySelector('span').style.background='#2e7d32';b.querySelector('span').style.color='#fff';
+            } else if(b===mybtn&&myopt!==d.ans){
+              b.style.background='#ffebee';b.style.borderColor='#e53935';b.style.color='#b71c1c';
+              b.querySelector('span').style.background='#e53935';b.querySelector('span').style.color='#fff';
+            } else if(b.textContent.trim()===d.ans){
+              b.style.background='#e8f5e9';b.style.borderColor='#2e7d32';b.style.color='#1b5e20';b.style.fontWeight='700';
+            }
+          });
+          qtxt.innerHTML=d.sent.replace('___','<b style="color:#b84300;font-size:15px"> '+d.ans+' </b>');
+          var sb2=document.createElement('button');sb2.className='spk';
+          sb2.innerHTML='<svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg>';
+          sb2.onclick=(function(s){return function(){sp(s);};})(d.spk);
+          qtxt.appendChild(sb2);
+          ep.style.display='block';
+        };
+      })(opt,btn,badge);
+      ca.appendChild(btn);
+    });
+  });
+}
+
+/* ===== ④ インライン確認問題：to / for / of ===== */
+(function(){
+  var quiz=[
+    {sent:'He told a story ___ me.',spk:'He told a story to me.',ja:'彼は私に話を聞かせてくれた。',ans:'to',
+     reason:'<b>tell は give型</b>の動詞です。話が相手に確実に<b>届く・伝わる</b>ので <b>to</b> を使います。'},
+    {sent:'She cooked a nice dinner ___ us.',spk:'She cooked a nice dinner for us.',ja:'彼女は私たちのために夕食を作った。',ans:'for',
+     reason:'<b>cook は buy型</b>の動詞です。「私たちのために作る」という行為で、渡すかどうかはまだわからないので <b>for</b> を使います。'},
+    {sent:'I asked a question ___ him.',spk:'I asked a question of him.',ja:'私は彼に質問した。',ans:'of',
+     reason:'<b>ask は ask型</b>の動詞です。ask だけが特別に <b>of</b> を使います。「彼から（答えを）引き出す」イメージです。'},
+    {sent:'My aunt sent some presents ___ me.',spk:'My aunt sent some presents to me.',ja:'おばは私にプレゼントをいくつか送ってくれた。',ans:'to',
+     reason:'<b>send は give型</b>の動詞です。送ったプレゼントは相手に確実に<b>届く</b>ので <b>to</b> を使います。'},
+    {sent:'My father made a kite ___ me.',spk:'My father made a kite for me.',ja:'父は私のために凧を作ってくれた。※kite（凧）',ans:'for',
+     reason:'<b>make は buy型</b>の動詞です。「私のために作る」という行為で、渡したかどうかはわからないので <b>for</b> を使います。'},
+    {sent:'Will you show your passport ___ me?',spk:'Will you show your passport to me?',ja:'パスポートを見せてくれますか。',ans:'to',
+     reason:'<b>show は give型</b>の動詞です。見せることで相手に情報が確実に<b>届く</b>ので <b>to</b> を使います。'},
+    {sent:'May I ask a favor ___ you?',spk:'May I ask a favor of you?',ja:'お願いがあるのですが。',ans:'of',
+     reason:'<b>ask は ask型</b>の動詞です。ask a favor of 人 で「人に親切をお願いする」という意味になります。'},
+    {sent:'He bought a dictionary ___ me.',spk:'He bought a dictionary for me.',ja:'彼は私のために辞書を買ってくれた。',ans:'for',
+     reason:'<b>buy は buy型</b>の動詞です。「私のために買う」という行為で、まだ渡していないかもしれないので <b>for</b> を使います。'},
+  ];
+  var container=document.getElementById('tfo-quiz');
+  if(!container)return;
+  quiz.forEach(function(q,i){
+    var div=document.createElement('div');
+    div.style.cssText='background:#fff;border-radius:10px;border:1px solid #dde;padding:12px 14px;margin-bottom:10px';
+
+    // 問題番号 + 英文
+    var top=document.createElement('div');
+    top.style.cssText='display:flex;align-items:center;gap:8px;margin-bottom:8px;flex-wrap:wrap';
+    var num=document.createElement('span');
+    num.style.cssText='flex-shrink:0;width:26px;height:26px;background:#0097A7;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700';
+    num.textContent=i+1;
+    var sent=document.createElement('span');
+    sent.style.cssText='font-size:15px;font-weight:700;flex:1';
+    sent.innerHTML=q.sent.replace('___','<span style="display:inline-block;min-width:36px;border-bottom:2px solid #1B3A6B;text-align:center;color:#b84300;font-weight:700;font-size:15px">&nbsp;&nbsp;&nbsp;&nbsp;</span>');
+    var sb=document.createElement('button');sb.className='spk';
+    sb.innerHTML='<svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg>';
+    sb.onclick=(function(s){return function(){sp(s);};})(q.spk);
+    top.appendChild(num);top.appendChild(sent);top.appendChild(sb);div.appendChild(top);
+
+    // 日本語訳
+    var ja=document.createElement('div');
+    ja.style.cssText='font-size:13px;color:#666;margin-bottom:10px;padding-left:34px';
+    ja.textContent=q.ja;div.appendChild(ja);
+
+    // 選択ボタン
+    var brow=document.createElement('div');
+    brow.style.cssText='display:flex;gap:8px;margin-bottom:8px;padding-left:34px;flex-wrap:wrap';
+    var answered=false;
+    ['to','for','of'].forEach(function(opt){
+      var btn=document.createElement('button');
+      btn.style.cssText='padding:8px 24px;border-radius:20px;border:2px solid #0097A7;background:#fff;color:#0097A7;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit;transition:.15s;min-width:70px';
+      btn.textContent=opt;
+      btn.onclick=function(){
+        if(answered)return;
+        answered=true;
+        // 全ボタンを無効化
+        brow.querySelectorAll('button').forEach(function(b){
+          b.style.pointerEvents='none';
+          if(b.textContent===q.ans){
+            b.style.background='#e8f5e9';b.style.borderColor='#2e7d32';b.style.color='#1b5e20';
+          } else if(b.textContent===opt&&opt!==q.ans){
+            b.style.background='#ffebee';b.style.borderColor='#e53935';b.style.color='#b71c1c';
+          } else {
+            b.style.opacity='0.4';
+          }
+        });
+        // 正解文に前置詞を埋める
+        sent.innerHTML=q.sent.replace('___','<b style="color:#b84300;font-size:16px">'+q.ans+'</b>');
+        // 解説表示
+        ep.style.display='block';
+      };
+      brow.appendChild(btn);
+    });
+    div.appendChild(brow);
+
+    // 解説
+    var ep=document.createElement('div');
+    ep.style.cssText='display:none;background:#fff8e1;border:1.5px solid #ffc107;border-radius:8px;padding:10px 12px;font-size:13px;line-height:1.8;margin-left:34px';
+    ep.innerHTML='📝 '+q.reason;
+    div.appendChild(ep);
+    container.appendChild(div);
+  });
+})();
+
+window._initm1=function(){buildC('m1',d1);};
+window._initm2=function(){buildC('m2',d2);};
+window._initm3=function(){buildC('m3',d3);};
+window._initm4=function(){buildS('m4',d4);};
+window._initm4b=function(){buildC('m4b',d4b);};
+window._initm5a=function(){buildC('m5a',d5a);};
+window._initm5b=function(){buildS('m5b',d5b);};
+window._initm6=function(){buildS('m6',d6);};
+
+// ===== ミニ確認問題データ =====
+
+// ① 10の品詞（練習①と重複しない新問）
+var mini_s1a=[
+  {q:'He is a <u>kind</u> doctor. ― 下線語の品詞は？',s:'He is a kind doctor.',j:'彼は親切な医者です。',a:1,c:['名詞','形容詞','動詞','副詞'],e:'kind は名詞 doctor を修飾する → <b>形容詞</b>'},
+  {q:'<u>The</u> sun rises in the east. ― 下線語の品詞は？',s:'The sun rises in the east.',j:'太陽は東から昇る。',a:4,c:['名詞','代名詞','形容詞','副詞','冠詞'],e:'The は特定の名詞 sun の前に置く定冠詞 → <b>冠詞</b>'},
+  {q:'I came home <u>early</u>. ― 下線語の品詞は？',s:'I came home early.',j:'私は早く帰宅した。',a:3,c:['名詞','形容詞','前置詞','副詞'],e:'early は動詞 came を修飾する「早く」→ <b>副詞</b>'},
+  {q:'<u>Oh</u>! That\'s amazing! ― 下線語の品詞は？',s:"Oh! That's amazing!",j:'おお！それはすごい！',a:4,c:['名詞','副詞','形容詞','接続詞','間投詞'],e:'Oh は驚きの感情を表す → <b>間投詞</b>'},
+  {q:'I study English <u>and</u> math. ― 下線語の品詞は？',s:'I study English and math.',j:'私は英語と数学を勉強する。',a:3,c:['名詞','副詞','前置詞','接続詞'],e:'and は English と math を結びつける → <b>接続詞</b>'},
+];
+
+// ① 形容詞 vs 副詞（練習①と重複しない新問）
+var mini_s1b=[
+  {q:'次のうち副詞として使われているのはどれか。',s:'He drives carefully.',j:'',a:2,c:['a careful driver（注意深いドライバー）','a fast car（速い車）','He drives carefully.（注意深く運転する）','an old man（老人）'],e:'carefully は動詞 drives を修飾する → <b>副詞</b>。残りはすべて名詞を修飾する<b>形容詞</b>'},
+  {q:'She speaks <u>clearly</u>. ― 下線語の品詞は？',s:'She speaks clearly.',j:'彼女ははっきりと話す。',a:1,c:['名詞','副詞','形容詞','接続詞'],e:'clearly は動詞 speaks を修飾する「はっきりと」→ <b>副詞</b>（-ly で終わる副詞）'},
+  {q:'It is a <u>long</u> journey. ― 下線語の品詞は？',s:'It is a long journey.',j:'それは長い旅だ。',a:1,c:['名詞','形容詞','動詞','副詞'],e:'long は名詞 journey を修飾する → <b>形容詞</b>（名詞を修飾）'},
+  {q:'形容詞と副詞の違いとして正しいのはどれか。',s:'形容詞は名詞を修飾し、副詞は動詞・形容詞などを修飾する',j:'',a:0,c:['形容詞は名詞を修飾し、副詞は動詞・形容詞などを修飾する','形容詞は動詞を修飾し、副詞は名詞を修飾する','形容詞と副詞は同じはたらきをする','副詞は名詞の前に置かれる'],e:'形容詞 → <b>名詞を修飾</b>（a fast car）　副詞 → <b>動詞・形容詞などを修飾</b>（run fast）'},
+];
+
+// ② S・V・O・C・M（練習②と重複しない新問）
+var mini_s2a=[
+  {q:'<u>Tom</u> runs fast. ― 下線語はS・V・O・C・Mのどれ？',s:'Tom runs fast.',j:'トムは速く走る。',a:0,c:['S','V','O','C','M'],e:'Tom は文の主語「〜は」→ <b>S（主語）</b>'},
+  {q:'My sister is <u>a nurse</u>. ― 下線語はS・V・O・C・Mのどれ？',s:'My sister is a nurse.',j:'私の姉は看護師です。',a:3,c:['S','V','O','C','M'],e:'My sister ＝ a nurse の関係が成立 → <b>C（補語）</b>'},
+  {q:'I read <u>the book</u>. ― 下線語はS・V・O・C・Mのどれ？',s:'I read the book.',j:'私はその本を読む。',a:2,c:['S','V','O','C','M'],e:'I ≠ the book で「〜を」にあたる → <b>O（目的語）</b>'},
+  {q:'She studies <u>hard</u>. ― 下線語はS・V・O・C・Mのどれ？',s:'She studies hard.',j:'彼女は一生懸命勉強する。',a:4,c:['S','V','O','C','M'],e:'hard は「一生懸命」という副詞で文型の要素にならない飾り → <b>M（修飾語）</b>'},
+];
+
+// ③ 5文型（名前と構造）（練習③と重複しない新問）
+var mini_s3a=[
+  {q:'「S ＝ C」の関係が成り立つ文型は？',s:'第2文型 S+V+C',j:'',a:1,c:['第1文型 S+V','第2文型 S+V+C','第3文型 S+V+O','第4文型 S+V+O+O'],e:'第2文型は <b>S ＝ C</b>（主語と補語が同じもの）。例：English is difficult（英語＝難しい）'},
+  {q:'目的語が2つある（人＋物）文型は？',s:'第4文型 S+V+O+O',j:'',a:3,c:['第1文型 S+V','第2文型 S+V+C','第3文型 S+V+O','第4文型 S+V+O+O'],e:'第4文型は <b>S+V+O（人）+O（物）</b>。例：He gave me a present（私に／プレゼントを）'},
+  {q:'He lives in Tokyo. ― この文型は？',s:'He lives in Tokyo.',j:'彼は東京に住んでいる。',a:0,c:['第1文型 SV','第2文型 SVC','第3文型 SVO','第4文型 SVOO'],e:'S(He)+V(lives)+M(in Tokyo)。Mは飾り → <b>第1文型 S+V</b>'},
+  {q:'I love music. ― この文型は？',s:'I love music.',j:'私は音楽が好きだ。',a:2,c:['第1文型 SV','第2文型 SVC','第3文型 SVO','第5文型 SVOC'],e:'I(S) ≠ music(O) で「〜を」にあたる → <b>第3文型 S+V+O</b>'},
+];
+
+// ③ 第4・5文型（練習③と重複しない新問）
+var mini_s3b=[
+  {q:'I named the dog Koro. ― この文型は？',s:'I named the dog Koro.',j:'私はその犬をコロと名付けた。',a:3,c:['第2文型 SVC','第3文型 SVO','第4文型 SVOO','第5文型 SVOC'],e:'the dog(O) ＝ Koro(C) → <b>第5文型 S+V+O+C</b>（O＝Cの関係）'},
+  {q:'My mother sent me a letter. ― この文型は？',s:'My mother sent me a letter.',j:'母は私に手紙を送った。',a:2,c:['第2文型 SVC','第3文型 SVO','第4文型 SVOO','第5文型 SVOC'],e:'me(O) ≠ a letter(O) で目的語が2つ（S+V＋人＋物）→ <b>第4文型 S+V+O+O</b>'},
+  {q:'第5文型の見分け方として正しいのは？',s:'O = C の関係が成り立つ',j:'',a:1,c:['S ＝ C の関係が成り立つ','O ＝ C の関係が成り立つ','目的語が2つある','修飾語だけが続く'],e:'第5文型は <b>O ＝ C</b>（目的語と補語が同じもの）。例：The news made me happy（me＝happy）'},
+];
+
+// ④ give型（to）（練習④と重複しない新問）
+var mini_s4a=[
+  {q:'She taught me English. → 第3文型に書き換えた正しい文は？',s:'She taught English to me.',j:'彼女は私に英語を教えた。',a:1,c:['She taught English for me.','She taught English to me.','She taught English of me.','She taught me of English.'],e:'teach は <b>give型</b>（教えたことが相手に届く）→ <b>to</b> を使う'},
+  {q:'He showed a photo ___ us. ― 空欄に入る前置詞は？',s:'He showed a photo to us.',j:'彼は私たちに写真を見せた。',a:0,c:['to','for','of','with'],e:'show は <b>give型</b>。見せることで情報が相手に届く → <b>to</b>'},
+  {q:'give型（to を使う）の動詞として正しいのはどれか。',s:'lend',j:'',a:2,c:['cook','buy','lend','make'],e:'cook / buy / make は <b>buy型（for）</b>。<b>lend（貸す）</b>は貸したものが相手に渡る → <b>give型（to）</b>'},
+];
+
+// ④ buy型（for）（練習④と重複しない新問）
+var mini_s4b=[
+  {q:'She cooked us a nice dinner. → 第3文型に書き換えた正しい文は？',s:'She cooked a nice dinner for us.',j:'彼女は私たちのために夕食を作った。',a:0,c:['She cooked a nice dinner for us.','She cooked a nice dinner to us.','She cooked a nice dinner of us.','She cooked us of a nice dinner.'],e:'cook は <b>buy型</b>（私たちのために行う）→ <b>for</b>'},
+  {q:'My father made a kite ___ me. ― 空欄に入る前置詞は？',s:'My father made a kite for me.',j:'父は私のために凧を作ってくれた。',a:1,c:['to','for','of','at'],e:'make は <b>buy型</b>。「私のために」という行為 → <b>for</b>'},
+  {q:'次のうち buy型（for を使う）の動詞はどれか。',s:'find',j:'',a:2,c:['give','tell','find','send'],e:'give / tell / send は <b>give型（to）</b>。<b>find（見つける）</b>は「相手のために見つけてあげる」→ <b>buy型（for）</b>'},
+];
+
+// ⑤-1 一般疑問文（練習⑤と重複しない新問）
+var mini_s5a1=[
+  {q:'次のうち一般疑問文の答え方として正しいのはどれか。\nDo you like sushi?',s:'Yes, I do.',j:'あなたは寿司が好きですか？',a:0,c:['Yes, I do.','Yes, I like.','Yes, I am.','Yes, I will.'],e:'一般動詞 like の疑問文には <b>do</b> で答える → <b>Yes, I do.</b>'},
+  {q:'Can\'t you drive?（運転できないの？）\n事実として「運転できる」とき正しい答えは？',s:'Yes, I can.',j:'英語は「事実」で答える。日本語と逆になることに注意！',a:0,c:['Yes, I can.','No, I can.','Yes, I cannot.','No, I can\'t.'],e:'事実が肯定（運転できる）→ <b>Yes, I can.</b>（日本語の「いいえ」と英語の Yes は逆！）'},
+  {q:'Does she study English every day?（彼女は毎日英語を勉強しますか？）\n事実として「勉強しない」とき正しい答えは？',s:'No, she doesn\'t.',j:'',a:0,c:['No, she doesn\'t.','No, she don\'t.','No, she isn\'t.','Yes, she does.'],e:'三人称単数 she の一般動詞疑問文 → <b>No, she doesn\'t.</b>（does で問われたら does で答える）'},
+];
+
+// ⑥ How型（練習⑥と重複しない新問）
+var mini_s6a=[
+  {q:'Kumi speaks English very well. → 感嘆文にすると？',s:'How well Kumi speaks English!',j:'クミはとても上手に英語を話す。',a:0,c:['How well Kumi speaks English!','What well Kumi speaks English!','How a well Kumi speaks English!','What good Kumi speaks English!'],e:'very ＋ 副詞1語（well）→ <b>How</b> で引っ張る → How well Kumi speaks English!'},
+  {q:'She is a very kind girl. → 感嘆文にすると？',s:'What a kind girl she is!',j:'彼女はとても親切な少女だ。',a:2,c:['How kind girl she is!','How a kind girl she is!','What a kind girl she is!','What kind girl she is!'],e:'very ＋ 形容詞＋名詞（kind girl）→ <b>What</b> で引っ張る。単数可算名詞 → <b>a</b> をつける'},
+  {q:'I am very lucky. → 感嘆文にすると？',s:'How lucky I am!',j:'私はとてもついている。',a:1,c:['What lucky I am!','How lucky I am!','What a lucky I am!','How luckily I am!'],e:'very ＋ 形容詞1語（lucky）→ <b>How</b> で引っ張る → How lucky I am!'},
+];
+
+// ミニ問題初期化（スコアバー不要のため updS を安全化）
+var _origUpdS=updS;
+function safeUpdS(mid,n,t){
+  var sn=document.getElementById(mid+'sn'),pf=document.getElementById(mid+'pf');
+  if(sn)sn.textContent=n+' / '+t;
+  if(pf)pf.style.width=(n/t*100)+'%';
+  if(n===t&&t>0)confetti();
+}
+function buildMini(mid,data){
+  var total=data.length,score=0,done=new Array(total).fill(false);
+  var c=document.getElementById(mid+'_q');if(!c)return;
+  c.innerHTML='';
+  data.forEach(function(d,i){
+    var div=document.createElement('div');div.className='qb';
+    var hd=document.createElement('div');hd.className='qh';
+    var num=document.createElement('span');num.className='qn';num.textContent=i+1;
+    var txt=document.createElement('span');txt.className='qt';
+    txt.innerHTML='<b>'+d.q+'</b>';
+    hd.appendChild(num);hd.appendChild(txt);div.appendChild(hd);
+    if(d.j){var jd=document.createElement('div');jd.style.cssText='font-size:13px;color:#555;margin-bottom:8px';jd.textContent=d.j;div.appendChild(jd);}
+    var ca=document.createElement('div');div.appendChild(ca);
+    var ep=document.createElement('div');ep.className='ep';ep.innerHTML='📝 解説：'+d.e;div.appendChild(ep);
+    c.appendChild(div);
+    d.c.forEach(function(ch,ci){
+      var btn=document.createElement('button');btn.className='cb';btn.textContent=ch;
+      btn.onclick=(function(myci){
+        return function(){
+          if(done[i])return;done[i]=true;
+          ca.querySelectorAll('.cb').forEach(function(b,bi){
+            b.classList.add('dis');
+            if(bi===d.a)b.classList.add('ca');
+            else if(bi===myci&&myci!==d.a)b.classList.add('wa');
+          });
+          ep.classList.add('show');
+          if(myci===d.a){score++;if(score===total)confetti();}
+        };
+      })(ci);
+      ca.appendChild(btn);
+    });
+  });
+}
+
+buildMini('mini_s1a',mini_s1a);
+buildMini('mini_s1b',mini_s1b);
+buildMini('mini_s2a',mini_s2a);
+buildMini('mini_s3a',mini_s3a);
+buildMini('mini_s3b',mini_s3b);
+buildMini('mini_s4a',mini_s4a);
+buildMini('mini_s4b',mini_s4b);
+buildMini('mini_s5a1',mini_s5a1);
+buildMini('mini_s6a',mini_s6a);
+
+// 起動
+_initm1();_initm2();_initm3();_initm4();_initm4b();_initm5a();_initm5b();_initm5c();_initm5d();_initm6();
+/* ===== 単語帳システム ===== */
+var vocabDB = {};  // {word: {pos,mean,kana,opts}}
+var savedWords = {};  // localStorage代替（メモリ内）
+var currentVword = null;
+
+// ポップアップ表示
+function showVpop(el) {
+  var w = el.dataset.w;
+  var pos = el.dataset.pos;
+  var mean = el.dataset.mean;
+  var kana = el.dataset.kana;
+  var opts = JSON.parse(el.dataset.opts);
+  vocabDB[w] = {pos:pos, mean:mean, kana:kana, opts:opts};
+  currentVword = w;
+  document.getElementById('vpop-word').textContent = w;
+  document.getElementById('vpop-pos').textContent = pos;
+  document.getElementById('vpop-mean').textContent = mean;
+  document.getElementById('vpop-kana').textContent = '発音：' + kana;
+  var saveBtn = document.getElementById('vpop-save-btn');
+  var savedLbl = document.getElementById('vpop-saved-lbl');
+  if (savedWords[w]) {
+    saveBtn.textContent = '✓ 保存済み';
+    saveBtn.className = 'vpop-save saved';
+    savedLbl.className = 'vpop-saved-lbl show';
+  } else {
+    saveBtn.textContent = '📖 単語帳へ';
+    saveBtn.className = 'vpop-save';
+    savedLbl.className = 'vpop-saved-lbl';
+  }
+  // ポップアップ位置決め
+  var pop = document.getElementById('vpop');
+  pop.className = 'vpop show';
+  var rect = el.getBoundingClientRect();
+  var top = rect.bottom + 6;
+  var left = rect.left;
+  var pw = 260;
+  if (left + pw > window.innerWidth - 8) left = window.innerWidth - pw - 8;
+  if (top + 160 > window.innerHeight) top = rect.top - 170;
+  pop.style.top = top + 'px';
+  pop.style.left = left + 'px';
+}
+
+function closeVpop() {
+  document.getElementById('vpop').className = 'vpop';
+  currentVword = null;
+}
+
+// ポップアップ外クリックで閉じる
+document.addEventListener('click', function(e) {
+  var pop = document.getElementById('vpop');
+  if (pop.classList.contains('show') && !pop.contains(e.target) && !e.target.classList.contains('vw')) {
+    closeVpop();
+  }
+});
+
+// 音声再生
+function vpopSpeak() {
+  if (currentVword) sp(currentVword);
+}
+
+// 単語帳に保存
+function vpopSave() {
+  if (!currentVword) return;
+  var w = currentVword;
+  if (!savedWords[w]) {
+    savedWords[w] = vocabDB[w];
+    updateVocabBadge();
+    var saveBtn = document.getElementById('vpop-save-btn');
+    var savedLbl = document.getElementById('vpop-saved-lbl');
+    saveBtn.textContent = '✓ 保存済み';
+    saveBtn.className = 'vpop-save saved';
+    savedLbl.className = 'vpop-saved-lbl show';
+  }
+}
+
+// バッジ更新
+function updateVocabBadge() {
+  var cnt = Object.keys(savedWords).length;
+  var badge = document.getElementById('vocab-badge');
+  badge.textContent = cnt;
+  badge.className = cnt > 0 ? 'vocab-badge show' : 'vocab-badge';
+}
+
+// 単語一覧表示
+function showVocabList() {
+  document.getElementById('vocab-list-area').style.display = 'block';
+  document.getElementById('vocab-test-area').style.display = 'none';
+  renderVocabList();
+}
+
+function renderVocabList() {
+  var area = document.getElementById('vocab-list-area');
+  var words = Object.keys(savedWords);
+  if (words.length === 0) {
+    area.innerHTML = '<div class="vbook-empty">📖 まだ単語が保存されていません。<br>本文中の<span style="border-bottom:2px dashed #0097A7;color:#0097A7">点線下線</span>の単語をタップして保存しましょう。</div>';
+    return;
+  }
+  var html = '<div style="font-size:12px;color:#888;margin-bottom:8px">保存済み：' + words.length + '語　　「覚えた」を押すと削除できます</div>';
+  words.forEach(function(w) {
+    var v = savedWords[w];
+    html += '<div class="vcard">'
+      + '<span class="vcard-word">' + w + '</span>'
+      + '<span class="vcard-mean">' + v.mean + '</span>'
+      + '<button class="vcard-del" onclick="removeWord(\'' + w + '\')">覚えた ✓</button>'
+      + '</div>';
+  });
+  area.innerHTML = html;
+}
+
+// 単語を削除
+function removeWord(w) {
+  delete savedWords[w];
+  updateVocabBadge();
+  renderVocabList();
+  // テスト中なら再生成
+  if (document.getElementById('vocab-test-area').style.display !== 'none') {
+    renderVocabTest();
+  }
+}
+
+// 復習テスト
+var testQueue = [];
+var testIdx = 0;
+var testScore = 0;
+
+function startVocabTest() {
+  document.getElementById('vocab-list-area').style.display = 'none';
+  document.getElementById('vocab-test-area').style.display = 'block';
+  renderVocabTest();
+}
+
+function renderVocabTest() {
+  var area = document.getElementById('vocab-test-area');
+  var words = Object.keys(savedWords);
+  if (words.length < 1) {
+    area.innerHTML = '<div class="vbook-empty">単語が保存されていません。</div>';
+    return;
+  }
+  // シャッフル
+  testQueue = words.slice().sort(function(){return Math.random()-.5;});
+  testIdx = 0; testScore = 0;
+  renderTestQuestion(area);
+}
+
+function renderTestQuestion(area) {
+  if (testIdx >= testQueue.length) {
+    area.innerHTML = '<div style="text-align:center;padding:24px">'
+      + '<div style="font-size:40px;margin-bottom:12px">🎉</div>'
+      + '<div style="font-size:18px;font-weight:700;color:#1B3A6B;margin-bottom:8px">テスト完了！</div>'
+      + '<div style="font-size:14px;color:#555;margin-bottom:16px">正解：' + testScore + ' / ' + testQueue.length + '問</div>'
+      + '<div style="display:flex;gap:8px;justify-content:center">'
+      + '<button onclick="renderVocabTest()" style="padding:10px 20px;border-radius:8px;border:none;background:#1B3A6B;color:#fff;font-size:14px;font-family:inherit;cursor:pointer">もう一度</button>'
+      + '<button onclick="showVocabList()" style="padding:10px 20px;border-radius:8px;border:1.5px solid #ccd;background:#fff;color:#555;font-size:14px;font-family:inherit;cursor:pointer">単語一覧へ</button>'
+      + '</div></div>';
+    return;
+  }
+  var w = testQueue[testIdx];
+  var v = savedWords[w];
+  if (!v) { testIdx++; renderTestQuestion(area); return; }
+  // 選択肢（正解＋ダミー3つ）
+  var opts = v.opts.slice();
+  // シャッフル
+  opts.sort(function(){return Math.random()-.5;});
+  var prog = (testIdx+1) + ' / ' + testQueue.length;
+  var html = '<div style="text-align:right;font-size:12px;color:#888;margin-bottom:8px">' + prog + '</div>'
+    + '<div class="vtest-q">' + w + ' <span style="font-size:12px;font-weight:400;color:#667">（' + v.pos + '）</span></div>';
+  opts.forEach(function(opt) {
+    html += '<button class="vtest-opt" onclick="checkTestAns(this,\'' + w + '\',\'' + opt.replace(/'/g, "\\'") + '\')">' + opt + '</button>';
+  });
+  html += '<div class="vtest-result" id="vtest-res"></div>';
+  area.innerHTML = html;
+}
+
+function checkTestAns(btn, word, selected) {
+  var v = savedWords[word];
+  if (!v) return;
+  var correct = v.mean;
+  area = document.getElementById('vocab-test-area');
+  area.querySelectorAll('.vtest-opt').forEach(function(b) {
+    b.classList.add('dis');
+    if (b.textContent === correct) b.classList.add('ca');
+    else if (b === btn && selected !== correct) b.classList.add('wa');
+  });
+  var res = document.getElementById('vtest-res');
+  if (selected === correct) {
+    testScore++;
+    res.textContent = '✓ 正解！';
+    res.className = 'vtest-result ok';
+    if (testScore > 0) launchConfetti && launchConfetti();
+  } else {
+    res.textContent = '✗ 正解は「' + correct + '」';
+    res.className = 'vtest-result ng';
+  }
+  // 次の問題へボタン
+  var nextBtn = document.createElement('button');
+  nextBtn.style.cssText = 'display:block;width:100%;margin-top:10px;padding:10px;border-radius:8px;border:none;background:#1B3A6B;color:#fff;font-size:14px;font-family:inherit;cursor:pointer';
+  nextBtn.textContent = testIdx + 1 < testQueue.length ? '次の問題 →' : '結果を見る';
+  nextBtn.onclick = function() {
+    testIdx++;
+    renderTestQuestion(document.getElementById('vocab-test-area'));
+  };
+  res.after(nextBtn);
+}
+
+// 単語帳モーダルを開いたとき一覧を表示
+var origOpenM = openM;
+openM = function(id) {
+  origOpenM(id);
+  if (id === 'mvocab') showVocabList();
+};
+
+</script>
+
+<!-- 単語ポップアップ -->
+<div class="vpop" id="vpop">
+  <div class="vpop-hd">
+    <span>
+      <span class="vpop-word" id="vpop-word"></span>
+      <span class="vpop-pos" id="vpop-pos"></span>
+    </span>
+    <button class="vpop-close" onclick="closeVpop()">✕</button>
+  </div>
+  <div class="vpop-body">
+    <div class="vpop-mean" id="vpop-mean"></div>
+    <div class="vpop-kana" id="vpop-kana"></div>
+    <div class="vpop-btns">
+      <button class="vpop-spk" id="vpop-spk-btn" onclick="vpopSpeak()">🔊 発音</button>
+      <button class="vpop-save" id="vpop-save-btn" onclick="vpopSave()">📖 単語帳へ</button>
+    </div>
+    <div class="vpop-saved-lbl" id="vpop-saved-lbl">✓ 単語帳に保存しました</div>
+  </div>
+</div>
+
+<!-- 単語帳モーダル -->
+<div class="mo" id="mvocab">
+  <div class="mb">
+    <div class="mh">
+      <h2>📚 単語帳</h2>
+      <button class="mhc" onclick="closeM('mvocab')">✕</button>
+    </div>
+    <div class="mbody">
+      <div style="display:flex;gap:8px;margin-bottom:12px">
+        <button onclick="showVocabList()" id="vt-list-btn" style="flex:1;padding:9px;border-radius:8px;border:2px solid #1B3A6B;background:#1B3A6B;color:#fff;font-size:13px;font-family:inherit;cursor:pointer;font-weight:700">📋 単語一覧</button>
+        <button onclick="startVocabTest()" id="vt-test-btn" style="flex:1;padding:9px;border-radius:8px;border:2px solid #0097A7;background:#f0faff;color:#0097A7;font-size:13px;font-family:inherit;cursor:pointer;font-weight:700">✏️ 復習テスト</button>
+      </div>
+      <div id="vocab-list-area"></div>
+      <div id="vocab-test-area" style="display:none"></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

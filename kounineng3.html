@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>英検2級・高認英文法　Unit 3　助動詞</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'BIZ UDGothic','Hiragino Kaku Gothic Pro','Meiryo',sans-serif;background:#eef2f7;color:#1a1a2e;min-height:100vh;font-size:15px}
+.top-header{background:linear-gradient(135deg,#1B3A6B 0%,#0097A7 100%);color:#fff;padding:14px 16px 12px;text-align:center}
+.top-header h1{font-size:17px;font-weight:700;letter-spacing:.05em}
+.top-header p{font-size:12px;margin-top:3px;opacity:.85}
+.main-nav{background:#fff;border-bottom:3px solid #0097A7;padding:8px 10px;display:flex;overflow-x:auto;gap:6px;-webkit-overflow-scrolling:touch}
+.main-nav::-webkit-scrollbar{height:3px}
+.nav,.main-nav{background:#fff;border-bottom:3px solid #0097A7;padding:8px 10px;display:flex;overflow-x:auto;gap:4px;-webkit-overflow-scrolling:touch;align-items:stretch}
+.nav::-webkit-scrollbar,.main-nav::-webkit-scrollbar{height:3px}
+.pair{display:flex;gap:0;flex-shrink:0;border-radius:22px;overflow:hidden;box-shadow:0 0 0 1.5px #ccd}
+.pair.active-pair{box-shadow:0 0 0 2.5px #1B3A6B}
+.nb,.nav-btn{padding:8px 14px;border:none;background:#f5f7fa;color:#555;font-size:13px;font-family:inherit;cursor:pointer;white-space:nowrap;border-right:1px solid #dde;transition:.2s;font-weight:500;flex-shrink:0}
+.nb:hover,.nav-btn:hover{background:#e8eaf6;color:#1B3A6B}
+.nb.on,.nav-btn.active{background:#1B3A6B;color:#fff}
+.pb{padding:8px 14px;border:none;background:#fff3e0;color:#c84500;font-size:13px;font-family:inherit;cursor:pointer;white-space:nowrap;font-weight:700;transition:.2s;flex-shrink:0}
+.pb:hover{background:#e65100;color:#fff}
+.nav-sep{width:6px;flex-shrink:0}
+.sec{display:none;padding:12px;max-width:820px;margin:0 auto;padding-bottom:40px}
+.sec.active{display:block}
+.card{background:#fff;border-radius:14px;border:1px solid #dde3ee;padding:14px 16px;margin-bottom:14px;box-shadow:0 1px 4px rgba(0,0,0,.05)}
+.card-title{font-size:15px;font-weight:700;color:#1B3A6B;margin-bottom:10px;padding-bottom:8px;border-bottom:2px solid #0097A7}
+.sh{background:linear-gradient(90deg,#1B3A6B,#1B5E8B);color:#fff;border-radius:10px;padding:9px 16px;font-size:15px;font-weight:700;margin-bottom:12px;margin-top:6px}
+.pt{background:#fffde7;border-left:5px solid #f9a825;border-radius:0 10px 10px 0;padding:10px 14px;margin:8px 0;font-size:14px;line-height:1.8}
+.kb{background:#f1f8e9;border-left:5px solid #2e7d32;border-radius:0 10px 10px 0;padding:10px 14px;margin:8px 0;font-size:14px;line-height:1.8}
+.wb{background:#fff3e0;border-left:5px solid #e65100;border-radius:0 10px 10px 0;padding:10px 14px;margin:8px 0;font-size:14px;line-height:1.8}
+.ex{background:#f0f8ff;border:1px solid #b3d9f7;border-radius:10px;padding:12px 14px;margin:8px 0;font-size:14px;line-height:1.9}
+.spk{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:#e8f4ff;border:1.5px solid #0097A7;cursor:pointer;margin-left:5px;vertical-align:middle;flex-shrink:0;transition:.2s}
+.spk:hover{background:#0097A7}.spk:hover svg{fill:#fff}
+.spk svg{width:14px;height:14px;fill:#0097A7;pointer-events:none}
+.q-box{background:#fff;border-radius:12px;border:1px solid #dde3ee;padding:14px;margin-bottom:14px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.q-hd{display:flex;align-items:flex-start;gap:8px;margin-bottom:10px}
+.q-num{flex-shrink:0;width:26px;height:26px;background:#1B3A6B;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700}
+.q-txt{flex:1;font-size:14px;line-height:1.7}
+.hint{font-size:12px;color:#0097A7;background:#f0faff;border-radius:6px;padding:3px 8px;display:inline-block;margin-bottom:8px}
+.ub{font-size:11px;background:#e3f2fd;color:#1565c0;padding:2px 8px;border-radius:10px;font-weight:700;margin-left:6px;vertical-align:middle}
+.az{display:flex;flex-wrap:wrap;gap:7px;min-height:44px;padding:7px 10px;background:#f0faff;border-radius:8px;border:2px dashed #0097A7;margin-bottom:10px;align-items:center}
+.az.ok{border-color:#2e7d32;background:#f1f8e9}
+.az.ng{border-color:#e53935;background:#fff5f5;animation:fl .4s}
+@keyframes fl{0%,100%{opacity:1}50%{opacity:.5}}
+.wb2{display:flex;flex-wrap:wrap;gap:7px;min-height:36px;padding:6px 8px;background:#f7f9fc;border-radius:8px;border:1px dashed #ccd;margin-bottom:10px}
+.chip{display:inline-flex;align-items:center;padding:6px 12px;border-radius:20px;border:1.5px solid #0097A7;background:#fff;color:#0097A7;font-size:13px;cursor:pointer;user-select:none;transition:.15s;font-family:inherit;white-space:nowrap}
+.chip:hover{background:#e0f7fa}.chip:active{transform:scale(.94)}
+.chip.used{opacity:.25;pointer-events:none;background:#f0f0f0;border-color:#bbb;color:#999}
+.chip.ac{background:#0097A7;color:#fff;border-color:#007a8a}
+.chip.ac:hover{background:#007a8a}
+.check-btn{background:#1B3A6B;color:#fff;border:none;border-radius:8px;padding:9px 20px;font-size:14px;font-family:inherit;cursor:pointer}
+.reset-btn{background:#fff;color:#555;border:1.5px solid #ccd;border-radius:8px;padding:9px 14px;font-size:13px;font-family:inherit;cursor:pointer}
+.exp-btn{background:#fff;color:#e65100;border:1.5px solid #e65100;border-radius:8px;padding:9px 14px;font-size:13px;font-family:inherit;cursor:pointer}
+.btn-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:8px}
+.fb{font-size:13px;font-weight:700;padding:3px 0}
+.fb.ok{color:#2e7d32}.fb.ng{color:#e53935}
+.ep{background:#fff8e1;border:1.5px solid #ffc107;border-radius:10px;padding:12px 14px;margin-top:10px;font-size:13px;line-height:1.8;display:none}
+.ep.show{display:block}
+.cb{width:100%;text-align:left;padding:10px 14px;margin:4px 0;border-radius:8px;border:1.5px solid #dde;background:#fff;font-size:14px;font-family:inherit;cursor:pointer;transition:.15s;line-height:1.4}
+.cb:hover:not(.dis){border-color:#0097A7;background:#f0faff}
+.cb.ca{background:#e8f5e9;border-color:#2e7d32;color:#1b5e20;font-weight:700}
+.cb.wa{background:#ffebee;border-color:#e53935;color:#b71c1c}
+.cb.dis{pointer-events:none}
+.sb{background:#fff;border-radius:10px;border:1px solid #dde;padding:10px 14px;margin-bottom:12px;display:flex;align-items:center;gap:12px}
+.sn{font-size:20px;font-weight:700;color:#1B3A6B;min-width:48px}
+.pw{flex:1;height:10px;background:#eee;border-radius:6px;overflow:hidden}
+.pf{height:100%;background:linear-gradient(90deg,#0097A7,#1B3A6B);border-radius:6px;transition:.5s}
+.tbl{width:100%;border-collapse:collapse;font-size:13px}
+.tbl th{background:#1B3A6B;color:#fff;padding:7px 8px;text-align:left}
+.tbl td{padding:7px 8px;border-bottom:1px solid #eef;vertical-align:top}
+.tbl tr:nth-child(even) td{background:#f7f9ff}
+/* ===== 単語ポップアップ ===== */
+.vw{border-bottom:2px dashed #0097A7;color:inherit;cursor:pointer;position:relative;white-space:nowrap;font-weight:inherit}
+.vw:hover{background:#e0f7fa;border-radius:3px}
+.vpop{display:none;position:fixed;z-index:2000;background:#fff;border-radius:14px;box-shadow:0 6px 30px rgba(0,0,0,.22);padding:0;width:260px;max-width:90vw}
+.vpop.show{display:block}
+.vpop-hd{background:linear-gradient(135deg,#1B3A6B,#0097A7);color:#fff;padding:12px 14px 10px;border-radius:14px 14px 0 0;display:flex;align-items:center;justify-content:space-between}
+.vpop-word{font-size:18px;font-weight:700;letter-spacing:.02em}
+.vpop-pos{font-size:11px;background:rgba(255,255,255,.25);border-radius:8px;padding:2px 8px;margin-left:6px}
+.vpop-close{background:rgba(255,255,255,.2);border:none;color:#fff;width:26px;height:26px;border-radius:50%;font-size:16px;cursor:pointer;line-height:1;display:flex;align-items:center;justify-content:center}
+.vpop-body{padding:12px 14px}
+.vpop-mean{font-size:16px;font-weight:700;color:#1B3A6B;margin-bottom:8px}
+.vpop-kana{font-size:12px;color:#888;margin-bottom:10px}
+.vpop-btns{display:flex;gap:8px}
+.vpop-spk{flex:1;padding:8px;border-radius:8px;border:1.5px solid #0097A7;background:#f0faff;color:#0097A7;font-size:13px;font-family:inherit;cursor:pointer;font-weight:700}
+.vpop-spk:hover{background:#0097A7;color:#fff}
+.vpop-save{flex:1;padding:8px;border-radius:8px;border:1.5px solid #e65100;background:#fff3e0;color:#c84500;font-size:13px;font-family:inherit;cursor:pointer;font-weight:700}
+.vpop-save:hover{background:#e65100;color:#fff}
+.vpop-save.saved{background:#e8f5e9;border-color:#2e7d32;color:#2e7d32}
+.vpop-saved-lbl{font-size:11px;color:#2e7d32;text-align:center;margin-top:6px;display:none}
+.vpop-saved-lbl.show{display:block}
+/* 単語帳バッジ */
+.vocab-badge{display:none;position:absolute;top:-6px;right:-6px;background:#e53935;color:#fff;border-radius:50%;width:18px;height:18px;font-size:11px;font-weight:700;align-items:center;justify-content:center}
+.vocab-badge.show{display:flex}
+/* 単語帳モーダル */
+.vbook-empty{text-align:center;color:#999;padding:24px;font-size:14px}
+.vcard{background:#f8faff;border-radius:10px;border:1px solid #dde;padding:10px 12px;margin-bottom:8px;display:flex;align-items:center;gap:10px}
+.vcard-word{font-size:15px;font-weight:700;color:#1B3A6B;flex:1}
+.vcard-mean{font-size:13px;color:#555;flex:1}
+.vcard-del{background:#fff;border:1.5px solid #dde;color:#aaa;border-radius:6px;padding:4px 10px;font-size:12px;cursor:pointer;font-family:inherit}
+.vcard-del:hover{border-color:#e53935;color:#e53935}
+/* 復習テスト */
+.vtest-q{font-size:16px;font-weight:700;color:#1B3A6B;text-align:center;padding:16px;background:#e8f4ff;border-radius:10px;margin-bottom:12px}
+.vtest-opt{width:100%;text-align:left;padding:11px 14px;margin:5px 0;border-radius:8px;border:1.5px solid #dde;background:#fff;font-size:14px;font-family:inherit;cursor:pointer;transition:.15s}
+.vtest-opt:hover:not(.dis){border-color:#0097A7;background:#f0faff}
+.vtest-opt.ca{background:#e8f5e9;border-color:#2e7d32;color:#1b5e20;font-weight:700}
+.vtest-opt.wa{background:#ffebee;border-color:#e53935;color:#b71c1c}
+.vtest-opt.dis{pointer-events:none}
+.vtest-result{text-align:center;padding:8px;font-size:13px;font-weight:700;margin-top:4px}
+.vtest-result.ok{color:#2e7d32}.vtest-result.ng{color:#e53935}
+</style>
+</head>
+<body>
+<canvas id="cc"></canvas>
+<div class="top-header">
+  <h1>🎓 英検2級・高認英文法　Unit 3　助動詞</h1>
+  <p>こうげんよびこう（江原予備校）　― スピーカーボタンで音声再生 ―</p>
+</div>
+<nav class="main-nav" id="nav">
+  <div class="pair active-pair">
+    <button class="nb on" onclick="ss('s1',this)">① 基本の助動詞</button>
+    <button class="pb" onclick="ss('p1',this)">✏️ 練習①</button>
+  </div>
+  <div class="nav-sep"></div>
+  <div class="pair">
+    <button class="nb" onclick="ss('s2',this)">② 推量・習慣</button>
+    <button class="pb" onclick="ss('p2',this)">✏️ 練習②</button>
+  </div>
+  <div class="nav-sep"></div>
+  <div class="pair">
+    <button class="nb" onclick="ss('s3',this)">③ 助動詞＋have＋p.p.</button>
+    <button class="pb" onclick="ss('p3',this)">✏️ 練習③</button>
+  </div>
+  <div class="nav-sep"></div>
+  <div class="pair">
+    <button class="nb" onclick="ss('s4',this)">④ 重要慣用表現</button>
+    <button class="pb" onclick="ss('p4',this)">✏️ 練習④</button>
+  </div>
+  <div class="nav-sep"></div>
+  <div class="pair">
+    <button class="nb" onclick="ss('s5',this)">⑤ need / <span class="vw" data-w="dare" data-pos="動詞" data-mean="あえて〜する・勇気がある" data-kana="デア" data-opts='["あえて〜する・勇気がある", "恐れる", "断る", "忘れる"]' onclick="showVpop(this)">dare</span> / lest</button>
+    <button class="pb" onclick="ss('p5',this)">✏️ 練習⑤実戦</button>
+  </div>
+  <div class="nav-sep" style="width:12px"></div>
+  <div style="flex-shrink:0;position:relative">
+    <button onclick="openM('mvocab')" style="padding:8px 16px;border-radius:22px;border:2px solid #7b1fa2;background:#f3e5f5;color:#7b1fa2;font-size:13px;font-family:inherit;cursor:pointer;font-weight:700;white-space:nowrap">📚 単語帳</button>
+    <span class="vocab-badge" id="vocab-badge">0</span>
+  </div>
+</nav>
+
+<!-- ①基本の助動詞 -->
+<div id="s1" class="sec active">
+  <div class="sh">① 基本の助動詞と書き換え</div>
+  <div class="card">
+    <div class="card-title">基本4助動詞</div>
+    <div class="pt">
+      助動詞は動詞だけでは表せないニュアンス（「できる」「してよい」「だろう」「しなければならない」）を動詞に加える語です。助動詞の後ろには必ず<b>動詞の原形</b>が来ることを忘れないようにしましょう。
+    </div>
+    <table class="tbl">
+      <tr><th>助動詞</th><th>意味</th><th>例文</th></tr>
+      <tr><td><b>can</b></td><td>〜できる</td><td>I can play the piano. <button class="spk" onclick="sp('I can play the piano.')">▶</button></td></tr>
+      <tr><td><b>may</b></td><td>〜してよい（許可）</td><td>May I use this pen? <button class="spk" onclick="sp('May I use this pen?')">▶</button></td></tr>
+      <tr><td><b>will</b></td><td>〜するつもり・〜だろう</td><td>I will buy this book. <button class="spk" onclick="sp('I will buy this book.')">▶</button><br><small>Will not の短縮形 = Won't</small></td></tr>
+      <tr><td><b>must</b></td><td>〜しなければならない</td><td>You must do your best. <button class="spk" onclick="sp('You must do your best.')">▶</button></td></tr>
+    </table>
+  </div>
+  <div class="card">
+    <div class="card-title">書き換え（同じ意味の表現）</div>
+    <div class="kb">
+      助動詞には「過去形がない」ものや「未来形と組み合わせられない」ものがあります。そのため、別の表現で言い換える必要があります。書き換え表現はセットで覚えましょう。
+    </div>
+    <table class="tbl">
+      <tr><th>助動詞</th><th>書き換え</th><th>違い</th></tr>
+      <tr><td><b>will</b></td><td>be going to ～</td><td>will: 思いつき　be going to: 前から計画中</td></tr>
+      <tr><td><b>can</b></td><td>be able to ～</td><td>can: 能力　be able to: 実際にできる状態</td></tr>
+      <tr><td><b>must</b></td><td>have to ～<br>has to（3単現）</td><td>must: 命令口調　have to: 客観的義務<br>過去形 = <b>had to</b>（mustに過去形なし）</td></tr>
+    </table>
+    <div class="wb">
+      <b>⚠ must not と don't have to は意味がまったく違います！</b><br><br>
+      ここは多くの生徒がつまずくポイントです。日本語の「しなくていい」と「してはいけない」の違いをそのまま英語に当てはめて考えましょう。<br><br>
+      ◆ <b>must not（mustn't）</b>「〜してはならない」（禁止）<br>
+      　 You must not <span class="vw" data-w="smoke" data-pos="動詞" data-mean="たばこを吸う・煙を出す" data-kana="スモーク" data-opts='["たばこを吸う・煙を出す", "飲む", "食べる", "走る"]' onclick="showVpop(this)">smoke</span> here.（ここでたばこを吸ってはなりません）<br>
+      　 「してはいけない」という強い禁止の意味です。<br><br>
+      ◆ <b>don't have to</b>「〜する必要はない」（不必要・自由）<br>
+      　 You don't have to come tomorrow.（明日来なくてもかまいません）<br>
+      　 「してもしなくてもどちらでもいい」という意味です。禁止ではありません。<br><br>
+      ◆ <b>Will ＋ can</b> は使えないので → <b>will be able to</b>（〜できるようになるだろう）<br>
+      ◆ <b>Will ＋ must</b> は使えないので → <b>will have to</b>（〜しなければならないだろう）<br>
+      　（must には未来形がないため、will の後ろには be able to / have to を使います）
+    </div>
+  </div>
+</div>
+
+<!-- 練習① -->
+<div id="p1" class="sec">
+  <div class="sh">練習①　基本の助動詞を選ぼう</div>
+  <div class="sb"><div class="sn" id="p1sn">0 / 7</div><div class="pw"><div class="pf" id="p1p" style="width:0%"></div></div><button class="reset-btn" onclick="iC('p1')">リセット</button></div>
+  <div id="p1q"></div>
+</div>
+
+<!-- ②推量・習慣 -->
+<div id="s2" class="sec">
+  <div class="sh">② 推量・習慣・ought to / used to</div>
+  <div class="card">
+    <div class="card-title">推量の助動詞（現在）</div>
+    <div class="pt">
+      これらは「確信の度合い」を表す助動詞です。自分がどのくらい確信しているかによって使い分けます。<br><br>
+      　<b>must</b>（ほぼ確信）＞ <b>may</b>（半信半疑）＞ <b>can't</b>（否定の確信）<br><br>
+      たとえば：「彼は金持ちだ」という証拠があるとき → He <b>must</b> be rich.（違いない）<br>
+      　「もしかしたら金持ちかも」→ He <b>may</b> be rich.（かもしれない）<br>
+      　「金持ちのはずがない」→ He <b>can't</b> be rich.（はずがない）
+    </div>
+    <table class="tbl">
+      <tr><th>表現</th><th>意味</th><th>例文</th></tr>
+      <tr><td><b>may</b></td><td>〜かもしれない</td><td>It may be true. <button class="spk" onclick="sp('It may be true.')">▶</button></td></tr>
+      <tr><td><b>must</b></td><td>〜に違いない</td><td>He must be rich. <button class="spk" onclick="sp('He must be rich.')">▶</button></td></tr>
+      <tr><td><b>can't (cannot)</b></td><td>〜のはずがない</td><td>It can't be true. <button class="spk" onclick="sp("It can't be true.")">▶</button></td></tr>
+    </table>
+  </div>
+  <div class="card">
+    <div class="card-title">should ＝ ought to「〜すべき」</div>
+    <div class="kb">
+      <b>should</b> と <b>ought to</b> はほぼ同じ意味（「〜すべきだ」「〜するのが当然だ」）で使えます。<br><br>
+      You should study harder. <button class="spk" onclick="sp('You should study harder.')">▶</button>（もっと一生懸命勉強すべきです）<br>
+      ＝ You ought to study harder.<br><br>
+      ◆ <b>否定の形に注意しましょう！</b><br>
+      　 should の否定：<b>should not（shouldn't）</b><br>
+      　 ought to の否定：<b>ought not to ～</b>（not は to の前ではなく、ought の後ろに来ます）<br><br>
+      　 You ought not to <span class="vw" data-w="smoke" data-pos="動詞" data-mean="たばこを吸う・煙を出す" data-kana="スモーク" data-opts='["たばこを吸う・煙を出す", "飲む", "食べる", "走る"]' onclick="showVpop(this)">smoke</span> in <span class="vw" data-w="public" data-pos="形容詞" data-mean="公の・公共の" data-kana="パブリック" data-opts='["公の・公共の", "私的な", "秘密の", "個人の"]' onclick="showVpop(this)">public</span>. <button class="spk" onclick="sp('You ought not to smoke in public.')">▶</button>（人前でたばこを吸うべきではありません）<br>
+      　 × ought to not <span class="vw" data-w="smoke" data-pos="動詞" data-mean="たばこを吸う・煙を出す" data-kana="スモーク" data-opts='["たばこを吸う・煙を出す", "飲む", "食べる", "走る"]' onclick="showVpop(this)">smoke</span>（この語順は誤りです）
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-title">習慣・傾向を表す助動詞</div>
+    <div class="kb">
+      will / would / used to はいずれも「習慣」に関係しますが、それぞれ意味が異なります。混同しやすいので整理して覚えましょう。
+    </div>
+    <table class="tbl">
+      <tr><th>表現</th><th>意味</th><th>例文</th></tr>
+      <tr><td><b>will（習性）</b></td><td>〜するものだ</td><td>Accidents will happen. <button class="spk" onclick="sp('Accidents will happen.')">▶</button></td></tr>
+      <tr><td><b>won't（拒絶）</b></td><td>どうしても〜しない</td><td>The door won't open. <button class="spk" onclick="sp("The door won't open.")">▶</button></td></tr>
+      <tr><td><b>would often ～</b></td><td>しばしば〜したものだ（不規則な習慣）</td><td>I would often go fishing with my father. <button class="spk" onclick="sp('I would often go fishing with my father.')">▶</button></td></tr>
+      <tr><td><b>used to ～</b></td><td>（規則的に）いつも〜していた</td><td>He used to go to <span class="vw" data-w="church" data-pos="名詞" data-mean="教会" data-kana="チャーチ" data-opts='["教会", "学校", "図書館", "病院"]' onclick="showVpop(this)">church</span> on Sundays. <button class="spk" onclick="sp('He used to go to church on Sundays.')">▶</button></td></tr>
+      <tr><td><b>There used to be ～</b></td><td>以前〜があった</td><td>There used to be a <span class="vw" data-w="church" data-pos="名詞" data-mean="教会" data-kana="チャーチ" data-opts='["教会", "学校", "図書館", "病院"]' onclick="showVpop(this)">church</span> on the hill. <button class="spk" onclick="sp('There used to be a church on the hill.')">▶</button></td></tr>
+      <tr><td><b>be used to ～ing</b></td><td>〜することに慣れている</td><td>I'm used to sitting up late. <button class="spk" onclick="sp("I'm used to sitting up late.")">▶</button></td></tr>
+    </table>
+    <div class="wb">
+      <b>would often と used to の違いを理解しましょう。</b><br><br>
+      どちらも「過去の習慣」を表しますが、ニュアンスが少し異なります。<br><br>
+      ◆ <b>used to ～</b>：「（規則的に）いつも〜していた」。毎回決まってすることを表します。<br>
+      　 He used to go to <span class="vw" data-w="church" data-pos="名詞" data-mean="教会" data-kana="チャーチ" data-opts='["教会", "学校", "図書館", "病院"]' onclick="showVpop(this)">church</span> on Sundays.（彼は毎週日曜日に決まって教会へ行っていた）<br><br>
+      ◆ <b>would often ～</b>：「しばしば〜したものだ」。不規則な習慣や思い出を表します。<br>
+      　 I would often go fishing with my father.（父とよく釣りに行ったものだ）<br><br>
+      2つの違いを示す例文で確認しましょう：<br>
+      He used to go to <span class="vw" data-w="church" data-pos="名詞" data-mean="教会" data-kana="チャーチ" data-opts='["教会", "学校", "図書館", "病院"]' onclick="showVpop(this)">church</span> on Sundays, but he would often be late.<br>
+      （彼は毎週日曜日に教会へ行っていたが、よく遅刻したものだ）<br><br>
+      また、<b>be used to ～ing</b>（〜することに慣れている）は上の2つとは全く別の表現です。to の後ろが動名詞（〜ing）になることを忘れないようにしましょう。
+    </div>
+  </div>
+</div>
+
+<!-- 練習② -->
+<div id="p2" class="sec">
+  <div class="sh">練習②　推量・習慣の助動詞（入試問題つき）</div>
+  <div class="sb"><div class="sn" id="p2sn">0 / 8</div><div class="pw"><div class="pf" id="p2p" style="width:0%"></div></div><button class="reset-btn" onclick="iC('p2')">リセット</button></div>
+  <div id="p2q"></div>
+</div>
+
+<!-- ③助動詞＋have＋p.p. -->
+<div id="s3" class="sec">
+  <div class="sh">③ 助動詞 ＋ have ＋ 過去分詞　― 過去への推量・後悔 ―</div>
+  <div class="card">
+    <div class="card-title">過去への推量・後悔の表現</div>
+    <div class="pt">
+      「助動詞 ＋ have ＋ 過去分詞」という形で、<b>過去のこと</b>について推量したり、後悔を表したりします。<br>
+      現在の推量（It must be true.）に対して、過去の推量（It must have been true.）のように、have ＋ p.p. を加えることで「過去のこと」を表します。<br><br>
+      この形は入試で非常によく出題されます。各表現の意味と例文をしっかり確認しましょう。
+    </div>
+    <table class="tbl">
+      <tr><th>表現</th><th>意味</th><th>例文</th></tr>
+      <tr><td><b>must have ＋ p.p.</b></td><td>〜したに違いない</td><td>It must have been true. <button class="spk" onclick="sp('It must have been true.')">▶</button></td></tr>
+      <tr><td><b>may have ＋ p.p.</b></td><td>〜だったかもしれない</td><td>It may have rained last night. <button class="spk" onclick="sp('It may have rained last night.')">▶</button></td></tr>
+      <tr><td><b>cannot have ＋ p.p.</b></td><td>〜したはずがない</td><td>He cannot have made such a <span class="vw" data-w="mistake" data-pos="名詞" data-mean="間違い・誤り" data-kana="ミステイク" data-opts='["間違い・誤り", "正解", "成功", "勝利"]' onclick="showVpop(this)">mistake</span>. <button class="spk" onclick="sp('He cannot have made such a mistake.')">▶</button></td></tr>
+      <tr><td><b>should have ＋ p.p.</b></td><td>〜すべきだったのに（後悔）<br>当然〜のはずだ（推量）</td><td>You should have studied harder. <button class="spk" onclick="sp('You should have studied harder.')">▶</button></td></tr>
+      <tr><td><b>need not have ＋ p.p.</b></td><td>〜する必要はなかったのに<br>（実際はしてしまった）</td><td>You need not have come. <button class="spk" onclick="sp('You need not have come.')">▶</button></td></tr>
+    </table>
+    <div class="wb">
+      <b>⚠ 混同しやすいペアをまとめておきましょう。</b><br><br>
+      ◆ <b>must have ＋ p.p.</b>「〜したに違いない」（過去の強い確信）<br>
+      　 The streets are wet. It <b>must have rained</b> last night.（昨夜雨が降ったに違いありません）<br><br>
+      ◆ <b>cannot have ＋ p.p.</b>「〜したはずがない」（過去の強い否定）<br>
+      　 He <b>cannot have made</b> such a <span class="vw" data-w="mistake" data-pos="名詞" data-mean="間違い・誤り" data-kana="ミステイク" data-opts='["間違い・誤り", "正解", "成功", "勝利"]' onclick="showVpop(this)">mistake</span>.（彼がそんなミスをしたはずがありません）<br><br>
+      ◆ <b>should have ＋ p.p.</b>「〜すべきだったのに（しなかった）」（後悔・非難）<br>
+      　 You <b>should have studied</b> harder.（もっとしっかり勉強すればよかったのに）<br><br>
+      ◆ <b>need not have ＋ p.p.</b>「〜する必要はなかったのに（してしまった）」<br>
+      　 You <b>need not have come</b>.（来る必要はなかったのに来てしまった）<br>
+      　 ＝ It was not necessary for you to come, but you did come.<br><br>
+      これらの表現は「助動詞 ＋ have ＋ 過去分詞」というセットの形で覚えましょう。have を足すことで「過去のこと」になります。
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-title">had better / Why should / It is natural that should</div>
+    <div class="kb">
+      ◆ <b>had better ＋ 原形</b>「〜したほうがよい（しないとひどい目にあう）」<br>
+      　 should よりも強い忠告・警告のニュアンスがあります。親しい間柄や緊急の場面で使います。<br>
+      　 You had better stay at home tonight. <button class="spk" onclick="sp('You had better stay at home tonight.')">▶</button>（今夜は家にいたほうがよいですよ）<br>
+      　 You had better not sit up late.（夜更かししないほうがよいですよ）<button class="spk" onclick="sp('You had better not sit up late.')">▶</button><br>
+      　 ⚠ <b>否定は had better not ～</b>（had better don't ～ は誤りです）<br><br>
+      ◆ <b>Why should ～?</b>「いったいどうして〜なのだろうか」<br>
+      　 単純な理由を聞くのではなく、「なぜそうなるのか理解できない・意外だ」という気持ちを表します。<br>
+      　 Why should he say so?（どうして彼はそんなことを言うのだろう）<button class="spk" onclick="sp('Why should he say so?')">▶</button><br><br>
+      ◆ <b>It is ＋ 形容詞 ＋ that ～ should</b>「感情・当然・必要・要求の形容詞」<br>
+      　 natural（当然な）/ <span class="vw" data-w="strange" data-pos="形容詞" data-mean="不思議な・奇妙な" data-kana="ストレンジ" data-opts='["不思議な・奇妙な", "普通の", "簡単な", "正しい"]' onclick="showVpop(this)">strange</span>（不思議な）/ necessary（必要な）/ <span class="vw" data-w="important" data-pos="形容詞" data-mean="重要な・大切な" data-kana="インポータント" data-opts='["重要な・大切な", "無意味な", "簡単な", "古い"]' onclick="showVpop(this)">important</span>（重要な）/<br>
+      　 <span class="vw" data-w="essential" data-pos="形容詞" data-mean="必要不可欠な" data-kana="エッセンシャル" data-opts='["必要不可欠な", "不要な", "自由な", "簡単な"]' onclick="showVpop(this)">essential</span>（必要不可欠な）/ a pity（残念なこと）などの形容詞が来る場合、<br>
+      　 that 節の中では <b>should ＋ 原形</b>を使います。（should は省略できません）<br>
+      　 It is natural that he should get angry. <button class="spk" onclick="sp('It is natural that he should get angry.')">▶</button><br>
+      　（彼が怒るのは当然のことです）<br>
+      　 It is necessary that you should take this medicine. <button class="spk" onclick="sp('It is necessary that you should take this medicine.')">▶</button><br>
+      　（あなたはこの薬を飲む必要があります）<br><br>
+      　 また、<b><span class="vw" data-w="suggest" data-pos="動詞" data-mean="提案する・示唆する" data-kana="サジェスト" data-opts='["提案する・示唆する", "断る", "反対する", "忘れる"]' onclick="showVpop(this)">suggest</span>（提案する）/ <span class="vw" data-w="insist" data-pos="動詞" data-mean="主張する・要求する" data-kana="インシスト" data-opts='["主張する・要求する", "謝る", "疑う", "やめる"]' onclick="showVpop(this)">insist</span>（要求する）/ <span class="vw" data-w="advise" data-pos="動詞" data-mean="忠告する・アドバイスする" data-kana="アドヴァイズ" data-opts='["忠告する・アドバイスする", "禁止する", "許可する", "無視する"]' onclick="showVpop(this)">advise</span>（忠告する）/ decide（決定する）</b> など<br>
+      　 提案・要求を表す動詞に続く that 節でも同様に should を使います。
+    </div>
+  </div>
+</div>
+
+<!-- 練習③ -->
+<div id="p3" class="sec">
+  <div class="sh">練習③　助動詞＋have＋p.p. を並び替えよう（入試問題つき）</div>
+  <div class="sb"><div class="sn" id="p3sn">0 / 6</div><div class="pw"><div class="pf" id="p3p" style="width:0%"></div></div><button class="reset-btn" onclick="iS('p3','p3q',d3)">リセット</button></div>
+  <div id="p3q"></div>
+</div>
+
+<!-- ④重要慣用表現 -->
+<div id="s4" class="sec">
+  <div class="sh">④ 重要慣用表現</div>
+  <div class="card">
+    <div class="card-title">重要慣用表現まとめ</div>
+    <div class="pt">
+      助動詞を使った慣用表現は、そのまま丸ごと覚えることが大切です。意味だけでなく、同じ意味の書き換え表現も一緒に覚えると入試で役立ちます。
+    </div>
+    <table class="tbl">
+      <tr><th>表現</th><th>意味</th><th>同意表現</th></tr>
+      <tr><td><b>may well 原形</b></td><td>〜するのは当然だ</td><td>have good <span class="vw" data-w="reason" data-pos="名詞" data-mean="理由・わけ" data-kana="リーズン" data-opts='["理由・わけ", "結果", "目的", "条件"]' onclick="showVpop(this)">reason</span> to / It is natural that ～ should</td></tr>
+      <tr><td><b>may(might) as well 原形</b></td><td>〜したほうがよい（had betterよりていねい）</td><td></td></tr>
+      <tr><td><b>may(might) as well A as B</b></td><td>BするくらいならAしたほうがまし</td><td></td></tr>
+      <tr><td><b>would like to 原形</b></td><td>〜したいなあ（want to のていねい表現）</td><td></td></tr>
+      <tr><td><b>would rather A than B</b></td><td>BするよりむしろAしたい</td><td></td></tr>
+      <tr><td><b>cannot 原形 too 副詞</b></td><td>いくら〜しても…しすぎることはない</td><td></td></tr>
+      <tr><td><b>cannot help ～ing</b></td><td>〜せざるを得ない</td><td>cannot but 原形</td></tr>
+    </table>
+    <div class="ex">
+      <b>may well</b> と <b>may as well</b> は形が似ていますが、意味がまったく異なります。区別して覚えましょう。<br><br>
+      ◆ <b>may well ＋ 原形</b>「〜するのは当然だ・〜するのももっともだ」<br>
+      　 You may well get angry with him. <button class="spk" onclick="sp('You may well get angry with him.')">▶</button><br>
+      　（君が彼に怒るのはもっともです）<br>
+      　 ＝ You have good <span class="vw" data-w="reason" data-pos="名詞" data-mean="理由・わけ" data-kana="リーズン" data-opts='["理由・わけ", "結果", "目的", "条件"]' onclick="showVpop(this)">reason</span> to get angry. ＝ It is natural that you should get angry.<br><br>
+      ◆ <b>cannot ～ too 副詞</b>「いくら〜しても…しすぎることはない」<br>
+      　 cannot と too を組み合わせた二重否定で、「どんなに〜してもしすぎることはない」という強調表現です。<br>
+      　 You cannot be too <span class="vw" data-w="careful" data-pos="形容詞" data-mean="注意深い・慎重な" data-kana="ケアフル" data-opts='["注意深い・慎重な", "不注意な", "急な", "遅い"]' onclick="showVpop(this)">careful</span> in choosing your friends. <button class="spk" onclick="sp('You cannot be too careful in choosing your friends.')">▶</button><br>
+      　（友人を選ぶときはいくら注意しても注意しすぎることはありません）<br><br>
+      ◆ <b>would rather A than B</b>「BするよりもむしろAしたい」<br>
+      　 A と B はどちらも動詞の原形が来ます。<br>
+      　 I would rather stay home than go out. <button class="spk" onclick="sp('I would rather stay home than go out.')">▶</button><br>
+      　（外に出るよりもむしろ家にいたいです）
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-title">lest〜should / so that〜can</div>
+    <div class="kb">
+      「〜しないように」という目的・注意を表す表現にはいくつかの言い方があります。<br>
+      書き言葉・話し言葉によって使い分けますが、入試では複数の書き換えを求められることが多いので、まとめて覚えましょう。<br><br>
+      ◆ <b>lest ～ should ＋ 原形</b>「〜しないように」（書き言葉・古い表現）<br>
+      ◆ <b>for fear that ～ should ＋ 原形</b>「〜しないかと恐れて」（書き言葉）<br>
+      ◆ <b>so as not to ＋ 原形</b>「〜しないように」（一般的な表現）<br>
+      ◆ <b>in order not to ＋ 原形</b>「〜しないために」（一般的な表現）<br>
+      ◆ <b>so that ～ won't ＋ 原形</b>「〜しないように」（口語的な表現）<br><br>
+      例文で確認しましょう：<br>
+      試験で失敗しないように一生懸命勉強しなければなりません。<br>
+      I must study harder <b>lest</b> I <b>should</b> fail the exam. <button class="spk" onclick="sp('I must study harder lest I should fail the exam.')">▶</button><br>
+      I must study harder <b>so as not to</b> fail the exam. <button class="spk" onclick="sp('I must study harder so as not to fail the exam.')">▶</button><br><br>
+      ※ lest / for fear that の後ろの should は省略できないことも覚えておきましょう。
+    </div>
+  </div>
+</div>
+
+<!-- 練習④ -->
+<div id="p4" class="sec">
+  <div class="sh">練習④　重要慣用表現を並び替えよう（入試問題つき）</div>
+  <div class="sb"><div class="sn" id="p4sn">0 / 7</div><div class="pw"><div class="pf" id="p4p" style="width:0%"></div></div><button class="reset-btn" onclick="iS('p4','p4q',d4)">リセット</button></div>
+  <div id="p4q"></div>
+</div>
+
+<!-- ⑤need / dare / lest -->
+<div id="s5" class="sec">
+  <div class="sh">⑤ need / <span class="vw" data-w="dare" data-pos="動詞" data-mean="あえて〜する・勇気がある" data-kana="デア" data-opts='["あえて〜する・勇気がある", "恐れる", "断る", "忘れる"]' onclick="showVpop(this)">dare</span> / 祈願・強調の do</div>
+  <div class="card">
+    <div class="card-title">need「〜する必要がある」</div>
+    <div class="kb">
+      <b>need</b>（必要がある）は、文の種類によって「動詞」か「助動詞」かが変わる特殊な語です。<br><br>
+      ◆ <b>肯定文では「動詞」として</b>使います。後ろに <b>to ＋ 原形</b> が続きます。<br>
+      　 He needs to study harder.（彼はもっと一生懸命勉強する必要があります）<br><br>
+      ◆ <b>疑問文・否定文では「助動詞」として</b>使うことができます。後ろは原形（toなし）です。<br>
+      　 <b>Need</b> I buy this dictionary?（この辞書を買う必要がありますか）<button class="spk" onclick="sp('Need I buy this dictionary?')">▶</button><br>
+      　 You <b>need not</b> leave in a <span class="vw" data-w="hurry" data-pos="名詞" data-mean="急ぎ・急ぐこと" data-kana="ハリー" data-opts='["急ぎ・急ぐこと", "休み", "余裕", "準備"]' onclick="showVpop(this)">hurry</span>.（急いで出発する必要はありません）<button class="spk" onclick="sp('You need not leave in a hurry.')">▶</button><br>
+      　 ＝ You <b>don't need to</b> leave in a <span class="vw" data-w="hurry" data-pos="名詞" data-mean="急ぎ・急ぐこと" data-kana="ハリー" data-opts='["急ぎ・急ぐこと", "休み", "余裕", "準備"]' onclick="showVpop(this)">hurry</span>.（動詞として使った同意表現）<br><br>
+      ◆ <b>助動詞の need には過去形がありません。</b><br>
+      　 「〜する必要はなかった」という過去の文では、<b>動詞</b>として didn't need to を使います。<br>
+      　 You didn't need to go there.（あなたはそこへ行く必要はなかったのです）<button class="spk" onclick="sp('You did not need to go there.')">▶</button>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-title"><span class="vw" data-w="dare" data-pos="動詞" data-mean="あえて〜する・勇気がある" data-kana="デア" data-opts='["あえて〜する・勇気がある", "恐れる", "断る", "忘れる"]' onclick="showVpop(this)">dare</span>「あえて〜する勇気がある」</div>
+    <div class="kb">
+      <b><span class="vw" data-w="dare" data-pos="動詞" data-mean="あえて〜する・勇気がある" data-kana="デア" data-opts='["あえて〜する・勇気がある", "恐れる", "断る", "忘れる"]' onclick="showVpop(this)">dare</span></b>（あえて〜する勇気がある）も need と同じように、文の種類によって「動詞」か「助動詞」かが変わります。<br><br>
+      ◆ <b>肯定文では「動詞」として</b>使います。後ろに <b>to ＋ 原形</b> が続きます。<br>
+      　 He dared to jump across the <span class="vw" data-w="brook" data-pos="名詞" data-mean="小川" data-kana="ブルック" data-opts='["小川", "池", "湖", "海"]' onclick="showVpop(this)">brook</span>.（彼はあえて小川を飛び越えました）<button class="spk" onclick="sp('He dared to jump across the brook.')">▶</button><br><br>
+      ◆ <b>疑問文・否定文では「助動詞」として</b>使います。後ろは原形（toなし）です。<br>
+      　 He daren't tell us.（彼には私たちに話す勇気がありません）<button class="spk" onclick="sp("He daren't tell us.")">▶</button><br><br>
+      ◆ <b>How <span class="vw" data-w="dare" data-pos="動詞" data-mean="あえて〜する・勇気がある" data-kana="デア" data-opts='["あえて〜する・勇気がある", "恐れる", "断る", "忘れる"]' onclick="showVpop(this)">dare</span> ～?</b>「よくもまあ〜できるものだ！」<br>
+      　 相手の行為に驚き・怒りを込めて「どうしてそんなことができるのだ」と責める表現です。<br>
+      　 How <span class="vw" data-w="dare" data-pos="動詞" data-mean="あえて〜する・勇気がある" data-kana="デア" data-opts='["あえて〜する・勇気がある", "恐れる", "断る", "忘れる"]' onclick="showVpop(this)">dare</span> you tell such a lie?（よくもそんな嘘をつけるものだ）<button class="spk" onclick="sp('How dare you tell such a lie?')">▶</button><br><br>
+      ◆ <b>I <span class="vw" data-w="dare" data-pos="動詞" data-mean="あえて〜する・勇気がある" data-kana="デア" data-opts='["あえて〜する・勇気がある", "恐れる", "断る", "忘れる"]' onclick="showVpop(this)">dare</span> say ～</b>「おそらく〜だろう（と思います）」<br>
+      　 確信はないが「たぶんそうだろう」という推測を控えめに表す表現です。<br>
+      　 I <span class="vw" data-w="dare" data-pos="動詞" data-mean="あえて〜する・勇気がある" data-kana="デア" data-opts='["あえて〜する・勇気がある", "恐れる", "断る", "忘れる"]' onclick="showVpop(this)">dare</span> say it will be fine tomorrow.（おそらく明日は晴れるでしょう）<button class="spk" onclick="sp('I dare say it will be fine tomorrow.')">▶</button>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-title">祈願の may / 強調の do</div>
+    <div class="kb">
+      ◆ <b>祈願（きがん）の may</b>「〜でありますように」<br>
+      　 祈りや願いを表すために、文頭に may を置く古い表現です。入試や文学でよく見られます。<br>
+      　 May you live long! <button class="spk" onclick="sp('May you live long!')">▶</button>（長生きされますように）<br>
+      　 May God be with you! <button class="spk" onclick="sp('May God be with you!')">▶</button>（神と共にあらんことを）<br>
+      　 May your dreams come true!（あなたの夢が実現しますように！）<br><br>
+      ◆ <b>強調の do / does / did</b>（動詞の前に置いて意味を強める）<br>
+      　 「本当に」「ぜひ」「確かに」のように動詞を強調したいときに使います。<br>
+      　 I <b>do</b> want to see that movie.（私はぜひあの映画を観たいです）<button class="spk" onclick="sp('I do want to see that movie.')">▶</button><br>
+      　 She <b>does</b> know the fact.（彼女は確かに事実を知っています）<button class="spk" onclick="sp('She does know the fact.')">▶</button><br>
+      　 He <b>did</b> enjoy the movie.（彼は本当にその映画を楽しんでいました）<br>
+      　 ⚠ do は主語や時制によって do / does / did に変化します。その後の動詞は必ず<b>原形</b>にします。
+    </div>
+  </div>
+</div>
+
+<!-- 練習⑤実戦 -->
+<div id="p5" class="sec">
+  <div class="sh">練習⑤　実戦問題（入試問題）を解こう</div>
+  <div class="sb"><div class="sn" id="p5sn">0 / 10</div><div class="pw"><div class="pf" id="p5p" style="width:0%"></div></div><button class="reset-btn" onclick="iC('p5')">リセット</button></div>
+  <div id="p5q"></div>
+</div>
+
+<script>
+/* ===== モーダル・花吹雪（共通） ===== */
+function openM(id){
+  document.getElementById(id).classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeM(id){
+  document.getElementById(id).classList.remove('open');
+  document.body.style.overflow='';
+}
+// オーバーレイクリックで閉じる
+document.querySelectorAll('.mo').forEach(function(mo){
+  mo.addEventListener('click',function(e){
+    if(e.target===mo)closeM(mo.id);
+  });
+});
+
+function confetti(){
+  var cv=document.getElementById('cc');
+  cv.width=window.innerWidth;cv.height=window.innerHeight;
+  cv.style.display='block';
+  var ctx=cv.getContext('2d');
+  var cols=['#f9a825','#0097A7','#1B3A6B','#e53935','#2e7d32','#ff6f00','#7b1fa2','#ff4081'];
+  var ps=[];
+  for(var k=0;k<130;k++){
+    ps.push({x:Math.random()*cv.width,y:-20-Math.random()*180,
+      w:7+Math.random()*9,h:3+Math.random()*5,
+      c:cols[Math.floor(Math.random()*cols.length)],
+      s:2+Math.random()*4,a:Math.random()*360,sp:3-Math.random()*6,
+      d:(Math.random()-.5)*2.5});
+  }
+  var fr=0;
+  function draw(){
+    ctx.clearRect(0,0,cv.width,cv.height);
+    ps.forEach(function(p){
+      ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.a*Math.PI/180);
+      ctx.fillStyle=p.c;ctx.fillRect(-p.w/2,-p.h/2,p.w,p.h);ctx.restore();
+      p.y+=p.s;p.x+=p.d;p.a+=p.sp;
+    });
+    fr++;
+    if(fr<100)requestAnimationFrame(draw);
+    else{ctx.clearRect(0,0,cv.width,cv.height);cv.style.display='none';}
+  }
+  draw();
+}
+
+function updS(mid,n,t){
+  document.getElementById(mid+'sn').textContent=n+' / '+t;
+  document.getElementById(mid+'pf').style.width=(n/t*100)+'%';
+  if(n===t&&t>0)confetti();
+}
+
+
+function sp(t){if(!window.speechSynthesis)return;speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang='en-US';u.rate=0.88;speechSynthesis.speak(u);}
+function ss(id,btn){
+  document.querySelectorAll('.sec').forEach(function(s){s.classList.remove('active','on');});
+  document.querySelectorAll('.nb,.nav-btn').forEach(function(b){b.classList.remove('active','on');});
+  document.querySelectorAll('.pair').forEach(function(p){p.classList.remove('active-pair');});
+  document.getElementById(id).classList.add('active','on');
+  btn.classList.add('active','on');
+  if(btn.parentElement&&btn.parentElement.classList.contains('pair')){
+    btn.parentElement.classList.add('active-pair');
+  }
+}
+function upd(id,n,t){document.getElementById(id+'sn').textContent=n+' / '+t;document.getElementById(id+'p').style.width=(n/t*100)+'%';}
+function sh(n){var e=n.replace(/'/g,"\\'");return '<button class="spk" style="width:26px;height:26px;margin-left:4px" onclick="sp(\''+e+'\')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button>';}
+function ub(u){return u?'<span class="ub">'+u+'</span>':'';}
+function iC(id){
+  var data=window['c'+id],total=data.length,score=0,done=new Array(total).fill(false);
+  upd(id,0,total);
+  var c=document.getElementById(id+'q');c.innerHTML='';
+  data.forEach(function(d,i){
+    var div=document.createElement('div');div.className='q-box';
+    div.innerHTML='<div class="q-hd"><span class="q-num">'+(i+1)+'</span><span class="q-txt"><b>'+d.q+'</b>'+ub(d.u)+sh(d.s)+'</span></div>'
+      +(d.j?'<div style="font-size:13px;color:#555;margin-bottom:8px">'+d.j+'</div>':'')
+      +(d.h?'<span class="hint">'+d.h+'</span>':'')
+      +'<div id="'+id+'ch'+i+'"></div><div class="ep" id="'+id+'ep'+i+'">📝 解説：'+d.e+'</div>';
+    c.appendChild(div);
+    d.c.forEach(function(ch,ci){
+      var btn=document.createElement('button');btn.className='cb';btn.textContent=ch;
+      btn.onclick=function(){
+        if(done[i])return;done[i]=true;
+        div.querySelectorAll('.cb').forEach(function(b,bi){b.classList.add('dis');if(bi===d.a)b.classList.add('ca');else if(bi===ci&&ci!==d.a)b.classList.add('wa');});
+        document.getElementById(id+'ep'+i).classList.add('show');
+        if(ci===d.a){score++;upd(id,score,total);}
+      };
+      document.getElementById(id+'ch'+i).appendChild(btn);
+    });
+  });
+}
+function shuffle(a){for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;}return a;}
+function iS(sid,cid,data){
+  var total=data.length;upd(sid,0,total);
+  var c=document.getElementById(cid);c.innerHTML='';
+  data.forEach(function(d,i){
+    var words=shuffle(d.w.slice()),sel=[],done=false;
+    var div=document.createElement('div');div.className='q-box';div.dataset.i=i;
+    div.innerHTML='<div class="q-hd"><span class="q-num">'+(i+1)+'</span><span class="q-txt">'+d.j+ub(d.u)+'</span></div>'
+      +(d.h?'<span class="hint">'+d.h+'</span>':'')
+      +'<div class="az" id="'+cid+'az'+i+'"></div>'
+      +'<div class="wb2" id="'+cid+'wb'+i+'"></div>'
+      +'<div class="btn-row"><button class="check-btn" id="'+cid+'cb'+i+'">確認</button>'
+      +'<button class="reset-btn" id="'+cid+'rb'+i+'">やり直し</button>'
+      +'<button class="exp-btn" id="'+cid+'eb'+i+'">解説</button>'
+      +'<span class="fb" id="'+cid+'fb'+i+'"></span></div>'
+      +'<div class="ep" id="'+cid+'ep'+i+'">📝 解説：'+d.e+'<br>✅ 正解：<b>'+d.w.join(' ')+'</b> '+sh(d.s)+'</div>';
+    c.appendChild(div);
+    function render(){
+      var wb=document.getElementById(cid+'wb'+i),az=document.getElementById(cid+'az'+i);
+      wb.innerHTML='';az.innerHTML='';
+      words.forEach(function(w,wi){
+        var chip=document.createElement('span');chip.className='chip'+(sel.indexOf(wi)>=0?' used':'');
+        chip.textContent=w;chip.onclick=function(){if(sel.indexOf(wi)<0&&!done){sel.push(wi);render();}};
+        wb.appendChild(chip);
+      });
+      sel.forEach(function(wi,si){
+        var chip=document.createElement('span');chip.className='chip ac';chip.textContent=words[wi];
+        chip.onclick=function(){if(!done){sel.splice(si,1);render();}};
+        az.appendChild(chip);
+      });
+    }
+    render();
+    document.getElementById(cid+'cb'+i).onclick=function(){
+      if(done)return;
+      var ans=sel.map(function(wi){return words[wi];});
+      var fb=document.getElementById(cid+'fb'+i),ep=document.getElementById(cid+'ep'+i);
+      if(ans.length===0){fb.textContent='単語を選んでください。';fb.className='fb ng';return;}
+      ep.classList.add('show');
+      if(JSON.stringify(ans)===JSON.stringify(d.w)){
+        fb.textContent='✓ 正解！';fb.className='fb ok';
+        document.getElementById(cid+'az'+i).classList.add('ok');
+        done=true;div._done=true;
+        var cnt=Array.from(document.querySelectorAll('#'+cid+' .q-box')).filter(function(q){return q._done;}).length;
+        upd(sid,cnt,total);
+      } else {
+        fb.textContent='✗ もう一度！';fb.className='fb ng';
+        var az=document.getElementById(cid+'az'+i);az.classList.add('ng');setTimeout(function(){az.classList.remove('ng');},500);
+      }
+    };
+    document.getElementById(cid+'rb'+i).onclick=function(){if(done)return;sel.length=0;document.getElementById(cid+'fb'+i).textContent='';document.getElementById(cid+'ep'+i).classList.remove('show');render();};
+    document.getElementById(cid+'eb'+i).onclick=function(){document.getElementById(cid+'ep'+i).classList.toggle('show');};
+  });
+}
+
+// ===== 練習①データ =====
+window.cp1=[
+  {q:'入っていいですか。\n( ) I come in? Yes, please do.',s:'May I come in?',j:'',a:0,c:['May','Can','Will','Shall'],e:'許可を求める「〜してよいですか」= <b>May I ～?</b>'},
+  {q:'あなたは喫煙をやめなければならない。\nYou ( ) stop smoking.',s:'You must stop smoking.',j:'',a:0,c:['must','can','may','should'],e:'「〜しなければならない」= <b>must</b>。※stop ～ing「〜することをやめる」'},
+  {q:'あなたはここに名前を書く必要はありません。\nYou ( ) write your name here.',s:"You don't have to write your name here.",j:'',a:2,c:["mustn't","don't must","don't have to","had better not"],e:'「〜する必要はない」= <b>don\'t have to</b>。must not は「〜してはならない（禁止）」なので違う。'},
+  {q:'ケンは野球を一生懸命に練習しなければならないだろう。\nKen ( ) practice baseball hard.',s:'Ken will have to practice baseball hard.',j:'',a:1,c:['will must','will have to','will be able to','would have to'],e:'will ＋ must → <b>will have to</b>（mustに未来形はないため）'},
+  {q:'The students must eat lunch in this classroom.\n＝ The students ( ) eat lunch in this classroom.',s:'The students have to eat lunch in this classroom.',j:'',a:0,c:['have to','should','are able to','ought'],e:'must の書き換え → <b>have to</b>'},
+  {q:"Don't play soccer in this park.\n＝ You ( ) play soccer in this park.",s:"You mustn't play soccer in this park.",j:'',a:1,c:["don't have to","mustn't","don't must","needn't"],e:"Don't ～（禁止命令）= You <b>mustn't</b> ～（〜してはならない）"},
+  {q:'We couldn\'t see Mt. Fuji from here.\n＝ We weren\'t ( ) to see Mt. Fuji from here.',s:"We weren't able to see Mt. Fuji from here.",j:'',a:1,c:['can','able','possible','allowed'],e:'couldn\'t の書き換え → weren\'t <b>able to</b>'},
+];
+
+// ===== 練習②データ =====
+window.cp2=[
+  {q:'Mary ( ) to read novels on the bench in the park.',s:'Mary used to read novels on the bench in the park.',j:'メアリーはよくその公園のベンチで小説を読んでいました。',u:'北海道医療',a:2,c:['could','would','used','should'],e:'「以前は〜していた」（規則的な習慣）= <b>used to</b>'},
+  {q:'The news ( ) be true.',s:"The news can't be true.",j:'そのニュースが本当であるはずがない。',u:'中部看護',a:1,c:["aren't","can't","doesn't","haven't"],e:'「〜のはずがない」= <b>can\'t（cannot）be ～</b>（現在についての強い否定推量）'},
+  {q:'He did not have time to eat lunch. He ( ) be hungry.',s:'He must be hungry.',j:'彼は昼食を食べる時間がなかった。彼は空腹に違いない。',u:'静岡看護',a:0,c:['must','will','can not','ought'],e:'「〜に違いない」= <b>must</b>（現在についての強い推量）'},
+  {q:'Something was wrong with the door. It ( ) not open.',s:'The door would not open.',j:'ドアに何か不具合があった。それはどうしても開こうとしなかった。',u:'東北福祉大学',a:2,c:['will','shall','would','should'],e:'「どうしても〜しようとしなかった」（過去の強い拒絶）= <b>would not（wouldn\'t）</b>'},
+  {q:'あなたは禁煙すべきです。\nYou ( ) stop smoking.',s:'You ought to stop smoking.',j:'',a:1,c:['can','ought to','have to','need'],e:'「〜すべき」= <b>ought to</b>（should の同意表現）'},
+  {q:'ここには以前レストランがありました。\n( ) be a restaurant here.',s:'There used to be a restaurant here.',j:'',a:2,c:['It used to','There would','There used to','It would'],e:'「以前〜があった」= <b>There used to be ～</b>'},
+  {q:'私は夜更かしには慣れている。\nI\'m ( ) up late.',s:"I'm used to sitting up late.",j:'',a:1,c:['used to sit','used to sitting','used to sitting up late','accustomed sit'],e:'「〜することに慣れている」= be <b>used to ～ing</b>（toは前置詞なので後ろは動名詞）'},
+  {q:'You ( ) study harder.',s:'You ought to study harder.',j:'あなたはもっと勉強すべきだ。（shouldと同じ意味で）',a:2,c:['should better','should to','ought to','must to'],e:'「〜すべき」should ＝ <b>ought to</b>。ought の後は to ＋ 原形。'},
+];
+
+// ===== 練習③データ（並び替え）=====
+window.d3=[
+  {j:'彼女は若い時は美人だったに違いない。',s:'She must have been a beauty in her day.',w:['She','must','have','been','a','beauty','in','her','day','.'],h:'must have ＋ p.p.（過去の強い推量）',e:'過去への強い推量 → She <b>must have been</b> a beauty.'},
+  {j:'あなたはもっと早く私にそのことを知らせにくるべきであった。\nYou __ to me earlier.',s:'You should have come to tell it to me earlier.',w:['should','have','come','to','tell','it'],h:'should have ＋ p.p.（〜すべきだったのに）',u:'札幌医科大医療',e:'「〜すべきだったのに」= <b>should have ＋ p.p.</b> → should have come to tell it'},
+  {j:'あなたは医者の忠告に従っていればよかったのに。',s:"You should have followed the doctor's advice.",w:['You','should','have','followed',"the","doctor's",'advice','.'],h:"should have ＋ p.p.",u:'順天堂医療',e:"後悔・非難 → You <b>should have followed</b> the doctor's advice."},
+  {j:'あなたは傘を持って行ったほうがよい。',s:'You had better take an umbrella with you.',w:['You','had','better','take','an','umbrella','with','you','.'],h:'had better ＋ 原形（強い忠告）',u:'尾道医師会',e:'「〜したほうがよい」= <b>had better</b> ＋ 原形 → You had better take an umbrella with you.'},
+  {j:'それは本当だったに違いない。\nIt is certain that he was wrong. =',s:'He must have been wrong.',w:['He','must','have','been','wrong','.'],h:'must have ＋ p.p.（〜だったに違いない）',e:'「〜だったに違いない」= <b>must have ＋ p.p.</b> → He must have been wrong.'},
+  {j:'あなたは今朝は早起きする必要がなかったのに。',s:'You need not have got up early this morning.',w:['You','need','not','have','got','up','early','this','morning','.'],h:'need not have ＋ p.p.（〜する必要はなかったのに）',e:'「〜する必要はなかったのに（でも実際にした）」= <b>need not have ＋ p.p.</b>'},
+];
+
+// ===== 練習④データ（並び替え）=====
+window.d4=[
+  {j:'健康にはどんなに注意しても注意しすぎることはない。',s:'We cannot be too careful of our health.',w:['We','cannot','be','too','careful','of','our','health','.'],h:'cannot ～ too「いくら〜しすぎることはない」',u:'九州保健福祉大学',e:'<b>cannot ～ too</b> + 副詞「いくら〜しても…しすぎることはない」→ We cannot be too careful.'},
+  {j:'私はどちらかといえばここにいたい。',s:'I would rather stay here.',w:['I','would','rather','stay','here','.'],h:'would rather ～「むしろ〜したい」',u:'上智大',e:'<b>would rather</b> + 原形 → I would rather stay here.'},
+  {j:'私はその光景を見て笑わざるを得なかった。',s:'I could not help laughing at the sight.',w:['I','could','not','help','laughing','at','the','sight','.'],h:'cannot help ～ing「〜せざるを得ない」',u:'千葉県立衛生',e:'<b>cannot help ～ing</b>「〜せずにはいられない」→ I could not help laughing.'},
+  {j:'私は釣りに行くよりも、むしろ家にいたい。',s:'I would rather stay at home than go fishing.',w:['I','would','rather','stay','at','home','than','go','fishing','.'],h:'would rather A than B「BよりもAしたい」',u:'東邦大佐倉',e:'<b>would rather A than B</b> → I would rather stay at home than go fishing.'},
+  {j:'いつか外国へ行きたいものです。',s:"I'd like to go abroad some day.",w:["I'd",'like','to','go','abroad','some','day','.'],h:"would like to ～「〜したいなあ」",u:'滋賀県立総合保険',e:"<b>would like to ＋ 原形</b>「〜したいなあ」= want to のていねいな表現"},
+  {j:'試験に失敗しないように一生懸命勉強すべきです。\n（lest を使って）',s:'You should study hard lest you should fail the exam.',w:['You','should','study','hard','lest','you','should','fail','the','exam','.'],h:'lest ～ should「〜しないように」',e:'<b>lest ～ should</b>「〜しないように」→ study hard lest you should fail the exam.'},
+  {j:'友達を選ぶときはどれほど注意してもしすぎることはない。',s:"You can't be too careful when you choose your friends.",w:["You","can't",'be','too','careful','when','you','choose','your','friends','.'],h:"can't ～ too「いくら〜してもしすぎない」",e:"<b>can't be too careful</b>"},
+];
+
+// ===== 練習⑤データ（実戦）=====
+window.cp5=[
+  {q:'Your shoes are too dirty for the party. You ( ) change them.',s:'You had better change them.',j:'あなたの靴はパーティーには汚れすぎている。履き替えたほうがよい。',u:'北海道医療看護',a:0,c:['had better','will','can','way'],e:'「〜したほうがよい（強い忠告）」= <b>had better</b> ＋ 原形'},
+  {q:'You ( ) smoke in the train.',s:"You had better not smoke in the train.",j:'電車の中でたばこを吸わないほうがよい。',a:2,c:['had better','had not better','had better not',"didn't have better"],e:'had better の否定形 = <b>had better not</b>（not の位置に注意）'},
+  {q:'The streets are wet. It ( ) last night.',s:'It must have rained last night.',j:'道が濡れている。昨夜雨が降ったに違いない。',u:'杏林大学',a:1,c:['must rained','must have rained','must be raining','must have had rained'],e:'過去への推量「〜したに違いない」= <b>must have ＋ p.p.</b>'},
+  {q:'I ( ) Mr. Johnson this afternoon, but I forgot.',s:'I should have phoned Mr. Johnson this afternoon.',j:'今日の午後ジョンソン氏に電話すべきだったのに、忘れてしまった。',u:'宇治大学健康科学部',a:0,c:['should have phoned','should phone','will have phoned','will phone'],e:'「〜すべきだったのに（後悔）」= <b>should have ＋ p.p.</b>'},
+  {q:'It is certain that he lost the way.\n＝ He ( ) his way.',s:'He must have lost his way.',j:'彼は道に迷ったに違いない。（certainは「確かだ」）',u:'JR東海病院',a:1,c:['must lost','must have lost','should have lost','may have lost'],e:'It is certain that ～ の書き換え → <b>must have ＋ p.p.</b>'},
+  {q:'( ) your dreams come true!',s:'May your dreams come true!',j:'あなたの夢が実現しますように！',a:3,c:['Would','Can','Should','May'],e:'「〜でありますように」（祈願）= <b>May ＋ S ＋ V!</b>'},
+  {q:'よくも私にそんなことが言えるな。\n( ) dare you say like that?',s:'How dare you say like that?',j:'',u:'昭和大学',a:2,c:['What','Do','How','Why'],e:'「よくもまあ〜できるものだ」= <b>How dare</b> you ～?'},
+  {q:'( ) tell me all about it.',s:'Do tell me all about it.',j:'ぜひすべてのことを話してください。',u:'神戸女子',a:0,c:['Do','Let','Shall','Should'],e:'「ぜひ〜してください」（強調の do） = <b>Do</b> ＋ 動詞原形'},
+  {q:'あなたは彼女にプロポーズする勇気がありますか。\n( ) you propose to her?',s:'Dare you propose to her?',j:'',a:1,c:['Will','Dare','Can','Do'],e:'「〜する勇気があるか」（助動詞のdare） = <b>dare</b> you ～?'},
+  {q:'私はその冗談に笑わずにはおれなかった。\nI ( ) at the joke.',s:'I could not help laughing at the joke.',j:'',u:'千葉県立衛生',a:1,c:['could not laughing','could not help laughing','could not but laughed','could not help to laugh'],e:'<b>cannot help ～ing</b>「〜せずにはいられない」→ could not help laughing'},
+];
+
+iC('p1');iC('p2');iC('p5');
+iS('p3','p3q',d3);iS('p4','p4q',d4);
+/* ===== 単語帳システム ===== */
+var vocabDB = {};  // {word: {pos,mean,kana,opts}}
+var savedWords = {};  // localStorage代替（メモリ内）
+var currentVword = null;
+
+// ポップアップ表示
+function showVpop(el) {
+  var w = el.dataset.w;
+  var pos = el.dataset.pos;
+  var mean = el.dataset.mean;
+  var kana = el.dataset.kana;
+  var opts = JSON.parse(el.dataset.opts);
+  vocabDB[w] = {pos:pos, mean:mean, kana:kana, opts:opts};
+  currentVword = w;
+  document.getElementById('vpop-word').textContent = w;
+  document.getElementById('vpop-pos').textContent = pos;
+  document.getElementById('vpop-mean').textContent = mean;
+  document.getElementById('vpop-kana').textContent = '発音：' + kana;
+  var saveBtn = document.getElementById('vpop-save-btn');
+  var savedLbl = document.getElementById('vpop-saved-lbl');
+  if (savedWords[w]) {
+    saveBtn.textContent = '✓ 保存済み';
+    saveBtn.className = 'vpop-save saved';
+    savedLbl.className = 'vpop-saved-lbl show';
+  } else {
+    saveBtn.textContent = '📖 単語帳へ';
+    saveBtn.className = 'vpop-save';
+    savedLbl.className = 'vpop-saved-lbl';
+  }
+  // ポップアップ位置決め
+  var pop = document.getElementById('vpop');
+  pop.className = 'vpop show';
+  var rect = el.getBoundingClientRect();
+  var top = rect.bottom + 6;
+  var left = rect.left;
+  var pw = 260;
+  if (left + pw > window.innerWidth - 8) left = window.innerWidth - pw - 8;
+  if (top + 160 > window.innerHeight) top = rect.top - 170;
+  pop.style.top = top + 'px';
+  pop.style.left = left + 'px';
+}
+
+function closeVpop() {
+  document.getElementById('vpop').className = 'vpop';
+  currentVword = null;
+}
+
+// ポップアップ外クリックで閉じる
+document.addEventListener('click', function(e) {
+  var pop = document.getElementById('vpop');
+  if (pop.classList.contains('show') && !pop.contains(e.target) && !e.target.classList.contains('vw')) {
+    closeVpop();
+  }
+});
+
+// 音声再生
+function vpopSpeak() {
+  if (currentVword) sp(currentVword);
+}
+
+// 単語帳に保存
+function vpopSave() {
+  if (!currentVword) return;
+  var w = currentVword;
+  if (!savedWords[w]) {
+    savedWords[w] = vocabDB[w];
+    updateVocabBadge();
+    var saveBtn = document.getElementById('vpop-save-btn');
+    var savedLbl = document.getElementById('vpop-saved-lbl');
+    saveBtn.textContent = '✓ 保存済み';
+    saveBtn.className = 'vpop-save saved';
+    savedLbl.className = 'vpop-saved-lbl show';
+  }
+}
+
+// バッジ更新
+function updateVocabBadge() {
+  var cnt = Object.keys(savedWords).length;
+  var badge = document.getElementById('vocab-badge');
+  badge.textContent = cnt;
+  badge.className = cnt > 0 ? 'vocab-badge show' : 'vocab-badge';
+}
+
+// 単語一覧表示
+function showVocabList() {
+  document.getElementById('vocab-list-area').style.display = 'block';
+  document.getElementById('vocab-test-area').style.display = 'none';
+  renderVocabList();
+}
+
+function renderVocabList() {
+  var area = document.getElementById('vocab-list-area');
+  var words = Object.keys(savedWords);
+  if (words.length === 0) {
+    area.innerHTML = '<div class="vbook-empty">📖 まだ単語が保存されていません。<br>本文中の<span style="border-bottom:2px dashed #0097A7;color:#0097A7">点線下線</span>の単語をタップして保存しましょう。</div>';
+    return;
+  }
+  var html = '<div style="font-size:12px;color:#888;margin-bottom:8px">保存済み：' + words.length + '語　　「覚えた」を押すと削除できます</div>';
+  words.forEach(function(w) {
+    var v = savedWords[w];
+    html += '<div class="vcard">'
+      + '<span class="vcard-word">' + w + '</span>'
+      + '<span class="vcard-mean">' + v.mean + '</span>'
+      + '<button class="vcard-del" onclick="removeWord(\'' + w + '\')">覚えた ✓</button>'
+      + '</div>';
+  });
+  area.innerHTML = html;
+}
+
+// 単語を削除
+function removeWord(w) {
+  delete savedWords[w];
+  updateVocabBadge();
+  renderVocabList();
+  // テスト中なら再生成
+  if (document.getElementById('vocab-test-area').style.display !== 'none') {
+    renderVocabTest();
+  }
+}
+
+// 復習テスト
+var testQueue = [];
+var testIdx = 0;
+var testScore = 0;
+
+function startVocabTest() {
+  document.getElementById('vocab-list-area').style.display = 'none';
+  document.getElementById('vocab-test-area').style.display = 'block';
+  renderVocabTest();
+}
+
+function renderVocabTest() {
+  var area = document.getElementById('vocab-test-area');
+  var words = Object.keys(savedWords);
+  if (words.length < 1) {
+    area.innerHTML = '<div class="vbook-empty">単語が保存されていません。</div>';
+    return;
+  }
+  // シャッフル
+  testQueue = words.slice().sort(function(){return Math.random()-.5;});
+  testIdx = 0; testScore = 0;
+  renderTestQuestion(area);
+}
+
+function renderTestQuestion(area) {
+  if (testIdx >= testQueue.length) {
+    area.innerHTML = '<div style="text-align:center;padding:24px">'
+      + '<div style="font-size:40px;margin-bottom:12px">🎉</div>'
+      + '<div style="font-size:18px;font-weight:700;color:#1B3A6B;margin-bottom:8px">テスト完了！</div>'
+      + '<div style="font-size:14px;color:#555;margin-bottom:16px">正解：' + testScore + ' / ' + testQueue.length + '問</div>'
+      + '<div style="display:flex;gap:8px;justify-content:center">'
+      + '<button onclick="renderVocabTest()" style="padding:10px 20px;border-radius:8px;border:none;background:#1B3A6B;color:#fff;font-size:14px;font-family:inherit;cursor:pointer">もう一度</button>'
+      + '<button onclick="showVocabList()" style="padding:10px 20px;border-radius:8px;border:1.5px solid #ccd;background:#fff;color:#555;font-size:14px;font-family:inherit;cursor:pointer">単語一覧へ</button>'
+      + '</div></div>';
+    return;
+  }
+  var w = testQueue[testIdx];
+  var v = savedWords[w];
+  if (!v) { testIdx++; renderTestQuestion(area); return; }
+  // 選択肢（正解＋ダミー3つ）
+  var opts = v.opts.slice();
+  // シャッフル
+  opts.sort(function(){return Math.random()-.5;});
+  var prog = (testIdx+1) + ' / ' + testQueue.length;
+  var html = '<div style="text-align:right;font-size:12px;color:#888;margin-bottom:8px">' + prog + '</div>'
+    + '<div class="vtest-q">' + w + ' <span style="font-size:12px;font-weight:400;color:#667">（' + v.pos + '）</span></div>';
+  opts.forEach(function(opt) {
+    html += '<button class="vtest-opt" onclick="checkTestAns(this,\'' + w + '\',\'' + opt.replace(/'/g, "\\'") + '\')">' + opt + '</button>';
+  });
+  html += '<div class="vtest-result" id="vtest-res"></div>';
+  area.innerHTML = html;
+}
+
+function checkTestAns(btn, word, selected) {
+  var v = savedWords[word];
+  if (!v) return;
+  var correct = v.mean;
+  area = document.getElementById('vocab-test-area');
+  area.querySelectorAll('.vtest-opt').forEach(function(b) {
+    b.classList.add('dis');
+    if (b.textContent === correct) b.classList.add('ca');
+    else if (b === btn && selected !== correct) b.classList.add('wa');
+  });
+  var res = document.getElementById('vtest-res');
+  if (selected === correct) {
+    testScore++;
+    res.textContent = '✓ 正解！';
+    res.className = 'vtest-result ok';
+    if (testScore > 0) launchConfetti && launchConfetti();
+  } else {
+    res.textContent = '✗ 正解は「' + correct + '」';
+    res.className = 'vtest-result ng';
+  }
+  // 次の問題へボタン
+  var nextBtn = document.createElement('button');
+  nextBtn.style.cssText = 'display:block;width:100%;margin-top:10px;padding:10px;border-radius:8px;border:none;background:#1B3A6B;color:#fff;font-size:14px;font-family:inherit;cursor:pointer';
+  nextBtn.textContent = testIdx + 1 < testQueue.length ? '次の問題 →' : '結果を見る';
+  nextBtn.onclick = function() {
+    testIdx++;
+    renderTestQuestion(document.getElementById('vocab-test-area'));
+  };
+  res.after(nextBtn);
+}
+
+// 単語帳モーダルを開いたとき一覧を表示
+var origOpenM = openM;
+openM = function(id) {
+  origOpenM(id);
+  if (id === 'mvocab') showVocabList();
+};
+</script>
+<!-- 単語ポップアップ -->
+<div class="vpop" id="vpop">
+  <div class="vpop-hd">
+    <span>
+      <span class="vpop-word" id="vpop-word"></span>
+      <span class="vpop-pos" id="vpop-pos"></span>
+    </span>
+    <button class="vpop-close" onclick="closeVpop()">✕</button>
+  </div>
+  <div class="vpop-body">
+    <div class="vpop-mean" id="vpop-mean"></div>
+    <div class="vpop-kana" id="vpop-kana"></div>
+    <div class="vpop-btns">
+      <button class="vpop-spk" id="vpop-spk-btn" onclick="vpopSpeak()">🔊 発音</button>
+      <button class="vpop-save" id="vpop-save-btn" onclick="vpopSave()">📖 単語帳へ</button>
+    </div>
+    <div class="vpop-saved-lbl" id="vpop-saved-lbl">✓ 単語帳に保存しました</div>
+  </div>
+</div>
+
+<!-- 単語帳モーダル -->
+<div class="mo" id="mvocab">
+  <div class="mb">
+    <div class="mh">
+      <h2>📚 単語帳</h2>
+      <button class="mhc" onclick="closeM('mvocab')">✕</button>
+    </div>
+    <div class="mbody">
+      <div style="display:flex;gap:8px;margin-bottom:12px">
+        <button onclick="showVocabList()" id="vt-list-btn" style="flex:1;padding:9px;border-radius:8px;border:2px solid #1B3A6B;background:#1B3A6B;color:#fff;font-size:13px;font-family:inherit;cursor:pointer;font-weight:700">📋 単語一覧</button>
+        <button onclick="startVocabTest()" id="vt-test-btn" style="flex:1;padding:9px;border-radius:8px;border:2px solid #0097A7;background:#f0faff;color:#0097A7;font-size:13px;font-family:inherit;cursor:pointer;font-weight:700">✏️ 復習テスト</button>
+      </div>
+      <div id="vocab-list-area"></div>
+      <div id="vocab-test-area" style="display:none"></div>
+    </div>
+  </div>
+</body>
+</html>
