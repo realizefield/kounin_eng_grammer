@@ -38,11 +38,11 @@ body{font-family:'BIZ UDGothic','Hiragino Kaku Gothic Pro','Meiryo',sans-serif;b
 .sc-topics li:last-child{border-bottom:none}
 .sc-topics li::before{content:"・";color:#0097A7}
 .sc-btn-row{display:flex;gap:6px;margin-top:8px}
-.sc-btn{flex:1;text-align:center;padding:9px 4px;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none;transition:.15s;font-family:inherit;border:none;cursor:pointer;display:block;letter-spacing:.03em}
-.sc-btn-learn{background:#0097A7;color:#fff;box-shadow:0 1px 3px rgba(0,0,0,.2)}
-.sc-btn-learn:hover,.sc-btn-learn:visited,.sc-btn-learn:active{background:#007a8a;color:#fff}
-.sc-btn-practice{background:#e65100;color:#fff;border:none}
-.sc-btn-practice:hover,.sc-btn-practice:visited,.sc-btn-practice:active{background:#bf3c00;color:#fff}
+.sc-btn{flex:1;text-align:center;padding:7px 4px;border-radius:8px;font-size:12px;font-weight:700;text-decoration:none;transition:.15s;font-family:inherit;border:none;cursor:pointer;display:block}
+.sc-btn-learn{background:#1B3A6B;color:#fff}
+.sc-btn-learn:hover{background:#0d2a55}
+.sc-btn-practice{background:#fff3e0;color:#c84500;border:1.5px solid #e65100}
+.sc-btn-practice:hover{background:#e65100;color:#fff}
 .abc-row{display:flex;gap:6px;padding:8px 12px 10px}
 .abc-btn{flex:1;padding:7px 2px;border-radius:20px;font-size:12px;font-weight:700;font-family:inherit;cursor:pointer;transition:.15s;border:2px solid;text-align:center;background:#fff}
 .abc-btn-a{border-color:#2e7d32;color:#2e7d32}
@@ -74,7 +74,7 @@ canvas{position:fixed;top:0;left:0;pointer-events:none;z-index:9999;display:none
     <div class="sum-item"><span class="sum-dot sum-dot-a"></span>A OK <span class="sum-count" id="cnt-a">0</span> 単元</div>
     <div class="sum-item"><span class="sum-dot sum-dot-b"></span>B 要復習 <span class="sum-count" id="cnt-b">0</span> 単元</div>
     <div class="sum-item"><span class="sum-dot sum-dot-c"></span>C 何度も復習 <span class="sum-count" id="cnt-c">0</span> 単元</div>
-    <div class="sum-item"><span class="sum-dot sum-dot-n"></span>未実施 <span class="sum-count" id="cnt-n">6</span> 単元</div>
+    <div class="sum-item"><span class="sum-dot sum-dot-n"></span>未実施 <span class="sum-count" id="cnt-n">24</span> 単元</div>
   </div>
 </div>
 <div class="wrap">
@@ -99,43 +99,43 @@ canvas{position:fixed;top:0;left:0;pointer-events:none;z-index:9999;display:none
     <div class="unit-body">
       <div class="sec-grid">
         <div class="sec-card" data-id="u1s1">
-          <a href="kounineng1.html#s1"><div class="sc-hd"><span class="sc-num">①</span><span class="sc-title">10の品詞</span></div><div class="sc-body"><ul class="sc-topics"><li>名詞・代名詞・形容詞・冠詞・動詞</li><li>助動詞・副詞・前置詞・接続詞・間投詞</li><li>形容詞 vs 副詞の違い</li><li>句と節の違い</li></ul></div></a>
-          <div class="sc-body" style="padding-top:0"><div class="sc-btn-row"><a class="sc-btn sc-btn-learn" href="kounineng1.html#s1">説明を読む</a><a class="sc-btn sc-btn-practice" href="kounineng1.html#s1">練習①</a></div></div>
+          <a href="kounineng1.html#s1"><div class="sc-hd"><span class="sc-num">①</span><span class="sc-title">10個の品詞</span></div><div class="sc-body"><ul class="sc-topics"><li>名詞・代名詞・動詞・形容詞・副詞</li><li>前置詞・接続詞・間投詞・冠詞・助動詞</li><li>品詞の見分け方</li></ul></div></a>
+          <div class="sc-body" style="padding-top:0"><div class="sc-btn-row"><a class="sc-btn sc-btn-learn" href="kounineng1.html#s1">説明を読む</a><a class="sc-btn sc-btn-practice" href="kounineng1.html#m1">練習①</a></div></div>
           <div class="abc-row"><button class="abc-btn abc-btn-a" onclick="setABC('u1s1','a',this)">A OK</button><button class="abc-btn abc-btn-b" onclick="setABC('u1s1','b',this)">B 要復習</button><button class="abc-btn abc-btn-c" onclick="setABC('u1s1','c',this)">C 何度も</button></div>
         </div>
         <div class="sec-card" data-id="u1s2">
-          <a href="kounineng1.html#s2"><div class="sc-hd"><span class="sc-num">②</span><span class="sc-title">SVOC（文の要素）</span></div><div class="sc-body"><ul class="sc-topics"><li>S（主語）・V（動詞）・O（目的語）</li><li>C（補語）・M（修飾語）の見分け方</li><li>各要素のはたらきと役割</li></ul></div></a>
-          <div class="sc-body" style="padding-top:0"><div class="sc-btn-row"><a class="sc-btn sc-btn-learn" href="kounineng1.html#s2">説明を読む</a><a class="sc-btn sc-btn-practice" href="kounineng1.html#s2">練習②</a></div></div>
+          <a href="kounineng1.html#s2"><div class="sc-hd"><span class="sc-num">②</span><span class="sc-title">文型の要素 SVOCM</span></div><div class="sc-body"><ul class="sc-topics"><li>S（主語）V（動詞）O（目的語）C（補語）</li><li>M（修飾語）の役割</li><li>SVOCMの見分け方</li></ul></div></a>
+          <div class="sc-body" style="padding-top:0"><div class="sc-btn-row"><a class="sc-btn sc-btn-learn" href="kounineng1.html#s2">説明を読む</a><a class="sc-btn sc-btn-practice" href="kounineng1.html#m2">練習②</a></div></div>
           <div class="abc-row"><button class="abc-btn abc-btn-a" onclick="setABC('u1s2','a',this)">A OK</button><button class="abc-btn abc-btn-b" onclick="setABC('u1s2','b',this)">B 要復習</button><button class="abc-btn abc-btn-c" onclick="setABC('u1s2','c',this)">C 何度も</button></div>
         </div>
         <div class="sec-card" data-id="u1s3">
-          <a href="kounineng1.html#s3"><div class="sc-hd"><span class="sc-num">③</span><span class="sc-title">5文型</span></div><div class="sc-body"><ul class="sc-topics"><li>第1文型 SV / 第2文型 SVC</li><li>第3文型 SVO / 第4文型 SVOO</li><li>第5文型 SVOC（O＝C）</li></ul></div></a>
-          <div class="sc-body" style="padding-top:0"><div class="sc-btn-row"><a class="sc-btn sc-btn-learn" href="kounineng1.html#s3">説明を読む</a><a class="sc-btn sc-btn-practice" href="kounineng1.html#s3">練習③</a></div></div>
+          <a href="kounineng1.html#s3"><div class="sc-hd"><span class="sc-num">③</span><span class="sc-title">英語の5文型</span></div><div class="sc-body"><ul class="sc-topics"><li>第1文型 SV ～ 第5文型 SVOC</li><li>各文型の見分け方</li><li>第4文型→第3文型の書き換え</li></ul></div></a>
+          <div class="sc-body" style="padding-top:0"><div class="sc-btn-row"><a class="sc-btn sc-btn-learn" href="kounineng1.html#s3">説明を読む</a><a class="sc-btn sc-btn-practice" href="kounineng1.html#m3">練習③</a></div></div>
           <div class="abc-row"><button class="abc-btn abc-btn-a" onclick="setABC('u1s3','a',this)">A OK</button><button class="abc-btn abc-btn-b" onclick="setABC('u1s3','b',this)">B 要復習</button><button class="abc-btn abc-btn-c" onclick="setABC('u1s3','c',this)">C 何度も</button></div>
         </div>
         <div class="sec-card" data-id="u1s4">
-          <a href="kounineng1.html#s4"><div class="sc-hd"><span class="sc-num">④</span><span class="sc-title">第4→第3文型 書き換え</span></div><div class="sc-body"><ul class="sc-topics"><li>SVOO → SVO ＋ 前置詞</li><li>to を使う動詞（give / send など）</li><li>for を使う動詞（make / buy など）</li><li>of を使う動詞（ask など）</li></ul></div></a>
-          <div class="sc-body" style="padding-top:0"><div class="sc-btn-row"><a class="sc-btn sc-btn-learn" href="kounineng1.html#s4">説明を読む</a><a class="sc-btn sc-btn-practice" href="kounineng1.html#s4">並替・前置詞</a></div></div>
+          <a href="kounineng1.html#s4"><div class="sc-hd"><span class="sc-num">④</span><span class="sc-title">第4→第3文型・前置詞</span></div><div class="sc-body"><ul class="sc-topics"><li>第4文型を第3文型にする</li><li>to / for の使い分け</li><li>重要前置詞の用法</li></ul></div></a>
+          <div class="sc-body" style="padding-top:0"><div class="sc-btn-row"><a class="sc-btn sc-btn-learn" href="kounineng1.html#s4">説明を読む</a><a class="sc-btn sc-btn-practice" href="kounineng1.html#m4">並替</a></div></div>
           <div class="abc-row"><button class="abc-btn abc-btn-a" onclick="setABC('u1s4','a',this)">A OK</button><button class="abc-btn abc-btn-b" onclick="setABC('u1s4','b',this)">B 要復習</button><button class="abc-btn abc-btn-c" onclick="setABC('u1s4','c',this)">C 何度も</button></div>
         </div>
         <div class="sec-card" data-id="u1s5a">
-          <a href="kounineng1.html#s5a"><div class="sc-hd"><span class="sc-num">⑤-1</span><span class="sc-title">疑問文（1）</span></div><div class="sc-body"><ul class="sc-topics"><li>be動詞・一般動詞の疑問文</li><li>do / does / did を使う疑問文</li><li>疑問詞（who / what / when / where）</li></ul></div></a>
-          <div class="sc-body" style="padding-top:0"><div class="sc-btn-row"><a class="sc-btn sc-btn-learn" href="kounineng1.html#s5a">説明を読む</a><a class="sc-btn sc-btn-practice" href="kounineng1.html#s5a">練習⑤-1</a></div></div>
+          <a href="kounineng1.html#s5a"><div class="sc-hd"><span class="sc-num">⑤-1</span><span class="sc-title">疑問文(1)</span></div><div class="sc-body"><ul class="sc-topics"><li>一般疑問文・疑問詞疑問文</li><li>who / what / which / when / where / why / how</li></ul></div></a>
+          <div class="sc-body" style="padding-top:0"><div class="sc-btn-row"><a class="sc-btn sc-btn-learn" href="kounineng1.html#s5a">説明を読む</a><a class="sc-btn sc-btn-practice" href="kounineng1.html#m5c">練習⑤-1</a></div></div>
           <div class="abc-row"><button class="abc-btn abc-btn-a" onclick="setABC('u1s5a','a',this)">A OK</button><button class="abc-btn abc-btn-b" onclick="setABC('u1s5a','b',this)">B 要復習</button><button class="abc-btn abc-btn-c" onclick="setABC('u1s5a','c',this)">C 何度も</button></div>
         </div>
         <div class="sec-card" data-id="u1s5b">
-          <a href="kounineng1.html#s5"><div class="sc-hd"><span class="sc-num">⑤-2</span><span class="sc-title">付加疑問・間接疑問</span></div><div class="sc-body"><ul class="sc-topics"><li>付加疑問文（〜, isn't it?）</li><li>間接疑問（I wonder / Do you know ～）</li><li>語順に注意（疑問詞＋S＋V）</li></ul></div></a>
-          <div class="sc-body" style="padding-top:0"><div class="sc-btn-row"><a class="sc-btn sc-btn-learn" href="kounineng1.html#s5">説明を読む</a><a class="sc-btn sc-btn-practice" href="kounineng1.html#s5">付加・間接</a></div></div>
+          <a href="kounineng1.html#s5b"><div class="sc-hd"><span class="sc-num">⑤-3</span><span class="sc-title">疑問慣用表現・命令文</span></div><div class="sc-body"><ul class="sc-topics"><li>What ～ for? / What is S like? / How come</li><li>命令文・Let's / 口語表現</li></ul></div></a>
+          <div class="sc-body" style="padding-top:0"><div class="sc-btn-row"><a class="sc-btn sc-btn-learn" href="kounineng1.html#s5b">説明を読む</a><a class="sc-btn sc-btn-practice" href="kounineng1.html#m5d">練習⑤-3</a></div></div>
           <div class="abc-row"><button class="abc-btn abc-btn-a" onclick="setABC('u1s5b','a',this)">A OK</button><button class="abc-btn abc-btn-b" onclick="setABC('u1s5b','b',this)">B 要復習</button><button class="abc-btn abc-btn-c" onclick="setABC('u1s5b','c',this)">C 何度も</button></div>
         </div>
-        <div class="sec-card" data-id="u1s5c">
-          <a href="kounineng1.html#s5b"><div class="sc-hd"><span class="sc-num">⑤-3</span><span class="sc-title">疑問慣用表現・命令文</span></div><div class="sc-body"><ul class="sc-topics"><li>How about ～? / What about ～?</li><li>Why don't you ～? / Shall we ～?</li><li>命令文・否定命令文（Don't ～）</li></ul></div></a>
-          <div class="sc-body" style="padding-top:0"><div class="sc-btn-row"><a class="sc-btn sc-btn-learn" href="kounineng1.html#s5b">説明を読む</a><a class="sc-btn sc-btn-practice" href="kounineng1.html#s5b">練習⑤-3</a></div></div>
-          <div class="abc-row"><button class="abc-btn abc-btn-a" onclick="setABC('u1s5c','a',this)">A OK</button><button class="abc-btn abc-btn-b" onclick="setABC('u1s5c','b',this)">B 要復習</button><button class="abc-btn abc-btn-c" onclick="setABC('u1s5c','c',this)">C 何度も</button></div>
+        <div class="sec-card" data-id="u1s5">
+          <a href="kounineng1.html#s5"><div class="sc-hd"><span class="sc-num">⑤-2</span><span class="sc-title">付加疑問文・間接疑問文</span></div><div class="sc-body"><ul class="sc-topics"><li>付加疑問文の作り方</li><li>間接疑問文の語順</li><li>do you think 型の語順</li></ul></div></a>
+          <div class="sc-body" style="padding-top:0"><div class="sc-btn-row"><a class="sc-btn sc-btn-learn" href="kounineng1.html#s5">説明を読む</a><a class="sc-btn sc-btn-practice" href="kounineng1.html#m5a">付加疑問</a></div></div>
+          <div class="abc-row"><button class="abc-btn abc-btn-a" onclick="setABC('u1s5','a',this)">A OK</button><button class="abc-btn abc-btn-b" onclick="setABC('u1s5','b',this)">B 要復習</button><button class="abc-btn abc-btn-c" onclick="setABC('u1s5','c',this)">C 何度も</button></div>
         </div>
         <div class="sec-card" data-id="u1s6">
-          <a href="kounineng1.html#s6"><div class="sc-hd"><span class="sc-num">⑥</span><span class="sc-title">感嘆文</span></div><div class="sc-body"><ul class="sc-topics"><li>What ＋ (a/an) ＋ 形容詞 ＋ 名詞！</li><li>How ＋ 形容詞 / 副詞！</li><li>What と How の使い分け</li></ul></div></a>
-          <div class="sc-body" style="padding-top:0"><div class="sc-btn-row"><a class="sc-btn sc-btn-learn" href="kounineng1.html#s6">説明を読む</a><a class="sc-btn sc-btn-practice" href="kounineng1.html#s6">練習⑥</a></div></div>
+          <a href="kounineng1.html#s6"><div class="sc-hd"><span class="sc-num">⑥</span><span class="sc-title">感嘆文 How〜! / What〜!</span></div><div class="sc-body"><ul class="sc-topics"><li>How ＋ 形容詞／副詞 ～!</li><li>What (a/an) ＋ 形容詞 ＋ 名詞 ～!</li><li>感嘆文の書き換え</li></ul></div></a>
+          <div class="sc-body" style="padding-top:0"><div class="sc-btn-row"><a class="sc-btn sc-btn-learn" href="kounineng1.html#s6">説明を読む</a><a class="sc-btn sc-btn-practice" href="kounineng1.html#m6">練習⑥</a></div></div>
           <div class="abc-row"><button class="abc-btn abc-btn-a" onclick="setABC('u1s6','a',this)">A OK</button><button class="abc-btn abc-btn-b" onclick="setABC('u1s6','b',this)">B 要復習</button><button class="abc-btn abc-btn-c" onclick="setABC('u1s6','c',this)">C 何度も</button></div>
         </div>
       </div>
@@ -183,25 +183,69 @@ canvas{position:fixed;top:0;left:0;pointer-events:none;z-index:9999;display:none
 
   <!-- Unit 3 -->
   <div class="unit">
-    <div class="unit-hd"><span class="unit-num">Unit 3</span><span class="unit-title">助動詞</span><span class="unit-badge">準備中</span></div>
+    <div class="unit-hd"><span class="unit-num">Unit 3</span><span class="unit-title">助動詞</span><span class="unit-badge">✅ 公開中</span></div>
     <div class="unit-body">
       <div class="sec-grid">
-        <div class="sec-card" style="opacity:.5"><div class="sc-hd"><span class="sc-num">1</span><span class="sc-title">can / may / must</span></div><div class="sc-body"><ul class="sc-topics"><li>能力・許可・推量・義務</li><li>must vs have to の違い</li></ul></div></div>
-        <div class="sec-card" style="opacity:.5"><div class="sc-hd"><span class="sc-num">2</span><span class="sc-title">should / ought to / used to</span></div><div class="sc-body"><ul class="sc-topics"><li>義務・推量・過去の習慣</li><li>助動詞＋have＋過去分詞</li></ul></div></div>
+        <div class="sec-card" data-id="u3s1">
+          <a href="kounineng3.html#s1"><div class="sc-hd"><span class="sc-num">①</span><span class="sc-title">基本の助動詞と書き換え</span></div><div class="sc-body"><ul class="sc-topics"><li>can / may / will / must の用法</li><li>be able to / have to / be going to</li><li>must not vs don't have to</li></ul></div></a>
+          <div class="sc-body" style="padding-top:0"><div class="sc-btn-row"><a class="sc-btn sc-btn-learn" href="kounineng3.html#s1">説明を読む</a><a class="sc-btn sc-btn-practice" href="kounineng3.html#p1">練習①</a></div></div>
+          <div class="abc-row"><button class="abc-btn abc-btn-a" onclick="setABC('u3s1','a',this)">A OK</button><button class="abc-btn abc-btn-b" onclick="setABC('u3s1','b',this)">B 要復習</button><button class="abc-btn abc-btn-c" onclick="setABC('u3s1','c',this)">C 何度も</button></div>
+        </div>
+        <div class="sec-card" data-id="u3s2">
+          <a href="kounineng3.html#s2"><div class="sc-hd"><span class="sc-num">②</span><span class="sc-title">推量・習慣・ought to</span></div><div class="sc-body"><ul class="sc-topics"><li>must / may / can't（推量の度合い）</li><li>should / ought to「〜すべき」</li><li>would / used to / be used to</li></ul></div></a>
+          <div class="sc-body" style="padding-top:0"><div class="sc-btn-row"><a class="sc-btn sc-btn-learn" href="kounineng3.html#s2">説明を読む</a><a class="sc-btn sc-btn-practice" href="kounineng3.html#p2">練習②</a></div></div>
+          <div class="abc-row"><button class="abc-btn abc-btn-a" onclick="setABC('u3s2','a',this)">A OK</button><button class="abc-btn abc-btn-b" onclick="setABC('u3s2','b',this)">B 要復習</button><button class="abc-btn abc-btn-c" onclick="setABC('u3s2','c',this)">C 何度も</button></div>
+        </div>
+        <div class="sec-card" data-id="u3s3">
+          <a href="kounineng3.html#s3"><div class="sc-hd"><span class="sc-num">③</span><span class="sc-title">助動詞＋have＋p.p.</span></div><div class="sc-body"><ul class="sc-topics"><li>must have / may have / cannot have</li><li>should have / need not have</li><li>had better / It is natural that should</li></ul></div></a>
+          <div class="sc-body" style="padding-top:0"><div class="sc-btn-row"><a class="sc-btn sc-btn-learn" href="kounineng3.html#s3">説明を読む</a><a class="sc-btn sc-btn-practice" href="kounineng3.html#p3">練習③</a></div></div>
+          <div class="abc-row"><button class="abc-btn abc-btn-a" onclick="setABC('u3s3','a',this)">A OK</button><button class="abc-btn abc-btn-b" onclick="setABC('u3s3','b',this)">B 要復習</button><button class="abc-btn abc-btn-c" onclick="setABC('u3s3','c',this)">C 何度も</button></div>
+        </div>
+        <div class="sec-card" data-id="u3s4">
+          <a href="kounineng3.html#s4"><div class="sc-hd"><span class="sc-num">④</span><span class="sc-title">重要慣用表現</span></div><div class="sc-body"><ul class="sc-topics"><li>may well / would rather / cannot help</li><li>cannot too / may as well</li><li>lest〜should / so as not to</li></ul></div></a>
+          <div class="sc-body" style="padding-top:0"><div class="sc-btn-row"><a class="sc-btn sc-btn-learn" href="kounineng3.html#s4">説明を読む</a><a class="sc-btn sc-btn-practice" href="kounineng3.html#p4">練習④</a></div></div>
+          <div class="abc-row"><button class="abc-btn abc-btn-a" onclick="setABC('u3s4','a',this)">A OK</button><button class="abc-btn abc-btn-b" onclick="setABC('u3s4','b',this)">B 要復習</button><button class="abc-btn abc-btn-c" onclick="setABC('u3s4','c',this)">C 何度も</button></div>
+        </div>
+        <div class="sec-card" data-id="u3s5">
+          <a href="kounineng3.html#s5"><div class="sc-hd"><span class="sc-num">⑤</span><span class="sc-title">need / dare / 祈願・強調</span></div><div class="sc-body"><ul class="sc-topics"><li>need・dare（助動詞と動詞の使い分け）</li><li>祈願の may / 強調の do</li><li>How dare you ～!</li></ul></div></a>
+          <div class="sc-body" style="padding-top:0"><div class="sc-btn-row"><a class="sc-btn sc-btn-learn" href="kounineng3.html#s5">説明を読む</a><a class="sc-btn sc-btn-practice" href="kounineng3.html#p5">練習⑤</a></div></div>
+          <div class="abc-row"><button class="abc-btn abc-btn-a" onclick="setABC('u3s5','a',this)">A OK</button><button class="abc-btn abc-btn-b" onclick="setABC('u3s5','b',this)">B 要復習</button><button class="abc-btn abc-btn-c" onclick="setABC('u3s5','c',this)">C 何度も</button></div>
+        </div>
       </div>
-      <div style="text-align:center;color:#aaa;font-size:13px;padding:4px 0">現在準備中です。もうしばらくお待ちください。</div>
     </div>
   </div>
 
   <!-- Unit 4 -->
   <div class="unit">
-    <div class="unit-hd"><span class="unit-num">Unit 4</span><span class="unit-title">不定詞・動名詞</span><span class="unit-badge">準備中</span></div>
+    <div class="unit-hd"><span class="unit-num">Unit 4</span><span class="unit-title">不定詞</span><span class="unit-badge">✅ 公開中</span></div>
     <div class="unit-body">
       <div class="sec-grid">
-        <div class="sec-card" style="opacity:.5"><div class="sc-hd"><span class="sc-num">1</span><span class="sc-title">不定詞の3用法</span></div><div class="sc-body"><ul class="sc-topics"><li>名詞的・副詞的・形容詞的用法</li><li>it … to ～ 構文</li></ul></div></div>
-        <div class="sec-card" style="opacity:.5"><div class="sc-hd"><span class="sc-num">2</span><span class="sc-title">動名詞</span></div><div class="sc-body"><ul class="sc-topics"><li>動名詞 vs 不定詞（意味の違い）</li><li>動名詞を目的語にとる動詞</li></ul></div></div>
+        <div class="sec-card" data-id="u4s1">
+          <a href="kounineng4.html#s1"><div class="sc-hd"><span class="sc-num">①</span><span class="sc-title">不定詞の3用法・仮主語</span></div><div class="sc-body"><ul class="sc-topics"><li>名詞的・形容詞的・副詞的用法</li><li>仮主語 It の構文（for / of）</li><li>副詞的用法の種類（目的・感情・結果）</li></ul></div></a>
+          <div class="sc-body" style="padding-top:0"><div class="sc-btn-row"><a class="sc-btn sc-btn-learn" href="kounineng4.html#s1">説明を読む</a><a class="sc-btn sc-btn-practice" href="kounineng4.html#p1">練習①</a></div></div>
+          <div class="abc-row"><button class="abc-btn abc-btn-a" onclick="setABC('u4s1','a',this)">A OK</button><button class="abc-btn abc-btn-b" onclick="setABC('u4s1','b',this)">B 要復習</button><button class="abc-btn abc-btn-c" onclick="setABC('u4s1','c',this)">C 何度も</button></div>
+        </div>
+        <div class="sec-card" data-id="u4s2">
+          <a href="kounineng4.html#s2"><div class="sc-hd"><span class="sc-num">②</span><span class="sc-title">SVO＋to / too～to</span></div><div class="sc-body"><ul class="sc-topics"><li>SVO ＋ to 不定詞（tell / want / allow）</li><li>too ～ to 原形 / enough to 原形</li><li>仮目的語 it の構文</li></ul></div></a>
+          <div class="sc-body" style="padding-top:0"><div class="sc-btn-row"><a class="sc-btn sc-btn-learn" href="kounineng4.html#s2">説明を読む</a><a class="sc-btn sc-btn-practice" href="kounineng4.html#p2">練習②</a></div></div>
+          <div class="abc-row"><button class="abc-btn abc-btn-a" onclick="setABC('u4s2','a',this)">A OK</button><button class="abc-btn abc-btn-b" onclick="setABC('u4s2','b',this)">B 要復習</button><button class="abc-btn abc-btn-c" onclick="setABC('u4s2','c',this)">C 何度も</button></div>
+        </div>
+        <div class="sec-card" data-id="u4s3">
+          <a href="kounineng4.html#s3"><div class="sc-hd"><span class="sc-num">③</span><span class="sc-title">重要不定詞表現</span></div><div class="sc-body"><ul class="sc-topics"><li>enough to / manage to / come to</li><li>so as to / in order to / be sure to</li><li>be willing to / be able to</li></ul></div></a>
+          <div class="sc-body" style="padding-top:0"><div class="sc-btn-row"><a class="sc-btn sc-btn-learn" href="kounineng4.html#s3">説明を読む</a><a class="sc-btn sc-btn-practice" href="kounineng4.html#p3">練習③</a></div></div>
+          <div class="abc-row"><button class="abc-btn abc-btn-a" onclick="setABC('u4s3','a',this)">A OK</button><button class="abc-btn abc-btn-b" onclick="setABC('u4s3','b',this)">B 要復習</button><button class="abc-btn abc-btn-c" onclick="setABC('u4s3','c',this)">C 何度も</button></div>
+        </div>
+        <div class="sec-card" data-id="u4s4">
+          <a href="kounineng4.html#s4"><div class="sc-hd"><span class="sc-num">④</span><span class="sc-title">不定詞の慣用表現</span></div><div class="sc-body"><ul class="sc-topics"><li>do nothing but / cannot but</li><li>All you have to do is / make it a rule to</li><li>would like to / had better</li></ul></div></a>
+          <div class="sc-body" style="padding-top:0"><div class="sc-btn-row"><a class="sc-btn sc-btn-learn" href="kounineng4.html#s4">説明を読む</a><a class="sc-btn sc-btn-practice" href="kounineng4.html#p4">練習④</a></div></div>
+          <div class="abc-row"><button class="abc-btn abc-btn-a" onclick="setABC('u4s4','a',this)">A OK</button><button class="abc-btn abc-btn-b" onclick="setABC('u4s4','b',this)">B 要復習</button><button class="abc-btn abc-btn-c" onclick="setABC('u4s4','c',this)">C 何度も</button></div>
+        </div>
+        <div class="sec-card" data-id="u4s5">
+          <a href="kounineng4.html#s5"><div class="sc-hd"><span class="sc-num">⑤</span><span class="sc-title">知覚・使役動詞 / seem to</span></div><div class="sc-body"><ul class="sc-topics"><li>知覚動詞 ＋ O ＋ 原形（受動態でto復活）</li><li>make / let / have / help ＋ O ＋ 原形</li><li>完了不定詞 / seem to ～</li></ul></div></a>
+          <div class="sc-body" style="padding-top:0"><div class="sc-btn-row"><a class="sc-btn sc-btn-learn" href="kounineng4.html#s5">説明を読む</a><a class="sc-btn sc-btn-practice" href="kounineng4.html#p5">練習⑤</a></div></div>
+          <div class="abc-row"><button class="abc-btn abc-btn-a" onclick="setABC('u4s5','a',this)">A OK</button><button class="abc-btn abc-btn-b" onclick="setABC('u4s5','b',this)">B 要復習</button><button class="abc-btn abc-btn-c" onclick="setABC('u4s5','c',this)">C 何度も</button></div>
+        </div>
       </div>
-      <div style="text-align:center;color:#aaa;font-size:13px;padding:4px 0">現在準備中です。もうしばらくお待ちください。</div>
     </div>
   </div>
 
@@ -234,7 +278,7 @@ canvas{position:fixed;top:0;left:0;pointer-events:none;z-index:9999;display:none
 
 <script>
 var status={};
-var activeIds=['u2s1','u2s2','u2s3','u2s4','u2s5','u2s6'];
+var activeIds=['u1s1','u1s2','u1s3','u1s4','u1s5a','u1s5b','u1s5','u1s6','u2s1','u2s2','u2s3','u2s4','u2s5','u2s6','u3s1','u3s2','u3s3','u3s4','u3s5','u4s1','u4s2','u4s3','u4s4','u4s5'];
 
 function setABC(id,grade,btn){
   var card=document.querySelector('[data-id="'+id+'"]');

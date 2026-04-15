@@ -71,6 +71,13 @@ body{font-family:'BIZ UDGothic','Hiragino Kaku Gothic Pro','Meiryo',sans-serif;b
 .tbl th{background:#1B3A6B;color:#fff;padding:7px 8px;text-align:left}
 .tbl td{padding:7px 8px;border-bottom:1px solid #eef;vertical-align:top}
 .tbl tr:nth-child(even) td{background:#f7f9ff}
+.tbl td:first-child{width:38%;word-break:break-word}
+.tbl td:nth-child(2){width:28%;word-break:keep-all}
+.tbl td:last-child{width:34%}
+.tbl4 td:first-child{width:22%}
+.tbl4 td:nth-child(2){width:18%}
+.tbl4 td:nth-child(3){width:22%}
+.tbl4 td:last-child{width:38%}
 /* ===== 単語ポップアップ ===== */
 .vw{border-bottom:2px dashed #0097A7;color:inherit;cursor:pointer;position:relative;white-space:nowrap;font-weight:inherit}
 .vw:hover{background:#e0f7fa;border-radius:3px}
@@ -110,6 +117,9 @@ body{font-family:'BIZ UDGothic','Hiragino Kaku Gothic Pro','Meiryo',sans-serif;b
 .vtest-opt.dis{pointer-events:none}
 .vtest-result{text-align:center;padding:8px;font-size:13px;font-weight:700;margin-top:4px}
 .vtest-result.ok{color:#2e7d32}.vtest-result.ng{color:#e53935}
+
+.mini-quiz-wrap{background:#f0faff;border:2px solid #0097A7;border-radius:12px;padding:14px;margin-top:12px}
+.mini-quiz-title{font-size:13px;font-weight:700;color:#0097A7;margin-bottom:10px}
 </style>
 </head>
 <body>
@@ -159,11 +169,11 @@ body{font-family:'BIZ UDGothic','Hiragino Kaku Gothic Pro','Meiryo',sans-serif;b
       「to ＋ 動詞の原形」の形を<b>不定詞</b>といいます。不定詞には3つの用法があり、文の中での働きによって訳し方が変わります。どの用法かを見分けるには、文の構造（何を修飾しているか）を考えることが大切です。<br><br>
       まず全体像を掴み、それから各用法の詳しい説明を確認しましょう。
     </div>
-    <table class="tbl">
+    <table class="tbl tbl4">
       <tr><th>用法</th><th>訳し方</th><th>働き</th><th>例文</th></tr>
-      <tr><td><b>名詞的用法</b></td><td>〜すること</td><td>S / O / C になる</td><td>To <span class="vw" data-w="master" data-pos="動詞" data-mean="マスターする・習得する" data-kana="マスター" data-opts='["マスターする・習得する", "忘れる", "始める", "休む"]' onclick="showVpop(this)">master</span> English is difficult. <button class="spk" onclick="sp('To master English is difficult.')">▶</button></td></tr>
-      <tr><td><b>形容詞的用法</b></td><td>〜するための<br>〜すべき</td><td>名詞を後ろから修飾</td><td>I want something cold to drink. <button class="spk" onclick="sp('I want something cold to drink.')">▶</button></td></tr>
-      <tr><td><b>副詞的用法</b></td><td>〜するために<br>〜して（感情の原因）</td><td>動詞・形容詞を修飾</td><td>He went there to meet her. <button class="spk" onclick="sp('He went there to meet her.')">▶</button></td></tr>
+      <tr><td><b>名詞的用法</b></td><td>〜すること</td><td>S / O / C になる</td><td>To <span class="vw" data-w="master" data-pos="動詞" data-mean="マスターする・習得する" data-kana="マスター" data-opts='["マスターする・習得する", "忘れる", "始める", "休む"]' onclick="showVpop(this)">master</span> English is difficult. <button class="spk" onclick="sp('To master English is difficult.')">▶</button><br><span style="font-size:12px;color:#555;">英語をマスターすることは難しい。</span></td></tr>
+      <tr><td><b>形容詞的用法</b></td><td>〜するための<br>〜すべき</td><td>名詞を後ろから修飾</td><td>I want something cold to drink. <button class="spk" onclick="sp('I want something cold to drink.')">▶</button><br><span style="font-size:12px;color:#555;">私は何か冷たい飲み物が欲しい。</span></td></tr>
+      <tr><td><b>副詞的用法</b></td><td>〜するために<br>〜して（感情の原因）</td><td>動詞・形容詞を修飾</td><td>He went there to meet her. <button class="spk" onclick="sp('He went there to meet her.')">▶</button><br><span style="font-size:12px;color:#555;">彼は彼女に会うためにそこへ行った。</span></td></tr>
     </table>
     <div class="card" style="background:#f0faff;border:2px solid #0097A7;margin-top:10px">
       <div class="card-title" style="color:#0097A7">📝 確認問題①　不定詞の3用法を判定しよう</div>
@@ -179,6 +189,10 @@ body{font-family:'BIZ UDGothic','Hiragino Kaku Gothic Pro','Meiryo',sans-serif;b
       さらに不定詞をつける場合：<b>something cold to drink</b>（飲むための冷たい何か）のように<br>
       「〜thing ＋ 形容詞 ＋ to 原形」の語順になります。
     </div>
+  </div>
+  <div class="card" style="border:2px solid #e65100">
+    <div class="card-title" style="color:#e65100">✏️ すぐに確認！　― 不定詞の3用法 ―</div>
+    <div id="iq1aq"></div>
   </div>
   <div class="card">
     <div class="card-title">仮主語 It の構文</div>
@@ -210,6 +224,10 @@ body{font-family:'BIZ UDGothic','Hiragino Kaku Gothic Pro','Meiryo',sans-serif;b
     <div class="card-title" style="color:#0097A7">📝 確認問題②　for か of か選ぼう</div>
     <div id="inq2"></div>
   </div>
+  <div class="card" style="border:2px solid #e65100">
+    <div class="card-title" style="color:#e65100">✏️ すぐに確認！　― 仮主語 It の構文 ―</div>
+    <div id="iq1bq"></div>
+  </div>
   <div class="card">
     <div class="card-title">副詞的用法の種類（詳しく）</div>
     <div class="kb">
@@ -218,23 +236,33 @@ body{font-family:'BIZ UDGothic','Hiragino Kaku Gothic Pro','Meiryo',sans-serif;b
     </div>
     <table class="tbl">
       <tr><th>種類</th><th>訳し方</th><th>例文</th></tr>
-      <tr><td>目的</td><td>〜するために</td><td>He went to the park <b>to meet</b> her. <button class="spk" onclick="sp('He went to the park to meet her.')">▶</button></td></tr>
-      <tr><td>感情の原因</td><td>〜して</td><td>I'm glad <b>to see</b> you. <button class="spk" onclick="sp("I'm glad to see you.")">▶</button></td></tr>
-      <tr><td>判断の根拠</td><td>〜するくらいだから</td><td>She must be rich <b>to buy</b> a new car. <button class="spk" onclick="sp('She must be rich to buy a new car.')">▶</button></td></tr>
-      <tr><td>結果</td><td>そして〜した</td><td>My grandmother lived <b>to be</b> ninety-five. <button class="spk" onclick="sp('My grandmother lived to be ninety-five.')">▶</button></td></tr>
-      <tr><td>only to ～</td><td>〜するばかりだった（失望の結果）</td><td>He studied hard only <b>to fail</b> the exam. <button class="spk" onclick="sp('He studied hard only to fail the exam.')">▶</button></td></tr>
+      <tr><td>目的</td><td>〜するために</td><td>He went to the park <b>to meet</b> her. <button class="spk" onclick="sp('He went to the park to meet her.')">▶</button><br><span style="font-size:12px;color:#555;">彼は彼女に会うために公園へ行った。</span></td></tr>
+      <tr><td>感情の原因</td><td>〜して</td><td>I'm glad <b>to see</b> you. <button class="spk" onclick="sp("I'm glad to see you.")">▶</button><br><span style="font-size:12px;color:#555;">あなたに会えて嬉しいです。</span></td></tr>
+      <tr><td>判断の根拠</td><td>〜するくらいだから</td><td>She must be rich <b>to buy</b> a new car. <button class="spk" onclick="sp('She must be rich to buy a new car.')">▶</button><br><span style="font-size:12px;color:#555;">新車を買うくらいだから、彼女はお金持ちに違いない。</span></td></tr>
+      <tr><td>結果</td><td>そして〜した</td><td>My grandmother lived <b>to be</b> ninety-five. <button class="spk" onclick="sp('My grandmother lived to be ninety-five.')">▶</button><br><span style="font-size:12px;color:#555;">私の祖母は95歳まで生きた。</span></td></tr>
+      <tr><td>only to ～</td><td>〜するばかりだった（失望の結果）</td><td>He studied hard only <b>to fail</b> the exam. <button class="spk" onclick="sp('He studied hard only to fail the exam.')">▶</button><br><span style="font-size:12px;color:#555;">彼は一生懸命勉強したが、残念ながら試験に失敗した。</span></td></tr>
     </table>
     <div class="card" style="background:#f0faff;border:2px solid #0097A7;margin-top:10px;padding:14px 16px;border-radius:14px">
       <div class="card-title" style="color:#0097A7">📝 確認問題③　副詞的用法の種類を選ぼう</div>
       <div id="inq3"></div>
     </div>
   </div>
+
+  <div class="mini-quiz-wrap">
+    <div class="mini-quiz-title">📝 ミニテスト①　不定詞の用法を確認しよう</div>
+    <div id="mq1a"></div>
+  </div>
+
+  <div class="card" style="border:2px solid #e65100">
+    <div class="card-title" style="color:#e65100">✏️ すぐに確認！　― 副詞的用法の種類 ―</div>
+    <div id="iq1cq"></div>
+  </div>
 </div>
 
 <!-- 練習① -->
 <div id="p1" class="sec">
   <div class="sh">練習①　不定詞の用法・仮主語（入試問題つき）</div>
-  <div class="sb"><div class="sn" id="p1sn">0 / 7</div><div class="pw"><div class="pf" id="p1p" style="width:0%"></div></div><button class="reset-btn" onclick="iC('p1')">リセット</button></div>
+  <div class="sb"><div class="sn" id="p1sn">0 / 12</div><div class="pw"><div class="pf" id="p1pf" style="width:0%"></div></div><button class="reset-btn" onclick="iC('p1')">リセット</button></div>
   <div id="p1q"></div>
 </div>
 
@@ -254,6 +282,10 @@ body{font-family:'BIZ UDGothic','Hiragino Kaku Gothic Pro','Meiryo',sans-serif;b
       　 He told me <b>not to go</b> there again.（彼は私に2度とそこへ行かないように言いました）<button class="spk" onclick="sp('He told me not to go there again.')">▶</button><br>
       　 ⚠ × He told me to not go（この語順は誤りです。not は必ず to の前！）
     </div>
+  </div>
+  <div class="card" style="border:2px solid #e65100">
+    <div class="card-title" style="color:#e65100">✏️ すぐに確認！　― SVO ＋ to 不定詞 ―</div>
+    <div id="iq2aq"></div>
   </div>
   <div class="card">
     <div class="card-title">too ～ to / It ＋ 形容詞 ＋ to の構文</div>
@@ -276,12 +308,22 @@ body{font-family:'BIZ UDGothic','Hiragino Kaku Gothic Pro','Meiryo',sans-serif;b
       ○ I found <b>it</b> difficult <b>to read the book</b>.（itを使ってバランスを整える）
     </div>
   </div>
+
+  <div class="mini-quiz-wrap">
+    <div class="mini-quiz-title">📝 ミニテスト②　SVO＋to / too～to を確認しよう</div>
+    <div id="mq2a"></div>
+  </div>
+
+  <div class="card" style="border:2px solid #e65100">
+    <div class="card-title" style="color:#e65100">✏️ すぐに確認！　― too ～ to / 仮目的語 it ―</div>
+    <div id="iq2bq"></div>
+  </div>
 </div>
 
 <!-- 練習② -->
 <div id="p2" class="sec">
   <div class="sh">練習②　SVO＋to / too〜to を並び替えよう（入試問題つき）</div>
-  <div class="sb"><div class="sn" id="p2sn">0 / 6</div><div class="pw"><div class="pf" id="p2p" style="width:0%"></div></div><button class="reset-btn" onclick="iS('p2','p2q',d2)">リセット</button></div>
+  <div class="sb"><div class="sn" id="p2sn">0 / 12</div><div class="pw"><div class="pf" id="p2pf" style="width:0%"></div></div><button class="reset-btn" onclick="iS('p2','p2q',d2)">リセット</button></div>
   <div id="p2q"></div>
 </div>
 
@@ -295,14 +337,14 @@ body{font-family:'BIZ UDGothic','Hiragino Kaku Gothic Pro','Meiryo',sans-serif;b
     </div>
     <table class="tbl">
       <tr><th>表現</th><th>意味</th><th>例文</th></tr>
-      <tr><td><b>形容詞 enough to ～</b></td><td>〜するほど十分〜だ</td><td>You are old enough to travel alone. <button class="spk" onclick="sp('You are old enough to travel alone.')">▶</button><br><small>※形容詞・副詞は enough の前に置く</small></td></tr>
-      <tr><td><b><span class="vw" data-w="manage" data-pos="動詞" data-mean="なんとかする・うまくやる" data-kana="マネージ" data-opts='["なんとかする・うまくやる", "失敗する", "諦める", "忘れる"]' onclick="showVpop(this)">manage</span> to ～</b></td><td>なんとかして〜する</td><td>I managed to pass the exam. <button class="spk" onclick="sp('I managed to pass the exam.')">▶</button></td></tr>
-      <tr><td><b>can <span class="vw" data-w="afford" data-pos="動詞" data-mean="〜する余裕がある" data-kana="アフォード" data-opts='["〜する余裕がある", "断る", "欲しがる", "羨む"]' onclick="showVpop(this)">afford</span> to ～</b></td><td>〜する余裕がある</td><td>I can't <span class="vw" data-w="afford" data-pos="動詞" data-mean="〜する余裕がある" data-kana="アフォード" data-opts='["〜する余裕がある", "断る", "欲しがる", "羨む"]' onclick="showVpop(this)">afford</span> to buy a car. <button class="spk" onclick="sp("I can't afford to buy a car.")">▶</button></td></tr>
-      <tr><td><b>so as to ～ / in order to ～</b></td><td>〜するために</td><td>He studied hard so as to pass. <button class="spk" onclick="sp('He studied hard so as to pass.')">▶</button></td></tr>
-      <tr><td><b>so as not to / in order not to ～</b></td><td>〜しないように</td><td>He ran fast so as not to be late. <button class="spk" onclick="sp('He ran fast so as not to be late.')">▶</button></td></tr>
-      <tr><td><b>be sure to ～</b></td><td>必ず〜する</td><td>Please be sure to read this. <button class="spk" onclick="sp('Please be sure to read this.')">▶</button></td></tr>
-      <tr><td><b>be <span class="vw" data-w="willing" data-pos="形容詞" data-mean="喜んで〜する・進んで" data-kana="ウィリング" data-opts='["喜んで〜する・進んで", "嫌がって", "仕方なく", "強制的に"]' onclick="showVpop(this)">willing</span> to ～</b></td><td>喜んで〜する</td><td>I'm <span class="vw" data-w="willing" data-pos="形容詞" data-mean="喜んで〜する・進んで" data-kana="ウィリング" data-opts='["喜んで〜する・進んで", "嫌がって", "仕方なく", "強制的に"]' onclick="showVpop(this)">willing</span> to do anything for you. <button class="spk" onclick="sp("I'm willing to do anything for you.")">▶</button></td></tr>
-      <tr><td><b>come to ～</b></td><td>〜するようになる（＝ get to）</td><td>We came to know each other. <button class="spk" onclick="sp('We came to know each other.')">▶</button></td></tr>
+      <tr><td><b>形容詞 enough to ～</b></td><td>〜するほど十分〜だ</td><td>You are old enough to travel alone. <button class="spk" onclick="sp('You are old enough to travel alone.')">▶</button><br><span style="font-size:12px;color:#555;">あなたは一人で旅行できるくらい大きい。</span><br><small>※形容詞・副詞は enough の前に置く</small></td></tr>
+      <tr><td><b><span class="vw" data-w="manage" data-pos="動詞" data-mean="なんとかする・うまくやる" data-kana="マネージ" data-opts='["なんとかする・うまくやる", "失敗する", "諦める", "忘れる"]' onclick="showVpop(this)">manage</span> to ～</b></td><td>なんとかして〜する</td><td>I managed to pass the exam. <button class="spk" onclick="sp('I managed to pass the exam.')">▶</button><br><span style="font-size:12px;color:#555;">私はなんとか試験に合格した。</span></td></tr>
+      <tr><td><b>can <span class="vw" data-w="afford" data-pos="動詞" data-mean="〜する余裕がある" data-kana="アフォード" data-opts='["〜する余裕がある", "断る", "欲しがる", "羨む"]' onclick="showVpop(this)">afford</span> to ～</b></td><td>〜する余裕がある</td><td>I can't <span class="vw" data-w="afford" data-pos="動詞" data-mean="〜する余裕がある" data-kana="アフォード" data-opts='["〜する余裕がある", "断る", "欲しがる", "羨む"]' onclick="showVpop(this)">afford</span> to buy a car. <button class="spk" onclick="sp("I can't afford to buy a car.")">▶</button><br><span style="font-size:12px;color:#555;">私には車を買う余裕がない。</span></td></tr>
+      <tr><td><b>so as to ～ / in order to ～</b></td><td>〜するために</td><td>He studied hard so as to pass. <button class="spk" onclick="sp('He studied hard so as to pass.')">▶</button><br><span style="font-size:12px;color:#555;">彼は合格するために一生懸命勉強した。</span></td></tr>
+      <tr><td><b>so as not to / in order not to ～</b></td><td>〜しないように</td><td>He ran fast so as not to be late. <button class="spk" onclick="sp('He ran fast so as not to be late.')">▶</button><br><span style="font-size:12px;color:#555;">彼は遅刻しないように速く走った。</span></td></tr>
+      <tr><td><b>be sure to ～</b></td><td>必ず〜する</td><td>Please be sure to read this. <button class="spk" onclick="sp('Please be sure to read this.')">▶</button><br><span style="font-size:12px;color:#555;">必ずこれを読んでください。</span></td></tr>
+      <tr><td><b>be <span class="vw" data-w="willing" data-pos="形容詞" data-mean="喜んで〜する・進んで" data-kana="ウィリング" data-opts='["喜んで〜する・進んで", "嫌がって", "仕方なく", "強制的に"]' onclick="showVpop(this)">willing</span> to ～</b></td><td>喜んで〜する</td><td>I'm <span class="vw" data-w="willing" data-pos="形容詞" data-mean="喜んで〜する・進んで" data-kana="ウィリング" data-opts='["喜んで〜する・進んで", "嫌がって", "仕方なく", "強制的に"]' onclick="showVpop(this)">willing</span> to do anything for you. <button class="spk" onclick="sp("I'm willing to do anything for you.")">▶</button><br><span style="font-size:12px;color:#555;">あなたのためなら何でもするつもりです。</span></td></tr>
+      <tr><td><b>come to ～</b></td><td>〜するようになる（＝ get to）</td><td>We came to know each other. <button class="spk" onclick="sp('We came to know each other.')">▶</button><br><span style="font-size:12px;color:#555;">私たちはお互いを知るようになった。</span></td></tr>
     </table>
     <div class="wb">
       <b>⚠ enough の位置に注意しましょう！</b><br><br>
@@ -315,12 +357,22 @@ body{font-family:'BIZ UDGothic','Hiragino Kaku Gothic Pro','Meiryo',sans-serif;b
       この2つの違いを覚えておくと書き換え問題で大変役立ちます。
     </div>
   </div>
+
+  <div class="mini-quiz-wrap">
+    <div class="mini-quiz-title">📝 ミニテスト③　enough to / too～to を確認しよう</div>
+    <div id="mq3a"></div>
+  </div>
+
+  <div class="card" style="border:2px solid #e65100">
+    <div class="card-title" style="color:#e65100">✏️ すぐに確認！　― 重要不定詞表現 ―</div>
+    <div id="iq3aq"></div>
+  </div>
 </div>
 
 <!-- 練習③ -->
 <div id="p3" class="sec">
   <div class="sh">練習③　重要不定詞表現を選ぼう（入試問題つき）</div>
-  <div class="sb"><div class="sn" id="p3sn">0 / 7</div><div class="pw"><div class="pf" id="p3p" style="width:0%"></div></div><button class="reset-btn" onclick="iC('p3')">リセット</button></div>
+  <div class="sb"><div class="sn" id="p3sn">0 / 10</div><div class="pw"><div class="pf" id="p3pf" style="width:0%"></div></div><button class="reset-btn" onclick="iC('p3')">リセット</button></div>
   <div id="p3q"></div>
 </div>
 
@@ -335,13 +387,13 @@ body{font-family:'BIZ UDGothic','Hiragino Kaku Gothic Pro','Meiryo',sans-serif;b
     </div>
     <table class="tbl">
       <tr><th>表現</th><th>意味</th><th>例文</th></tr>
-      <tr><td><b>do nothing but 原形</b></td><td>〜してばかりいる</td><td>The baby did nothing but cry. <button class="spk" onclick="sp('The baby did nothing but cry.')">▶</button></td></tr>
-      <tr><td><b>cannot but 原形</b></td><td>〜せざるを得ない</td><td>I cannot but <span class="vw" data-w="laugh" data-pos="動詞" data-mean="笑う" data-kana="ラーフ" data-opts='["笑う", "泣く", "怒る", "驚く"]' onclick="showVpop(this)">laugh</span> at his joke. <button class="spk" onclick="sp('I cannot but laugh at his joke.')">▶</button></td></tr>
-      <tr><td><b>make it a rule to 原形</b></td><td>〜することを習慣にしている</td><td>I make it a rule to get up early. <button class="spk" onclick="sp('I make it a rule to get up early.')">▶</button></td></tr>
-      <tr><td><b>All you have to do is to 原形</b><br>＝ <b>You have only to 原形</b></td><td>〜しさえすればよい</td><td>All you have to do is to do your best. <button class="spk" onclick="sp('All you have to do is to do your best.')">▶</button></td></tr>
-      <tr><td><b>Why not 原形?</b><br>＝ <b>Why don't you 原形?</b></td><td>〜してはどうですか</td><td>Why not take a rest? <button class="spk" onclick="sp('Why not take a rest?')">▶</button></td></tr>
-      <tr><td><b>would like to 原形</b></td><td>〜したいなあ（ていねい）</td><td>I would like to go home. <button class="spk" onclick="sp('I would like to go home.')">▶</button></td></tr>
-      <tr><td><b>had better 原形</b></td><td>〜したほうがよい（強い忠告）</td><td>You had better take an umbrella. <button class="spk" onclick="sp('You had better take an umbrella.')">▶</button></td></tr>
+      <tr><td><b>do nothing but 原形</b></td><td>〜してばかりいる</td><td>The baby did nothing but cry. <button class="spk" onclick="sp('The baby did nothing but cry.')">▶</button><br><span style="font-size:12px;color:#555;">その赤ちゃんは泣いてばかりいた。</span></td></tr>
+      <tr><td><b>cannot but 原形</b></td><td>〜せざるを得ない</td><td>I cannot but <span class="vw" data-w="laugh" data-pos="動詞" data-mean="笑う" data-kana="ラーフ" data-opts='["笑う", "泣く", "怒る", "驚く"]' onclick="showVpop(this)">laugh</span> at his joke. <button class="spk" onclick="sp('I cannot but laugh at his joke.')">▶</button><br><span style="font-size:12px;color:#555;">彼のジョークに笑わずにはいられない。</span></td></tr>
+      <tr><td><b>make it a rule to 原形</b></td><td>〜することを習慣にしている</td><td>I make it a rule to get up early. <button class="spk" onclick="sp('I make it a rule to get up early.')">▶</button><br><span style="font-size:12px;color:#555;">私は早起きすることを習慣にしている。</span></td></tr>
+      <tr><td><b>All you have to do is to 原形</b><br>＝ <b>You have only to 原形</b></td><td>〜しさえすればよい</td><td>All you have to do is to do your best. <button class="spk" onclick="sp('All you have to do is to do your best.')">▶</button><br><span style="font-size:12px;color:#555;">あなたは全力を尽くしさえすればよい。</span></td></tr>
+      <tr><td><b>Why not 原形?</b><br>＝ <b>Why don't you 原形?</b></td><td>〜してはどうですか</td><td>Why not take a rest? <button class="spk" onclick="sp('Why not take a rest?')">▶</button><br><span style="font-size:12px;color:#555;">少し休憩してはどうですか？</span></td></tr>
+      <tr><td><b>would like to 原形</b></td><td>〜したいなあ（ていねい）</td><td>I would like to go home. <button class="spk" onclick="sp('I would like to go home.')">▶</button><br><span style="font-size:12px;color:#555;">家に帰りたいです。</span></td></tr>
+      <tr><td><b>had better 原形</b></td><td>〜したほうがよい（強い忠告）</td><td>You had better take an umbrella. <button class="spk" onclick="sp('You had better take an umbrella.')">▶</button><br><span style="font-size:12px;color:#555;">傘を持っていったほうがよいですよ。</span></td></tr>
     </table>
     <div class="wb">
       <b>⚠ do nothing but / cannot but の後ろは「原形動詞」です！</b><br><br>
@@ -363,12 +415,22 @@ body{font-family:'BIZ UDGothic','Hiragino Kaku Gothic Pro','Meiryo',sans-serif;b
       ⚠ これらの慣用表現は、主節の主語が変わっても形は変わりません。
     </div>
   </div>
+
+  <div class="mini-quiz-wrap">
+    <div class="mini-quiz-title">📝 ミニテスト④　慣用表現を確認しよう</div>
+    <div id="mq4a"></div>
+  </div>
+
+  <div class="card" style="border:2px solid #e65100">
+    <div class="card-title" style="color:#e65100">✏️ すぐに確認！　― 重要慣用表現 ―</div>
+    <div id="iq4aq"></div>
+  </div>
 </div>
 
 <!-- 練習④ -->
 <div id="p4" class="sec">
   <div class="sh">練習④　慣用表現を並び替えよう（入試問題つき）</div>
-  <div class="sb"><div class="sn" id="p4sn">0 / 6</div><div class="pw"><div class="pf" id="p4p" style="width:0%"></div></div><button class="reset-btn" onclick="iS('p4','p4q',d4)">リセット</button></div>
+  <div class="sb"><div class="sn" id="p4sn">0 / 10</div><div class="pw"><div class="pf" id="p4pf" style="width:0%"></div></div><button class="reset-btn" onclick="iS('p4','p4q',d4)">リセット</button></div>
   <div id="p4q"></div>
 </div>
 
@@ -397,6 +459,10 @@ body{font-family:'BIZ UDGothic','Hiragino Kaku Gothic Pro','Meiryo',sans-serif;b
       　 受動態では原形不定詞が使えないため、<b>to ＋ 原形</b>に戻るのです。
     </div>
   </div>
+  <div class="card" style="border:2px solid #e65100">
+    <div class="card-title" style="color:#e65100">✏️ すぐに確認！　― 知覚動詞 ＋ O ＋ 原形不定詞 ―</div>
+    <div id="iq5aq"></div>
+  </div>
   <div class="card">
     <div class="card-title">使役動詞 ＋ O ＋ 原形不定詞</div>
     <div class="kb">
@@ -413,6 +479,10 @@ body{font-family:'BIZ UDGothic','Hiragino Kaku Gothic Pro','Meiryo',sans-serif;b
       ◆ <b>受動態にすると to ＋ 原形 に変わります</b><br>
       　 He was made <b>to <span class="vw" data-w="carry" data-pos="動詞" data-mean="運ぶ・持ち運ぶ" data-kana="キャリー" data-opts='["運ぶ・持ち運ぶ", "捨てる", "買う", "置く"]' onclick="showVpop(this)">carry</span></b> his <span class="vw" data-w="baggage" data-pos="名詞" data-mean="手荷物・荷物" data-kana="バゲッジ" data-opts='["手荷物・荷物", "財布", "チケット", "パスポート"]' onclick="showVpop(this)">baggage</span>.（彼は荷物を運ばされました）<button class="spk" onclick="sp('He was made to carry his baggage.')">▶</button>
     </div>
+  </div>
+  <div class="card" style="border:2px solid #e65100">
+    <div class="card-title" style="color:#e65100">✏️ すぐに確認！　― 使役動詞 ＋ O ＋ 原形不定詞 ―</div>
+    <div id="iq5bq"></div>
   </div>
   <div class="card">
     <div class="card-title">完了不定詞 / seem to ～</div>
@@ -431,8 +501,20 @@ body{font-family:'BIZ UDGothic','Hiragino Kaku Gothic Pro','Meiryo',sans-serif;b
     </div>
   </div>
 
+  <div class="card" style="border:2px solid #e65100">
+    <div class="card-title" style="color:#e65100">✏️ すぐに確認！　― 完了不定詞 / seem to ～ ―</div>
+    <div id="iq5cq"></div>
+  </div>
+  <div class="mini-quiz-wrap">
+    <div class="mini-quiz-title">📝 ミニテスト⑤　知覚・使役動詞 / seem to を確認しよう</div>
+    <div id="mq5a"></div>
+  </div>
+
+</div>
+
+<div id="p5" class="sec">
   <div class="sh" style="margin-top:16px">練習⑤　実戦問題（入試問題）を解こう</div>
-  <div class="sb"><div class="sn" id="p5sn">0 / 10</div><div class="pw"><div class="pf" id="p5p" style="width:0%"></div></div><button class="reset-btn" onclick="iC('p5')">リセット</button></div>
+  <div class="sb"><div class="sn" id="p5sn">0 / 10</div><div class="pw"><div class="pf" id="p5pf" style="width:0%"></div></div><button class="reset-btn" onclick="iC('p5')">リセット</button></div>
   <div id="p5q"></div>
 </div>
 
@@ -483,8 +565,10 @@ function confetti(){
 }
 
 function updS(mid,n,t){
-  document.getElementById(mid+'sn').textContent=n+' / '+t;
-  document.getElementById(mid+'pf').style.width=(n/t*100)+'%';
+  var sn=document.getElementById(mid+'sn');
+  var pf=document.getElementById(mid+'pf');
+  if(sn)sn.textContent=n+' / '+t;
+  if(pf)pf.style.width=(n/t*100)+'%';
   if(n===t&&t>0)confetti();
 }
 
@@ -501,6 +585,33 @@ function ss(id,btn){
   }
 }
 function shuffle(a){for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;}return a;}
+function upd(id,n,t){var sn=document.getElementById(id+'sn');if(sn)sn.textContent=n+' / '+t;var pf=document.getElementById(id+'pf')||document.getElementById(id+'p');if(pf)pf.style.width=(n/t*100)+'%';if(n===t&&t>0)confetti();}
+function sh(n){var e=n.replace(/'/g,"\\'");return '<button class="spk" style="width:26px;height:26px;margin-left:4px" onclick="sp(\''+e+'\')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button>';}
+function ub(u){return u?'<span class="ub">'+u+'</span>':'';}  
+function iC(id){
+  var data=window['c'+id],total=data.length,score=0,done=new Array(total).fill(false);
+  updS(id,0,total);
+  var c=document.getElementById(id+'q');c.innerHTML='';
+  data.forEach(function(d,i){
+    var div=document.createElement('div');div.className='q-box';
+    div.innerHTML='<div class="q-hd"><span class="q-num">'+(i+1)+'</span><span class="q-txt"><b>'+d.q+'</b>'+ub(d.u)+sh(d.s)+'</span></div>'
+      +(d.j?'<div style="font-size:13px;color:#555;margin-bottom:8px">'+d.j+'</div>':'')
+      +(d.h?'<span class="hint">'+d.h+'</span>':'')
+      +'<div id="'+id+'ch'+i+'"></div><div class="ep" id="'+id+'ep'+i+'">📝 解説：'+d.e+'</div>';
+    c.appendChild(div);
+    d.c.forEach(function(ch,ci){
+      var btn=document.createElement('button');btn.className='cb';btn.textContent=ch;
+      btn.onclick=function(){
+        if(done[i])return;done[i]=true;
+        div.querySelectorAll('.cb').forEach(function(b,bi){b.classList.add('dis');if(bi===d.a)b.classList.add('ca');else if(bi===ci&&ci!==d.a)b.classList.add('wa');});
+        document.getElementById(id+'ep'+i).classList.add('show');
+        if(ci===d.a){score++;updS(id,score,total);}
+      };
+      document.getElementById(id+'ch'+i).appendChild(btn);
+    });
+  });
+}
+
 function iS(sid,cid,data){
   var total=data.length;upd(sid,0,total);
   var c=document.getElementById(cid);c.innerHTML='';
@@ -555,13 +666,18 @@ function iS(sid,cid,data){
 
 // ===== 練習①データ =====
 window.cp1=[
-  {q:'His dream is ( ) to London.',s:'His dream is to go to London.',j:'彼の夢はロンドンへ行くことです。',a:2,c:['going','went','to go','go'],h:'名詞的用法（補語）',e:'is の後ろで C（補語）として使われる <b>名詞的用法</b> → His dream is <b>to go</b> to London.'},
+  {q:'His dream is <b>to go</b> to London.',s:'His dream is to go to London.',j:'彼の夢はロンドンへ行くことです。',a:2,c:['going','went','to go','go'],h:'名詞的用法（補語）',e:'is の後ろで C（補語）として使われる <b>名詞的用法</b> → His dream is <b>to go</b> to London.'},
   {q:'He went to the park ( ) her.',s:'He went to the park to meet her.',j:'彼は彼女に会うためにその公園へ行った。',a:2,c:['meet','meeting','to meet','for meeting'],h:'副詞的用法（目的）',e:'「〜するために」= <b>副詞的用法（目的）</b> → to meet her'},
   {q:'Jane has some friends ( ) with.',s:'Jane has some friends to talk with.',j:'ジェーンにはいっしょに話す友達がいます。',a:2,c:['talk','talking','to talk','talked'],h:'形容詞的用法（名詞を修飾）',e:'friends を後ろから修飾する <b>形容詞的用法</b> → friends to talk with'},
-  {q:'It is very kind ( ) you to help me.',s:'It is very kind of you to help me.',j:'私を助けてくれるとは親切だ。',a:1,c:['for','of','to','with'],h:'kind は人の性質 → of を使う',e:'kind / wise / foolish など人の性質を表す形容詞のとき → It is ～ <b>of</b> you to ～'},
+  {q:'It is very kind <b>of you</b> to help me.',s:'It is very kind of you to help me.',j:'私を助けてくれるとは親切だ。',a:1,c:['for','of','to','with'],h:'kind は人の性質 → of を使う',e:'kind / wise / foolish など人の性質を表す形容詞のとき → It is ～ <b>of</b> you to ～'},
   {q:'It is difficult ( ) me to master a foreign language.',s:'It is difficult for me to master a foreign language.',j:'私にとって外国語をマスターするのは難しい。',a:0,c:['for','of','to','with'],h:'一般的状況・困難さ → for を使う',e:'difficult / easy / impossible など一般的状況を示す形容詞のとき → <b>for</b> ＋ 人'},
   {q:'Please give me something ( ) to drink.',s:'Please give me something cold to drink.',j:'何か冷たい飲み物を下さい。',a:1,c:['cold','cold something','to cold','coldly'],h:'something ＋ 形容詞 ＋ to 原形',e:'～thing の後は <b>形容詞を後置</b> → something <b>cold</b> to drink'},
-  {q:'She must be rich ( ) a new car.',s:'She must be rich to buy a new car.',j:'彼女は新車を買うくらいなのでお金持ちに違いない。',a:2,c:['for buying','of buying','to buy','buy'],h:'副詞的用法（判断の根拠）',e:'判断の根拠を表す副詞的用法 → to buy a new car'},
+  {q:'She must be rich ( ) a new car.',s:'She must be rich to buy a new car.',j:'彼女は新車を買うくらいなのでお金持ちに違いない。',a:2,c:['for buying','of buying','to buy','buy'],h:'副詞的用法（判断の根拠）',e:'判断の根拠を表す副詞的用法 → to buy a new car'},,
+  {q:'（　）に入る正しい用法の不定詞を選べ。\nHe lived ( ) be ninety years old.',s:'He lived to be ninety years old.',j:'彼は90歳まで生きた。',u:'',a:0,c:['to be','being','be','been'],e:'「〜した結果…になった」<b>結果</b>を表す副詞的用法 → <b>to be</b>。'},
+  {q:'（　）に入る正しい語句を選べ。\nIt is dangerous ( ) swim in this river.',s:'It is dangerous to swim in this river.',j:'この川で泳ぐのは危険です。',u:'',a:2,c:['of','for','to','that'],e:'It is ＋ 形容詞 ＋ <b>to 原形</b>（仮主語構文）。dangerous は状況を表す形容詞 → for O も可。'},
+  {q:'（　）に入る正しい語句を選べ。\nI have no time ( ).',s:'I have no time to waste.',j:'私にはむだにする時間がありません。',u:'',a:1,c:['waste','to waste','wasting','wasted'],e:'名詞 time を後ろから修飾する<b>形容詞的用法</b> → <b>to waste</b>。'},
+  {q:'（　）に入る正しい語句を選べ。\nTo tell the truth, ( ) hard to answer.',s:"To tell the truth, it's hard to answer.",j:'正直に言うと、答えるのが難しい。',u:'',a:1,c:['this is','it is','that is','there is'],e:'To tell the truth「正直に言うと」は独立用法の不定詞。仮主語は <b>it</b>。'},
+  {q:'（　）に入る正しい語句を選べ。\nI woke up early so as ( ) miss the bus.',s:'I woke up early so as not to miss the bus.',j:'バスに乗り遅れないように早起きした。',u:'',a:0,c:['not to','to not','not','no to'],e:'「〜しないために」= <b>so as not to 原形</b>。not to の語順に注意。'}
 ];
 
 // ===== 練習②データ（並び替え）=====
@@ -571,7 +687,13 @@ window.d2=[
   {j:'このお茶は熱すぎて私には飲めません。',s:"The tea is too hot for me to drink.",w:['The','tea','is','too','hot','for','me','to','drink','.'],h:'too ～ for 人 to 原形（意味上の主語）',e:'意味上の主語がある場合 <b>for ＋ 人</b> → The tea is too hot <b>for me to drink</b>.'},
   {j:'彼は私に2度とそこに行かないように言った。',s:'He told me not to go there again.',w:['He','told','me','not','to','go','there','again','.'],h:'tell ＋ O ＋ not to 原形（不定詞の否定）',e:'不定詞の否定は <b>not to ＋ 原形</b> → He told me <b>not to go</b> there again.'},
   {j:'君にはもっと慎重になってほしい。',s:'I want you to be more careful.',w:['I','want','you','to','be','more','careful','.'],h:'want ＋ O ＋ to 原形',e:'want / tell / ask ＋ O ＋ <b>to 原形</b> → I want you to be more careful.'},
-  {j:'劇場の職員が私たちに上演中はドアを開けないように言った。',s:"The theater's staff members told us not to open the door during the performance.",w:["The","theater's",'staff','members','told','us','not','to','open','the','door','during','the','performance','.'],h:'tell ＋ O ＋ not to 原形',u:'広島工大',e:'否定の不定詞 <b>not to open</b> → told us not to open the door.'},
+  {j:'劇場の職員が私たちに上演中はドアを開けないように言った。',s:"The theater's staff members told us not to open the door during the performance.",w:["The","theater's",'staff','members','told','us','not','to','open','the','door','during','the','performance','.'],h:'tell ＋ O ＋ not to 原形',u:'広島工大',e:'否定の不定詞 <b>not to open</b> → told us not to open the door.'},,
+  {j:'彼女は親切にも私に道を教えてくれた。',s:'She was kind enough to show me the way.',w:['She','was','kind','enough','to','show','me','the','way','.'],h:'形容詞 enough to ～「〜するほど十分に…だ」',u:'',e:'<b>形容詞 enough to 原形</b> → She was kind enough to show me the way.'},
+  {j:'この問題は私には難しすぎて解けない。',s:'This problem is too difficult for me to solve.',w:['This','problem','is','too','difficult','for','me','to','solve','.'],h:'too ～ for O to 原形',u:'',e:'<b>too ～ for O to 原形</b>「O には〜すぎて…できない」'},
+  {j:'先生は私たちに廊下を走らないよう言った。',s:'The teacher told us not to run in the hallway.',w:['The','teacher','told','us','not','to','run','in','the','hallway','.'],h:'tell O not to 原形（不定詞の否定）',u:'',e:'不定詞の否定は <b>not to 原形</b>。told ＋ O ＋ not to 原形。'},
+  {j:'私の父は毎朝ジョギングをすることを習慣にしている。',s:'My father makes it a rule to jog every morning.',w:['My','father','makes','it','a','rule','to','jog','every','morning','.'],h:'make it a rule to ～',u:'',e:'<b>make it a rule to 原形</b>「〜することを習慣にしている」'},
+  {j:'彼を説得することは不可能だとわかった。',s:'I found it impossible to persuade him.',w:['I','found','it','impossible','to','persuade','him','.'],h:'find it ＋ 形容詞 ＋ to 原形（仮目的語）',u:'',e:'find ＋ <b>仮目的語 it</b> ＋ 形容詞 ＋ to 原形'},
+  {j:'彼女は医者になるために一生懸命勉強した。',s:'She studied hard to become a doctor.',w:['She','studied','hard','to','become','a','doctor','.'],h:'to 原形（目的の副詞的用法）',u:'',e:'「〜するために」目的の副詞的用法 → to become a doctor'}
 ];
 
 // ===== 練習③データ（選択）=====
@@ -582,7 +704,10 @@ window.cp3=[
   {q:'His parents could ( ) buy a new car.',s:'His parents could afford to buy a new car.',j:'彼の両親は新車を買うほどの余裕があった。',a:1,c:['manage to','afford to','decide to','want to'],e:'「〜する余裕がある」= <b>afford to</b>'},
   {q:'He studied hard ( ) fail the exam.',s:'He studied hard so as not to fail the exam.',j:'彼は試験で失敗しないように一生懸命勉強した。',a:2,c:['so as to','not so as','so as not to','in order to'],h:'〜しないように = so as not to',e:'「〜しないように」= <b>so as not to</b>（= in order not to）'},
   {q:'Please pack your suitcases and leave here immediately ( ) miss the next bus.',s:'Please pack your suitcases and leave here immediately so as not to miss the next bus.',j:'次のバスに乗りそこなわないように荷物をまとめてすぐにここを出て下さい。',u:'神奈川大',a:3,c:['not so as to','as you not','not because you','so as not to'],e:'「〜しないように」= <b>so as not to</b>'},
-  {q:'I am sure that he will succeed.\n＝ He is ( ) succeed.',s:'He is sure to succeed.',j:'彼はきっと成功するだろう。',a:1,c:['sure that','sure to','certainly to','surely to'],h:'be sure to ～「必ず〜する」',e:'I am sure that ～ の書き換え → He is <b>sure to</b> succeed.'},
+  {q:'I am sure that he will succeed.\n＝ He is ( ) succeed.',s:'He is sure to succeed.',j:'彼はきっと成功するだろう。',a:1,c:['sure that','sure to','certainly to','surely to'],h:'be sure to ～「必ず〜する」',e:'I am sure that ～ の書き換え → He is <b>sure to</b> succeed.'},,
+  {q:'（　）に入る正しい語句を選べ。\nShe is ( ) to succeed.',s:'She is sure to succeed.',j:'彼女はきっと成功するだろう。',u:'',a:0,c:['sure','certain of','likely','able'],e:'<b>be sure to 原形</b>「きっと〜するだろう」= be certain to ～ と同意。'},
+  {q:'（　）に入る正しい語句を選べ。\nI ( ) to like classical music.',s:'I came to like classical music.',j:'私はクラシック音楽が好きになった。',u:'',a:1,c:['got','came','became','started'],e:'<b>come to 原形</b>「〜するようになる」。変化の過程を表す。'},
+  {q:'（　）に入る正しい語句を選べ。\nShe studies hard ( ) to fail the exam.',s:'She studies hard so as not to fail the exam.',j:'彼女は試験に落ちないように一生懸命勉強する。',u:'',a:2,c:['in order to','in order','so as not','so as not to'],e:'「〜しないように」= <b>so as not to 原形</b>。not の位置に注意。'}
 ];
 
 // ===== 練習④データ（並び替え）=====
@@ -592,7 +717,11 @@ window.d4=[
   {j:'よいお天気ですね。散歩でもしたらどうですか。\nA nice day, isn\'t it? __ out for a walk?',s:"A nice day, isn't it? Why not go out for a walk?",w:['Why','not','go'],h:'Why not 原形?「〜してはどうですか」',u:'中央大',e:'<b>Why not ＋ 原形?</b>（= Why don\'t you ～?）'},
   {j:'何をお召し上がりになりますか。',s:'What would you like to have?',w:['What','would','you','like','to','have','?'],h:'would like to ～「〜したい（ていねい）」',e:'<b>would like to ＋ 原形</b>「〜したいなあ」の疑問形 → What would you like to have?'},
   {j:'あなたはベストを尽くしさえすればよい。\nAll you have to do is __.',s:'All you have to do is to do your best.',w:['to','do','your','best'],h:'All you have to do is to 原形「〜しさえすればよい」',e:'<b>All you have to do is to ＋ 原形</b>'},
-  {j:'あなたはその川で泳がないほうがよい。',s:"You had better not swim in the river.",w:['You','had','better','not','swim','in','the','river','.'],h:'had better not ～「〜しないほうがよい」',e:'<b>had better not ＋ 原形</b>（had better の否定。not の位置に注意）'},
+  {j:'あなたはその川で泳がないほうがよい。',s:"You had better not swim in the river.",w:['You','had','better','not','swim','in','the','river','.'],h:'had better not ～「〜しないほうがよい」',e:'<b>had better not ＋ 原形</b>（had better の否定。not の位置に注意）'},,
+  {j:'私は早起きするのを習慣にしている。',s:'I make it a rule to get up early.',w:['I','make','it','a','rule','to','get','up','early','.'],h:'make it a rule to ～',u:'',e:'<b>make it a rule to 原形</b>「〜することを習慣にしている」'},
+  {j:'私は泳ぐことができないよりも、むしろ死んだほうがよい。\n（would rather A than B）',s:"I would rather die than not be able to swim.",w:['I','would','rather','die','than','not','be','able','to','swim','.'],h:'would rather A than B「BよりもAしたい」',u:'',e:'<b>would rather A than B</b>'},
+  {j:'あなたはなんとか期限内に仕事を終えることができましたか。',s:'Did you manage to finish the work within the deadline?',w:['Did','you','manage','to','finish','the','work','within','the','deadline','?'],h:'manage to ～「なんとか〜できる」',u:'',e:'<b>manage to 原形</b>「なんとか〜する」'},
+  {j:'彼女は試験に合格できるだけの英語力がある。',s:'She is good enough at English to pass the exam.',w:['She','is','good','enough','at','English','to','pass','the','exam','.'],h:'形容詞 enough to ～',u:'',e:'形容詞 ＋ <b>enough to 原形</b>「〜するのに十分なほど…だ」'}
 ];
 
 // ===== 練習⑤データ（実戦）=====
@@ -660,52 +789,141 @@ function iIQ(containerId, data){
 }
 
 // インライン問題①：3用法判定
+/* ===== buildInlineQuiz 関数 ===== */
+function buildInlineQuiz(containerId,data){
+  var c=document.getElementById(containerId);
+  if(!c)return;
+  data.forEach(function(d,i){
+    var div=document.createElement('div');
+    div.style.cssText='background:#fff;border-radius:10px;border:1px solid #dde;padding:13px 14px;margin-bottom:10px';
+    var hd=document.createElement('div');hd.style.cssText='display:flex;align-items:flex-start;gap:8px;margin-bottom:6px';
+    var num=document.createElement('span');
+    num.style.cssText='flex-shrink:0;width:26px;height:26px;background:#0097A7;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700';
+    num.textContent=i+1;
+    var qtxt=document.createElement('span');
+    qtxt.style.cssText='font-size:14px;font-weight:700;flex:1;line-height:1.7';
+    qtxt.innerHTML=d.sent.replace('___','<span style="display:inline-block;min-width:50px;border-bottom:2px solid #1B3A6B;color:#b84300">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>');
+    if(d.spk){var sb=document.createElement('button');sb.className='spk';sb.innerHTML='▶';sb.onclick=(function(s){return function(){sp(s);};})(d.spk);qtxt.appendChild(sb);}
+    hd.appendChild(num);hd.appendChild(qtxt);div.appendChild(hd);
+    if(d.ja){var ja=document.createElement('div');ja.style.cssText='font-size:13px;color:#666;margin-bottom:10px;padding-left:34px;white-space:pre-line';ja.textContent=d.ja;div.appendChild(ja);}
+    var nums='①②③④';
+    var ca=document.createElement('div');ca.style.cssText='display:flex;flex-direction:column;gap:5px;padding-left:34px';
+    div.appendChild(ca);
+    var ep=document.createElement('div');
+    ep.style.cssText='display:none;background:#fff8e1;border:1px solid #ffc107;border-radius:8px;padding:9px 12px;font-size:13px;line-height:1.8;margin-top:8px;margin-left:34px';
+    ep.innerHTML='📝 解説：'+d.r+'<br>✅ 正解：<b>'+d.ans+'</b>';
+    div.appendChild(ep);c.appendChild(div);
+    var answered=false;
+    d.c.forEach(function(opt,ci){
+      var btn=document.createElement('button');
+      btn.style.cssText='text-align:left;padding:9px 14px;border-radius:8px;border:1.5px solid #dde;background:#fff;font-size:13px;cursor:pointer;font-family:inherit;line-height:1.4;width:100%;display:flex;align-items:center;gap:8px';
+      var badge=document.createElement('span');
+      badge.style.cssText='flex-shrink:0;width:22px;height:22px;border-radius:50%;background:#eee;color:#555;font-size:12px;font-weight:700;text-align:center;line-height:22px';
+      badge.textContent=nums[ci];
+      btn.appendChild(badge);btn.appendChild(document.createTextNode(opt));
+      btn.onclick=(function(myopt,mybtn){
+        return function(){
+          if(answered)return;answered=true;
+          ca.querySelectorAll('button').forEach(function(b){
+            b.style.pointerEvents='none';
+            if(b===mybtn&&myopt===d.ans){b.style.background='#e8f5e9';b.style.borderColor='#2e7d32';b.style.color='#1b5e20';b.style.fontWeight='700';b.querySelector('span').style.background='#2e7d32';b.querySelector('span').style.color='#fff';}
+            else if(b===mybtn&&myopt!==d.ans){b.style.background='#ffebee';b.style.borderColor='#e53935';b.style.color='#b71c1c';b.querySelector('span').style.background='#e53935';b.querySelector('span').style.color='#fff';}
+            else if(b.textContent.trim()===d.ans){b.style.background='#e8f5e9';b.style.borderColor='#2e7d32';b.style.color='#1b5e20';b.style.fontWeight='700';}
+          });
+          qtxt.innerHTML=d.sent.replace('___','<b style="color:#b84300;font-size:15px"> '+d.ans+' </b>');
+          ep.style.display='block';
+        };
+      })(opt,btn);
+      ca.appendChild(btn);
+    });
+  });
+}
+
+
+/* ===== ミニテストデータ (Unit 4) ===== */
+
+// ①不定詞の3用法
+(function(){buildInlineQuiz('mq1a',[
+  {sent:'___ English well takes a lot of practice.',spk:'To speak English well takes a lot of practice.',ja:'英語を上手に話すには多くの練習が必要です。',ans:'To speak',c:['To speak','Speaking to','For speaking','Speak'],r:'文の主語になる不定詞は<b>名詞的用法</b>「〜すること」。To speak = Speaking と言い換えも可能。'},
+  {sent:'I need a chair ___ on.',spk:'I need a chair to sit on.',ja:'私は座るための椅子が必要です。',ans:'to sit',c:['to sit','sitting','sat','for sitting'],r:'直前の名詞（chair）を後ろから修飾する<b>形容詞的用法</b>「〜するための」。to sit on の on を忘れずに。'},
+  {sent:'He turned on the TV ___ the news.',spk:'He turned on the TV to watch the news.',ja:'彼はニュースを見るためにテレビをつけた。',ans:'to watch',c:['to watch','watching','watch','for watching'],r:'「〜するために」という目的を表す<b>副詞的用法</b>。動詞（turned on）を修飾する。'},
+]);}());
+
+// ②SVO＋to / too～to
+(function(){buildInlineQuiz('mq2a',[
+  {sent:'My teacher told ___ study harder.',spk:'My teacher told me to study harder.',ja:'先生は私にもっと一生懸命勉強するように言いました。',ans:'me to',c:['me to','me that','to me','I to'],r:'tell＋O＋to原形「Oに〜するよう言う」。<b>SVO＋to不定詞</b>の形。'},
+  {sent:'This bag is ___ heavy for me ___ carry.',spk:'This bag is too heavy for me to carry.',ja:'このカバンは重すぎて私には持てません。',ans:'too / to',c:['too / to','so / that','very / to','such / that'],r:'「〜すぎて…できない」= <b>too ～ to 原形</b>。for O to原形 で「Oには」の意味が加わる。'},
+  {sent:'It is important ___ you ___ be on time.',spk:'It is important for you to be on time.',ja:'あなたが時間を守ることは大切です。',ans:'for / to',c:['for / to','of / to','that / to','to / that'],r:'It is 形容詞 <b>for O to原形</b>「Oが〜することは…だ」。仮主語 it の構文。'},
+]);}());
+
+// ③enough to / too～to
+(function(){buildInlineQuiz('mq3a',[
+  {sent:'She is old ___ drive a car.',spk:'She is old enough to drive a car.',ja:'彼女は車を運転するのに十分な年齢です。',ans:'enough to',c:['enough to','too to','so that','as to'],r:'「〜するのに十分なほど…だ」= <b>形容詞・副詞 enough to 原形</b>。enough は形容詞の後ろに置く。'},
+  {sent:'He was ___ tired that he could not walk.',spk:'He was so tired that he could not walk.',ja:'彼はとても疲れていて歩けなかった。',ans:'so',c:['so','too','such','very'],r:'so ～ that S cannot は too ～ to と書き換え可能。'},
+  {sent:'The box is ___ heavy ___ me to lift.',spk:'The box is too heavy for me to lift.',ja:'その箱は重すぎて私には持ち上げられない。',ans:'too / for',c:['too / for','enough / for','so / that','very / to'],r:'too～to構文でOを示すには <b>for O</b> を to の前に置く。too heavy for me to lift。'},
+]);}());
+
+// ④慣用表現
+(function(){buildInlineQuiz('mq4a',[
+  {sent:'He did nothing but ___ TV all day.',spk:'He did nothing but watch TV all day.',ja:'彼は一日中テレビを見てばかりいた。',ans:'watch',c:['watch','to watch','watching','watched'],r:'<b>do nothing but 原形</b>「〜してばかりいる・〜するだけだ」。but の後は動詞の原形。'},
+  {sent:'All you have to do is ___ this button.',spk:'All you have to do is push this button.',ja:'あなたはこのボタンを押しさえすればよい。',ans:'push',c:['push','to push','pushing','pushed'],r:'<b>All S have to do is (to) 原形</b>「〜しさえすればよい」。is の後は原形または to原形。'},
+  {sent:'He ___ it a rule to take a walk every morning.',spk:'He makes it a rule to take a walk every morning.',ja:'彼は毎朝散歩することを習慣にしている。',ans:'makes',c:['makes','takes','does','has'],r:'<b>make it a rule to 原形</b>「〜することを習慣にしている」。it は仮目的語。'},
+]);}());
+
+// ⑤知覚・使役動詞 / seem to
+(function(){buildInlineQuiz('mq5a',[
+  {sent:'I heard someone ___ my name.',spk:'I heard someone call my name.',ja:'誰かが私の名前を呼ぶのが聞こえた。',ans:'call',c:['call','to call','calling','called'],r:'知覚動詞（hear/see/feel）＋O＋<b>原形不定詞</b>「Oが〜するのを…する」。toなしの原形を使う。'},
+  {sent:'My mother made me ___ my room.',spk:'My mother made me clean my room.',ja:'母は私に部屋を掃除させた。',ans:'clean',c:['clean','to clean','cleaning','cleaned'],r:'使役動詞 <b>make＋O＋原形</b>「Oに〜させる（強制）」。toなしの原形を使う。'},
+  {sent:'She seems ___ tired today.',spk:'She seems to be tired today.',ja:'彼女は今日疲れているようだ。',ans:'to be',c:['to be','being','be','been'],r:'<b>seem to 原形</b>「〜のようだ」。= It seems that she is tired. と書き換え可能。'},
+]);}());
+
+
 iC('p1');iC('p3');iC('p5');
 iS('p2','p2q',d2);iS('p4','p4q',d4);
 
 iIQ('inq1',[
-  {q:'His dream is ( ) to London.',j:'彼の夢はロンドンへ行くことです。',s:'His dream is to go to London.',
+  {q:'His dream is <b>to go</b> to London.',j:'彼の夢はロンドンへ行くことです。',s:'His dream is to go to London.',
    c:['名詞的用法（C）','形容詞的用法','副詞的用法（目的）'],a:0,
    e:'is の後ろで補語（C）になっているので<b>名詞的用法</b>です。His dream = to go to London の関係が成り立ちます。'},
-  {q:'She went to the library ( ) books.',j:'彼女は本を借りるために図書館へ行きました。',s:'She went to the library to borrow books.',
+  {q:'She went to the library <b>to borrow</b> books.',j:'彼女は本を借りるために図書館へ行きました。',s:'She went to the library to borrow books.',
    c:['名詞的用法','形容詞的用法','副詞的用法（目的）'],a:2,
    e:'「図書館へ行った目的」を表しているので<b>副詞的用法（目的）</b>です。'},
-  {q:'I have a lot of homework ( ).',j:'私にはやるべき宿題がたくさんあります。',s:'I have a lot of homework to do.',
+  {q:'I have a lot of homework <b>to do</b>.',j:'私にはやるべき宿題がたくさんあります。',s:'I have a lot of homework to do.',
    c:['名詞的用法','形容詞的用法','副詞的用法'],a:1,
    e:'homework（名詞）を後ろから修飾しているので<b>形容詞的用法</b>です。「やるべき宿題」と訳します。'},
-  {q:'I am happy ( ) you again.',j:'また会えて嬉しいです。',s:'I am happy to see you again.',
+  {q:'I am happy <b>to see</b> you again.',j:'また会えて嬉しいです。',s:'I am happy to see you again.',
    c:['名詞的用法','形容詞的用法','副詞的用法（感情の原因）'],a:2,
    e:'「嬉しい（感情）の原因・理由」を表しているので<b>副詞的用法（感情の原因）</b>です。'},
 ]);
 
 // インライン問題②：for か of か
 iIQ('inq2',[
-  {q:'It is difficult ( ) me to solve this problem.',j:'この問題を解くのは私には難しいです。',s:'It is difficult for me to solve this problem.',
+  {q:'It is difficult <b>for me</b> to solve this problem.',j:'この問題を解くのは私には難しいです。',s:'It is difficult for me to solve this problem.',
    c:['for','of'],a:0,
    e:'difficult は「状況・難易度」を表す形容詞なので <b>for</b> を使います。「私は難しい」とは言えません。'},
-  {q:'It is very kind ( ) you to help me.',j:'私を助けてくれるとはあなたはとても親切ですね。',s:'It is very kind of you to help me.',
+  {q:'It is very kind <b>of you</b> to help me.',j:'私を助けてくれるとはあなたはとても親切ですね。',s:'It is very kind of you to help me.',
    c:['for','of'],a:1,
    e:'kind は「人の性質」を表す形容詞なので <b>of</b> を使います。You are kind. と言えることで判断します。'},
-  {q:'It is important ( ) you to study every day.',j:'毎日勉強することはあなたにとって大切です。',s:'It is important for you to study every day.',
+  {q:'It is important <b>for you</b> to study every day.',j:'毎日勉強することはあなたにとって大切です。',s:'It is important for you to study every day.',
    c:['for','of'],a:0,
    e:'important は「状況・重要度」を表す形容詞なので <b>for</b> を使います。'},
-  {q:'It is very careless ( ) him to make such a mistake.',j:'そんな間違いをするとは彼は不注意ですね。',s:'It is very careless of him to make such a mistake.',
+  {q:'It is very careless <b>of him</b> to make such a mistake.',j:'そんな間違いをするとは彼は不注意ですね。',s:'It is very careless of him to make such a mistake.',
    c:['for','of'],a:1,
    e:'careless は「人の性質・性格」を表す形容詞なので <b>of</b> を使います。He is careless. と言えます。'},
 ]);
 
 // インライン問題③：副詞的用法の種類
 iIQ('inq3',[
-  {q:'He studied hard only to fail the exam.',j:'彼は一生懸命勉強したが、試験に失敗するばかりだった。',s:'He studied hard only to fail the exam.',
+  {q:'He studied hard only <b>to fail</b> the exam.',j:'彼は一生懸命勉強したが、試験に失敗するばかりだった。',s:'He studied hard only to fail the exam.',
    c:['目的（〜するために）','結果（そして〜した）','only to（失望の結果）','感情の原因'],a:2,
    e:'<b>only to ～</b> は「〜した結果、残念ながら…になってしまった」という<b>失望・意外な結果</b>を表します。'},
-  {q:'My grandmother lived to be ninety-five.',j:'私の祖母は95歳まで生きました。',s:'My grandmother lived to be ninety-five.',
+  {q:'My grandmother lived <b>to be</b> ninety-five.',j:'私の祖母は95歳まで生きました。',s:'My grandmother lived to be ninety-five.',
    c:['目的（〜するために）','結果（そして〜した）','感情の原因（〜して）','判断の根拠'],a:1,
    e:'「生きた、そして95歳になった」という<b>結果</b>を表す副詞的用法です。'},
-  {q:"I'm glad to see you again.",j:"また会えて嬉しいです。",s:"I'm glad to see you again.",
+  {q:"I'm glad <b>to see</b> you again.",j:"また会えて嬉しいです。",s:"I'm glad to see you again.",
    c:['目的（〜するために）','結果（そして〜した）','感情の原因（〜して）','判断の根拠'],a:2,
    e:'「会えて（嬉しい）」のように、感情を表す形容詞（glad / happy / sorry など）の後ろに来て<b>感情の原因</b>を表します。'},
-  {q:'She must be rich to buy a new car.',j:'新車を買うくらいなのでお金持ちに違いない。',s:'She must be rich to buy a new car.',
+  {q:'She must be rich <b>to buy</b> a new car.',j:'新車を買うくらいなのでお金持ちに違いない。',s:'She must be rich to buy a new car.',
    c:['目的（〜するために）','感情の原因（〜して）','判断の根拠（〜するくらいだから）','結果'],a:2,
    e:'「新車を買う（くらいだから）お金持ちに違いない」のように、話し手の<b>判断の根拠</b>を表す副詞的用法です。'},
 ]);
@@ -913,6 +1131,88 @@ function checkTestAns(btn, word, selected) {
   res.after(nextBtn);
 }
 
+/* ===== Unit4 確認問題データ ===== */
+
+// iq1a: 不定詞の3用法
+window.ciq1a=[
+  {q:'（　）に入る正しい語句を選べ。\nTo speak English well is ( ).',s:'To speak English well is important.',j:'英語を上手に話すことは大切です。',a:1,c:['important','importantly','importance','to important'],e:'To speak ～ が主語（名詞的用法）→「〜すること」。is の後ろは形容詞 <b>important</b>。'},
+  {q:'（　）に入る正しい語句を選べ。\nI have a lot of homework ( ) tonight.',s:'I have a lot of homework to do tonight.',j:'今夜やるべき宿題がたくさんある。',a:0,c:['to do','doing','done','do'],e:'直前の名詞 homework を後ろから修飾する<b>形容詞的用法</b>「〜すべき・〜するための」→ <b>to do</b>。'},
+  {q:'（　）に入る正しい語句を選べ。\nShe went to the store ( ) some vegetables.',s:'She went to the store to buy some vegetables.',j:'彼女は野菜を買うために店に行った。',a:1,c:['buying','to buy','buy','for buy'],e:'「〜するために」という目的を表す<b>副詞的用法</b> → <b>to buy</b>。'},
+  {q:'次の不定詞の用法はどれか？\nI want something cold to drink.',s:'I want something cold to drink.',j:'私は何か冷たい飲み物が欲しい。',a:1,c:['名詞的用法','形容詞的用法','副詞的用法（目的）','副詞的用法（感情）'],e:'something cold を後ろから修飾する → <b>形容詞的用法</b>「〜するための」。'},
+];
+
+// iq1b: 仮主語 It の構文
+window.ciq1b=[
+  {q:'（　）に入る正しい語句を選べ。\nIt is easy ( ) him to solve this problem.',s:'It is easy for him to solve this problem.',j:'彼がこの問題を解くのは簡単です。',a:0,c:['for','of','to','by'],e:'性質・状況を表す形容詞（easy, difficult, important など）の後は <b>for + O</b>。'},
+  {q:'（　）に入る正しい語句を選べ。\nIt is kind ( ) you to help me.',s:'It is kind of you to help me.',j:'手伝ってくださってご親切に。',a:1,c:['for','of','to','with'],e:'人の性質・人柄を表す形容詞（kind, careless, wise など）の後は <b>of + O</b>。'},
+  {q:'次のうち正しい文はどれか？',s:'It is necessary for you to study hard.',j:'あなたが一生懸命勉強することが必要です。',a:2,c:['It is necessary of you to study hard.','It is necessary you studying hard.','It is necessary for you to study hard.','That is necessary for you to study hard.'],e:'necessary は性質ではなく状況を表す → <b>for + O</b>。It is ＋ 形容詞 ＋ for O ＋ to 原形。'},
+];
+
+// iq1c: 副詞的用法の種類
+window.ciq1c=[
+  {q:'次の to 不定詞の用法は何か？\nI am glad to hear the news.',s:'I am glad to hear the news.',j:'私はその知らせを聞いて嬉しい。',a:1,c:['目的','感情の原因','判断の根拠','結果'],e:'形容詞（glad, happy, sorry など）の後ろに来て感情の<b>原因</b>を表す → 「〜して（嬉しい）」。'},
+  {q:'次の to 不定詞の用法は何か？\nShe grew up to be a great doctor.',s:'She grew up to be a great doctor.',j:'彼女は成長して偉大な医者になった。',a:3,c:['目的','感情の原因','判断の根拠','結果'],e:'「成長した → その結果医者になった」→ <b>結果</b>を表す副詞的用法。'},
+  {q:'（　）に入る正しい語句を選べ。\nHe must be clever ( ) solve such a difficult problem.',s:'He must be clever to solve such a difficult problem.',j:'そんな難問を解くとは、彼は賢いに違いない。',a:1,c:['to','for','of','by'],e:'「〜するくらいだから（賢いに違いない）」→ <b>判断の根拠</b>を表す副詞的用法 → to solve。'},
+];
+
+// iq2a: SVO + to不定詞
+window.ciq2a=[
+  {q:'（　）に入る正しい語句を選べ。\nShe told me ( ) wait here.',s:'She told me to wait here.',j:'彼女は私にここで待つように言った。',a:0,c:['to wait','waiting','wait','waited'],e:'tell ＋ O ＋ <b>to 原形</b>「O に〜するように言う」。to は省略できない。'},
+  {q:'（　）に入る正しい語句を選べ。\nMy parents want me ( ) a doctor.',s:'My parents want me to become a doctor.',j:'両親は私に医者になってほしいと思っている。',a:1,c:['become','to become','becoming','became'],e:'want ＋ O ＋ <b>to 原形</b>「O に〜してほしい」。'},
+  {q:'（　）に入る正しい語句を選べ。\nThe teacher allowed us ( ) leave early.',s:'The teacher allowed us to leave early.',j:'先生は私たちが早退するのを許可した。',a:0,c:['to leave','leaving','leave','left'],e:'allow ＋ O ＋ <b>to 原形</b>「O が〜することを許可する」。'},
+];
+
+// iq2b: too～to / 仮目的語it
+window.ciq2b=[
+  {q:'（　）に入る正しい語句を選べ。\nThis coffee is ( ) hot for me to drink.',s:'This coffee is too hot for me to drink.',j:'このコーヒーは熱すぎて私には飲めません。',a:0,c:['too','so','very','such'],e:'「〜すぎて…できない」= <b>too ＋ 形容詞 ＋ for O ＋ to 原形</b>。'},
+  {q:'（　）に入る正しい語句を選べ。\nI found ( ) difficult to answer the question.',s:'I found it difficult to answer the question.',j:'私はその質問に答えることが難しいとわかった。',a:1,c:['that','it','this','there'],e:'find ＋ <b>仮目的語 it</b> ＋ 形容詞 ＋ to 原形「〜することが…だとわかる」。'},
+  {q:'（　）に入る正しい語句を選べ。\nHe is old enough ( ) drive a car.',s:'He is old enough to drive a car.',j:'彼は車を運転するのに十分な年齢です。',a:2,c:['for','to driving','to','as'],e:'「十分〜なので…できる」= 形容詞 ＋ <b>enough to 原形</b>。to の前に for O を置くこともできる。'},
+];
+
+// iq3a: 重要不定詞表現
+window.ciq3a=[
+  {q:'（　）に入る正しい語句を選べ。\nShe was kind enough ( ) show me the way.',s:'She was kind enough to show me the way.',j:'彼女は道を教えてくれるほど親切だった。',a:0,c:['to show','showing','show','shown'],e:'形容詞 ＋ <b>enough to 原形</b>「〜するほど十分に…だ」。'},
+  {q:'（　）に入る正しい語句を選べ。\nHe managed ( ) finish the work by noon.',s:'He managed to finish the work by noon.',j:'彼はなんとか正午までに仕事を終えた。',a:1,c:['finishing','to finish','finish','finished'],e:'<b>manage to 原形</b>「なんとか〜する（困難を乗り越えて）」。'},
+  {q:'（　）に入る正しい語句を選べ。\nI came ( ) know about it.',s:'I came to know about it.',j:'私はそのことを知るようになった。',a:1,c:['knowing','to know','know','known'],e:'<b>come to 原形</b>「〜するようになる」。変化の結果を表す。'},
+  {q:'（　）に入る正しい語句を選べ。\nHe was ( ) to pass the exam.',s:'He was sure to pass the exam.',j:'彼はきっと試験に合格するだろう。',a:2,c:['certain','sure to','sure','certainly'],e:'<b>be sure to 原形</b>「きっと〜するだろう（話し手の確信）」。'},
+];
+
+// iq4a: 重要慣用表現
+window.ciq4a=[
+  {q:'（　）に入る正しい語句を選べ。\nYou have ( ) do is apologize.',s:'All you have to do is apologize.',j:'あなたはあやまりさえすればよい。',a:1,c:['nothing but','All','only','just'],e:'<b>All S have to do is (to) 原形</b>「〜しさえすればよい」。is の後は原形または to 原形。'},
+  {q:'（　）に入る正しい語句を選べ。\nShe ( ) a rule to get up at 6 every morning.',s:'She makes it a rule to get up at 6 every morning.',j:'彼女は毎朝6時に起きることを習慣にしている。',a:0,c:['makes it','does it','has it','takes it'],e:'<b>make it a rule to 原形</b>「〜することを習慣にしている」。it は仮目的語。'},
+  {q:'（　）に入る正しい語句を選べ。\nHe did nothing but ( ) all day.',s:'He did nothing but sleep all day.',j:'彼は一日中寝てばかりいた。',a:2,c:['to sleep','sleeping','sleep','slept'],e:'<b>do nothing but 原形</b>「〜してばかりいる」。but の後ろは動詞の原形（to なし）。'},
+  {q:'（　）に入る正しい語句を選べ。\nHe cannot ( ) laugh at the joke.',s:'He cannot but laugh at the joke.',j:'彼はそのジョークに笑わずにはいられない。',a:1,c:['help to','but','help','avoid'],e:'<b>cannot but 原形</b>「〜せずにはいられない」= cannot help ～ing と同意。'},
+];
+
+// iq5a: 知覚動詞
+window.ciq5a=[
+  {q:'（　）に入る正しい形を選べ。\nI saw him ( ) across the street.',s:'I saw him run across the street.',j:'私は彼が道路を走って渡るのを見た。',a:1,c:['to run','run','running','ran'],e:'知覚動詞 see ＋ O ＋ <b>原形</b>（動作の全体を見た）。または現在分詞でも可。'},
+  {q:'（　）に入る正しい形を選べ。\nI heard someone ( ) my name.',s:'I heard someone call my name.',j:'誰かが私の名前を呼ぶのが聞こえた。',a:0,c:['call','to call','calling','called'],e:'知覚動詞 hear ＋ O ＋ <b>原形</b>「O が〜するのを聞く」（to なし）。'},
+  {q:'（　）に入る正しい形を選べ。\nHe was seen ( ) enter the building.',s:'He was seen to enter the building.',j:'彼がビルに入るのが目撃された。',a:2,c:['enter','entering','to enter','entered'],e:'知覚動詞の<b>受動態</b>では to が復活する → was seen <b>to enter</b>。'},
+];
+
+// iq5b: 使役動詞
+window.ciq5b=[
+  {q:'（　）に入る正しい形を選べ。\nMy father made me ( ) my room.',s:'My father made me clean my room.',j:'父は私に部屋を掃除させた。',a:1,c:['to clean','clean','cleaning','cleaned'],e:'make ＋ O ＋ <b>原形</b>「O に〜させる（強制）」。to なし。'},
+  {q:'（　）に入る正しい形を選べ。\nThe teacher let us ( ) home early.',s:'The teacher let us go home early.',j:'先生は私たちを早退させてくれた。',a:0,c:['go','to go','going','went'],e:'let ＋ O ＋ <b>原形</b>「O に〜させる（許可）」。to なし。'},
+  {q:'（　）に入る正しい形を選べ。\nI was made ( ) wait for an hour.',s:'I was made to wait for an hour.',j:'私は1時間待たされた。',a:2,c:['wait','waiting','to wait','waited'],e:'make の<b>受動態</b>では to が復活する → was made <b>to wait</b>。'},
+];
+
+// iq5c: 完了不定詞 / seem to
+window.ciq5c=[
+  {q:'（　）に入る正しい語句を選べ。\nShe seems ( ) sick.',s:'She seems to be sick.',j:'彼女は病気のようだ。',a:0,c:['to be','being','be','been'],e:'<b>seem to 原形</b>「〜のようだ」。It seems that she is sick. と書き換え可能。'},
+  {q:'（　）に入る正しい語句を選べ。\nHe seems ( ) the news.',s:'He seems to have heard the news.',j:'彼はそのニュースを聞いたようだ。',a:1,c:['to hear','to have heard','having heard','heard'],e:'主節より前の出来事 → <b>完了不定詞（to have ＋ p.p.）</b>。seems to have heard。'},
+  {q:'（　）に入る正しい語句を選べ。\nIt seems that she was very busy yesterday.\n＝ She seems ( ) very busy yesterday.',s:'She seems to have been very busy yesterday.',j:'彼女は昨日とても忙しかったようだ。',a:2,c:['to be','being','to have been','having been'],e:'「過去のこと」を seem to で表すには <b>to have been</b>（完了不定詞）を使う。'},
+];
+
+iC('iq1a');iC('iq1b');iC('iq1c');
+iC('iq2a');iC('iq2b');
+iC('iq3a');
+iC('iq4a');
+iC('iq5a');iC('iq5b');iC('iq5c');
+
+
 // 単語帳モーダルを開いたとき一覧を表示
 var origOpenM = openM;
 openM = function(id) {
@@ -956,5 +1256,6 @@ openM = function(id) {
       <div id="vocab-test-area" style="display:none"></div>
     </div>
   </div>
+</div>
 </body>
 </html>

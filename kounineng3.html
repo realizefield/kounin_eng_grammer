@@ -110,6 +110,9 @@ body{font-family:'BIZ UDGothic','Hiragino Kaku Gothic Pro','Meiryo',sans-serif;b
 .vtest-opt.dis{pointer-events:none}
 .vtest-result{text-align:center;padding:8px;font-size:13px;font-weight:700;margin-top:4px}
 .vtest-result.ok{color:#2e7d32}.vtest-result.ng{color:#e53935}
+
+.mini-quiz-wrap{background:#f0faff;border:2px solid #0097A7;border-radius:12px;padding:14px;margin-top:12px}
+.mini-quiz-title{font-size:13px;font-weight:700;color:#0097A7;margin-bottom:10px}
 </style>
 </head>
 <body>
@@ -165,7 +168,12 @@ body{font-family:'BIZ UDGothic','Hiragino Kaku Gothic Pro','Meiryo',sans-serif;b
       <tr><td><b>will</b></td><td>〜するつもり・〜だろう</td><td>I will buy this book. <button class="spk" onclick="sp('I will buy this book.')">▶</button><br><small>Will not の短縮形 = Won't</small></td></tr>
       <tr><td><b>must</b></td><td>〜しなければならない</td><td>You must do your best. <button class="spk" onclick="sp('You must do your best.')">▶</button></td></tr>
     </table>
+
+  <div class="card" style="border:2px solid #e65100">
+    <div class="card-title" style="color:#e65100">✏️ すぐに確認！　― 基本4助動詞 ―</div>
+    <div id="iq1aq"></div>
   </div>
+
   <div class="card">
     <div class="card-title">書き換え（同じ意味の表現）</div>
     <div class="kb">
@@ -192,11 +200,16 @@ body{font-family:'BIZ UDGothic','Hiragino Kaku Gothic Pro','Meiryo',sans-serif;b
     </div>
   </div>
 </div>
+  <div class="card" style="border:2px solid #e65100">
+    <div class="card-title" style="color:#e65100">✏️ すぐに確認！　― 書き換え表現 ―</div>
+    <div id="iq1bq"></div>
+  </div>
 
+</div>
 <!-- 練習① -->
 <div id="p1" class="sec">
   <div class="sh">練習①　基本の助動詞を選ぼう</div>
-  <div class="sb"><div class="sn" id="p1sn">0 / 7</div><div class="pw"><div class="pf" id="p1p" style="width:0%"></div></div><button class="reset-btn" onclick="iC('p1')">リセット</button></div>
+  <div class="sb"><div class="sn" id="p1sn">0 / 12</div><div class="pw"><div class="pf" id="p1p" style="width:0%"></div></div><button class="reset-btn" onclick="iC('p1')">リセット</button></div>
   <div id="p1q"></div>
 </div>
 
@@ -218,7 +231,12 @@ body{font-family:'BIZ UDGothic','Hiragino Kaku Gothic Pro','Meiryo',sans-serif;b
       <tr><td><b>must</b></td><td>〜に違いない</td><td>He must be rich. <button class="spk" onclick="sp('He must be rich.')">▶</button></td></tr>
       <tr><td><b>can't (cannot)</b></td><td>〜のはずがない</td><td>It can't be true. <button class="spk" onclick="sp("It can't be true.")">▶</button></td></tr>
     </table>
+
+  <div class="card" style="border:2px solid #e65100">
+    <div class="card-title" style="color:#e65100">✏️ すぐに確認！　― 推量の助動詞 ―</div>
+    <div id="iq2aq"></div>
   </div>
+
   <div class="card">
     <div class="card-title">should ＝ ought to「〜すべき」</div>
     <div class="kb">
@@ -231,7 +249,12 @@ body{font-family:'BIZ UDGothic','Hiragino Kaku Gothic Pro','Meiryo',sans-serif;b
       　 You ought not to <span class="vw" data-w="smoke" data-pos="動詞" data-mean="たばこを吸う・煙を出す" data-kana="スモーク" data-opts='["たばこを吸う・煙を出す", "飲む", "食べる", "走る"]' onclick="showVpop(this)">smoke</span> in <span class="vw" data-w="public" data-pos="形容詞" data-mean="公の・公共の" data-kana="パブリック" data-opts='["公の・公共の", "私的な", "秘密の", "個人の"]' onclick="showVpop(this)">public</span>. <button class="spk" onclick="sp('You ought not to smoke in public.')">▶</button>（人前でたばこを吸うべきではありません）<br>
       　 × ought to not <span class="vw" data-w="smoke" data-pos="動詞" data-mean="たばこを吸う・煙を出す" data-kana="スモーク" data-opts='["たばこを吸う・煙を出す", "飲む", "食べる", "走る"]' onclick="showVpop(this)">smoke</span>（この語順は誤りです）
     </div>
+
+  <div class="card" style="border:2px solid #e65100">
+    <div class="card-title" style="color:#e65100">✏️ すぐに確認！　― should / ought to ―</div>
+    <div id="iq2bq"></div>
   </div>
+
   <div class="card">
     <div class="card-title">習慣・傾向を表す助動詞</div>
     <div class="kb">
@@ -260,11 +283,17 @@ body{font-family:'BIZ UDGothic','Hiragino Kaku Gothic Pro','Meiryo',sans-serif;b
     </div>
   </div>
 </div>
+  <div class="card" style="border:2px solid #e65100">
+    <div class="card-title" style="color:#e65100">✏️ すぐに確認！　― 習慣・傾向の助動詞 ―</div>
+    <div id="iq2cq"></div>
+  </div>
 
+</div>
+</div>
 <!-- 練習② -->
 <div id="p2" class="sec">
   <div class="sh">練習②　推量・習慣の助動詞（入試問題つき）</div>
-  <div class="sb"><div class="sn" id="p2sn">0 / 8</div><div class="pw"><div class="pf" id="p2p" style="width:0%"></div></div><button class="reset-btn" onclick="iC('p2')">リセット</button></div>
+  <div class="sb"><div class="sn" id="p2sn">0 / 12</div><div class="pw"><div class="pf" id="p2p" style="width:0%"></div></div><button class="reset-btn" onclick="iC('p2')">リセット</button></div>
   <div id="p2q"></div>
 </div>
 
@@ -299,7 +328,12 @@ body{font-family:'BIZ UDGothic','Hiragino Kaku Gothic Pro','Meiryo',sans-serif;b
       　 ＝ It was not necessary for you to come, but you did come.<br><br>
       これらの表現は「助動詞 ＋ have ＋ 過去分詞」というセットの形で覚えましょう。have を足すことで「過去のこと」になります。
     </div>
+
+  <div class="card" style="border:2px solid #e65100">
+    <div class="card-title" style="color:#e65100">✏️ すぐに確認！　― 過去への推量・後悔 ―</div>
+    <div id="iq3aq"></div>
   </div>
+
   <div class="card">
     <div class="card-title">had better / Why should / It is natural that should</div>
     <div class="kb">
@@ -324,11 +358,16 @@ body{font-family:'BIZ UDGothic','Hiragino Kaku Gothic Pro','Meiryo',sans-serif;b
     </div>
   </div>
 </div>
+  <div class="card" style="border:2px solid #e65100">
+    <div class="card-title" style="color:#e65100">✏️ すぐに確認！　― had better / should ―</div>
+    <div id="iq3bq"></div>
+  </div>
 
+</div>
 <!-- 練習③ -->
 <div id="p3" class="sec">
   <div class="sh">練習③　助動詞＋have＋p.p. を並び替えよう（入試問題つき）</div>
-  <div class="sb"><div class="sn" id="p3sn">0 / 6</div><div class="pw"><div class="pf" id="p3p" style="width:0%"></div></div><button class="reset-btn" onclick="iS('p3','p3q',d3)">リセット</button></div>
+  <div class="sb"><div class="sn" id="p3sn">0 / 10</div><div class="pw"><div class="pf" id="p3p" style="width:0%"></div></div><button class="reset-btn" onclick="iS('p3','p3q',d3)">リセット</button></div>
   <div id="p3q"></div>
 </div>
 
@@ -365,7 +404,12 @@ body{font-family:'BIZ UDGothic','Hiragino Kaku Gothic Pro','Meiryo',sans-serif;b
       　 I would rather stay home than go out. <button class="spk" onclick="sp('I would rather stay home than go out.')">▶</button><br>
       　（外に出るよりもむしろ家にいたいです）
     </div>
+
+  <div class="card" style="border:2px solid #e65100">
+    <div class="card-title" style="color:#e65100">✏️ すぐに確認！　― 重要慣用表現 ―</div>
+    <div id="iq4aq"></div>
   </div>
+
   <div class="card">
     <div class="card-title">lest〜should / so that〜can</div>
     <div class="kb">
@@ -384,11 +428,16 @@ body{font-family:'BIZ UDGothic','Hiragino Kaku Gothic Pro','Meiryo',sans-serif;b
     </div>
   </div>
 </div>
+  <div class="card" style="border:2px solid #e65100">
+    <div class="card-title" style="color:#e65100">✏️ すぐに確認！　― lest / so as not to ―</div>
+    <div id="iq4bq"></div>
+  </div>
 
+</div>
 <!-- 練習④ -->
 <div id="p4" class="sec">
   <div class="sh">練習④　重要慣用表現を並び替えよう（入試問題つき）</div>
-  <div class="sb"><div class="sn" id="p4sn">0 / 7</div><div class="pw"><div class="pf" id="p4p" style="width:0%"></div></div><button class="reset-btn" onclick="iS('p4','p4q',d4)">リセット</button></div>
+  <div class="sb"><div class="sn" id="p4sn">0 / 10</div><div class="pw"><div class="pf" id="p4p" style="width:0%"></div></div><button class="reset-btn" onclick="iS('p4','p4q',d4)">リセット</button></div>
   <div id="p4q"></div>
 </div>
 
@@ -425,7 +474,18 @@ body{font-family:'BIZ UDGothic','Hiragino Kaku Gothic Pro','Meiryo',sans-serif;b
       　 確信はないが「たぶんそうだろう」という推測を控えめに表す表現です。<br>
       　 I <span class="vw" data-w="dare" data-pos="動詞" data-mean="あえて〜する・勇気がある" data-kana="デア" data-opts='["あえて〜する・勇気がある", "恐れる", "断る", "忘れる"]' onclick="showVpop(this)">dare</span> say it will be fine tomorrow.（おそらく明日は晴れるでしょう）<button class="spk" onclick="sp('I dare say it will be fine tomorrow.')">▶</button>
     </div>
+  
+  <div class="card" style="border:2px solid #e65100">
+    <div class="card-title" style="color:#e65100">✏️ すぐに確認！　― need ―</div>
+    <div id="iq5aq"></div>
   </div>
+
+
+  <div class="card" style="border:2px solid #e65100">
+    <div class="card-title" style="color:#e65100">✏️ すぐに確認！　― dare ―</div>
+    <div id="iq5bq"></div>
+  </div>
+
   <div class="card">
     <div class="card-title">祈願の may / 強調の do</div>
     <div class="kb">
@@ -443,6 +503,11 @@ body{font-family:'BIZ UDGothic','Hiragino Kaku Gothic Pro','Meiryo',sans-serif;b
     </div>
   </div>
 </div>
+  <div class="card" style="border:2px solid #e65100">
+    <div class="card-title" style="color:#e65100">✏️ すぐに確認！　― 祈願の may / 強調の do ―</div>
+    <div id="iq5cq"></div>
+</div>
+  </div>
 
 <!-- 練習⑤実戦 -->
 <div id="p5" class="sec">
@@ -515,7 +580,7 @@ function ss(id,btn){
     btn.parentElement.classList.add('active-pair');
   }
 }
-function upd(id,n,t){document.getElementById(id+'sn').textContent=n+' / '+t;document.getElementById(id+'p').style.width=(n/t*100)+'%';}
+function upd(id,n,t){var sn=document.getElementById(id+'sn');var pf=document.getElementById(id+'p');if(sn)sn.textContent=n+' / '+t;if(pf)pf.style.width=(n/t*100)+'%';if(n===t&&t>0)confetti();}
 function sh(n){var e=n.replace(/'/g,"\\'");return '<button class="spk" style="width:26px;height:26px;margin-left:4px" onclick="sp(\''+e+'\')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button>';}
 function ub(u){return u?'<span class="ub">'+u+'</span>':'';}
 function iC(id){
@@ -604,6 +669,11 @@ window.cp1=[
   {q:'The students must eat lunch in this classroom.\n＝ The students ( ) eat lunch in this classroom.',s:'The students have to eat lunch in this classroom.',j:'',a:0,c:['have to','should','are able to','ought'],e:'must の書き換え → <b>have to</b>'},
   {q:"Don't play soccer in this park.\n＝ You ( ) play soccer in this park.",s:"You mustn't play soccer in this park.",j:'',a:1,c:["don't have to","mustn't","don't must","needn't"],e:"Don't ～（禁止命令）= You <b>mustn't</b> ～（〜してはならない）"},
   {q:'We couldn\'t see Mt. Fuji from here.\n＝ We weren\'t ( ) to see Mt. Fuji from here.',s:"We weren't able to see Mt. Fuji from here.",j:'',a:1,c:['can','able','possible','allowed'],e:'couldn\'t の書き換え → weren\'t <b>able to</b>'},
+  {q:'明日は早起きしなければならないだろう。\nI ( ) get up early tomorrow.',s:'I will have to get up early tomorrow.',j:'',a:2,c:['will must','must to','will have to','will be able to'],e:'will ＋ must は使えない → <b>will have to</b>（mustに未来形がないため）'},
+  {q:'（　）に入る正しい語句を選べ。\nYou ( ) be careful not to catch a cold.',s:'You should be careful not to catch a cold.',j:'風邪をひかないように注意すべきです。',a:1,c:['must not','should','don\'t have to','will be able to'],e:'「〜すべきだ（忠告）」= <b>should</b>。mustn\'t は「してはいけない（禁止）」で意味が違う。'},
+  {q:'次の英文の（　）に適語を入れよ。\nHe is sick, so he ( ) see a doctor.',s:'He is sick, so he had better see a doctor.',j:'彼は病気だから、医者に診てもらったほうがよい。',a:3,c:['should better','would rather','ought better','had better'],e:'「〜したほうがよい（強い忠告）」= <b>had better</b> ＋ 原形。to は不要。'},
+  {q:'次の文の意味を考えて正しいものを選べ。\nYou ( ) return the book by Friday.',s:'You must return the book by Friday.',j:'あなたは金曜日までにその本を返却しなければならない。',a:0,c:['must','don\'t have to','mustn\'t','had better not'],e:'「〜しなければならない（義務）」= <b>must</b>。don\'t have to は「しなくてよい」なので意味が反対。'},
+  {q:'彼女は以前、毎朝ジョギングをしていたものだ。\nShe ( ) jog every morning.',s:'She used to jog every morning.',j:'',a:2,c:['would often','will often','used to','was used to'],e:'「以前は〜していたものだ（継続的な過去の習慣・状態）」= <b>used to</b>。would often は不規則な過去の習慣に使う。'},
 ];
 
 // ===== 練習②データ =====
@@ -616,6 +686,10 @@ window.cp2=[
   {q:'ここには以前レストランがありました。\n( ) be a restaurant here.',s:'There used to be a restaurant here.',j:'',a:2,c:['It used to','There would','There used to','It would'],e:'「以前〜があった」= <b>There used to be ～</b>'},
   {q:'私は夜更かしには慣れている。\nI\'m ( ) up late.',s:"I'm used to sitting up late.",j:'',a:1,c:['used to sit','used to sitting','used to sitting up late','accustomed sit'],e:'「〜することに慣れている」= be <b>used to ～ing</b>（toは前置詞なので後ろは動名詞）'},
   {q:'You ( ) study harder.',s:'You ought to study harder.',j:'あなたはもっと勉強すべきだ。（shouldと同じ意味で）',a:2,c:['should better','should to','ought to','must to'],e:'「〜すべき」should ＝ <b>ought to</b>。ought の後は to ＋ 原形。'},
+  {q:'彼が酔っているはずがない。彼はお酒を飲まない。\nHe ( ) be drunk. He never drinks.',s:"He can't be drunk. He never drinks.",j:'',a:1,c:["mustn't","can't","couldn't","may not"],e:'「〜のはずがない（否定の強い推量）」= <b>can\'t（cannot）be</b>'},
+  {q:'この写真を見ると、私は祖父のことを思い出したものだ。\n( ) of my grandfather when I saw this photo.',s:'I would think of my grandfather when I saw this photo.',j:'',a:0,c:['I would think','I used to think','I could think','I should think'],e:'「〜したものだ（不規則な過去の習慣）」= <b>would</b>。used to は継続的な状態・習慣に使う。'},
+  {q:'( ) I ask you a favor?',s:'May I ask you a favor?',j:'お願いがあるのですが。',a:1,c:['Will','May','Must','Should'],e:'「〜してもいいですか（ていねいな許可）」= <b>May I ～?</b>'},
+  {q:'You ( ) take a rest. You look very tired.',s:'You had better take a rest.',j:'少し休んだほうがいいですよ。とても疲れているようです。',a:2,c:['should better','ought better','had better','would rather'],e:'「〜したほうがよい（強い忠告）」= <b>had better</b> ＋ 原形。had better to は誤り。'}
 ];
 
 // ===== 練習③データ（並び替え）=====
@@ -626,6 +700,10 @@ window.d3=[
   {j:'あなたは傘を持って行ったほうがよい。',s:'You had better take an umbrella with you.',w:['You','had','better','take','an','umbrella','with','you','.'],h:'had better ＋ 原形（強い忠告）',u:'尾道医師会',e:'「〜したほうがよい」= <b>had better</b> ＋ 原形 → You had better take an umbrella with you.'},
   {j:'それは本当だったに違いない。\nIt is certain that he was wrong. =',s:'He must have been wrong.',w:['He','must','have','been','wrong','.'],h:'must have ＋ p.p.（〜だったに違いない）',e:'「〜だったに違いない」= <b>must have ＋ p.p.</b> → He must have been wrong.'},
   {j:'あなたは今朝は早起きする必要がなかったのに。',s:'You need not have got up early this morning.',w:['You','need','not','have','got','up','early','this','morning','.'],h:'need not have ＋ p.p.（〜する必要はなかったのに）',e:'「〜する必要はなかったのに（でも実際にした）」= <b>need not have ＋ p.p.</b>'},
+  {j:'彼は疲れているに違いない。そんなに長い間走っていたのだから。',s:'He must be tired.',w:['He','must','be','tired','.'],h:'must be（現在の強い推量）',u:'',e:'現在の強い推量「〜に違いない」= <b>must be</b>'},
+  {j:'彼女に謝るべきだったのに。',s:'You should have apologized to her.',w:['You','should','have','apologized','to','her','.'],h:'should have ＋ p.p.（後悔）',u:'',e:'「〜すべきだったのに（しなかった）」= <b>should have ＋ p.p.</b>'},
+  {j:'鍵をなくしてしまったに違いない。',s:'I must have lost my key.',w:['I','must','have','lost','my','key','.'],h:'must have ＋ p.p.（過去の強い確信）',u:'',e:'「〜したに違いない」= <b>must have ＋ p.p.</b>'},
+  {j:'彼がそんなことをするはずがなかった。',s:'He cannot have done such a thing.',w:['He','cannot','have','done','such','a','thing','.'],h:'cannot have ＋ p.p.（過去の強い否定）',u:'',e:'「〜したはずがない」= <b>cannot have ＋ p.p.</b>'}
 ];
 
 // ===== 練習④データ（並び替え）=====
@@ -636,7 +714,11 @@ window.d4=[
   {j:'私は釣りに行くよりも、むしろ家にいたい。',s:'I would rather stay at home than go fishing.',w:['I','would','rather','stay','at','home','than','go','fishing','.'],h:'would rather A than B「BよりもAしたい」',u:'東邦大佐倉',e:'<b>would rather A than B</b> → I would rather stay at home than go fishing.'},
   {j:'いつか外国へ行きたいものです。',s:"I'd like to go abroad some day.",w:["I'd",'like','to','go','abroad','some','day','.'],h:"would like to ～「〜したいなあ」",u:'滋賀県立総合保険',e:"<b>would like to ＋ 原形</b>「〜したいなあ」= want to のていねいな表現"},
   {j:'試験に失敗しないように一生懸命勉強すべきです。\n（lest を使って）',s:'You should study hard lest you should fail the exam.',w:['You','should','study','hard','lest','you','should','fail','the','exam','.'],h:'lest ～ should「〜しないように」',e:'<b>lest ～ should</b>「〜しないように」→ study hard lest you should fail the exam.'},
-  {j:'友達を選ぶときはどれほど注意してもしすぎることはない。',s:"You can't be too careful when you choose your friends.",w:["You","can't",'be','too','careful','when','you','choose','your','friends','.'],h:"can't ～ too「いくら〜してもしすぎない」",e:"<b>can't be too careful</b>"},
+  {j:'友達を選ぶときはどれほど注意してもしすぎることはない。',s:"You can't be too careful when you choose your friends.",w:["You","can't",'be','too','careful','when','you','choose','your','friends','.'],h:"can't ～ too「いくら〜してもしすぎない」",e:"<b>can't be too careful</b>"}
+,
+  {j:'私はむしろ映画を見に行きたい。',s:'I would rather go to the movies.',w:['I','would','rather','go','to','the','movies','.'],h:'would rather ～「むしろ〜したい」',u:'',e:'<b>would rather</b> ＋ 原形 → I would rather go to the movies.'},
+  {j:'遅刻しないように急いだ。',s:'I hurried so as not to be late.',w:['I','hurried','so','as','not','to','be','late','.'],h:'so as not to ～「〜しないように」',u:'',e:'<b>so as not to</b> ＋ 原形 → I hurried so as not to be late.'},
+  {j:'あなたがそんなに怒るのはもっともです。',s:'You may well get angry like that.',w:['You','may','well','get','angry','like','that','.'],h:'may well ～「〜するのは当然だ」',u:'',e:'<b>may well</b> ＋ 原形 → You may well get angry.'}
 ];
 
 // ===== 練習⑤データ（実戦）=====
@@ -859,6 +941,103 @@ function checkTestAns(btn, word, selected) {
   res.after(nextBtn);
 }
 
+/* ===== Unit3 確認問題データ ===== */
+
+// iq1a: 基本4助動詞
+window.ciq1a=[
+  {q:'（　）に入る正しい助動詞を選べ。\n( ) I use your phone?',s:'May I use your phone?',j:'電話を使ってもいいですか。',a:1,c:['Must','May','Will','Should'],e:'許可を求める表現は <b>May I ～?</b> が最もていねい。Can も可だが May が正式。'},
+  {q:'（　）に入る正しい助動詞を選べ。\nYou ( ) be quiet in the library.',s:'You must be quiet in the library.',j:'図書館では静かにしなければならない。',a:0,c:['must','can','may','will'],e:'義務・命令を表すのは <b>must</b>。「〜しなければならない」。'},
+  {q:'（　）に入る正しい助動詞を選べ。\n( ) you speak French?',s:'Can you speak French?',j:'フランス語は話せますか。',a:2,c:['Will','May','Can','Must'],e:'能力「〜できる」を表すのは <b>can</b>。Can you ～? で「〜できますか」。'},
+  {q:'（　）に入る正しい助動詞を選べ。\nIt ( ) rain tomorrow.',s:'It will rain tomorrow.',j:'明日は雨が降るだろう。',a:3,c:['can','may','must','will'],e:'推測・未来を表すのは <b>will</b>。「〜だろう」「〜するつもり」。'},
+];
+
+// iq1b: 書き換え表現
+window.ciq1b=[
+  {q:'（　）に入る正しい表現を選べ。（同意）\nHe can swim fast.\n＝ He ( ) swim fast.',s:'He is able to swim fast.',j:'彼は速く泳ぐことができる。',a:1,c:['is going to','is able to','has to','ought to'],e:'can の書き換えは <b>be able to</b>「〜できる」。'},
+  {q:'（　）に入る正しい表現を選べ。（同意）\nYou must finish this report.\n＝ You ( ) finish this report.',s:'You have to finish this report.',j:'あなたはこのレポートを終えなければならない。',a:2,c:['ought to','are going to','have to','are able to'],e:'must の書き換えは <b>have to</b>「〜しなければならない」。過去形は had to。'},
+  {q:'（　）に入る正しい語句を選べ。\nI must get up early tomorrow.\n＝ I ( ) get up early tomorrow.',s:"I will have to get up early tomorrow.",j:'明日は早起きしなければならないだろう。',a:0,c:['will have to','will must','am going must','will be able to'],e:'must には未来形がない → <b>will have to</b>「〜しなければならないだろう」。'},
+  {q:'（　）に入る正しい表現を選べ。\nI was able to open the door.（同意）\n＝ I ( ) open the door.',s:'I could open the door.',j:'私はドアを開けることができた。',a:3,c:['must','might','would','could'],e:'be able to の過去形 = <b>could</b>「〜できた」（実際にできた場合は was able to が自然）。'},
+];
+
+// iq2a: 推量の助動詞
+window.ciq2a=[
+  {q:'（　）に入る正しい助動詞を選べ。\nThe streets are wet. It ( ) have rained last night.',s:'It must have rained last night.',j:'道が濡れている。昨夜は雨が降ったに違いない。',a:0,c:['must','may','can','should'],e:'「〜に違いない（強い確信）」= <b>must</b>。must be ～ で推量を表す。'},
+  {q:'（　）に入る正しい助動詞を選べ。\nHe ( ) be sick — he looks pale.',s:'He must be sick — he looks pale.',j:'彼は病気に違いない — 青白い顔をしている。',a:2,c:['will','can','must','may'],e:'証拠をもとにした強い推量は <b>must</b>「〜に違いない」。'},
+  {q:'（　）に入る正しい助動詞を選べ。\nThis story ( ) be true.',s:'This story may be true.',j:'この話は本当かもしれない。',a:3,c:['must','can','will','may'],e:'「〜かもしれない（半信半疑）」= <b>may</b>。might はさらに確信が低い。'},
+  {q:'（　）に入る正しい助動詞を選べ。\nHe ( ) be a doctor — he is only 20!',s:"He can't be a doctor — he is only 20!",j:'彼が医者のはずがない — まだ20歳だ！',a:1,c:["mustn't","can't","won't","shouldn't"],e:'「〜のはずがない（否定の確信）」= <b>can\'t</b>。'},
+];
+
+// iq2b: should / ought to
+window.ciq2b=[
+  {q:'（　）に入る正しい語句を選べ。\nYou ( ) get more exercise.',s:'You ought to get more exercise.',j:'あなたはもっと運動すべきです。',a:1,c:['ought not to','ought to','should not to','ought'],e:'「〜すべきだ」= <b>ought to</b>。should と同意。後ろは動詞の原形。'},
+  {q:'次のうち正しい文はどれか？',s:'You ought not to smoke here.',j:'ここでタバコを吸うべきではない。',a:2,c:['You ought not smoke here.','You ought to not smoke here.','You ought not to smoke here.','You not ought to smoke here.'],e:'ought to の否定は <b>ought not to ～</b>。not は to の前に置く。'},
+  {q:'（　）に入る正しい語句を選べ。\nYou ( ) be more careful.',s:'You should be more careful.',j:'あなたはもっと注意すべきです。',a:0,c:['should','should to','ought','had better to'],e:'「〜すべきだ」= <b>should</b> または ought to。後ろは動詞の原形（to は不要）。'},
+];
+
+// iq2c: 習慣・傾向の助動詞
+window.ciq2c=[
+  {q:'（　）に入る正しい語句を選べ。\nHe ( ) go fishing on Sundays.',s:'He would often go fishing on Sundays.',j:'彼は日曜日によく釣りに行ったものだ。',a:2,c:['used to often','will often','would often','was often'],e:'「しばしば〜したものだ（不規則な過去の習慣）」= <b>would often</b>。'},
+  {q:'（　）に入る正しい語句を選べ。\nHe ( ) visit his parents every weekend.',s:'He used to visit his parents every weekend.',j:'彼は毎週末、両親を訪れていたものだ。',a:0,c:['used to','would to','was used to','is used to'],e:'「〜していたものだ（継続的な過去の習慣・状態）」= <b>used to</b>。'},
+  {q:'次のうち意味が異なる文はどれか？',s:'The door will not open.',j:'そのドアはどうしても開かない。',a:1,c:["Accidents will happen.","The door will not open.","Boys will be boys.","Oil will float on water."],e:'<b>Accidents will happen</b> は「事故は起こるものだ（習性）」。<b>will not open</b> は「どうしても開かない（拒絶）」で意味が異なる。'},
+];
+
+// iq3a: 過去への推量・後悔
+window.ciq3a=[
+  {q:'（　）に入る正しい語句を選べ。\nHe ( ) studied hard. He got 100 on the test!',s:'He must have studied hard.',j:'彼はきっと一生懸命勉強したに違いない。テストで100点だった！',a:0,c:['must have','may have','cannot have','should have'],e:'過去の強い確信「〜したに違いない」= <b>must have ＋ p.p.</b>'},
+  {q:'（　）に入る正しい語句を選べ。\nYou ( ) told her the truth. She is very sad.',s:'You should have told her the truth.',j:'あなたは彼女に本当のことを言えばよかったのに。',a:2,c:['must have','may have','cannot have','should have'],e:'「〜すべきだったのに（しなかった）」後悔・非難 = <b>should have ＋ p.p.</b>'},
+  {q:'（　）に入る正しい語句を選べ。\nHe ( ) said such a rude thing. He is very kind.',s:'He cannot have said such a rude thing.',j:'彼がそんな失礼なことを言ったはずがない。彼はとても親切だ。',a:1,c:['must have','cannot have','should have','may have'],e:'「〜したはずがない」過去の強い否定 = <b>cannot have ＋ p.p.</b>'},
+  {q:'（　）に入る正しい語句を選べ。\nYou ( ) come. I could have done it alone.',s:'You need not have come.',j:'あなたは来る必要はなかったのに（でも来てしまった）。',a:3,c:['should have','must not have','may not have','need not have'],e:'「〜する必要はなかったのに（実際はしてしまった）」= <b>need not have ＋ p.p.</b>'},
+];
+
+// iq3b: had better / should構文
+window.ciq3b=[
+  {q:'（　）に入る正しい語句を選べ。\nYou ( ) take an umbrella. It looks like rain.',s:'You had better take an umbrella.',j:'傘を持っていったほうがいいよ。雨が降りそうだ。',a:0,c:['had better','had better to','would rather','used to'],e:'「〜したほうがよい（強い忠告）」= <b>had better ＋ 原形</b>。to は不要。'},
+  {q:'次のうち正しい否定形はどれか？',s:"You had better not stay up late.",j:'夜更かししないほうがいいよ。',a:2,c:["You had better don't stay up late.","You hadn't better stay up late.","You had better not stay up late.","You had not better stay up late."],e:'had better の否定は <b>had better not ～</b>。not は better の後。'},
+  {q:'（　）に入る正しい語句を選べ。\nIt is natural that he ( ) angry.',s:'It is natural that he should be angry.',j:'彼が怒るのは当然だ。',a:1,c:['must be','should be','would be','had better be'],e:'It is natural that ～ の that 節では <b>should ＋ 原形</b>を使う。'},
+];
+
+// iq4a: 重要慣用表現
+window.ciq4a=[
+  {q:'（　）に入る正しい語句を選べ。\nYou ( ) be surprised. He is always late.',s:'You may well be surprised.',j:'あなたが驚くのは当然だ。彼はいつも遅れる。',a:1,c:['may as well','may well','would rather','had better'],e:'「〜するのは当然だ」= <b>may well</b>。have good reason to と書き換え可能。'},
+  {q:'（　）に入る正しい語句を選べ。\nI ( ) stay home than go out in the rain.',s:'I would rather stay home than go out in the rain.',j:'雨の中を外出するくらいなら家にいたほうがいい。',a:2,c:['may as well','had better','would rather','cannot but'],e:'「BするくらいならAしたい」= <b>would rather A than B</b>。A・B はどちらも動詞の原形。'},
+  {q:'（　）に入る正しい語句を選べ。\nI ( ) laughing at the joke.',s:'I cannot help laughing at the joke.',j:'私はそのジョークに笑わずにはいられなかった。',a:0,c:['cannot help','cannot but','may as well','had better'],e:'「〜せずにはいられない」= <b>cannot help ～ing</b>。= cannot but ＋ 原形。'},
+];
+
+// iq4b: lest / so as not to
+window.ciq4b=[
+  {q:'（　）に入る正しい語句を選べ。\nI hurried ( ) I should be late.',s:'I hurried lest I should be late.',j:'遅刻しないように急いだ。',a:0,c:['lest','so that','because','so as'],e:'「〜しないように（書き言葉）」= <b>lest ～ should ＋ 原形</b>。'},
+  {q:'（　）に入る正しい語句を選べ。\nI left early ( ) miss the train.',s:'I left early so as not to miss the train.',j:'電車に乗り遅れないように早めに出発した。',a:1,c:['lest not to','so as not to','in order not','for fear to'],e:'「〜しないように（一般的）」= <b>so as not to ＋ 原形</b>。'},
+  {q:'次のうち lest ～ should の書き換えとして正しいものを選べ。\nShe spoke quietly lest she should wake the baby.',s:'She spoke quietly so as not to wake the baby.',j:'彼女は赤ちゃんを起こさないようにそっと話した。',a:2,c:['She spoke quietly so that she would wake the baby.','She spoke quietly because she woke the baby.','She spoke quietly so as not to wake the baby.','She spoke quietly lest not wake the baby.'],e:'lest ～ should = <b>so as not to</b> / <b>in order not to</b> / <b>so that ～ won\'t</b>'},
+];
+
+// iq5a: need
+window.ciq5a=[
+  {q:'（　）に入る正しい形を選べ。\nHe ( ) study harder.',s:'He needs to study harder.',j:'彼はもっと一生懸命勉強する必要がある。',a:0,c:['needs to','need to','need','needs'],e:'肯定文では need は<b>動詞</b>として使う。三単現 → <b>needs to ＋ 原形</b>。'},
+  {q:'（　）に入る正しい形を選べ。\n( ) I buy a new dictionary?',s:'Need I buy a new dictionary?',j:'私は新しい辞書を買う必要がありますか。',a:1,c:['Do','Need','Does','Have'],e:'疑問文では need は<b>助動詞</b>として使える。<b>Need ＋ S ＋ 原形?</b>（toなし）'},
+  {q:'（　）に入る正しい形を選べ。\nYou ( ) wait any longer.',s:'You need not wait any longer.',j:'あなたはこれ以上待つ必要はありません。',a:2,c:["don't need","doesn't need","need not","not need"],e:'否定文では助動詞として <b>need not ＋ 原形</b>（toなし）。= don\'t need to。'},
+];
+
+// iq5b: dare
+window.ciq5b=[
+  {q:'（　）に入る正しい形を選べ。\nHe ( ) jump across the brook.',s:'He dared to jump across the brook.',j:'彼はあえて小川を跳び越えた。',a:0,c:['dared to','dare to','dared','dare'],e:'肯定文では dare は<b>動詞</b>として使う。<b>dared to ＋ 原形</b>。'},
+  {q:'（　）に入る正しい形を選べ。\nHow ( ) you say that to me!',s:'How dare you say that to me!',j:'よくもそんなことが私に言えるな！',a:1,c:['did','dare','dared','do'],e:'「よくも〜できるものだ」= <b>How dare you ～!</b> 怒り・驚きを込めた表現。'},
+  {q:'（　）に入る正しい形を選べ。\n( ) you propose to her?',s:'Dare you propose to her?',j:'あなたには彼女にプロポーズする勇気がありますか。',a:2,c:['Did','Do','Dare','Would'],e:'疑問文では助動詞として <b>Dare ＋ S ＋ 原形?</b>（toなし）'},
+];
+
+// iq5c: 祈願のmay / 強調のdo
+window.ciq5c=[
+  {q:'（　）に入る正しい語を選べ。\n( ) your dreams come true!',s:'May your dreams come true!',j:'あなたの夢が実現しますように！',a:0,c:['May','Will','Should','Must'],e:'「〜でありますように（祈願）」= 文頭に <b>May</b> を置く古い表現。'},
+  {q:'（　）に入る正しい語を選べ。\nI ( ) want to see you again.',s:'I do want to see you again.',j:'私はぜひまたあなたに会いたいです。',a:1,c:['will','do','must','would'],e:'動詞を強調する <b>強調の do</b>。「ぜひ・確かに」の意味で動詞の前に置く。'},
+  {q:'（　）に入る正しい語を選べ。\nShe ( ) know the answer. I am sure.',s:'She does know the answer.',j:'彼女は確かに答えを知っています。',a:2,c:['do','did','does','has'],e:'三人称単数の場合は <b>does</b>。その後の動詞は必ず原形にする。'},
+];
+
+iC('iq1a');iC('iq1b');
+iC('iq2a');iC('iq2b');iC('iq2c');
+iC('iq3a');iC('iq3b');
+iC('iq4a');iC('iq4b');
+iC('iq5a');iC('iq5b');iC('iq5c');
+
+
 // 単語帳モーダルを開いたとき一覧を表示
 var origOpenM = openM;
 openM = function(id) {
@@ -902,5 +1081,6 @@ openM = function(id) {
       <div id="vocab-test-area" style="display:none"></div>
     </div>
   </div>
+</div>
 </body>
 </html>
