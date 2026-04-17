@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+<title>英検2級・高認英文法　Unit 7　比較</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'BIZ UDGothic','Hiragino Kaku Gothic Pro','Meiryo',sans-serif;background:#eef2f7;color:#1a1a2e;min-height:100vh;font-size:15px}
+.top-header{background:linear-gradient(135deg,#1B3A6B 0%,#0097A7 100%);color:#fff;padding:14px 16px 12px;text-align:center}
+.top-header h1{font-size:17px;font-weight:700;letter-spacing:.05em}
+.top-header p{font-size:12px;margin-top:3px;opacity:.85}
+.nav{background:#fff;border-bottom:3px solid #0097A7;padding:8px 10px;display:flex;overflow-x:auto;gap:4px;-webkit-overflow-scrolling:touch;align-items:stretch}
+.nav::-webkit-scrollbar{height:3px}
+.pair{display:flex;gap:0;flex-shrink:0;border-radius:22px;overflow:hidden;box-shadow:0 0 0 1.5px #ccd}
+.pair.active-pair{box-shadow:0 0 0 2.5px #1B3A6B}
+.nb{padding:8px 14px;border:none;background:#f5f7fa;color:#555;font-size:13px;font-family:inherit;cursor:pointer;white-space:nowrap;border-right:1px solid #dde;transition:.2s;font-weight:500;flex-shrink:0}
+.nb:hover{background:#e8eaf6;color:#1B3A6B}
+.nb.on{background:#1B3A6B;color:#fff}
+.pb{padding:8px 14px;border:none;background:#fff3e0;color:#c84500;font-size:13px;font-family:inherit;cursor:pointer;white-space:nowrap;font-weight:700;transition:.2s;flex-shrink:0}
+.pb:hover{background:#e65100;color:#fff}
+.nav-sep{width:6px;flex-shrink:0}
+.sec{display:none;padding:12px;max-width:820px;margin:0 auto;padding-bottom:60px}
+.sec.active{display:block}
+.card{background:#fff;border-radius:14px;border:1px solid #dde3ee;padding:14px 16px;margin-bottom:14px;box-shadow:0 1px 4px rgba(0,0,0,.05)}
+.card-title{font-size:15px;font-weight:700;color:#1B3A6B;margin-bottom:10px;padding-bottom:8px;border-bottom:2px solid #0097A7}
+.sh{background:linear-gradient(90deg,#1B3A6B,#1B5E8B);color:#fff;border-radius:10px;padding:9px 16px;font-size:15px;font-weight:700;margin-bottom:12px;margin-top:6px}
+.pt{background:#fffde7;border-left:5px solid #f9a825;border-radius:0 10px 10px 0;padding:10px 14px;margin:8px 0;font-size:14px;line-height:1.8}
+.kb{background:#f1f8e9;border-left:5px solid #2e7d32;border-radius:0 10px 10px 0;padding:10px 14px;margin:8px 0;font-size:14px;line-height:1.8}
+.wb{background:#fff3e0;border-left:5px solid #e65100;border-radius:0 10px 10px 0;padding:10px 14px;margin:8px 0;font-size:14px;line-height:1.8}
+.ex{background:#f0f8ff;border:1px solid #b3d9f7;border-radius:10px;padding:12px 14px;margin:8px 0;font-size:14px;line-height:1.9}
+.ex-ja{font-size:12px;color:#555;margin-top:3px}
+.spk{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:#e8f4ff;border:1.5px solid #0097A7;cursor:pointer;margin-left:5px;vertical-align:middle;flex-shrink:0;transition:.2s;font-size:14px;font-family:inherit;padding:0}
+.spk:hover{background:#0097A7;color:#fff}
+.q-box{background:#fff;border-radius:12px;border:1px solid #dde3ee;padding:14px;margin-bottom:14px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.q-hd{display:flex;align-items:flex-start;gap:8px;margin-bottom:10px}
+.q-num{flex-shrink:0;width:26px;height:26px;background:#1B3A6B;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700}
+.q-txt{flex:1;font-size:14px;line-height:1.7}
+.hint{font-size:12px;color:#0097A7;background:#f0faff;border-radius:6px;padding:3px 8px;display:inline-block;margin-bottom:8px}
+.ub{font-size:11px;background:#e3f2fd;color:#1565c0;padding:2px 8px;border-radius:10px;font-weight:700;margin-left:6px;vertical-align:middle}
+.cb{width:100%;text-align:left;padding:10px 14px;margin:4px 0;border-radius:8px;border:1.5px solid #dde;background:#fff;font-size:14px;font-family:inherit;cursor:pointer;transition:.15s;line-height:1.4}
+.cb:hover:not(.dis){border-color:#0097A7;background:#f0faff}
+.cb.ca{background:#e8f5e9;border-color:#2e7d32;color:#1b5e20;font-weight:700}
+.cb.wa{background:#ffebee;border-color:#e53935;color:#b71c1c}
+.cb.dis{pointer-events:none}
+.ep{background:#fff8e1;border:1.5px solid #ffc107;border-radius:10px;padding:12px 14px;margin-top:10px;font-size:13px;line-height:1.8;display:none}
+.ep.show{display:block}
+.sb{background:#fff;border-radius:10px;border:1px solid #dde;padding:10px 14px;margin-bottom:12px;display:flex;align-items:center;gap:12px}
+.sn{font-size:20px;font-weight:700;color:#1B3A6B;min-width:60px}
+.pw{flex:1;height:10px;background:#eee;border-radius:6px;overflow:hidden}
+.pf{height:100%;background:linear-gradient(90deg,#0097A7,#1B3A6B);border-radius:6px;transition:.5s}
+.tbl{width:100%;border-collapse:collapse;font-size:13px}
+.tbl th{background:#1B3A6B;color:#fff;padding:7px 8px;text-align:left}
+.tbl td{padding:7px 8px;border-bottom:1px solid #eef;vertical-align:top}
+.tbl tr:nth-child(even) td{background:#f7f9ff}
+.tbl td b{color:#1B3A6B}
+/* no/not 比較の専用ボックス */
+.nbox-wrap{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0}
+@media(max-width:540px){.nbox-wrap{grid-template-columns:1fr}}
+.nbox{border-radius:12px;padding:14px;font-size:13px;line-height:1.8}
+.nbox.no{background:#e8f5e9;border:2px solid #2e7d32}
+.nbox.not{background:#e3f2fd;border:2px solid #1565c0}
+.nbox .nb-ttl{font-size:14px;font-weight:700;margin-bottom:8px;padding-bottom:6px;border-bottom:2px solid}
+.nbox.no .nb-ttl{color:#2e7d32;border-color:#2e7d32}
+.nbox.not .nb-ttl{color:#1565c0;border-color:#1565c0}
+.nbox .nb-feel{font-size:18px;font-weight:700;text-align:center;padding:8px 0;margin:6px 0}
+.nbox.no .nb-feel{color:#2e7d32}
+.nbox.not .nb-feel{color:#1565c0}
+.numline{display:flex;align-items:center;gap:0;margin:10px 0;font-size:12px}
+.numline-bar{flex:1;height:8px;background:linear-gradient(90deg,#e0e0e0,#1B3A6B);border-radius:4px;position:relative}
+.numline-mark{position:absolute;top:-10px;font-size:11px;font-weight:700;white-space:nowrap}
+.numline-mark.left{left:0;color:#e53935}
+.numline-mark.mid{left:50%;transform:translateX(-50%);color:#0097A7}
+.numline-mark.right{right:0;color:#2e7d32}
+/* 比較変化テーブル */
+.comp-tbl{width:100%;border-collapse:collapse;font-size:13px;margin:8px 0}
+.comp-tbl th{background:#0097A7;color:#fff;padding:6px 8px;text-align:center}
+.comp-tbl td{padding:7px 8px;border:1px solid #dde;text-align:center;vertical-align:middle}
+.comp-tbl tr:nth-child(even) td{background:#f7f9ff}
+.mini-quiz-wrap{background:#f0faff;border:2px solid #0097A7;border-radius:12px;padding:14px;margin-top:12px}
+.mini-quiz-title{font-size:13px;font-weight:700;color:#0097A7;margin-bottom:10px}
+.vpop{display:none;position:fixed;z-index:2000;background:#fff;border-radius:14px;box-shadow:0 6px 30px rgba(0,0,0,.22);padding:0;width:260px;max-width:90vw}
+.vpop.show{display:block}
+.vpop-hd{background:linear-gradient(135deg,#1B3A6B,#0097A7);color:#fff;padding:12px 14px 10px;border-radius:14px 14px 0 0;display:flex;align-items:center;justify-content:space-between}
+.vpop-word{font-size:18px;font-weight:700}
+.vpop-pos{font-size:11px;background:rgba(255,255,255,.25);border-radius:8px;padding:2px 8px;margin-left:6px}
+.vpop-close{background:rgba(255,255,255,.2);border:none;color:#fff;width:26px;height:26px;border-radius:50%;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.vpop-body{padding:12px 14px}
+.vpop-mean{font-size:16px;font-weight:700;color:#1B3A6B;margin-bottom:4px}
+.vpop-kana{font-size:13px;color:#555;margin-bottom:10px}
+.vpop-btns{display:flex;gap:8px}
+.vpop-spk{flex:1;padding:8px;border-radius:8px;border:1.5px solid #0097A7;background:#f0faff;color:#0097A7;font-size:13px;font-family:inherit;cursor:pointer;font-weight:700}
+.vpop-spk:hover{background:#0097A7;color:#fff}
+.vpop-save{flex:1;padding:8px;border-radius:8px;border:1.5px solid #e65100;background:#fff3e0;color:#c84500;font-size:13px;font-family:inherit;cursor:pointer;font-weight:700}
+.vpop-save:hover{background:#e65100;color:#fff}
+.vpop-save.saved{background:#e8f5e9;border-color:#2e7d32;color:#2e7d32}
+.vpop-saved-lbl{font-size:11px;color:#2e7d32;text-align:center;margin-top:6px;display:none}
+.vpop-saved-lbl.show{display:block}
+.vocab-badge{display:none;position:absolute;top:-6px;right:-6px;background:#e53935;color:#fff;border-radius:50%;width:18px;height:18px;font-size:11px;font-weight:700;align-items:center;justify-content:center}
+.vocab-badge.show{display:flex}
+.mo{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:1500;align-items:flex-end;justify-content:center}
+.mo.open{display:flex}
+.mb{background:#fff;border-radius:18px 18px 0 0;width:100%;max-width:540px;max-height:85vh;display:flex;flex-direction:column}
+.mh{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid #eee}
+.mh h2{font-size:16px;font-weight:700;color:#1B3A6B}
+.mhc{background:none;border:none;font-size:22px;cursor:pointer;color:#888;line-height:1}
+.mbody{overflow-y:auto;padding:14px 16px;flex:1}
+.vbook-empty{text-align:center;color:#999;padding:24px;font-size:14px}
+.vcard{background:#f8faff;border-radius:10px;border:1px solid #dde;padding:10px 12px;margin-bottom:8px;display:flex;align-items:center;gap:10px}
+.vcard-word{font-size:15px;font-weight:700;color:#1B3A6B;flex:1}
+.vcard-mean{font-size:13px;color:#555;flex:1}
+.vcard-del{background:#fff;border:1.5px solid #dde;color:#aaa;border-radius:6px;padding:4px 10px;font-size:12px;cursor:pointer;font-family:inherit}
+.vcard-del:hover{border-color:#e53935;color:#e53935}
+.vtest-q{font-size:16px;font-weight:700;color:#1B3A6B;text-align:center;padding:16px;background:#e8f4ff;border-radius:10px;margin-bottom:12px}
+.vtest-opt{width:100%;text-align:left;padding:11px 14px;margin:5px 0;border-radius:8px;border:1.5px solid #dde;background:#fff;font-size:14px;font-family:inherit;cursor:pointer;transition:.15s}
+.vtest-opt:hover:not(.dis){border-color:#0097A7;background:#f0faff}
+.vtest-opt.ca{background:#e8f5e9;border-color:#2e7d32;color:#1b5e20;font-weight:700}
+.vtest-opt.wa{background:#ffebee;border-color:#e53935;color:#b71c1c}
+.vtest-opt.dis{pointer-events:none}
+canvas#cc{position:fixed;top:0;left:0;pointer-events:none;z-index:9999;display:none}
+</style>
+</head>
+<body>
+<canvas id="cc"></canvas>
+<div class="top-header">
+  <h1>🎓 英検2級・高認英文法　Unit 7　比較</h1>
+  <p>こうげんよびこう（江原予備校）　― スピーカーボタンで音声再生 ―</p>
+</div>
+<nav class="nav" id="nav">
+  <div class="pair active-pair">
+    <button class="nb on" onclick="ss('s1',this)">① 比較変化の基本</button>
+    <button class="pb" onclick="ss('p1',this)">✏️ 練習①</button>
+  </div>
+  <div class="nav-sep"></div>
+  <div class="pair">
+    <button class="nb" onclick="ss('s2',this)">② 原級・比較級の用法</button>
+    <button class="pb" onclick="ss('p2',this)">✏️ 練習②</button>
+  </div>
+  <div class="nav-sep"></div>
+  <div class="pair">
+    <button class="nb" onclick="ss('s3',this)">③ 最上級・書き換え</button>
+    <button class="pb" onclick="ss('p3',this)">✏️ 練習③</button>
+  </div>
+  <div class="nav-sep"></div>
+  <div class="pair">
+    <button class="nb" onclick="ss('s4',this)">④ no/not＋比較級の違い</button>
+    <button class="pb" onclick="ss('p4',this)">✏️ 練習④</button>
+  </div>
+  <div class="nav-sep"></div>
+  <div class="pair">
+    <button class="nb" onclick="ss('s5',this)">⑤ 重要比較表現</button>
+    <button class="pb" onclick="ss('p5',this)">✏️ 練習⑤実戦</button>
+  </div>
+  <div class="nav-sep" style="width:12px"></div>
+  <div style="flex-shrink:0;position:relative">
+    <button onclick="openM('mvocab')" style="padding:8px 16px;border-radius:22px;border:2px solid #7b1fa2;background:#f3e5f5;color:#7b1fa2;font-size:13px;font-family:inherit;cursor:pointer;font-weight:700;white-space:nowrap">📚 単語帳</button>
+    <span class="vocab-badge" id="vocab-badge">0</span>
+  </div>
+</nav>
+
+<!-- ① 比較変化の基本 -->
+<div id="s1" class="sec active">
+<div class="sh">① 比較変化の基本　— 原級・比較級・最上級 —</div>
+
+<div class="card">
+  <div class="card-title">比較とは？　3つの段階を覚えよう</div>
+  <div class="pt">
+    形容詞や副詞には「もとの形（<b>原級</b>）」「より～という形（<b>比較級</b>）」「最も～という形（<b>最上級</b>）」の3段階があります。<br>
+    これらを使って「AはBより背が高い」「クラスで一番速い」などの比較を表します。<br><br>
+    まず、どの形に変化するかのルールをしっかり覚えましょう。
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title">①規則変化　— er / est をつける —</div>
+  <div class="pt">
+    多くの形容詞・副詞は語尾に <b>-er（比較級）</b> と <b>-est（最上級）</b> をつけます。<br>
+    語尾の形によってつけ方が少し変わりますので、下の表でパターンを覚えましょう。
+  </div>
+  <table class="comp-tbl">
+    <tr><th>パターン</th><th>原級</th><th>比較級</th><th>最上級</th></tr>
+    <tr><td>ふつうは -er / -est</td><td>small</td><td>smaller</td><td>smallest</td></tr>
+    <tr><td>語尾が -e → -r / -st</td><td>large</td><td>larger</td><td>largest</td></tr>
+    <tr><td>短母音＋子音字 → 子音を重ねて</td><td>big</td><td>bigger</td><td>biggest</td></tr>
+    <tr><td>子音字＋y → y を i に変えて</td><td>busy</td><td>busier</td><td>busiest</td></tr>
+  </table>
+</div>
+
+<div class="card">
+  <div class="card-title">②more / most をつける　— 長い語は前に置く —</div>
+  <div class="pt">
+    音節（母音のまとまり）が多い語（2音節以上の多く・3音節以上・-ly 副詞など）は、<br>
+    語尾に -er をつけるかわりに、前に <b>more（比較級）</b> または <b>most（最上級）</b> を置きます。
+  </div>
+  <table class="comp-tbl">
+    <tr><th>パターン</th><th>原級</th><th>比較級</th><th>最上級</th></tr>
+    <tr><td>2音節以上の多く</td><td>famous</td><td>more famous</td><td>most famous</td></tr>
+    <tr><td>3音節以上</td><td>important</td><td>more important</td><td>most important</td></tr>
+    <tr><td>-ly で終わる副詞</td><td>slowly</td><td>more slowly</td><td>most slowly</td></tr>
+  </table>
+  <div class="kb">💡 例外：early → earlier → earliest（-ly でも er / est の形）</div>
+</div>
+
+<div class="card">
+  <div class="card-title">③不規則変化　— そのまま覚える —</div>
+  <div class="pt">
+    次の語はルールに当てはまらない不規則変化です。そのまま丸ごと覚えてください。
+  </div>
+  <table class="comp-tbl">
+    <tr><th>原級</th><th>比較級</th><th>最上級</th><th>意味</th></tr>
+    <tr><td>good / well</td><td><b>better</b></td><td><b>best</b></td><td>よい・よく</td></tr>
+    <tr><td>bad / ill / badly</td><td><b>worse</b></td><td><b>worst</b></td><td>悪い・悪く</td></tr>
+    <tr><td>many / much</td><td><b>more</b></td><td><b>most</b></td><td>多い・多く</td></tr>
+    <tr><td>little</td><td><b>less</b></td><td><b>least</b></td><td>少ない・少なく</td></tr>
+  </table>
+</div>
+
+<div class="card">
+  <div class="card-title">④意味が変わる形容詞　— late・old・far に注意 —</div>
+  <div class="pt">
+    次の語は比較変化によって意味が変わります。文脈に合った方を選ぶ問題がよく出ます。
+  </div>
+  <table class="comp-tbl">
+    <tr><th>原級</th><th>比較級</th><th>最上級</th><th>意味</th></tr>
+    <tr><td rowspan="2">late</td><td>later</td><td>latest</td><td>（時間が）遅い・最新の</td></tr>
+    <tr><td>latter</td><td>last</td><td>（順序が）後の・最後の</td></tr>
+    <tr><td rowspan="2">old</td><td>older</td><td>oldest</td><td>（年齢が）年をとった</td></tr>
+    <tr><td>elder</td><td>eldest</td><td>（家族の）年上の</td></tr>
+    <tr><td rowspan="2">far</td><td>farther</td><td>farthest</td><td>（距離が）遠い</td></tr>
+    <tr><td>further</td><td>furthest</td><td>（程度が）はるかに・さらに</td></tr>
+  </table>
+  <div class="ex">
+    The <b>latter</b> part of the story was interesting. <button class="spk" data-t="The latter part of the story was interesting." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">物語の後半部分はおもしろかった。（後の部分 → latter）</span>
+  </div>
+  <div class="ex">
+    I have an <b>elder</b> brother. <button class="spk" data-t="I have an elder brother." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">私には年上の兄がいます。（家族の年上 → elder）</span>
+  </div>
+</div>
+
+<div class="mini-quiz-wrap">
+  <div class="mini-quiz-title">📝 確認問題① 比較変化の形</div>
+  <div id="iq1aq"></div>
+</div>
+</div><!-- /s1 -->
+
+<!-- 練習① -->
+<div id="p1" class="sec">
+  <div class="sb"><span class="sn" id="p1sn">0 / 10</span><div class="pw"><div class="pf" id="p1pf" style="width:0%"></div></div>
+  <button onclick="resetP('p1')" style="border:none;background:#eee;border-radius:6px;padding:6px 12px;font-size:12px;cursor:pointer;font-family:inherit">リセット</button></div>
+  <div id="p1q"></div>
+</div>
+
+<!-- ② 原級・比較級の用法 -->
+<div id="s2" class="sec">
+<div class="sh">② 原級・比較級を使った比較</div>
+
+<div class="card">
+  <div class="card-title">as ～ as …　「…と同じくらい～」</div>
+  <div class="pt">
+    2つのものが「同じくらい」であることを表すときは、<br>
+    <b>as ＋ 原級 ＋ as ～</b> の形を使います。<br>
+    後ろの as は<b>接続詞</b>なので、後ろには主格（I / he / she など）を使います。
+  </div>
+  <div class="ex">
+    My brother is <b>as tall as</b> I. <button class="spk" data-t="My brother is as tall as I." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">私の兄は私と同じくらい背が高いです。</span>
+  </div>
+  <div class="ex">
+    I'm <b>not as young as</b> you. <button class="spk" data-t="I am not as young as you." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">私はあなたほど若くありません。（not as ～ as = ～ほど～ではない）</span>
+  </div>
+  <div class="ex">
+    You have <b>as many books as</b> he. <button class="spk" data-t="You have as many books as he." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">あなたは彼と同じくらいたくさんの本を持っています。（as 原級 ＋ 名詞 as の語順）</span>
+  </div>
+  <div class="kb">
+    💡 <b>as 原級 ＋ a(an) ＋ 名詞 as</b> の語順に注意！<br>
+    ❌ I am as a good swimmer as you.（as が名詞の直前は誤り）<br>
+    ✅ I am as <b>good a swimmer</b> as you. <button class="spk" data-t="I am as good a swimmer as you." onclick="sp(this.dataset.t)">▶</button><br>
+    <span style="font-size:12px;color:#555">→ 原級が冠詞 a の前に出ます。</span>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title">倍数表現　「…の～倍」</div>
+  <div class="pt">
+    「…の～倍」は <b>～ times as ＋ 原級 ＋ as …</b> の形で表します。<br>
+    ただし「2倍」は <b>twice</b>（two times は使わない）、「半分」は <b>half</b> を使います。
+  </div>
+  <div class="ex">
+    This room is <b>twice as large as</b> that one. <button class="spk" data-t="This room is twice as large as that one." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">この部屋はあの部屋の2倍の大きさです。</span>
+  </div>
+  <div class="ex">
+    He has <b>three times as much money as</b> I. <button class="spk" data-t="He has three times as much money as I." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">彼は私の3倍のお金を持っています。</span>
+  </div>
+</div>
+
+<div class="mini-quiz-wrap">
+  <div class="mini-quiz-title">📝 確認問題② 原級の比較</div>
+  <div id="iq2aq"></div>
+</div>
+
+<div class="card">
+  <div class="card-title">比較級を使った比較　「AはBより～」</div>
+  <div class="pt">
+    2つを比べて「AはBより～だ」というときは、<b>比較級 ＋ than ～</b> を使います。<br>
+    比較の程度を表すときは比較級の前に修飾語を置きます。
+  </div>
+  <table class="tbl">
+    <tr><th>修飾語</th><th>意味</th><th>例</th></tr>
+    <tr><td><b>much / far</b></td><td>ずっと・はるかに</td><td>Tom swims <b>much faster</b> than I. <button class="spk" data-t="Tom swims much faster than I." onclick="sp(this.dataset.t)">▶</button></td></tr>
+    <tr><td><b>a little</b></td><td>少し</td><td>I got up <b>a little</b> earlier than usual. <button class="spk" data-t="I got up a little earlier than usual." onclick="sp(this.dataset.t)">▶</button></td></tr>
+    <tr><td><b>two years</b> など</td><td>～歳・～cm 差</td><td>He is <b>two years</b> older than I. <button class="spk" data-t="He is two years older than I." onclick="sp(this.dataset.t)">▶</button></td></tr>
+  </table>
+  <div class="wb">
+    ⚠️ 比較級の前に <b>very</b> は使えません！ 「ずっと」は <b>much / far</b> を使います。<br>
+    ❌ He is very taller.　　✅ He is <b>much taller</b>.
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title">同類を比べるとき　that of ～ / those of ～</div>
+  <div class="pt">
+    同じ種類のものを比べるとき、繰り返しを避けるために <b>that / those</b> を使います。<br>
+    単数の名詞 → <b>that</b>　　複数の名詞 → <b>those</b>
+  </div>
+  <div class="ex">
+    The climate of Japan is milder than <b>that of</b> Norway. <button class="spk" data-t="The climate of Japan is milder than that of Norway." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">日本の気候はノルウェーの気候より穏やかです。（climate の繰り返しを that で避ける）</span>
+  </div>
+  <div class="ex">
+    The ears of a rabbit are longer than <b>those of</b> a cat. <button class="spk" data-t="The ears of a rabbit are longer than those of a cat." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">ウサギの耳は猫の耳より長いです。（ears は複数 → those）</span>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title">2者の比較 / 劣等比較 / The 比較級 ～ the 比較級</div>
+  <div class="pt">
+    <b>「2人のうちでより～の方」</b>：<b>the ＋ 比較級 ＋ of the two</b>（the がつく！）
+  </div>
+  <div class="ex">
+    She is <b>the taller</b> of the two. <button class="spk" data-t="She is the taller of the two." onclick="sp(this.dataset.t)">▶</button>　<span class="ex-ja">彼女は2人のうちで背の高い方です。</span>
+  </div>
+  <div class="pt">
+    <b>劣等比較</b>「…ほど～ではない」：<b>less ＋ 原級 ＋ than …</b>
+  </div>
+  <div class="ex">
+    This book is <b>less interesting</b> than that one. <button class="spk" data-t="This book is less interesting than that one." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">この本はあの本ほど面白くありません。</span>
+  </div>
+  <div class="pt">
+    <b>The ＋ 比較級 ～, the ＋ 比較級 …</b>　「～すればするほど…」
+  </div>
+  <div class="ex">
+    <b>The more</b> we have, <b>the more</b> we want. <button class="spk" data-t="The more we have, the more we want." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">持てば持つほど欲しくなる。</span>
+  </div>
+  <div class="ex">
+    <b>The sooner</b>, <b>the better</b>. <button class="spk" data-t="The sooner, the better." onclick="sp(this.dataset.t)">▶</button>　<span class="ex-ja">早ければ早いほどよい。</span>
+  </div>
+</div>
+
+<div class="mini-quiz-wrap">
+  <div class="mini-quiz-title">📝 確認問題③ 比較級の用法</div>
+  <div id="iq2bq"></div>
+</div>
+</div><!-- /s2 -->
+
+<!-- 練習② -->
+<div id="p2" class="sec">
+  <div class="sb"><span class="sn" id="p2sn">0 / 10</span><div class="pw"><div class="pf" id="p2pf" style="width:0%"></div></div>
+  <button onclick="resetP('p2')" style="border:none;background:#eee;border-radius:6px;padding:6px 12px;font-size:12px;cursor:pointer;font-family:inherit">リセット</button></div>
+  <div id="p2q"></div>
+</div>
+
+<!-- ③ 最上級・書き換え -->
+<div id="s3" class="sec">
+<div class="sh">③ 最上級の用法と最上級の書き換え</div>
+
+<div class="card">
+  <div class="card-title">最上級の基本　in / of の使い分け</div>
+  <div class="pt">
+    「～の中で一番…だ」には <b>the ＋ 最上級 ＋ in / of ～</b> を使います。<br>
+    <b>in</b>：後ろに場所・集団を表す語句（in Japan / in the class）<br>
+    <b>of</b>：後ろに複数のものを表す語句（of all / of the three）
+  </div>
+  <div class="ex">
+    This house is the <b>oldest</b> building <b>in</b> the town. <button class="spk" data-t="This house is the oldest building in the town." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">この家は町で一番古い建物です。</span>
+  </div>
+  <div class="ex">
+    She danced the <b>best</b> <b>of</b> all the girls. <button class="spk" data-t="She danced the best of all the girls." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">彼女はすべての女の子の中で最も上手に踊りました。</span>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title">最上級のさまざまな形</div>
+  <table class="tbl">
+    <tr><th>表現</th><th>意味</th><th>例文</th></tr>
+    <tr><td><b>one of the 最上級＋複数名詞</b></td><td>最も～な…のひとつ</td><td>Tokyo is one of the largest <b>cities</b> in the world. <button class="spk" data-t="Tokyo is one of the largest cities in the world." onclick="sp(this.dataset.t)">▶</button></td></tr>
+    <tr><td><b>the ＋ 序数 ＋ 最上級</b></td><td>～番目に…</td><td>Tom is the <b>third tallest</b> boy. <button class="spk" data-t="Tom is the third tallest boy." onclick="sp(this.dataset.t)">▶</button></td></tr>
+    <tr><td><b>副詞の最上級（the なし）</b></td><td>最も…（the をつけないことが多い）</td><td>She can run <b>fastest</b> in the class. <button class="spk" data-t="She can run fastest in the class." onclick="sp(this.dataset.t)">▶</button></td></tr>
+    <tr><td><b>by far / much ＋ 最上級</b></td><td>ずばぬけて最も</td><td>Jupiter is <b>by far</b> the biggest planet. <button class="spk" data-t="Jupiter is by far the biggest planet." onclick="sp(this.dataset.t)">▶</button></td></tr>
+    <tr><td><b>同一物の比較（the なし）</b></td><td>その中で最も…</td><td>The lake is <b>deepest</b> at this point. <button class="spk" data-t="The lake is deepest at this point." onclick="sp(this.dataset.t)">▶</button></td></tr>
+  </table>
+</div>
+
+<div class="card">
+  <div class="card-title">最上級の書き換え　— 3つの形で同じ意味を表す —</div>
+  <div class="pt">
+    最上級の文は <b>no other ～</b> や <b>比較級 ＋ than any other ～</b> の形に書き換えられます。<br>
+    この3形の書き換えは入試でよく出ますので、全部できるようにしておきましょう。
+  </div>
+  <div class="ex">
+    Mt. Fuji is <b>the highest</b> mountain in Japan. <button class="spk" data-t="Mt. Fuji is the highest mountain in Japan." onclick="sp(this.dataset.t)">▶</button><br>
+    ＝ <b>No other mountain</b> in Japan is <b>higher than</b> Mt. Fuji. <button class="spk" data-t="No other mountain in Japan is higher than Mt. Fuji." onclick="sp(this.dataset.t)">▶</button><br>
+    ＝ <b>No other mountain</b> in Japan is <b>as high as</b> Mt. Fuji. <button class="spk" data-t="No other mountain in Japan is as high as Mt. Fuji." onclick="sp(this.dataset.t)">▶</button><br>
+    ＝ Mt. Fuji is <b>higher than any other mountain</b> in Japan. <button class="spk" data-t="Mt. Fuji is higher than any other mountain in Japan." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">富士山は日本で最も高い山です。</span>
+  </div>
+  <div class="ex">
+    Health is <b>the most important</b> of all.<br>
+    ＝ <b>Nothing</b> is <b>more important than</b> health. <button class="spk" data-t="Nothing is more important than health." onclick="sp(this.dataset.t)">▶</button><br>
+    ＝ <b>Nothing</b> is <b>as important as</b> health. <button class="spk" data-t="Nothing is as important as health." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">健康は全ての中で最も重要です。（nothing / anything else を使う書き換え）</span>
+  </div>
+</div>
+
+<div class="mini-quiz-wrap">
+  <div class="mini-quiz-title">📝 確認問題④ 最上級と書き換え</div>
+  <div id="iq3aq"></div>
+</div>
+</div><!-- /s3 -->
+
+<!-- 練習③ -->
+<div id="p3" class="sec">
+  <div class="sb"><span class="sn" id="p3sn">0 / 10</span><div class="pw"><div class="pf" id="p3pf" style="width:0%"></div></div>
+  <button onclick="resetP('p3')" style="border:none;background:#eee;border-radius:6px;padding:6px 12px;font-size:12px;cursor:pointer;font-family:inherit">リセット</button></div>
+  <div id="p3q"></div>
+</div>
+
+<!-- ④ no/not 比較級の違い（重点解説） -->
+<div id="s4" class="sec">
+<div class="sh">④ 紛らわしい比較表現　— no と not の違いを完全マスター —</div>
+
+<div class="card">
+  <div class="card-title">🔑 まずここを理解しよう！　no と not の根本的な違い</div>
+  <div class="pt">
+    <b>no</b> と <b>not</b> は、どちらも「否定」ですが、比較表現では意味が全く違います。<br><br>
+    ・<b>no ＋ 比較級</b>：「～してもそれ以上にはならない」という<b>感情・評価</b>を表します。<br>
+    　→ 数・量に対して「<b>少ない・多い</b>」という<b>気持ち（驚き・残念）</b>が入ります。<br><br>
+    ・<b>not ＋ 比較級</b>：「more than の否定 → 超えない」という<b>客観的な上限・下限</b>を表します。<br>
+    　→ 数・量に対して<b>事実として上限・下限</b>を示します。<br><br>
+    下の4つの表現を「イメージ」で理解してください。
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title">🟢 no more than vs 🔵 not more than</div>
+  <div class="nbox-wrap">
+    <div class="nbox no">
+      <div class="nb-ttl">🟢 no more than 〔数〕</div>
+      <div class="nb-feel">「たった〜しか」😢</div>
+      <b>＝ only</b>「たったの～しか」<br><br>
+      <b>気持ち</b>：その数が少ないと感じている。<br>
+      「10枚しかない…少ない！」<br><br>
+      He has <b>no more than</b> 10 CDs.<br>
+      <span style="font-size:12px;color:#555">彼はCDを<b>たった10枚しか</b>持っていない。</span>
+    </div>
+    <div class="nbox not">
+      <div class="nb-ttl">🔵 not more than 〔数〕</div>
+      <div class="nb-feel">「せいぜい〜以内」📊</div>
+      <b>＝ at most</b>「多くても～」<br><br>
+      <b>客観的事実</b>：10を超えない。感情なし。<br>
+      「10以下である」という上限を示す。<br><br>
+      He has <b>not more than</b> 10 CDs.<br>
+      <span style="font-size:12px;color:#555">彼はCDを<b>せいぜい10枚</b>しか持っていない。</span>
+    </div>
+  </div>
+  <div style="background:#fff8e1;border:1.5px solid #ffc107;border-radius:10px;padding:14px;margin:10px 0;font-size:14px;line-height:1.9">
+    💡 <b>数直線で理解するとわかりやすい！</b><br><br>
+    <b>no more than 10</b>：「10しかない（少ない！）」<br>
+    　→ 10という数が「少ない」という<b>感情</b>込みの表現<br><br>
+    <b>not more than 10</b>：「10以下（0〜10の範囲）」<br>
+    　→ 10を超えないという<b>客観的な上限</b>。「0〜10のどこか」を示す<br><br>
+    <span style="color:#1B3A6B">【覚え方】no → 感情あり「only（たった）」 ／ not → 客観「at most（せいぜい）」</span>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title">🟢 no less than vs 🔵 not less than</div>
+  <div class="nbox-wrap">
+    <div class="nbox no">
+      <div class="nb-ttl">🟢 no less than 〔数〕</div>
+      <div class="nb-feel">「〜も！」😲</div>
+      <b>＝ as many / much as</b>「～も」<br><br>
+      <b>気持ち</b>：その数が多いと感じている。<br>
+      「10枚もある！多い！」<br><br>
+      He has <b>no less than</b> 10 CDs.<br>
+      <span style="font-size:12px;color:#555">彼はCDを<b>10枚も</b>持っている。</span>
+    </div>
+    <div class="nbox not">
+      <div class="nb-ttl">🔵 not less than 〔数〕</div>
+      <div class="nb-feel">「少なくとも〜以上」📊</div>
+      <b>＝ at least</b>「少なくとも～」<br><br>
+      <b>客観的事実</b>：10以上（10を下回らない）。<br>
+      「最低でも10」という下限を示す。<br><br>
+      He has <b>not less than</b> 10 CDs.<br>
+      <span style="font-size:12px;color:#555">彼はCDを<b>少なくとも10枚</b>持っている。</span>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title">📋 4つをまとめて確認しよう</div>
+  <table class="tbl">
+    <tr><th>表現</th><th>意味</th><th>言い換え</th><th>気持ち</th></tr>
+    <tr><td><b>no more than 10</b></td><td>たった10しか</td><td>= only 10</td><td>😢 少ない！</td></tr>
+    <tr><td><b>not more than 10</b></td><td>せいぜい10（以下）</td><td>= at most 10</td><td>😐 客観（上限）</td></tr>
+    <tr><td><b>no less than 10</b></td><td>10も（ある）</td><td>= as many as 10</td><td>😲 多い！</td></tr>
+    <tr><td><b>not less than 10</b></td><td>少なくとも10（以上）</td><td>= at least 10</td><td>😐 客観（下限）</td></tr>
+  </table>
+  <div class="wb">
+    ⚠️ <b>no / not の判断ポイント</b><br>
+    「only（たった）」「as many as（～も）」に言い換えられる → <b>no</b><br>
+    「at most（せいぜい）」「at least（少なくとも）」に言い換えられる → <b>not</b>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title">no more ～ than …　— クジラ構文 —</div>
+  <div class="pt">
+    <b>A is no more B than C is.</b>「AがBでないのはCがBでないのと同じだ」<br>
+    これは「当然のことを確認する」表現で、<b>C が B でないことを前提</b>に使います。<br>
+    A と C の両方が B ではないことを強調しています。
+  </div>
+  <div class="ex">
+    A whale is <b>no more</b> a fish <b>than</b> a horse is. <button class="spk" data-t="A whale is no more a fish than a horse is." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">クジラが魚でないのは馬が魚でないのと同じです。（= クジラは（当然）魚ではない）</span>
+  </div>
+  <div class="kb">
+    💡 「馬が魚でないことは当然」→「同じようにクジラも魚ではない」という論理です。<br>
+    ＝ A whale is not a fish <b>any more than</b> a horse is.（同じ意味の別の書き方）
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title">no less ～ than …　「…に劣らず同じくらい～」</div>
+  <div class="ex">
+    She is <b>no less beautiful than</b> her sister. <button class="spk" data-t="She is no less beautiful than her sister." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">彼女は姉に劣らず美しい。（= 姉と同じくらい美しい）</span>
+  </div>
+  <div class="kb">
+    💡 not less ～ than … との違い：<br>
+    ・<b>no less</b> ～ than …「…と同じように～（AとBが対等）」<br>
+    ・<b>not less</b> ～ than …「…にまさるとも劣らず～（A ≥ B）」
+  </div>
+</div>
+
+<div class="mini-quiz-wrap">
+  <div class="mini-quiz-title">📝 確認問題⑤ no / not の違いをマスター</div>
+  <div id="iq4aq"></div>
+</div>
+</div><!-- /s4 -->
+
+<!-- 練習④ -->
+<div id="p4" class="sec">
+  <div class="sb"><span class="sn" id="p4sn">0 / 10</span><div class="pw"><div class="pf" id="p4pf" style="width:0%"></div></div>
+  <button onclick="resetP('p4')" style="border:none;background:#eee;border-radius:6px;padding:6px 12px;font-size:12px;cursor:pointer;font-family:inherit">リセット</button></div>
+  <div id="p4q"></div>
+</div>
+
+<!-- ⑤ 重要比較表現 -->
+<div id="s5" class="sec">
+<div class="sh">⑤ 重要比較表現をマスター</div>
+
+<div class="card">
+  <div class="card-title">as ～ as possible 「できるだけ～」</div>
+  <div class="pt">
+    「できるだけ～する」は <b>as ＋ 原級 ＋ as possible</b> または <b>as ＋ 原級 ＋ as 人 can</b> で表します。<br>
+    後ろの as は接続詞なので、時制の一致を受けます（過去なら could になる）。
+  </div>
+  <div class="ex">
+    He ran as <b>fast as possible</b>. <button class="spk" data-t="He ran as fast as possible." onclick="sp(this.dataset.t)">▶</button><br>
+    ＝ He ran as <b>fast as he could</b>. <button class="spk" data-t="He ran as fast as he could." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">彼はできるだけ速く走りました。</span>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title">not so much A as B 「AというよりむしろB」</div>
+  <div class="pt">
+    「AというよりむしろBだ」という表現は <b>not so much A as B</b> または <b>B rather than A</b> で表します。<br>
+    両方の形を覚えておくと、書き換え問題にも対応できます。
+  </div>
+  <div class="ex">
+    He is <b>not so much</b> a teacher <b>as</b> a doctor. <button class="spk" data-t="He is not so much a teacher as a doctor." onclick="sp(this.dataset.t)">▶</button><br>
+    ＝ He is <b>rather</b> a doctor <b>than</b> a teacher. <button class="spk" data-t="He is rather a doctor than a teacher." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">彼は先生というよりむしろ医者だ。</span>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title">all the ＋比較級 for ～ 「～だからますます～」</div>
+  <div class="pt">
+    「～という理由があるからこそ、ますます～だ」という意味を表します。<br>
+    for の代わりに because / that を使うこともあります。
+  </div>
+  <div class="ex">
+    I like him <b>all the better for</b> his faults. <button class="spk" data-t="I like him all the better for his faults." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">彼に欠点があるからこそますます好きだ。</span>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title">ラテン比較級　— than ではなく to を使う —</div>
+  <div class="pt">
+    ラテン語から来た形容詞は、比較に <b>than</b> ではなく <b>to</b> を使います。<br>
+    これらは形は比較級ですが、<b>原級として使われる</b>ことに注意してください。
+  </div>
+  <table class="tbl">
+    <tr><th>表現</th><th>発音</th><th>意味</th><th>例文</th></tr>
+    <tr><td><b>superior to</b></td><td>スペリ【オア】ー</td><td>～より優れている</td><td>This computer is superior to that one. <button class="spk" data-t="This computer is superior to that one." onclick="sp(this.dataset.t)">▶</button></td></tr>
+    <tr><td><b>inferior to</b></td><td>インフェ【リア】ー</td><td>～より劣っている</td><td>This is inferior to that model. <button class="spk" data-t="This is inferior to that model." onclick="sp(this.dataset.t)">▶</button></td></tr>
+    <tr><td><b>senior to</b></td><td>【シー】ニアー</td><td>～より年上</td><td>He is senior to me by two years. <button class="spk" data-t="He is senior to me by two years." onclick="sp(this.dataset.t)">▶</button></td></tr>
+    <tr><td><b>junior to</b></td><td>【ジュー】ニアー</td><td>～より年下</td><td>She is junior to me by three years. <button class="spk" data-t="She is junior to me by three years." onclick="sp(this.dataset.t)">▶</button></td></tr>
+    <tr><td><b>prefer A to B</b></td><td>プリ【ファー】</td><td>BよりAが好き</td><td>He prefers tea to coffee. <button class="spk" data-t="He prefers tea to coffee." onclick="sp(this.dataset.t)">▶</button></td></tr>
+  </table>
+  <div class="wb">⚠️ ラテン比較級は <b>more をつけない</b>、<b>than ではなく to</b> を使うという2点に注意！</div>
+</div>
+
+<div class="card">
+  <div class="card-title">その他の重要表現</div>
+  <table class="tbl">
+    <tr><th>表現</th><th>意味</th><th>例文</th></tr>
+    <tr><td><b>比較級 and 比較級</b></td><td>ますます・だんだん～</td><td>It is getting <b>warmer and warmer</b>. <button class="spk" data-t="It is getting warmer and warmer." onclick="sp(this.dataset.t)">▶</button><br><span class="ex-ja">だんだん暖かくなっている。</span></td></tr>
+    <tr><td><b>none the less for</b></td><td>～にもかかわらず</td><td>I love her <b>none the less for</b> her faults. <button class="spk" data-t="I love her none the less for her faults." onclick="sp(this.dataset.t)">▶</button><br><span class="ex-ja">欠点にもかかわらず彼女を愛している。</span></td></tr>
+    <tr><td><b>much more</b>（肯定文）</td><td>まして～は言うまでもない</td><td>He can speak French, <b>much more</b> English. <button class="spk" data-t="He can speak French, much more English." onclick="sp(this.dataset.t)">▶</button><br><span class="ex-ja">フランス語が話せる。まして英語は言うまでもない。</span></td></tr>
+    <tr><td><b>much less</b>（否定文）</td><td>まして～は言うまでもない</td><td>He can't speak French, <b>much less</b> Chinese. <button class="spk" data-t="He cannot speak French, much less Chinese." onclick="sp(this.dataset.t)">▶</button><br><span class="ex-ja">フランス語が話せない。まして中国語は言うまでもない。</span></td></tr>
+    <tr><td><b>the last 人 to 動詞</b></td><td>最も～しそうにない</td><td>He is <b>the last man to</b> tell a lie. <button class="spk" data-t="He is the last man to tell a lie." onclick="sp(this.dataset.t)">▶</button><br><span class="ex-ja">彼は決して嘘をつかない人だ。</span></td></tr>
+    <tr><td><b>make the best of</b></td><td>（困難な状況で）最善を尽くす</td><td>He made the best of a bad situation. <button class="spk" data-t="He made the best of a bad situation." onclick="sp(this.dataset.t)">▶</button><br><span class="ex-ja">彼は悪条件の中で最大限の努力をした。</span></td></tr>
+    <tr><td><b>make the most of</b></td><td>（有利な状況を）最大限に活用する</td><td>Make the most of your time. <button class="spk" data-t="Make the most of your time." onclick="sp(this.dataset.t)">▶</button><br><span class="ex-ja">あなたの時間を最大限に活用しなさい。</span></td></tr>
+    <tr><td><b>would rather A than B</b></td><td>BよりもむしろAしたい</td><td>I would rather stay home than go out. <button class="spk" data-t="I would rather stay home than go out." onclick="sp(this.dataset.t)">▶</button><br><span class="ex-ja">外出するよりも家にいたい。</span></td></tr>
+  </table>
+</div>
+
+<div class="mini-quiz-wrap">
+  <div class="mini-quiz-title">📝 確認問題⑥ 重要比較表現</div>
+  <div id="iq5aq"></div>
+</div>
+</div><!-- /s5 -->
+
+<!-- 練習⑤ -->
+<div id="p5" class="sec">
+  <div class="sb"><span class="sn" id="p5sn">0 / 14</span><div class="pw"><div class="pf" id="p5pf" style="width:0%"></div></div>
+  <button onclick="resetP('p5')" style="border:none;background:#eee;border-radius:6px;padding:6px 12px;font-size:12px;cursor:pointer;font-family:inherit">リセット</button></div>
+  <div id="p5q"></div>
+</div>
+
+<!-- 単語ポップアップ -->
+<div class="vpop" id="vpop">
+  <div class="vpop-hd"><div><span class="vpop-word" id="vpop-word"></span><span class="vpop-pos" id="vpop-pos"></span></div><button class="vpop-close" onclick="closeVpop()">✕</button></div>
+  <div class="vpop-body"><div class="vpop-mean" id="vpop-mean"></div><div class="vpop-kana" id="vpop-kana"></div>
+    <div class="vpop-btns"><button class="vpop-spk" onclick="vpopSpeak()">🔊 発音を聞く</button><button class="vpop-save" id="vpop-save-btn" onclick="vpopSave()">📖 単語帳へ</button></div>
+    <div class="vpop-saved-lbl" id="vpop-saved-lbl">✓ 単語帳に保存しました</div></div>
+</div>
+
+<!-- 単語帳モーダル -->
+<div class="mo" id="mvocab">
+  <div class="mb">
+    <div class="mh"><h2>📚 単語帳</h2><button class="mhc" onclick="closeM('mvocab')">✕</button></div>
+    <div class="mbody">
+      <div style="display:flex;gap:8px;margin-bottom:12px">
+        <button onclick="showVocabList()" style="flex:1;padding:9px;border-radius:8px;border:2px solid #1B3A6B;background:#1B3A6B;color:#fff;font-size:13px;font-family:inherit;cursor:pointer;font-weight:700">📋 単語一覧</button>
+        <button onclick="startVocabTest()" style="flex:1;padding:9px;border-radius:8px;border:2px solid #0097A7;background:#f0faff;color:#0097A7;font-size:13px;font-family:inherit;cursor:pointer;font-weight:700">✏️ 復習テスト</button>
+      </div>
+      <div id="vocab-list-area"></div>
+      <div id="vocab-test-area" style="display:none"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ===== 共通システム ===== */
+function openM(id){document.getElementById(id).classList.add('open');document.body.style.overflow='hidden';}
+function closeM(id){document.getElementById(id).classList.remove('open');document.body.style.overflow='';}
+document.querySelectorAll('.mo').forEach(function(mo){mo.addEventListener('click',function(e){if(e.target===mo)closeM(mo.id);});});
+function confetti(){var cv=document.getElementById('cc');cv.width=window.innerWidth;cv.height=window.innerHeight;cv.style.display='block';var ctx=cv.getContext('2d');var cols=['#f9a825','#0097A7','#1B3A6B','#e53935','#2e7d32','#ff6f00','#7b1fa2','#ff4081'];var ps=[];for(var k=0;k<130;k++){ps.push({x:Math.random()*cv.width,y:-20-Math.random()*180,w:7+Math.random()*9,h:3+Math.random()*5,c:cols[Math.floor(Math.random()*cols.length)],s:2+Math.random()*4,a:Math.random()*360,sp:3-Math.random()*6,d:(Math.random()-.5)*2.5});}var fr=0;function draw(){ctx.clearRect(0,0,cv.width,cv.height);ps.forEach(function(p){ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.a*Math.PI/180);ctx.fillStyle=p.c;ctx.fillRect(-p.w/2,-p.h/2,p.w,p.h);ctx.restore();p.y+=p.s;p.x+=p.d;p.a+=p.sp;});fr++;if(fr<100)requestAnimationFrame(draw);else{ctx.clearRect(0,0,cv.width,cv.height);cv.style.display='none';}}draw();}
+function updS(mid,n,t){var sn=document.getElementById(mid+'sn');var pf=document.getElementById(mid+'pf');if(sn)sn.textContent=n+' / '+t;if(pf)pf.style.width=(n/t*100)+'%';if(n===t&&t>0)confetti();}
+function sp(t){if(!window.speechSynthesis)return;speechSynthesis.cancel();var u=new SpeechSynthesisUtterance(t);u.lang='en-US';u.rate=0.88;speechSynthesis.speak(u);}
+function ss(id,btn){document.querySelectorAll('.sec').forEach(function(s){s.classList.remove('active');});document.querySelectorAll('.nb,.pb').forEach(function(b){b.classList.remove('on');});document.querySelectorAll('.pair').forEach(function(p){p.classList.remove('active-pair');});document.getElementById(id).classList.add('active');btn.classList.add('on');if(btn.parentElement&&btn.parentElement.classList.contains('pair')){btn.parentElement.classList.add('active-pair');}}
+function sh(n){var c=n.replace(/'/g,'');return '<button class="spk" onclick="sp(this.dataset.t)" data-t="'+c+'">▶</button>';}
+function ub(u){return u?'<span class="ub">'+u+'</span>':'';}
+function iC(id){var data=window['c'+id],total=data.length,score=0,done=new Array(total).fill(false);updS(id,0,total);var c=document.getElementById(id+'q');c.innerHTML='';data.forEach(function(d,i){var div=document.createElement('div');div.className='q-box';div.innerHTML='<div class="q-hd"><span class="q-num">'+(i+1)+'</span><span class="q-txt"><b>'+d.q+'</b>'+ub(d.u)+sh(d.s)+'</span></div>'+(d.j?'<div style="font-size:13px;color:#555;margin-bottom:8px">'+d.j+'</div>':'')+(d.h?'<span class="hint">'+d.h+'</span>':'')+'<div id="'+id+'ch'+i+'"></div><div class="ep" id="'+id+'ep'+i+'">📝 解説：'+d.e+'</div>';c.appendChild(div);d.c.forEach(function(ch,ci){var btn=document.createElement('button');btn.className='cb';btn.textContent=ch;btn.onclick=function(){if(done[i])return;done[i]=true;div.querySelectorAll('.cb').forEach(function(b,bi){b.classList.add('dis');if(bi===d.a)b.classList.add('ca');else if(bi===ci&&ci!==d.a)b.classList.add('wa');});document.getElementById(id+'ep'+i).classList.add('show');if(ci===d.a){score++;updS(id,score,total);}};document.getElementById(id+'ch'+i).appendChild(btn);});});}
+function resetP(id){iC(id);}
+var vocabDB={},savedWords={},currentVword=null;
+function showVpop(el){var w=el.dataset.w,pos=el.dataset.pos,mean=el.dataset.mean,kana=el.dataset.kana,opts=JSON.parse(el.dataset.opts);vocabDB[w]={pos:pos,mean:mean,kana:kana,opts:opts};currentVword=w;document.getElementById('vpop-word').textContent=w;document.getElementById('vpop-pos').textContent=pos;document.getElementById('vpop-mean').textContent=mean;document.getElementById('vpop-kana').textContent='発音：'+kana;var saveBtn=document.getElementById('vpop-save-btn');var savedLbl=document.getElementById('vpop-saved-lbl');if(savedWords[w]){saveBtn.textContent='✓ 保存済み';saveBtn.className='vpop-save saved';savedLbl.className='vpop-saved-lbl show';}else{saveBtn.textContent='📖 単語帳へ';saveBtn.className='vpop-save';savedLbl.className='vpop-saved-lbl';}var pop=document.getElementById('vpop');pop.className='vpop show';var rect=el.getBoundingClientRect();var top=rect.bottom+6,left=rect.left,pw=260;if(left+pw>window.innerWidth-8)left=window.innerWidth-pw-8;if(top+160>window.innerHeight)top=rect.top-170;pop.style.top=top+'px';pop.style.left=left+'px';}
+function closeVpop(){document.getElementById('vpop').className='vpop';currentVword=null;}
+document.addEventListener('click',function(e){var pop=document.getElementById('vpop');if(pop.classList.contains('show')&&!pop.contains(e.target)&&!e.target.classList.contains('vw'))closeVpop();});
+function vpopSpeak(){if(currentVword)sp(currentVword);}
+function vpopSave(){if(!currentVword)return;var w=currentVword;if(!savedWords[w]){savedWords[w]=vocabDB[w];updateVocabBadge();document.getElementById('vpop-save-btn').textContent='✓ 保存済み';document.getElementById('vpop-save-btn').className='vpop-save saved';document.getElementById('vpop-saved-lbl').className='vpop-saved-lbl show';}}
+function updateVocabBadge(){var n=Object.keys(savedWords).length;var badge=document.getElementById('vocab-badge');badge.textContent=n;badge.className=n>0?'vocab-badge show':'vocab-badge';}
+var origOpenM=openM;openM=function(id){origOpenM(id);if(id==='mvocab')showVocabList();};
+function showVocabList(){document.getElementById('vocab-list-area').style.display='block';document.getElementById('vocab-test-area').style.display='none';renderVocabList();}
+function renderVocabList(){var area=document.getElementById('vocab-list-area');var words=Object.keys(savedWords);if(words.length===0){area.innerHTML='<div class="vbook-empty">📖 まだ単語が保存されていません。</div>';return;}var html='<div style="font-size:12px;color:#888;margin-bottom:8px">保存済み：'+words.length+'語</div>';words.forEach(function(w){var v=savedWords[w];html+='<div class="vcard"><span class="vcard-word">'+w+'</span><span class="vcard-mean">'+v.mean+'</span><button class="vcard-del" onclick="removeWord(\''+w+'\')">覚えた ✓</button></div>';});area.innerHTML=html;}
+function removeWord(w){delete savedWords[w];updateVocabBadge();renderVocabList();}
+var testQueue=[],testIdx=0,testScore=0;
+function startVocabTest(){document.getElementById('vocab-list-area').style.display='none';document.getElementById('vocab-test-area').style.display='block';renderVocabTest();}
+function renderVocabTest(){var area=document.getElementById('vocab-test-area');var words=Object.keys(savedWords);if(words.length<1){area.innerHTML='<div class="vbook-empty">単語が保存されていません。</div>';return;}testQueue=words.slice().sort(function(){return Math.random()-.5;});testIdx=0;testScore=0;renderTestQuestion(area);}
+function renderTestQuestion(area){if(testIdx>=testQueue.length){area.innerHTML='<div style="text-align:center;padding:24px"><div style="font-size:40px;margin-bottom:12px">🎉</div><div style="font-size:18px;font-weight:700;color:#1B3A6B;margin-bottom:8px">テスト完了！</div><div style="font-size:14px;color:#555;margin-bottom:16px">正解：'+testScore+' / '+testQueue.length+'問</div><div style="display:flex;gap:8px;justify-content:center"><button onclick="renderVocabTest()" style="padding:10px 20px;border-radius:8px;border:none;background:#1B3A6B;color:#fff;font-size:14px;font-family:inherit;cursor:pointer">もう一度</button><button onclick="showVocabList()" style="padding:10px 20px;border-radius:8px;border:1.5px solid #ccd;background:#fff;color:#555;font-size:14px;font-family:inherit;cursor:pointer">単語一覧へ</button></div></div>';return;}var w=testQueue[testIdx];var v=savedWords[w];if(!v){testIdx++;renderTestQuestion(area);return;}var opts=v.opts.slice().sort(function(){return Math.random()-.5;});var html='<div style="text-align:right;font-size:12px;color:#888;margin-bottom:8px">'+(testIdx+1)+' / '+testQueue.length+'</div><div class="vtest-q">'+w+'</div>';opts.forEach(function(opt){html+='<button class="vtest-opt" onclick="checkTestAns(this,\''+w+'\',\''+opt.replace(/'/g,'')+'\')">'+opt+'</button>';});html+='<div id="vtest-res"></div>';area.innerHTML=html;}
+function checkTestAns(btn,word,selected){var v=savedWords[word];if(!v)return;var correct=v.mean;var area=document.getElementById('vocab-test-area');area.querySelectorAll('.vtest-opt').forEach(function(b){b.classList.add('dis');if(b.textContent===correct)b.classList.add('ca');else if(b===btn&&selected!==correct)b.classList.add('wa');});var res=document.getElementById('vtest-res');if(selected===correct){testScore++;res.innerHTML='<div style="color:#2e7d32;font-weight:700;padding:8px">✓ 正解！</div>';}else{res.innerHTML='<div style="color:#e53935;font-weight:700;padding:8px">✗ 不正解　正解：'+correct+'</div>';}testIdx++;setTimeout(function(){renderTestQuestion(area);},1200);}
+
+/* ===== 確認問題データ ===== */
+window.ciq1a=[
+  {q:'big の比較級として正しいのはどれか？',s:'bigger',j:'',a:1,c:['biger','bigger','more big','biggest'],h:'短母音＋子音字 → 子音を重ねて er',e:'big は「短母音（i）＋ 子音字（g）」の形 → 子音字を重ねて -er → <b>bigger</b>'},
+  {q:'slowly の比較級として正しいのはどれか？',s:'more slowly',j:'',a:2,c:['slowlier','slowlyer','more slowly','most slowly'],h:'-ly で終わる副詞 → more をつける',e:'-ly で終わる副詞は <b>more</b> をつける → <b>more slowly</b>'},
+  {q:'「物語の後半部分」を表す英語として正しいのはどれか？',s:'the latter part',j:'',a:1,c:['the later part','the latter part','the latest part','the last part'],h:'順序で後の → latter',e:'順序・後の方を表す → <b>latter</b>（時間が遅い → later）'},
+  {q:'「私には年上の兄がいます。」<br>I have an ( ) brother.',s:'I have an elder brother.',j:'',a:0,c:['elder','older','eldest','more old'],h:'家族の年上 → elder',e:'家族の年上（兄・姉）には <b>elder</b> を使います。older は一般的な年齢比較。'},
+];
+window.ciq2a=[
+  {q:'（　）を埋めよ。<br>My brother is ( ) tall ( ) I.',s:'My brother is as tall as I.',j:'私の兄は私と同じくらい背が高いです。',a:1,c:['so / as','as / as','as / than','more / as'],h:'同じくらい = as ～ as',e:'同等比較は <b>as ＋ 原級 ＋ as</b> → as <b>tall</b> as'},
+  {q:'（　）を埋めよ。<br>This room is ( ) as large as that one.',s:'This room is twice as large as that one.',j:'この部屋はあの部屋の2倍の大きさです。',a:2,c:['two times','double','twice','half'],h:'2倍 = twice（two times は誤り）',e:'「2倍」は <b>twice</b> を使います。three times / four times…'},
+  {q:'（　）を埋めよ。<br>I am as ( ) a swimmer as you.',s:'I am as good a swimmer as you.',j:'私はあなたと同じくらい泳ぎが上手です。',a:0,c:['good','a good','well','better'],h:'as 原級 ＋ a ＋ 名詞 as の語順',e:'as の直後に原級 → <b>as good a swimmer as</b>（冠詞の前に原級を出す）'},
+];
+window.ciq2b=[
+  {q:'（　）を埋めよ。<br>The climate of Japan is milder than ( ) of Norway.',s:'The climate of Japan is milder than that of Norway.',j:'日本の気候はノルウェーの気候より穏やかです。',a:1,c:['one','that','those','it'],h:'単数の繰り返しを避ける → that',e:'climate（単数）の繰り返しを避けるために <b>that</b> を使います。複数なら those。'},
+  {q:'（　）を埋めよ。<br>She is ( ) taller of the two.',s:'She is the taller of the two.',j:'彼女は2人のうちで背の高い方です。',a:2,c:['a','more','the','most'],h:'2人のうちの比較 → the ＋ 比較級',e:'「2人のうちより～の方」→ <b>the ＋ 比較級</b> of the two（the をつけることに注意）'},
+  {q:'（　）を埋めよ。<br>The ( ) you study, the ( ) you will get.',s:'The more you study, the better you will get.',j:'勉強すればするほど上達するでしょう。',a:0,c:['more / better','most / best','more / more','much / much'],h:'すればするほど = The 比較級 ～, the 比較級 …',e:'<b>The ＋ 比較級 ～, the ＋ 比較級 …</b>「～すればするほど…」→ The <b>more</b> … the <b>better</b>'},
+];
+window.ciq3a=[
+  {q:'（　）を埋めよ。<br>Tokyo is one of the largest ( ) in the world.',s:'Tokyo is one of the largest cities in the world.',j:'東京は世界の大都市のひとつです。',a:1,c:['city','cities','town','towns'],h:'one of the 最上級 ＋ 複数名詞',e:'<b>one of the 最上級 ＋ 複数名詞</b> → <b>cities</b>（city の複数形）'},
+  {q:'次のうち最上級の書き換えとして正しいのはどれか？<br>Tom is the tallest in our class.',s:'No other boy is as tall as Tom in our class.',j:'',a:2,c:['Tom is taller than all boys.','Any boy is taller than Tom.','No other boy is as tall as Tom in our class.','Tom is not as tall as any other boy.'],h:'No other ～ is as 原級 as ...',e:'最上級の書き換え → <b>No other boy is as tall as Tom</b>（no other ＋ 単数名詞 ＋ is as ＋ 原級 ＋ as）'},
+  {q:'（　）を埋めよ。<br>Nothing is ( ) important than health.',s:'Nothing is more important than health.',j:'健康ほど重要なものはない。',a:0,c:['more','most','as','less'],h:'Nothing is 比較級 than = 最も～（最上級の書き換え）',e:'<b>Nothing is more ～ than</b> = 最上級の書き換え → <b>more important</b>'},
+];
+window.ciq4a=[
+  {q:'「彼はCDをたった10枚しか持っていない。」<br>He has ( ) 10 CDs.',s:'He has no more than 10 CDs.',j:'（少ない！という気持ちがある）',a:0,c:['no more than','not more than','no less than','not less than'],h:'「たった～しか」= only → no more than',e:'「たった～しか（少ない）」という気持ち → <b>no more than</b>（= only）'},
+  {q:'「彼はCDをせいぜい10枚持っている。」<br>He has ( ) 10 CDs.',s:'He has not more than 10 CDs.',j:'（10枚を超えない、という客観的な上限）',a:1,c:['no more than','not more than','no less than','not less than'],h:'「せいぜい」= at most → not more than',e:'客観的な上限「せいぜい」→ <b>not more than</b>（= at most）'},
+  {q:'「彼はCDを10枚も持っている。」<br>He has ( ) 10 CDs.',s:'He has no less than 10 CDs.',j:'（多い！という気持ちがある）',a:2,c:['no more than','not more than','no less than','not less than'],h:'「～も（多い）」= as many as → no less than',e:'「～も（多い）」という気持ち → <b>no less than</b>（= as many as）'},
+  {q:'「彼はCDを少なくとも10枚持っている。」<br>He has ( ) 10 CDs.',s:'He has not less than 10 CDs.',j:'（10枚を下回らない、という客観的な下限）',a:3,c:['no more than','not more than','no less than','not less than'],h:'「少なくとも」= at least → not less than',e:'客観的な下限「少なくとも」→ <b>not less than</b>（= at least）'},
+  {q:'He has not more than 10 CDs. を言い換えると？',s:'He has at most 10 CDs.',j:'',a:1,c:['He has only 10 CDs.','He has at most 10 CDs.','He has as many as 10 CDs.','He has at least 10 CDs.'],h:'not more than = at most',e:'<b>not more than</b> = <b>at most</b>「せいぜい・多くても」'},
+  {q:'「公園には少なくとも100人いた。」<br>There were ( ) one hundred people in the park.',s:'There were no less than one hundred people in the park.',j:'',a:2,c:['not more than','at most','no less than','not less than'],h:'「～も」という気持ち → no less than',e:'「100人も（多い！）」という気持ち → <b>no less than</b>（= as many as）'},
+];
+window.ciq5a=[
+  {q:'（　）を埋めよ。<br>He is not so much a scholar ( ) a journalist.',s:'He is not so much a scholar as a journalist.',j:'彼は学者というよりむしろジャーナリストだ。',a:1,c:['than','as','but','that'],h:'not so much A as B = AというよりむしろB',e:'<b>not so much A as B</b>「AというよりむしろB」→ as'},
+  {q:'（　）を埋めよ。<br>I like him all the better ( ) his faults.',s:'I like him all the better for his faults.',j:'欠点があるからこそますます好きだ。',a:2,c:['than','because','for','of'],h:'all the 比較級 for ～',e:'<b>all the 比較級 for ～</b>「～だからますます～」→ <b>for</b>'},
+  {q:'（　）を埋めよ。<br>She is two years ( ) ( ) me.',s:'She is two years junior to me.',j:'彼女は2歳年下だ。',a:0,c:['junior to','junior than','younger to','inferior of'],h:'ラテン比較級 junior to ～',e:'ラテン比較級は <b>to</b> を使います → <b>junior to</b>（than は誤り）'},
+  {q:'（　）を埋めよ。<br>He can speak French, ( ) English.',s:'He can speak French, much more English.',j:'彼はフランス語が話せる。まして英語は言うまでもない。',a:1,c:['much less','much more','not less','no more'],h:'肯定文「まして～は言うまでもない」= much more',e:'肯定文で「まして～は言うまでもない」→ <b>much more</b>（否定文は much less）'},
+];
+
+/* ===== 練習問題データ ===== */
+window.cp1=[
+  {q:'big → 比較級はどれか？',s:'bigger',j:'',a:0,c:['bigger','biger','more big','bigest'],h:'短母音＋子音字 → 子音を重ねて er',e:'big → <b>bigger</b>（g を重ねて er）'},
+  {q:'famous → 比較級はどれか？',s:'more famous',j:'',a:2,c:['famouser','famousier','more famous','most famous'],h:'2音節以上 → more をつける',e:'famous（2音節）→ <b>more famous</b>'},
+  {q:'good → 比較級・最上級の不規則変化はどれか？',s:'better, best',j:'',a:1,c:['gooder, goodest','better, best','more good, most good','weller, wellest'],h:'不規則変化',e:'good → <b>better → best</b>（不規則変化）'},
+  {q:'（　）を埋めよ。<br>This is the ( ) news from Tokyo.',s:'This is the latest news from Tokyo.',j:'これが東京からの最新のニュースです。（時間が最も新しい）',a:1,c:['last','latest','latter','lattermost'],h:'時間が最新の = latest',e:'時間的に「最新の」→ <b>latest</b>（last は順序が最後）'},
+  {q:'（　）を埋めよ。<br>The ( ) part of the story was interesting.',s:'The latter part of the story was interesting.',j:'物語の後半部分はおもしろかった。',a:1,c:['later','latter','latest','last'],h:'順序で後の = latter',e:'順序で「後の方」→ <b>latter</b>（later は時間的に遅い）'},
+  {q:'bad の比較級はどれか？',s:'worse',j:'',a:2,c:['badder','more bad','worse','lesser'],h:'不規則変化',e:'bad → <b>worse</b> → worst（不規則変化）'},
+  {q:'little の比較級はどれか？',s:'less',j:'',a:1,c:['littler','less','lesser','fewer'],h:'不規則変化',e:'little → <b>less</b> → least（不規則変化）'},
+  {q:'（　）を埋めよ。<br>Do you have any ( ) information?',s:'Do you have any further information?',j:'これ以上の情報を持っていますか。（程度・追加の意味）',a:1,c:['farther','further','farthest','furthest'],h:'程度・追加の意味 = further',e:'距離ではなく「さらなる・追加の」→ <b>further</b>'},
+  {q:'Tokyo is ( ) from Kyoto than from Nagoya.',s:'Tokyo is farther from Kyoto than from Nagoya.',j:'東京は名古屋よりも京都から遠い。（物理的な距離）',a:0,c:['farther','further','farthest','more far'],h:'物理的な距離 = farther',e:'物理的な距離には <b>farther</b>（further は程度・追加）'},
+  {q:'many / much の比較級はどれか？',s:'more',j:'',a:2,c:['morest','morer','more','most'],h:'不規則変化',e:'many / much → <b>more</b> → most（不規則変化）'},
+];
+window.cp2=[
+  {q:'My brother is ( ) tall ( ) I.',s:'My brother is as tall as I.',j:'私の兄は私と同じくらい背が高いです。',a:0,c:['as / as','so / as','as / than','more / as'],h:'同じくらい = as ～ as',e:'<b>as ＋ 原級 ＋ as</b>「～と同じくらい」'},
+  {q:'I am not as ( ) as you.',s:'I am not as young as you.',j:'私はあなたほど若くありません。',a:1,c:['younger','young','more young','youngest'],h:'not as ～ as = ～ほど～ではない',e:'not as ～ as の ～ には<b>原級</b>を入れる → <b>young</b>'},
+  {q:'This room is ( ) as large as that one.',s:'This room is twice as large as that one.',j:'この部屋はあの部屋の2倍の大きさです。',a:2,c:['two times','double','twice','two'],h:'2倍 = twice',e:'「2倍」は <b>twice</b>（two times は誤り）'},
+  {q:'I am as ( ) a swimmer as you.',s:'I am as good a swimmer as you.',j:'私はあなたと同じくらい泳ぎが上手です。',a:0,c:['good','a good','well','better'],h:'as 原級 ＋ a 名詞 as の語順',e:'<b>as good a swimmer as</b>（冠詞の前に原級）'},
+  {q:'Tom can swim ( ) faster than I.',s:'Tom can swim much faster than I.',j:'トムは私よりずっと速く泳げる。',a:1,c:['very','much','too','so'],h:'比較級の強調 = much / far',e:'比較級の「ずっと」には <b>much</b> または far（very は不可）'},
+  {q:'He is ( ) years older than I.',s:'He is two years older than I.',j:'彼は私の2歳年上です。',a:2,c:['a two','by two','two','the two'],h:'差を前につける場合 → 数字をそのまま前に',e:'差は比較級の前に置く → <b>two years</b> older'},
+  {q:'The climate of Japan is milder than ( ) of Norway.',s:'The climate of Japan is milder than that of Norway.',j:'日本の気候はノルウェーより穏やかです。',a:0,c:['that','those','one','it'],h:'単数の繰り返しを that で',e:'climate（単数）の繰り返し → <b>that</b> of Norway'},
+  {q:'She is ( ) taller of the two.',s:'She is the taller of the two.',j:'彼女は2人のうちで背の高い方です。',a:2,c:['a','more','the','most'],h:'2者の比較 → the ＋ 比較級',e:'「2人のうちより～の方」→ <b>the</b> taller'},
+  {q:'This book is ( ) interesting than that one.',s:'This book is less interesting than that one.',j:'この本はあの本ほど面白くありません。',a:1,c:['not','less','not more','fewer'],h:'劣等比較 = less ＋ 原級 ＋ than',e:'「…ほど～ではない」= <b>less ＋ 原級 ＋ than</b>'},
+  {q:'The ( ) you study, the ( ) you will get.',s:'The more you study, the better you will get.',j:'勉強すればするほど上達するでしょう。',a:0,c:['more / better','most / best','more / more','much / much'],h:'The 比較級 ～, the 比較級 …',e:'<b>The more ～, the better …</b>「するほど…」'},
+];
+window.cp3=[
+  {q:'Tokyo is one of the largest ( ) in the world.',s:'Tokyo is one of the largest cities in the world.',j:'東京は世界で最も大きな都市のひとつです。',a:1,c:['city','cities','town','towns'],h:'one of the 最上級 ＋ 複数名詞',e:'<b>one of the 最上級 ＋ 複数名詞</b> → <b>cities</b>'},
+  {q:'Tom is the ( ) tallest boy in this class.',s:'Tom is the third tallest boy in this class.',j:'トムはこのクラスで3番目に背の高い少年です。',a:2,c:['one','two','third','three'],h:'～番目に = the ＋ 序数 ＋ 最上級',e:'「3番目に」→ <b>the third</b> tallest'},
+  {q:'She can run ( ) in this class.',s:'She can run fastest in this class.',j:'彼女はこのクラスで最も速く走ることができます。',a:0,c:['fastest','the fastest','most fast','most faster'],h:'副詞の最上級 → the をつけないことが多い',e:'副詞の最上級は the をつけないことが多い → <b>fastest</b>'},
+  {q:'Jupiter is ( ) the biggest planet.',s:'Jupiter is by far the biggest planet.',j:'木星はずばぬけて最も大きな惑星です。',a:1,c:['very','by far','so much','much more'],h:'最上級の強調 = by far',e:'最上級の「ずばぬけて」→ <b>by far</b>（very は不可）'},
+  {q:'Mt. Fuji is the highest mountain in Japan.<br>＝ ( ) other mountain in Japan is ( ) than Mt. Fuji.',s:'No other mountain in Japan is higher than Mt. Fuji.',j:'',a:0,c:['No / higher','Any / taller','No / as high as','Not / highest'],h:'最上級の書き換え = No other ＋ 単数 ＋ 比較級 than',e:'<b>No other mountain … is higher than</b> Mt. Fuji'},
+  {q:'Mt. Fuji is the highest mountain in Japan.<br>＝ Mt. Fuji is higher than ( ) other mountain in Japan.',s:'Mt. Fuji is higher than any other mountain in Japan.',j:'',a:2,c:['no','some','any','every'],h:'比較級 than any other ＋ 単数名詞',e:'<b>higher than any other mountain</b>（any other ＋ 単数）'},
+  {q:'Health is the most important of all.<br>＝ ( ) is more important than health.',s:'Nothing is more important than health.',j:'',a:1,c:['Everything','Nothing','Something','Anything'],h:'Nothing is 比較級 than = 最上級の書き換え',e:'<b>Nothing is more important than</b> health（最上級の書き換え）'},
+  {q:'The lake is ( ) at this point.',s:'The lake is deepest at this point.',j:'その湖はここが一番深い。（同一物の比較）',a:2,c:['the deepest','most deep','deepest','very deep'],h:'同一物の比較 = the をつけない',e:'同一の物について「ここが一番深い」→ the をつけない → <b>deepest</b>'},
+  {q:'This is the ( ) best book I have ever read.',s:'This is the very best book I have ever read.',j:'これは今まで読んだ中でまさに最高の本です。',a:0,c:['very','most','much','by'],h:'最上級の強調「まさに」= the very 最上級',e:'最上級の強調「まさに～」→ <b>the very</b> best（by far も可）'},
+  {q:'( ) is more precious than time in the world.',s:'Nothing is more precious than time in the world.',j:'時間ほど大切なものはない。',a:1,c:['Everything','Nothing','Anything','Something'],h:'Nothing is 比較級 than = 最上級の書き換え',e:'<b>Nothing is more precious than</b> time'},
+];
+window.cp4=[
+  {q:'「彼はたった100円しか持っていない。」<br>He has ( ) 100 yen.',s:'He has no more than 100 yen.',j:'（少ない！）',a:0,c:['no more than','not more than','no less than','not less than'],h:'たった～しか（少ない！）= no more than = only',e:'少ないという感情がある → <b>no more than</b>（= only）'},
+  {q:'「彼はせいぜい100円しか持っていない。」<br>He has ( ) 100 yen.',s:'He has not more than 100 yen.',j:'（上限が100円）',a:1,c:['no more than','not more than','no less than','not less than'],h:'せいぜい（上限）= not more than = at most',e:'客観的な上限 → <b>not more than</b>（= at most）'},
+  {q:'「彼は100円も持っている。」<br>He has ( ) 100 yen.',s:'He has no less than 100 yen.',j:'（多い！）',a:2,c:['no more than','not more than','no less than','not less than'],h:'～も（多い！）= no less than = as much as',e:'多いという感情がある → <b>no less than</b>（= as many/much as）'},
+  {q:'「彼は少なくとも100円持っている。」<br>He has ( ) 100 yen.',s:'He has not less than 100 yen.',j:'（下限が100円）',a:3,c:['no more than','not more than','no less than','not less than'],h:'少なくとも（下限）= not less than = at least',e:'客観的な下限 → <b>not less than</b>（= at least）'},
+  {q:'He has not more than 10 CDs.<br>＝ He has ( ) 10 CDs.',s:'He has at most 10 CDs.',j:'',a:1,c:['only','at most','as many as','at least'],h:'not more than = at most',e:'<b>not more than</b> = <b>at most</b>「せいぜい」'},
+  {q:'He has no more than 10 CDs.<br>＝ He has ( ) 10 CDs.',s:'He has only 10 CDs.',j:'',a:0,c:['only','at most','as many as','at least'],h:'no more than = only',e:'<b>no more than</b> = <b>only</b>「たった～しか」'},
+  {q:'He has no less than 10 CDs.<br>＝ He has ( ) 10 CDs.',s:'He has as many as 10 CDs.',j:'',a:2,c:['only','at most','as many as','at least'],h:'no less than = as many as',e:'<b>no less than</b> = <b>as many as</b>「～も」'},
+  {q:'He has not less than 10 CDs.<br>＝ He has ( ) 10 CDs.',s:'He has at least 10 CDs.',j:'',a:3,c:['only','at most','as many as','at least'],h:'not less than = at least',e:'<b>not less than</b> = <b>at least</b>「少なくとも」'},
+  {q:'「クジラが魚でないのは馬が魚でないのと同じだ。」<br>A whale is ( ) a fish ( ) a horse is.',s:'A whale is no more a fish than a horse is.',j:'',a:0,c:['no more / than','not more / than','no less / than','not less / than'],h:'AがBでないのはCがBでないのと同じ = no more B than',e:'<b>no more B than C is</b>「CがBでないのと同様にAもBではない」（クジラ構文）'},
+  {q:'「彼女は姉に劣らず美しい。」<br>She is ( ) beautiful than her sister.',s:'She is no less beautiful than her sister.',j:'',a:2,c:['not less','not more','no less','no more'],h:'…に劣らず同じくらい = no less ～ than',e:'<b>no less ～ than</b>「…に劣らず～（同じくらい）」'},
+];
+window.cp5=[
+  {q:'He ran as fast as ( ).',s:'He ran as fast as possible.',j:'彼はできるだけ速く走りました。',a:1,c:['he can','possible','he could','he may'],h:'できるだけ = as ～ as possible',e:'<b>as fast as possible</b>（= as fast as he could）'},
+  {q:'He is not so much a teacher ( ) a doctor.',s:'He is not so much a teacher as a doctor.',j:'彼は先生というよりむしろ医者だ。',a:1,c:['than','as','but','rather'],h:'not so much A as B',e:'<b>not so much A as B</b>「AというよりむしろB」→ <b>as</b>'},
+  {q:'I like him all the better ( ) his faults.',s:'I like him all the better for his faults.',j:'欠点があるからこそますます好きだ。',a:2,c:['than','because','for','of'],h:'all the 比較級 for ～',e:'<b>all the 比較級 for ～</b>「～だからますます」→ <b>for</b>'},
+  {q:'It is getting ( ) and ( ).',s:'It is getting warmer and warmer.',j:'だんだん暖かくなっています。',a:0,c:['warmer / warmer','warm / warm','more warm / more warm','warmly / warmly'],h:'だんだん～ = 比較級 and 比較級',e:'<b>比較級 and 比較級</b>「ますます・だんだん～」→ <b>warmer and warmer</b>'},
+  {q:'She is ( ) to me by three years.',s:'She is junior to me by three years.',j:'彼女は3歳年下だ。',a:2,c:['young than','younger than','junior to','inferior than'],h:'ラテン比較級 junior to',e:'<b>junior to</b>「～より年下」（by ～ で差を後ろにつける）'},
+  {q:'This computer is ( ) to that one.',s:'This computer is superior to that one.',j:'このコンピューターはあれより優れています。',a:1,c:['more superior','superior','superiorer','superiority'],h:'ラテン比較級 superior to',e:'<b>superior to</b>「～より優れている」（more を前につけない！）'},
+  {q:'He prefers tea ( ) coffee.',s:'He prefers tea to coffee.',j:'彼はコーヒーより紅茶が好きです。',a:2,c:['than','more than','to','above'],h:'prefer A to B',e:'<b>prefer A to B</b>「BよりAが好き」→ <b>to</b>'},
+  {q:'He can speak French, ( ) English.',s:'He can speak French, much more English.',j:'フランス語が話せる。まして英語は言うまでもない。（肯定文）',a:0,c:['much more','much less','no more','no less'],h:'肯定文 + まして = much more',e:'肯定文で「まして～は言うまでもない」→ <b>much more</b>'},
+  {q:'He is ( ) man to tell a lie.',s:'He is the last man to tell a lie.',j:'彼は決して嘘をつかない人だ。',a:1,c:['a last','the last','most last','a least'],h:'the last 人 to 動詞 = 最も～しそうにない',e:'<b>the last 人 to 動詞</b>「最も～しそうにない人」→ <b>the last</b>'},
+  {q:'I would ( ) stay home than go out.',s:'I would rather stay home than go out.',j:'外出するよりも家にいたい。',a:2,c:['rather more','very rather','rather','more'],h:'would rather A than B = BよりむしろAしたい',e:'<b>would rather A than B</b>「BよりむしろAしたい」→ <b>rather</b>'},
+  {q:'（　）を埋めよ。<br>She saved ( ) one million yen.',s:'She saved no less than one million yen.',j:'彼女は100万円も貯金していた。',a:2,c:['not more than','at least','no less than','not less than'],h:'「～も（多い）」= no less than = as much as',e:'「100万円も（多い！）」→ <b>no less than</b>（= as much as）'},
+  {q:'（　）を埋めよ。<br>He studied not more than two hours.',s:'He studied not more than two hours.',j:'彼はせいぜい2時間しか勉強しなかった。<br>＝ He studied ( ) two hours.',a:1,c:['at least','at most','only','no less than'],h:'not more than = at most',e:'<b>not more than = at most</b>「せいぜい」'},
+  {q:'（　）を埋めよ。<br>A whale is ( ) a fish than a horse is.',s:'A whale is no more a fish than a horse is.',j:'クジラが魚でないのは馬が魚でないのと同じだ。',a:0,c:['no more','not more','no less','not less'],h:'クジラ構文 = no more B than',e:'<b>no more ～ than</b>「…でないのと同様に～でない」（クジラ構文）'},
+  {q:'Tom is（　）than clever.',s:'Tom is more wise than clever.',j:'トムはずる賢いというより頭がよい。（同一人物の性格比較）',a:1,c:['wiser','more wise','wisest','most wise'],h:'同一人物の2つの性質を比べるときは more 形',e:'同一人物の性格などを比べるときは <b>more</b> を使う → <b>more wise</b>'},
+];
+
+/* ===== 初期化 ===== */
+iC('iq1a');iC('iq2a');iC('iq2b');iC('iq3a');iC('iq4a');iC('iq5a');
+iC('p1');iC('p2');iC('p3');iC('p4');iC('p5');
+</script>
+</body>
+</html>
