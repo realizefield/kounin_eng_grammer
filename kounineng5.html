@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+<title>英検2級・高認英文法　Unit 5　動名詞</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'BIZ UDGothic','Hiragino Kaku Gothic Pro','Meiryo',sans-serif;background:#eef2f7;color:#1a1a2e;min-height:100vh;font-size:15px}
+.top-header{background:linear-gradient(135deg,#1B3A6B 0%,#0097A7 100%);color:#fff;padding:14px 16px 12px;text-align:center}
+.top-header h1{font-size:17px;font-weight:700;letter-spacing:.05em}
+.top-header p{font-size:12px;margin-top:3px;opacity:.85}
+.nav{background:#fff;border-bottom:3px solid #0097A7;padding:8px 10px;display:flex;overflow-x:auto;gap:4px;-webkit-overflow-scrolling:touch;align-items:stretch}
+.nav::-webkit-scrollbar{height:3px}
+.pair{display:flex;gap:0;flex-shrink:0;border-radius:22px;overflow:hidden;box-shadow:0 0 0 1.5px #ccd}
+.pair.active-pair{box-shadow:0 0 0 2.5px #1B3A6B}
+.nb{padding:8px 14px;border:none;background:#f5f7fa;color:#555;font-size:13px;font-family:inherit;cursor:pointer;white-space:nowrap;border-right:1px solid #dde;transition:.2s;font-weight:500;flex-shrink:0}
+.nb:hover{background:#e8eaf6;color:#1B3A6B}
+.nb.on{background:#1B3A6B;color:#fff}
+.pb{padding:8px 14px;border:none;background:#fff3e0;color:#c84500;font-size:13px;font-family:inherit;cursor:pointer;white-space:nowrap;font-weight:700;transition:.2s;flex-shrink:0}
+.pb:hover{background:#e65100;color:#fff}
+.nav-sep{width:6px;flex-shrink:0}
+.sec{display:none;padding:12px;max-width:820px;margin:0 auto;padding-bottom:60px}
+.sec.active{display:block}
+.card{background:#fff;border-radius:14px;border:1px solid #dde3ee;padding:14px 16px;margin-bottom:14px;box-shadow:0 1px 4px rgba(0,0,0,.05)}
+.card-title{font-size:15px;font-weight:700;color:#1B3A6B;margin-bottom:10px;padding-bottom:8px;border-bottom:2px solid #0097A7}
+.sh{background:linear-gradient(90deg,#1B3A6B,#1B5E8B);color:#fff;border-radius:10px;padding:9px 16px;font-size:15px;font-weight:700;margin-bottom:12px;margin-top:6px}
+.pt{background:#fffde7;border-left:5px solid #f9a825;border-radius:0 10px 10px 0;padding:10px 14px;margin:8px 0;font-size:14px;line-height:1.8}
+.kb{background:#f1f8e9;border-left:5px solid #2e7d32;border-radius:0 10px 10px 0;padding:10px 14px;margin:8px 0;font-size:14px;line-height:1.8}
+.wb{background:#fff3e0;border-left:5px solid #e65100;border-radius:0 10px 10px 0;padding:10px 14px;margin:8px 0;font-size:14px;line-height:1.8}
+.ex{background:#f0f8ff;border:1px solid #b3d9f7;border-radius:10px;padding:12px 14px;margin:8px 0;font-size:14px;line-height:1.9}
+.ex-ja{font-size:12px;color:#555;margin-top:3px;padding-left:2px}
+.spk{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:#e8f4ff;border:1.5px solid #0097A7;cursor:pointer;margin-left:5px;vertical-align:middle;flex-shrink:0;transition:.2s;font-size:14px;line-height:1;font-family:inherit;padding:0}
+.spk:hover{background:#0097A7;color:#fff}
+.q-box{background:#fff;border-radius:12px;border:1px solid #dde3ee;padding:14px;margin-bottom:14px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.q-hd{display:flex;align-items:flex-start;gap:8px;margin-bottom:10px}
+.q-num{flex-shrink:0;width:26px;height:26px;background:#1B3A6B;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700}
+.q-txt{flex:1;font-size:14px;line-height:1.7}
+.hint{font-size:12px;color:#0097A7;background:#f0faff;border-radius:6px;padding:3px 8px;display:inline-block;margin-bottom:8px}
+.ub{font-size:11px;background:#e3f2fd;color:#1565c0;padding:2px 8px;border-radius:10px;font-weight:700;margin-left:6px;vertical-align:middle}
+.cb{width:100%;text-align:left;padding:10px 14px;margin:4px 0;border-radius:8px;border:1.5px solid #dde;background:#fff;font-size:14px;font-family:inherit;cursor:pointer;transition:.15s;line-height:1.4}
+.cb:hover:not(.dis){border-color:#0097A7;background:#f0faff}
+.cb.ca{background:#e8f5e9;border-color:#2e7d32;color:#1b5e20;font-weight:700}
+.cb.wa{background:#ffebee;border-color:#e53935;color:#b71c1c}
+.cb.dis{pointer-events:none}
+.ep{background:#fff8e1;border:1.5px solid #ffc107;border-radius:10px;padding:12px 14px;margin-top:10px;font-size:13px;line-height:1.8;display:none}
+.ep.show{display:block}
+.sb{background:#fff;border-radius:10px;border:1px solid #dde;padding:10px 14px;margin-bottom:12px;display:flex;align-items:center;gap:12px}
+.sn{font-size:20px;font-weight:700;color:#1B3A6B;min-width:48px}
+.pw{flex:1;height:10px;background:#eee;border-radius:6px;overflow:hidden}
+.pf{height:100%;background:linear-gradient(90deg,#0097A7,#1B3A6B);border-radius:6px;transition:.5s}
+.tbl{width:100%;border-collapse:collapse;font-size:13px}
+.tbl th{background:#1B3A6B;color:#fff;padding:7px 8px;text-align:left}
+.tbl td{padding:7px 8px;border-bottom:1px solid #eef;vertical-align:top}
+.tbl tr:nth-child(even) td{background:#f7f9ff}
+.cmp2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:10px 0}
+@media(max-width:500px){.cmp2{grid-template-columns:1fr}}
+.cbox{border-radius:10px;padding:12px 14px;font-size:13px;line-height:1.8}
+.cbox.bl{background:#e3f2fd;border:1.5px solid #90caf9}
+.cbox.gn{background:#f1f8e9;border:1.5px solid #a5d6a7}
+.cbox-ttl{font-weight:700;font-size:13px;margin-bottom:6px}
+.cbox.bl .cbox-ttl{color:#1565c0}
+.cbox.gn .cbox-ttl{color:#2e7d32}
+.vw{border-bottom:2px dashed #0097A7;color:inherit;cursor:pointer;position:relative;white-space:nowrap}
+.vw:hover{background:#e0f7fa;border-radius:3px}
+.vpop{display:none;position:fixed;z-index:2000;background:#fff;border-radius:14px;box-shadow:0 6px 30px rgba(0,0,0,.22);padding:0;width:260px;max-width:90vw}
+.vpop.show{display:block}
+.vpop-hd{background:linear-gradient(135deg,#1B3A6B,#0097A7);color:#fff;padding:12px 14px 10px;border-radius:14px 14px 0 0;display:flex;align-items:center;justify-content:space-between}
+.vpop-word{font-size:18px;font-weight:700}
+.vpop-pos{font-size:11px;background:rgba(255,255,255,.25);border-radius:8px;padding:2px 8px;margin-left:6px}
+.vpop-close{background:rgba(255,255,255,.2);border:none;color:#fff;width:26px;height:26px;border-radius:50%;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.vpop-body{padding:12px 14px}
+.vpop-mean{font-size:16px;font-weight:700;color:#1B3A6B;margin-bottom:4px}
+.vpop-kana{font-size:13px;color:#555;margin-bottom:10px}
+.vpop-btns{display:flex;gap:8px}
+.vpop-spk{flex:1;padding:8px;border-radius:8px;border:1.5px solid #0097A7;background:#f0faff;color:#0097A7;font-size:13px;font-family:inherit;cursor:pointer;font-weight:700}
+.vpop-spk:hover{background:#0097A7;color:#fff}
+.vpop-save{flex:1;padding:8px;border-radius:8px;border:1.5px solid #e65100;background:#fff3e0;color:#c84500;font-size:13px;font-family:inherit;cursor:pointer;font-weight:700}
+.vpop-save:hover{background:#e65100;color:#fff}
+.vpop-save.saved{background:#e8f5e9;border-color:#2e7d32;color:#2e7d32}
+.vpop-saved-lbl{font-size:11px;color:#2e7d32;text-align:center;margin-top:6px;display:none}
+.vpop-saved-lbl.show{display:block}
+.vocab-badge{display:none;position:absolute;top:-6px;right:-6px;background:#e53935;color:#fff;border-radius:50%;width:18px;height:18px;font-size:11px;font-weight:700;align-items:center;justify-content:center}
+.vocab-badge.show{display:flex}
+.mo{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:1500;align-items:flex-end;justify-content:center}
+.mo.open{display:flex}
+.mb{background:#fff;border-radius:18px 18px 0 0;width:100%;max-width:540px;max-height:85vh;display:flex;flex-direction:column}
+.mh{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid #eee}
+.mh h2{font-size:16px;font-weight:700;color:#1B3A6B}
+.mhc{background:none;border:none;font-size:22px;cursor:pointer;color:#888;line-height:1}
+.mbody{overflow-y:auto;padding:14px 16px;flex:1}
+.vbook-empty{text-align:center;color:#999;padding:24px;font-size:14px}
+.vcard{background:#f8faff;border-radius:10px;border:1px solid #dde;padding:10px 12px;margin-bottom:8px;display:flex;align-items:center;gap:10px}
+.vcard-word{font-size:15px;font-weight:700;color:#1B3A6B;flex:1}
+.vcard-mean{font-size:13px;color:#555;flex:1}
+.vcard-del{background:#fff;border:1.5px solid #dde;color:#aaa;border-radius:6px;padding:4px 10px;font-size:12px;cursor:pointer;font-family:inherit}
+.vcard-del:hover{border-color:#e53935;color:#e53935}
+.vtest-q{font-size:16px;font-weight:700;color:#1B3A6B;text-align:center;padding:16px;background:#e8f4ff;border-radius:10px;margin-bottom:12px}
+.vtest-opt{width:100%;text-align:left;padding:11px 14px;margin:5px 0;border-radius:8px;border:1.5px solid #dde;background:#fff;font-size:14px;font-family:inherit;cursor:pointer;transition:.15s}
+.vtest-opt:hover:not(.dis){border-color:#0097A7;background:#f0faff}
+.vtest-opt.ca{background:#e8f5e9;border-color:#2e7d32;color:#1b5e20;font-weight:700}
+.vtest-opt.wa{background:#ffebee;border-color:#e53935;color:#b71c1c}
+.vtest-opt.dis{pointer-events:none}
+.mini-quiz-wrap{background:#f0faff;border:2px solid #0097A7;border-radius:12px;padding:14px;margin-top:12px}
+.mini-quiz-title{font-size:13px;font-weight:700;color:#0097A7;margin-bottom:10px}
+canvas#cc{position:fixed;top:0;left:0;pointer-events:none;z-index:9999;display:none}
+</style>
+</head>
+<body>
+<canvas id="cc"></canvas>
+<div class="top-header">
+  <h1>🎓 英検2級・高認英文法　Unit 5　動名詞</h1>
+  <p>こうげんよびこう（江原予備校）　― スピーカーボタンで音声再生 ―</p>
+</div>
+
+<nav class="nav" id="nav">
+  <div class="pair active-pair">
+    <button class="nb on" onclick="ss('s1',this)">① 動名詞の基本</button>
+    <button class="pb" onclick="ss('p1',this)">✏️ 練習①</button>
+  </div>
+  <div class="nav-sep"></div>
+  <div class="pair">
+    <button class="nb" onclick="ss('s2',this)">② 動名詞のみの動詞</button>
+    <button class="pb" onclick="ss('p2',this)">✏️ 練習②</button>
+  </div>
+  <div class="nav-sep"></div>
+  <div class="pair">
+    <button class="nb" onclick="ss('s3',this)">③ ing vs to（意味の違い）</button>
+    <button class="pb" onclick="ss('p3',this)">✏️ 練習③</button>
+  </div>
+  <div class="nav-sep"></div>
+  <div class="pair">
+    <button class="nb" onclick="ss('s4',this)">④ 意味上の主語・完了・受動</button>
+    <button class="pb" onclick="ss('p4',this)">✏️ 練習④</button>
+  </div>
+  <div class="nav-sep"></div>
+  <div class="pair">
+    <button class="nb" onclick="ss('s5',this)">⑤ 重要慣用表現</button>
+    <button class="pb" onclick="ss('p5',this)">✏️ 練習⑤実戦</button>
+  </div>
+  <div class="nav-sep" style="width:12px"></div>
+  <div style="flex-shrink:0;position:relative">
+    <button onclick="openM('mvocab')" style="padding:8px 16px;border-radius:22px;border:2px solid #7b1fa2;background:#f3e5f5;color:#7b1fa2;font-size:13px;font-family:inherit;cursor:pointer;font-weight:700;white-space:nowrap">📚 単語帳</button>
+    <span class="vocab-badge" id="vocab-badge">0</span>
+  </div>
+</nav>
+
+<!-- ========== ① 動名詞の基本 ========== -->
+<div id="s1" class="sec active">
+  <div class="sh">① 動名詞とは何か？　4つの働き</div>
+
+  <div class="card">
+    <div class="card-title">動名詞の作り方と意味</div>
+    <div class="pt">
+      <b>動詞の原形 ＋ ing</b> ＝ <b>動名詞</b><br>
+      動名詞を使うと、動詞に「～すること」という意味を加えて、<b>名詞のように</b>使うことができます。<br>
+      つまり「主語・補語・目的語」の位置に動詞のかたまりを置けるようになります。
+    </div>
+    <div class="ex">
+      swim（泳ぐ）→ <b>swimming</b>（泳ぐ<u>こと</u>）　<button class="spk" onclick="sp(this.dataset.t)" data-t="swimming">▶</button><br>
+      <div class="ex-ja">動詞 swim に ing をつけるだけ。発音：ス【ウィ】ミング</div>
+    </div>
+    <div class="ex">
+      read（読む）→ <b>reading</b>（読む<u>こと</u>）　<button class="spk" onclick="sp(this.dataset.t)" data-t="reading">▶</button><br>
+      <div class="ex-ja">発音：【リー】ディング</div>
+    </div>
+    <div class="ex">
+      take（とる）→ <b>taking</b>（とる<u>こと</u>）　<button class="spk" onclick="sp(this.dataset.t)" data-t="taking">▶</button>
+    </div>
+    <div class="wb">
+      ⚠️ <b>動名詞と進行形（現在分詞）を混同しないように！</b><br>
+      どちらも「動詞 ＋ ing」の形ですが、使い方が違います。<br>
+      ・動名詞　→ 名詞の役割「～すること」<br>
+      ・現在分詞 → 動詞・形容詞の役割「～している」（進行形 be ＋ ing）
+    </div>
+  </div>
+
+  <div class="mini-quiz-wrap">
+    <div class="mini-quiz-title">📝 確認問題① 動名詞の意味を確認しよう</div>
+    <div id="iq1aq"></div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">① 主語になる「～することは・が」</div>
+    <div class="pt">
+      動名詞のかたまりを文の先頭に置くと「～することは…だ」という意味になります。<br>
+      動名詞が主語のときは<b>単数扱い</b>（is / was / has など）になります。
+    </div>
+    <div class="ex">
+      <b>Taking</b> pictures is my hobby. <button class="spk" onclick="sp(this.dataset.t)" data-t="Taking pictures is my hobby.">▶</button><br>
+      <div class="ex-ja">写真を<u>とること</u>が私の趣味です。</div>
+      <div style="font-size:12px;color:#0097A7;margin-top:4px">S（主語）：Taking pictures　V：is　C：my hobby</div>
+    </div>
+    <div class="ex">
+      <b>Swimming</b> every day is good for your health. <button class="spk" onclick="sp(this.dataset.t)" data-t="Swimming every day is good for your health.">▶</button><br>
+      <div class="ex-ja">毎日<u>泳ぐこと</u>はあなたの健康に良いです。</div>
+    </div>
+    <div class="kb">
+      💡 主語の動名詞が長い場合は、<b>仮主語 It</b> を使うこともできます。<br>
+      It is fun <b>taking</b> pictures. = <b>Taking</b> pictures is fun.<br>
+      ▶ <button class="spk" onclick="sp(this.dataset.t)" data-t="It is fun taking pictures.">▶</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">② 補語になる「～は…することです」</div>
+    <div class="pt">
+      「be 動詞 ＋ 動名詞」の形で、主語が「何をするものか」を説明します。<br>
+      「私の趣味 is 〇〇すること」のように、主語の内容を説明するのが補語です。
+    </div>
+    <div class="ex">
+      My hobby is <b>taking</b> pictures. <button class="spk" onclick="sp(this.dataset.t)" data-t="My hobby is taking pictures.">▶</button><br>
+      <div class="ex-ja">私の趣味は写真を<u>とること</u>です。</div>
+      <div style="font-size:12px;color:#0097A7;margin-top:4px">S：My hobby　V：is　C（補語）：taking pictures</div>
+    </div>
+    <div class="ex">
+      Her dream is <b>becoming</b> a <span class="vw" data-w="nurse" data-pos="名詞" data-mean="看護師" data-kana="ナース" data-opts='["看護師","医師","薬剤師","教師"]' onclick="showVpop(this)">nurse</span>. <button class="spk" onclick="sp(this.dataset.t)" data-t="Her dream is becoming a nurse.">▶</button><br>
+      <div class="ex-ja">彼女の夢は看護師に<u>なること</u>です。</div>
+    </div>
+  </div>
+
+  <div class="mini-quiz-wrap">
+    <div class="mini-quiz-title">📝 確認問題② 主語・補語の動名詞</div>
+    <div id="iq1bq"></div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">③ 動詞の目的語になる「～することを（楽しむ・終える…）」</div>
+    <div class="pt">
+      動名詞を動詞の後ろに置くと「～することを〔動詞〕する」という意味になります。<br>
+      <b>enjoy（楽しむ）・finish（終える）・stop（やめる）など</b> は、目的語に<b>動名詞のみ</b>使えます。<br>
+      ❌ I enjoyed <s>to play</s> tennis.（誤り）　　✅ I enjoyed <b>playing</b> tennis.（正しい）
+    </div>
+    <div class="ex">
+      We enjoyed <b>playing</b> soccer. <button class="spk" onclick="sp(this.dataset.t)" data-t="We enjoyed playing soccer.">▶</button><br>
+      <div class="ex-ja">私たちはサッカーをして<u>楽しんだ</u>。</div>
+      <div style="font-size:12px;color:#0097A7;margin-top:4px">S：We　V：enjoyed　O（目的語）：playing soccer</div>
+    </div>
+    <div class="ex">
+      He finished <b>doing</b> his homework. <button class="spk" onclick="sp(this.dataset.t)" data-t="He finished doing his homework.">▶</button><br>
+      <div class="ex-ja">彼は宿題を<u>し終えた</u>。</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">④ 前置詞の目的語になる「前置詞の後ろは必ず名詞！」</div>
+    <div class="pt">
+      <b>前置詞（of / for / at / in / about … など）の後ろには必ず名詞を置きます。</b><br>
+      動詞を後ろに置きたい場合は、動名詞（～ing）に変えて名詞にすればOKです！
+    </div>
+    <div class="ex">
+      She is <span class="vw" data-w="fond" data-pos="形容詞" data-mean="好きである（be fond of ＝ ～が好き）" data-kana="ファンド" data-opts='["好きである","嫌いである","得意でない","苦手な"]' onclick="showVpop(this)">fond</span> of <b>reading</b>. <button class="spk" onclick="sp(this.dataset.t)" data-t="She is fond of reading.">▶</button><br>
+      <div class="ex-ja">彼女は読書が好きです。（of の後ろ → 動名詞 reading）</div>
+    </div>
+    <div class="ex">
+      Thank you for <b>helping</b> me. <button class="spk" onclick="sp(this.dataset.t)" data-t="Thank you for helping me.">▶</button><br>
+      <div class="ex-ja">手伝ってくれてありがとう。（for の後ろ → 動名詞 helping）</div>
+    </div>
+    <div class="ex">
+      I am good at <b>speaking</b> English. <button class="spk" onclick="sp(this.dataset.t)" data-t="I am good at speaking English.">▶</button><br>
+      <div class="ex-ja">私は英語を話すのが得意です。（at の後ろ → 動名詞 speaking）</div>
+    </div>
+    <div class="wb">
+      ⚠️ <b>look forward to ～ing</b> の「to」は前置詞です（不定詞の to ではありません）！<br>
+      ✅ I look forward to <b>seeing</b> you. <button class="spk" onclick="sp(this.dataset.t)" data-t="I look forward to seeing you.">▶</button><br>
+      ❌ I look forward to <s>see</s> you.（× see は動詞原形なので誤り）
+    </div>
+  </div>
+
+  <div class="mini-quiz-wrap">
+    <div class="mini-quiz-title">📝 確認問題③ 前置詞の後ろの動名詞</div>
+    <div id="iq1cq"></div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">⑤ 動名詞の形容詞的用法（複合名詞）</div>
+    <div class="pt">
+      動名詞が名詞の前に置かれて「～するための」という目的・用途を表すことがあります。<br>
+      これを<b>動名詞の形容詞的用法</b>（複合名詞）と言います。<br>
+      現在分詞「～している」と混同しやすいので注意！
+    </div>
+    <table class="tbl">
+      <tr><th>表現</th><th>意味</th><th>区別のポイント</th></tr>
+      <tr>
+        <td>a <b>waiting</b> room <button class="spk" onclick="sp(this.dataset.t)" data-t="a waiting room">▶</button></td>
+        <td>待合室</td>
+        <td>待つ<u>ための</u>部屋 → 動名詞的用法</td>
+      </tr>
+      <tr>
+        <td>a <b>living</b> room <button class="spk" onclick="sp(this.dataset.t)" data-t="a living room">▶</button></td>
+        <td>居間</td>
+        <td>生活する<u>ための</u>部屋 → 動名詞的用法</td>
+      </tr>
+      <tr>
+        <td>a <b>sleeping</b> car <button class="spk" onclick="sp(this.dataset.t)" data-t="a sleeping car">▶</button></td>
+        <td>寝台車</td>
+        <td>寝る<u>ための</u>車両 → 動名詞的用法</td>
+      </tr>
+      <tr>
+        <td>a <b>dining</b> room <button class="spk" onclick="sp(this.dataset.t)" data-t="a dining room">▶</button></td>
+        <td>食堂</td>
+        <td>食事する<u>ための</u>部屋 → 動名詞的用法</td>
+      </tr>
+      <tr>
+        <td>a sleeping baby</td>
+        <td>眠っている赤ちゃん</td>
+        <td>赤ちゃんが眠っている → 現在分詞（状態）</td>
+      </tr>
+    </table>
+  </div>
+</div><!-- /s1 -->
+
+<!-- ========== 練習① ========== -->
+<div id="p1" class="sec">
+  <div class="sb"><span class="sn" id="p1sn">0 / 8</span><div class="pw"><div class="pf" id="p1pf" style="width:0%"></div></div>
+  <button onclick="resetP('p1')" style="border:none;background:#eee;border-radius:6px;padding:6px 12px;font-size:12px;cursor:pointer;font-family:inherit">リセット</button></div>
+  <div id="p1q"></div>
+</div>
+
+<!-- ========== ② 動名詞のみを目的語にとる動詞 ========== -->
+<div id="s2" class="sec">
+  <div class="sh">② 動名詞のみを目的語にとる動詞 vs 不定詞のみの動詞</div>
+
+  <div class="card">
+    <div class="card-title">動名詞のみを目的語にとる動詞（不定詞 to ～ は使えない！）</div>
+    <div class="pt">
+      次の動詞の後ろには <b>～ing（動名詞）だけ</b>使えます。<br>
+      to ＋ 動詞（不定詞）を使うと間違いになります！<br>
+      ❌ I enjoy <s>to play</s> tennis.　　✅ I enjoy <b>playing</b> tennis.
+    </div>
+    <table class="tbl">
+      <tr><th>動詞</th><th>発音（カタカナ）</th><th>意味</th><th>例文</th></tr>
+      <tr>
+        <td><b><span class="vw" data-w="enjoy" data-pos="動詞" data-mean="楽しむ" data-kana="エン【ジョ】イ" data-opts='["楽しむ","嫌う","始める","終える"]' onclick="showVpop(this)">enjoy</span></b> <button class="spk" onclick="sp(this.dataset.t)" data-t="enjoy">▶</button></td>
+        <td>エン【ジョ】イ</td><td>楽しむ</td>
+        <td>I enjoy <b>swimming</b>. <button class="spk" onclick="sp(this.dataset.t)" data-t="I enjoy swimming.">▶</button><br><span class="ex-ja">私は泳ぐことを楽しんでいる。</span></td>
+      </tr>
+      <tr>
+        <td><b><span class="vw" data-w="finish" data-pos="動詞" data-mean="終える・終わる" data-kana="【フィ】ニッシュ" data-opts='["終える","始める","続ける","休む"]' onclick="showVpop(this)">finish</span></b> <button class="spk" onclick="sp(this.dataset.t)" data-t="finish">▶</button></td>
+        <td>【フィ】ニッシュ</td><td>終える</td>
+        <td>He finished <b>eating</b>. <button class="spk" onclick="sp(this.dataset.t)" data-t="He finished eating.">▶</button><br><span class="ex-ja">彼は食べ終えた。</span></td>
+      </tr>
+      <tr>
+        <td><b>stop</b> <button class="spk" onclick="sp(this.dataset.t)" data-t="stop">▶</button></td>
+        <td>ス【トッ】プ</td><td>やめる</td>
+        <td>She stopped <b>crying</b>. <button class="spk" onclick="sp(this.dataset.t)" data-t="She stopped crying.">▶</button><br><span class="ex-ja">彼女は泣くのをやめた。</span></td>
+      </tr>
+      <tr>
+        <td><b>mind</b> <button class="spk" onclick="sp(this.dataset.t)" data-t="mind">▶</button></td>
+        <td>マ【イン】ド</td><td>いやに思う</td>
+        <td>Do you mind <b>opening</b> the window? <button class="spk" onclick="sp(this.dataset.t)" data-t="Do you mind opening the window?">▶</button><br><span class="ex-ja">窓を開けてもらえますか。</span></td>
+      </tr>
+      <tr>
+        <td><b><span class="vw" data-w="avoid" data-pos="動詞" data-mean="避ける" data-kana="ア【ヴォイ】ド" data-opts='["避ける","向かう","認める","許す"]' onclick="showVpop(this)">avoid</span></b> <button class="spk" onclick="sp(this.dataset.t)" data-t="avoid">▶</button></td>
+        <td>ア【ヴォイ】ド</td><td>避ける</td>
+        <td>Try to avoid <b>making</b> mistakes. <button class="spk" onclick="sp(this.dataset.t)" data-t="Try to avoid making mistakes.">▶</button><br><span class="ex-ja">間違いをするのを避けるようにしなさい。</span></td>
+      </tr>
+      <tr>
+        <td><b>give up</b> <button class="spk" onclick="sp(this.dataset.t)" data-t="give up">▶</button></td>
+        <td>ギ【ヴ】アップ</td><td>あきらめる</td>
+        <td>Don't give up <b>trying</b>. <button class="spk" onclick="sp(this.dataset.t)" data-t="Dont give up trying.">▶</button><br><span class="ex-ja">挑戦することをあきらめるな。</span></td>
+      </tr>
+      <tr>
+        <td><b><span class="vw" data-w="deny" data-pos="動詞" data-mean="否定する・否認する" data-kana="デ【ナイ】" data-opts='["否定する","認める","説明する","始める"]' onclick="showVpop(this)">deny</span></b> <button class="spk" onclick="sp(this.dataset.t)" data-t="deny">▶</button></td>
+        <td>デ【ナイ】</td><td>否定する</td>
+        <td>She denied <b>stealing</b> it. <button class="spk" onclick="sp(this.dataset.t)" data-t="She denied stealing it.">▶</button><br><span class="ex-ja">彼女はそれを盗んだことを否定した。</span></td>
+      </tr>
+      <tr>
+        <td><b><span class="vw" data-w="admit" data-pos="動詞" data-mean="認める・認めて入れる" data-kana="アド【ミッ】ト" data-opts='["認める","否定する","忘れる","断る"]' onclick="showVpop(this)">admit</span></b> <button class="spk" onclick="sp(this.dataset.t)" data-t="admit">▶</button></td>
+        <td>アド【ミッ】ト</td><td>認める</td>
+        <td>He admitted <b>making</b> a mistake. <button class="spk" onclick="sp(this.dataset.t)" data-t="He admitted making a mistake.">▶</button><br><span class="ex-ja">彼は間違えたことを認めた。</span></td>
+      </tr>
+      <tr>
+        <td><b><span class="vw" data-w="consider" data-pos="動詞" data-mean="考慮する・検討する" data-kana="コン【スィ】ダー" data-opts='["考慮する","無視する","決める","始める"]' onclick="showVpop(this)">consider</span></b> <button class="spk" onclick="sp(this.dataset.t)" data-t="consider">▶</button></td>
+        <td>コン【スィ】ダー</td><td>考慮する</td>
+        <td>I'm considering <b>moving</b> abroad. <button class="spk" onclick="sp(this.dataset.t)" data-t="I am considering moving abroad.">▶</button><br><span class="ex-ja">海外に引っ越すことを考えています。</span></td>
+      </tr>
+      <tr>
+        <td><b>practice</b> <button class="spk" onclick="sp(this.dataset.t)" data-t="practice">▶</button></td>
+        <td>【プラ】クティス</td><td>練習する</td>
+        <td>She practices <b>speaking</b> English. <button class="spk" onclick="sp(this.dataset.t)" data-t="She practices speaking English.">▶</button><br><span class="ex-ja">彼女は英語を話す練習をしている。</span></td>
+      </tr>
+      <tr>
+        <td><b>miss</b> <button class="spk" onclick="sp(this.dataset.t)" data-t="miss">▶</button></td>
+        <td>【ミ】ス</td><td>しそこなう</td>
+        <td>I missed <b>seeing</b> him. <button class="spk" onclick="sp(this.dataset.t)" data-t="I missed seeing him.">▶</button><br><span class="ex-ja">私は彼に会いそこなった。</span></td>
+      </tr>
+      <tr>
+        <td><b><span class="vw" data-w="escape" data-pos="動詞" data-mean="逃れる・免れる" data-kana="イ【スケイ】プ" data-opts='["逃れる","向かう","捕まえる","探す"]' onclick="showVpop(this)">escape</span></b> <button class="spk" onclick="sp(this.dataset.t)" data-t="escape">▶</button></td>
+        <td>イ【スケイ】プ</td><td>逃れる</td>
+        <td>He escaped <b>being</b> caught. <button class="spk" onclick="sp(this.dataset.t)" data-t="He escaped being caught.">▶</button><br><span class="ex-ja">彼は捕まることをまぬがれた。</span></td>
+      </tr>
+      <tr>
+        <td><b><span class="vw" data-w="postpone" data-pos="動詞" data-mean="延期する" data-kana="ポウスト【ポウ】ン" data-opts='["延期する","中止する","始める","終える"]' onclick="showVpop(this)">postpone</span></b> <button class="spk" onclick="sp(this.dataset.t)" data-t="postpone">▶</button></td>
+        <td>ポウスト【ポウ】ン</td><td>延期する</td>
+        <td>They postponed <b>holding</b> the event. <button class="spk" onclick="sp(this.dataset.t)" data-t="They postponed holding the event.">▶</button><br><span class="ex-ja">彼らはイベントの開催を延期した。</span></td>
+      </tr>
+    </table>
+    <div class="kb">
+      💡 <b>暗記のコツ「メガフェプスダ」</b><br>
+      <b>メ</b>（mind）<b>ガ</b>（enjoy）<b>フェ</b>（finish・give up）<b>プ</b>（practice）<b>ス</b>（stop・avoid・escape）<b>ダ</b>（deny・admit）
+    </div>
+  </div>
+
+  <div class="mini-quiz-wrap">
+    <div class="mini-quiz-title">📝 確認問題④ 動名詞専用の動詞を確認しよう</div>
+    <div id="iq2aq"></div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">不定詞のみを目的語にとる動詞（動名詞 ～ing は使えない！）</div>
+    <div class="pt">
+      次の動詞の後ろには <b>to ＋ 動詞の原形（不定詞）だけ</b>使えます。<br>
+      動名詞（～ing）を使うと間違いになります！
+    </div>
+    <table class="tbl">
+      <tr><th>動詞</th><th>発音（カタカナ）</th><th>意味</th><th>例文</th></tr>
+      <tr>
+        <td><b>want</b> <button class="spk" onclick="sp(this.dataset.t)" data-t="want">▶</button></td>
+        <td>【ウォ】ント</td><td>～したい</td>
+        <td>I want <b>to go</b>. <button class="spk" onclick="sp(this.dataset.t)" data-t="I want to go.">▶</button><br><span class="ex-ja">行きたい。</span></td>
+      </tr>
+      <tr>
+        <td><b>hope</b> <button class="spk" onclick="sp(this.dataset.t)" data-t="hope">▶</button></td>
+        <td>【ホウ】プ</td><td>望む</td>
+        <td>I hope <b>to pass</b>. <button class="spk" onclick="sp(this.dataset.t)" data-t="I hope to pass.">▶</button><br><span class="ex-ja">合格したいと思う。</span></td>
+      </tr>
+      <tr>
+        <td><b><span class="vw" data-w="decide" data-pos="動詞" data-mean="決める・決意する" data-kana="ディ【サイ】ド" data-opts='["決める","迷う","忘れる","始める"]' onclick="showVpop(this)">decide</span></b> <button class="spk" onclick="sp(this.dataset.t)" data-t="decide">▶</button></td>
+        <td>ディ【サイ】ド</td><td>決める</td>
+        <td>He decided <b>to study</b> abroad. <button class="spk" onclick="sp(this.dataset.t)" data-t="He decided to study abroad.">▶</button><br><span class="ex-ja">彼は留学することを決めた。</span></td>
+      </tr>
+      <tr>
+        <td><b><span class="vw" data-w="refuse" data-pos="動詞" data-mean="断る・拒否する" data-kana="リ【フュー】ズ" data-opts='["断る","承諾する","求める","認める"]' onclick="showVpop(this)">refuse</span></b> <button class="spk" onclick="sp(this.dataset.t)" data-t="refuse">▶</button></td>
+        <td>リ【フュー】ズ</td><td>断る</td>
+        <td>She refused <b>to come</b>. <button class="spk" onclick="sp(this.dataset.t)" data-t="She refused to come.">▶</button><br><span class="ex-ja">彼女は来ることを断った。</span></td>
+      </tr>
+      <tr>
+        <td><b><span class="vw" data-w="promise" data-pos="動詞" data-mean="約束する" data-kana="【プロ】ミス" data-opts='["約束する","忘れる","始める","断る"]' onclick="showVpop(this)">promise</span></b> <button class="spk" onclick="sp(this.dataset.t)" data-t="promise">▶</button></td>
+        <td>【プロ】ミス</td><td>約束する</td>
+        <td>He promised <b>to come</b> early. <button class="spk" onclick="sp(this.dataset.t)" data-t="He promised to come early.">▶</button><br><span class="ex-ja">彼は早く来ると約束した。</span></td>
+      </tr>
+      <tr>
+        <td><b><span class="vw" data-w="pretend" data-pos="動詞" data-mean="～のふりをする" data-kana="プリ【テン】ド" data-opts='["ふりをする","確認する","認める","始める"]' onclick="showVpop(this)">pretend</span></b> <button class="spk" onclick="sp(this.dataset.t)" data-t="pretend">▶</button></td>
+        <td>プリ【テン】ド</td><td>ふりをする</td>
+        <td>She pretended <b>to be</b> sick. <button class="spk" onclick="sp(this.dataset.t)" data-t="She pretended to be sick.">▶</button><br><span class="ex-ja">彼女は病気のふりをした。</span></td>
+      </tr>
+      <tr>
+        <td><b><span class="vw" data-w="manage" data-pos="動詞" data-mean="なんとかする（困難を乗り越えて）" data-kana="【マ】ニッジ" data-opts='["なんとかやり遂げる","断念する","失敗する","諦める"]' onclick="showVpop(this)">manage</span></b> <button class="spk" onclick="sp(this.dataset.t)" data-t="manage">▶</button></td>
+        <td>【マ】ニッジ</td><td>なんとかする</td>
+        <td>He managed <b>to finish</b> it. <button class="spk" onclick="sp(this.dataset.t)" data-t="He managed to finish it.">▶</button><br><span class="ex-ja">彼はなんとかそれを終えた。</span></td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="mini-quiz-wrap">
+    <div class="mini-quiz-title">📝 確認問題⑤ 不定詞専用の動詞を確認しよう</div>
+    <div id="iq2bq"></div>
+  </div>
+</div><!-- /s2 -->
+
+<!-- ========== 練習② ========== -->
+<div id="p2" class="sec">
+  <div class="sb"><span class="sn" id="p2sn">0 / 8</span><div class="pw"><div class="pf" id="p2pf" style="width:0%"></div></div>
+  <button onclick="resetP('p2')" style="border:none;background:#eee;border-radius:6px;padding:6px 12px;font-size:12px;cursor:pointer;font-family:inherit">リセット</button></div>
+  <div id="p2q"></div>
+</div>
+
+<!-- ========== ③ ing vs to 意味の違い ========== -->
+<div id="s3" class="sec">
+  <div class="sh">③ 動名詞と不定詞で意味が変わる動詞</div>
+
+  <div class="card">
+    <div class="card-title">try ～ing と try to ～ の違い</div>
+    <div class="cmp2">
+      <div class="cbox bl">
+        <div class="cbox-ttl">try ～ing（動名詞）</div>
+        「<b>ためしに～してみる</b>」<br>
+        実際にやってみた（過去の行為）<br><br>
+        He tried <b>lifting</b> the rock. <button class="spk" onclick="sp(this.dataset.t)" data-t="He tried lifting the rock.">▶</button><br>
+        <span style="font-size:12px;color:#555">彼はその岩を（試しに）持ち上げてみた。</span>
+      </div>
+      <div class="cbox gn">
+        <div class="cbox-ttl">try to ～（不定詞）</div>
+        「<b>～しようと努める</b>」<br>
+        実際にできたかは不明<br><br>
+        He tried <b>to lift</b> the rock, but he couldn't. <button class="spk" onclick="sp(this.dataset.t)" data-t="He tried to lift the rock, but he could not.">▶</button><br>
+        <span style="font-size:12px;color:#555">彼はその岩を持ち上げようとしたが、できなかった。</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="mini-quiz-wrap">
+    <div class="mini-quiz-title">📝 確認問題⑥ try ～ing / try to ～</div>
+    <div id="iq3aq"></div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">remember / forget ～ing と to ～ の違い</div>
+    <div class="pt">
+      動名詞（ing）は<b>過去のこと</b>、不定詞（to）は<b>これからのこと（未来）</b>を表します！<br>
+      この区別がとても重要です。
+    </div>
+    <div class="cmp2">
+      <div class="cbox bl">
+        <div class="cbox-ttl">～ing（動名詞）= 過去のこと</div>
+        remember ～ing「～したことを覚えている」<br>
+        forget ～ing「～したことを忘れる」
+      </div>
+      <div class="cbox gn">
+        <div class="cbox-ttl">to ～（不定詞）= これからのこと</div>
+        remember to ～「～することを覚えておく」<br>
+        forget to ～「～することを忘れる」
+      </div>
+    </div>
+    <div class="ex">
+      I remember <b>posting</b> the letter.〔過去〕 <button class="spk" onclick="sp(this.dataset.t)" data-t="I remember posting the letter.">▶</button><br>
+      <div class="ex-ja">私は手紙を投函した<u>こと</u>を覚えています。（投函したのは過去）</div>
+    </div>
+    <div class="ex">
+      Please remember <b>to post</b> the letter.〔未来〕 <button class="spk" onclick="sp(this.dataset.t)" data-t="Please remember to post the letter.">▶</button><br>
+      <div class="ex-ja">どうか手紙を出す<u>こと</u>を覚えておいてください。（これからポストに入れる）</div>
+    </div>
+    <div class="ex">
+      I'll never forget <b>seeing</b> her.〔過去〕 <button class="spk" onclick="sp(this.dataset.t)" data-t="I will never forget seeing her.">▶</button><br>
+      <div class="ex-ja">私は彼女に会った<u>こと</u>を決して忘れないだろう。（過去に会った）</div>
+    </div>
+    <div class="ex">
+      Don't forget <b>to lock</b> the door.〔未来〕 <button class="spk" onclick="sp(this.dataset.t)" data-t="Dont forget to lock the door.">▶</button><br>
+      <div class="ex-ja">ドアにカギをかける<u>こと</u>を忘れるな。（これからカギをかける）</div>
+    </div>
+  </div>
+
+  <div class="mini-quiz-wrap">
+    <div class="mini-quiz-title">📝 確認問題⑦ remember / forget の ing vs to</div>
+    <div id="iq3bq"></div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">regret / stop ～ing と to ～ の違い</div>
+    <div class="cmp2">
+      <div class="cbox bl">
+        <div class="cbox-ttl">regret ～ing〔過去〕</div>
+        「～した<b>ことを後悔する</b>」<br><br>
+        I <span class="vw" data-w="regret" data-pos="動詞" data-mean="後悔する" data-kana="リ【グレッ】ト" data-opts='["後悔する","喜ぶ","忘れる","認める"]' onclick="showVpop(this)">regret</span> <b>saying</b> that. <button class="spk" onclick="sp(this.dataset.t)" data-t="I regret saying that.">▶</button><br>
+        <span style="font-size:12px;color:#555">そう言ったことを後悔しています。</span>
+      </div>
+      <div class="cbox gn">
+        <div class="cbox-ttl">regret to ～〔これから〕</div>
+        「残念ながら<b>～する</b>（これから言う）」<br><br>
+        I regret <b>to say</b> I can't help. <button class="spk" onclick="sp(this.dataset.t)" data-t="I regret to say I cannot help.">▶</button><br>
+        <span style="font-size:12px;color:#555">残念ながら手伝えないと言わねばなりません。</span>
+      </div>
+    </div>
+    <div class="cmp2">
+      <div class="cbox bl">
+        <div class="cbox-ttl">stop ～ing</div>
+        「～することを<b>やめる</b>」<br>
+        （ing が stop の目的語）<br><br>
+        He stopped <b>smoking</b>. <button class="spk" onclick="sp(this.dataset.t)" data-t="He stopped smoking.">▶</button><br>
+        <span style="font-size:12px;color:#555">彼は禁煙した。</span>
+      </div>
+      <div class="cbox gn">
+        <div class="cbox-ttl">stop to ～</div>
+        「～するために<b>立ち止まる</b>」<br>
+        （to は副詞的用法・目的）<br><br>
+        He stopped <b>to smoke</b>. <button class="spk" onclick="sp(this.dataset.t)" data-t="He stopped to smoke.">▶</button><br>
+        <span style="font-size:12px;color:#555">彼はタバコを吸うために立ち止まった。</span>
+      </div>
+    </div>
+    <div class="wb">
+      ⚠️ stop to ～ の「to」は不定詞の<b>副詞的用法（目的）</b>です。stop の目的語ではありません。<br>
+      だから「stop は動名詞のみを目的語にとる」というルールに矛盾しません！
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">need / want ～ing の特殊な意味（受動の意味）</div>
+    <div class="pt">
+      <b>need ～ing / want ～ing</b> ＝「～される必要がある」という<b>受動</b>の意味<br>
+      「物」が主語のとき、動名詞が受動の意味で使われます。
+    </div>
+    <div class="ex">
+      This bag needs <b>repairing</b>. <button class="spk" onclick="sp(this.dataset.t)" data-t="This bag needs repairing.">▶</button><br>
+      <div class="ex-ja">このかばんは修理される必要がある。</div>
+      <div style="font-size:12px;color:#2e7d32;margin-top:4px">✅ = This bag needs <b>to be repaired</b>. と同じ意味</div>
+    </div>
+    <div class="ex">
+      This house wants <b>painting</b>. <button class="spk" onclick="sp(this.dataset.t)" data-t="This house wants painting.">▶</button><br>
+      <div class="ex-ja">この家にはペンキを塗る必要がある。</div>
+    </div>
+  </div>
+
+  <div class="mini-quiz-wrap">
+    <div class="mini-quiz-title">📝 確認問題⑧ stop / need / want の ing vs to</div>
+    <div id="iq3cq"></div>
+  </div>
+</div><!-- /s3 -->
+
+<!-- ========== 練習③ ========== -->
+<div id="p3" class="sec">
+  <div class="sb"><span class="sn" id="p3sn">0 / 9</span><div class="pw"><div class="pf" id="p3pf" style="width:0%"></div></div>
+  <button onclick="resetP('p3')" style="border:none;background:#eee;border-radius:6px;padding:6px 12px;font-size:12px;cursor:pointer;font-family:inherit">リセット</button></div>
+  <div id="p3q"></div>
+</div>
+
+<!-- ========== ④ 意味上の主語・完了・受動 ========== -->
+<div id="s4" class="sec">
+  <div class="sh">④ 動名詞の意味上の主語・完了形・受動態</div>
+
+  <div class="card">
+    <div class="card-title">動名詞の意味上の主語</div>
+    <div class="pt">
+      動名詞の「～すること」の動作をするのが、文の主語と<b>違う人</b>の場合、<br>
+      動名詞の直前に<b>所有格（his / her / Tom's）</b>または<b>目的格（him / her）</b>を置きます。
+    </div>
+    <div class="ex">
+      He is proud of <b>passing</b> the exam. <button class="spk" onclick="sp(this.dataset.t)" data-t="He is proud of passing the exam.">▶</button><br>
+      <div class="ex-ja">彼は試験に合格したことを誇りに思っている。（passing するのは He）</div>
+    </div>
+    <div class="ex">
+      He is proud of <b>his son's passing</b> the exam. <button class="spk" onclick="sp(this.dataset.t)" data-t="He is proud of his son passing the exam.">▶</button><br>
+      <div class="ex-ja">彼は息子が試験に合格したことを誇りに思っている。（passing するのは his son）</div>
+    </div>
+    <div class="ex">
+      Would you mind <b>my opening</b> the window? <button class="spk" onclick="sp(this.dataset.t)" data-t="Would you mind my opening the window?">▶</button><br>
+      <div class="ex-ja">私が窓を開けてもよろしいですか。（opening するのは I）</div>
+    </div>
+  </div>
+
+  <div class="mini-quiz-wrap">
+    <div class="mini-quiz-title">📝 確認問題⑨ 意味上の主語</div>
+    <div id="iq4aq"></div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">完了動名詞（having ＋ 過去分詞）</div>
+    <div class="pt">
+      動名詞の表す動作が、文の動詞より<b>前の時（過去のこと）</b>を表すとき、<br>
+      <b>having ＋ 過去分詞</b> の形を使います。
+    </div>
+    <div class="ex">
+      She is proud of <b>having worked</b> as a <span class="vw" data-w="nurse" data-pos="名詞" data-mean="看護師" data-kana="ナース" data-opts='["看護師","医師","薬剤師","教師"]' onclick="showVpop(this)">nurse</span>. <button class="spk" onclick="sp(this.dataset.t)" data-t="She is proud of having worked as a nurse.">▶</button><br>
+      <div class="ex-ja">彼女は（以前）看護師として働いていたことを誇りに思っている。</div>
+      <div style="font-size:12px;color:#0097A7;margin-top:4px">今（is proud）より前のこと（働いていた）→ having worked</div>
+    </div>
+    <div class="ex">
+      He was sorry for <b>having been</b> <span class="vw" data-w="idle" data-pos="形容詞" data-mean="なまけている・何もしていない" data-kana="ア【イ】ドル" data-opts='["なまけている","勤勉な","忙しい","元気な"]' onclick="showVpop(this)">idle</span>. <button class="spk" onclick="sp(this.dataset.t)" data-t="He was sorry for having been idle.">▶</button><br>
+      <div class="ex-ja">彼はなまけていたことを後悔していた。</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">受動態の動名詞（being ＋ 過去分詞）</div>
+    <div class="pt">
+      「～されること」を動名詞で表したいときは<b>being ＋ 過去分詞</b>を使います。<br>
+      「（以前）～されたこと」なら<b>having been ＋ 過去分詞</b>を使います。
+    </div>
+    <div class="ex">
+      He doesn't like <b>being treated</b> like a child. <button class="spk" onclick="sp(this.dataset.t)" data-t="He does not like being treated like a child.">▶</button><br>
+      <div class="ex-ja">彼は子供のように扱われるのが好きではない。（treated ＝ 扱われる）</div>
+    </div>
+    <div class="ex">
+      She doesn't like <b>being told</b> what to do. <button class="spk" onclick="sp(this.dataset.t)" data-t="She does not like being told what to do.">▶</button><br>
+      <div class="ex-ja">彼女は何をすべきか言われるのは好きではありません。</div>
+    </div>
+    <div class="ex">
+      He is proud of <b>having been given</b> a <span class="vw" data-w="dictionary" data-pos="名詞" data-mean="辞書" data-kana="【ディ】クショナリー" data-opts='["辞書","教科書","ノート","問題集"]' onclick="showVpop(this)">dictionary</span> by his teacher. <button class="spk" onclick="sp(this.dataset.t)" data-t="He is proud of having been given a dictionary by his teacher.">▶</button><br>
+      <div class="ex-ja">彼は先生から辞書をいただいたことを誇りに思っている。（過去に受け取った → having been given）</div>
+    </div>
+  </div>
+
+  <div class="mini-quiz-wrap">
+    <div class="mini-quiz-title">📝 確認問題⑩ 完了・受動態の動名詞</div>
+    <div id="iq4bq"></div>
+  </div>
+</div><!-- /s4 -->
+
+<!-- ========== 練習④ ========== -->
+<div id="p4" class="sec">
+  <div class="sb"><span class="sn" id="p4sn">0 / 7</span><div class="pw"><div class="pf" id="p4pf" style="width:0%"></div></div>
+  <button onclick="resetP('p4')" style="border:none;background:#eee;border-radius:6px;padding:6px 12px;font-size:12px;cursor:pointer;font-family:inherit">リセット</button></div>
+  <div id="p4q"></div>
+</div>
+
+<!-- ========== ⑤ 重要慣用表現 ========== -->
+<div id="s5" class="sec">
+  <div class="sh">⑤ 動名詞を含む重要慣用表現</div>
+
+  <div class="card">
+    <div class="card-title">must-have！ 必須慣用表現（その1）</div>
+    <table class="tbl">
+      <tr><th>表現</th><th>意味</th><th>例文</th></tr>
+      <tr>
+        <td><b>cannot help ～ing</b><br>＝ cannot but 原形</td>
+        <td>～せずに<br>いられない</td>
+        <td>I cannot help <b>laughing</b>. <button class="spk" onclick="sp(this.dataset.t)" data-t="I cannot help laughing.">▶</button><br>
+        <span class="ex-ja">笑わずにはいられない。</span></td>
+      </tr>
+      <tr>
+        <td><b>feel like ～ing</b></td>
+        <td>～したい<br>気がする</td>
+        <td>I feel like <b>eating</b> something. <button class="spk" onclick="sp(this.dataset.t)" data-t="I feel like eating something.">▶</button><br>
+        <span class="ex-ja">何か食べたい気がする。</span></td>
+      </tr>
+      <tr>
+        <td><b>It is no use ～ing</b></td>
+        <td>～しても<br>むだだ</td>
+        <td>It is no use <b>crying</b> over spilt milk. <button class="spk" onclick="sp(this.dataset.t)" data-t="It is no use crying over spilt milk.">▶</button><br>
+        <span class="ex-ja">こぼれた牛乳を嘆いてもむだだ。（覆水盆に返らず）</span></td>
+      </tr>
+      <tr>
+        <td><b>There is no ～ing</b></td>
+        <td>～することは<br>できない</td>
+        <td>There is no <b>telling</b> when it will happen. <button class="spk" onclick="sp(this.dataset.t)" data-t="There is no telling when it will happen.">▶</button><br>
+        <span class="ex-ja">それがいつ起こるかわかりません。</span></td>
+      </tr>
+      <tr>
+        <td><b>look forward to ～ing</b></td>
+        <td>～するのを<br>楽しみにする</td>
+        <td>I look forward to <b>seeing</b> you. <button class="spk" onclick="sp(this.dataset.t)" data-t="I look forward to seeing you.">▶</button><br>
+        <span class="ex-ja">あなたに会うのを楽しみにしています。</span></td>
+      </tr>
+      <tr>
+        <td><b>be used to ～ing</b></td>
+        <td>～に慣れて<br>いる</td>
+        <td>He is used to <b>driving</b>. <button class="spk" onclick="sp(this.dataset.t)" data-t="He is used to driving.">▶</button><br>
+        <span class="ex-ja">彼は運転に慣れている。</span></td>
+      </tr>
+      <tr>
+        <td><b>worth ～ing</b></td>
+        <td>～する価値<br>がある</td>
+        <td>This book is worth <b>reading</b>. <button class="spk" onclick="sp(this.dataset.t)" data-t="This book is worth reading.">▶</button><br>
+        <span class="ex-ja">この本は読む価値がある。</span></td>
+      </tr>
+      <tr>
+        <td><b>be busy ～ing</b></td>
+        <td>～するのに<br>忙しい</td>
+        <td>I am busy <b>studying</b>. <button class="spk" onclick="sp(this.dataset.t)" data-t="I am busy studying.">▶</button><br>
+        <span class="ex-ja">私は勉強するのに忙しい。</span></td>
+      </tr>
+    </table>
+    <div class="wb">
+      ⚠️ <b>be used to ～ing</b>（～に慣れている）と <b>used to ～</b>（以前は～していた）を混同しないように！<br>
+      be used to の「to」は<b>前置詞</b> → 後ろは動名詞<br>
+      used to の「to」は<b>不定詞のto</b> → 後ろは動詞原形
+    </div>
+  </div>
+
+  <div class="mini-quiz-wrap">
+    <div class="mini-quiz-title">📝 確認問題⑪ 慣用表現①</div>
+    <div id="iq5aq"></div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">must-have！ 必須慣用表現（その2）</div>
+    <table class="tbl">
+      <tr><th>表現</th><th>意味</th><th>例文</th></tr>
+      <tr>
+        <td><b><span class="vw" data-w="prevent" data-pos="動詞" data-mean="妨げる・防ぐ" data-kana="プリ【ヴェ】ント" data-opts='["妨げる","助ける","始める","続ける"]' onclick="showVpop(this)">prevent</span> A from ～ing</b><br>＝ keep A from ～ing</td>
+        <td>Aが～する<br>のを妨げる</td>
+        <td>Rain <b>prevented</b> me <b>from going</b> out. <button class="spk" onclick="sp(this.dataset.t)" data-t="Rain prevented me from going out.">▶</button><br>
+        <span class="ex-ja">雨が私の外出を妨げた。</span></td>
+      </tr>
+      <tr>
+        <td><b>On ～ing</b></td>
+        <td>～するとすぐに</td>
+        <td><b>On seeing</b> me, she ran. <button class="spk" onclick="sp(this.dataset.t)" data-t="On seeing me, she ran.">▶</button><br>
+        <span class="ex-ja">私を見るとすぐに彼女は走った。</span></td>
+      </tr>
+      <tr>
+        <td><b>go on ～ing</b></td>
+        <td>～し続ける</td>
+        <td>He went on <b>talking</b>. <button class="spk" onclick="sp(this.dataset.t)" data-t="He went on talking.">▶</button><br>
+        <span class="ex-ja">彼は話し続けた。</span></td>
+      </tr>
+      <tr>
+        <td><b>cannot ～ without ～ing</b></td>
+        <td>～すれば必ず～する</td>
+        <td>He cannot speak without <b>making</b> mistakes. <button class="spk" onclick="sp(this.dataset.t)" data-t="He cannot speak without making mistakes.">▶</button><br>
+        <span class="ex-ja">彼は話すと必ず間違える。</span></td>
+      </tr>
+      <tr>
+        <td><b>It goes without saying that ～</b></td>
+        <td>～は言うまでもない</td>
+        <td>It goes without <b>saying</b> that health is important. <button class="spk" onclick="sp(this.dataset.t)" data-t="It goes without saying that health is important.">▶</button><br>
+        <span class="ex-ja">健康が大切なことは言うまでもない。</span></td>
+      </tr>
+      <tr>
+        <td><b>How about ～ing?</b></td>
+        <td>～するのは<br>どうですか？</td>
+        <td>How about <b>playing</b> tennis? <button class="spk" onclick="sp(this.dataset.t)" data-t="How about playing tennis?">▶</button><br>
+        <span class="ex-ja">テニスをするのはどうですか？</span></td>
+      </tr>
+      <tr>
+        <td><b>What do you say to ～ing?</b></td>
+        <td>～しませんか？</td>
+        <td>What do you say to <b>going</b> for a walk? <button class="spk" onclick="sp(this.dataset.t)" data-t="What do you say to going for a walk?">▶</button><br>
+        <span class="ex-ja">散歩しませんか？</span></td>
+      </tr>
+      <tr>
+        <td><b>In ～ing</b></td>
+        <td>～しているときに</td>
+        <td>Be careful in <b>driving</b>. <button class="spk" onclick="sp(this.dataset.t)" data-t="Be careful in driving.">▶</button><br>
+        <span class="ex-ja">運転するときに注意しなさい。</span></td>
+      </tr>
+    </table>
+    <div class="kb">
+      💡 <b>worth ～ing の注意点</b>：動名詞に前置詞が必要な場合は忘れずに！<br>
+      His speech is worth listening <b>to</b>. <button class="spk" onclick="sp(this.dataset.t)" data-t="His speech is worth listening to.">▶</button><br>
+      （listen to ～ が元の形なので to が必要）
+    </div>
+  </div>
+
+  <div class="mini-quiz-wrap">
+    <div class="mini-quiz-title">📝 確認問題⑫ 慣用表現②</div>
+    <div id="iq5bq"></div>
+  </div>
+</div><!-- /s5 -->
+
+<!-- ========== 練習⑤実戦 ========== -->
+<div id="p5" class="sec">
+  <div class="sb"><span class="sn" id="p5sn">0 / 12</span><div class="pw"><div class="pf" id="p5pf" style="width:0%"></div></div>
+  <button onclick="resetP('p5')" style="border:none;background:#eee;border-radius:6px;padding:6px 12px;font-size:12px;cursor:pointer;font-family:inherit">リセット</button></div>
+  <div id="p5q"></div>
+</div>
+
+<!-- 単語ポップアップ -->
+<div class="vpop" id="vpop">
+  <div class="vpop-hd">
+    <div><span class="vpop-word" id="vpop-word"></span><span class="vpop-pos" id="vpop-pos"></span></div>
+    <button class="vpop-close" onclick="closeVpop()">✕</button>
+  </div>
+  <div class="vpop-body">
+    <div class="vpop-mean" id="vpop-mean"></div>
+    <div class="vpop-kana" id="vpop-kana"></div>
+    <div class="vpop-btns">
+      <button class="vpop-spk" onclick="vpopSpeak()">🔊 発音を聞く</button>
+      <button class="vpop-save" id="vpop-save-btn" onclick="vpopSave()">📖 単語帳へ</button>
+    </div>
+    <div class="vpop-saved-lbl" id="vpop-saved-lbl">✓ 単語帳に保存しました</div>
+  </div>
+</div>
+
+<!-- 単語帳モーダル -->
+<div class="mo" id="mvocab">
+  <div class="mb">
+    <div class="mh">
+      <h2>📚 単語帳</h2>
+      <button class="mhc" onclick="closeM('mvocab')">✕</button>
+    </div>
+    <div class="mbody">
+      <div style="display:flex;gap:8px;margin-bottom:12px">
+        <button onclick="showVocabList()" style="flex:1;padding:9px;border-radius:8px;border:2px solid #1B3A6B;background:#1B3A6B;color:#fff;font-size:13px;font-family:inherit;cursor:pointer;font-weight:700">📋 単語一覧</button>
+        <button onclick="startVocabTest()" style="flex:1;padding:9px;border-radius:8px;border:2px solid #0097A7;background:#f0faff;color:#0097A7;font-size:13px;font-family:inherit;cursor:pointer;font-weight:700">✏️ 復習テスト</button>
+      </div>
+      <div id="vocab-list-area"></div>
+      <div id="vocab-test-area" style="display:none"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ===== 共通関数（Unit4と同じ） ===== */
+function openM(id){document.getElementById(id).classList.add('open');document.body.style.overflow='hidden';}
+function closeM(id){document.getElementById(id).classList.remove('open');document.body.style.overflow='';}
+document.querySelectorAll('.mo').forEach(function(mo){
+  mo.addEventListener('click',function(e){if(e.target===mo)closeM(mo.id);});
+});
+function confetti(){
+  var cv=document.getElementById('cc');
+  cv.width=window.innerWidth;cv.height=window.innerHeight;cv.style.display='block';
+  var ctx=cv.getContext('2d');
+  var cols=['#f9a825','#0097A7','#1B3A6B','#e53935','#2e7d32','#ff6f00','#7b1fa2','#ff4081'];
+  var ps=[];
+  for(var k=0;k<130;k++){ps.push({x:Math.random()*cv.width,y:-20-Math.random()*180,w:7+Math.random()*9,h:3+Math.random()*5,c:cols[Math.floor(Math.random()*cols.length)],s:2+Math.random()*4,a:Math.random()*360,sp:3-Math.random()*6,d:(Math.random()-.5)*2.5});}
+  var fr=0;
+  function draw(){ctx.clearRect(0,0,cv.width,cv.height);ps.forEach(function(p){ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.a*Math.PI/180);ctx.fillStyle=p.c;ctx.fillRect(-p.w/2,-p.h/2,p.w,p.h);ctx.restore();p.y+=p.s;p.x+=p.d;p.a+=p.sp;});fr++;if(fr<100)requestAnimationFrame(draw);else{ctx.clearRect(0,0,cv.width,cv.height);cv.style.display='none';}}
+  draw();
+}
+function updS(mid,n,t){var sn=document.getElementById(mid+'sn');var pf=document.getElementById(mid+'pf');if(sn)sn.textContent=n+' / '+t;if(pf)pf.style.width=(n/t*100)+'%';if(n===t&&t>0)confetti();}
+function sp(t){if(!window.speechSynthesis)return;speechSynthesis.cancel();var u=new SpeechSynthesisUtterance(t);u.lang='en-US';u.rate=0.88;speechSynthesis.speak(u);}
+function ss(id,btn){
+  document.querySelectorAll('.sec').forEach(function(s){s.classList.remove('active');});
+  document.querySelectorAll('.nb,.pb').forEach(function(b){b.classList.remove('on');});
+  document.querySelectorAll('.pair').forEach(function(p){p.classList.remove('active-pair');});
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('on');
+  if(btn.parentElement&&btn.parentElement.classList.contains('pair')){btn.parentElement.classList.add('active-pair');}
+}
+function shuffle(a){for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;}return a;}
+function sh(n){var clean=n.replace(/'/g,"");return '<button class="spk" onclick="sp(this.dataset.t)" data-t="'+clean+'">▶</button>';}
+function ub(u){return u?'<span class="ub">'+u+'</span>':'';}
+
+/* ===== 練習問題エンジン（iC） ===== */
+function iC(id){
+  var data=window['c'+id],total=data.length,score=0,done=new Array(total).fill(false);
+  updS(id,0,total);
+  var c=document.getElementById(id+'q');c.innerHTML='';
+  data.forEach(function(d,i){
+    var div=document.createElement('div');div.className='q-box';
+    div.innerHTML='<div class="q-hd"><span class="q-num">'+(i+1)+'</span><span class="q-txt"><b>'+d.q+'</b>'+ub(d.u)+sh(d.s)+'</span></div>'
+      +(d.j?'<div style="font-size:13px;color:#555;margin-bottom:8px">'+d.j+'</div>':'')
+      +(d.h?'<span class="hint">'+d.h+'</span>':'')
+      +'<div id="'+id+'ch'+i+'"></div><div class="ep" id="'+id+'ep'+i+'">📝 解説：'+d.e+'</div>';
+    c.appendChild(div);
+    d.c.forEach(function(ch,ci){
+      var btn=document.createElement('button');btn.className='cb';btn.textContent=ch;
+      btn.onclick=function(){
+        if(done[i])return;done[i]=true;
+        div.querySelectorAll('.cb').forEach(function(b,bi){b.classList.add('dis');if(bi===d.a)b.classList.add('ca');else if(bi===ci&&ci!==d.a)b.classList.add('wa');});
+        document.getElementById(id+'ep'+i).classList.add('show');
+        if(ci===d.a){score++;updS(id,score,total);}
+      };
+      document.getElementById(id+'ch'+i).appendChild(btn);
+    });
+  });
+}
+function resetP(id){iC(id);}
+
+/* ===== 単語帳システム ===== */
+var vocabDB={};
+var savedWords={};
+var currentVword=null;
+
+function showVpop(el){
+  var w=el.dataset.w,pos=el.dataset.pos,mean=el.dataset.mean,kana=el.dataset.kana,opts=JSON.parse(el.dataset.opts);
+  vocabDB[w]={pos:pos,mean:mean,kana:kana,opts:opts};
+  currentVword=w;
+  document.getElementById('vpop-word').textContent=w;
+  document.getElementById('vpop-pos').textContent=pos;
+  document.getElementById('vpop-mean').textContent=mean;
+  document.getElementById('vpop-kana').textContent='発音：'+kana;
+  var saveBtn=document.getElementById('vpop-save-btn');
+  var savedLbl=document.getElementById('vpop-saved-lbl');
+  if(savedWords[w]){saveBtn.textContent='✓ 保存済み';saveBtn.className='vpop-save saved';savedLbl.className='vpop-saved-lbl show';}
+  else{saveBtn.textContent='📖 単語帳へ';saveBtn.className='vpop-save';savedLbl.className='vpop-saved-lbl';}
+  var pop=document.getElementById('vpop');pop.className='vpop show';
+  var rect=el.getBoundingClientRect();
+  var top=rect.bottom+6,left=rect.left,pw=260;
+  if(left+pw>window.innerWidth-8)left=window.innerWidth-pw-8;
+  if(top+160>window.innerHeight)top=rect.top-170;
+  pop.style.top=top+'px';pop.style.left=left+'px';
+}
+function closeVpop(){document.getElementById('vpop').className='vpop';currentVword=null;}
+document.addEventListener('click',function(e){
+  var pop=document.getElementById('vpop');
+  if(pop.classList.contains('show')&&!pop.contains(e.target)&&!e.target.classList.contains('vw'))closeVpop();
+});
+function vpopSpeak(){if(currentVword)sp(currentVword);}
+function vpopSave(){
+  if(!currentVword)return;
+  var w=currentVword;
+  if(!savedWords[w]){
+    savedWords[w]=vocabDB[w];
+    updateVocabBadge();
+    var saveBtn=document.getElementById('vpop-save-btn');
+    saveBtn.textContent='✓ 保存済み';saveBtn.className='vpop-save saved';
+    document.getElementById('vpop-saved-lbl').className='vpop-saved-lbl show';
+  }
+}
+function updateVocabBadge(){
+  var n=Object.keys(savedWords).length;
+  var badge=document.getElementById('vocab-badge');
+  badge.textContent=n;
+  badge.className=n>0?'vocab-badge show':'vocab-badge';
+}
+var origOpenM=openM;
+openM=function(id){origOpenM(id);if(id==='mvocab')showVocabList();};
+function showVocabList(){
+  document.getElementById('vocab-list-area').style.display='block';
+  document.getElementById('vocab-test-area').style.display='none';
+  renderVocabList();
+}
+function renderVocabList(){
+  var area=document.getElementById('vocab-list-area');
+  var words=Object.keys(savedWords);
+  if(words.length===0){area.innerHTML='<div class="vbook-empty">📖 まだ単語が保存されていません。<br>本文中の<span style="border-bottom:2px dashed #0097A7;color:#0097A7">点線下線</span>の単語をタップして保存しましょう。</div>';return;}
+  var html='<div style="font-size:12px;color:#888;margin-bottom:8px">保存済み：'+words.length+'語　「覚えた」を押すと削除できます</div>';
+  words.forEach(function(w){
+    var v=savedWords[w];
+    html+='<div class="vcard"><span class="vcard-word">'+w+'</span><span class="vcard-mean">'+v.mean+'</span><button class="vcard-del" onclick="removeWord(\''+w+'\')">覚えた ✓</button></div>';
+  });
+  area.innerHTML=html;
+}
+function removeWord(w){delete savedWords[w];updateVocabBadge();renderVocabList();}
+var testQueue=[],testIdx=0,testScore=0;
+function startVocabTest(){
+  document.getElementById('vocab-list-area').style.display='none';
+  document.getElementById('vocab-test-area').style.display='block';
+  renderVocabTest();
+}
+function renderVocabTest(){
+  var area=document.getElementById('vocab-test-area');
+  var words=Object.keys(savedWords);
+  if(words.length<1){area.innerHTML='<div class="vbook-empty">単語が保存されていません。</div>';return;}
+  testQueue=words.slice().sort(function(){return Math.random()-.5;});
+  testIdx=0;testScore=0;renderTestQuestion(area);
+}
+function renderTestQuestion(area){
+  if(testIdx>=testQueue.length){
+    area.innerHTML='<div style="text-align:center;padding:24px"><div style="font-size:40px;margin-bottom:12px">🎉</div><div style="font-size:18px;font-weight:700;color:#1B3A6B;margin-bottom:8px">テスト完了！</div><div style="font-size:14px;color:#555;margin-bottom:16px">正解：'+testScore+' / '+testQueue.length+'問</div><div style="display:flex;gap:8px;justify-content:center"><button onclick="renderVocabTest()" style="padding:10px 20px;border-radius:8px;border:none;background:#1B3A6B;color:#fff;font-size:14px;font-family:inherit;cursor:pointer">もう一度</button><button onclick="showVocabList()" style="padding:10px 20px;border-radius:8px;border:1.5px solid #ccd;background:#fff;color:#555;font-size:14px;font-family:inherit;cursor:pointer">単語一覧へ</button></div></div>';
+    return;
+  }
+  var w=testQueue[testIdx];var v=savedWords[w];if(!v){testIdx++;renderTestQuestion(area);return;}
+  var opts=v.opts.slice().sort(function(){return Math.random()-.5;});
+  var html='<div style="text-align:right;font-size:12px;color:#888;margin-bottom:8px">'+(testIdx+1)+' / '+testQueue.length+'</div>'
+    +'<div class="vtest-q">'+w+'</div>';
+  opts.forEach(function(opt){
+    html+='<button class="vtest-opt" onclick="checkTestAns(this,\''+w+'\',\''+opt.replace(/'/g,"\\'")+'\')">' +opt+'</button>';
+  });
+  html+='<div id="vtest-res"></div>';
+  area.innerHTML=html;
+}
+function checkTestAns(btn,word,selected){
+  var v=savedWords[word];if(!v)return;
+  var correct=v.mean;
+  var area=document.getElementById('vocab-test-area');
+  area.querySelectorAll('.vtest-opt').forEach(function(b){b.classList.add('dis');if(b.textContent===correct)b.classList.add('ca');else if(b===btn&&selected!==correct)b.classList.add('wa');});
+  var res=document.getElementById('vtest-res');
+  if(selected===correct){testScore++;res.innerHTML='<div style="color:#2e7d32;font-weight:700;padding:8px">✓ 正解！</div>';}
+  else{res.innerHTML='<div style="color:#e53935;font-weight:700;padding:8px">✗ 不正解　正解：'+correct+'</div>';}
+  testIdx++;
+  setTimeout(function(){renderTestQuestion(area);},1200);
+}
+
+/* ===== 確認問題データ ===== */
+/* iq1a: 動名詞の意味 */
+window.ciq1a=[
+  {q:'swimming の意味はどれか？',s:'swimming',j:'',a:1,c:['泳いでいる（進行形）','泳ぐこと（動名詞）','泳いだ（過去形）','泳ぎなさい（命令形）'],h:'動名詞は「動詞＋ing」で名詞の役割',e:'動名詞は「動詞の原形＋ing」で「<b>～すること</b>」という意味になります。swimming ＝ 泳ぐこと'},
+  {q:'次のうち動名詞の文はどれか？',s:'Reading is my hobby.',j:'',a:0,c:['Reading is my hobby.','She is reading now.','I read a book.','Read this book!'],h:'名詞の働きをしているingを探せ',e:'<b>Reading</b> is my hobby. の Reading は主語（名詞）として使われている動名詞です。She is reading は進行形（現在分詞）。'},
+];
+/* iq1b: 主語・補語 */
+window.ciq1b=[
+  {q:'（　）に入る正しい語句を選べ。<br>( ) every day is good for your health.',s:'Swimming every day is good for your health.',j:'毎日泳ぐことはあなたの健康に良いです。',a:1,c:['Swim','Swimming','Swam','To swimming'],h:'主語の位置 → 動名詞',e:'主語の位置では<b>動名詞（Swimming）</b>または不定詞（To swim）が使えます。「Swim」単体は動詞の原形なので主語になれません。'},
+  {q:'（　）に入る正しい語句を選べ。<br>Her dream is ( ) a nurse.',s:'Her dream is becoming a nurse.',j:'彼女の夢は看護師になることです。',a:2,c:['become','became','becoming','to becoming'],h:'be動詞の後の補語に動名詞',e:'be動詞の後ろでも動名詞が使えます。Her dream is <b>becoming</b> a nurse.（なること）。to becoming は誤り。'},
+];
+/* iq1c: 前置詞の後ろ */
+window.ciq1c=[
+  {q:'（　）に入る正しい語句を選べ。<br>She is good at ( ) English.',s:'She is good at speaking English.',j:'彼女は英語を話すのが得意です。',a:2,c:['speak','spoke','speaking','to speak'],h:'前置詞 at の後ろは？',e:'前置詞（at）の後ろには名詞→動名詞を使います。→ at <b>speaking</b>'},
+  {q:'（　）に入る正しい語句を選べ。<br>I look forward to ( ) you.',s:'I look forward to seeing you.',j:'あなたに会うのを楽しみにしています。',a:1,c:['see','seeing','seen','have seen'],h:'look forward to ～ing の to は前置詞！',e:'look forward to の「to」は前置詞なので後ろは動名詞。→ look forward to <b>seeing</b>。to see（不定詞）は誤り。'},
+  {q:'（　）に入る正しい語句を選べ。<br>Thank you for ( ) me.',s:'Thank you for helping me.',j:'手伝ってくれてありがとう。',a:0,c:['helping','help','to help','helped'],h:'for の後ろは？',e:'前置詞（for）の後ろは動名詞。→ for <b>helping</b>'},
+];
+/* iq2a: 動名詞専用 */
+window.ciq2a=[
+  {q:'（　）に入る正しい語句を選べ。<br>Have you finished ( ) your homework?',s:'Have you finished doing your homework?',j:'宿題をし終えましたか。',a:2,c:['do','to do','doing','did'],h:'finish の後ろは？',e:'<b>finish</b> は動名詞のみを目的語にとります。→ finished <b>doing</b>'},
+  {q:'（　）に入る正しい語句を選べ。<br>She denied ( ) the money.',s:'She denied stealing the money.',j:'彼女はそのお金を盗んだことを否定した。',a:1,c:['to steal','stealing','steal','stole'],h:'deny の後ろは？',e:'<b>deny</b>（否定する）は動名詞のみ。→ denied <b>stealing</b>'},
+  {q:'（　）に入る正しい語句を選べ。<br>Do you mind ( ) the window?',s:'Do you mind opening the window?',j:'窓を開けてもらえますか。',a:0,c:['opening','to open','open','opened'],h:'mind の後ろは？',e:'<b>mind</b>（いやに思う）は動名詞のみ。→ mind <b>opening</b>'},
+];
+/* iq2b: 不定詞専用 */
+window.ciq2b=[
+  {q:'（　）に入る正しい語句を選べ。<br>She refused ( ) with us.',s:'She refused to come with us.',j:'彼女は私たちと来ることを断った。',a:1,c:['coming','to come','come','came'],h:'refuse の後ろは？',e:'<b>refuse</b>（断る）は不定詞のみ。→ refused <b>to come</b>'},
+  {q:'（　）に入る正しい語句を選べ。<br>He decided ( ) study abroad.',s:'He decided to study abroad.',j:'彼は留学することを決めた。',a:0,c:['to study','studying','study','studied'],h:'decide の後ろは？',e:'<b>decide</b>（決める）は不定詞のみ。→ decided <b>to study</b>'},
+];
+/* iq3a: try */
+window.ciq3a=[
+  {q:'「彼はふとんで寝てみた。」に合う文は？',s:'Tom tried sleeping on a futon.',j:'',a:0,c:['Tom tried sleeping on a futon.','Tom tried to sleep on a futon.'],h:'ためしにやってみた = try ～ing',e:'ためしに実際にやってみた → try <b>～ing</b>（動名詞）。try to ～ は「しようとした（できたかは不明）」という意味。'},
+  {q:'「彼はドアを開けようとしたができなかった。」に合う文は？',s:'He tried to open the door, but he could not.',j:'',a:1,c:['He tried opening the door, but he could not.','He tried to open the door, but he could not.'],h:'しようとした（できなかった） = try to ～',e:'努力したが実現しなかった → try <b>to ～</b>（不定詞）。'},
+];
+/* iq3b: remember/forget */
+window.ciq3b=[
+  {q:'「ドアにカギをかけるのを忘れるな。」〔これから〕<br>Don\'t forget ( ) the door.',s:"Don't forget to lock the door.",j:'',a:1,c:['locking','to lock'],h:'これからする → to ～',e:'これからする行為を忘れない → forget <b>to ～</b>（不定詞）。'},
+  {q:'「私は手紙を投函したことを覚えている。」〔過去〕<br>I remember ( ) the letter.',s:'I remember posting the letter.',j:'',a:0,c:['posting','to post'],h:'過去のこと → ～ing',e:'過去にしたことを覚えている → remember <b>～ing</b>（動名詞）。'},
+  {q:'「私は彼女に会ったことを決して忘れない。」〔過去〕<br>I\'ll never forget ( ) her.',s:"I'll never forget seeing her.",j:'',a:0,c:['seeing','to see'],h:'過去のこと → ～ing',e:'過去に会ったことを忘れない → forget <b>～ing</b>（動名詞）。'},
+];
+/* iq3c: stop/need */
+window.ciq3c=[
+  {q:'「彼は禁煙した。」に合う文は？',s:'He stopped smoking.',j:'',a:1,c:['He stopped to smoke.','He stopped smoking.'],h:'やめた = stop ～ing',e:'～することをやめる → stop <b>～ing</b>（動名詞が目的語）。stop to smoke は「吸うために立ち止まった」という別の意味。'},
+  {q:'「私の車は修理が必要だ。」<br>My car needs ( ).',s:'My car needs repairing.',j:'',a:2,c:['repair','to repair','repairing'],h:'need ～ing = ～される必要がある',e:'<b>need ～ing</b>「～される必要がある」（受動の意味）→ needs <b>repairing</b>。= needs to be repaired'},
+];
+/* iq4a: 意味上の主語 */
+window.ciq4a=[
+  {q:'「私が窓を開けてもよろしいですか。」<br>Would you mind ( ) the window?',s:'Would you mind my opening the window?',j:'',a:1,c:['I opening','my opening','me to open','open'],h:'意味上の主語 = 所有格（my）か目的格（me）',e:'動名詞の意味上の主語は<b>所有格（my）</b>または目的格（me）。→ mind <b>my opening</b>'},
+  {q:'「彼は息子が合格したことを誇りに思う。」<br>He is proud of ( ) the exam.',s:"He is proud of his son's passing the exam.",j:'',a:1,c:["his son passing","his son's passing","him passing","he passing"],h:'意味上の主語 = 所有格（his son\'s）',e:'意味上の主語は所有格 → <b>his son\'s passing</b>（口語では his son passing も可）'},
+];
+/* iq4b: 完了・受動 */
+window.ciq4b=[
+  {q:'「彼女は以前看護師だったことを誇りに思っている。」<br>She is proud of ( ) a nurse.',s:"She is proud of having been a nurse.",j:'',a:1,c:['being','having been','been','to be'],h:'文の動詞より前のこと → having ＋ 過去分詞',e:'動名詞の動作が文の動詞より前 → <b>having been</b>（完了動名詞）。'},
+  {q:'「彼は子供のように扱われるのが好きでない。」<br>He doesn\'t like ( ) like a child.',s:'He does not like being treated like a child.',j:'',a:2,c:['treating','to treat','being treated','having treated'],h:'される → being ＋ 過去分詞',e:'受動の動名詞 → <b>being treated</b>（being ＋ 過去分詞）。'},
+];
+/* iq5a: 慣用表現① */
+window.ciq5a=[
+  {q:'（　）に入る正しい語句を選べ。<br>I cannot help ( ) when I see him.',s:'I cannot help laughing when I see him.',j:'彼を見ると笑わずにはいられない。',a:2,c:['laugh','to laugh','laughing','laughed'],h:'cannot help ～ing',e:'<b>cannot help ～ing</b>「～せずにはいられない」→ cannot help <b>laughing</b>'},
+  {q:'（　）に入る正しい語句を選べ。<br>This museum is worth ( ).',s:'This museum is worth visiting.',j:'この博物館は訪れる価値がある。',a:2,c:['visit','to visit','visiting','visited'],h:'worth ～ing',e:'<b>worth ～ing</b>「～する価値がある」→ worth <b>visiting</b>'},
+  {q:'「今夜は外出する気にならない。」<br>I don\'t feel like ( ) out tonight.',s:"I don't feel like going out tonight.",j:'',a:1,c:['go','going','to go','to going'],h:'feel like ～ing',e:'<b>feel like ～ing</b>「～したい気がする」→ feel like <b>going</b>'},
+];
+/* iq5b: 慣用表現② */
+window.ciq5b=[
+  {q:'（　）に入る正しい語句を選べ。<br>The rain prevented him ( ) going out.',s:'The rain prevented him from going out.',j:'雨が彼の外出を妨げた。',a:2,c:['to','for','from','of'],h:'prevent A from ～ing',e:'<b>prevent A from ～ing</b>「Aが～するのを妨げる」→ prevent him <b>from</b> going'},
+  {q:'（　）に入る正しい語句を選べ。<br>He is used ( ) driving a car.',s:'He is used to driving a car.',j:'彼は車の運転に慣れている。',a:0,c:['to','for','of','at'],h:'be used to ～ing の to は前置詞',e:'<b>be used to ～ing</b>「～に慣れている」の to は前置詞 → used <b>to</b> driving'},
+  {q:'（　）に入る正しい語句を選べ。<br>It goes without ( ) that health is important.',s:'It goes without saying that health is important.',j:'健康が大切なことは言うまでもない。',a:2,c:['say','to say','saying','said'],h:'It goes without saying that ～',e:'<b>It goes without saying that ～</b>「～は言うまでもない」→ without <b>saying</b>'},
+];
+
+/* ===== 練習問題データ ===== */
+window.cp1=[
+  {q:'I enjoyed ( ) soccer yesterday.',s:'I enjoyed playing soccer yesterday.',j:'私は昨日サッカーをして楽しんだ。',a:2,c:['play','to play','playing','played'],h:'enjoy の後ろは？',e:'<b>enjoy</b> は動名詞のみを目的語にとります。→ enjoyed <b>playing</b>'},
+  {q:'Do you mind ( ) the window?',s:'Do you mind closing the window?',j:'窓を閉めてもらえますか。',a:1,c:['close','closing','to close','closed'],h:'mind の後ろは？',e:'<b>mind</b>（いやに思う）は動名詞のみ。→ mind <b>closing</b>'},
+  {q:'( ) every day is good for your health.',s:'Swimming every day is good for your health.',j:'毎日泳ぐことはあなたの健康に良いです。',a:1,c:['Swim','Swimming','Swam','To swimming'],h:'主語の位置 → 動名詞',e:'主語の位置では動名詞 → <b>Swimming</b>'},
+  {q:'My hobby is ( ) pictures.',s:'My hobby is taking pictures.',j:'私の趣味は写真をとることです。',a:2,c:['take','took','taking','to taking'],h:'be動詞の後の補語 → 動名詞',e:'補語の位置でも動名詞が使えます。→ is <b>taking</b>'},
+  {q:'She is fond of ( ).',s:'She is fond of reading.',j:'彼女は読書が好きです。',a:2,c:['read','to read','reading','reads'],h:'前置詞 of の後ろは？',e:'前置詞（of）の後ろは動名詞 → of <b>reading</b>'},
+  {q:'Thank you for ( ) me.',s:'Thank you for helping me.',j:'手伝ってくれてありがとう。',a:2,c:['help','to help','helping','helped'],h:'前置詞 for の後ろは？',e:'前置詞（for）の後ろは動名詞 → for <b>helping</b>'},
+  {q:'I am good at ( ) English.',s:'I am good at speaking English.',j:'私は英語を話すのが得意です。',a:2,c:['speak','to speak','speaking','spoke'],h:'前置詞 at の後ろは？',e:'前置詞（at）の後ろは動名詞 → at <b>speaking</b>'},
+  {q:'I look forward to ( ) you again.',s:'I look forward to seeing you again.',j:'あなたと再び会うことを楽しみにしています。',a:1,c:['see','seeing','seen','to see'],h:'look forward to の to は前置詞！',e:'look forward to ～ing の to は前置詞 → to <b>seeing</b>'},
+];
+window.cp2=[
+  {q:'Have you finished ( ) your work?',s:'Have you finished doing your work?',j:'仕事をし終えましたか。',a:2,c:['do','to do','doing','did'],h:'finish の後ろは？',e:'<b>finish</b> は動名詞のみ → finished <b>doing</b>'},
+  {q:'He escaped ( ) killed.',s:'He escaped being killed.',j:'彼は殺されることをまぬがれた。',a:2,c:['be','to be','being','been'],h:'escape の後ろ ＋ 受動の動名詞',e:'<b>escape</b> は動名詞のみ。受動の動名詞 → escaped <b>being killed</b>'},
+  {q:"Don't put off ( ) the letter.",s:"Don't put off answering the letter.",j:'返事を書くのを延期するな。',a:2,c:['answer','to answer','answering','answered'],h:'put off（延期する）の後ろは？',e:'put off（延期する）の後ろは動名詞 → put off <b>answering</b>'},
+  {q:'She denied ( ) the money.',s:'She denied stealing the money.',j:'彼女はそのお金を盗んだことを否定した。',a:0,c:['stealing','to steal','steal','stole'],h:'deny の後ろは？',e:'<b>deny</b>（否定する）は動名詞のみ → denied <b>stealing</b>'},
+  {q:'He decided ( ) study abroad.',s:'He decided to study abroad.',j:'彼は留学することを決めた。',a:1,c:['studying','to study','study','studied'],h:'decide の後ろは？',e:'<b>decide</b>（決める）は不定詞のみ → decided <b>to study</b>'},
+  {q:'She refused ( ) with us.',s:'She refused to come with us.',j:'彼女は私たちと来ることを断った。',a:2,c:['come','coming','to come','came'],h:'refuse の後ろは？',e:'<b>refuse</b>（断る）は不定詞のみ → refused <b>to come</b>'},
+  {q:'She practices ( ) the piano every day.',s:'She practices playing the piano every day.',j:'彼女は毎日ピアノを練習します。',a:2,c:['to play','play','playing','plays'],h:'practice の後ろは？',e:'<b>practice</b>（練習する）は動名詞のみ → practices <b>playing</b>'},
+  {q:'He promised ( ) early.',s:'He promised to come early.',j:'彼は早く来ると約束した。',a:2,c:['come','coming','to come','came'],h:'promise の後ろは？',e:'<b>promise</b>（約束する）は不定詞のみ → promised <b>to come</b>'},
+];
+window.cp3=[
+  {q:'He stopped ( ).',s:'He stopped smoking.',j:'彼は禁煙した。（やめた）',a:1,c:['to smoke','smoking'],h:'やめた = stop ～ing',e:'～することをやめる → stop <b>smoking</b>（動名詞が目的語）'},
+  {q:'He stopped ( ).',s:'He stopped to smoke.',j:'彼はタバコを吸うために立ち止まった。',a:0,c:['to smoke','smoking'],h:'立ち止まった = stop to ～',e:'～するために立ち止まる → stop <b>to smoke</b>（to は副詞的用法）'},
+  {q:'I remember ( ) the letter.',s:'I remember posting the letter.',j:'私は手紙を投函したことを覚えています。（過去）',a:0,c:['posting','to post'],h:'過去のこと → ～ing',e:'過去にしたことを覚えている → remember <b>posting</b>（動名詞）'},
+  {q:'Please remember ( ) the letter.',s:'Please remember to post the letter.',j:'どうか手紙を出すことを覚えておいてください。（未来）',a:1,c:['posting','to post'],h:'これからすること → to ～',e:'これからする行為を覚えておく → remember <b>to post</b>（不定詞）'},
+  {q:"I'll never forget ( ) her.",s:"I'll never forget seeing her.",j:'私は彼女に会ったことを決して忘れない。（過去）',a:0,c:['seeing','to see'],h:'過去のこと → ～ing',e:'過去に会ったことを忘れない → forget <b>seeing</b>（動名詞）'},
+  {q:"Don't forget ( ) her.",s:"Don't forget to call her.",j:'彼女に電話することを忘れないでください。（未来）',a:1,c:['calling','to call'],h:'これからすること → to ～',e:'これからする行為を忘れない → forget <b>to call</b>（不定詞）'},
+  {q:'My car needs ( ).',s:'My car needs repairing.',j:'私の車は修理が必要だ。',a:2,c:['repair','to repair','repairing'],h:'need ～ing = ～される必要がある',e:'<b>need ～ing</b>「される必要がある」→ needs <b>repairing</b>'},
+  {q:'Tom tried ( ) on a futon.',s:'Tom tried sleeping on a futon.',j:'トムはふとんで寝てみた。（試しに）',a:0,c:['sleeping','to sleep'],h:'試しにやってみた = try ～ing',e:'ためしにやってみた → try <b>sleeping</b>（動名詞）'},
+  {q:'He tried ( ) the rock, but he could not.',s:'He tried to lift the rock, but he could not.',j:'彼はその岩を持ち上げようとしたが、できなかった。',a:1,c:['lifting','to lift'],h:'しようとした = try to ～',e:'努力したが実現しなかった → try <b>to lift</b>（不定詞）'},
+];
+window.cp4=[
+  {q:'Would you mind ( ) the window?',s:'Would you mind opening the window?',j:'窓を開けてもらえますか。（あなたが開ける）',a:0,c:['opening','my opening','I open'],h:'主語と同じ人 → 意味上の主語不要',e:'主語（you）が opening する → 意味上の主語は不要 → mind <b>opening</b>'},
+  {q:'Would you mind ( ) the window?',s:'Would you mind my opening the window?',j:'私が窓を開けてもよろしいですか。（私が開ける）',a:1,c:['opening','my opening','I open'],h:'私（別人）が開ける → my を置く',e:'opening するのは I（別人）→ 意味上の主語 my → mind <b>my opening</b>'},
+  {q:'She is proud of ( ) a nurse.',s:'She is proud of having been a nurse.',j:'彼女は以前看護師だったことを誇りに思っている。',a:1,c:['being','having been','been','to be'],h:'文の動詞より前のこと',e:'動名詞の動作が文の動詞より前 → <b>having been</b>（完了動名詞）'},
+  {q:"He doesn't like ( ) like a child.",s:'He does not like being treated like a child.',j:'彼は子供のように扱われるのが好きでない。',a:1,c:['treating','being treated','to treat','having treated'],h:'される → being ＋ 過去分詞',e:'受動の動名詞 → <b>being treated</b>'},
+  {q:'She is proud of ( ) as a nurse.',s:'She is proud of having worked as a nurse.',j:'彼女は看護師として働いていたことを誇りに思っている。',a:2,c:['working','to work','having worked','been working'],h:'過去の行為（文の動詞より前）',e:'過去に働いていた → 完了動名詞 <b>having worked</b>'},
+  {q:'I am sure of ( ) the exam.',s:'I am sure of passing the exam.',j:'私は試験に合格することを確信している。',a:2,c:['pass','to pass','passing','passed'],h:'前置詞 of の後ろ',e:'前置詞（of）の後ろは動名詞 → of <b>passing</b>'},
+  {q:'I am sure of ( ) the exam.',s:'I am sure of his passing the exam.',j:'私は彼が試験に合格することを確信している。（彼が合格する）',a:0,c:['his passing','he passing','him to pass','his to pass'],h:'彼（別人）が合格する → 意味上の主語',e:'意味上の主語（別人）→ <b>his passing</b>（所有格＋動名詞）'},
+];
+window.cp5=[
+  {q:'I cannot help ( ) when I see him.',s:'I cannot help laughing when I see him.',j:'彼を見ると笑わずにはいられない。',a:2,c:['laugh','to laugh','laughing','laughed'],h:'cannot help ～ing',e:'<b>cannot help ～ing</b>「～せずにはいられない」→ <b>laughing</b>'},
+  {q:"I don't feel like ( ) out tonight.",s:"I don't feel like going out tonight.",j:'今夜は外出する気にならない。',a:1,c:['go','going','to go','to going'],h:'feel like ～ing',e:'<b>feel like ～ing</b>「～したい気がする」→ <b>going</b>'},
+  {q:'The heavy rain prevented him ( ) going out.',s:'The heavy rain prevented him from going out.',j:'激しい雨が彼の外出を妨げた。',a:2,c:['to','for','from','of'],h:'prevent A from ～ing',e:'<b>prevent A from ～ing</b>「Aが～するのを妨げる」→ <b>from</b>'},
+  {q:'He is used ( ) driving a car.',s:'He is used to driving a car.',j:'彼は車の運転に慣れている。',a:0,c:['to','for','of','at'],h:'be used to ～ing の to は前置詞',e:'<b>be used to ～ing</b> の to は前置詞 → <b>to</b>'},
+  {q:'It is no use ( ) over spilt milk.',s:'It is no use crying over spilt milk.',j:'こぼれた牛乳を嘆いてもむだだ。（覆水盆に返らず）',a:2,c:['cry','to cry','crying','cried'],h:'It is no use ～ing',e:'<b>It is no use ～ing</b>「～してもむだだ」→ <b>crying</b>'},
+  {q:'There is no ( ) when it will happen.',s:'There is no telling when it will happen.',j:'それがいつ起こるかわかりません。',a:2,c:['tell','to tell','telling','told'],h:'There is no ～ing',e:'<b>There is no ～ing</b>「～することはできない」→ <b>telling</b>'},
+  {q:'It goes without ( ) that health is important.',s:'It goes without saying that health is important.',j:'健康が大切なことは言うまでもない。',a:2,c:['say','to say','saying','said'],h:'It goes without saying that ～',e:'<b>It goes without saying that ～</b> → <b>saying</b>'},
+  {q:'His speech is worth ( ) to.',s:'His speech is worth listening to.',j:'彼のスピーチは聞く価値がある。',a:0,c:['listening','to listen','listen','listened'],h:'worth ～ing + 前置詞を忘れずに',e:'worth <b>～ing</b>。listen to ～ なので to が必要 → worth <b>listening</b> to'},
+  {q:'Circumstances prevented him ( ) going to college.',s:'Circumstances prevented him from going to college.',j:'状況により彼は大学へ行けなかった。',a:0,c:['from','to','of','by'],h:'prevent A from ～ing',e:'<b>prevent A from ～ing</b> → <b>from</b>'},
+  {q:'She denied ( ) told a lie.',s:'She denied having told a lie.',j:'彼女は嘘をついたことを否定した。',a:2,c:['to have','had','having','not to have'],h:'deny は動名詞のみ。過去のこと → having',e:'deny は動名詞のみ。過去のことなので完了動名詞 → denied <b>having</b> told a lie'},
+  {q:'I am looking forward ( ) seeing you.',s:'I am looking forward to seeing you.',j:'あなたに会うことを楽しみにしています。',a:0,c:['to','for','of','at'],h:'look forward to ～ing の to は前置詞',e:'<b>look forward to ～ing</b> の to は前置詞 → <b>to</b>'},
+  {q:'A slight fever kept me ( ) going to work.',s:'A slight fever kept me from going to work.',j:'少し熱があったので仕事に行けなかった。',a:0,c:['from','to','of','for'],h:'keep A from ～ing',e:'<b>keep A from ～ing</b>（= prevent A from ～ing）→ <b>from</b>'},
+];
+
+/* ===== 初期化 ===== */
+iC('iq1a');iC('iq1b');iC('iq1c');
+iC('iq2a');iC('iq2b');
+iC('iq3a');iC('iq3b');iC('iq3c');
+iC('iq4a');iC('iq4b');
+iC('iq5a');iC('iq5b');
+iC('p1');iC('p2');iC('p3');iC('p4');iC('p5');
+</script>
+</body>
+</html>
