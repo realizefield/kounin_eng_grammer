@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+<title>英検2級・高認英文法　Unit 9　仮定法</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'BIZ UDGothic','Hiragino Kaku Gothic Pro','Meiryo',sans-serif;background:#eef2f7;color:#1a1a2e;min-height:100vh;font-size:15px}
+.top-header{background:linear-gradient(135deg,#1B3A6B 0%,#0097A7 100%);color:#fff;padding:14px 16px 12px;text-align:center}
+.top-header h1{font-size:17px;font-weight:700;letter-spacing:.05em}
+.top-header p{font-size:12px;margin-top:3px;opacity:.85}
+.nav{background:#fff;border-bottom:3px solid #0097A7;padding:8px 10px;display:flex;overflow-x:auto;gap:4px;-webkit-overflow-scrolling:touch;align-items:stretch}
+.nav::-webkit-scrollbar{height:3px}
+.pair{display:flex;gap:0;flex-shrink:0;border-radius:22px;overflow:hidden;box-shadow:0 0 0 1.5px #ccd}
+.pair.active-pair{box-shadow:0 0 0 2.5px #1B3A6B}
+.nb{padding:8px 14px;border:none;background:#f5f7fa;color:#555;font-size:13px;font-family:inherit;cursor:pointer;white-space:nowrap;border-right:1px solid #dde;transition:.2s;font-weight:500;flex-shrink:0}
+.nb:hover{background:#e8eaf6;color:#1B3A6B}
+.nb.on{background:#1B3A6B;color:#fff}
+.pb{padding:8px 14px;border:none;background:#fff3e0;color:#c84500;font-size:13px;font-family:inherit;cursor:pointer;white-space:nowrap;font-weight:700;transition:.2s;flex-shrink:0}
+.pb:hover{background:#e65100;color:#fff}
+.nav-sep{width:6px;flex-shrink:0}
+.sec{display:none;padding:12px;max-width:820px;margin:0 auto;padding-bottom:60px}
+.sec.active{display:block}
+.card{background:#fff;border-radius:14px;border:1px solid #dde3ee;padding:14px 16px;margin-bottom:14px;box-shadow:0 1px 4px rgba(0,0,0,.05)}
+.card-title{font-size:15px;font-weight:700;color:#1B3A6B;margin-bottom:10px;padding-bottom:8px;border-bottom:2px solid #0097A7}
+.sh{background:linear-gradient(90deg,#1B3A6B,#1B5E8B);color:#fff;border-radius:10px;padding:9px 16px;font-size:15px;font-weight:700;margin-bottom:12px;margin-top:6px}
+.pt{background:#fffde7;border-left:5px solid #f9a825;border-radius:0 10px 10px 0;padding:10px 14px;margin:8px 0;font-size:14px;line-height:1.8}
+.kb{background:#f1f8e9;border-left:5px solid #2e7d32;border-radius:0 10px 10px 0;padding:10px 14px;margin:8px 0;font-size:14px;line-height:1.8}
+.wb{background:#fff3e0;border-left:5px solid #e65100;border-radius:0 10px 10px 0;padding:10px 14px;margin:8px 0;font-size:14px;line-height:1.8}
+.ex{background:#f0f8ff;border:1px solid #b3d9f7;border-radius:10px;padding:12px 14px;margin:8px 0;font-size:14px;line-height:1.9}
+.ex-ja{font-size:12px;color:#555;margin-top:3px}
+.spk{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:#e8f4ff;border:1.5px solid #0097A7;cursor:pointer;margin-left:5px;vertical-align:middle;flex-shrink:0;transition:.2s;font-size:14px;font-family:inherit;padding:0}
+.spk:hover{background:#0097A7;color:#fff}
+.q-box{background:#fff;border-radius:12px;border:1px solid #dde3ee;padding:14px;margin-bottom:14px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.q-hd{display:flex;align-items:flex-start;gap:8px;margin-bottom:10px}
+.q-num{flex-shrink:0;width:26px;height:26px;background:#1B3A6B;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700}
+.q-txt{flex:1;font-size:14px;line-height:1.7}
+.hint{font-size:12px;color:#0097A7;background:#f0faff;border-radius:6px;padding:3px 8px;display:inline-block;margin-bottom:8px}
+.ub{font-size:11px;background:#e3f2fd;color:#1565c0;padding:2px 8px;border-radius:10px;font-weight:700;margin-left:6px;vertical-align:middle}
+.cb{width:100%;text-align:left;padding:10px 14px;margin:4px 0;border-radius:8px;border:1.5px solid #dde;background:#fff;font-size:14px;font-family:inherit;cursor:pointer;transition:.15s;line-height:1.4}
+.cb:hover:not(.dis){border-color:#0097A7;background:#f0faff}
+.cb.ca{background:#e8f5e9;border-color:#2e7d32;color:#1b5e20;font-weight:700}
+.cb.wa{background:#ffebee;border-color:#e53935;color:#b71c1c}
+.cb.dis{pointer-events:none}
+.ep{background:#fff8e1;border:1.5px solid #ffc107;border-radius:10px;padding:12px 14px;margin-top:10px;font-size:13px;line-height:1.8;display:none}
+.ep.show{display:block}
+.sb{background:#fff;border-radius:10px;border:1px solid #dde;padding:10px 14px;margin-bottom:12px;display:flex;align-items:center;gap:12px}
+.sn{font-size:20px;font-weight:700;color:#1B3A6B;min-width:60px}
+.pw{flex:1;height:10px;background:#eee;border-radius:6px;overflow:hidden}
+.pf{height:100%;background:linear-gradient(90deg,#0097A7,#1B3A6B);border-radius:6px;transition:.5s}
+.tbl{width:100%;border-collapse:collapse;font-size:13px}
+.tbl th{background:#1B3A6B;color:#fff;padding:7px 8px;text-align:left}
+.tbl td{padding:7px 8px;border-bottom:1px solid #eef;vertical-align:top}
+.tbl tr:nth-child(even) td{background:#f7f9ff}
+/* 仮定法タイムライン */
+.kdbox-wrap{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:10px 0}
+@media(max-width:520px){.kdbox-wrap{grid-template-columns:1fr}}
+.kdbox{border-radius:12px;padding:14px;font-size:13px;line-height:1.8}
+.kdbox.past{background:#e8f5e9;border:2px solid #2e7d32}
+.kdbox.ppast{background:#e3f2fd;border:2px solid #1565c0}
+.kdbox.future{background:#fff3e0;border:2px solid #e65100}
+.kdbox.present{background:#fce4ec;border:2px solid #c62828}
+.kdbox .kd-ttl{font-weight:700;font-size:14px;margin-bottom:8px;padding-bottom:5px;border-bottom:2px solid}
+.kdbox.past .kd-ttl{color:#2e7d32;border-color:#2e7d32}
+.kdbox.ppast .kd-ttl{color:#1565c0;border-color:#1565c0}
+.kdbox.future .kd-ttl{color:#e65100;border-color:#e65100}
+.kdbox.present .kd-ttl{color:#c62828;border-color:#c62828}
+.form-box{background:#e8f4ff;border:2px solid #0097A7;border-radius:12px;padding:14px;font-size:14px;font-weight:700;color:#1B3A6B;margin:10px 0;line-height:2}
+.cmp2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:10px 0}
+@media(max-width:500px){.cmp2{grid-template-columns:1fr}}
+.cbox{border-radius:10px;padding:12px 14px;font-size:13px;line-height:1.8}
+.cbox.bl{background:#e3f2fd;border:1.5px solid #90caf9}
+.cbox.gn{background:#f1f8e9;border:1.5px solid #a5d6a7}
+.cbox-ttl{font-weight:700;font-size:13px;margin-bottom:6px}
+.cbox.bl .cbox-ttl{color:#1565c0}
+.cbox.gn .cbox-ttl{color:#2e7d32}
+.mini-quiz-wrap{background:#f0faff;border:2px solid #0097A7;border-radius:12px;padding:14px;margin-top:12px}
+.mini-quiz-title{font-size:13px;font-weight:700;color:#0097A7;margin-bottom:10px}
+.vpop{display:none;position:fixed;z-index:2000;background:#fff;border-radius:14px;box-shadow:0 6px 30px rgba(0,0,0,.22);width:260px;max-width:90vw}
+.vpop.show{display:block}
+.vpop-hd{background:linear-gradient(135deg,#1B3A6B,#0097A7);color:#fff;padding:12px 14px 10px;border-radius:14px 14px 0 0;display:flex;align-items:center;justify-content:space-between}
+.vpop-word{font-size:18px;font-weight:700}
+.vpop-pos{font-size:11px;background:rgba(255,255,255,.25);border-radius:8px;padding:2px 8px;margin-left:6px}
+.vpop-close{background:rgba(255,255,255,.2);border:none;color:#fff;width:26px;height:26px;border-radius:50%;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.vpop-body{padding:12px 14px}
+.vpop-mean{font-size:16px;font-weight:700;color:#1B3A6B;margin-bottom:4px}
+.vpop-kana{font-size:13px;color:#555;margin-bottom:10px}
+.vpop-btns{display:flex;gap:8px}
+.vpop-spk,.vpop-save{flex:1;padding:8px;border-radius:8px;font-size:13px;font-family:inherit;cursor:pointer;font-weight:700}
+.vpop-spk{border:1.5px solid #0097A7;background:#f0faff;color:#0097A7}
+.vpop-spk:hover{background:#0097A7;color:#fff}
+.vpop-save{border:1.5px solid #e65100;background:#fff3e0;color:#c84500}
+.vpop-save:hover{background:#e65100;color:#fff}
+.vpop-save.saved{background:#e8f5e9;border-color:#2e7d32;color:#2e7d32}
+.vpop-saved-lbl{font-size:11px;color:#2e7d32;text-align:center;margin-top:6px;display:none}
+.vpop-saved-lbl.show{display:block}
+.vocab-badge{display:none;position:absolute;top:-6px;right:-6px;background:#e53935;color:#fff;border-radius:50%;width:18px;height:18px;font-size:11px;font-weight:700;align-items:center;justify-content:center}
+.vocab-badge.show{display:flex}
+.mo{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:1500;align-items:flex-end;justify-content:center}
+.mo.open{display:flex}
+.mb{background:#fff;border-radius:18px 18px 0 0;width:100%;max-width:540px;max-height:85vh;display:flex;flex-direction:column}
+.mh{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid #eee}
+.mh h2{font-size:16px;font-weight:700;color:#1B3A6B}
+.mhc{background:none;border:none;font-size:22px;cursor:pointer;color:#888}
+.mbody{overflow-y:auto;padding:14px 16px;flex:1}
+.vbook-empty{text-align:center;color:#999;padding:24px;font-size:14px}
+.vcard{background:#f8faff;border-radius:10px;border:1px solid #dde;padding:10px 12px;margin-bottom:8px;display:flex;align-items:center;gap:10px}
+.vcard-word{font-size:15px;font-weight:700;color:#1B3A6B;flex:1}
+.vcard-mean{font-size:13px;color:#555;flex:1}
+.vcard-del{background:#fff;border:1.5px solid #dde;color:#aaa;border-radius:6px;padding:4px 10px;font-size:12px;cursor:pointer;font-family:inherit}
+.vcard-del:hover{border-color:#e53935;color:#e53935}
+.vtest-q{font-size:16px;font-weight:700;color:#1B3A6B;text-align:center;padding:16px;background:#e8f4ff;border-radius:10px;margin-bottom:12px}
+.vtest-opt{width:100%;text-align:left;padding:11px 14px;margin:5px 0;border-radius:8px;border:1.5px solid #dde;background:#fff;font-size:14px;font-family:inherit;cursor:pointer;transition:.15s}
+.vtest-opt:hover:not(.dis){border-color:#0097A7;background:#f0faff}
+.vtest-opt.ca{background:#e8f5e9;border-color:#2e7d32;color:#1b5e20;font-weight:700}
+.vtest-opt.wa{background:#ffebee;border-color:#e53935;color:#b71c1c}
+.vtest-opt.dis{pointer-events:none}
+canvas#cc{position:fixed;top:0;left:0;pointer-events:none;z-index:9999;display:none}
+</style>
+</head>
+<body>
+<canvas id="cc"></canvas>
+<div class="top-header">
+  <h1>🎓 英検2級・高認英文法　Unit 9　仮定法</h1>
+  <p>こうげんよびこう（江原予備校）　― スピーカーボタンで音声再生 ―</p>
+</div>
+<nav class="nav" id="nav">
+  <div class="pair active-pair">
+    <button class="nb on" onclick="ss('s1',this)">① 仮定法の基本と4種類</button>
+    <button class="pb" onclick="ss('p1',this)">✏️ 練習①</button>
+  </div>
+  <div class="nav-sep"></div>
+  <div class="pair">
+    <button class="nb" onclick="ss('s2',this)">② 仮定法過去・過去完了</button>
+    <button class="pb" onclick="ss('p2',this)">✏️ 練習②</button>
+  </div>
+  <div class="nav-sep"></div>
+  <div class="pair">
+    <button class="nb" onclick="ss('s3',this)">③ I wish / as if の仮定法</button>
+    <button class="pb" onclick="ss('p3',this)">✏️ 練習③</button>
+  </div>
+  <div class="nav-sep"></div>
+  <div class="pair">
+    <button class="nb" onclick="ss('s4',this)">④ if it were not for / otherwise</button>
+    <button class="pb" onclick="ss('p4',this)">✏️ 練習④</button>
+  </div>
+  <div class="nav-sep"></div>
+  <div class="pair">
+    <button class="nb" onclick="ss('s5',this)">⑤ if の省略・重要表現</button>
+    <button class="pb" onclick="ss('p5',this)">✏️ 練習⑤実戦</button>
+  </div>
+  <div class="nav-sep" style="width:12px"></div>
+  <div style="flex-shrink:0;position:relative">
+    <button onclick="openM('mvocab')" style="padding:8px 16px;border-radius:22px;border:2px solid #7b1fa2;background:#f3e5f5;color:#7b1fa2;font-size:13px;font-family:inherit;cursor:pointer;font-weight:700;white-space:nowrap">📚 単語帳</button>
+    <span class="vocab-badge" id="vocab-badge">0</span>
+  </div>
+</nav>
+
+<!-- ① 仮定法の基本と4種類 -->
+<div id="s1" class="sec active">
+<div class="sh">① 仮定法とは？　4種類の形を一覧で理解しよう</div>
+
+<div class="card">
+  <div class="card-title">【基礎】仮定法とは何か　— 直説法との根本的な違い —</div>
+  <div class="pt">
+    英語の If 文には <b>直説法</b> と <b>仮定法</b> の2種類があります。見た目が似ていますが、意味がまったく違います。<br><br>
+    <b>直説法</b>：本当に起こりうること・現実的な条件を表します。If 節には<b>現在形</b>、主節には<b>will ＋ 原形</b>を使います。<br>
+    　例：If it <b>is</b> fine tomorrow, I <b>will</b> go hiking.（明日晴れたら行く → 本当にありうる）<br><br>
+    <b>仮定法</b>：今の事実と反対のこと、またはほぼあり得ないことを表します。「今は事実ではない」というニュアンスを伝えるために<b>時制を1つずらします</b>。<br>
+    　例：If I <b>were</b> you, I <b>wouldn't</b> do that.（私はあなたではない → 事実と反対）<br><br>
+    🔑 <b>仮定法の核心：「時制をずらすことで、これは現実ではない」と伝える</b><br>
+    ・現在のことを表すのに<b>過去形</b>を使う → 仮定法過去<br>
+    ・過去のことを表すのに<b>過去完了</b>を使う → 仮定法過去完了
+  </div>
+  <div class="wb">
+    ⚠️ <b>仮定法の be 動詞は主語にかかわらず were！</b><br>
+    I / he / she / it など単数主語でも仮定法では<b>were</b>を使います。（口語では was も可）<br>
+    ❌ If I <s>was</s> you …　　✅ If I <b>were</b> you …
+  </div>
+</div>
+<div class="mini-quiz-wrap">
+  <div class="mini-quiz-title">📝 確認① 直説法と仮定法の区別</div>
+  <div id="iq1aq"></div>
+</div>
+
+<div class="card">
+  <div class="card-title">【一覧】仮定法の4種類　— 形と意味をセットで覚えよう —</div>
+  <div class="pt">
+    仮定法には4種類あります。<b>If 節の形</b>と<b>主節の形</b>を必ずセットで覚えましょう。主節に使える助動詞は<b>would / could / might / should</b>の4つです。
+  </div>
+  <div class="kdbox-wrap">
+    <div class="kdbox past">
+      <div class="kd-ttl">🟢 仮定法過去</div>
+      <b>現在の事実に反する仮定</b><br>「今～ならば～なのに（実際は違う）」<br><br>
+      If ＋ S ＋ <b>過去形（were / had…）</b><br>
+      S ＋ <b>would / could ＋ 原形</b><br><br>
+      <span style="font-size:12px">例：If I <b>were</b> rich, I <b>could</b> travel. <button class="spk" data-t="If I were rich, I could travel." onclick="sp(this.dataset.t)">▶</button></span><br>
+      <span style="font-size:12px;color:#2e7d32">もし私がお金持ちなら、旅行できるのに。</span>
+    </div>
+    <div class="kdbox ppast">
+      <div class="kd-ttl">🔵 仮定法過去完了</div>
+      <b>過去の事実に反する仮定</b><br>「あのとき～していたなら（実際はしなかった）」<br><br>
+      If ＋ S ＋ <b>had ＋ 過去分詞</b><br>
+      S ＋ <b>would have ＋ 過去分詞</b><br><br>
+      <span style="font-size:12px">例：If I <b>had studied</b>, I <b>could have passed</b>. <button class="spk" data-t="If I had studied, I could have passed." onclick="sp(this.dataset.t)">▶</button></span><br>
+      <span style="font-size:12px;color:#1565c0">もし勉強していたなら、合格できたのに。</span>
+    </div>
+    <div class="kdbox future">
+      <div class="kd-ttl">🟠 仮定法未来①（should）</div>
+      <b>万が一の仮定</b><br>「もし万が一～したら（可能性は低いがゼロではない）」<br><br>
+      If ＋ S ＋ <b>should ＋ 原形</b><br>
+      S ＋ <b>would ＋ 原形</b><br><br>
+      <span style="font-size:12px">例：If it <b>should</b> rain, what would you do? <button class="spk" data-t="If it should rain, what would you do?" onclick="sp(this.dataset.t)">▶</button></span><br>
+      <span style="font-size:12px;color:#e65100">もし万が一雨が降ったら、どうしますか。</span>
+    </div>
+    <div class="kdbox present">
+      <div class="kd-ttl">🔴 仮定法未来②（were to）</div>
+      <b>ほぼあり得ない仮定</b><br>「もし仮に～するとしたら（まずあり得ない）」<br><br>
+      If ＋ S ＋ <b>were to ＋ 原形</b><br>
+      S ＋ <b>would ＋ 原形</b><br><br>
+      <span style="font-size:12px">例：If the sun <b>were to</b> rise in the west, I wouldn't change my mind. <button class="spk" data-t="If the sun were to rise in the west, I would not change my mind." onclick="sp(this.dataset.t)">▶</button></span><br>
+      <span style="font-size:12px;color:#c62828">太陽が西から昇るとしても、決心は変えない。</span>
+    </div>
+  </div>
+  <div class="kb">
+    💡 <b>判断の決め手：If 節の動詞の形を見る！</b><br>
+    現在形 → 直説法（本当にあり得る）<br>
+    過去形（were / had / knew…）→ 仮定法過去（現在の事実に反する）<br>
+    had ＋ pp → 仮定法過去完了（過去の事実に反する）<br>
+    should ＋ 原形 → 仮定法未来①（万が一）<br>
+    were to ＋ 原形 → 仮定法未来②（ほぼあり得ない）
+  </div>
+</div>
+<div class="mini-quiz-wrap">
+  <div class="mini-quiz-title">📝 確認② 仮定法の4種類の判断</div>
+  <div id="iq1bq"></div>
+</div>
+
+<div class="card">
+  <div class="card-title">【整理】直説法と仮定法の形を見分ける表</div>
+  <div class="pt">If 節と主節の形を見れば、直説法か仮定法かがわかります。特に<b>主節に would / could が来たら仮定法</b>と判断できます。</div>
+  <table class="tbl">
+    <tr><th>種類</th><th>If 節</th><th>主節</th><th>日本語のニュアンス</th></tr>
+    <tr><td><b>直説法（現在）</b></td><td>現在形（is / comes）</td><td>will ＋ 原形</td><td>「もし～なら～する」（本当にあり得る）</td></tr>
+    <tr><td><b>仮定法過去</b></td><td>過去形（were / had / knew）</td><td>would / could ＋ 原形</td><td>「もし～なら～なのに」（今は違う）</td></tr>
+    <tr><td><b>仮定法過去完了</b></td><td>had ＋ 過去分詞</td><td>would / could have ＋ pp</td><td>「あのとき～なら～だった」（過去に違った）</td></tr>
+    <tr><td><b>仮定法未来（should）</b></td><td>should ＋ 原形</td><td>would ＋ 原形</td><td>「万が一～したら」（低い可能性）</td></tr>
+    <tr><td><b>仮定法未来（were to）</b></td><td>were to ＋ 原形</td><td>would ＋ 原形</td><td>「もし仮に～なら」（ほぼゼロ）</td></tr>
+  </table>
+</div>
+<div class="mini-quiz-wrap">
+  <div class="mini-quiz-title">📝 確認③ 形から仮定法の種類を見分ける</div>
+  <div id="iq1cq"></div>
+</div>
+
+<div class="card">
+  <div class="card-title">【特殊】提案・主張・要求の that 節 — 動詞が原形になる！ —</div>
+  <div class="pt">
+    「提案・主張・要求・命令」を意味する動詞の後ろの<b>that 節</b>では、動詞が<b>原形（または should ＋ 原形）</b>になります。これを<b>仮定法現在</b>といいます。<br><br>
+    対象動詞：suggest / propose / insist / demand / order / recommend / request / advise など<br><br>
+    なぜ原形？ → 提案・命令の内容はまだ実現していない事柄 → 事実を表す現在形ではなく<b>原形</b>を使います。<br>
+    アメリカ英語では原形のまま、イギリス英語では should ＋ 原形が多いです。
+  </div>
+  <div class="ex">
+    He insisted that I <b>pay</b> the money. <button class="spk" data-t="He insisted that I pay the money." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">彼は私がお金を払うよう主張した。（pay ＝ 原形　❌ pays / paid）</span>
+  </div>
+  <div class="ex">
+    He proposed that I <b>go</b> there alone. <button class="spk" data-t="He proposed that I go there alone." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">彼は私が1人でそこへ行くよう提案した。（go ＝ 原形　❌ goes / went）</span>
+  </div>
+  <div class="ex">
+    The doctor recommended that she <b>stay</b> in bed. <button class="spk" data-t="The doctor recommended that she stay in bed." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">医者は彼女が安静にするよう勧めた。（stay ＝ 原形。she でも s をつけない！）</span>
+  </div>
+  <div class="wb">
+    ⚠️ 主語が3人称単数でも s をつけない！<br>
+    ❌ that she <s>goes</s>（goes は誤り）　　✅ that she <b>go</b>（原形のまま）
+  </div>
+</div>
+<div class="mini-quiz-wrap">
+  <div class="mini-quiz-title">📝 確認④ 提案・主張の that 節（動詞の原形）</div>
+  <div id="iq1dq"></div>
+</div>
+</div><!-- /s1 -->
+
+<!-- 練習① -->
+<div id="p1" class="sec">
+  <div class="sb"><span class="sn" id="p1sn">0 / 10</span><div class="pw"><div class="pf" id="p1pf" style="width:0%"></div></div>
+  <button onclick="resetP('p1')" style="border:none;background:#eee;border-radius:6px;padding:6px 12px;font-size:12px;cursor:pointer;font-family:inherit">リセット</button></div>
+  <div id="p1q"></div>
+</div>
+
+<!-- ② 仮定法過去・過去完了 -->
+<div id="s2" class="sec">
+<div class="sh">② 仮定法過去・仮定法過去完了・仮定法未来</div>
+
+<div class="card">
+  <div class="card-title">【仮定法過去】現在の事実と反対の仮定　「今～なら～なのに」</div>
+  <div class="pt">
+    <b>仮定法過去</b>は、現在の事実と反対のことや、今は実現していないことを表します。<br>
+    「今のことなのになぜ過去形？」と思うかもしれません。これは<b>「時制をずらすことで、これは現実の話ではない」</b>と伝えるためです。<br><br>
+    <b>形の確認</b><br>
+    ・If 節：<b>動詞の過去形</b>（be 動詞は<b>were</b>）<br>
+    ・主節：<b>would / could / might ＋ 動詞の原形</b>
+  </div>
+  <div class="form-box">If ＋ S ＋ <b>過去形（were / knew / had…）</b>，S ＋ <b>would / could / might ＋ 原形</b></div>
+  <div class="ex">
+    If I <b>had</b> more money, I <b>could buy</b> the car. <button class="spk" data-t="If I had more money, I could buy the car." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">もし私がもっとお金を持っていれば、その車を買えるのに。（実際にはお金がない → 現在の事実に反する）</span>
+  </div>
+  <div class="ex">
+    If I <b>were</b> you, I <b>wouldn't</b> do that. <button class="spk" data-t="If I were you, I would not do that." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">もし私があなたなら、そんなことはしないのに。（私はあなたではない → 現在の事実に反する）</span>
+  </div>
+  <div class="ex">
+    If I <b>knew</b> her address, I <b>would write</b> to her. <button class="spk" data-t="If I knew her address, I would write to her." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">もし彼女の住所がわかれば、手紙を出すのになあ。（実際には知らない）</span>
+  </div>
+  <div class="ex">
+    If it <b>weren't</b> raining, we <b>could have</b> lunch in the garden. <button class="spk" data-t="If it were not raining, we could have lunch in the garden." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">もし雨が降っていなければ、庭で昼食を食べるのになあ。（現在進行形の否定も were not raining）</span>
+  </div>
+  <div class="kb">
+    💡 <b>仮定法過去の訳し方のコツ</b><br>
+    日本語に訳すとき、文末に「～のに」「～のだが」「～なあ」をつけると自然になります。<br>
+    「もし～なら…する」ではなく「もし～なら…<b>するのに</b>」という惜しむ気持ちが入ります。
+  </div>
+</div>
+<div class="mini-quiz-wrap">
+  <div class="mini-quiz-title">📝 確認⑤ 仮定法過去の形と訳</div>
+  <div id="iq2aq"></div>
+</div>
+
+<div class="card">
+  <div class="card-title">【仮定法過去完了】過去の事実と反対の仮定　「あのとき～していたなら～だった」</div>
+  <div class="pt">
+    <b>仮定法過去完了</b>は、<b>過去のことについて</b>「あのとき実際とは違っていたら」という後悔や仮定を表します。<br>
+    過去のことなので、さらに1つ前の時制（<b>過去完了</b>）を使います。<br><br>
+    <b>形の確認</b><br>
+    ・If 節：<b>had ＋ 過去分詞（pp）</b><br>
+    ・主節：<b>would / could / might have ＋ 過去分詞（pp）</b>
+  </div>
+  <div class="form-box">If ＋ S ＋ <b>had ＋ pp</b>，S ＋ <b>would / could / might have ＋ pp</b></div>
+  <div class="ex">
+    If I <b>had been</b> there, I <b>could have helped</b> you. <button class="spk" data-t="If I had been there, I could have helped you." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">もし私がそこにいたら、あなたを手伝えたのになあ。（実際にはそこにいなかった）</span>
+  </div>
+  <div class="ex">
+    If he <b>had taken</b> my advice, he <b>would have been</b> successful. <button class="spk" data-t="If he had taken my advice, he would have been successful." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">もし彼が私のアドバイスを聞いていたなら、成功していたのに。</span>
+  </div>
+  <div class="kb">
+    💡 <b>混合型（過去の仮定 → 現在の結果）に注意！</b><br>
+    「あのとき～していたなら、今ごろは～なのに」という文は、If 節は<b>had ＋ pp（過去完了）</b>ですが、主節は<b>would ＋ 原形（現在）</b>になります。<br><br>
+    If she <b>had taken</b> his advice, she <b>would be</b> rich <b>now</b>. <button class="spk" data-t="If she had taken his advice, she would be rich now." onclick="sp(this.dataset.t)">▶</button><br>
+    <span style="font-size:12px;color:#555">もし彼女が助言に従っていたなら、今ごろは金持ちになっているのに。<br>
+    → If 節（過去完了）= 過去の仮定　／　主節（would be）= 今の状態</span>
+  </div>
+</div>
+<div class="mini-quiz-wrap">
+  <div class="mini-quiz-title">📝 確認⑥ 仮定法過去完了・混合型</div>
+  <div id="iq2bq"></div>
+</div>
+
+<div class="card">
+  <div class="card-title">【仮定法未来】should と were to の使い分け　— 可能性の度合いで選ぶ —</div>
+  <div class="pt">
+    未来についての仮定にも仮定法を使うことがあります。<b>可能性の度合い</b>によって2種類を使い分けます。<br><br>
+    <b>① should ＋ 原形</b>（万が一・低い可能性だがゼロではない）<br>
+    「もし万が一～したら」。起こりうるが可能性が低い場合です。主節は命令文・will ＋ 原形・would ＋ 原形など柔軟に使えます。<br><br>
+    <b>② were to ＋ 原形</b>（ほぼあり得ない・議論上の仮定）<br>
+    「もし仮に～するとしたら（まず起こらない）」。太陽が西から昇るなど物理的・論理的にほぼ不可能なことを表します。
+  </div>
+  <div class="cmp2">
+    <div class="cbox bl">
+      <div class="cbox-ttl">🟠 should（万が一）</div>
+      If an earthquake <b>should</b> happen, what would you do? <button class="spk" data-t="If an earthquake should happen, what would you do?" onclick="sp(this.dataset.t)">▶</button><br>
+      <span style="font-size:12px;color:#555">もし万が一地震が起きたら、どうしますか。（地震はあり得るが万が一を想定）</span><br><br>
+      If I <b>should</b> be late, please don't wait. <button class="spk" data-t="If I should be late, please do not wait for me." onclick="sp(this.dataset.t)">▶</button><br>
+      <span style="font-size:12px;color:#555">万一私が遅れたら、待たないでください。</span>
+    </div>
+    <div class="cbox gn">
+      <div class="cbox-ttl">🔴 were to（ほぼあり得ない）</div>
+      If the sun <b>were to</b> rise in the west, I wouldn't change my mind. <button class="spk" data-t="If the sun were to rise in the west, I would not change my mind." onclick="sp(this.dataset.t)">▶</button><br>
+      <span style="font-size:12px;color:#555">太陽が西から昇ろうとも決心は変えない。（あり得ない）</span><br><br>
+      If the war <b>were to</b> break out, what would you do? <button class="spk" data-t="If the war were to break out, what would you do?" onclick="sp(this.dataset.t)">▶</button><br>
+      <span style="font-size:12px;color:#555">もし戦争が起こるとしたら？（議論上の仮定）</span>
+    </div>
+  </div>
+</div>
+<div class="mini-quiz-wrap">
+  <div class="mini-quiz-title">📝 確認⑦ 仮定法未来（should / were to）</div>
+  <div id="iq2cq"></div>
+</div>
+</div><!-- /s2 -->
+<div id="p2" class="sec">
+  <div class="sb"><span class="sn" id="p2sn">0 / 10</span><div class="pw"><div class="pf" id="p2pf" style="width:0%"></div></div>
+  <button onclick="resetP('p2')" style="border:none;background:#eee;border-radius:6px;padding:6px 12px;font-size:12px;cursor:pointer;font-family:inherit">リセット</button></div>
+  <div id="p2q"></div>
+</div>
+
+<!-- ③ I wish / as if -->
+<div id="s3" class="sec">
+<div class="sh">③ I wish ～ / as if ～ の仮定法</div>
+
+<div class="card">
+  <div class="card-title">【I wish①】現在の実現していない願望　「～であればなあ」</div>
+  <div class="pt">
+    <b>I wish ＋ 仮定法過去</b>は、<b>今はそうでないが、そうであればいい</b>という願望を表します。<br>
+    日本語の「～があればなあ」「～できればなあ」に当たる表現です。<br><br>
+    <b>I wish の後ろに過去形が来る理由</b><br>
+    「今の現実と反対のことを望んでいる」→ 仮定法過去（時制を1つずらす）→<b>過去形</b>になります。<br><br>
+    ※ <b>I hope との違い</b>：<br>
+    I <b>hope</b> ～：現実に起こりうることへの望み（直説法 → will ＋ 原形・現在形）<br>
+    I <b>wish</b> ～：今は実現していないことへの願望（仮定法 → 過去形）<br>
+    例：I hope it <b>will</b> be fine tomorrow.（あり得る → hope）<br>
+    例：I wish I <b>could</b> fly.（現実には無理 → wish）<br><br>
+    <b>I wish ＝ If only（～さえあれば）で書き換えられます。</b>
+  </div>
+  <div class="form-box">I wish ＋ S ＋ <b>過去形（were / had / could…）</b><br>＝ If only ＋ S ＋ <b>過去形</b></div>
+  <div class="ex">
+    I <b>wish</b> I <b>had</b> a brother. <button class="spk" data-t="I wish I had a brother." onclick="sp(this.dataset.t)">▶</button><br>
+    ＝ <b>If only</b> I <b>had</b> a brother.<br>
+    <span class="ex-ja">私に兄がいればなあ。（実際には兄がいない）</span>
+  </div>
+  <div class="ex">
+    I <b>wish</b> I <b>had</b> a better memory. <button class="spk" data-t="I wish I had a better memory." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">私の記憶力がよければなあ。</span>
+  </div>
+  <div class="ex">
+    I <b>wish</b> it <b>would</b> stop raining. <button class="spk" data-t="I wish it would stop raining." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">雨がやんでくれればなあ。（would は「これからやんでほしい」という未来への願望）</span>
+  </div>
+</div>
+<div class="mini-quiz-wrap">
+  <div class="mini-quiz-title">📝 確認⑧ I wish ＋ 仮定法過去（現在の願望）</div>
+  <div id="iq3aq"></div>
+</div>
+
+<div class="card">
+  <div class="card-title">【I wish②】過去の後悔・惜しむ気持ち　「～だったらよかったのに」</div>
+  <div class="pt">
+    <b>I wish ＋ 仮定法過去完了</b>は、<b>過去のことについて</b>「あのときそうだったらよかった」という<b>後悔や惜しむ気持ち</b>を表します。<br><br>
+    なぜ過去完了（had ＋ pp）を使うの？<br>
+    過去の事実と反対のことを表す → 仮定法過去完了 → <b>had ＋ 過去分詞</b>になります。<br>
+    「I wish ＋ 過去完了 = 仮定法過去完了と同じ発想」です。<br><br>
+    <b>I wish の時制まとめ</b><br>
+    I wish ＋<b>過去形</b>（were / had / could）→ 今のことへの願望（現在の事実と反対）<br>
+    I wish ＋<b>had ＋ pp</b>（had studied / had been）→ 過去のことへの後悔（過去の事実と反対）<br>
+    I wish ＋<b>would ＋ 原形</b>（would stop）→ これからのことへの願望（未来の変化を望む）
+  </div>
+  <div class="form-box">I wish ＋ S ＋ <b>had ＋ 過去分詞</b>　「～だったらよかったのに」<br>＝ If only ＋ S ＋ <b>had ＋ 過去分詞</b></div>
+  <div class="ex">
+    I <b>wish</b> I <b>had studied</b> harder in my school days. <button class="spk" data-t="I wish I had studied harder in my school days." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">学生のころもっと一生懸命勉強しておけばよかった。（過去への後悔）</span>
+  </div>
+  <div class="ex">
+    I <b>wish</b> he <b>had been</b> with me then. <button class="spk" data-t="I wish he had been with me then." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">あのとき彼が一緒にいてくれたらなあ。</span>
+  </div>
+</div>
+<div class="mini-quiz-wrap">
+  <div class="mini-quiz-title">📝 確認⑨ I wish ＋ 仮定法過去完了（過去の後悔）</div>
+  <div id="iq3bq"></div>
+</div>
+
+<div class="card">
+  <div class="card-title">【as if ～】まるで～であるかのように　— 同時か前かで形が変わる —</div>
+  <div class="pt">
+    <b>as if ～</b>（= as though ～）は「まるで～であるかのように」という意味で、<b>実際とは違うこと</b>をそうであるかのように表現するときに使います。<br><br>
+    ポイントは<b>as if 節の時間と主節の時間の関係</b>です。<br><br>
+    <b>① as if 節と主節が同じ時点</b>「今まるで～であるかのように」<br>
+    　→ as if ＋<b>仮定法過去（過去形・were）</b><br><br>
+    <b>② as if 節が主節より前の時点</b>「まるで以前に～であったかのように」<br>
+    　→ as if ＋<b>仮定法過去完了（had ＋ pp）</b>
+  </div>
+  <div class="cmp2">
+    <div class="cbox bl">
+      <div class="cbox-ttl">① 同じ時点 → 仮定法過去（were）</div>
+      She looked <b>as if</b> she <b>were</b> sick. <button class="spk" data-t="She looked as if she were sick." onclick="sp(this.dataset.t)">▶</button><br>
+      <span style="font-size:12px;color:#555">彼女はまるで病気であるかのように見えた。<br>（見えた）のと（病気である）が同じ時点</span><br><br>
+      He acts <b>as if</b> he <b>were</b> my boss. <button class="spk" data-t="He acts as if he were my boss." onclick="sp(this.dataset.t)">▶</button><br>
+      <span style="font-size:12px;color:#555">まるで私の上司であるかのようにふるまう。<br>（ふるまう）のと（上司である）が同じ時点</span>
+    </div>
+    <div class="cbox gn">
+      <div class="cbox-ttl">② 前の時点 → 仮定法過去完了（had pp）</div>
+      She looks <b>as if</b> she <b>had seen</b> a ghost. <button class="spk" data-t="She looks as if she had seen a ghost." onclick="sp(this.dataset.t)">▶</button><br>
+      <span style="font-size:12px;color:#555">まるで幽霊を見たかのような顔をしている。<br>（今の顔）より前に（幽霊を見た）→ had seen</span><br><br>
+      He talks <b>as if</b> he <b>had been</b> there. <button class="spk" data-t="He talks about Rome as if he had been there." onclick="sp(this.dataset.t)">▶</button><br>
+      <span style="font-size:12px;color:#555">まるで行ってきたかのように話す。<br>（今話す）より前に（行った）→ had been</span>
+    </div>
+  </div>
+</div>
+<div class="mini-quiz-wrap">
+  <div class="mini-quiz-title">📝 確認⑩ as if の仮定法過去・過去完了</div>
+  <div id="iq3cq"></div>
+</div>
+</div><!-- /s3 -->
+<div id="p3" class="sec">
+  <div class="sb"><span class="sn" id="p3sn">0 / 10</span><div class="pw"><div class="pf" id="p3pf" style="width:0%"></div></div>
+  <button onclick="resetP('p3')" style="border:none;background:#eee;border-radius:6px;padding:6px 12px;font-size:12px;cursor:pointer;font-family:inherit">リセット</button></div>
+  <div id="p3q"></div>
+</div>
+
+<!-- ④ if it were not for / otherwise -->
+<div id="s4" class="sec">
+<div class="sh">④ if it were not for ～ / otherwise などの慣用表現</div>
+
+<div class="card">
+  <div class="card-title">【もし～がなければ】if it were not for / if it had not been for の使い分け</div>
+  <div class="pt">
+    「もし～がなければ」という表現には<b>現在</b>と<b>過去</b>で使い分けがあります。<br><br>
+    <b>① if it were not for ～</b>（現在：今～がなければ）<br>
+    　→ 主節は仮定法過去（would / could ＋ 原形）<br>
+    　→<b>But for ～ ／ Without ～</b>で書き換え可能<br><br>
+    <b>② if it had not been for ～</b>（過去：あのとき～がなかったなら）<br>
+    　→ 主節は仮定法過去完了（would have ＋ pp）<br>
+    　→<b>But for ～ ／ Without ～</b>で書き換え可能<br><br>
+    <b>But for ～ と Without ～ はどちらの時制でも使えます。</b>前後の動詞形（would / would have）を見て判断します。
+  </div>
+  <div class="cmp2">
+    <div class="cbox bl">
+      <div class="cbox-ttl">現在「もし～がなければ」</div>
+      <b>If it were not for</b> your help, I couldn't finish this.<br>
+      ＝ <b>But for</b> your help,…<br>
+      ＝ <b>Without</b> your help,…<br>
+      <button class="spk" data-t="If it were not for your help, I could not finish this." onclick="sp(this.dataset.t)">▶</button><br>
+      <span style="font-size:12px;color:#555">あなたの助けがなければ終えられないのに。<br>（主節：could not → 現在の仮定）</span>
+    </div>
+    <div class="cbox gn">
+      <div class="cbox-ttl">過去「もし～がなかったなら」</div>
+      <b>If it had not been for</b> the storm, I would have arrived earlier.<br>
+      ＝ <b>But for</b> the storm,…<br>
+      ＝ <b>Without</b> the storm,…<br>
+      <button class="spk" data-t="If it had not been for the storm, I would have arrived earlier." onclick="sp(this.dataset.t)">▶</button><br>
+      <span style="font-size:12px;color:#555">嵐がなかったなら、もっと早くついたのに。<br>（主節：would have → 過去の仮定）</span>
+    </div>
+  </div>
+  <div class="wb">
+    ⚠️ <b>But for と Without の注意点</b><br>
+    どちらも現在・過去どちらにも使えます。前後の動詞形（would / would have）で判断しましょう。<br>
+    But for water, no living things could live.（現在：水がなければ生きられない）<br>
+    But for your help, I would have failed.（過去：助けがなければ失敗していた）
+  </div>
+</div>
+<div class="mini-quiz-wrap">
+  <div class="mini-quiz-title">📝 確認⑪ if it were not for / had not been for の使い分け</div>
+  <div id="iq4aq"></div>
+</div>
+
+<div class="card">
+  <div class="card-title">【otherwise】さもなければ　— 仮定法の働きをする副詞 —</div>
+  <div class="pt">
+    <b>otherwise</b>（さもなければ）は、前の文全体を受けて「もしそうでなければ～だろう（だった）」という意味を表します。<br>
+    otherwise の後ろは<b>仮定法の形（would / could ＋ 原形 または would have ＋ pp）</b>になります。<br><br>
+    <b>otherwise の使い方のポイント</b><br>
+    ・前の文が「実際に起きたこと（事実）」<br>
+    ・otherwise 以降が「もしそうでなかったなら（という仮定）」<br>
+    ・前の文が現在の話 → otherwise ＋<b>would ＋ 原形</b>（現在の仮定）<br>
+    ・前の文が過去の話 → otherwise ＋<b>would have ＋ pp</b>（過去の仮定）
+  </div>
+  <div class="ex">
+    I caught the train; <b>otherwise</b>, I <b>would have been</b> late for the meeting. <button class="spk" data-t="I caught the train, otherwise I would have been late for the meeting." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">私はその列車に乗れた。<b>さもなければ</b>会議に遅れていただろう。<br>（「列車に乗れた」が事実 → otherwise 以降は過去の仮定 → would have been）</span>
+  </div>
+  <div class="ex">
+    He took your advice; <b>otherwise</b> he <b>would fail</b>. <button class="spk" data-t="He took your advice, otherwise he would fail." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">彼はアドバイスを受け入れた。さもなければ失敗するだろう。（現在の仮定 → would fail）</span>
+  </div>
+</div>
+<div class="mini-quiz-wrap">
+  <div class="mini-quiz-title">📝 確認⑫ otherwise の使い方</div>
+  <div id="iq4bq"></div>
+</div>
+
+<div class="card">
+  <div class="card-title">【慣用表現】with a little more ～ / It is time / as it were / even if</div>
+  <div class="pt">
+    仮定法を使う重要な慣用表現をまとめます。意味・形・使い方を確認しておきましょう。
+  </div>
+  <table class="tbl">
+    <tr><th>表現</th><th>意味・使い方</th><th>例文</th></tr>
+    <tr>
+      <td><b>With a little more ～</b></td>
+      <td>「もう少し～があれば」<br>If you had a little more ～と同じ意味の仮定法</td>
+      <td><b>With</b> a little more effort, you <b>could</b> pass. <button class="spk" data-t="With a little more effort, you could pass." onclick="sp(this.dataset.t)">▶</button><br><span class="ex-ja">もう少し努力すれば合格できるのに。</span></td>
+    </tr>
+    <tr>
+      <td><b>It is (high) time S ＋ 仮定法過去</b></td>
+      <td>「もう～してもよいころだ」<br>S の後ろの動詞は<b>過去形</b>（仮定法過去）になる<br>❌ go　✅ went</td>
+      <td>It is time you <b>went</b> to bed. <button class="spk" data-t="It is time you went to bed." onclick="sp(this.dataset.t)">▶</button><br><span class="ex-ja">もうねる時間ですよ。（went は仮定法過去）</span></td>
+    </tr>
+    <tr>
+      <td><b>as it were</b></td>
+      <td>「いわば・言ってみれば」<br>慣用的仮定法表現（挿入句）</td>
+      <td>He is, <b>as it were</b>, a grown-up baby. <button class="spk" data-t="He is as it were a grown up baby." onclick="sp(this.dataset.t)">▶</button><br><span class="ex-ja">彼はいわば大人の赤ちゃんだ。</span></td>
+    </tr>
+    <tr>
+      <td><b>even if（though）</b></td>
+      <td>「たとえ～だとしても」</td>
+      <td><b>Even if</b> it rains, you have to go. <button class="spk" data-t="Even if it rains, you have to go." onclick="sp(this.dataset.t)">▶</button><br><span class="ex-ja">たとえ雨が降ろうとも行かなければならない。</span></td>
+    </tr>
+    <tr>
+      <td><b>unless ＋ 仮定法過去</b></td>
+      <td>「もし～でないならば」（= if … not）</td>
+      <td><b>Unless</b> he were honest, I would not employ him. <button class="spk" data-t="Unless he were honest, I would not employ him." onclick="sp(this.dataset.t)">▶</button><br><span class="ex-ja">もし彼が正直でないならば雇わないだろう。</span></td>
+    </tr>
+  </table>
+  <div class="kb">
+    💡 <b>It is time の注意点</b><br>
+    It is time の後ろの動詞は<b>仮定法過去（過去形）</b>になります。<br>
+    ❌ It is time you <s>go</s> to bed.（現在形は誤り）<br>
+    ✅ It is time you <b>went</b> to bed.（過去形が正しい）
+  </div>
+</div>
+<div class="mini-quiz-wrap">
+  <div class="mini-quiz-title">📝 確認⑬ with a little more / It is time / as it were</div>
+  <div id="iq4cq"></div>
+</div>
+</div><!-- /s4 -->
+<div id="p4" class="sec">
+  <div class="sb"><span class="sn" id="p4sn">0 / 10</span><div class="pw"><div class="pf" id="p4pf" style="width:0%"></div></div>
+  <button onclick="resetP('p4')" style="border:none;background:#eee;border-radius:6px;padding:6px 12px;font-size:12px;cursor:pointer;font-family:inherit">リセット</button></div>
+  <div id="p4q"></div>
+</div>
+
+<!-- ⑤ if の省略・重要表現 -->
+<div id="s5" class="sec">
+<div class="sh">⑤ if の省略（倒置）・重要表現</div>
+
+<div class="card">
+  <div class="card-title">if を省略する倒置表現　— 硬い文体でよく使われる —</div>
+  <div class="pt">
+    仮定法の文では <b>if を省略</b>して、<b>be 動詞・had・助動詞を文頭に出す</b>倒置形を作ることができます。<br>
+    文語（書き言葉）でよく使われます。形を見ただけで仮定法と判断できるようにしておきましょう。
+  </div>
+  <table class="tbl">
+    <tr><th>通常の if 文</th><th>倒置形（if 省略）</th></tr>
+    <tr>
+      <td>If I <b>were</b> you, …</td>
+      <td><b>Were</b> I you, … <button class="spk" data-t="Were I you, I would buy the house." onclick="sp(this.dataset.t)">▶</button></td>
+    </tr>
+    <tr>
+      <td>If it <b>were</b> not for the sun, …</td>
+      <td><b>Were</b> it not for the sun, … <button class="spk" data-t="Were it not for the sun, we could not live." onclick="sp(this.dataset.t)">▶</button></td>
+    </tr>
+    <tr>
+      <td>If it <b>had</b> not been for your support, …</td>
+      <td><b>Had</b> it not been for your support, … <button class="spk" data-t="Had it not been for your support, he would have failed." onclick="sp(this.dataset.t)">▶</button></td>
+    </tr>
+    <tr>
+      <td>If he <b>had</b> taken my advice, …</td>
+      <td><b>Had</b> he taken my advice, … <button class="spk" data-t="Had he taken my advice, he would have succeeded." onclick="sp(this.dataset.t)">▶</button></td>
+    </tr>
+    <tr>
+      <td>If anyone <b>should</b> call on me, …</td>
+      <td><b>Should</b> anyone call on me, … <button class="spk" data-t="Should anyone call on me, tell him I am out." onclick="sp(this.dataset.t)">▶</button></td>
+    </tr>
+  </table>
+  <div class="kb">
+    💡 <b>倒置形の見分け方</b>：文頭に <b>Were / Had / Should</b> があって、主語が後ろに来ていたら if の省略です。<br>
+    Were I you → If I were you<br>
+    Had it not been for → If it had not been for<br>
+    Should anyone come → If anyone should come
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title">仮定法の重要表現まとめ</div>
+  <table class="tbl">
+    <tr><th>表現</th><th>意味</th><th>例文</th></tr>
+    <tr>
+      <td><b>If only ～</b></td><td>～さえあれば（= I wish ～）</td>
+      <td><b>If only</b> I could drive a car! <button class="spk" data-t="If only I could drive a car." onclick="sp(this.dataset.t)">▶</button><br><span class="ex-ja">車の運転ができればなあ！</span></td>
+    </tr>
+    <tr>
+      <td><b>I'm sorry (that) S V</b><br>→ <b>I wish S 仮定法</b></td><td>～できなくて残念（現在）</td>
+      <td>I'm sorry I can't go.<br>→ I <b>wish</b> I <b>could</b> go. <button class="spk" data-t="I wish I could go." onclick="sp(this.dataset.t)">▶</button></td>
+    </tr>
+    <tr>
+      <td><b>I'm sorry S Vp</b><br>→ <b>I wish S had pp</b></td><td>～できなかった（過去の後悔）</td>
+      <td>I'm sorry I didn't study.<br>→ I <b>wish</b> I <b>had studied</b>. <button class="spk" data-t="I wish I had studied more." onclick="sp(this.dataset.t)">▶</button></td>
+    </tr>
+    <tr>
+      <td><b>in case S ＋ 仮定法過去</b></td><td>もし～の場合には</td>
+      <td><b>In case</b> I were in your position, I wouldn't say that. <button class="spk" data-t="In case I were in your position, I would not say that." onclick="sp(this.dataset.t)">▶</button></td>
+    </tr>
+  </table>
+</div>
+
+<div class="mini-quiz-wrap">
+  <div class="mini-quiz-title">📝 確認問題⑤ if の省略・重要表現</div>
+  <div id="iq5aq"></div>
+</div>
+</div><!-- /s5 -->
+
+<!-- 練習⑤ -->
+<div id="p5" class="sec">
+  <div class="sb"><span class="sn" id="p5sn">0 / 14</span><div class="pw"><div class="pf" id="p5pf" style="width:0%"></div></div>
+  <button onclick="resetP('p5')" style="border:none;background:#eee;border-radius:6px;padding:6px 12px;font-size:12px;cursor:pointer;font-family:inherit">リセット</button></div>
+  <div id="p5q"></div>
+</div>
+
+<!-- 単語帳モーダル -->
+<div class="vpop" id="vpop">
+  <div class="vpop-hd"><div><span class="vpop-word" id="vpop-word"></span><span class="vpop-pos" id="vpop-pos"></span></div><button class="vpop-close" onclick="closeVpop()">✕</button></div>
+  <div class="vpop-body"><div class="vpop-mean" id="vpop-mean"></div><div class="vpop-kana" id="vpop-kana"></div>
+    <div class="vpop-btns"><button class="vpop-spk" onclick="vpopSpeak()">🔊 発音を聞く</button><button class="vpop-save" id="vpop-save-btn" onclick="vpopSave()">📖 単語帳へ</button></div>
+    <div class="vpop-saved-lbl" id="vpop-saved-lbl">✓ 単語帳に保存しました</div></div>
+</div>
+<div class="mo" id="mvocab">
+  <div class="mb">
+    <div class="mh"><h2>📚 単語帳</h2><button class="mhc" onclick="closeM('mvocab')">✕</button></div>
+    <div class="mbody">
+      <div style="display:flex;gap:8px;margin-bottom:12px">
+        <button onclick="showVocabList()" style="flex:1;padding:9px;border-radius:8px;border:2px solid #1B3A6B;background:#1B3A6B;color:#fff;font-size:13px;font-family:inherit;cursor:pointer;font-weight:700">📋 単語一覧</button>
+        <button onclick="startVocabTest()" style="flex:1;padding:9px;border-radius:8px;border:2px solid #0097A7;background:#f0faff;color:#0097A7;font-size:13px;font-family:inherit;cursor:pointer;font-weight:700">✏️ 復習テスト</button>
+      </div>
+      <div id="vocab-list-area"></div>
+      <div id="vocab-test-area" style="display:none"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openM(id){document.getElementById(id).classList.add('open');document.body.style.overflow='hidden';}
+function closeM(id){document.getElementById(id).classList.remove('open');document.body.style.overflow='';}
+document.querySelectorAll('.mo').forEach(function(mo){mo.addEventListener('click',function(e){if(e.target===mo)closeM(mo.id);});});
+function confetti(){var cv=document.getElementById('cc');cv.width=window.innerWidth;cv.height=window.innerHeight;cv.style.display='block';var ctx=cv.getContext('2d');var cols=['#f9a825','#0097A7','#1B3A6B','#e53935','#2e7d32','#ff6f00','#7b1fa2','#ff4081'];var ps=[];for(var k=0;k<130;k++){ps.push({x:Math.random()*cv.width,y:-20-Math.random()*180,w:7+Math.random()*9,h:3+Math.random()*5,c:cols[Math.floor(Math.random()*cols.length)],s:2+Math.random()*4,a:Math.random()*360,sp:3-Math.random()*6,d:(Math.random()-.5)*2.5});}var fr=0;function draw(){ctx.clearRect(0,0,cv.width,cv.height);ps.forEach(function(p){ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.a*Math.PI/180);ctx.fillStyle=p.c;ctx.fillRect(-p.w/2,-p.h/2,p.w,p.h);ctx.restore();p.y+=p.s;p.x+=p.d;p.a+=p.sp;});fr++;if(fr<100)requestAnimationFrame(draw);else{ctx.clearRect(0,0,cv.width,cv.height);cv.style.display='none';}}draw();}
+function updS(mid,n,t){var sn=document.getElementById(mid+'sn');var pf=document.getElementById(mid+'pf');if(sn)sn.textContent=n+' / '+t;if(pf)pf.style.width=(n/t*100)+'%';if(n===t&&t>0)confetti();}
+function sp(t){if(!window.speechSynthesis)return;speechSynthesis.cancel();var u=new SpeechSynthesisUtterance(t);u.lang='en-US';u.rate=0.88;speechSynthesis.speak(u);}
+function ss(id,btn){document.querySelectorAll('.sec').forEach(function(s){s.classList.remove('active');});document.querySelectorAll('.nb,.pb').forEach(function(b){b.classList.remove('on');});document.querySelectorAll('.pair').forEach(function(p){p.classList.remove('active-pair');});document.getElementById(id).classList.add('active');btn.classList.add('on');if(btn.parentElement&&btn.parentElement.classList.contains('pair')){btn.parentElement.classList.add('active-pair');}}
+function sh(n){var c=n.replace(/'/g,'');return '<button class="spk" onclick="sp(this.dataset.t)" data-t="'+c+'">▶</button>';}
+function ub(u){return u?'<span class="ub">'+u+'</span>':'';}
+function iC(id){var data=window['c'+id],total=data.length,score=0,done=new Array(total).fill(false);updS(id,0,total);var c=document.getElementById(id+'q');c.innerHTML='';data.forEach(function(d,i){var div=document.createElement('div');div.className='q-box';div.innerHTML='<div class="q-hd"><span class="q-num">'+(i+1)+'</span><span class="q-txt"><b>'+d.q+'</b>'+ub(d.u)+sh(d.s)+'</span></div>'+(d.j?'<div style="font-size:13px;color:#555;margin-bottom:8px">'+d.j+'</div>':'')+(d.h?'<span class="hint">'+d.h+'</span>':'')+'<div id="'+id+'ch'+i+'"></div><div class="ep" id="'+id+'ep'+i+'">📝 解説：'+d.e+'</div>';c.appendChild(div);d.c.forEach(function(ch,ci){var btn=document.createElement('button');btn.className='cb';btn.textContent=ch;btn.onclick=function(){if(done[i])return;done[i]=true;div.querySelectorAll('.cb').forEach(function(b,bi){b.classList.add('dis');if(bi===d.a)b.classList.add('ca');else if(bi===ci&&ci!==d.a)b.classList.add('wa');});document.getElementById(id+'ep'+i).classList.add('show');if(ci===d.a){score++;updS(id,score,total);}};document.getElementById(id+'ch'+i).appendChild(btn);});});}
+function resetP(id){iC(id);}
+var vocabDB={},savedWords={},currentVword=null;
+function showVpop(el){var w=el.dataset.w,pos=el.dataset.pos,mean=el.dataset.mean,kana=el.dataset.kana,opts=JSON.parse(el.dataset.opts);vocabDB[w]={pos:pos,mean:mean,kana:kana,opts:opts};currentVword=w;document.getElementById('vpop-word').textContent=w;document.getElementById('vpop-pos').textContent=pos;document.getElementById('vpop-mean').textContent=mean;document.getElementById('vpop-kana').textContent='発音：'+kana;var saveBtn=document.getElementById('vpop-save-btn');if(savedWords[w]){saveBtn.textContent='✓ 保存済み';saveBtn.className='vpop-save saved';document.getElementById('vpop-saved-lbl').className='vpop-saved-lbl show';}else{saveBtn.textContent='📖 単語帳へ';saveBtn.className='vpop-save';document.getElementById('vpop-saved-lbl').className='vpop-saved-lbl';}var pop=document.getElementById('vpop');pop.className='vpop show';var rect=el.getBoundingClientRect();var top=rect.bottom+6,left=rect.left,pw=260;if(left+pw>window.innerWidth-8)left=window.innerWidth-pw-8;if(top+160>window.innerHeight)top=rect.top-170;pop.style.top=top+'px';pop.style.left=left+'px';}
+function closeVpop(){document.getElementById('vpop').className='vpop';currentVword=null;}
+document.addEventListener('click',function(e){var pop=document.getElementById('vpop');if(pop.classList.contains('show')&&!pop.contains(e.target)&&!e.target.classList.contains('vw'))closeVpop();});
+function vpopSpeak(){if(currentVword)sp(currentVword);}
+function vpopSave(){if(!currentVword)return;var w=currentVword;if(!savedWords[w]){savedWords[w]=vocabDB[w];updateVocabBadge();document.getElementById('vpop-save-btn').textContent='✓ 保存済み';document.getElementById('vpop-save-btn').className='vpop-save saved';document.getElementById('vpop-saved-lbl').className='vpop-saved-lbl show';}}
+function updateVocabBadge(){var n=Object.keys(savedWords).length;var badge=document.getElementById('vocab-badge');badge.textContent=n;badge.className=n>0?'vocab-badge show':'vocab-badge';}
+var origOpenM=openM;openM=function(id){origOpenM(id);if(id==='mvocab')showVocabList();};
+function showVocabList(){document.getElementById('vocab-list-area').style.display='block';document.getElementById('vocab-test-area').style.display='none';renderVocabList();}
+function renderVocabList(){var area=document.getElementById('vocab-list-area');var words=Object.keys(savedWords);if(words.length===0){area.innerHTML='<div class="vbook-empty">📖 まだ単語が保存されていません。</div>';return;}var html='<div style="font-size:12px;color:#888;margin-bottom:8px">保存済み：'+words.length+'語</div>';words.forEach(function(w){var v=savedWords[w];html+='<div class="vcard"><span class="vcard-word">'+w+'</span><span class="vcard-mean">'+v.mean+'</span><button class="vcard-del" onclick="removeWord(\''+w+'\')">覚えた ✓</button></div>';});area.innerHTML=html;}
+function removeWord(w){delete savedWords[w];updateVocabBadge();renderVocabList();}
+var testQueue=[],testIdx=0,testScore=0;
+function startVocabTest(){document.getElementById('vocab-list-area').style.display='none';document.getElementById('vocab-test-area').style.display='block';renderVocabTest();}
+function renderVocabTest(){var area=document.getElementById('vocab-test-area');var words=Object.keys(savedWords);if(words.length<1){area.innerHTML='<div class="vbook-empty">単語が保存されていません。</div>';return;}testQueue=words.slice().sort(function(){return Math.random()-.5;});testIdx=0;testScore=0;renderTestQuestion(area);}
+function renderTestQuestion(area){if(testIdx>=testQueue.length){area.innerHTML='<div style="text-align:center;padding:24px"><div style="font-size:40px;margin-bottom:12px">🎉</div><div style="font-size:18px;font-weight:700;color:#1B3A6B;margin-bottom:8px">テスト完了！</div><div style="font-size:14px;color:#555;margin-bottom:16px">正解：'+testScore+' / '+testQueue.length+'問</div><div style="display:flex;gap:8px;justify-content:center"><button onclick="renderVocabTest()" style="padding:10px 20px;border-radius:8px;border:none;background:#1B3A6B;color:#fff;font-size:14px;font-family:inherit;cursor:pointer">もう一度</button><button onclick="showVocabList()" style="padding:10px 20px;border-radius:8px;border:1.5px solid #ccd;background:#fff;color:#555;font-size:14px;font-family:inherit;cursor:pointer">単語一覧へ</button></div></div>';return;}var w=testQueue[testIdx];var v=savedWords[w];if(!v){testIdx++;renderTestQuestion(area);return;}var opts=v.opts.slice().sort(function(){return Math.random()-.5;});var html='<div style="text-align:right;font-size:12px;color:#888;margin-bottom:8px">'+(testIdx+1)+' / '+testQueue.length+'</div><div class="vtest-q">'+w+'</div>';opts.forEach(function(opt){html+='<button class="vtest-opt" onclick="checkTestAns(this,\''+w+'\',\''+opt.replace(/'/g,'')+'\')">'+opt+'</button>';});html+='<div id="vtest-res"></div>';area.innerHTML=html;}
+function checkTestAns(btn,word,selected){var v=savedWords[word];if(!v)return;var correct=v.mean;var area=document.getElementById('vocab-test-area');area.querySelectorAll('.vtest-opt').forEach(function(b){b.classList.add('dis');if(b.textContent===correct)b.classList.add('ca');else if(b===btn&&selected!==correct)b.classList.add('wa');});var res=document.getElementById('vtest-res');if(selected===correct){testScore++;res.innerHTML='<div style="color:#2e7d32;font-weight:700;padding:8px">✓ 正解！</div>';}else{res.innerHTML='<div style="color:#e53935;font-weight:700;padding:8px">✗ 不正解　正解：'+correct+'</div>';}testIdx++;setTimeout(function(){renderTestQuestion(area);},1200);}
+
+/* ===== 確認問題データ ===== */
+window.ciq1a=[
+  {q:'「明日晴れたら出かけよう。」（本当にあり得る仮定）<br>If it ( ) fine tomorrow, I will go out.',s:'If it is fine tomorrow, I will go out.',j:'',a:2,c:['were','was','is','will be'],h:'本当にあり得る → 直説法（現在形）',e:'本当にあり得る仮定（直説法）→ If 節では <b>is</b>（現在形）。will be は不可。'},
+  {q:'「もし私があなたなら、そんなことはしない。」（仮定法過去）<br>If I ( ) you, I would not do such a thing.',s:'If I were you, I would not do such a thing.',j:'',a:0,c:['were','am','have been','will be'],h:'仮定法過去：be 動詞は were',e:'仮定法過去は過去形を使う。be 動詞は主語にかかわらず <b>were</b>。'},
+  {q:'「彼は私がお金を払うよう主張した。」（that 節の動詞）<br>He insisted that I ( ) the money.',s:'He insisted that I pay the money.',j:'',a:0,c:['pay','paid','would pay','have paid'],h:'insist that ～ → 原形（または should ＋ 原形）',e:'insist / suggest などの後の that 節 → <b>原形</b>（または should ＋ 原形）'},
+  {q:'「もし万が一地震が起きたら、どうしますか。」（仮定法未来・万が一）<br>If an earthquake ( ) happen, what would you do?',s:'If an earthquake should happen, what would you do?',j:'',a:1,c:['would','should','were to','will'],h:'万が一（低い可能性）= should',e:'万が一の仮定 → If ＋ S ＋ <b>should</b> ＋ 原形'},
+];
+window.ciq2a=[
+  {q:'「もし私がもっとお金を持っていれば、その車を買えるのに。」<br>If I ( ) more money, I could buy the car.',s:'If I had more money, I could buy the car.',j:'（現在の事実に反する → 仮定法過去）',a:1,c:['have','had','have had','would have'],h:'現在の事実に反する → 仮定法過去（過去形）',e:'現在の事実に反する仮定法過去 → If I <b>had</b>（過去形）'},
+  {q:'「もし私がそこにいたら、あなたを手伝えたのに。」<br>If I ( ) there, I could have helped you.',s:'If I had been there, I could have helped you.',j:'（過去の事実に反する → 仮定法過去完了）',a:2,c:['were','was','had been','have been'],h:'過去の事実に反する → 仮定法過去完了（had pp）',e:'過去の事実に反する → <b>had been</b>（had ＋ 過去分詞）'},
+  {q:'「もし彼が私のアドバイスを聞いていたなら、今頃成功しているのに。」<br>If he ( ) my advice, he would be successful now.',s:'If he had taken my advice, he would be successful now.',j:'（過去の仮定→現在の状態：混合型）',a:1,c:['took','had taken','has taken','would take'],h:'過去の仮定→現在に影響：If 節は had pp（過去完了）',e:'過去の仮定が現在に影響する混合型 → If 節は <b>had taken</b>（過去完了）'},
+  {q:'「太陽が西から昇るとしても、決心は変えない。」（ほぼあり得ない仮定）<br>If the sun ( ) rise in the west, I would not change my mind.',s:'If the sun were to rise in the west, I would not change my mind.',j:'',a:1,c:['should','were to','would','had to'],h:'ほぼあり得ない仮定 = were to',e:'ほぼあり得ない仮定 → <b>were to</b> ＋ 原形'},
+];
+window.ciq3a=[
+  {q:'「私に兄がいればなあ。」（現在の願望）<br>I wish I ( ) a brother.',s:'I wish I had a brother.',j:'',a:1,c:['have','had','have had','will have'],h:'I wish ＋ 仮定法過去（現在の願望）',e:'I wish ＋ 現在の願望 → <b>had</b>（過去形）'},
+  {q:'「学生のとき一生懸命勉強しておけばよかった。」（過去の後悔）<br>I wish I ( ) harder in my school days.',s:'I wish I had studied harder in my school days.',j:'',a:2,c:['studied','have studied','had studied','was studying'],h:'I wish ＋ 仮定法過去完了（過去の後悔）',e:'I wish ＋ 過去の後悔 → <b>had studied</b>（had ＋ 過去分詞）'},
+  {q:'「彼女はまるで病気であるかのように見えた。」（主節と同じ時点）<br>She looked as if she ( ) sick.',s:'She looked as if she were sick.',j:'',a:0,c:['were','had been','was being','is'],h:'as if ＋ 主節と同じ時点 → 仮定法過去（were）',e:'as if 節が主節と同じ時点 → 仮定法過去 <b>were</b>'},
+  {q:'「彼はまるでそこに行ってきたかのように話す。」（主節より前の時点）<br>He talks about Rome as if he ( ) there.',s:'He talks about Rome as if he had been there.',j:'',a:2,c:['were','was','had been','has been'],h:'as if ＋ 主節より前 → 仮定法過去完了（had pp）',e:'as if 節が主節より前の時点 → 仮定法過去完了 <b>had been</b>'},
+];
+window.ciq4a=[
+  {q:'「あなたの助けがなければ、私は宿題を終えられないだろう。」<br>If it ( ) for your help, I could not finish the homework.',s:'If it were not for your help, I could not finish the homework.',j:'（現在：もし～がなければ）',a:1,c:['was not','were not','had not been','has not been'],h:'現在「もし～がなければ」= if it were not for',e:'現在「もし～がなければ」→ <b>if it were not for</b>'},
+  {q:'「嵐がなかったなら、もっと早く着けたのに。」<br>If it ( ) the storm, I would have arrived earlier.',s:'If it had not been for the storm, I would have arrived earlier.',j:'（過去：もし～がなかったなら）',a:2,c:['were not for','was not for','had not been for','has not been for'],h:'過去「もし～がなかったなら」= if it had not been for',e:'過去「もし～がなかったなら」→ <b>if it had not been for</b>'},
+  {q:'「嵐がなかったなら…」をBut for で書き換えると？',s:'But for the storm, I would have arrived earlier.',j:'',a:0,c:['But for the storm','Without for the storm','If not the storm','Except the storm'],h:'if it had not been for ～ = But for ～',e:'<b>But for ～</b>（= if it had not been for）「もし～がなかったなら」'},
+  {q:'「私は疲れていた。さもなければパーティーに行っていただろう。」<br>I was tired; ( ), I would have gone to the party.',s:'I was tired; otherwise, I would have gone to the party.',j:'',a:1,c:['however','otherwise','therefore','unless'],h:'さもなければ = otherwise',e:'「さもなければ」→ <b>otherwise</b>（後ろは仮定法の形）'},
+];
+window.ciq5a=[
+  {q:'「もし私があなたなら」の if 省略形は？',s:'Were I you, I would buy the house.',j:'If I were you, I would buy the house.',a:0,c:['Were I you','Had I you','Should I be you','If were I you'],h:'If I were → Were I（were を文頭へ）',e:'If I <b>were</b> → <b>Were</b> I（if を省略して were を文頭に）'},
+  {q:'「もし～がなかったなら」の倒置形は？<br>If it had not been for your support, he would have failed.',s:'Had it not been for your support, he would have failed.',j:'',a:1,c:['Were it not been for','Had it not been for','Should it not be for','Has it not been for'],h:'If it had not been for → Had it not been for',e:'If it <b>had</b> not been for → <b>Had</b> it not been for（had を文頭に）'},
+  {q:'「もし万が一誰か来たら」の倒置形は？<br>If anyone should come, tell him I am out.',s:'Should anyone come, tell him I am out.',j:'',a:2,c:['Were anyone come','Had anyone come','Should anyone come','Would anyone come'],h:'If S should → Should S（should を文頭へ）',e:'If anyone <b>should</b> come → <b>Should</b> anyone come（should を文頭に）'},
+  {q:'「ごめんなさい、一緒に行けなくて。」を I wish で書き換えると？<br>I am sorry I cannot go with you.',s:'I wish I could go with you.',j:'',a:0,c:['I wish I could go with you.','I wish I can go with you.','I wish I went with you.','I wish I had gone with you.'],h:'cannot → I wish ～ could（現在できない → 仮定法過去）',e:'現在できないことへの惜しむ気持ち → I wish I <b>could</b>（仮定法過去）'},
+];
+
+/* ===== 練習問題データ ===== */
+window.cp1=[
+  {q:'If it ( ) fine tomorrow, I will go hiking.',s:'If it is fine tomorrow, I will go hiking.',j:'明日晴れたらハイキングへ行く。（あり得る）',a:2,c:['were','was','is','will be'],h:'本当にあり得る → 直説法（現在形）',e:'あり得る仮定（直説法） → <b>is</b>（現在形）'},
+  {q:'If I ( ) you, I would not do that.',s:'If I were you, I would not do that.',j:'もし私があなたなら、そうしないのに。',a:0,c:['were','am','have been','will be'],h:'仮定法過去：be 動詞は were',e:'仮定法過去 → be 動詞は <b>were</b>'},
+  {q:'If I ( ) a little younger, I could climb Mt. Fuji.',s:'If I were a little younger, I could climb Mt. Fuji.',j:'もう少し若ければ富士山に登れるのに。',a:1,c:['am','were','have been','will be'],h:'現在の事実に反する → 仮定法過去',e:'現在の事実に反する → 仮定法過去 <b>were</b>'},
+  {q:'He insisted that I ( ) the money.',s:'He insisted that I pay the money.',j:'彼は私がお金を払うよう主張した。',a:0,c:['pay','paid','would pay','paying'],h:'insist that ～ → 原形',e:'insist / suggest などの that 節 → <b>pay</b>（原形）'},
+  {q:'He proposed that she ( ) there alone.',s:'He proposed that she go there alone.',j:'彼は彼女が1人でそこへ行くよう提案した。',a:1,c:['goes','go','went','would go'],h:'propose that ～ → 原形',e:'propose の that 節 → <b>go</b>（原形）'},
+  {q:'If an earthquake ( ) happen, what would you do?',s:'If an earthquake should happen, what would you do?',j:'もし万が一地震が起きたら、どうしますか。',a:1,c:['would','should','were to','will'],h:'万が一（低い可能性）= should',e:'万が一の仮定 → <b>should</b> ＋ 原形'},
+  {q:'If the war ( ) break out, what would you do?',s:'If the war were to break out, what would you do?',j:'もし戦争が起こるとしたら、どうしますか。（ほぼあり得ない）',a:1,c:['should','were to','had to','would'],h:'ほぼあり得ない仮定 = were to',e:'ほぼあり得ない仮定 → <b>were to</b> ＋ 原形'},
+  {q:'If I ( ) in Hawaii, I would go swimming.',s:'If I were in Hawaii now, I would go swimming.',j:'もし私がハワイにいるなら、泳ぎに行くだろう。',a:0,c:['were','am','have been','will be'],h:'現在の事実に反する → 仮定法過去（were）',e:'現在の事実に反する → <b>were</b>（仮定法過去）'},
+  {q:'I demand that he ( ) present at the meeting.',s:'I demand that he be present at the meeting.',j:'私は彼が会議に出席するよう要求した。',a:1,c:['is','be','was','should be'],h:'demand that ～ → 原形 または should ＋ 原形',e:'demand の that 節 → <b>be</b>（原形）（または should be）'},
+  {q:'The doctor recommended that she ( ) in bed.',s:'The doctor recommended that she stay in bed.',j:'医者は彼女がベッドで安静にするよう勧めた。',a:2,c:['stays','stayed','stay','should stayed'],h:'recommend that ～ → 原形',e:'recommend の that 節 → <b>stay</b>（原形）'},
+];
+window.cp2=[
+  {q:'If I ( ) more money, I could buy the car.',s:'If I had more money, I could buy the car.',j:'もし私がもっとお金を持っていれば、その車を買えるのに。',a:1,c:['have','had','would have','have had'],h:'現在の事実に反する → 仮定法過去（過去形）',e:'現在の事実に反する → <b>had</b>（過去形）'},
+  {q:'If I ( ) there, I could have helped you.',s:'If I had been there, I could have helped you.',j:'もし私がそこにいたら、あなたを手伝えたのに。',a:2,c:['were','was','had been','have been'],h:'過去の事実に反する → 仮定法過去完了（had pp）',e:'過去の事実に反する → <b>had been</b>（had ＋ 過去分詞）'},
+  {q:'If it ( ) raining, we could have lunch in the garden.',s:'If it were not raining, we could have lunch in the garden.',j:'もし雨が降っていなければ、庭で昼食を食べるのに。',a:0,c:['were not','was not','had not been','would not be'],h:'現在の事実に反する → 仮定法過去（were）',e:'現在進行形の否定 → <b>were not</b> raining（仮定法過去）'},
+  {q:'If he ( ) had enough time, he could have finished it.',s:'If he had had enough time, he could have finished it.',j:'もし彼に十分な時間があったなら、終えることができたのに。',a:2,c:['has had','had','had had','would have had'],h:'過去の事実に反する → 仮定法過去完了（had had）',e:'過去の事実に反する → <b>had had</b>（had ＋ 過去分詞 had）'},
+  {q:'If she had taken his advice, she ( ) rich now.',s:'If she had taken his advice, she would be rich now.',j:'もし彼女が助言を聞いていたなら、今頃は金持ちなのに。（混合型）',a:1,c:['would have been','would be','was','had been'],h:'過去の仮定→現在の状態：主節は would ＋ 原形（現在）',e:'過去の仮定が現在に影響（混合型）→ 主節は <b>would be</b>（現在）'},
+  {q:'If he ( ) not seen Jane, he might not have married Susan.',s:'If he had not seen Jane, he might not have married Susan.',j:'もしジェーンに会っていなかったなら、スーザンと結婚しなかったかもしれない。',a:2,c:['did','were','had','would have'],h:'過去の事実に反する → 仮定法過去完了（had ＋ pp）',e:'過去の事実に反する → <b>had</b> not seen（仮定法過去完了）'},
+  {q:'If I ( ) be late, please do not wait for me.',s:'If I should be late, please do not wait for me.',j:'万一私が遅れたら、待たないでください。',a:1,c:['would','should','were to','had'],h:'万が一（低い可能性）= should',e:'万が一の仮定 → <b>should</b>（万一）'},
+  {q:'If I had finished the work yesterday, I ( ) in Okinawa now.',s:'If I had finished the work yesterday, I would be in Okinawa now.',j:'昨日仕事を終わらせていたなら、今ごろ沖縄にいるのに。（混合型）',a:2,c:['am','will be','would be','would have been'],h:'過去の仮定→現在の状態：主節は would ＋ 原形',e:'混合型（過去の仮定→現在の状態）→ <b>would be</b>（現在）'},
+  {q:'If the sun ( ) to rise in the west, I would not change my mind.',s:'If the sun were to rise in the west, I would not change my mind.',j:'太陽が西から昇るとしても、決心は変えない。',a:0,c:['were','should','would','had'],h:'ほぼあり得ない仮定 = were to',e:'ほぼあり得ない仮定 → <b>were to</b>'},
+  {q:'If you ( ) more patient, you could have solved the problem.',s:'If you had been more patient, you could have solved the problem.',j:'もし你がもっと辛抱強ければ、その問題を解けたのに。',a:2,c:['were','have been','had been','was'],h:'過去の事実に反する → 仮定法過去完了',e:'過去の事実に反する → <b>had been</b>（仮定法過去完了）'},
+];
+window.cp3=[
+  {q:'I wish I ( ) a brother.',s:'I wish I had a brother.',j:'私に兄がいればなあ。（現在の願望）',a:1,c:['have','had','have had','will have'],h:'I wish ＋ 現在の願望 → 仮定法過去（過去形）',e:'現在の願望 → I wish I <b>had</b>（過去形）'},
+  {q:'I wish I ( ) harder in my school days.',s:'I wish I had studied harder in my school days.',j:'学生のときもっと勉強しておけばよかった。（過去の後悔）',a:2,c:['studied','have studied','had studied','was studying'],h:'I wish ＋ 過去の後悔 → 仮定法過去完了',e:'過去の後悔 → I wish I <b>had studied</b>（had ＋ 過去分詞）'},
+  {q:'I wish it ( ) stop raining.',s:'I wish it would stop raining.',j:'雨がやんでくれればなあ。（未来への願望）',a:1,c:['will','would','should','could'],h:'I wish ＋ 未来への願望 → would',e:'未来への願望 → I wish it <b>would</b> stop raining'},
+  {q:'She looked as if she ( ) sick.',s:'She looked as if she were sick.',j:'彼女はまるで病気であるかのように見えた。（主節と同じ時点）',a:0,c:['were','had been','was being','is'],h:'as if ＋ 同じ時点 → 仮定法過去（were）',e:'主節と同じ時点 → as if she <b>were</b>（仮定法過去）'},
+  {q:'She looks as if she ( ) a ghost.',s:'She looks as if she had seen a ghost.',j:'彼女はまるで幽霊を見たかのような顔をしている。（主節より前）',a:2,c:['see','saw','had seen','has seen'],h:'as if ＋ 主節より前 → 仮定法過去完了（had pp）',e:'主節より前の時点 → as if she <b>had seen</b>（仮定法過去完了）'},
+  {q:'He talks as if he ( ) there before.',s:'He talks as if he had been there before.',j:'彼はまるでそこに行ったことがあるかのように話す。',a:1,c:['were','had been','was','has been'],h:'as if ＋ 主節より前 → 仮定法過去完了',e:'主節より前の時点 → <b>had been</b>（仮定法過去完了）'},
+  {q:'I wish I ( ) as gifted as you.',s:'I wish I were as gifted as you.',j:'あなたと同じくらい才能があればなあ。（現在の願望）',a:0,c:['were','had been','am','have been'],h:'I wish ＋ 現在の願望：be 動詞は were',e:'現在の願望 → I wish I <b>were</b>（be 動詞は were）'},
+  {q:'「コンサートに一緒に行けなくてごめんなさい。」を I wish で書き換えると？<br>I am sorry I cannot go to the concert with you.',s:'I wish I could go to the concert with you.',j:'',a:1,c:['I wish I can go.','I wish I could go.','I wish I went.','I wish I had gone.'],h:'現在できない → I wish ＋ could（仮定法過去）',e:'現在できないことを惜しむ → I wish I <b>could</b>（仮定法過去）'},
+  {q:'I wish I ( ) more money then.',s:'I wish I had had more money then.',j:'あのとき（あの時）もっとお金を持っていたらなあ。',a:2,c:['had','have','had had','would have'],h:'過去について → I wish ＋ 仮定法過去完了（had pp）',e:'過去のことへの後悔 → I wish I <b>had had</b>（had ＋ had）'},
+  {q:'He acts as if he ( ) my boss.',s:'He acts as if he were my boss.',j:'彼はまるで私の上司であるかのようにふるまう。（主節と同じ時点）',a:0,c:['were','had been','is','was'],h:'as if ＋ 同じ時点 → 仮定法過去（were）',e:'同じ時点 → as if he <b>were</b>（仮定法過去）'},
+];
+window.cp4=[
+  {q:'If it ( ) for your help, I could not finish this.',s:'If it were not for your help, I could not finish this.',j:'あなたの助けがなければ、これを終えられないのに。（現在）',a:1,c:['was not','were not','had not been','has not been'],h:'現在「もし～がなければ」= if it were not for',e:'現在の仮定 → <b>if it were not for</b>'},
+  {q:'「あなたの助けがなければ…」をBut for に書き換えると？',s:'But for your help, I could not finish this.',j:'If it were not for your help, I could not finish this.',a:0,c:['But for your help','Without for your help','If not your help','Except your help'],h:'if it were not for ～ = But for ～',e:'<b>But for ～</b>（= if it were not for）'},
+  {q:'If it ( ) for the storm, I would have arrived earlier.',s:'If it had not been for the storm, I would have arrived earlier.',j:'嵐がなかったなら、もっと早くついていたのに。（過去）',a:2,c:['were not','was not','had not been','has not been'],h:'過去「もし～がなかったなら」= if it had not been for',e:'過去の仮定 → <b>if it had not been for</b>'},
+  {q:'「嵐がなかったなら…」をWithout で書き換えると？',s:'Without the storm, I would have arrived earlier.',j:'If it had not been for the storm, I would have arrived earlier.',a:1,c:['But the storm','Without the storm','Except the storm','If no storm'],h:'if it had not been for ～ = Without ～',e:'<b>Without ～</b>（= if it had not been for）'},
+  {q:'I was tired; ( ), I would have gone to the party.',s:'I was tired; otherwise, I would have gone to the party.',j:'疲れていた。さもなければパーティーに行っていただろう。',a:2,c:['however','therefore','otherwise','unless'],h:'さもなければ = otherwise',e:'「さもなければ」→ <b>otherwise</b>'},
+  {q:'It is time you ( ) to bed.',s:'It is time you went to bed.',j:'もうねる時間ですよ。',a:1,c:['go','went','have gone','going'],h:'It is time S ＋ 仮定法過去（過去形）',e:'It is time ＋ 仮定法過去 → <b>went</b>（過去形）'},
+  {q:'With a little more ( ), you could pass the exam.',s:'With a little more effort, you could pass the exam.',j:'もう少し努力すれば合格できるのに。',a:0,c:['effort','efforts','working','practice'],h:'with a little more effort「もう少し努力すれば」',e:'<b>with a little more effort</b>「もう少し努力があれば」'},
+  {q:'He is, ( ), a grown-up baby.',s:'He is, as it were, a grown-up baby.',j:'彼はいわば大人の赤ちゃんだ。',a:1,c:['as if it were','as it were','as if he were','as were it'],h:'いわば = as it were',e:'「いわば」→ <b>as it were</b>'},
+  {q:'( ) for water, no living things could live.',s:'But for water, no living things could live.',j:'水がなければ、どんな生物も生きられないだろう。',a:0,c:['But for','Without for','Except for','If not'],h:'もし～がなければ = But for ～ / Without ～',e:'<b>But for ～</b>（= if it were not for）「もし～がなければ」'},
+  {q:'「もし彼女の助けがなければ成功しないのに。」をWithout で表すと？<br>If it were not for her help, I would not succeed.',s:'Without her help, I would not succeed.',j:'',a:1,c:['But not her help','Without her help','Except her help','If not her help'],h:'if it were not for ～ = Without ～',e:'<b>Without ～</b>（= if it were not for）'},
+];
+window.cp5=[
+  {q:'If I ( ) you, I would buy the house.<br>→ 倒置形は？',s:'Were I you, I would buy the house.',j:'',a:0,c:['Were I you','Had I you','Should I be you','Would I be you'],h:'If I were → Were I（were を文頭に）',e:'If I <b>were</b> → <b>Were</b> I（if を省略して were を文頭へ）'},
+  {q:'If it had not been for your support, he would have failed.<br>→ 倒置形は？',s:'Had it not been for your support, he would have failed.',j:'',a:1,c:['Were it not been for your support','Had it not been for your support','Should it not be for your support','If not for your support'],h:'If it had → Had it（had を文頭に）',e:'If it <b>had</b> not been for → <b>Had</b> it not been for'},
+  {q:'If I known his address, I would have written to him.<br>→ （ ）I known…（倒置：if を省略した形）',s:'Had I known his address, I would have written to him.',j:'',a:1,c:['Have','Had','Was','Did'],h:'If I had known → Had I known',e:'If I <b>had</b> known → <b>Had</b> I known（倒置形）'},
+  {q:'If anyone should call on me, tell him I am ill.<br>→ 倒置形は？',s:'Should anyone call on me, tell him I am ill.',j:'',a:2,c:['Were anyone call','Had anyone call','Should anyone call','Would anyone call'],h:'If S should → Should S（should を文頭に）',e:'If anyone <b>should</b> call → <b>Should</b> anyone call'},
+  {q:'Were you in my place, what would you do?<br>→ if を使った形に戻すと？',s:'If you were in my place, what would you do?',j:'',a:0,c:['If you were in my place','If you had been in my place','If you are in my place','If you should be in my place'],h:'Were you → If you were',e:'<b>Were</b> you → If you <b>were</b>（倒置 → if 形に戻す）'},
+  {q:'I wish I ( ) driven a car.',s:'If only I could have driven a car.',j:'車の運転ができていたならなあ。（if only で書き換え）',a:1,c:['If only I could drive a car.','If only I could have driven a car.','If only I had driven a car.','If only I would drive a car.'],h:'I wish I could have pp → If only I could have pp',e:'過去にできなかった → <b>If only I could have driven</b>'},
+  {q:'「もし私があなたなら、その仕事をやめることを考え直すだろう。」<br>( ) you, I would think better of quitting the job.',s:'If I were you, I would think better of quitting the job.',j:'',a:1,c:['If I had been','If I were','Should I be','If I am'],h:'今の仮定 → 仮定法過去（If I were）',e:'現在の仮定 → <b>If I were</b>（仮定法過去）'},
+  {q:'Had it not been ( ) your help, I should have failed.',s:'Had it not been for your help, I should have failed.',j:'あなたの助けがなかったなら、失敗していただろう。',a:3,c:['by','much','to','for'],h:'Had it not been for ～（if it had not been for の倒置）',e:'Had it not been <b>for</b> ～（for を忘れずに）'},
+  {q:'「もし彼がもっと辛抱強ければよかったのに。」を with で表すと？<br>If you had been more patient, you could have solved the problem.',s:'With more patience, you could have solved the problem.',j:'',a:0,c:['With more patience','For more patience','By more patience','In more patience'],h:'with a little more ～「もう少し～があれば」',e:'<b>With more patience</b>（= if you had been more patient）'},
+  {q:'I am sorry I could not be with you.<br>→ I wish ( )',s:'I wish I had been with you.',j:'一緒にいられなくてごめん。→ I wish ～',a:1,c:['I could be with you.','I had been with you.','I were with you.','I could have been with you.'],h:'過去にできなかった → I wish ＋ 仮定法過去完了',e:'過去にできなかったことへの後悔 → I wish I <b>had been</b>（仮定法過去完了）'},
+  {q:'She acts as if nothing ( ) happened.',s:'She acts as if nothing had happened.',j:'彼女はまるで何も起きなかったかのようにふるまう。（主節より前の出来事）',a:2,c:['were','should have','had','was'],h:'as if ＋ 主節より前の出来事 → had pp',e:'主節より前の出来事 → as if nothing <b>had</b> happened（仮定法過去完了）'},
+  {q:'「雨がやんでくれればなあ。」<br>I wish it ( ) stop raining.',s:'I wish it would stop raining.',j:'',a:1,c:['will','would','should','could'],h:'I wish ＋ 未来への願望 → would',e:'未来への願望 → I wish it <b>would</b> stop raining'},
+  {q:'With a little more effort, he ( ) been successful.',s:'With a little more effort, he would have been successful.',j:'もう少し努力していれば、成功していただろう。',a:2,c:['will have','can have','would have','could have'],h:'with a little more ～（過去の仮定）→ would have pp',e:'過去の仮定 → <b>would have</b> been successful'},
+  {q:'Even ( ) it rains, you have to go there.',s:'Even if it rains, you have to go there.',j:'たとえ雨が降ろうとも、そこへ行かなければならない。',a:1,c:['though','if','when','while'],h:'たとえ～でも = even if',e:'「たとえ～でも」→ <b>even if</b>'},
+];
+
+/* ===== カード別確認問題データ（追加分） ===== */
+window.ciq1b=[
+  {q:'If he <b>had taken</b> my advice, he would have succeeded.<br>これは何仮定法か？',s:'仮定法過去完了',j:'',a:1,c:['仮定法過去','仮定法過去完了','仮定法未来（should）','直説法'],h:'If 節が had ＋ pp → 仮定法過去完了',e:'If 節に <b>had ＋ 過去分詞</b> → <b>仮定法過去完了</b>（過去の事実に反する仮定）'},
+  {q:'If it <b>should</b> rain, what would you do?<br>この should の意味は？',s:'should',j:'',a:0,c:['万が一（低い可能性）','現在の事実と反対','過去の後悔','ほぼあり得ない'],h:'should ＋ 原形 → 仮定法未来（万が一）',e:'<b>should ＋ 原形</b> → 仮定法未来。可能性は低いがゼロではない「万が一」の仮定。'},
+  {q:'If the sun <b>were to</b> rise in the west, I would not change my mind.<br>この were to の意味は？',s:'were to',j:'',a:2,c:['万が一','現在の事実と反対','ほぼあり得ない（不可能に近い）仮定','過去の後悔'],h:'were to ＋ 原形 → 仮定法未来（ほぼあり得ない）',e:'<b>were to ＋ 原形</b> → 仮定法未来。ほぼあり得ない・論理上の仮定。'},
+];
+window.ciq1c=[
+  {q:'If I ( ) more money, I could buy the car.<br>（　）に入る形は？（現在の事実に反する）',s:'If I had more money, I could buy the car.',j:'今お金がない → 現在の事実に反する',a:1,c:['have','had','would have','have had'],h:'現在の事実に反する → 仮定法過去（過去形）',e:'現在の事実に反する → 仮定法過去 → <b>had</b>（過去形）'},
+  {q:'次の文の（　）には何が入るか？<br>If he ( ) there, he would have helped her.',s:'If he had been there, he would have helped her.',j:'主節が would have pp → 仮定法過去完了',a:2,c:['were','was','had been','is'],h:'主節に would have pp → If 節は had pp（仮定法過去完了）',e:'主節に <b>would have helped</b>（過去完了）→ If 節は <b>had been</b>（仮定法過去完了）'},
+];
+window.ciq1d=[
+  {q:'He insisted that I ( ) the money.',s:'He insisted that I pay the money.',j:'彼は私がお金を払うよう主張した。',a:0,c:['pay','paid','would pay','have paid'],h:'insist that ～ → 原形（または should ＋ 原形）',e:'insist などの後の that 節 → <b>原形（pay）</b>。paid や would pay は誤り。'},
+  {q:'The doctor recommended that she ( ) in bed.',s:'The doctor recommended that she stay in bed.',j:'医者は彼女が安静にするよう勧めた。',a:2,c:['stays','stayed','stay','should stayed'],h:'recommend that ～ → 原形（主語が she でも s なし！）',e:'recommend の that 節 → <b>stay</b>（原形。she でも s をつけない！）'},
+  {q:'He proposed that I ( ) there alone.',s:'He proposed that I go there alone.',j:'彼は私が1人でそこへ行くよう提案した。',a:1,c:['went','go','will go','had gone'],h:'propose that ～ → 原形',e:'propose の that 節 → <b>go</b>（原形）'},
+];
+window.ciq2b=[
+  {q:'「もし私がそこにいたなら、あなたを手伝えたのに。」<br>If I ( ) there, I could have helped you.',s:'If I had been there, I could have helped you.',j:'（過去にそこにいなかった → 過去の事実に反する）',a:2,c:['were','was','had been','have been'],h:'過去の事実に反する → 仮定法過去完了（had pp）',e:'過去の事実に反する → <b>had been</b>（had ＋ 過去分詞）'},
+  {q:'「もし彼女が助言に従っていたなら、今頃は金持ちなのに。」（混合型）<br>If she had taken his advice, she ( ) rich now.',s:'If she had taken his advice, she would be rich now.',j:'（過去の仮定 → 今の状態：混合型）',a:1,c:['would have been','would be','was','had been'],h:'混合型：過去の仮定 → 今の状態 → 主節は would ＋ 原形',e:'混合型：過去の仮定（had taken）→ 今の状態 → 主節は <b>would be</b>（現在）'},
+  {q:'If he ( ) enough time, he could have finished the work.',s:'If he had had enough time, he could have finished the work.',j:'もし彼に十分な時間があったなら、終えられたのに。',a:2,c:['has had','had','had had','would have had'],h:'過去の事実に反する → 仮定法過去完了（had had）',e:'have の仮定法過去完了は <b>had had</b>（had ＋ 過去分詞 had）'},
+];
+window.ciq2c=[
+  {q:'「もし万が一地震が起きたら、どうしますか。」<br>If an earthquake ( ) happen, what would you do?',s:'If an earthquake should happen, what would you do?',j:'（万が一 → 可能性は低いがあり得る）',a:1,c:['would','should','were to','will'],h:'万が一（低い可能性）= should',e:'万が一の仮定 → <b>should</b> ＋ 原形'},
+  {q:'「太陽が西から昇るとしても、決心は変えない。」<br>If the sun ( ) rise in the west, I would not change my mind.',s:'If the sun were to rise in the west, I would not change my mind.',j:'（まずあり得ない仮定）',a:1,c:['should','were to','had to','would'],h:'ほぼあり得ない = were to',e:'ほぼあり得ない仮定 → <b>were to</b> ＋ 原形'},
+];
+window.ciq3b=[
+  {q:'「学生のとき一生懸命勉強しておけばよかった。」（過去の後悔）<br>I wish I ( ) harder.',s:'I wish I had studied harder.',j:'',a:2,c:['studied','have studied','had studied','was studying'],h:'I wish ＋ 過去の後悔 → 仮定法過去完了（had pp）',e:'過去の後悔 → I wish I <b>had studied</b>（had ＋ 過去分詞）'},
+  {q:'「あのとき彼が一緒にいてくれたらなあ。」（過去の後悔）<br>I wish he ( ) with me then.',s:'I wish he had been with me then.',j:'',a:1,c:['was','had been','were','is'],h:'I wish ＋ 過去の後悔 → had ＋ pp',e:'過去の後悔 → I wish ＋ <b>had been</b>（仮定法過去完了）'},
+];
+window.ciq3c=[
+  {q:'She looked as if she ( ) sick.（主節と同じ時点）',s:'She looked as if she were sick.',j:'彼女はまるで病気であるかのように見えた。',a:0,c:['were','had been','was being','is'],h:'as if ＋ 同じ時点 → 仮定法過去（were）',e:'主節と同じ時点 → as if ＋ 仮定法過去 → <b>were</b>'},
+  {q:'She looks as if she ( ) a ghost.（主節より前の時点）',s:'She looks as if she had seen a ghost.',j:'彼女はまるで幽霊を見たかのような顔をしている。',a:2,c:['see','saw','had seen','has seen'],h:'as if ＋ 主節より前 → 仮定法過去完了（had pp）',e:'主節より前の時点 → as if ＋ 仮定法過去完了 → <b>had seen</b>'},
+  {q:'He talks as if he ( ) there before.（主節より前）',s:'He talks as if he had been there before.',j:'まるでそこに行ったことがあるかのように話す。',a:1,c:['were','had been','was','has been'],h:'as if ＋ 主節より前 → 仮定法過去完了（had been）',e:'主節より前の時点 → <b>had been</b>（仮定法過去完了）'},
+];
+window.ciq4b=[
+  {q:'I was tired; ( ), I would have gone to the party.',s:'I was tired; otherwise, I would have gone to the party.',j:'疲れていた。さもなければパーティーに行っていただろう。',a:1,c:['however','otherwise','therefore','unless'],h:'さもなければ = otherwise',e:'「さもなければ」→ <b>otherwise</b>（後ろは仮定法：would have gone）'},
+  {q:'otherwise の後ろの動詞形として正しいのはどれか？（前の文が過去の話）',s:'otherwise I would have been late.',j:'',a:2,c:['I am late.','I will be late.','I would have been late.','I was late.'],h:'前の文が過去の話 → otherwise ＋ would have pp',e:'前の文が過去 → otherwise の後ろは <b>would have been</b>（仮定法過去完了）'},
+];
+window.ciq4c=[
+  {q:'「もうねる時間ですよ。」<br>It is time you ( ) to bed.',s:'It is time you went to bed.',j:'',a:1,c:['go','went','have gone','going'],h:'It is time S ＋ 仮定法過去（過去形）',e:'It is time の後ろは <b>仮定法過去（過去形）</b> → <b>went</b>'},
+  {q:'「もう少し努力すれば合格できるのに。」<br>( ) a little more effort, you could pass.',s:'With a little more effort, you could pass.',j:'',a:0,c:['With','For','By','In'],h:'with a little more ～「もう少し～があれば」',e:'<b>With a little more ～</b>「もう少し～があれば」→ <b>With</b>'},
+  {q:'「彼はいわば大人の赤ちゃんだ。」<br>He is, ( ), a grown-up baby.',s:'He is, as it were, a grown-up baby.',j:'',a:2,c:['as if it were','as if he were','as it were','as if were'],h:'いわば = as it were（慣用的仮定法表現）',e:'「いわば」→ <b>as it were</b>（as if were ではなく as it were が正しい）'},
+];
+
+/* ===== 初期化 ===== */
+iC('iq1a');iC('iq1b');iC('iq1c');iC('iq1d');
+iC('iq2a');iC('iq2b');iC('iq2c');
+iC('iq3a');iC('iq3b');iC('iq3c');
+iC('iq4a');iC('iq4b');iC('iq4c');
+iC('iq5a');
+iC('p1');iC('p2');iC('p3');iC('p4');iC('p5');
+</script>
+</body>
+</html>

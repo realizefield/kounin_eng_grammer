@@ -1,0 +1,1167 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+<title>英検2級・高認英文法　Unit 11　関係詞②</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'BIZ UDGothic','Hiragino Kaku Gothic Pro','Meiryo',sans-serif;background:#eef2f7;color:#1a1a2e;min-height:100vh;font-size:15px}
+.top-header{background:linear-gradient(135deg,#1B3A6B 0%,#0097A7 100%);color:#fff;padding:14px 16px 12px;text-align:center}
+.top-header h1{font-size:17px;font-weight:700;letter-spacing:.05em}
+.top-header p{font-size:12px;margin-top:3px;opacity:.85}
+.nav{background:#fff;border-bottom:3px solid #0097A7;padding:8px 10px;display:flex;overflow-x:auto;gap:4px;-webkit-overflow-scrolling:touch;align-items:stretch}
+.nav::-webkit-scrollbar{height:3px}
+.pair{display:flex;gap:0;flex-shrink:0;border-radius:22px;overflow:hidden;box-shadow:0 0 0 1.5px #ccd}
+.pair.active-pair{box-shadow:0 0 0 2.5px #1B3A6B}
+.nb{padding:8px 14px;border:none;background:#f5f7fa;color:#555;font-size:13px;font-family:inherit;cursor:pointer;white-space:nowrap;border-right:1px solid #dde;transition:.2s;font-weight:500;flex-shrink:0}
+.nb:hover{background:#e8eaf6;color:#1B3A6B}
+.nb.on{background:#1B3A6B;color:#fff}
+.pb{padding:8px 14px;border:none;background:#fff3e0;color:#c84500;font-size:13px;font-family:inherit;cursor:pointer;white-space:nowrap;font-weight:700;transition:.2s;flex-shrink:0}
+.pb:hover{background:#e65100;color:#fff}
+.nav-sep{width:6px;flex-shrink:0}
+.sec{display:none;padding:12px;max-width:820px;margin:0 auto;padding-bottom:60px}
+.sec.active{display:block}
+.card{background:#fff;border-radius:14px;border:1px solid #dde3ee;padding:14px 16px;margin-bottom:14px;box-shadow:0 1px 4px rgba(0,0,0,.05)}
+.card-title{font-size:15px;font-weight:700;color:#1B3A6B;margin-bottom:10px;padding-bottom:8px;border-bottom:2px solid #0097A7}
+.sh{background:linear-gradient(90deg,#1B3A6B,#1B5E8B);color:#fff;border-radius:10px;padding:9px 16px;font-size:15px;font-weight:700;margin-bottom:12px;margin-top:6px}
+.pt{background:#fffde7;border-left:5px solid #f9a825;border-radius:0 10px 10px 0;padding:10px 14px;margin:8px 0;font-size:14px;line-height:1.9}
+.kb{background:#f1f8e9;border-left:5px solid #2e7d32;border-radius:0 10px 10px 0;padding:10px 14px;margin:8px 0;font-size:14px;line-height:1.8}
+.wb{background:#fff3e0;border-left:5px solid #e65100;border-radius:0 10px 10px 0;padding:10px 14px;margin:8px 0;font-size:14px;line-height:1.8}
+.ex{background:#f0f8ff;border:1px solid #b3d9f7;border-radius:10px;padding:12px 14px;margin:8px 0;font-size:14px;line-height:1.9}
+.ex-ja{font-size:12px;color:#555;margin-top:3px}
+.spk{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:#e8f4ff;border:1.5px solid #0097A7;cursor:pointer;margin-left:5px;vertical-align:middle;flex-shrink:0;transition:.2s;font-size:14px;font-family:inherit;padding:0}
+.spk:hover{background:#0097A7;color:#fff}
+.q-box{background:#fff;border-radius:12px;border:1px solid #dde3ee;padding:14px;margin-bottom:14px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.q-hd{display:flex;align-items:flex-start;gap:8px;margin-bottom:10px}
+.q-num{flex-shrink:0;width:26px;height:26px;background:#1B3A6B;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700}
+.q-txt{flex:1;font-size:14px;line-height:1.7}
+.hint{font-size:12px;color:#0097A7;background:#f0faff;border-radius:6px;padding:3px 8px;display:inline-block;margin-bottom:8px}
+.ub{font-size:11px;background:#e3f2fd;color:#1565c0;padding:2px 8px;border-radius:10px;font-weight:700;margin-left:6px;vertical-align:middle}
+.cb{width:100%;text-align:left;padding:10px 14px;margin:4px 0;border-radius:8px;border:1.5px solid #dde;background:#fff;font-size:14px;font-family:inherit;cursor:pointer;transition:.15s;line-height:1.4}
+.cb:hover:not(.dis){border-color:#0097A7;background:#f0faff}
+.cb.ca{background:#e8f5e9;border-color:#2e7d32;color:#1b5e20;font-weight:700}
+.cb.wa{background:#ffebee;border-color:#e53935;color:#b71c1c}
+.cb.dis{pointer-events:none}
+.ep{background:#fff8e1;border:1.5px solid #ffc107;border-radius:10px;padding:12px 14px;margin-top:10px;font-size:13px;line-height:1.8;display:none}
+.ep.show{display:block}
+.sb{background:#fff;border-radius:10px;border:1px solid #dde;padding:10px 14px;margin-bottom:12px;display:flex;align-items:center;gap:12px}
+.sn{font-size:20px;font-weight:700;color:#1B3A6B;min-width:60px}
+.pw{flex:1;height:10px;background:#eee;border-radius:6px;overflow:hidden}
+.pf{height:100%;background:linear-gradient(90deg,#0097A7,#1B3A6B);border-radius:6px;transition:.5s}
+.tbl{width:100%;border-collapse:collapse;font-size:13px}
+.tbl th{background:#1B3A6B;color:#fff;padding:7px 8px;text-align:center}
+.tbl td{padding:7px 8px;border-bottom:1px solid #eef;vertical-align:middle;text-align:center}
+.tbl tr:nth-child(even) td{background:#f7f9ff}
+.form-box{background:#e8f4ff;border:2px solid #0097A7;border-radius:12px;padding:14px;font-size:14px;font-weight:700;color:#1B3A6B;margin:10px 0;line-height:2.1}
+.mini-quiz-wrap{background:#f0faff;border:2px solid #0097A7;border-radius:12px;padding:14px;margin-top:12px;margin-bottom:4px}
+.mini-quiz-title{font-size:13px;font-weight:700;color:#0097A7;margin-bottom:10px}
+.cmp2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:10px 0}
+@media(max-width:500px){.cmp2{grid-template-columns:1fr}}
+.cbox{border-radius:10px;padding:12px 14px;font-size:13px;line-height:1.8}
+.cbox.bl{background:#e3f2fd;border:1.5px solid #90caf9}
+.cbox.gn{background:#f1f8e9;border:1.5px solid #a5d6a7}
+.cbox.yl{background:#fffde7;border:1.5px solid #f9a825}
+.cbox-ttl{font-weight:700;font-size:13px;margin-bottom:6px}
+.cbox.bl .cbox-ttl{color:#1565c0}
+.cbox.gn .cbox-ttl{color:#2e7d32}
+.cbox.yl .cbox-ttl{color:#f57f17}
+/* 関係詞フロー図 */
+.rel-flow{background:#f8f9ff;border-radius:12px;border:1px solid #dde3ee;padding:14px;margin:10px 0;font-size:13px;line-height:2}
+.rel-flow .arr{color:#0097A7;font-size:18px;margin:0 6px}
+/* 関係副詞タグ */
+.tag-when{display:inline-block;background:#1B3A6B;color:#fff;border-radius:6px;padding:2px 10px;font-size:13px;font-weight:700;margin:2px}
+.tag-where{display:inline-block;background:#0097A7;color:#fff;border-radius:6px;padding:2px 10px;font-size:13px;font-weight:700;margin:2px}
+.tag-why{display:inline-block;background:#e65100;color:#fff;border-radius:6px;padding:2px 10px;font-size:13px;font-weight:700;margin:2px}
+.tag-how{display:inline-block;background:#7b1fa2;color:#fff;border-radius:6px;padding:2px 10px;font-size:13px;font-weight:700;margin:2px}
+.tag-ever{display:inline-block;background:#2e7d32;color:#fff;border-radius:6px;padding:2px 10px;font-size:13px;font-weight:700;margin:2px}
+.tag-which{display:inline-block;background:#0097A7;color:#fff;border-radius:6px;padding:2px 10px;font-size:13px;font-weight:700;margin:2px}
+.tag-who{display:inline-block;background:#1B3A6B;color:#fff;border-radius:6px;padding:2px 10px;font-size:13px;font-weight:700;margin:2px}
+.tag-no{display:inline-block;background:#c62828;color:#fff;border-radius:6px;padding:2px 10px;font-size:13px;font-weight:700;margin:2px}
+.vpop{display:none;position:fixed;z-index:2000;background:#fff;border-radius:14px;box-shadow:0 6px 30px rgba(0,0,0,.22);width:260px;max-width:90vw}
+.vpop.show{display:block}
+.vpop-hd{background:linear-gradient(135deg,#1B3A6B,#0097A7);color:#fff;padding:12px 14px 10px;border-radius:14px 14px 0 0;display:flex;align-items:center;justify-content:space-between}
+.vpop-word{font-size:18px;font-weight:700}
+.vpop-pos{font-size:11px;background:rgba(255,255,255,.25);border-radius:8px;padding:2px 8px;margin-left:6px}
+.vpop-close{background:rgba(255,255,255,.2);border:none;color:#fff;width:26px;height:26px;border-radius:50%;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.vpop-body{padding:12px 14px}
+.vpop-mean{font-size:16px;font-weight:700;color:#1B3A6B;margin-bottom:4px}
+.vpop-kana{font-size:13px;color:#555;margin-bottom:10px}
+.vpop-btns{display:flex;gap:8px}
+.vpop-spk,.vpop-save{flex:1;padding:8px;border-radius:8px;font-size:13px;font-family:inherit;cursor:pointer;font-weight:700}
+.vpop-spk{border:1.5px solid #0097A7;background:#f0faff;color:#0097A7}
+.vpop-spk:hover{background:#0097A7;color:#fff}
+.vpop-save{border:1.5px solid #e65100;background:#fff3e0;color:#c84500}
+.vpop-save:hover{background:#e65100;color:#fff}
+.vpop-save.saved{background:#e8f5e9;border-color:#2e7d32;color:#2e7d32}
+.vpop-saved-lbl{font-size:11px;color:#2e7d32;text-align:center;margin-top:6px;display:none}
+.vpop-saved-lbl.show{display:block}
+.vocab-badge{display:none;position:absolute;top:-6px;right:-6px;background:#e53935;color:#fff;border-radius:50%;width:18px;height:18px;font-size:11px;font-weight:700;align-items:center;justify-content:center}
+.vocab-badge.show{display:flex}
+.mo{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:1500;align-items:flex-end;justify-content:center}
+.mo.open{display:flex}
+.mb{background:#fff;border-radius:18px 18px 0 0;width:100%;max-width:540px;max-height:85vh;display:flex;flex-direction:column}
+.mh{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid #eee}
+.mh h2{font-size:16px;font-weight:700;color:#1B3A6B}
+.mhc{background:none;border:none;font-size:22px;cursor:pointer;color:#888}
+.mbody{overflow-y:auto;padding:14px 16px;flex:1}
+.vbook-empty{text-align:center;color:#999;padding:24px;font-size:14px}
+.vcard{background:#f8faff;border-radius:10px;border:1px solid #dde;padding:10px 12px;margin-bottom:8px;display:flex;align-items:center;gap:10px}
+.vcard-word{font-size:15px;font-weight:700;color:#1B3A6B;flex:1}
+.vcard-mean{font-size:13px;color:#555;flex:1}
+.vcard-del{background:#fff;border:1.5px solid #dde;color:#aaa;border-radius:6px;padding:4px 10px;font-size:12px;cursor:pointer;font-family:inherit}
+.vcard-del:hover{border-color:#e53935;color:#e53935}
+.vtest-q{font-size:16px;font-weight:700;color:#1B3A6B;text-align:center;padding:16px;background:#e8f4ff;border-radius:10px;margin-bottom:12px}
+.vtest-opt{width:100%;text-align:left;padding:11px 14px;margin:5px 0;border-radius:8px;border:1.5px solid #dde;background:#fff;font-size:14px;font-family:inherit;cursor:pointer;transition:.15s}
+.vtest-opt:hover:not(.dis){border-color:#0097A7;background:#f0faff}
+.vtest-opt.ca{background:#e8f5e9;border-color:#2e7d32;color:#1b5e20;font-weight:700}
+.vtest-opt.wa{background:#ffebee;border-color:#e53935;color:#b71c1c}
+.vtest-opt.dis{pointer-events:none}
+/* 重要語クリック */
+.vw{border-bottom:2px dashed #7b1fa2;cursor:pointer;color:#1B3A6B;font-weight:700}
+.vw:hover{background:#f3e5f5;border-radius:3px}
+/* 3ステップ判定フロー */
+.flow-step{background:#fff;border:2px solid #0097A7;border-radius:10px;padding:10px 14px;margin:8px 0;font-size:13px;line-height:1.8;position:relative}
+.flow-step-num{display:inline-block;background:#0097A7;color:#fff;border-radius:50%;width:22px;height:22px;line-height:22px;text-align:center;font-size:12px;font-weight:700;margin-right:6px}
+.flow-arrow{text-align:center;font-size:18px;color:#0097A7;margin:-2px 0}
+canvas#cc{position:fixed;top:0;left:0;pointer-events:none;z-index:9999;display:none}
+</style>
+</head>
+<body>
+<canvas id="cc"></canvas>
+<div class="top-header">
+  <h1>🎓 英検2級・高認英文法　Unit 11　関係詞②</h1>
+  <p>こうげんよびこう（江原予備校）　― スピーカーボタンで音声再生 ―</p>
+</div>
+<nav class="nav" id="nav">
+  <div class="pair active-pair">
+    <button class="nb on" onclick="ss('s1',this)">① 関係副詞 when/where/why/how</button>
+    <button class="pb" onclick="ss('p1',this)">✏️ 練習①</button>
+  </div>
+  <div class="nav-sep"></div>
+  <div class="pair">
+    <button class="nb" onclick="ss('s2',this)">② 関係代名詞 vs 関係副詞</button>
+    <button class="pb" onclick="ss('p2',this)">✏️ 練習②</button>
+  </div>
+  <div class="nav-sep"></div>
+  <div class="pair">
+    <button class="nb" onclick="ss('s3',this)">③ 複合関係代名詞</button>
+    <button class="pb" onclick="ss('p3',this)">✏️ 練習③</button>
+  </div>
+  <div class="nav-sep"></div>
+  <div class="pair">
+    <button class="nb" onclick="ss('s4',this)">④ 複合関係形容詞・副詞</button>
+    <button class="pb" onclick="ss('p4',this)">✏️ 練習④</button>
+  </div>
+  <div class="nav-sep"></div>
+  <div class="pair">
+    <button class="nb" onclick="ss('s5',this)">⑤ 総合まとめ</button>
+    <button class="pb" onclick="ss('p5',this)">✏️ 練習⑤実戦</button>
+  </div>
+  <div class="nav-sep" style="width:12px"></div>
+  <div style="flex-shrink:0;position:relative">
+    <button onclick="openM('mvocab')" style="padding:8px 16px;border-radius:22px;border:2px solid #7b1fa2;background:#f3e5f5;color:#7b1fa2;font-size:13px;font-family:inherit;cursor:pointer;font-weight:700;white-space:nowrap">📚 単語帳</button>
+    <span class="vocab-badge" id="vocab-badge">0</span>
+  </div>
+</nav>
+
+<!-- ===== ① 関係副詞 when/where/why/how ===== -->
+<div id="s1" class="sec active">
+<div class="sh">① 関係副詞 when / where / why / how</div>
+
+<div class="card">
+  <div class="card-title">【基礎】関係副詞とは何か　— 接続詞＋副詞の働き —</div>
+  <div class="pt">
+    <b>関係副詞</b>は、関係代名詞と同じように、直前の<b>先行詞</b>を修飾する<b>形容詞節</b>をつくります。<br>
+    ただし、関係代名詞が「接続詞＋<b>代名詞</b>」の働きをするのに対して、関係副詞は「<b>接続詞＋副詞</b>」の働きをします。<br><br>
+    <b>関係副詞の正体</b><br>
+    関係副詞は、じつは<b>「前置詞＋関係代名詞」</b>のかたまりを1語にまとめたものです。<br>
+    ・on which → <span class="tag-when vw" onclick="showVwPop(this,event)" data-w="when" data-pos="関係副詞" data-mean="〜するとき（時を表す先行詞を修飾）" data-kana="ウェン" data-opts="[&quot;〜するとき（時）&quot;,&quot;〜する場所&quot;,&quot;〜する理由&quot;,&quot;〜する方法&quot;]">when</span>（時）<br>
+    ・in which → <span class="tag-where vw" onclick="showVwPop(this,event)" data-w="where" data-pos="関係副詞" data-mean="〜するところ（場所を表す先行詞を修飾）" data-kana="ウェア" data-opts="[&quot;〜する場所&quot;,&quot;〜するとき&quot;,&quot;〜する理由&quot;,&quot;〜する方法&quot;]">where</span>（場所）<br>
+    ・for which → <span class="tag-why vw" onclick="showVwPop(this,event)" data-w="why" data-pos="関係副詞" data-mean="〜する理由（the reason を修飾）" data-kana="ワイ" data-opts="[&quot;〜する理由&quot;,&quot;〜する場所&quot;,&quot;〜するとき&quot;,&quot;〜する方法&quot;]">why</span>（理由）<br>
+    ・in which → <span class="tag-how vw" onclick="showVwPop(this,event)" data-w="how" data-pos="関係副詞" data-mean="〜する方法（先行詞なしで使う）" data-kana="ハウ" data-opts="[&quot;〜する方法&quot;,&quot;〜する場所&quot;,&quot;〜するとき&quot;,&quot;〜する理由&quot;]">how</span>（方法）
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title">【関係副詞 when】時を表す先行詞を修飾　— the day / the time など —</div>
+  <div class="pt">
+    <b>先行詞が「時」を表す語</b>（the day, the time, the year など）のとき、「<b>on / at / in ＋ which</b>」を <span class="tag-when vw" onclick="showVwPop(this,event)" data-w="when" data-pos="関係副詞" data-mean="〜するとき（時を表す先行詞を修飾）" data-kana="ウェン" data-opts="[&quot;〜するとき（時）&quot;,&quot;〜する場所&quot;,&quot;〜する理由&quot;,&quot;〜する方法&quot;]">when</span> で書き換えられます。<br>
+    <b>when は「接続詞＋副詞」</b>の働きをし、関係副詞のあとには<b>完全な文</b>（S＋V＋…）が続きます。
+  </div>
+  <div class="rel-flow">
+    <b>📌 足し算型（時・when）</b><br><br>
+    <b>① 共通の名詞を探す</b><br>
+    I can't forget <span style="color:#e65100;font-weight:700">the day</span>. ＋ I first met her <span style="color:#e65100;font-weight:700">on the day</span>.<br>
+    → the day（時を表す名詞）<br><br>
+    <b>② on the day（副詞句）を関係副詞に変える</b><br>
+    on which（前置詞＋関係代名詞） → <span class="tag-when vw" onclick="showVwPop(this,event)" data-w="when" data-pos="関係副詞" data-mean="〜するとき（時を表す先行詞を修飾）" data-kana="ウェン" data-opts="[&quot;〜するとき（時）&quot;,&quot;〜する場所&quot;,&quot;〜する理由&quot;,&quot;〜する方法&quot;]">when</span><br><br>
+    <b>③ 完成！</b><br>
+    I can't forget the day <span class="tag-when vw" onclick="showVwPop(this,event)" data-w="when" data-pos="関係副詞" data-mean="〜するとき（時を表す先行詞を修飾）" data-kana="ウェン" data-opts="[&quot;〜するとき（時）&quot;,&quot;〜する場所&quot;,&quot;〜する理由&quot;,&quot;〜する方法&quot;]">when</span> I first met her. <button class="spk" data-t="I can't forget the day when I first met her." onclick="sp(this.dataset.t)">▶</button><br>
+    <span style="color:#555;font-size:12px">私は彼女にはじめて会った日のことを忘れられない。</span>
+  </div>
+  <div class="ex">
+    Do you know the time <span class="tag-when vw" onclick="showVwPop(this,event)" data-w="when" data-pos="関係副詞" data-mean="〜するとき（時を表す先行詞を修飾）" data-kana="ウェン" data-opts="[&quot;〜するとき（時）&quot;,&quot;〜する場所&quot;,&quot;〜する理由&quot;,&quot;〜する方法&quot;]">when</span> they will <span class="vw" onclick="showVwPop(this,event)" data-w="arrive" data-pos="動詞" data-mean="到着する" data-kana="アライブ" data-opts="[&quot;到着する&quot;,&quot;出発する&quot;,&quot;帰る&quot;,&quot;滞在する&quot;]">arrive</span> here? <button class="spk" data-t="Do you know the time when they will arrive here?" onclick="sp(this.dataset.t)">▶</button><br>
+    ＝ Do you know the time <b>at which</b> they will arrive here? <button class="spk" data-t="Do you know the time at which they will arrive here?" onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">あなたは彼らがここに到着する時間を知っていますか。</span>
+  </div>
+  <div class="kb">
+    💡 <b>when のチェック方法</b><br>
+    先行詞が<b>時</b>（the day / the time / the year など）＋ 後ろに<b>完全な文（S＋V＋…）</b> → <span class="tag-when vw" onclick="showVwPop(this,event)" data-w="when" data-pos="関係副詞" data-mean="〜するとき（時を表す先行詞を修飾）" data-kana="ウェン" data-opts="[&quot;〜するとき（時）&quot;,&quot;〜する場所&quot;,&quot;〜する理由&quot;,&quot;〜する方法&quot;]">when</span>（関係副詞）
+  </div>
+</div>
+<div class="mini-quiz-wrap">
+  <div class="mini-quiz-title">📝 確認① 関係副詞 when</div>
+  <div id="iq1aq"></div>
+</div>
+
+<div class="card">
+  <div class="card-title">【関係副詞 where】場所を表す先行詞を修飾　— the house / the place など —</div>
+  <div class="pt">
+    <b>先行詞が「場所」を表す語</b>（the house, the place, the city など）のとき、「<b>in / at / on ＋ which</b>」を <span class="tag-where vw" onclick="showVwPop(this,event)" data-w="where" data-pos="関係副詞" data-mean="〜するところ（場所を表す先行詞を修飾）" data-kana="ウェア" data-opts="[&quot;〜する場所&quot;,&quot;〜するとき&quot;,&quot;〜する理由&quot;,&quot;〜する方法&quot;]">where</span> で書き換えられます。<br>
+    <b>先行詞を表す副詞の here, there</b> を受けたり、<b>「前置詞＋名詞」</b>の形を受けるときに使います。
+  </div>
+  <div class="rel-flow">
+    <b>📌 足し算型（場所・where）</b><br><br>
+    <b>① 共通の名詞を探す</b><br>
+    This is <span style="color:#0097A7;font-weight:700">the house</span>. ＋ He lives <span style="color:#0097A7;font-weight:700">here</span>.<br>
+    → the house（場所を表す名詞） ／ here（= in it）<br><br>
+    <b>② 書き換えのながれ（3パターン）</b><br>
+    ・This is the house <b>which</b> he lives <b>in</b>.　（前置詞を後ろに）<br>
+    ・This is the house <b>in which</b> he lives.　（前置詞を前に）<br>
+    ・This is the house <span class="tag-where vw" onclick="showVwPop(this,event)" data-w="where" data-pos="関係副詞" data-mean="〜するところ（場所を表す先行詞を修飾）" data-kana="ウェア" data-opts="[&quot;〜する場所&quot;,&quot;〜するとき&quot;,&quot;〜する理由&quot;,&quot;〜する方法&quot;]">where</span> he lives.　（<b>in which ＝ where</b>）<button class="spk" data-t="This is the house where he lives." onclick="sp(this.dataset.t)">▶</button><br>
+    <span style="color:#555;font-size:12px">ここが彼が住んでいる家です。</span><br><br>
+    <b>③ ポイント</b><br>
+    <b>前置詞＋関係代名詞 ＝ 関係副詞</b>
+  </div>
+  <div class="kb">
+    💡 <b>where のチェック方法</b><br>
+    先行詞が<b>場所</b>（the house / the place / the city など）＋ 後ろに<b>完全な文</b> → <span class="tag-where vw" onclick="showVwPop(this,event)" data-w="where" data-pos="関係副詞" data-mean="〜するところ（場所を表す先行詞を修飾）" data-kana="ウェア" data-opts="[&quot;〜する場所&quot;,&quot;〜するとき&quot;,&quot;〜する理由&quot;,&quot;〜する方法&quot;]">where</span>（関係副詞）
+  </div>
+</div>
+<div class="mini-quiz-wrap">
+  <div class="mini-quiz-title">📝 確認② 関係副詞 where</div>
+  <div id="iq1bq"></div>
+</div>
+
+<div class="card">
+  <div class="card-title">【関係副詞 why】理由を表す先行詞を修飾　— the reason —</div>
+  <div class="pt">
+    <b>先行詞が「理由」を表す the <span class="vw" onclick="showVwPop(this,event)" data-w="reason" data-pos="名詞" data-mean="理由・わけ" data-kana="リーズン" data-opts="[&quot;理由&quot;,&quot;方法&quot;,&quot;場所&quot;,&quot;時間&quot;]">reason</span></b> のときに <span class="tag-why vw" onclick="showVwPop(this,event)" data-w="why" data-pos="関係副詞" data-mean="〜する理由（the reason を修飾）" data-kana="ワイ" data-opts="[&quot;〜する理由&quot;,&quot;〜する場所&quot;,&quot;〜するとき&quot;,&quot;〜する方法&quot;]">why</span> を使います。<br>
+    <b>the reason why</b>（〜する理由）の形で使うほか、the reason を省略して <b>why</b> だけ、または why を省略して <b>the reason</b> だけで表すこともできます。
+  </div>
+  <div class="ex">
+    This is <b>the reason</b> <span class="tag-why vw" onclick="showVwPop(this,event)" data-w="why" data-pos="関係副詞" data-mean="〜する理由（the reason を修飾）" data-kana="ワイ" data-opts="[&quot;〜する理由&quot;,&quot;〜する場所&quot;,&quot;〜するとき&quot;,&quot;〜する方法&quot;]">why</span> I was late yesterday. <button class="spk" data-t="This is the reason why I was late yesterday." onclick="sp(this.dataset.t)">▶</button><br>
+    ＝ This is <span class="tag-why vw" onclick="showVwPop(this,event)" data-w="why" data-pos="関係副詞" data-mean="〜する理由（the reason を修飾）" data-kana="ワイ" data-opts="[&quot;〜する理由&quot;,&quot;〜する場所&quot;,&quot;〜するとき&quot;,&quot;〜する方法&quot;]">why</span> I was late yesterday. <button class="spk" data-t="This is why I was late yesterday." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">これが私が昨日遅刻した理由です。</span>
+  </div>
+  <div class="ex">
+    The <span class="vw" onclick="showVwPop(this,event)" data-w="reason" data-pos="名詞" data-mean="理由・わけ" data-kana="リーズン" data-opts="[&quot;理由&quot;,&quot;方法&quot;,&quot;場所&quot;,&quot;時間&quot;]">reason</span> <span class="tag-why vw" onclick="showVwPop(this,event)" data-w="why" data-pos="関係副詞" data-mean="〜する理由（the reason を修飾）" data-kana="ワイ" data-opts="[&quot;〜する理由&quot;,&quot;〜する場所&quot;,&quot;〜するとき&quot;,&quot;〜する方法&quot;]">why</span> he did it is unknown. <button class="spk" data-t="The reason why he did it is unknown." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">彼がそれをした理由は知られていない。</span>
+  </div>
+  <div class="kb">
+    💡 <b>why のチェック方法</b><br>
+    先行詞が <b>the reason</b>（またはreasonを省略）＋ 後ろに<b>完全な文</b> → <span class="tag-why vw" onclick="showVwPop(this,event)" data-w="why" data-pos="関係副詞" data-mean="〜する理由（the reason を修飾）" data-kana="ワイ" data-opts="[&quot;〜する理由&quot;,&quot;〜する場所&quot;,&quot;〜するとき&quot;,&quot;〜する方法&quot;]">why</span>（関係副詞）<br>
+    <b>the reason why ／ why ／ the reason</b> の3通りが可能
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title">【関係副詞 how】方法を表す　— 先行詞は the way（両方は不可！）—</div>
+  <div class="pt">
+    関係副詞 <span class="tag-how vw" onclick="showVwPop(this,event)" data-w="how" data-pos="関係副詞" data-mean="〜する方法（先行詞なしで使う）" data-kana="ハウ" data-opts="[&quot;〜する方法&quot;,&quot;〜する場所&quot;,&quot;〜するとき&quot;,&quot;〜する理由&quot;]">how</span> を用いて「<b>〜する方法</b>」という意味を表します。<br>
+    ・<b>how は先行詞を持ちません</b>（how 単独で使う）<br>
+    ・<span class="tag-how vw" onclick="showVwPop(this,event)" data-w="how" data-pos="関係副詞" data-mean="〜する方法（先行詞なしで使う）" data-kana="ハウ" data-opts="[&quot;〜する方法&quot;,&quot;〜する場所&quot;,&quot;〜するとき&quot;,&quot;〜する理由&quot;]">how</span> のかわりに <b>the way</b> で表すこともできます
+  </div>
+  <div class="wb">
+    ⚠️ <b>the way how は間違い！</b><br>
+    ✅ the reason why は OK（両方使える）<br>
+    ❌ <s>the way how</s> は不可<br>
+    → <b>the way</b> だけ／<b>how</b> だけ のどちらかで表現すること
+  </div>
+  <div class="ex">
+    This is <span class="tag-how vw" onclick="showVwPop(this,event)" data-w="how" data-pos="関係副詞" data-mean="〜する方法（先行詞なしで使う）" data-kana="ハウ" data-opts="[&quot;〜する方法&quot;,&quot;〜する場所&quot;,&quot;〜するとき&quot;,&quot;〜する理由&quot;]">how</span> he <span class="vw" onclick="showVwPop(this,event)" data-w="solved" data-pos="動詞" data-mean="解いた（solve の過去形）" data-kana="ソルブド" data-opts="[&quot;解いた&quot;,&quot;失った&quot;,&quot;学んだ&quot;,&quot;作った&quot;]">solved</span> this <span class="vw" onclick="showVwPop(this,event)" data-w="problem" data-pos="名詞" data-mean="問題" data-kana="プロブレム" data-opts="[&quot;問題&quot;,&quot;答え&quot;,&quot;質問&quot;,&quot;課題&quot;]">problem</span>. <button class="spk" data-t="This is how he solved this problem." onclick="sp(this.dataset.t)">▶</button><br>
+    ＝ This is <b>the way</b> he solved this problem. <button class="spk" data-t="This is the way he solved this problem." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">これが彼がその問題を解いた方法です。</span>
+  </div>
+  <div class="ex">
+    This is <span class="tag-how vw" onclick="showVwPop(this,event)" data-w="how" data-pos="関係副詞" data-mean="〜する方法（先行詞なしで使う）" data-kana="ハウ" data-opts="[&quot;〜する方法&quot;,&quot;〜する場所&quot;,&quot;〜するとき&quot;,&quot;〜する理由&quot;]">how</span> he went to Osaka. <button class="spk" data-t="This is how he went to Osaka." onclick="sp(this.dataset.t)">▶</button><br>
+    ＝ This is <b>the way</b> he went to Osaka. <button class="spk" data-t="This is the way he went to Osaka." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">このようにして彼は大阪に行きました。</span>
+  </div>
+</div>
+<div class="mini-quiz-wrap">
+  <div class="mini-quiz-title">📝 確認③ 関係副詞 why / how</div>
+  <div id="iq2aq"></div>
+</div>
+
+<div class="card">
+  <div class="card-title">【関係副詞まとめ表】when / where / why / how</div>
+  <table class="tbl">
+    <tr>
+      <th>関係副詞</th>
+      <th>先行詞</th>
+      <th>前置詞＋関係代名詞</th>
+      <th>意味</th>
+    </tr>
+    <tr>
+      <td><span class="tag-when">when</span></td>
+      <td>時（the day, the time, the year...）</td>
+      <td>on which / at which / in which</td>
+      <td>〜するとき</td>
+    </tr>
+    <tr>
+      <td><span class="tag-where">where</span></td>
+      <td>場所（the house, the place...）</td>
+      <td>in which / at which / on which</td>
+      <td>〜するところ</td>
+    </tr>
+    <tr>
+      <td><span class="tag-why">why</span></td>
+      <td>理由（the reason）</td>
+      <td>for which</td>
+      <td>〜する理由</td>
+    </tr>
+    <tr>
+      <td><span class="tag-how">how</span></td>
+      <td>先行詞なし（the way と併用不可）</td>
+      <td>in which</td>
+      <td>〜する方法</td>
+    </tr>
+  </table>
+  <div class="kb">
+    💡 <b>覚え方のポイント</b><br>
+    関係副詞のあとには必ず<b>完全な文</b>（S＋V＋…）が続く。<br>
+    一方、関係代名詞のあとは<b>不完全な文</b>（主語や目的語が欠けている）。
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title">【非制限用法】コンマ＋ when / where　— 接続詞の意味をもつ —</div>
+  <div class="pt">
+    関係代名詞と同様に、関係副詞にも<b>非制限用法（継続用法）</b>があります。<br>
+    コンマ（<b>,</b>）を置いて情報を付け加え、<b>接続詞</b>の意味（and / but / because / for など）をもちます。<br><br>
+    <b>⚠️ 非制限用法を使えるのは <span class="tag-where">where</span> と <span class="tag-when">when</span> だけ</b>（<span class="tag-why">why</span>・<span class="tag-how">how</span> は不可）
+  </div>
+  <div class="ex">
+    Next weekend I'm going to Kobe, <span class="tag-where vw" onclick="showVwPop(this,event)" data-w="where" data-pos="関係副詞（非制限）" data-mean="そしてそこで（＝ and there）" data-kana="ウェア" data-opts="[&quot;そしてそこで&quot;,&quot;〜する場所&quot;,&quot;そしてそのとき&quot;,&quot;そのために&quot;]">where</span> my <span class="vw" onclick="showVwPop(this,event)" data-w="sister" data-pos="名詞" data-mean="姉・妹" data-kana="シスター" data-opts="[&quot;姉・妹&quot;,&quot;兄・弟&quot;,&quot;母&quot;,&quot;娘&quot;]">sister</span> lives. <button class="spk" data-t="Next weekend I'm going to Kobe, where my sister lives." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">今週末は神戸へ行きますが、そこには妹が住んでいます。（<b>, where ＝ and there</b>）</span>
+  </div>
+  <div class="ex">
+    We will put off the <span class="vw" onclick="showVwPop(this,event)" data-w="picnic" data-pos="名詞" data-mean="ピクニック" data-kana="ピクニック" data-opts="[&quot;ピクニック&quot;,&quot;会議&quot;,&quot;旅行&quot;,&quot;試験&quot;]">picnic</span> until next week, <span class="tag-when vw" onclick="showVwPop(this,event)" data-w="when" data-pos="関係副詞（非制限）" data-mean="そしてそのとき（＝ and then）" data-kana="ウェン" data-opts="[&quot;そしてそのとき&quot;,&quot;〜するとき&quot;,&quot;そしてそこで&quot;,&quot;そのために&quot;]">when</span> the weather may be better. <button class="spk" data-t="We will put off the picnic until next week, when the weather may be better." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">ピクニックは来週まで延期します。そのころには天気がよくなるかもしれませんから。（<b>, when ＝ and then</b>）</span>
+  </div>
+  <div class="kb">
+    💡 <b>非制限用法の意味</b><br>
+    , where ＝ and there ／ but there ／ because there …<br>
+    , when ＝ and then ／ but then ／ because then …<br>
+    文脈から適切な接続詞の意味を判断します。
+  </div>
+</div>
+<div class="mini-quiz-wrap">
+  <div class="mini-quiz-title">📝 確認④ 非制限用法</div>
+  <div id="iq2bq"></div>
+</div>
+</div><!-- /s1 -->
+
+<!-- 練習① -->
+<div id="p1" class="sec">
+  <div class="sb"><span class="sn" id="p1sn">0 / 10</span><div class="pw"><div class="pf" id="p1pf" style="width:0%"></div></div>
+  <button onclick="resetP('p1')" style="border:none;background:#eee;border-radius:6px;padding:6px 12px;font-size:12px;cursor:pointer;font-family:inherit">リセット</button></div>
+  <div id="p1q"></div>
+</div>
+
+<!-- ===== ② 関係代名詞 vs 関係副詞 ===== -->
+<div id="s2" class="sec">
+<div class="sh">② 関係代名詞なのか、関係副詞なのか</div>
+
+<div class="card">
+  <div class="card-title">【基本原理】代名詞の代わり？ それとも副詞の代わり？</div>
+  <div class="pt">
+    関係代名詞と関係副詞を見分ける最も基本的な考え方は、<b>元の文で何を置き換えているか</b>を考えることです。<br><br>
+    <b>① 関係代名詞</b>は<b>代名詞</b>（it / he / they など）の代わり<br>
+    　→ 先行詞が関係詞節の中で<b>主語や目的語</b>になる<br><br>
+    <b>② 関係副詞</b>は<b>副詞</b>（there / here / yesterday など）の代わり<br>
+    　→ <b>関係副詞 ＝ 前置詞＋関係代名詞</b>
+  </div>
+  <div class="cmp2">
+    <div class="cbox bl">
+      <div class="cbox-ttl">関係代名詞（代名詞の代わり）</div>
+      This is the house ＋ He lives in <u>it</u>.<br>
+      　→ <b>it</b>（代名詞）→ <span class="tag-which">which</span><br>
+      ＝ This is the house <span class="tag-which">which</span> he lives <b>in</b>.<br>
+      <span style="font-size:12px;color:#555">※前置詞 in が残る</span>
+    </div>
+    <div class="cbox gn">
+      <div class="cbox-ttl">関係副詞（副詞の代わり）</div>
+      This is the house ＋ He lives <u>there</u>.<br>
+      　→ <b>there</b>（副詞）→ <span class="tag-where">where</span><br>
+      ＝ This is the house <span class="tag-where">where</span> he lives.<br>
+      <span style="font-size:12px;color:#555">※前置詞は不要（in which ＝ where）</span>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title">【見分け方の核心】自動詞 vs 他動詞</div>
+  <div class="pt">
+    関係詞節の中の<b>動詞が自動詞か他動詞か</b>で区別します。<br><br>
+    <b>自動詞</b>（前置詞と一緒に目的語をとる動詞）<br>
+    　例：live <b>in</b>, look <b>for</b>, listen <b>to</b>, arrive <b>at</b>, go <b>to</b>...<br>
+    　→ 前置詞がない場合 → 前置詞＋関係代名詞 ＝ <b>関係副詞</b> を使う<br><br>
+    <b>他動詞</b>（前置詞なしで目的語をとれる動詞）<br>
+    　例：visit, know, see, love, like, make...<br>
+    　→ <b>関係代名詞</b>（目的語の位置が空く）
+  </div>
+  <div class="kb">
+    💡 <b>判断のコツ</b><br>
+    ・動詞が<b>自動詞</b>で前置詞がない　→ 関係副詞（where / when など）<br>
+    ・動詞が<b>他動詞</b>で目的語がない　→ 関係代名詞（which / whom など）
+  </div>
+</div>
+<div class="mini-quiz-wrap">
+  <div class="mini-quiz-title">📝 確認⑤ 自動詞・他動詞の見分け</div>
+  <div id="iq3aq"></div>
+</div>
+
+<div class="card">
+  <div class="card-title">【3ステップ判断フロー】関係代名詞 or 関係副詞</div>
+  <div class="flow-step">
+    <span class="flow-step-num">1</span><b>先行詞を確認する</b><br>
+    時（the day, the time...）／ 場所（the house, the place...）／ 理由（the reason）／ それ以外
+  </div>
+  <div class="flow-arrow">▼</div>
+  <div class="flow-step">
+    <span class="flow-step-num">2</span><b>関係詞の後ろの文を見る</b><br>
+    ・<b>完全な文</b>（S＋V＋…、主語や目的語がそろっている） → <b>関係副詞</b>（when / where / why / how）<br>
+    ・<b>不完全な文</b>（主語 or 目的語が欠けている） → <b>関係代名詞</b>（who / which / that / whom...）
+  </div>
+  <div class="flow-arrow">▼</div>
+  <div class="flow-step">
+    <span class="flow-step-num">3</span><b>動詞が自動詞か他動詞かで最終判断</b><br>
+    ・自動詞（live in, look for...）で前置詞なし → 関係副詞<br>
+    ・他動詞（visit, know...）で目的語なし → 関係代名詞（which / whom...）
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title">【頻出パターン】visit vs live　— 同じ「場所」の先行詞でも違う！—</div>
+  <div class="cmp2">
+    <div class="cbox bl">
+      <div class="cbox-ttl">visit（他動詞）→ which</div>
+      Paris is a city <span class="tag-which">which</span> I have long wanted to <b>visit</b>. <button class="spk" data-t="Paris is a city which I have long wanted to visit." onclick="sp(this.dataset.t)">▶</button><br>
+      <span style="font-size:12px;color:#555">パリは私が訪れたかった都市です。</span><br>
+      <span style="font-size:11px;color:#888">※visit <u>it</u>（他動詞）→ which</span>
+    </div>
+    <div class="cbox gn">
+      <div class="cbox-ttl">live（自動詞）→ where</div>
+      Paris is a city <span class="tag-where">where</span> I have long wanted to <b>live</b>. <button class="spk" data-t="Paris is a city where I have long wanted to live." onclick="sp(this.dataset.t)">▶</button><br>
+      <span style="font-size:12px;color:#555">パリは私がずっと住みたかった都市です。</span><br>
+      <span style="font-size:11px;color:#888">※live <u>there</u>（自動詞）→ where</span>
+    </div>
+  </div>
+  <div class="cmp2">
+    <div class="cbox bl">
+      <div class="cbox-ttl">visited（他動詞）→ which</div>
+      Do you remember the place <span class="tag-which">which</span> we <b>visited</b> last summer? <button class="spk" data-t="Do you remember the place which we visited last summer?" onclick="sp(this.dataset.t)">▶</button><br>
+      <span style="font-size:12px;color:#555">私たちが昨年夏に訪れた場所を覚えていますか。</span>
+    </div>
+    <div class="cbox gn">
+      <div class="cbox-ttl">be born（自動詞）→ where</div>
+      Do you remember the place <span class="tag-where">where</span> we were <b>born</b>? <button class="spk" data-t="Do you remember the place where we were born?" onclick="sp(this.dataset.t)">▶</button><br>
+      <span style="font-size:12px;color:#555">私たちが生まれた場所を覚えていますか。</span><br>
+      <span style="font-size:11px;color:#888">※be born <u>in</u>（自動詞）→ where</span>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title">【重要】関係副詞は主語にはなれない！</div>
+  <div class="wb">
+    ⚠️ <b>関係副詞は関係詞節の主語にはなれません。</b><br>
+    関係副詞＝副詞なので、主語の位置には立てないのです。<br>
+    主語の位置が空くときは必ず<b>関係代名詞</b>（which / who / that）を使います。
+  </div>
+  <div class="ex">
+    At last he visited the place <span class="tag-which vw" onclick="showVwPop(this,event)" data-w="which" data-pos="関係代名詞（主格）" data-mean="それが（主語の位置が空くとき）" data-kana="ウィッチ" data-opts="[&quot;主語の位置で物&quot;,&quot;〜する場所&quot;,&quot;人&quot;,&quot;所有格&quot;]">which</span> had long been in his mind. <button class="spk" data-t="At last he visited the place which had long been in his mind." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">ついに彼は心に思っていた場所を訪れた。（主語の位置 → which）</span><br>
+    <span style="font-size:11px;color:#e65100">❌ <s>the place where had long been...</s>（where は主語になれない）</span>
+  </div>
+  <div class="ex">
+    <span class="vw" onclick="showVwPop(this,event)" data-w="Greenwich" data-pos="固有名詞" data-mean="グリニッジ（NYの地区名）" data-kana="グレニッチ" data-opts="[&quot;グリニッジ&quot;,&quot;ブルックリン&quot;,&quot;マンハッタン&quot;,&quot;ブロンクス&quot;]">Greenwich</span> Village is a place <span class="tag-which vw" onclick="showVwPop(this,event)" data-w="which" data-pos="関係代名詞（主格）" data-mean="それが（主語の位置が空くとき）" data-kana="ウィッチ" data-opts="[&quot;主語の位置で物&quot;,&quot;〜する場所&quot;,&quot;人&quot;,&quot;所有格&quot;]">which</span> especially <span class="vw" onclick="showVwPop(this,event)" data-w="attracts" data-pos="動詞" data-mean="魅惑する・引きつける" data-kana="アトラクト" data-opts="[&quot;魅惑する&quot;,&quot;逃げる&quot;,&quot;嫌う&quot;,&quot;無視する&quot;]">attracts</span> the young. <button class="spk" data-t="Greenwich Village is a place which especially attracts the young." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">グリニッジビレッジは若者に特に人気のある場所です。（主語の位置 → which）</span>
+  </div>
+</div>
+<div class="mini-quiz-wrap">
+  <div class="mini-quiz-title">📝 確認⑥ 関係代名詞 vs 関係副詞の総合判断</div>
+  <div id="iq3bq"></div>
+</div>
+</div><!-- /s2 -->
+
+<!-- 練習② -->
+<div id="p2" class="sec">
+  <div class="sb"><span class="sn" id="p2sn">0 / 10</span><div class="pw"><div class="pf" id="p2pf" style="width:0%"></div></div>
+  <button onclick="resetP('p2')" style="border:none;background:#eee;border-radius:6px;padding:6px 12px;font-size:12px;cursor:pointer;font-family:inherit">リセット</button></div>
+  <div id="p2q"></div>
+</div>
+
+<!-- ===== ③ 複合関係代名詞 ===== -->
+<div id="s3" class="sec">
+<div class="sh">③ 複合関係代名詞 whoever / whatever / whichever</div>
+
+<div class="card">
+  <div class="card-title">【基礎】複合関係詞とは　— 関係詞 ＋ -ever —</div>
+  <div class="pt">
+    <b>複合関係詞</b>とは、関係代名詞や関係副詞の語尾に <b>-ever</b> がついた形の語です。<br>
+    「どの〜でも」「たとえ〜しようとも」といった<b>強調・譲歩</b>の意味を加えます。<br><br>
+    <b>複合関係詞の3グループ</b><br>
+    ① <b>複合関係代名詞</b>：<span class="tag-ever vw" onclick="showVwPop(this,event)" data-w="whoever" data-pos="複合関係代名詞" data-mean="〜する人はだれでも／たとえだれが〜しようとも" data-kana="フーエヴァー" data-opts="[&quot;〜する人はだれでも&quot;,&quot;〜する時はいつでも&quot;,&quot;〜する場所はどこでも&quot;,&quot;〜するものは何でも&quot;]">whoever</span> ／ <span class="tag-ever vw" onclick="showVwPop(this,event)" data-w="whatever" data-pos="複合関係代名詞" data-mean="〜するものは何でも／たとえ何が〜しようとも" data-kana="ワットエヴァー" data-opts="[&quot;〜するものは何でも&quot;,&quot;〜する人はだれでも&quot;,&quot;〜する時はいつでも&quot;,&quot;〜する場所はどこでも&quot;]">whatever</span> ／ <span class="tag-ever vw" onclick="showVwPop(this,event)" data-w="whichever" data-pos="複合関係代名詞" data-mean="〜するものはどれでも／たとえどちらを〜しても" data-kana="ウィッチエヴァー" data-opts="[&quot;〜するものはどれでも&quot;,&quot;〜する人はだれでも&quot;,&quot;〜するものは何でも&quot;,&quot;〜する場所はどこでも&quot;]">whichever</span><br>
+    ② <b>複合関係形容詞</b>：whatever ＋ 名詞 ／ whichever ＋ 名詞 ／ however ＋ 形容詞<br>
+    ③ <b>複合関係副詞</b>：<span class="tag-ever vw" onclick="showVwPop(this,event)" data-w="wherever" data-pos="複合関係副詞" data-mean="〜する場所はどこでも／たとえどこで〜しようとも" data-kana="ウェアエヴァー" data-opts="[&quot;〜する場所はどこでも&quot;,&quot;〜する時はいつでも&quot;,&quot;どのように〜しようとも&quot;,&quot;〜する人はだれでも&quot;]">wherever</span> ／ <span class="tag-ever vw" onclick="showVwPop(this,event)" data-w="whenever" data-pos="複合関係副詞" data-mean="〜する時はいつでも／たとえいつ〜しようとも" data-kana="ウェンエヴァー" data-opts="[&quot;〜する時はいつでも&quot;,&quot;〜する場所はどこでも&quot;,&quot;どのように〜しようとも&quot;,&quot;〜する人はだれでも&quot;]">whenever</span> ／ <span class="tag-ever vw" onclick="showVwPop(this,event)" data-w="however" data-pos="複合関係副詞" data-mean="どんなに〜でも（譲歩のみ）" data-kana="ハウエヴァー" data-opts="[&quot;どんなに〜でも&quot;,&quot;〜する場所はどこでも&quot;,&quot;〜する時はいつでも&quot;,&quot;〜するものは何でも&quot;]">however</span>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title">【不定用法】「〜する人・もの・どれでも」　— 名詞節をつくる —</div>
+  <div class="pt">
+    複合関係代名詞には2つの用法があります。まずは<b>不定用法</b>から。<br>
+    <b>不定用法</b>は「<b>〜する…はだれでも（何でも／どれでも）</b>」という意味で、<b>名詞節</b>をつくります。<br>
+    文中で主語・目的語・補語として働きます。
+  </div>
+  <table class="tbl">
+    <tr>
+      <th>複合関係代名詞</th>
+      <th>意味</th>
+      <th>置き換え</th>
+    </tr>
+    <tr>
+      <td><span class="tag-ever">whoever</span></td>
+      <td>〜する人はだれでも</td>
+      <td>＝ anyone who</td>
+    </tr>
+    <tr>
+      <td><span class="tag-ever">whatever</span></td>
+      <td>〜するものは何でも</td>
+      <td>＝ anything that</td>
+    </tr>
+    <tr>
+      <td><span class="tag-ever">whichever</span></td>
+      <td>〜するものはどれでも</td>
+      <td>＝ any one that</td>
+    </tr>
+  </table>
+  <div class="ex">
+    She told the story to <span class="tag-ever vw" onclick="showVwPop(this,event)" data-w="whoever" data-pos="複合関係代名詞" data-mean="〜する人はだれでも／たとえだれが〜しようとも" data-kana="フーエヴァー" data-opts="[&quot;〜する人はだれでも&quot;,&quot;〜する時はいつでも&quot;,&quot;〜する場所はどこでも&quot;,&quot;〜するものは何でも&quot;]">whoever</span> wanted to hear. <button class="spk" data-t="She told the story to whoever wanted to hear." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">彼女はその話を聞きたい人ならだれにでも話した。（whoever ＝ anyone who）</span>
+  </div>
+  <div class="ex">
+    I'll give you <span class="tag-ever vw" onclick="showVwPop(this,event)" data-w="whatever" data-pos="複合関係代名詞" data-mean="〜するものは何でも／たとえ何が〜しようとも" data-kana="ワットエヴァー" data-opts="[&quot;〜するものは何でも&quot;,&quot;〜する人はだれでも&quot;,&quot;〜する時はいつでも&quot;,&quot;〜する場所はどこでも&quot;]">whatever</span> I have. <button class="spk" data-t="I'll give you whatever I have." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">私が持っているものは何でも君にあげよう。（whatever ＝ anything that）</span>
+  </div>
+  <div class="ex">
+    You can choose <span class="tag-ever vw" onclick="showVwPop(this,event)" data-w="whichever" data-pos="複合関係代名詞" data-mean="〜するものはどれでも／たとえどちらを〜しても" data-kana="ウィッチエヴァー" data-opts="[&quot;〜するものはどれでも&quot;,&quot;〜する人はだれでも&quot;,&quot;〜するものは何でも&quot;,&quot;〜する場所はどこでも&quot;]">whichever</span> you like. <button class="spk" data-t="You can choose whichever you like." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">どちらでもお好きな方をお選びください。（whichever ＝ any one that）</span>
+  </div>
+</div>
+<div class="mini-quiz-wrap">
+  <div class="mini-quiz-title">📝 確認⑦ 不定用法（〜する人／ものはだれでも）</div>
+  <div id="iq4aq"></div>
+</div>
+
+<div class="card">
+  <div class="card-title">【譲歩用法】「たとえ〜でも」　— 副詞節をつくる —</div>
+  <div class="pt">
+    複合関係代名詞のもう1つの用法は<b>譲歩用法</b>。<br>
+    「<b>たとえ〜しようとも</b>」という意味で、<b>副詞節</b>をつくります。<br>
+    <b>no matter ＋ (who / what / which)</b> に書き換えられます。
+  </div>
+  <table class="tbl">
+    <tr>
+      <th>複合関係代名詞</th>
+      <th>意味</th>
+      <th>書き換え</th>
+    </tr>
+    <tr>
+      <td><span class="tag-ever">whoever</span></td>
+      <td>たとえだれが〜しようとも</td>
+      <td><span class="tag-no">no matter who</span></td>
+    </tr>
+    <tr>
+      <td><span class="tag-ever">whomever</span></td>
+      <td>たとえだれを〜しようとも</td>
+      <td><span class="tag-no">no matter whom</span></td>
+    </tr>
+    <tr>
+      <td><span class="tag-ever">whatever</span></td>
+      <td>たとえ何が〜しようとも</td>
+      <td><span class="tag-no">no matter what</span></td>
+    </tr>
+    <tr>
+      <td><span class="tag-ever">whichever</span></td>
+      <td>たとえどちらが〜しようとも</td>
+      <td><span class="tag-no">no matter which</span></td>
+    </tr>
+  </table>
+  <div class="ex">
+    <span class="tag-ever vw" onclick="showVwPop(this,event)" data-w="Whoever" data-pos="複合関係代名詞（譲歩）" data-mean="たとえだれが〜しようとも（＝ no matter who）" data-kana="フーエヴァー" data-opts="[&quot;たとえだれが〜しようとも&quot;,&quot;〜する人はだれでも&quot;,&quot;〜する場所はどこでも&quot;,&quot;〜する時はいつでも&quot;]">Whoever</span> said it, it is not true. <button class="spk" data-t="Whoever said it, it is not true." onclick="sp(this.dataset.t)">▶</button><br>
+    ＝ <span class="tag-no">No matter who</span> said it, it is not true. <button class="spk" data-t="No matter who said it, it is not true." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">たとえだれがそう言ったとしても、それは真実ではない。</span>
+  </div>
+  <div class="ex">
+    <span class="tag-ever vw" onclick="showVwPop(this,event)" data-w="Whomever" data-pos="複合関係代名詞（譲歩）" data-mean="たとえだれに〜しても（＝ no matter whom）" data-kana="フームエヴァー" data-opts="[&quot;たとえだれに〜しても&quot;,&quot;〜する人はだれでも&quot;,&quot;たとえだれが〜しようとも&quot;,&quot;〜する場所はどこでも&quot;]">Whomever</span> I asked, I could not <span class="vw" onclick="showVwPop(this,event)" data-w="discover" data-pos="動詞" data-mean="発見する・見つけ出す" data-kana="ディスカヴァー" data-opts="[&quot;発見する&quot;,&quot;隠す&quot;,&quot;失う&quot;,&quot;忘れる&quot;]">discover</span> his <span class="vw" onclick="showVwPop(this,event)" data-w="address" data-pos="名詞" data-mean="住所・所在地" data-kana="アドレス" data-opts="[&quot;住所&quot;,&quot;名前&quot;,&quot;電話番号&quot;,&quot;年齢&quot;]">address</span>. <button class="spk" data-t="Whomever I asked, I could not discover his address." onclick="sp(this.dataset.t)">▶</button><br>
+    ＝ <span class="tag-no">No matter whom</span> I asked, I could not discover his address.<br>
+    <span class="ex-ja">たとえだれに尋ねても、彼の居場所は分かりそうになかった。</span>
+  </div>
+  <div class="ex">
+    <span class="tag-ever vw" onclick="showVwPop(this,event)" data-w="Whatever" data-pos="複合関係代名詞（譲歩）" data-mean="たとえ何が〜しようとも（＝ no matter what）" data-kana="ワットエヴァー" data-opts="[&quot;たとえ何が〜しようとも&quot;,&quot;〜するものは何でも&quot;,&quot;〜する人はだれでも&quot;,&quot;〜する時はいつでも&quot;]">Whatever</span> happens, he will never change his mind. <button class="spk" data-t="Whatever happens, he will never change his mind." onclick="sp(this.dataset.t)">▶</button><br>
+    ＝ <span class="tag-no">No matter what</span> happens, he will never change his mind. <button class="spk" data-t="No matter what happens, he will never change his mind." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">たとえ何が起きようと、彼は考えを変えないだろう。</span>
+  </div>
+  <div class="kb">
+    💡 <b>2つの用法の見分け方</b><br>
+    ・<b>不定用法</b>（〜する人はだれでも） → <b>名詞節</b>（主語・目的語になる）<br>
+    ・<b>譲歩用法</b>（たとえ〜しようとも） → <b>副詞節</b>（文全体を修飾・コンマで区切られることが多い）
+  </div>
+</div>
+<div class="mini-quiz-wrap">
+  <div class="mini-quiz-title">📝 確認⑧ 譲歩用法（たとえ〜しようとも）</div>
+  <div id="iq4bq"></div>
+</div>
+</div><!-- /s3 -->
+
+<!-- 練習③ -->
+<div id="p3" class="sec">
+  <div class="sb"><span class="sn" id="p3sn">0 / 10</span><div class="pw"><div class="pf" id="p3pf" style="width:0%"></div></div>
+  <button onclick="resetP('p3')" style="border:none;background:#eee;border-radius:6px;padding:6px 12px;font-size:12px;cursor:pointer;font-family:inherit">リセット</button></div>
+  <div id="p3q"></div>
+</div>
+
+<!-- ===== ④ 複合関係形容詞・副詞 ===== -->
+<div id="s4" class="sec">
+<div class="sh">④ 複合関係形容詞 ／ 複合関係副詞</div>
+
+<div class="card">
+  <div class="card-title">【複合関係形容詞】whatever / whichever ＋ 名詞</div>
+  <div class="pt">
+    <b>複合関係形容詞</b>は「<b>複合関係詞 ＋ 名詞</b>」の形をとり、名詞を修飾します。<br>
+    ・<b>whatever ＋ 名詞</b>：どんな〜でも／たとえどんな〜しようとも<br>
+    ・<b>whichever ＋ 名詞</b>：どちらの〜でも<br>
+    複合関係代名詞と同じく、<b>不定用法</b>と<b>譲歩用法</b>の2つがあります。
+  </div>
+  <div class="ex">
+    <b>【不定用法】</b><br>
+    I want to take <span class="tag-ever vw" onclick="showVwPop(this,event)" data-w="whatever" data-pos="複合関係形容詞" data-mean="どんな〜でも（＋名詞）" data-kana="ワットエヴァー" data-opts="[&quot;どんな〜でも&quot;,&quot;〜するものは何でも&quot;,&quot;たとえ何が〜しようとも&quot;,&quot;〜する人はだれでも&quot;]">whatever</span> ways are <span class="vw" onclick="showVwPop(this,event)" data-w="considered" data-pos="動詞" data-mean="考えられる（considerの受動態）" data-kana="コンシダード" data-opts="[&quot;考えられる&quot;,&quot;避けられる&quot;,&quot;禁止される&quot;,&quot;許される&quot;]">considered</span> best. <button class="spk" data-t="I want to take whatever ways are considered best." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">最善と考えられる方法ならどんな方法でもとってみたい。</span>
+  </div>
+  <div class="ex">
+    <b>【譲歩用法】</b><br>
+    <span class="tag-ever vw" onclick="showVwPop(this,event)" data-w="Whatever" data-pos="複合関係形容詞（譲歩）" data-mean="たとえどんな〜でも（＋名詞）" data-kana="ワットエヴァー" data-opts="[&quot;たとえどんな〜でも&quot;,&quot;どんな〜でも&quot;,&quot;〜するものは何でも&quot;,&quot;〜する人はだれでも&quot;]">Whatever</span> money you pay, you cannot buy her mind. <button class="spk" data-t="Whatever money you pay, you cannot buy her mind." onclick="sp(this.dataset.t)">▶</button><br>
+    ＝ <span class="tag-no">No matter what</span> money you pay, you cannot buy her mind.<br>
+    <span class="ex-ja">たとえどんなお金を支払っても、彼女の心は買えない。</span>
+  </div>
+  <div class="ex">
+    You can use <span class="tag-ever vw" onclick="showVwPop(this,event)" data-w="whichever" data-pos="複合関係形容詞" data-mean="どちらの〜でも（＋名詞）" data-kana="ウィッチエヴァー" data-opts="[&quot;どちらの〜でも&quot;,&quot;〜するものはどれでも&quot;,&quot;どんな〜でも&quot;,&quot;〜する人はだれでも&quot;]">whichever</span> bed you like. <button class="spk" data-t="You can use whichever bed you like." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">どちらのベッドでもお好きな方をお使いください。</span>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title">【複合関係副詞】wherever / whenever / however</div>
+  <div class="pt">
+    <b>複合関係副詞</b>は、<b>副詞節</b>をつくります。<br>
+    <b>wherever</b>（どこ〜でも）／ <b>whenever</b>（いつ〜でも）／ <b>however</b>（どのように〜でも）<br><br>
+    複合関係代名詞・形容詞と同様に、<b>不定用法</b>と<b>譲歩用法</b>の2つがあります。<br>
+    ⚠️ ただし <b>however だけは譲歩用法しかありません</b>（不定用法はなし）
+  </div>
+  <table class="tbl">
+    <tr>
+      <th>複合関係副詞</th>
+      <th>不定用法（〜する時／場所はどこでも）</th>
+      <th>譲歩用法（たとえ〜しようとも）</th>
+    </tr>
+    <tr>
+      <td><span class="tag-ever">wherever</span></td>
+      <td>〜する場所はどこでも</td>
+      <td>たとえどこで〜しようとも<br>（＝ no matter where）</td>
+    </tr>
+    <tr>
+      <td><span class="tag-ever">whenever</span></td>
+      <td>〜する時はいつでも</td>
+      <td>たとえいつ〜しようとも<br>（＝ no matter when）</td>
+    </tr>
+    <tr>
+      <td><span class="tag-ever">however</span></td>
+      <td style="color:#c62828;font-weight:700">✗ なし</td>
+      <td>どんなに〜でも<br>（＝ no matter how）</td>
+    </tr>
+  </table>
+  <div class="ex">
+    <b>【不定用法：wherever】</b><br>
+    Please sit <span class="tag-ever vw" onclick="showVwPop(this,event)" data-w="wherever" data-pos="複合関係副詞" data-mean="〜する場所はどこでも" data-kana="ウェアエヴァー" data-opts="[&quot;〜する場所はどこでも&quot;,&quot;〜する時はいつでも&quot;,&quot;どんなに〜でも&quot;,&quot;〜するものは何でも&quot;]">wherever</span> you like. <button class="spk" data-t="Please sit wherever you like." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">どこでもお好きなところへお座りください。</span>
+  </div>
+  <div class="ex">
+    <b>【不定用法：whenever】</b><br>
+    Come and see me <span class="tag-ever vw" onclick="showVwPop(this,event)" data-w="whenever" data-pos="複合関係副詞" data-mean="〜する時はいつでも" data-kana="ウェンエヴァー" data-opts="[&quot;〜する時はいつでも&quot;,&quot;〜する場所はどこでも&quot;,&quot;どんなに〜でも&quot;,&quot;〜するものは何でも&quot;]">whenever</span> you are <span class="vw" onclick="showVwPop(this,event)" data-w="convenient" data-pos="形容詞" data-mean="都合のよい・便利な" data-kana="コンビニエント" data-opts="[&quot;都合のよい&quot;,&quot;都合の悪い&quot;,&quot;忙しい&quot;,&quot;暇な&quot;]">convenient</span>. <button class="spk" data-t="Come and see me whenever you are convenient." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">都合のよいときにはいつでも来てください。</span>
+  </div>
+  <div class="ex">
+    <b>【譲歩用法：wherever】</b><br>
+    <span class="tag-ever vw" onclick="showVwPop(this,event)" data-w="Wherever" data-pos="複合関係副詞（譲歩）" data-mean="たとえどこで〜しようとも（＝ no matter where）" data-kana="ウェアエヴァー" data-opts="[&quot;たとえどこで〜しようとも&quot;,&quot;〜する場所はどこでも&quot;,&quot;たとえいつ〜しようとも&quot;,&quot;どんなに〜でも&quot;]">Wherever</span> he may go, he will be <span class="vw" onclick="showVwPop(this,event)" data-w="welcome" data-pos="形容詞" data-mean="歓迎される" data-kana="ウェルカム" data-opts="[&quot;歓迎される&quot;,&quot;拒まれる&quot;,&quot;無視される&quot;,&quot;嫌われる&quot;]">welcome</span>. <button class="spk" data-t="Wherever he may go, he will be welcome." onclick="sp(this.dataset.t)">▶</button><br>
+    ＝ <span class="tag-no">No matter where</span> he may go, he will be welcome.<br>
+    <span class="ex-ja">たとえどこへ行っても彼は歓迎されるだろう。</span>
+  </div>
+  <div class="ex">
+    <b>【譲歩用法：however】</b><br>
+    <span class="tag-ever vw" onclick="showVwPop(this,event)" data-w="However" data-pos="複合関係副詞（譲歩）" data-mean="どんなに〜でも（＝ no matter how）" data-kana="ハウエヴァー" data-opts="[&quot;どんなに〜でも&quot;,&quot;たとえどこで〜しようとも&quot;,&quot;たとえいつ〜しようとも&quot;,&quot;〜する時はいつでも&quot;]">However</span> tired he was, he worked hard. <button class="spk" data-t="However tired he was, he worked hard." onclick="sp(this.dataset.t)">▶</button><br>
+    ＝ <span class="tag-no">No matter how</span> tired he was, he worked hard.<br>
+    <span class="ex-ja">どんなに疲れていても、彼は一生懸命働いた。</span>
+  </div>
+  <div class="wb">
+    ⚠️ <b>however の語順に注意！</b><br>
+    however ＋ <b>形容詞／副詞</b> ＋ S V …　の語順になる<br>
+    × <s>However he was tired</s>　→ ○ <b>However tired he was</b>（形容詞を前に出す）
+  </div>
+</div>
+<div class="mini-quiz-wrap">
+  <div class="mini-quiz-title">📝 確認⑨ 複合関係副詞 wherever / whenever / however</div>
+  <div id="iq5aq"></div>
+</div>
+
+<div class="card">
+  <div class="card-title">【書き換え確認】no matter ＋ 疑問詞</div>
+  <div class="pt">
+    譲歩用法の複合関係詞は、すべて <b>no matter ＋ 疑問詞</b> の形に書き換えられます。<br>
+    試験では<b>両方の形が出題されます</b>ので、書き換えをしっかり覚えておきましょう。
+  </div>
+  <table class="tbl">
+    <tr>
+      <th>複合関係詞（譲歩）</th>
+      <th>no matter 形式</th>
+      <th>意味</th>
+    </tr>
+    <tr>
+      <td>whoever</td>
+      <td>no matter who</td>
+      <td>たとえだれが〜しようとも</td>
+    </tr>
+    <tr>
+      <td>whomever</td>
+      <td>no matter whom</td>
+      <td>たとえだれに〜しても</td>
+    </tr>
+    <tr>
+      <td>whatever</td>
+      <td>no matter what</td>
+      <td>たとえ何が〜しようとも</td>
+    </tr>
+    <tr>
+      <td>whichever</td>
+      <td>no matter which</td>
+      <td>たとえどちらを〜しても</td>
+    </tr>
+    <tr>
+      <td>wherever</td>
+      <td>no matter where</td>
+      <td>たとえどこで〜しようとも</td>
+    </tr>
+    <tr>
+      <td>whenever</td>
+      <td>no matter when</td>
+      <td>たとえいつ〜しようとも</td>
+    </tr>
+    <tr>
+      <td>however</td>
+      <td>no matter how</td>
+      <td>どんなに〜でも</td>
+    </tr>
+  </table>
+</div>
+</div><!-- /s4 -->
+
+<!-- 練習④ -->
+<div id="p4" class="sec">
+  <div class="sb"><span class="sn" id="p4sn">0 / 10</span><div class="pw"><div class="pf" id="p4pf" style="width:0%"></div></div>
+  <button onclick="resetP('p4')" style="border:none;background:#eee;border-radius:6px;padding:6px 12px;font-size:12px;cursor:pointer;font-family:inherit">リセット</button></div>
+  <div id="p4q"></div>
+</div>
+
+<!-- ===== ⑤ 総合まとめ ===== -->
+<div id="s5" class="sec">
+<div class="sh">⑤ 関係詞② 総合まとめ</div>
+
+<div class="card">
+  <div class="card-title">【総合まとめ①】関係副詞の一覧表</div>
+  <table class="tbl">
+    <tr>
+      <th>関係副詞</th>
+      <th>先行詞</th>
+      <th>＝前置詞＋関係代名詞</th>
+      <th>非制限用法</th>
+    </tr>
+    <tr>
+      <td><span class="tag-when">when</span></td>
+      <td>時（the day, the time, the year）</td>
+      <td>on/at/in which</td>
+      <td>○ 可</td>
+    </tr>
+    <tr>
+      <td><span class="tag-where">where</span></td>
+      <td>場所（the house, the place, the city）</td>
+      <td>in/at/on which</td>
+      <td>○ 可</td>
+    </tr>
+    <tr>
+      <td><span class="tag-why">why</span></td>
+      <td>理由（the reason）</td>
+      <td>for which</td>
+      <td>✗ 不可</td>
+    </tr>
+    <tr>
+      <td><span class="tag-how">how</span></td>
+      <td>なし（the way とは併用不可）</td>
+      <td>in which</td>
+      <td>✗ 不可</td>
+    </tr>
+  </table>
+</div>
+
+<div class="card">
+  <div class="card-title">【総合まとめ②】複合関係詞の一覧表</div>
+  <table class="tbl">
+    <tr>
+      <th>種類</th>
+      <th>複合関係詞</th>
+      <th>不定用法</th>
+      <th>譲歩用法（＝ no matter〜）</th>
+    </tr>
+    <tr>
+      <td rowspan="3"><b>代名詞</b></td>
+      <td><span class="tag-ever">whoever</span></td>
+      <td>〜する人はだれでも</td>
+      <td>たとえだれが〜しようとも</td>
+    </tr>
+    <tr>
+      <td><span class="tag-ever">whatever</span></td>
+      <td>〜するものは何でも</td>
+      <td>たとえ何が〜しようとも</td>
+    </tr>
+    <tr>
+      <td><span class="tag-ever">whichever</span></td>
+      <td>〜するものはどれでも</td>
+      <td>たとえどちらを〜しても</td>
+    </tr>
+    <tr>
+      <td rowspan="2"><b>形容詞</b><br>（＋名詞）</td>
+      <td><span class="tag-ever">whatever</span></td>
+      <td>どんな〜でも</td>
+      <td>たとえどんな〜でも</td>
+    </tr>
+    <tr>
+      <td><span class="tag-ever">whichever</span></td>
+      <td>どちらの〜でも</td>
+      <td>たとえどちらの〜でも</td>
+    </tr>
+    <tr>
+      <td rowspan="3"><b>副詞</b></td>
+      <td><span class="tag-ever">wherever</span></td>
+      <td>〜する場所はどこでも</td>
+      <td>たとえどこで〜しようとも</td>
+    </tr>
+    <tr>
+      <td><span class="tag-ever">whenever</span></td>
+      <td>〜する時はいつでも</td>
+      <td>たとえいつ〜しようとも</td>
+    </tr>
+    <tr>
+      <td><span class="tag-ever">however</span></td>
+      <td style="color:#c62828;font-weight:700">✗ なし</td>
+      <td>どんなに〜でも（＋形容詞/副詞）</td>
+    </tr>
+  </table>
+</div>
+
+<div class="card">
+  <div class="card-title">【総合まとめ③】関係詞判別のフローチャート</div>
+  <div class="flow-step">
+    <span class="flow-step-num">1</span><b>先行詞を確認</b><br>
+    時 → when ／ 場所 → where ／ 理由 → why ／ 方法 → how（先行詞なし）／ その他 → 関係代名詞の可能性
+  </div>
+  <div class="flow-arrow">▼</div>
+  <div class="flow-step">
+    <span class="flow-step-num">2</span><b>関係詞の後ろの文を見る</b><br>
+    完全な文（S＋V） → 関係副詞<br>
+    不完全な文（主語 or 目的語が欠けている） → 関係代名詞
+  </div>
+  <div class="flow-arrow">▼</div>
+  <div class="flow-step">
+    <span class="flow-step-num">3</span><b>自動詞／他動詞で最終確認</b><br>
+    自動詞（live in, be born in）で前置詞なし → 関係副詞 where<br>
+    他動詞（visit, know）で目的語なし → 関係代名詞 which / that
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title">【頻出】関係副詞 vs 関係代名詞　— visit と live の違い —</div>
+  <div class="cmp2">
+    <div class="cbox bl">
+      <div class="cbox-ttl">visit（他動詞）→ which</div>
+      <b>Africa is the place <span class="tag-which">which</span> I would like to visit.</b> <button class="spk" data-t="Africa is the place which I would like to visit." onclick="sp(this.dataset.t)">▶</button><br>
+      <span style="font-size:12px;color:#555">アフリカは私が訪れたい場所です。</span><br>
+      <span style="font-size:11px;color:#888">visit it → which（目的語が空く）</span>
+    </div>
+    <div class="cbox gn">
+      <div class="cbox-ttl">be born（自動詞）→ where</div>
+      <b>He will visit the town <span class="tag-where">where</span> he was born.</b> <button class="spk" data-t="He will visit the town where he was born." onclick="sp(this.dataset.t)">▶</button><br>
+      <span style="font-size:12px;color:#555">彼は生まれた町を訪れるつもりだ。</span><br>
+      <span style="font-size:11px;color:#888">be born in → where（完全な文）</span>
+    </div>
+  </div>
+  <div class="cmp2">
+    <div class="cbox bl">
+      <div class="cbox-ttl">主語が空く → which（関係代名詞）</div>
+      <b>Greenwich Village is a place <span class="tag-which">which</span> especially attracts the young.</b> <button class="spk" data-t="Greenwich Village is a place which especially attracts the young." onclick="sp(this.dataset.t)">▶</button><br>
+      <span style="font-size:12px;color:#555">主語の位置が空くため which を使う（where は主語になれない）</span>
+    </div>
+    <div class="cbox gn">
+      <div class="cbox-ttl">完全な文 → where（関係副詞）</div>
+      <b>The fireman had trouble getting to the street <span class="tag-where">where</span> the house was on fire.</b> <button class="spk" data-t="The fireman had trouble getting to the street where the house was on fire." onclick="sp(this.dataset.t)">▶</button><br>
+      <span style="font-size:12px;color:#555">the street で始まる完全な文が続く → where</span>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title">【最終確認】よく出る書き換えパターン</div>
+  <div class="ex">
+    He didn't attend the meeting <b>for that <span class="vw" onclick="showVwPop(this,event)" data-w="reason" data-pos="名詞" data-mean="理由・わけ" data-kana="リーズン" data-opts="[&quot;理由&quot;,&quot;方法&quot;,&quot;場所&quot;,&quot;時間&quot;]">reason</span></b>. <button class="spk" data-t="He didn't attend the meeting for that reason." onclick="sp(this.dataset.t)">▶</button><br>
+    ＝ That is <span class="tag-why">why</span> he wasn't <span class="vw" onclick="showVwPop(this,event)" data-w="present" data-pos="形容詞" data-mean="出席している" data-kana="プレゼント" data-opts="[&quot;出席している&quot;,&quot;欠席している&quot;,&quot;過去の&quot;,&quot;未来の&quot;]">present</span> at the meeting. <button class="spk" data-t="That is why he wasn't present at the meeting." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">彼はその理由でミーティングに参加しなかった。／ それが彼が会議に出席しなかった理由だ。</span>
+  </div>
+  <div class="ex">
+    She talks like a boy. That's <span class="tag-why">why</span> she is <span class="vw" onclick="showVwPop(this,event)" data-w="disliked" data-pos="動詞" data-mean="嫌われる（dislikeの受動態）" data-kana="ディスライクト" data-opts="[&quot;嫌われる&quot;,&quot;好かれる&quot;,&quot;無視される&quot;,&quot;尊敬される&quot;]">disliked</span> by many. <button class="spk" data-t="She talks like a boy. That's why she is disliked by many." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">彼女は少年のように話す。そのことがみんなに好かれない理由だ。</span>
+  </div>
+  <div class="ex">
+    Tell me <span class="tag-how">how</span> I can get to the <span class="vw" onclick="showVwPop(this,event)" data-w="museum" data-pos="名詞" data-mean="博物館・美術館" data-kana="ミュージアム" data-opts="[&quot;博物館&quot;,&quot;学校&quot;,&quot;病院&quot;,&quot;駅&quot;]">museum</span>. <button class="spk" data-t="Tell me how I can get to the museum." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">博物館にはどう行けばよいか教えてください。（how ＝ the way）</span>
+  </div>
+</div>
+<div class="mini-quiz-wrap">
+  <div class="mini-quiz-title">📝 確認⑩ 総合まとめ</div>
+  <div id="iq6aq"></div>
+</div>
+</div><!-- /s5 -->
+
+<!-- 練習⑤実戦 -->
+<div id="p5" class="sec">
+  <div class="sb"><span class="sn" id="p5sn">0 / 14</span><div class="pw"><div class="pf" id="p5pf" style="width:0%"></div></div>
+  <button onclick="resetP('p5')" style="border:none;background:#eee;border-radius:6px;padding:6px 12px;font-size:12px;cursor:pointer;font-family:inherit">リセット</button></div>
+  <div id="p5q"></div>
+</div>
+
+<!-- 単語帳・モーダル -->
+<div class="vpop" id="vpop">
+  <div class="vpop-hd"><div><span class="vpop-word" id="vpop-word"></span><span class="vpop-pos" id="vpop-pos"></span></div><button class="vpop-close" onclick="closeVpop()">✕</button></div>
+  <div class="vpop-body"><div class="vpop-mean" id="vpop-mean"></div><div class="vpop-kana" id="vpop-kana"></div>
+    <div class="vpop-btns"><button class="vpop-spk" onclick="vpopSpeak()">🔊 発音を聞く</button><button class="vpop-save" id="vpop-save-btn" onclick="vpopSave()">📖 単語帳へ</button></div>
+    <div class="vpop-saved-lbl" id="vpop-saved-lbl">✓ 単語帳に保存しました</div></div>
+</div>
+<div class="mo" id="mvocab">
+  <div class="mb">
+    <div class="mh"><h2>📚 単語帳</h2><button class="mhc" onclick="closeM('mvocab')">✕</button></div>
+    <div class="mbody">
+      <div style="display:flex;gap:8px;margin-bottom:12px">
+        <button onclick="showVocabList()" style="flex:1;padding:9px;border-radius:8px;border:2px solid #1B3A6B;background:#1B3A6B;color:#fff;font-size:13px;font-family:inherit;cursor:pointer;font-weight:700">📋 単語一覧</button>
+        <button onclick="startVocabTest()" style="flex:1;padding:9px;border-radius:8px;border:2px solid #0097A7;background:#f0faff;color:#0097A7;font-size:13px;font-family:inherit;cursor:pointer;font-weight:700">✏️ 復習テスト</button>
+      </div>
+      <div id="vocab-list-area"></div>
+      <div id="vocab-test-area" style="display:none"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openM(id){document.getElementById(id).classList.add('open');document.body.style.overflow='hidden';}
+function closeM(id){document.getElementById(id).classList.remove('open');document.body.style.overflow='';}
+document.querySelectorAll('.mo').forEach(function(mo){mo.addEventListener('click',function(e){if(e.target===mo)closeM(mo.id);});});
+function confetti(){var cv=document.getElementById('cc');cv.width=window.innerWidth;cv.height=window.innerHeight;cv.style.display='block';var ctx=cv.getContext('2d');var cols=['#f9a825','#0097A7','#1B3A6B','#e53935','#2e7d32','#ff6f00','#7b1fa2','#ff4081'];var ps=[];for(var k=0;k<130;k++){ps.push({x:Math.random()*cv.width,y:-20-Math.random()*180,w:7+Math.random()*9,h:3+Math.random()*5,c:cols[Math.floor(Math.random()*cols.length)],s:2+Math.random()*4,a:Math.random()*360,sp:3-Math.random()*6,d:(Math.random()-.5)*2.5});}var fr=0;function draw(){ctx.clearRect(0,0,cv.width,cv.height);ps.forEach(function(p){ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.a*Math.PI/180);ctx.fillStyle=p.c;ctx.fillRect(-p.w/2,-p.h/2,p.w,p.h);ctx.restore();p.y+=p.s;p.x+=p.d;p.a+=p.sp;});fr++;if(fr<100)requestAnimationFrame(draw);else{ctx.clearRect(0,0,cv.width,cv.height);cv.style.display='none';}}draw();}
+function updS(mid,n,t){var sn=document.getElementById(mid+'sn');var pf=document.getElementById(mid+'pf');if(sn)sn.textContent=n+' / '+t;if(pf)pf.style.width=(n/t*100)+'%';if(n===t&&t>0)confetti();}
+function sp(t){if(!window.speechSynthesis)return;speechSynthesis.cancel();var u=new SpeechSynthesisUtterance(t);u.lang='en-US';u.rate=0.88;speechSynthesis.speak(u);}
+function ss(id,btn){document.querySelectorAll('.sec').forEach(function(s){s.classList.remove('active');});document.querySelectorAll('.nb,.pb').forEach(function(b){b.classList.remove('on');});document.querySelectorAll('.pair').forEach(function(p){p.classList.remove('active-pair');});document.getElementById(id).classList.add('active');btn.classList.add('on');if(btn.parentElement&&btn.parentElement.classList.contains('pair')){btn.parentElement.classList.add('active-pair');}}
+function sh(n){var c=n.replace(/'/g,'');return '<button class="spk" onclick="sp(this.dataset.t)" data-t="'+c+'">▶</button>';}
+function ub(u){return u?'<span class="ub">'+u+'</span>':'';}
+function iC(id){var data=window['c'+id],total=data.length,score=0,done=new Array(total).fill(false);updS(id,0,total);var c=document.getElementById(id+'q');c.innerHTML='';data.forEach(function(d,i){var div=document.createElement('div');div.className='q-box';div.innerHTML='<div class="q-hd"><span class="q-num">'+(i+1)+'</span><span class="q-txt"><b>'+d.q+'</b>'+ub(d.u)+sh(d.s)+'</span></div>'+(d.j?'<div style="font-size:13px;color:#555;margin-bottom:8px">'+d.j+'</div>':'')+(d.h?'<span class="hint">'+d.h+'</span>':'')+'<div id="'+id+'ch'+i+'"></div><div class="ep" id="'+id+'ep'+i+'">📝 解説：'+d.e+'</div>';c.appendChild(div);d.c.forEach(function(ch,ci){var btn=document.createElement('button');btn.className='cb';btn.textContent=ch;btn.onclick=function(){if(done[i])return;done[i]=true;div.querySelectorAll('.cb').forEach(function(b,bi){b.classList.add('dis');if(bi===d.a)b.classList.add('ca');else if(bi===ci&&ci!==d.a)b.classList.add('wa');});document.getElementById(id+'ep'+i).classList.add('show');if(ci===d.a){score++;updS(id,score,total);}};document.getElementById(id+'ch'+i).appendChild(btn);});});}
+function resetP(id){iC(id);}
+var vocabDB={},savedWords={},currentVword=null;
+function closeVpop(){document.getElementById('vpop').className='vpop';currentVword=null;}
+document.addEventListener('click',function(e){var pop=document.getElementById('vpop');if(pop.classList.contains('show')&&!pop.contains(e.target))closeVpop();});
+function vpopSpeak(){if(currentVword)sp(currentVword);}
+function vpopSave(){if(!currentVword)return;var w=currentVword;if(!savedWords[w]){savedWords[w]=vocabDB[w];updateVocabBadge();document.getElementById('vpop-save-btn').textContent='✓ 保存済み';document.getElementById('vpop-save-btn').className='vpop-save saved';document.getElementById('vpop-saved-lbl').className='vpop-saved-lbl show';}}
+function updateVocabBadge(){var n=Object.keys(savedWords).length;var badge=document.getElementById('vocab-badge');badge.textContent=n;badge.className=n>0?'vocab-badge show':'vocab-badge';}
+var origOpenM=openM;openM=function(id){origOpenM(id);if(id==='mvocab')showVocabList();};
+function showVocabList(){document.getElementById('vocab-list-area').style.display='block';document.getElementById('vocab-test-area').style.display='none';renderVocabList();}
+function renderVocabList(){var area=document.getElementById('vocab-list-area');var words=Object.keys(savedWords);if(words.length===0){area.innerHTML='<div class="vbook-empty">📖 まだ単語が保存されていません。</div>';return;}var html='<div style="font-size:12px;color:#888;margin-bottom:8px">保存済み：'+words.length+'語</div>';words.forEach(function(w){var v=savedWords[w];html+='<div class="vcard"><span class="vcard-word">'+w+'</span><span class="vcard-mean">'+v.mean+'</span><button class="vcard-del" onclick="removeWord(\''+w+'\')">覚えた ✓</button></div>';});area.innerHTML=html;}
+function removeWord(w){delete savedWords[w];updateVocabBadge();renderVocabList();}
+var testQueue=[],testIdx=0,testScore=0;
+function startVocabTest(){document.getElementById('vocab-list-area').style.display='none';document.getElementById('vocab-test-area').style.display='block';renderVocabTest();}
+function renderVocabTest(){var area=document.getElementById('vocab-test-area');var words=Object.keys(savedWords);if(words.length<1){area.innerHTML='<div class="vbook-empty">単語が保存されていません。</div>';return;}testQueue=words.slice().sort(function(){return Math.random()-.5;});testIdx=0;testScore=0;renderTestQuestion(area);}
+function renderTestQuestion(area){if(testIdx>=testQueue.length){area.innerHTML='<div style="text-align:center;padding:24px"><div style="font-size:40px;margin-bottom:12px">🎉</div><div style="font-size:18px;font-weight:700;color:#1B3A6B;margin-bottom:8px">テスト完了！</div><div style="font-size:14px;color:#555;margin-bottom:16px">正解：'+testScore+' / '+testQueue.length+'問</div><div style="display:flex;gap:8px;justify-content:center"><button onclick="renderVocabTest()" style="padding:10px 20px;border-radius:8px;border:none;background:#1B3A6B;color:#fff;font-size:14px;font-family:inherit;cursor:pointer">もう一度</button><button onclick="showVocabList()" style="padding:10px 20px;border-radius:8px;border:1.5px solid #ccd;background:#fff;color:#555;font-size:14px;font-family:inherit;cursor:pointer">単語一覧へ</button></div></div>';return;}var w=testQueue[testIdx];var v=savedWords[w];if(!v){testIdx++;renderTestQuestion(area);return;}var opts=v.opts.slice().sort(function(){return Math.random()-.5;});var html='<div style="text-align:right;font-size:12px;color:#888;margin-bottom:8px">'+(testIdx+1)+' / '+testQueue.length+'</div><div class="vtest-q">'+w+'</div>';opts.forEach(function(opt){html+='<button class="vtest-opt" onclick="checkTestAns(this,\''+w+'\',\''+opt.replace(/'/g,'')+'\')">'+opt+'</button>';});html+='<div id="vtest-res"></div>';area.innerHTML=html;}
+function checkTestAns(btn,word,selected){var v=savedWords[word];if(!v)return;var correct=v.mean;var area=document.getElementById('vocab-test-area');area.querySelectorAll('.vtest-opt').forEach(function(b){b.classList.add('dis');if(b.textContent===correct)b.classList.add('ca');else if(b===btn&&selected!==correct)b.classList.add('wa');});var res=document.getElementById('vtest-res');if(selected===correct){testScore++;res.innerHTML='<div style="color:#2e7d32;font-weight:700;padding:8px">✓ 正解！</div>';}else{res.innerHTML='<div style="color:#e53935;font-weight:700;padding:8px">✗ 不正解　正解：'+correct+'</div>';}testIdx++;setTimeout(function(){renderTestQuestion(area);},1200);}
+function showVwPop(el,ev){
+  if(ev)ev.stopPropagation();
+  var w=el.dataset.w,pos=el.dataset.pos,mean=el.dataset.mean,kana=el.dataset.kana,opts=JSON.parse(el.dataset.opts);
+  vocabDB[w]={pos:pos,mean:mean,kana:kana,opts:opts};currentVword=w;
+  document.getElementById('vpop-word').textContent=w;
+  document.getElementById('vpop-pos').textContent=pos;
+  document.getElementById('vpop-mean').textContent=mean;
+  document.getElementById('vpop-kana').textContent='発音：'+kana;
+  var saveBtn=document.getElementById('vpop-save-btn');
+  if(savedWords[w]){saveBtn.textContent='✓ 保存済み';saveBtn.className='vpop-save saved';document.getElementById('vpop-saved-lbl').className='vpop-saved-lbl show';}
+  else{saveBtn.textContent='📖 単語帳へ';saveBtn.className='vpop-save';document.getElementById('vpop-saved-lbl').className='vpop-saved-lbl';}
+  var pop=document.getElementById('vpop');pop.className='vpop show';
+  var rect=el.getBoundingClientRect();
+  var top=rect.bottom+6,left=rect.left,pw=260;
+  if(left+pw>window.innerWidth-8)left=window.innerWidth-pw-8;
+  if(top+160>window.innerHeight)top=rect.top-170;
+  pop.style.top=top+'px';pop.style.left=left+'px';
+}
+
+/* ===== 確認問題データ ===== */
+window.ciq1a=[
+  {q:'関係副詞 when の先行詞として適切なのはどれか？',s:'the day when I first met her',j:'',a:1,c:['the place','the day','the reason','the way'],h:'when は「時」を表す先行詞',e:'関係副詞 <b>when</b> は「時」を表す先行詞（the day / the time / the year など）を修飾します。'},
+  {q:'次の文の（　）に入る語はどれか？<br>I can\'t forget the day ( ) I first met her.',s:'I can\'t forget the day when I first met her.',j:'私は彼女にはじめて会った日のことを忘れられない。',a:2,c:['where','which','when','why'],h:'先行詞 the day（時）＋ 完全な文 → when',e:'先行詞が <b>the day</b>（時）で、後ろに完全な文（I first met her）が続く → <b>when</b>'},
+  {q:'関係副詞 when = 前置詞＋関係代名詞　書き換えとして正しいものは？<br>I can\'t forget the day when I met her.',s:'I can\'t forget the day on which I met her.',j:'',a:0,c:['on which','in which','for which','of which'],h:'「時」の前置詞は on / at / in',e:'「日」は on the day と表現 → <b>on which ＝ when</b>（時を表す関係副詞）'},
+  {q:'次の文を関係副詞で書き換えよ。<br>Do you know the time at which they will arrive?',s:'Do you know the time when they will arrive?',j:'彼らがいつ到着するかあなたは知っていますか。',a:2,c:['where','which','when','why'],h:'at which ＝ when',e:'<b>at which ＝ when</b>（時を表す関係副詞への書き換え）'},
+];
+window.ciq1b=[
+  {q:'関係副詞 where の先行詞として適切なのはどれか？',s:'the house where he lives',j:'',a:1,c:['the reason','the house','the day','the way'],h:'where は「場所」を表す先行詞',e:'関係副詞 <b>where</b> は「場所」を表す先行詞（the house / the place / the city など）を修飾します。'},
+  {q:'次の文の（　）に入る語はどれか？<br>This is the house ( ) he lives.',s:'This is the house where he lives.',j:'ここが彼の住む家です。',a:2,c:['who','which','where','why'],h:'先行詞 the house（場所）＋ 完全な文 → where',e:'先行詞が <b>the house</b>（場所）、後ろに完全な文（he lives）→ <b>where</b>（＝ in which）'},
+  {q:'次の文と同じ意味になるのはどれか？<br>This is the house in which he lives.',s:'This is the house where he lives.',j:'',a:0,c:['This is the house where he lives.','This is the house which he lives.','This is the house why he lives.','This is the house he lives.'],h:'in which ＝ where',e:'<b>前置詞＋関係代名詞（in which）＝ 関係副詞（where）</b>'},
+  {q:'3つの書き換えのうち、誤っているものはどれか？<br>This is the house ( ) he lives in.',s:'This is the house where he lives in.（誤）',j:'',a:2,c:['This is the house which he lives in.','This is the house in which he lives.','This is the house where he lives in.','This is the house where he lives.'],h:'where と in を両方使うのは誤り',e:'<b>where ＝ in which</b> なので、where と前置詞 in を両方使うのは誤り。where を使うなら in は不要。'},
+];
+window.ciq2a=[
+  {q:'関係副詞 why の先行詞は何か？',s:'the reason',j:'',a:2,c:['the way','the time','the reason','the place'],h:'why の先行詞は the reason',e:'関係副詞 <b>why</b> の先行詞は <b>the reason</b>（理由）のみ。'},
+  {q:'the reason ( ) I was late（私が遅れた理由）に入る語はどれか？',s:'This is the reason why I was late yesterday.',j:'',a:1,c:['what','why','how','when'],h:'理由 → why',e:'「理由」の先行詞 the reason を修飾する関係副詞は <b>why</b>。'},
+  {q:'関係副詞 how の特徴として正しいのはどれか？',s:'how は先行詞を持たない',j:'',a:2,c:['先行詞は the reason','the way how の形で使う','先行詞を持たない（または the way 単独）','時を表す'],h:'how は先行詞なし or the way 単独',e:'関係副詞 <b>how</b> は先行詞を持たない特殊な関係副詞。the way だけ、あるいは how だけで使う（<b>the way how は誤り！</b>）'},
+  {q:'「これは彼がその問題を解いた方法です」を表す文はどれか？',s:'This is how he solved this problem.',j:'',a:3,c:['This is the way how he solved this problem.','This is the reason how he solved this problem.','This is why he solved this problem.','This is how he solved this problem.'],h:'the way how は誤り！',e:'<b>the way how は不可</b>。正しくは「how he solved」か「the way he solved」のいずれか。'},
+  {q:'次の文を the way を使って書き換えよ。<br>This is how he went to Osaka.',s:'This is the way he went to Osaka.',j:'このようにして彼は大阪に行きました。',a:1,c:['This is the way how he went to Osaka.','This is the way he went to Osaka.','This is the reason he went to Osaka.','This is why he went to Osaka.'],h:'how ＝ the way（ただし両方併用は不可）',e:'<b>how ＝ the way</b>。両方を使う「the way how」は誤り。'},
+];
+window.ciq2b=[
+  {q:'関係副詞の非制限用法が使えるものはどれか？',s:'where / when のみ',j:'',a:2,c:['why と how','how と where','where と when','すべて使える'],h:'非制限用法 → where と when だけ',e:'関係副詞の非制限用法は <b>where と when</b> だけ。why と how には非制限用法はありません。'},
+  {q:'次の文の , where はどんな意味か？<br>Next weekend I\'m going to Kobe, where my sister lives.',s:'Next weekend I\'m going to Kobe, where my sister lives.',j:'今週末は神戸へ行きますが、そこには妹が住んでいます。',a:1,c:['and there','but there','because there','if there'],h:', where ＝ and there',e:'非制限用法の <b>, where ＝ and there</b>（「そしてそこでは」の意味）。'},
+  {q:'次の文の , when の意味として最も適切なのは？<br>We will put off the picnic until next week, when the weather may be better.',s:'ピクニックを来週まで延期する。そのころには天気がよくなるかもしれないからだ。',j:'',a:2,c:['and then','if then','because then','but then'],h:', when ＝ because then（文脈判断）',e:'文脈上、「来週には天気がよくなるかも<b>しれないので</b>延期する」という理由の意味 → <b>because then</b>（because は文脈から判断）'},
+];
+window.ciq3a=[
+  {q:'次の動詞のうち、他動詞はどれか？',s:'visit（訪れる）他動詞',j:'',a:1,c:['live','visit','arrive','go'],h:'他動詞は前置詞なしで目的語をとる',e:'<b>visit</b> は他動詞で、visit + 場所（前置詞なし）で目的語をとれる。live / arrive / go は自動詞。'},
+  {q:'Paris is a city ( ) I have long wanted to visit. の（　）に入るのは？',s:'Paris is a city which I have long wanted to visit.',j:'パリは私が訪れたかった都市です。',a:1,c:['where','which','when','how'],h:'visit は他動詞 → 関係代名詞 which',e:'visit は<b>他動詞</b>で visit it（目的語）が必要。目的語が空く → <b>which</b>（関係代名詞）'},
+  {q:'Paris is a city ( ) I have long wanted to live. の（　）に入るのは？',s:'Paris is a city where I have long wanted to live.',j:'パリは私がずっと住みたかった都です。',a:0,c:['where','which','when','how'],h:'live は自動詞（live in）→ 関係副詞 where',e:'live は<b>自動詞</b>で live in のペア。live in → where（関係副詞）。'},
+  {q:'Do you remember the place ( ) we were born.（私たちが生まれた場所を覚えていますか。）',s:'Do you remember the place where we were born?',j:'',a:0,c:['where','which','when','what'],h:'be born in は自動詞的用法 → where',e:'be born は自動詞的（be born in 〜）。前置詞 in が省略されている → <b>where</b>。'},
+];
+window.ciq3b=[
+  {q:'At last he visited the place ( ) had long been in his mind. の（　）に入るのは？',s:'At last he visited the place which had long been in his mind.',j:'ついに彼は心に思っていた場所を訪れた。',a:1,c:['where','which','in which','how'],h:'関係副詞は主語になれない！',e:'（　）の後ろに主語がない（had long been... の主語が空いている）→ 主語の位置 → <b>which</b>（関係代名詞）。where は主語になれない。'},
+  {q:'Greenwich Village is a place ( ) especially attracts the young. の（　）に入るのは？',s:'Greenwich Village is a place which especially attracts the young.',j:'グリニッジビレッジは若者に特に人気のある場所です。',a:3,c:['in which','where','wherever','which'],h:'主語がない → 関係代名詞 which',e:'attracts の主語の位置が空いている → 関係副詞は主語になれないので <b>which</b>（関係代名詞）。'},
+  {q:'関係代名詞と関係副詞の見分け方として正しいものはどれか？',s:'後ろが完全な文 → 関係副詞',j:'',a:2,c:['先行詞が同じなら関係副詞','動詞が他動詞 → 関係副詞','後ろが完全な文 → 関係副詞／不完全な文 → 関係代名詞','どちらも同じ意味'],h:'後ろの文が完全か不完全かで判断',e:'関係副詞の後ろは<b>完全な文</b>、関係代名詞の後ろは<b>不完全な文</b>（主語/目的語が空く）。'},
+];
+window.ciq4a=[
+  {q:'「〜する人はだれでも」を表す複合関係代名詞はどれか？',s:'whoever wanted to hear',j:'',a:1,c:['whenever','whoever','wherever','whatever'],h:'〜する人 → whoever',e:'<b>whoever</b>（〜する人はだれでも／＝ anyone who）'},
+  {q:'I\'ll give you ( ) I have. の（　）に入る語は？',s:'I\'ll give you whatever I have.',j:'私が持っているものは何でも君にあげよう。',a:2,c:['whoever','wherever','whatever','whenever'],h:'〜するものは何でも → whatever',e:'<b>whatever</b>（〜するものは何でも／＝ anything that）'},
+  {q:'You can choose ( ) you like. の（　）に入る語は？',s:'You can choose whichever you like.',j:'どちらでもお好きな方をお選びください。',a:1,c:['however','whichever','whenever','wherever'],h:'〜するものはどれでも → whichever',e:'<b>whichever</b>（〜するものはどれでも／＝ any one that）'},
+  {q:'複合関係代名詞の「不定用法」がつくる節はどれか？',s:'名詞節',j:'',a:0,c:['名詞節（主語・目的語になる）','副詞節','形容詞節','疑問文'],h:'不定用法 → 名詞節',e:'複合関係代名詞の<b>不定用法</b>は<b>名詞節</b>をつくり、主語・目的語・補語になります。'},
+];
+window.ciq4b=[
+  {q:'「たとえ〜しようとも」を表す形はどれか？',s:'Whoever said it, it is not true.',j:'',a:2,c:['不定用法（名詞節）','関係副詞','譲歩用法（副詞節）','非制限用法'],h:'譲歩用法 → 副詞節',e:'複合関係代名詞の<b>譲歩用法</b>は<b>副詞節</b>をつくり、「たとえ〜しようとも」という意味。'},
+  {q:'Whoever said it, it is not true. の書き換えとして正しいものは？',s:'No matter who said it, it is not true.',j:'たとえだれがそう言ったとしても、それは真実ではない。',a:1,c:['Anyone who said it, it is not true.','No matter who said it, it is not true.','No one who said it, it is not true.','That is why he said it.'],h:'whoever（譲歩）＝ no matter who',e:'譲歩用法の <b>whoever ＝ no matter who</b>'},
+  {q:'Whatever happens, he will never change his mind. と同じ意味は？',s:'No matter what happens, he will never change his mind.',j:'たとえ何が起きようと、彼は考えを変えないだろう。',a:0,c:['No matter what happens, he will never change his mind.','Anything that happens, he will never change his mind.','Whenever happens, he will never change his mind.','However happens, he will never change his mind.'],h:'whatever（譲歩）＝ no matter what',e:'譲歩用法の <b>whatever ＝ no matter what</b>'},
+  {q:'旅行情報センターでは都市地図を欲しい人には誰でもあげました。<br>The tourist information center gave a city map to ( ) asked for it.',s:'The tourist information center gave a city map to whoever asked for it.',j:'',a:2,c:['whom','whatever','whoever','people'],h:'〜する人はだれでも → whoever',e:'to 〜 の後に続き、「〜する人はだれでも」の意味 → <b>whoever</b>（不定用法）'},
+];
+window.ciq5a=[
+  {q:'「どんなに忙しくても、本を読む時間を見つけられる」を表す関係詞は？<br>( ) busy you are, you can find time for reading.',s:'However busy you are, you can find time for reading.',j:'',a:2,c:['whatever','whenever','however','whichever'],h:'「どんなに〜でも」→ however ＋ 形容詞',e:'「どんなに〜でも」＝ <b>however ＋ 形容詞／副詞</b>（譲歩用法のみ）'},
+  {q:'Don\'t worry, we\'ll leave ( ) you\'re ready. の（　）に入る語は？',s:'Don\'t worry, we\'ll leave whenever you\'re ready.',j:'心配しないで。準備が整ったときに出発します。',a:1,c:['whatever','whenever','wherever','however'],h:'〜する時はいつでも → whenever',e:'「〜する時はいつでも」＝ <b>whenever</b>'},
+  {q:'複合関係副詞のうち、不定用法を持たないものはどれか？',s:'however は譲歩用法のみ',j:'',a:2,c:['wherever','whenever','however','すべて不定用法がある'],h:'however は譲歩のみ',e:'<b>however</b> だけは<b>譲歩用法しかありません</b>（「どんなに〜でも」）。wherever / whenever は不定・譲歩の両方あり。'},
+  {q:'複合関係形容詞の形として正しいのはどれか？',s:'whatever money you pay',j:'',a:1,c:['whatever money（形容詞だけで使う）','whatever ＋ 名詞（例：whatever money）','whatever ＋ 動詞','whatever ＋ 形容詞'],h:'複合関係形容詞 = 複合関係詞 + 名詞',e:'複合関係形容詞は <b>whatever／whichever ＋ 名詞</b>の形で使います。例：whatever money, whichever bed'},
+];
+window.ciq6a=[
+  {q:'He didn\'t attend the meeting for that reason. ＝ That is ( ) he wasn\'t present at the meeting. に入る語は？',s:'That is why he wasn\'t present at the meeting.',j:'',a:1,c:['when','why','how','that'],h:'for that reason ＝ why',e:'「その理由で」＝ <b>why</b>（That is why 〜「それが〜の理由だ」）'},
+  {q:'She talks like a boy. That\'s ( ) she is disliked by many. に入る語は？',s:'That\'s why she is disliked by many.',j:'彼女は少年のように話す。それが好かれない理由だ。',a:1,c:['how','why','what','when'],h:'理由 → why',e:'「それが好かれない<b>理由</b>だ」→ <b>why</b>（That\'s why ＝ That is the reason why）'},
+  {q:'Tell me ( ) I can get to the museum. に入る語は？',s:'Tell me how I can get to the museum.',j:'博物館にはどう行けばよいか教えてください。',a:2,c:['where','what','how','that'],h:'方法 → how',e:'「どうやって〜するか」＝ <b>how</b>（方法を表す関係副詞）'},
+  {q:'The fireman had trouble getting to the street ( ) the house was on fire. に入る語は？',s:'The fireman had trouble getting to the street where the house was on fire.',j:'消防士は家が火事になっている通りにたどり着くのに苦労した。',a:0,c:['where','which','what','that'],h:'完全な文 → where',e:'後ろに完全な文（the house was on fire）→ <b>where</b>'},
+];
+
+/* ===== 練習問題データ ===== */
+window.cp1=[
+  {q:'I still remember the day ( ) we first met.',s:'I still remember the day when we first met.',j:'私たちがはじめて会った日のことをまだ覚えている。',a:2,c:['where','which','when','why'],h:'先行詞 the day（時）＋ 完全な文 → when',e:'先行詞が<b>時</b>（the day）で後ろに完全な文 → <b>when</b>'},
+  {q:'August is the month ( ) we have the summer festival.',s:'August is the month when we have the summer festival.',j:'8月は私たちが夏祭りをする月です。',a:2,c:['where','which','when','how'],h:'先行詞 the month（時）＋ 完全な文',e:'the month（時）＋ 完全な文（we have...）→ <b>when</b>'},
+  {q:'This is the village ( ) my grandmother was born.',s:'This is the village where my grandmother was born.',j:'ここが祖母が生まれた村です。',a:0,c:['where','which','when','why'],h:'場所 ＋ be born（自動詞）→ where',e:'先行詞 the village（場所）＋ be born（自動詞的）→ <b>where</b>'},
+  {q:'Tokyo is the city ( ) I want to visit next.',s:'Tokyo is the city which I want to visit next.',j:'東京は私が次に訪れたい都市です。',a:1,c:['where','which','when','why'],h:'visit は他動詞 → which',e:'visit は<b>他動詞</b>で目的語が必要。目的語が空く → <b>which</b>'},
+  {q:'Please tell me the reason ( ) you were absent yesterday.',s:'Please tell me the reason why you were absent yesterday.',j:'あなたが昨日欠席した理由を教えてください。',a:3,c:['where','which','when','why'],h:'先行詞 the reason → why',e:'「理由」→ the reason ＋ <b>why</b>'},
+  {q:'This is ( ) I solved the problem.<br>（「これが私がその問題を解いた方法です」）',s:'This is how I solved the problem.',j:'',a:3,c:['the way how','why','what','how'],h:'方法 → how（the way how は不可）',e:'方法 → <b>how</b>（the way how は誤り！）'},
+  {q:'Yesterday was the day ( ) I took my driver\'s license test.',s:'Yesterday was the day when I took my driver\'s license test.',j:'昨日は私が運転免許試験を受けた日だった。',a:2,c:['where','which','when','why'],h:'the day（時）＋ 完全な文',e:'the day ＋ I took ...（完全な文）→ <b>when</b>'},
+  {q:'Last summer we visited the park, ( ) we had a picnic.',s:'Last summer we visited the park, where we had a picnic.',j:'去年の夏、私たちは公園を訪れ、そこでピクニックをしました。',a:0,c:['where','which','when','what'],h:'コンマ ＋ 場所 → , where（非制限用法）',e:'非制限用法：<b>, where</b>（＝ and there）「そしてそこで」'},
+  {q:'I\'ll see you at 3 p.m., ( ) I will be free.',s:'I\'ll see you at 3 p.m., when I will be free.',j:'午後3時にお会いします。そのころには暇になっているでしょう。',a:2,c:['where','which','when','why'],h:'コンマ ＋ 時 → , when（非制限用法）',e:'非制限用法：<b>, when</b>（＝ and then）「そしてそのとき」'},
+  {q:'That\'s ( ) he didn\'t come to the party.<br>（「それが彼がパーティーに来なかった理由だ」）',s:'That\'s why he didn\'t come to the party.',j:'',a:3,c:['when','where','how','why'],h:'理由 → why',e:'「それが〜の理由だ」＝ <b>That\'s why</b>'},
+];
+window.cp2=[
+  {q:'This is the room ( ) my father works.',s:'This is the room where my father works.',j:'ここが父が働く部屋です。',a:0,c:['where','which','when','why'],h:'work（自動詞）+ 場所 → where',e:'the room（場所）＋ work（自動詞）→ <b>where</b>'},
+  {q:'This is the book ( ) I bought last week.',s:'This is the book which I bought last week.',j:'これは私が先週買った本です。',a:1,c:['where','which','when','why'],h:'buy は他動詞',e:'buy は<b>他動詞</b>で目的語が必要。本（先行詞）＝ 目的語 → <b>which</b>'},
+  {q:'I remember the place ( ) we stayed during our trip.',s:'I remember the place where we stayed during our trip.',j:'私は旅行中に泊まった場所を覚えています。',a:0,c:['where','which','when','why'],h:'stay は自動詞',e:'stay は<b>自動詞</b>（stay in, stay at）＋ 場所の先行詞 → <b>where</b>'},
+  {q:'I remember the place ( ) we visited during our trip.',s:'I remember the place which we visited during our trip.',j:'私は旅行中に訪れた場所を覚えています。',a:1,c:['where','which','when','why'],h:'visit は他動詞',e:'visit は<b>他動詞</b>。目的語（place）が空く → <b>which</b>'},
+  {q:'Finally he found the book ( ) he had been looking for.',s:'Finally he found the book which he had been looking for.',j:'ついに彼は探していた本を見つけた。',a:1,c:['where','which','when','why'],h:'look for の目的語 → which',e:'look <b>for</b> の目的語の位置が空く → <b>which</b>（他動詞的）'},
+  {q:'The store ( ) stands on the corner has been there for 50 years.',s:'The store which stands on the corner has been there for 50 years.',j:'角に立っている店は50年前からそこにある。',a:1,c:['where','which','when','how'],h:'主語の位置 → which（関係副詞は主語になれない）',e:'stands の主語が空く → <b>which</b>（関係副詞は主語になれない！）'},
+  {q:'Do you know the station ( ) we should get off?',s:'Do you know the station where we should get off?',j:'私たちが降りるべき駅を知っていますか。',a:0,c:['where','which','when','how'],h:'get off は自動詞的（get off at）',e:'get off は<b>自動詞的</b>（get off at 〜）＋ 場所 → <b>where</b>'},
+  {q:'The cake ( ) my mother makes is always delicious.',s:'The cake which my mother makes is always delicious.',j:'母が作るケーキはいつもおいしい。',a:1,c:['where','which','when','how'],h:'make は他動詞',e:'makes の目的語が空く → <b>which</b>（他動詞）'},
+  {q:'Summer is the season ( ) we enjoy swimming.',s:'Summer is the season when we enjoy swimming.',j:'夏は私たちが水泳を楽しむ季節です。',a:2,c:['where','which','when','why'],h:'the season（時）＋ 完全な文',e:'the season（時）＋ 完全な文（we enjoy swimming）→ <b>when</b>'},
+  {q:'Tell me the reason ( ) you can\'t attend the meeting.',s:'Tell me the reason why you can\'t attend the meeting.',j:'あなたが会議に出席できない理由を教えてください。',a:3,c:['where','which','when','why'],h:'the reason → why',e:'the reason（理由）＋ 完全な文 → <b>why</b>'},
+];
+window.cp3=[
+  {q:'She is willing to help ( ) asks her for help.',s:'She is willing to help whoever asks her for help.',j:'彼女は助けを求める人ならだれでも助けようとする。',a:2,c:['whenever','whatever','whoever','wherever'],h:'〜する人はだれでも → whoever',e:'<b>whoever</b>（不定用法：〜する人はだれでも／＝ anyone who）'},
+  {q:'I\'ll buy ( ) you want.',s:'I\'ll buy whatever you want.',j:'あなたが欲しいものは何でも買ってあげよう。',a:1,c:['whoever','whatever','whichever','however'],h:'〜するものは何でも → whatever',e:'<b>whatever</b>（不定用法：〜するものは何でも／＝ anything that）'},
+  {q:'( ) happens, I\'ll support you.',s:'Whatever happens, I\'ll support you.',j:'たとえ何が起きても、私はあなたを支えます。',a:1,c:['Whoever','Whatever','However','Whichever'],h:'たとえ何が〜しても → whatever（譲歩）',e:'譲歩用法の <b>whatever</b>（＝ no matter what）'},
+  {q:'Whoever calls, tell them I\'m not at home.',s:'Whoever calls, tell them I\'m not at home.',j:'たとえだれが電話してきても、不在だと伝えてください。',a:2,c:['anyone who','anything that','no matter who','no matter what'],h:'whoever（譲歩）= no matter who',e:'譲歩用法の <b>whoever ＝ no matter who</b>'},
+  {q:'You can take ( ) you like from these boxes.',s:'You can take whichever you like from these boxes.',j:'これらの箱の中からどれでも好きなものを選んでください。',a:2,c:['whoever','whatever','whichever','however'],h:'〜するものはどれでも → whichever',e:'<b>whichever</b>（不定用法：〜するものはどれでも）'},
+  {q:'( ) you do, be sincere.',s:'Whatever you do, be sincere.',j:'たとえ何をしようとも、誠実でいなさい。',a:3,c:['Wherever','Whenever','Whoever','Whatever'],h:'たとえ何をしても → whatever',e:'譲歩用法の <b>whatever</b>（＝ no matter what）'},
+  {q:'( ) I asked could not answer the question.',s:'Whoever I asked could not answer the question.',j:'私が尋ねただれもが、その質問に答えられなかった。',a:0,c:['Whoever','Whatever','Whichever','Whenever'],h:'〜した人はだれも（不定用法・名詞節）',e:'<b>whoever</b>（不定用法）「〜する人はだれでも」→ 名詞節として主語に'},
+  {q:'I\'ll give this ticket to ( ) wants it.',s:'I\'ll give this ticket to whoever wants it.',j:'このチケットを欲しい人にはだれにでもあげよう。',a:2,c:['whenever','whatever','whoever','wherever'],h:'to 〜（前置詞の後）＋ 人 → whoever',e:'to の後ろで「〜する人にはだれでも」→ <b>whoever</b>（不定用法）'},
+  {q:'Please take ( ) book you need.',s:'Please take whichever book you need.',j:'必要などちらの本でもお取りください。',a:2,c:['whatever','whenever','whichever','however'],h:'どちらの〜でも（複合関係形容詞）',e:'<b>whichever ＋ 名詞</b>（複合関係形容詞）「どちらの〜でも」'},
+  {q:'Give me ( ) information you have.',s:'Give me whatever information you have.',j:'お持ちのどんな情報でもください。',a:1,c:['whichever','whatever','whoever','however'],h:'どんな〜でも（複合関係形容詞）',e:'<b>whatever ＋ 名詞</b>（複合関係形容詞）「どんな〜でも」'},
+];
+window.cp4=[
+  {q:'Please sit ( ) you like.',s:'Please sit wherever you like.',j:'お好きなところへお座りください。',a:2,c:['whenever','whoever','wherever','however'],h:'〜する場所はどこでも → wherever',e:'<b>wherever</b>（不定用法：〜する場所はどこでも）'},
+  {q:'Come and see me ( ) you are free.',s:'Come and see me whenever you are free.',j:'暇なときはいつでも会いに来てください。',a:0,c:['whenever','whoever','wherever','however'],h:'〜する時はいつでも → whenever',e:'<b>whenever</b>（不定用法：〜する時はいつでも）'},
+  {q:'( ) tired you may be, you must finish the job.',s:'However tired you may be, you must finish the job.',j:'どんなに疲れていても、仕事を終えなければならない。',a:3,c:['Whenever','Whoever','Wherever','However'],h:'どんなに〜でも ＋ 形容詞',e:'<b>However ＋ 形容詞／副詞</b>（譲歩用法）「どんなに〜でも」'},
+  {q:'However tired he was と同じ意味はどれか？',s:'However tired he was, he worked hard.',j:'',a:1,c:['Anywhere he was tired','No matter how tired he was','No matter where he was tired','However he was tired'],h:'however（譲歩）＝ no matter how',e:'<b>however tired ＝ no matter how tired</b>'},
+  {q:'「どんなに一生懸命働いても…」を正しく表すのは？',s:'However hard he works, he can\'t finish it today.',j:'',a:2,c:['However he works hard','However works hard','However hard he works','However hard works he'],h:'however ＋ 形容詞／副詞 ＋ S V',e:'語順に注意：<b>However ＋ 形容詞／副詞 ＋ S ＋ V</b>'},
+  {q:'( ) you go, don\'t forget us.',s:'Wherever you go, don\'t forget us.',j:'どこへ行っても、私たちを忘れないで。',a:1,c:['Whenever','Wherever','Whoever','Whatever'],h:'たとえどこで〜しようとも → wherever（譲歩）',e:'譲歩用法の <b>wherever</b>（＝ no matter where）'},
+  {q:'No matter ( ) you go, don\'t forget us.',s:'No matter where you go, don\'t forget us.',j:'どこに行こうとも、私たちのことは忘れないで。',a:0,c:['where','when','how','what'],h:'wherever ＝ no matter where',e:'<b>wherever ＝ no matter where</b>'},
+  {q:'He is welcome ( ) he may go.',s:'He is welcome wherever he may go.',j:'彼はどこへ行っても歓迎される。',a:2,c:['whenever','whoever','wherever','however'],h:'どこへ〜しても → wherever（譲歩）',e:'譲歩用法の <b>wherever</b>'},
+  {q:'however にない用法はどれか？',s:'however は譲歩用法のみ',j:'',a:0,c:['不定用法','譲歩用法','形容詞を伴う','副詞節をつくる'],h:'however は譲歩のみ',e:'<b>however</b> だけは<b>譲歩用法のみ</b>（不定用法はない）'},
+  {q:'次の文に最も自然に入る語はどれか？<br>Call me ( ) you need help.',s:'Call me whenever you need help.',j:'助けが必要なときはいつでも呼んでください。',a:1,c:['wherever','whenever','whoever','however'],h:'〜する時はいつでも → whenever',e:'<b>whenever</b>（不定用法：〜する時はいつでも）'},
+];
+window.cp5=[
+  {q:'At last he visited the place ( ) had long been in his mind. <span class="ub">常葉学園大</span>',u:'常葉学園大',s:'At last he visited the place which had long been in his mind.',j:'ついに彼は心に思っていた場所を訪れた。',a:0,c:['which','where','in which','how'],h:'主語の位置 → 関係副詞は主語になれない',e:'had been の主語が空く → <b>which</b>（関係副詞 where は主語になれない）'},
+  {q:'Greenwich Village is a place ( ) especially attracts the young. <span class="ub">中部大</span>',u:'中部大',s:'Greenwich Village is a place which especially attracts the young.',j:'グリニッジビレッジは若者に特に人気のある場所です。',a:3,c:['in which','where','wherever','which'],h:'主語が空く → which',e:'attracts の主語位置が空く → <b>which</b>（関係副詞は主語になれない）'},
+  {q:'Never put off till tomorrow ( ) you can do today. <span class="ub">北海道医学技術</span>',u:'北海道医学技術',s:'Never put off till tomorrow what you can do today.',j:'今日できることを明日まで延ばすな。',a:1,c:['when','what','which','that'],h:'先行詞がない → what',e:'先行詞を含む関係代名詞 <b>what</b>（＝ the thing that）「〜できること」'},
+  {q:'"Don\'t worry, we\'ll leave ( ) you\'re ready." <span class="ub">青森県立保健大</span>',u:'青森県立保健大',s:'Don\'t worry, we\'ll leave whenever you\'re ready.',j:'心配しないで。準備が整ったときに出発します。',a:1,c:['whatever','whenever','wherever','however'],h:'〜する時はいつでも → whenever',e:'「〜する時（＝準備ができたら）」→ <b>whenever</b>'},
+  {q:'The tourist information center gave a city map to ( ) asked for it. <span class="ub">神戸常磐短大</span>',u:'神戸常磐短大',s:'The tourist information center gave a city map to whoever asked for it.',j:'旅行情報センターでは都市地図を欲しい人にはだれにでもあげました。',a:2,c:['whom','whatever','whoever','people'],h:'to の後 ＋ 〜する人 → whoever',e:'「〜する人にはだれにでも」＝ <b>whoever</b>（不定用法）'},
+  {q:'He will visit the town ( ) he was born.',s:'He will visit the town where he was born.',j:'彼は生まれた町を訪れるつもりです。',a:2,c:['which','that','where','what'],h:'場所 ＋ be born → where',e:'the town（場所）＋ be born in → <b>where</b>（自動詞的）'},
+  {q:'We went to New York, ( ) we stayed for a week.',s:'We went to New York, where we stayed for a week.',j:'私たちはニューヨークへ行き、そこで一週間滞在した。',a:2,c:['because','if','where','when'],h:'コンマ ＋ 場所 → , where',e:'非制限用法の <b>, where</b>（＝ and there）'},
+  {q:'Tell me ( ) I can get to the museum. <span class="ub">広島国際大学</span>',u:'広島国際大学',s:'Tell me how I can get to the museum.',j:'博物館にはどう行けばよいか教えてください。',a:2,c:['where','what','how','that'],h:'方法 → how',e:'「どうやって」＝ <b>how</b>（関係副詞／間接疑問でもOK）'},
+  {q:'She talks like a boy. That\'s ( ) she is disliked by many. <span class="ub">北海大医療大</span>',u:'北海大医療大',s:'That\'s why she is disliked by many.',j:'彼女は少年のように話す。そのことが多くの人に好かれない理由だ。',a:1,c:['now','why','what','when'],h:'That\'s why ～（それが〜の理由）',e:'<b>That\'s why</b>（それが〜の理由だ）'},
+  {q:'No matter ( ) you go, don\'t forget us.',s:'No matter where you go, don\'t forget us.',j:'どこに行こうとも、私たちのことは忘れないで。',a:0,c:['where','when','how','what'],h:'どこで〜しても → no matter where',e:'<b>no matter where ＝ wherever</b>（譲歩用法）'},
+  {q:'The fireman had trouble getting to the street ( ) the house was on fire. <span class="ub">センター</span>',u:'センター',s:'The fireman had trouble getting to the street where the house was on fire.',j:'消防士は家が火事になっている通りにたどり着くのに苦労した。',a:0,c:['where','which','what','that'],h:'場所 ＋ 完全な文 → where',e:'the street（場所）＋ the house was on fire（完全な文）→ <b>where</b>'},
+  {q:'Africa is the place ( ) I would like to visit. <span class="ub">青山学院大</span>',u:'青山学院大',s:'Africa is the place which I would like to visit.',j:'アフリカは私が訪れたい場所です。',a:0,c:['which','where','when','how'],h:'visit は他動詞 → which',e:'visit は<b>他動詞</b>で目的語が必要 → <b>which</b>（関係代名詞）'},
+  {q:'He didn\'t attend the meeting for that reason. ＝ That is ( ) he wasn\'t present at the meeting. <span class="ub">佐世保市立大</span>',u:'佐世保市立大',s:'That is why he wasn\'t present at the meeting.',j:'彼はその理由でミーティングに参加しなかった。＝ それが会議に出席しなかった理由だ。',a:2,c:['where','when','why','how'],h:'for that reason ＝ why',e:'「その理由で」→ That is <b>why</b>'},
+  {q:'( ) busy you are, you can find time for reading.',s:'However busy you are, you can find time for reading.',j:'どんなに忙しくても、本を読む時間を見つけることができる。',a:2,c:['whatever','whenever','however','whichever'],h:'どんなに〜でも ＋ 形容詞',e:'<b>However ＋ 形容詞／副詞</b>（譲歩用法）「どんなに〜でも」'},
+];
+
+/* ===== 初期化 ===== */
+iC('iq1a');iC('iq1b');
+iC('iq2a');iC('iq2b');
+iC('iq3a');iC('iq3b');
+iC('iq4a');iC('iq4b');
+iC('iq5a');
+iC('iq6a');
+iC('p1');iC('p2');iC('p3');iC('p4');iC('p5');
+</script>
+</body>
+</html>

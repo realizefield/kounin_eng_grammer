@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+<title>英検2級・高認英文法　Unit 10　関係詞①</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'BIZ UDGothic','Hiragino Kaku Gothic Pro','Meiryo',sans-serif;background:#eef2f7;color:#1a1a2e;min-height:100vh;font-size:15px}
+.top-header{background:linear-gradient(135deg,#1B3A6B 0%,#0097A7 100%);color:#fff;padding:14px 16px 12px;text-align:center}
+.top-header h1{font-size:17px;font-weight:700;letter-spacing:.05em}
+.top-header p{font-size:12px;margin-top:3px;opacity:.85}
+.nav{background:#fff;border-bottom:3px solid #0097A7;padding:8px 10px;display:flex;overflow-x:auto;gap:4px;-webkit-overflow-scrolling:touch;align-items:stretch}
+.nav::-webkit-scrollbar{height:3px}
+.pair{display:flex;gap:0;flex-shrink:0;border-radius:22px;overflow:hidden;box-shadow:0 0 0 1.5px #ccd}
+.pair.active-pair{box-shadow:0 0 0 2.5px #1B3A6B}
+.nb{padding:8px 14px;border:none;background:#f5f7fa;color:#555;font-size:13px;font-family:inherit;cursor:pointer;white-space:nowrap;border-right:1px solid #dde;transition:.2s;font-weight:500;flex-shrink:0}
+.nb:hover{background:#e8eaf6;color:#1B3A6B}
+.nb.on{background:#1B3A6B;color:#fff}
+.pb{padding:8px 14px;border:none;background:#fff3e0;color:#c84500;font-size:13px;font-family:inherit;cursor:pointer;white-space:nowrap;font-weight:700;transition:.2s;flex-shrink:0}
+.pb:hover{background:#e65100;color:#fff}
+.nav-sep{width:6px;flex-shrink:0}
+.sec{display:none;padding:12px;max-width:820px;margin:0 auto;padding-bottom:60px}
+.sec.active{display:block}
+.card{background:#fff;border-radius:14px;border:1px solid #dde3ee;padding:14px 16px;margin-bottom:14px;box-shadow:0 1px 4px rgba(0,0,0,.05)}
+.card-title{font-size:15px;font-weight:700;color:#1B3A6B;margin-bottom:10px;padding-bottom:8px;border-bottom:2px solid #0097A7}
+.sh{background:linear-gradient(90deg,#1B3A6B,#1B5E8B);color:#fff;border-radius:10px;padding:9px 16px;font-size:15px;font-weight:700;margin-bottom:12px;margin-top:6px}
+.pt{background:#fffde7;border-left:5px solid #f9a825;border-radius:0 10px 10px 0;padding:10px 14px;margin:8px 0;font-size:14px;line-height:1.9}
+.kb{background:#f1f8e9;border-left:5px solid #2e7d32;border-radius:0 10px 10px 0;padding:10px 14px;margin:8px 0;font-size:14px;line-height:1.8}
+.wb{background:#fff3e0;border-left:5px solid #e65100;border-radius:0 10px 10px 0;padding:10px 14px;margin:8px 0;font-size:14px;line-height:1.8}
+.ex{background:#f0f8ff;border:1px solid #b3d9f7;border-radius:10px;padding:12px 14px;margin:8px 0;font-size:14px;line-height:1.9}
+.ex-ja{font-size:12px;color:#555;margin-top:3px}
+.spk{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:#e8f4ff;border:1.5px solid #0097A7;cursor:pointer;margin-left:5px;vertical-align:middle;flex-shrink:0;transition:.2s;font-size:14px;font-family:inherit;padding:0}
+.spk:hover{background:#0097A7;color:#fff}
+.q-box{background:#fff;border-radius:12px;border:1px solid #dde3ee;padding:14px;margin-bottom:14px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.q-hd{display:flex;align-items:flex-start;gap:8px;margin-bottom:10px}
+.q-num{flex-shrink:0;width:26px;height:26px;background:#1B3A6B;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700}
+.q-txt{flex:1;font-size:14px;line-height:1.7}
+.hint{font-size:12px;color:#0097A7;background:#f0faff;border-radius:6px;padding:3px 8px;display:inline-block;margin-bottom:8px}
+.ub{font-size:11px;background:#e3f2fd;color:#1565c0;padding:2px 8px;border-radius:10px;font-weight:700;margin-left:6px;vertical-align:middle}
+.cb{width:100%;text-align:left;padding:10px 14px;margin:4px 0;border-radius:8px;border:1.5px solid #dde;background:#fff;font-size:14px;font-family:inherit;cursor:pointer;transition:.15s;line-height:1.4}
+.cb:hover:not(.dis){border-color:#0097A7;background:#f0faff}
+.cb.ca{background:#e8f5e9;border-color:#2e7d32;color:#1b5e20;font-weight:700}
+.cb.wa{background:#ffebee;border-color:#e53935;color:#b71c1c}
+.cb.dis{pointer-events:none}
+.ep{background:#fff8e1;border:1.5px solid #ffc107;border-radius:10px;padding:12px 14px;margin-top:10px;font-size:13px;line-height:1.8;display:none}
+.ep.show{display:block}
+.sb{background:#fff;border-radius:10px;border:1px solid #dde;padding:10px 14px;margin-bottom:12px;display:flex;align-items:center;gap:12px}
+.sn{font-size:20px;font-weight:700;color:#1B3A6B;min-width:60px}
+.pw{flex:1;height:10px;background:#eee;border-radius:6px;overflow:hidden}
+.pf{height:100%;background:linear-gradient(90deg,#0097A7,#1B3A6B);border-radius:6px;transition:.5s}
+.tbl{width:100%;border-collapse:collapse;font-size:13px}
+.tbl th{background:#1B3A6B;color:#fff;padding:7px 8px;text-align:center}
+.tbl td{padding:7px 8px;border-bottom:1px solid #eef;vertical-align:middle;text-align:center}
+.tbl tr:nth-child(even) td{background:#f7f9ff}
+.form-box{background:#e8f4ff;border:2px solid #0097A7;border-radius:12px;padding:14px;font-size:14px;font-weight:700;color:#1B3A6B;margin:10px 0;line-height:2.1}
+.mini-quiz-wrap{background:#f0faff;border:2px solid #0097A7;border-radius:12px;padding:14px;margin-top:12px;margin-bottom:4px}
+.mini-quiz-title{font-size:13px;font-weight:700;color:#0097A7;margin-bottom:10px}
+.cmp2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:10px 0}
+@media(max-width:500px){.cmp2{grid-template-columns:1fr}}
+.cbox{border-radius:10px;padding:12px 14px;font-size:13px;line-height:1.8}
+.cbox.bl{background:#e3f2fd;border:1.5px solid #90caf9}
+.cbox.gn{background:#f1f8e9;border:1.5px solid #a5d6a7}
+.cbox.yl{background:#fffde7;border:1.5px solid #f9a825}
+.cbox-ttl{font-weight:700;font-size:13px;margin-bottom:6px}
+.cbox.bl .cbox-ttl{color:#1565c0}
+.cbox.gn .cbox-ttl{color:#2e7d32}
+.cbox.yl .cbox-ttl{color:#f57f17}
+/* 関係詞フロー図 */
+.rel-flow{background:#f8f9ff;border-radius:12px;border:1px solid #dde3ee;padding:14px;margin:10px 0;font-size:13px;line-height:2}
+.rel-flow .arr{color:#0097A7;font-size:18px;margin:0 6px}
+.tag-who{display:inline-block;background:#1B3A6B;color:#fff;border-radius:6px;padding:2px 10px;font-size:13px;font-weight:700;margin:2px}
+.tag-which{display:inline-block;background:#0097A7;color:#fff;border-radius:6px;padding:2px 10px;font-size:13px;font-weight:700;margin:2px}
+.tag-that{display:inline-block;background:#e65100;color:#fff;border-radius:6px;padding:2px 10px;font-size:13px;font-weight:700;margin:2px}
+.tag-whose{display:inline-block;background:#7b1fa2;color:#fff;border-radius:6px;padding:2px 10px;font-size:13px;font-weight:700;margin:2px}
+.tag-what{display:inline-block;background:#c62828;color:#fff;border-radius:6px;padding:2px 10px;font-size:13px;font-weight:700;margin:2px}
+.vpop{display:none;position:fixed;z-index:2000;background:#fff;border-radius:14px;box-shadow:0 6px 30px rgba(0,0,0,.22);width:260px;max-width:90vw}
+.vpop.show{display:block}
+.vpop-hd{background:linear-gradient(135deg,#1B3A6B,#0097A7);color:#fff;padding:12px 14px 10px;border-radius:14px 14px 0 0;display:flex;align-items:center;justify-content:space-between}
+.vpop-word{font-size:18px;font-weight:700}
+.vpop-pos{font-size:11px;background:rgba(255,255,255,.25);border-radius:8px;padding:2px 8px;margin-left:6px}
+.vpop-close{background:rgba(255,255,255,.2);border:none;color:#fff;width:26px;height:26px;border-radius:50%;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.vpop-body{padding:12px 14px}
+.vpop-mean{font-size:16px;font-weight:700;color:#1B3A6B;margin-bottom:4px}
+.vpop-kana{font-size:13px;color:#555;margin-bottom:10px}
+.vpop-btns{display:flex;gap:8px}
+.vpop-spk,.vpop-save{flex:1;padding:8px;border-radius:8px;font-size:13px;font-family:inherit;cursor:pointer;font-weight:700}
+.vpop-spk{border:1.5px solid #0097A7;background:#f0faff;color:#0097A7}
+.vpop-spk:hover{background:#0097A7;color:#fff}
+.vpop-save{border:1.5px solid #e65100;background:#fff3e0;color:#c84500}
+.vpop-save:hover{background:#e65100;color:#fff}
+.vpop-save.saved{background:#e8f5e9;border-color:#2e7d32;color:#2e7d32}
+.vpop-saved-lbl{font-size:11px;color:#2e7d32;text-align:center;margin-top:6px;display:none}
+.vpop-saved-lbl.show{display:block}
+.vocab-badge{display:none;position:absolute;top:-6px;right:-6px;background:#e53935;color:#fff;border-radius:50%;width:18px;height:18px;font-size:11px;font-weight:700;align-items:center;justify-content:center}
+.vocab-badge.show{display:flex}
+.mo{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:1500;align-items:flex-end;justify-content:center}
+.mo.open{display:flex}
+.mb{background:#fff;border-radius:18px 18px 0 0;width:100%;max-width:540px;max-height:85vh;display:flex;flex-direction:column}
+.mh{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid #eee}
+.mh h2{font-size:16px;font-weight:700;color:#1B3A6B}
+.mhc{background:none;border:none;font-size:22px;cursor:pointer;color:#888}
+.mbody{overflow-y:auto;padding:14px 16px;flex:1}
+.vbook-empty{text-align:center;color:#999;padding:24px;font-size:14px}
+.vcard{background:#f8faff;border-radius:10px;border:1px solid #dde;padding:10px 12px;margin-bottom:8px;display:flex;align-items:center;gap:10px}
+.vcard-word{font-size:15px;font-weight:700;color:#1B3A6B;flex:1}
+.vcard-mean{font-size:13px;color:#555;flex:1}
+.vcard-del{background:#fff;border:1.5px solid #dde;color:#aaa;border-radius:6px;padding:4px 10px;font-size:12px;cursor:pointer;font-family:inherit}
+.vcard-del:hover{border-color:#e53935;color:#e53935}
+.vtest-q{font-size:16px;font-weight:700;color:#1B3A6B;text-align:center;padding:16px;background:#e8f4ff;border-radius:10px;margin-bottom:12px}
+.vtest-opt{width:100%;text-align:left;padding:11px 14px;margin:5px 0;border-radius:8px;border:1.5px solid #dde;background:#fff;font-size:14px;font-family:inherit;cursor:pointer;transition:.15s}
+.vtest-opt:hover:not(.dis){border-color:#0097A7;background:#f0faff}
+.vtest-opt.ca{background:#e8f5e9;border-color:#2e7d32;color:#1b5e20;font-weight:700}
+.vtest-opt.wa{background:#ffebee;border-color:#e53935;color:#b71c1c}
+.vtest-opt.dis{pointer-events:none}
+/* 重要語クリック */
+.vw{border-bottom:2px dashed #7b1fa2;cursor:pointer;color:#1B3A6B;font-weight:700}
+.vw:hover{background:#f3e5f5;border-radius:3px}
+canvas#cc{position:fixed;top:0;left:0;pointer-events:none;z-index:9999;display:none}
+</style>
+</head>
+<body>
+<canvas id="cc"></canvas>
+<div class="top-header">
+  <h1>🎓 英検2級・高認英文法　Unit 10　関係詞①</h1>
+  <p>こうげんよびこう（江原予備校）　― スピーカーボタンで音声再生 ―</p>
+</div>
+<nav class="nav" id="nav">
+  <div class="pair active-pair">
+    <button class="nb on" onclick="ss('s1',this)">① 関係代名詞の基本と格変化</button>
+    <button class="pb" onclick="ss('p1',this)">✏️ 練習①</button>
+  </div>
+  <div class="nav-sep"></div>
+  <div class="pair">
+    <button class="nb" onclick="ss('s2',this)">② 前置詞＋関係代名詞</button>
+    <button class="pb" onclick="ss('p2',this)">✏️ 練習②</button>
+  </div>
+  <div class="nav-sep"></div>
+  <div class="pair">
+    <button class="nb" onclick="ss('s3',this)">③ that必須・制限用法と非制限用法</button>
+    <button class="pb" onclick="ss('p3',this)">✏️ 練習③</button>
+  </div>
+  <div class="nav-sep"></div>
+  <div class="pair">
+    <button class="nb" onclick="ss('s4',this)">④ as / than / but / what</button>
+    <button class="pb" onclick="ss('p4',this)">✏️ 練習④</button>
+  </div>
+  <div class="nav-sep"></div>
+  <div class="pair">
+    <button class="nb" onclick="ss('s5',this)">⑤ what の重要表現</button>
+    <button class="pb" onclick="ss('p5',this)">✏️ 練習⑤実戦</button>
+  </div>
+  <div class="nav-sep" style="width:12px"></div>
+  <div style="flex-shrink:0;position:relative">
+    <button onclick="openM('mvocab')" style="padding:8px 16px;border-radius:22px;border:2px solid #7b1fa2;background:#f3e5f5;color:#7b1fa2;font-size:13px;font-family:inherit;cursor:pointer;font-weight:700;white-space:nowrap">📚 単語帳</button>
+    <span class="vocab-badge" id="vocab-badge">0</span>
+  </div>
+</nav>
+
+<!-- ===== ① 関係代名詞の基本と格変化 ===== -->
+<div id="s1" class="sec active">
+<div class="sh">① 関係代名詞の基本と格変化</div>
+
+<div class="card">
+  <div class="card-title">【基礎】関係代名詞とは何か　— 2つの文を1つにまとめる —</div>
+  <div class="pt">
+    <b>関係代名詞</b>は、<b>接続詞</b>と<b>代名詞</b>の両方の働きを兼ねた特別なことばです。<br>
+    2つの文を1つにまとめることができ、名詞（先行詞）を後ろから詳しく説明します。<br><br>
+    <b>重要な用語を覚えよう</b><br>
+    ・<b>先行詞（せんこうし）</b>：関係代名詞が修飾する名詞のこと。関係代名詞の直前にあります。<br>
+    ・<b>関係代名詞節</b>：先行詞を修飾する節のこと。文の中で<b>形容詞節</b>の役割を果たします。<br><br>
+    <b>関係代名詞の働き（2文を1文にする手順）</b><br>
+    ① 共通の名詞（先行詞になる語）を見つける<br>
+    ② 後ろの文の対応する代名詞を関係代名詞に変える<br>
+    ③ 関係代名詞を先行詞の直後に移す
+  </div>
+  <div class="rel-flow">
+    <b>📌 足し算で覚えよう！　2文 → 1文</b><br><br>
+    <b>① 共通の名詞を探す</b><br>
+    I have an American friend. <span style="color:#e65100;font-weight:700">He</span> can speak Japanese.<br>
+    　→ friend ＝ He（同じ人物！）<br><br>
+    <b>② He を関係代名詞に変えて先行詞の直後へ移す</b><br>
+    He（人） → <span class="tag-who vw" onclick="showVwPop(this,event)" data-w="who" data-pos="主格（人）" data-mean="誰が・誰を（人が先行詞の関係代名詞）" data-kana="フー" data-opts="[&quot;誰が（主格）&quot;, &quot;誰を（目的格）&quot;, &quot;誰の（所有格）&quot;, &quot;物が先行詞&quot;]">who</span><br><br>
+    <b>③ 完成！</b><br>
+    I have an American friend <span class="tag-who vw" onclick="showVwPop(this,event)" data-w="who" data-pos="主格（人）" data-mean="誰が・誰を（人が先行詞の関係代名詞）" data-kana="フー" data-opts="[&quot;誰が（主格）&quot;, &quot;誰を（目的格）&quot;, &quot;誰の（所有格）&quot;, &quot;物が先行詞&quot;]">who</span> can speak Japanese. <button class="spk" data-t="I have an American friend who can speak Japanese." onclick="sp(this.dataset.t)">▶</button><br>
+    <span style="color:#555;font-size:12px">私には日本語を話せるアメリカ人の友人がいます。</span><br><br>
+    <table style="font-size:13px;border-collapse:collapse;width:100%;margin-top:4px">
+      <tr style="background:#e8f4ff"><td style="padding:4px 8px;font-weight:700">先行詞</td><td style="padding:4px 8px">an American friend（友人 → 人）</td></tr>
+      <tr style="background:#f1f8e9"><td style="padding:4px 8px;font-weight:700">関係代名詞</td><td style="padding:4px 8px"><span class="tag-who vw" onclick="showVwPop(this,event)" data-w="who" data-pos="主格（人）" data-mean="誰が・誰を（人が先行詞の関係代名詞）" data-kana="フー" data-opts="[&quot;誰が（主格）&quot;, &quot;誰を（目的格）&quot;, &quot;誰の（所有格）&quot;, &quot;物が先行詞&quot;]">who</span>（接続詞＋代名詞の役割）</td></tr>
+      <tr style="background:#fff8e1"><td style="padding:4px 8px;font-weight:700">関係代名詞節</td><td style="padding:4px 8px">who can speak Japanese（形容詞節 → friend を修飾）</td></tr>
+    </table>
+  </div>
+</div>
+<div class="mini-quiz-wrap">
+  <div class="mini-quiz-title">📝 確認① 関係代名詞の基本</div>
+  <div id="iq1aq"></div>
+</div>
+
+<div class="card">
+  <div class="card-title">【格変化表】who / which / that / whose　— 先行詞と格で使い分ける —</div>
+  <div class="pt">
+    関係代名詞は、<b>先行詞の種類（人・物・動物）</b>と<b>格（主格・所有格・目的格）</b>によって形が変わります。<br>
+    下の表を覚えることが関係代名詞マスターへの第一歩です。
+  </div>
+  <table class="tbl">
+    <tr>
+      <th>格　＼　先行詞</th>
+      <th>人</th>
+      <th>物・動物</th>
+      <th>人・物・動物すべて</th>
+    </tr>
+    <tr>
+      <td><b>主格</b>（～は・が）</td>
+      <td><span class="tag-who vw" onclick="showVwPop(this,event)" data-w="who" data-pos="主格（人）" data-mean="誰が・誰を（人が先行詞の関係代名詞）" data-kana="フー" data-opts="[&quot;誰が（主格）&quot;, &quot;誰を（目的格）&quot;, &quot;誰の（所有格）&quot;, &quot;物が先行詞&quot;]">who</span></td>
+      <td><span class="tag-which vw" onclick="showVwPop(this,event)" data-w="which" data-pos="物・動物用" data-mean="それが・それを（物・動物が先行詞の関係代名詞）" data-kana="ウィッチ" data-opts="[&quot;物・動物（主格/目的格）&quot;, &quot;人（主格）&quot;, &quot;所有格&quot;, &quot;先行詞を含む&quot;]">which</span></td>
+      <td><span class="tag-that vw" onclick="showVwPop(this,event)" data-w="that" data-pos="万能型" data-mean="人・物・動物すべてに使える関係代名詞（所有格なし）" data-kana="ザット" data-opts="[&quot;人・物・動物すべてOK&quot;, &quot;所有格なし&quot;, &quot;非制限用法なし&quot;, &quot;that必須の場合がある&quot;]">that</span></td>
+    </tr>
+    <tr>
+      <td><b>所有格</b>（～の）</td>
+      <td><span class="tag-whose vw" onclick="showVwPop(this,event)" data-w="whose" data-pos="所有格" data-mean="誰の・その～（所有格の関係代名詞）" data-kana="フーズ" data-opts="[&quot;誰の（所有格）&quot;, &quot;誰が（主格）&quot;, &quot;誰を（目的格）&quot;, &quot;of whichと同義&quot;]">whose</span></td>
+      <td><span class="tag-whose vw" onclick="showVwPop(this,event)" data-w="whose" data-pos="所有格" data-mean="誰の・その～（所有格の関係代名詞）" data-kana="フーズ" data-opts="[&quot;誰の（所有格）&quot;, &quot;誰が（主格）&quot;, &quot;誰を（目的格）&quot;, &quot;of whichと同義&quot;]">whose</span> または of which</td>
+      <td>なし</td>
+    </tr>
+    <tr>
+      <td><b>目的格</b>（～を・に）</td>
+      <td><span class="tag-who vw" onclick="showVwPop(this,event)" data-w="whom" data-pos="目的格（人）" data-mean="誰を・誰に（人が先行詞の目的格関係代名詞）" data-kana="フーム" data-opts="[&quot;誰を（目的格）&quot;, &quot;誰が（主格）&quot;, &quot;誰の（所有格）&quot;, &quot;省略可能&quot;]">whom</span>（省略可）</td>
+      <td><span class="tag-which vw" onclick="showVwPop(this,event)" data-w="which" data-pos="物・動物用" data-mean="それが・それを（物・動物が先行詞の関係代名詞）" data-kana="ウィッチ" data-opts="[&quot;物・動物（主格/目的格）&quot;, &quot;人（主格）&quot;, &quot;所有格&quot;, &quot;先行詞を含む&quot;]">which</span>（省略可）</td>
+      <td><span class="tag-that vw" onclick="showVwPop(this,event)" data-w="that" data-pos="万能型" data-mean="人・物・動物すべてに使える関係代名詞（所有格なし）" data-kana="ザット" data-opts="[&quot;人・物・動物すべてOK&quot;, &quot;所有格なし&quot;, &quot;非制限用法なし&quot;, &quot;that必須の場合がある&quot;]">that</span>（省略可）</td>
+    </tr>
+  </table>
+  <div class="kb">
+    💡 <b>格の見分け方のコツ</b><br>
+    関係代名詞の後ろを見てください。<br>
+    ・後ろに<b>動詞が続く</b> → その関係代名詞は<b>主格</b>（関係詞節の主語）<br>
+    ・後ろに<b>名詞が続く</b> → その関係代名詞は<b>所有格</b>（～の）<br>
+    ・後ろに<b>S ＋ V が続く</b>（主語と動詞がある）→ その関係代名詞は<b>目的格</b>（省略可能）
+  </div>
+</div>
+<div class="mini-quiz-wrap">
+  <div class="mini-quiz-title">📝 確認② 格変化表の使い方</div>
+  <div id="iq1bq"></div>
+</div>
+
+<div class="card">
+  <div class="card-title">【主格】who / which の使い方　— 後ろに動詞が続く —</div>
+  <div class="pt">
+    <b>主格の関係代名詞</b>：関係詞節の中で<b>主語の役割</b>をします。<br>
+    関係代名詞の後ろに<b>動詞が直接続きます</b>。<br>
+    ・先行詞が「<b>人</b>」→ <span class="tag-who vw" onclick="showVwPop(this,event)" data-w="who" data-pos="主格（人）" data-mean="誰が・誰を（人が先行詞の関係代名詞）" data-kana="フー" data-opts="[&quot;誰が（主格）&quot;, &quot;誰を（目的格）&quot;, &quot;誰の（所有格）&quot;, &quot;物が先行詞&quot;]">who</span><br>
+    ・先行詞が「<b>物・動物</b>」→ <span class="tag-which vw" onclick="showVwPop(this,event)" data-w="which" data-pos="物・動物用" data-mean="それが・それを（物・動物が先行詞の関係代名詞）" data-kana="ウィッチ" data-opts="[&quot;物・動物（主格/目的格）&quot;, &quot;人（主格）&quot;, &quot;所有格&quot;, &quot;先行詞を含む&quot;]">which</span>
+  </div>
+  <div style="background:#f8f9ff;border-radius:12px;border:1.5px solid #dde3ee;padding:14px;margin:10px 0;font-size:13px;line-height:2">
+    <b>📌 足し算型（人・主格）</b><br>
+    I have a friend. <span style="color:#e65100;font-weight:700">He</span> lives in Tokyo.<br>
+    He（人・主語） → <span class="tag-who vw" onclick="showVwPop(this,event)" data-w="who" data-pos="主格（人）" data-mean="誰が・誰を（人が先行詞の関係代名詞）" data-kana="フー" data-opts="[&quot;誰が（主格）&quot;, &quot;誰を（目的格）&quot;, &quot;誰の（所有格）&quot;, &quot;物が先行詞&quot;]">who</span>（主格）<br>
+    ＝ I have a friend <span class="tag-who vw" onclick="showVwPop(this,event)" data-w="who" data-pos="主格（人）" data-mean="誰が・誰を（人が先行詞の関係代名詞）" data-kana="フー" data-opts="[&quot;誰が（主格）&quot;, &quot;誰を（目的格）&quot;, &quot;誰の（所有格）&quot;, &quot;物が先行詞&quot;]">who</span> lives in Tokyo. <button class="spk" data-t="I have a friend who lives in Tokyo." onclick="sp(this.dataset.t)">▶</button><br>
+    <span style="color:#555">私には東京に住んでいる友人がいます。</span>
+  </div>
+  <div style="background:#f8f9ff;border-radius:12px;border:1.5px solid #dde3ee;padding:14px;margin:10px 0;font-size:13px;line-height:2">
+    <b>📌 足し算型（物・主格）</b><br>
+    This is the bus. <span style="color:#0097A7;font-weight:700">It</span> goes to the <span class="vw" onclick="showVwPop(this,event)" data-w="station" data-pos="名詞" data-mean="駅" data-kana="ステーション" data-opts="[&quot;駅&quot;, &quot;空港&quot;, &quot;港&quot;, &quot;停留所&quot;]">station</span>.<br>
+    It（物・主語） → <span class="tag-which vw" onclick="showVwPop(this,event)" data-w="which" data-pos="物・動物用" data-mean="それが・それを（物・動物が先行詞の関係代名詞）" data-kana="ウィッチ" data-opts="[&quot;物・動物（主格/目的格）&quot;, &quot;人（主格）&quot;, &quot;所有格&quot;, &quot;先行詞を含む&quot;]">which</span>（主格）<br>
+    ＝ This is the bus <span class="tag-which vw" onclick="showVwPop(this,event)" data-w="which" data-pos="物・動物用" data-mean="それが・それを（物・動物が先行詞の関係代名詞）" data-kana="ウィッチ" data-opts="[&quot;物・動物（主格/目的格）&quot;, &quot;人（主格）&quot;, &quot;所有格&quot;, &quot;先行詞を含む&quot;]">which</span> goes to the station. <button class="spk" data-t="This is the bus which goes to the station." onclick="sp(this.dataset.t)">▶</button><br>
+    <span style="color:#555">これは駅に行くバスです。</span>
+  </div>
+  <div class="kb">
+    💡 <b>主格かどうかの確認方法</b><br>
+    関係代名詞の直後が<b>動詞</b>なら → 主格（who / which）<br>
+    a friend <u>who</u> <b>lives</b>… ← lives が動詞 → 主格 ✅
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title">【所有格】whose の使い方　— 後ろに名詞が続く・「～の」を表す —</div>
+  <div class="pt">
+    <b>所有格の関係代名詞</b>：「～の」という所有の意味を表します。<br>
+    関係代名詞の後ろに<b>名詞が直接続きます</b>（<span class="tag-whose vw" onclick="showVwPop(this,event)" data-w="whose" data-pos="所有格" data-mean="誰の・その～（所有格の関係代名詞）" data-kana="フーズ" data-opts="[&quot;誰の（所有格）&quot;, &quot;誰が（主格）&quot;, &quot;誰を（目的格）&quot;, &quot;of whichと同義&quot;]">whose</span> ＋ 名詞 の形）。<br>
+    ・先行詞が「<b>人</b>」でも「<b>物・動物</b>」でも → <span class="tag-whose vw" onclick="showVwPop(this,event)" data-w="whose" data-pos="所有格" data-mean="誰の・その～（所有格の関係代名詞）" data-kana="フーズ" data-opts="[&quot;誰の（所有格）&quot;, &quot;誰が（主格）&quot;, &quot;誰を（目的格）&quot;, &quot;of whichと同義&quot;]">whose</span><br>
+    ・「物・動物」の場合は <b>of which</b> でも書き換えられます。
+  </div>
+  <div style="background:#f8f9ff;border-radius:12px;border:1.5px solid #dde3ee;padding:14px;margin:10px 0;font-size:13px;line-height:2">
+    <b>📌 足し算型（人・所有格）</b><br>
+    He is a boy. <span style="color:#7b1fa2;font-weight:700">His</span> name is Tom.<br>
+    His（人・所有格） → <span class="tag-whose vw" onclick="showVwPop(this,event)" data-w="whose" data-pos="所有格" data-mean="誰の・その～（所有格の関係代名詞）" data-kana="フーズ" data-opts="[&quot;誰の（所有格）&quot;, &quot;誰が（主格）&quot;, &quot;誰を（目的格）&quot;, &quot;of whichと同義&quot;]">whose</span>（所有格）<br>
+    ＝ He is a boy <span class="tag-whose vw" onclick="showVwPop(this,event)" data-w="whose" data-pos="所有格" data-mean="誰の・その～（所有格の関係代名詞）" data-kana="フーズ" data-opts="[&quot;誰の（所有格）&quot;, &quot;誰が（主格）&quot;, &quot;誰を（目的格）&quot;, &quot;of whichと同義&quot;]">whose</span> name is Tom. <button class="spk" data-t="He is a boy whose name is Tom." onclick="sp(this.dataset.t)">▶</button><br>
+    <span style="color:#555">彼はトムという名の少年です。</span>
+  </div>
+  <div style="background:#f8f9ff;border-radius:12px;border:1.5px solid #dde3ee;padding:14px;margin:10px 0;font-size:13px;line-height:2">
+    <b>📌 足し算型（物・所有格）</b><br>
+    Look at the house. <span style="color:#7b1fa2;font-weight:700">Its</span> <span class="vw" onclick="showVwPop(this,event)" data-w="roof" data-pos="名詞" data-mean="屋根" data-kana="ルーフ" data-opts="[&quot;屋根&quot;, &quot;床&quot;, &quot;壁&quot;, &quot;窓&quot;]">roof</span> is red. <span style="font-size:11px;color:#888">※roof（ルーフ/屋根）</span><br>
+    Its（物・所有格） → <span class="tag-whose vw" onclick="showVwPop(this,event)" data-w="whose" data-pos="所有格" data-mean="誰の・その～（所有格の関係代名詞）" data-kana="フーズ" data-opts="[&quot;誰の（所有格）&quot;, &quot;誰が（主格）&quot;, &quot;誰を（目的格）&quot;, &quot;of whichと同義&quot;]">whose</span> または <b>of which</b><br>
+    ＝ Look at the house <span class="tag-whose vw" onclick="showVwPop(this,event)" data-w="whose" data-pos="所有格" data-mean="誰の・その～（所有格の関係代名詞）" data-kana="フーズ" data-opts="[&quot;誰の（所有格）&quot;, &quot;誰が（主格）&quot;, &quot;誰を（目的格）&quot;, &quot;of whichと同義&quot;]">whose</span> roof is red. <button class="spk" data-t="Look at the house whose roof is red." onclick="sp(this.dataset.t)">▶</button><br>
+    ＝ Look at the house <b>of which</b> the roof is red. <button class="spk" data-t="Look at the house of which the roof is red." onclick="sp(this.dataset.t)">▶</button><br>
+    <span style="color:#555">屋根が赤い家を見なさい。</span>
+  </div>
+  <div class="wb">
+    ⚠️ <b>whose の直後には必ず名詞が来ます！</b><br>
+    ❌ a boy <s>whose</s> is …（動詞が来ているのは誤り）<br>
+    ✅ a boy <b>whose name</b> is Tom（whose ＋ 名詞 ✅）
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title">【目的格】whom / which の使い方　— 後ろに S＋V が続く・省略可能 —</div>
+  <div class="pt">
+    <b>目的格の関係代名詞</b>：関係詞節の中で<b>目的語の役割</b>をします。<br>
+    関係代名詞の後ろに<b>S（主語）＋ V（動詞）</b>が続きます。<br>
+    ・目的格の関係代名詞は<b>省略できます</b>。<b>that</b> に置き換えることもできます。<br>
+    ・先行詞が「<b>人</b>」→ <span class="tag-who vw" onclick="showVwPop(this,event)" data-w="whom" data-pos="目的格（人）" data-mean="誰を・誰に（人が先行詞の目的格関係代名詞）" data-kana="フーム" data-opts="[&quot;誰を（目的格）&quot;, &quot;誰が（主格）&quot;, &quot;誰の（所有格）&quot;, &quot;省略可能&quot;]">whom</span>　　先行詞が「<b>物・動物</b>」→ <span class="tag-which vw" onclick="showVwPop(this,event)" data-w="which" data-pos="物・動物用" data-mean="それが・それを（物・動物が先行詞の関係代名詞）" data-kana="ウィッチ" data-opts="[&quot;物・動物（主格/目的格）&quot;, &quot;人（主格）&quot;, &quot;所有格&quot;, &quot;先行詞を含む&quot;]">which</span>
+  </div>
+  <div style="background:#f8f9ff;border-radius:12px;border:1.5px solid #dde3ee;padding:14px;margin:10px 0;font-size:13px;line-height:2">
+    <b>📌 足し算型（人・目的格）</b><br>
+    She is a girl. I know <span style="color:#1B3A6B;font-weight:700">her</span> well.<br>
+    her（人・目的語） → <span class="tag-who vw" onclick="showVwPop(this,event)" data-w="whom" data-pos="目的格（人）" data-mean="誰を・誰に（人が先行詞の目的格関係代名詞）" data-kana="フーム" data-opts="[&quot;誰を（目的格）&quot;, &quot;誰が（主格）&quot;, &quot;誰の（所有格）&quot;, &quot;省略可能&quot;]">whom</span>（目的格）<br>
+    ＝ She is a girl <span class="tag-who vw" onclick="showVwPop(this,event)" data-w="whom" data-pos="目的格（人）" data-mean="誰を・誰に（人が先行詞の目的格関係代名詞）" data-kana="フーム" data-opts="[&quot;誰を（目的格）&quot;, &quot;誰が（主格）&quot;, &quot;誰の（所有格）&quot;, &quot;省略可能&quot;]">whom</span> I know well. <button class="spk" data-t="She is a girl whom I know well." onclick="sp(this.dataset.t)">▶</button><br>
+    ＝ She is a girl I know well.（省略可）<button class="spk" data-t="She is a girl I know well." onclick="sp(this.dataset.t)">▶</button><br>
+    <span style="color:#555">彼女は私がよく知っている少女です。</span>
+  </div>
+  <div style="background:#f8f9ff;border-radius:12px;border:1.5px solid #dde3ee;padding:14px;margin:10px 0;font-size:13px;line-height:2">
+    <b>📌 足し算型（物・目的格）</b><br>
+    This is the letter. She wrote <span style="color:#0097A7;font-weight:700">it</span> yesterday.<br>
+    it（物・目的語） → <span class="tag-which vw" onclick="showVwPop(this,event)" data-w="which" data-pos="物・動物用" data-mean="それが・それを（物・動物が先行詞の関係代名詞）" data-kana="ウィッチ" data-opts="[&quot;物・動物（主格/目的格）&quot;, &quot;人（主格）&quot;, &quot;所有格&quot;, &quot;先行詞を含む&quot;]">which</span>（目的格）<br>
+    ＝ This is the letter <span class="tag-which vw" onclick="showVwPop(this,event)" data-w="which" data-pos="物・動物用" data-mean="それが・それを（物・動物が先行詞の関係代名詞）" data-kana="ウィッチ" data-opts="[&quot;物・動物（主格/目的格）&quot;, &quot;人（主格）&quot;, &quot;所有格&quot;, &quot;先行詞を含む&quot;]">which</span> she wrote yesterday. <button class="spk" data-t="This is the letter which she wrote yesterday." onclick="sp(this.dataset.t)">▶</button><br>
+    <span style="color:#555">これは彼女が昨日書いた手紙です。</span>
+  </div>
+  <div class="kb">
+    💡 <b>長い主語にも使われる！</b><br>
+    The man ＋ You met <span style="color:#1B3A6B;font-weight:700">him</span> yesterday.（him → whom）<br>
+    ＝ The man <span class="tag-who vw" onclick="showVwPop(this,event)" data-w="whom" data-pos="目的格（人）" data-mean="誰を・誰に（人が先行詞の目的格関係代名詞）" data-kana="フーム" data-opts="[&quot;誰を（目的格）&quot;, &quot;誰が（主格）&quot;, &quot;誰の（所有格）&quot;, &quot;省略可能&quot;]">whom</span> you met yesterday is my <span class="vw" onclick="showVwPop(this,event)" data-w="uncle" data-pos="名詞" data-mean="おじ" data-kana="アンクル" data-opts="[&quot;おじ&quot;, &quot;おば&quot;, &quot;兄弟&quot;, &quot;祖父&quot;]">uncle</span>. <button class="spk" data-t="The man whom you met yesterday is my uncle." onclick="sp(this.dataset.t)">▶</button><br>
+    <span style="font-size:12px;color:#555">昨日あなたが会った男の人は私のおじです。<br>（whom you met yesterday が主語 The man を後ろから修飾 → 長い主語）</span>
+  </div>
+  <div class="wb">
+    ⚠️ <b>目的格かどうかの確認方法</b><br>
+    関係代名詞の後ろが <b>S ＋ V</b>（I know / she wrote など）なら → 目的格（省略可）<br>
+    a girl <u>whom</u> <b>I know</b> well ← I know の目的語 → 目的格 ✅
+  </div>
+</div>
+<div class="mini-quiz-wrap">
+  <div class="mini-quiz-title">📝 確認③ 主格・所有格・目的格の使い分け</div>
+  <div id="iq1cq"></div>
+</div>
+</div><!-- /s1 -->
+
+<!-- 練習① -->
+<div id="p1" class="sec">
+  <div class="sb"><span class="sn" id="p1sn">0 / 10</span><div class="pw"><div class="pf" id="p1pf" style="width:0%"></div></div>
+  <button onclick="resetP('p1')" style="border:none;background:#eee;border-radius:6px;padding:6px 12px;font-size:12px;cursor:pointer;font-family:inherit">リセット</button></div>
+  <div id="p1q"></div>
+</div>
+
+<!-- ===== ② 前置詞＋関係代名詞 ===== -->
+<div id="s2" class="sec">
+<div class="sh">② 前置詞＋関係代名詞</div>
+
+<div class="card">
+  <div class="card-title">【前置詞＋関係代名詞】2通りの表現方法</div>
+  <div class="pt">
+    関係代名詞が前置詞の目的語になるとき（live <b>in</b> it → in which など）、<br>
+    前置詞の置き場所に<b>2つの方法</b>があります。<br><br>
+    <b>方法① 関係代名詞だけを前に出し、前置詞は文末（元の位置）に置く</b><br>
+    　→ 口語的な表現。whom / which どちらも使えます。<br><br>
+    <b>方法② 前置詞＋関係代名詞として一緒に前に出す</b><br>
+    　→ 文語的・格式ある表現。この場合は<b>that は使えません</b>。<br>
+    　→ 人 → <b>前置詞 ＋ whom</b>　　物 → <b>前置詞 ＋ which</b>
+  </div>
+  <div style="background:#f0faff;border:1.5px solid #0097A7;border-radius:10px;padding:12px 14px;margin:8px 0;font-size:13px;line-height:1.9">
+    📌 <b>作り方のポイント</b><br>
+    ① 元の文の前置詞とその目的語（it / him など）を確認する<br>
+    ② 方法①：目的語だけを関係代名詞（which/whom）に変えて先行詞の後ろへ<br>
+    　　前置詞は元の位置（文末）に残す<br>
+    ③ 方法②：前置詞と関係代名詞をセットで先行詞の後ろへ移す<br>
+    　　（この時 that は使えない！）
+  </div>
+  <div class="wb">⚠️ <b>前置詞＋that はできません！</b><br>
+    ❌ This is the house <s>in that</s> he lives.（誤り）<br>
+    ✅ This is the house in <b>which</b> he lives.（正しい）
+  </div>
+  <div class="ex">
+    <b>【物・in which】</b><br>
+    This is the house ＋ He lives <b>in it</b>.<br>
+    ① This is the house <span class="tag-which vw" onclick="showVwPop(this,event)" data-w="which" data-pos="物・動物用" data-mean="それが・それを（物・動物が先行詞の関係代名詞）" data-kana="ウィッチ" data-opts="[&quot;物・動物（主格/目的格）&quot;, &quot;人（主格）&quot;, &quot;所有格&quot;, &quot;先行詞を含む&quot;]">which</span> he lives <b>in</b>. <button class="spk" data-t="This is the house which he lives in." onclick="sp(this.dataset.t)">▶</button><br>
+    ② This is the house <b>in</b> <span class="tag-which vw" onclick="showVwPop(this,event)" data-w="which" data-pos="物・動物用" data-mean="それが・それを（物・動物が先行詞の関係代名詞）" data-kana="ウィッチ" data-opts="[&quot;物・動物（主格/目的格）&quot;, &quot;人（主格）&quot;, &quot;所有格&quot;, &quot;先行詞を含む&quot;]">which</span> he lives. <button class="spk" data-t="This is the house in which he lives." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">これは彼が住む家です。</span>
+  </div>
+  <div class="ex">
+    <b>【人・to whom】</b><br>
+    Tom is the boy ＋ I gave the book <b>to him</b>.<br>
+    ① Tom is the boy <span class="tag-who vw" onclick="showVwPop(this,event)" data-w="whom" data-pos="目的格（人）" data-mean="誰を・誰に（人が先行詞の目的格関係代名詞）" data-kana="フーム" data-opts="[&quot;誰を（目的格）&quot;, &quot;誰が（主格）&quot;, &quot;誰の（所有格）&quot;, &quot;省略可能&quot;]">whom</span> I gave the book <b>to</b>. <button class="spk" data-t="Tom is the boy whom I gave the book to." onclick="sp(this.dataset.t)">▶</button><br>
+    ② Tom is the boy <b>to</b> <span class="tag-who vw" onclick="showVwPop(this,event)" data-w="whom" data-pos="目的格（人）" data-mean="誰を・誰に（人が先行詞の目的格関係代名詞）" data-kana="フーム" data-opts="[&quot;誰を（目的格）&quot;, &quot;誰が（主格）&quot;, &quot;誰の（所有格）&quot;, &quot;省略可能&quot;]">whom</span> I gave the book. <button class="spk" data-t="Tom is the boy to whom I gave the book." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">トムは私がその本をあげた少年です。</span>
+  </div>
+  <div class="ex">
+    <b>【物・for which / 群動詞の場合】</b><br>
+    This is the book ＋ I have been looking <b>for it</b>.<br>
+    ① This is the book <span class="tag-which vw" onclick="showVwPop(this,event)" data-w="which" data-pos="物・動物用" data-mean="それが・それを（物・動物が先行詞の関係代名詞）" data-kana="ウィッチ" data-opts="[&quot;物・動物（主格/目的格）&quot;, &quot;人（主格）&quot;, &quot;所有格&quot;, &quot;先行詞を含む&quot;]">which</span> I have been looking <b>for</b>. <button class="spk" data-t="This is the book which I have been looking for." onclick="sp(this.dataset.t)">▶</button><br>
+    ② This is the book <b>for</b> <span class="tag-which vw" onclick="showVwPop(this,event)" data-w="which" data-pos="物・動物用" data-mean="それが・それを（物・動物が先行詞の関係代名詞）" data-kana="ウィッチ" data-opts="[&quot;物・動物（主格/目的格）&quot;, &quot;人（主格）&quot;, &quot;所有格&quot;, &quot;先行詞を含む&quot;]">which</span> I have been looking. <button class="spk" data-t="This is the book for which I have been looking." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">これは私が探していた本です。</span>
+  </div>
+  <div class="ex">
+    <b>【人・from whom】</b><br>
+    I met John's mother ＋ I got the news <b>from her</b>.<br>
+    ① I met John's mother <span class="tag-who vw" onclick="showVwPop(this,event)" data-w="whom" data-pos="目的格（人）" data-mean="誰を・誰に（人が先行詞の目的格関係代名詞）" data-kana="フーム" data-opts="[&quot;誰を（目的格）&quot;, &quot;誰が（主格）&quot;, &quot;誰の（所有格）&quot;, &quot;省略可能&quot;]">whom</span> I got the news <b>from</b>. <button class="spk" data-t="I met John's mother whom I got the news from." onclick="sp(this.dataset.t)">▶</button><br>
+    ② I met John's mother <b>from</b> <span class="tag-who vw" onclick="showVwPop(this,event)" data-w="whom" data-pos="目的格（人）" data-mean="誰を・誰に（人が先行詞の目的格関係代名詞）" data-kana="フーム" data-opts="[&quot;誰を（目的格）&quot;, &quot;誰が（主格）&quot;, &quot;誰の（所有格）&quot;, &quot;省略可能&quot;]">whom</span> I got the news. <button class="spk" data-t="I met John's mother from whom I got the news." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">私はジョンのお母さんに会い、彼女から知らせを聞いた。</span>
+  </div>
+</div>
+<div class="mini-quiz-wrap">
+  <div class="mini-quiz-title">📝 確認④ 前置詞＋関係代名詞の使い方</div>
+  <div id="iq2aq"></div>
+</div>
+
+<div class="card">
+  <div class="card-title">【連鎖関係代名詞】I think / I know などが挿入される場合</div>
+  <div class="pt">
+    「I think（思う）」「I believe（信じる）」「I know（知っている）」などが関係代名詞の直後に挿入される場合を<b>連鎖関係代名詞</b>といいます。<br><br>
+    <b>ポイント</b>：関係代名詞の格は、挿入された節ではなく<b>その後ろの節で決まります</b>。<br><br>
+    例：I <span class="vw" onclick="showVwPop(this,event)" data-w="employed" data-pos="動詞（employed）" data-mean="雇った・採用した（employ の過去形）" data-kana="エンプロイド" data-opts="[&quot;雇った&quot;, &quot;解雇した&quot;, &quot;訪問した&quot;, &quot;紹介した&quot;]">employed</span> a man <b>who</b> I thought <b>was <span class="vw" onclick="showVwPop(this,event)" data-w="honest" data-pos="形容詞" data-mean="正直な・誠実な" data-kana="オネスト" data-opts="[&quot;正直な&quot;, &quot;不正直な&quot;, &quot;勤勉な&quot;, &quot;親切な&quot;]">honest</span></b>.<br>
+    → 「I thought（私が思った）」は挿入句。「was honest」の主語が必要 → 主格 <b>who</b>
+  </div>
+  <div class="ex">
+    I employed a man <span class="tag-who vw" onclick="showVwPop(this,event)" data-w="who" data-pos="主格（人）" data-mean="誰が・誰を（人が先行詞の関係代名詞）" data-kana="フー" data-opts="[&quot;誰が（主格）&quot;, &quot;誰を（目的格）&quot;, &quot;誰の（所有格）&quot;, &quot;物が先行詞&quot;]">who</span> I thought was honest. <button class="spk" data-t="I employed a man who I thought was honest." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">私は正直だと思った人を雇った。（who は「was honest」の主語 → 主格）</span>
+  </div>
+  <div class="ex">
+    The boy <span class="tag-who vw" onclick="showVwPop(this,event)" data-w="who" data-pos="主格（人）" data-mean="誰が・誰を（人が先行詞の関係代名詞）" data-kana="フー" data-opts="[&quot;誰が（主格）&quot;, &quot;誰を（目的格）&quot;, &quot;誰の（所有格）&quot;, &quot;物が先行詞&quot;]">who</span> I believed was honest <span class="vw" onclick="showVwPop(this,event)" data-w="deceived" data-pos="動詞（deceived）" data-mean="欺いた・だました（deceive の過去形）" data-kana="ディシーブド" data-opts="[&quot;欺いた&quot;, &quot;助けた&quot;, &quot;信じた&quot;, &quot;尊敬した&quot;]">deceived</span> me. <button class="spk" data-t="The boy who I believed was honest deceived me." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">正直だと信じていたその少年は私を欺いた。（who は「was honest」の主語 → 主格）</span>
+  </div>
+  <div class="kb">
+    💡 <b>連鎖関係代名詞の見分け方</b><br>
+    「 関係代名詞 ＋ I think / I believe / I know ＋ 動詞…」の形になっているとき、<br>
+    関係代名詞の格はその後ろの動詞（was / is / deceived など）との関係で決まります。<br>
+    その動詞の主語が関係代名詞なら<b>主格 who</b>、目的語なら<b>目的格 whom</b>です。
+  </div>
+</div>
+<div class="mini-quiz-wrap">
+  <div class="mini-quiz-title">📝 確認⑤ 連鎖関係代名詞</div>
+  <div id="iq2bq"></div>
+</div>
+</div><!-- /s2 -->
+
+<!-- 練習② -->
+<div id="p2" class="sec">
+  <div class="sb"><span class="sn" id="p2sn">0 / 10</span><div class="pw"><div class="pf" id="p2pf" style="width:0%"></div></div>
+  <button onclick="resetP('p2')" style="border:none;background:#eee;border-radius:6px;padding:6px 12px;font-size:12px;cursor:pointer;font-family:inherit">リセット</button></div>
+  <div id="p2q"></div>
+</div>
+
+<!-- ===== ③ that 必須・制限用法と非制限用法 ===== -->
+<div id="s3" class="sec">
+<div class="sh">③ that が必須な場合・制限用法と非制限用法</div>
+
+<div class="card">
+  <div class="card-title">【that 必須】that しか使えない3つのケース</div>
+  <div class="pt">
+    通常、関係代名詞は who / which / that のどれかを選べますが、<b>以下の3つのケースでは必ず that</b> を使わなければなりません。
+  </div>
+  <div style="background:#fff8e1;border-radius:12px;border:2px solid #ffc107;padding:14px;margin:10px 0;font-size:14px;line-height:2">
+    <b>① 先行詞に「最上級・序数・特定限定語」がつくとき</b><br>
+    　最上級（the most / the best…）/ first / last / only / all / every / very / any / no など<br>
+    　「限定的な意味」が強いときには <span class="tag-that vw" onclick="showVwPop(this,event)" data-w="that" data-pos="万能型" data-mean="人・物・動物すべてに使える関係代名詞（所有格なし）" data-kana="ザット" data-opts="[&quot;人・物・動物すべてOK&quot;, &quot;所有格なし&quot;, &quot;非制限用法なし&quot;, &quot;that必須の場合がある&quot;]">that</span> を使います。<br>
+    　例：<b>the most</b> <span class="vw" onclick="showVwPop(this,event)" data-w="beautiful" data-pos="形容詞" data-mean="美しい・きれいな" data-kana="ビューティフル" data-opts="[&quot;美しい&quot;, &quot;醜い&quot;, &quot;古い&quot;, &quot;大きい&quot;]">beautiful</span> ～ that… / <b>the first</b> man that… / <b>the very</b> book that…<br><br>
+    <b>② 先行詞が「人＋人以外（動物・物）」のとき</b><br>
+    　先行詞が複数の種類を含む場合は <span class="tag-that vw" onclick="showVwPop(this,event)" data-w="that" data-pos="万能型" data-mean="人・物・動物すべてに使える関係代名詞（所有格なし）" data-kana="ザット" data-opts="[&quot;人・物・動物すべてOK&quot;, &quot;所有格なし&quot;, &quot;非制限用法なし&quot;, &quot;that必須の場合がある&quot;]">that</span> を使います。<br>
+    　例：the boy <b>and</b> the dog that… / a man <b>and</b> his horse that…<br><br>
+    <b>③ 先行詞が疑問詞（who / what）のとき</b><br>
+    　「Who that ～?」の形で<b>反語表現</b>になることが多いです。<br>
+    　「誰が～というのか ＝ いや、そんな人はいない」という意味になります。<br>
+    　例：Who <b>that</b> is honest can tell such a lie?
+  </div>
+  <div class="ex">
+    <b>①最上級：</b> This is the most beautiful <span class="vw" onclick="showVwPop(this,event)" data-w="picture" data-pos="名詞" data-mean="写真・絵・映画" data-kana="ピクチャー" data-opts="[&quot;写真・絵&quot;, &quot;地図&quot;, &quot;表&quot;, &quot;グラフ&quot;]">picture</span> <span class="tag-that vw" onclick="showVwPop(this,event)" data-w="that" data-pos="万能型" data-mean="人・物・動物すべてに使える関係代名詞（所有格なし）" data-kana="ザット" data-opts="[&quot;人・物・動物すべてOK&quot;, &quot;所有格なし&quot;, &quot;非制限用法なし&quot;, &quot;that必須の場合がある&quot;]">that</span> I've ever seen. <button class="spk" data-t="This is the most beautiful picture that I have ever seen." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">これは私が今まで見た中で最も美しい絵です。（the most beautiful → that）</span>
+  </div>
+  <div class="ex">
+    <b>①very：</b> This is the very book <span class="tag-that vw" onclick="showVwPop(this,event)" data-w="that" data-pos="万能型" data-mean="人・物・動物すべてに使える関係代名詞（所有格なし）" data-kana="ザット" data-opts="[&quot;人・物・動物すべてOK&quot;, &quot;所有格なし&quot;, &quot;非制限用法なし&quot;, &quot;that必須の場合がある&quot;]">that</span> I've wanted to read. <button class="spk" data-t="This is the very book that I have wanted to read." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">これはまさに私が読みたいと思っていた本です。（very → that）</span>
+  </div>
+  <div class="ex">
+    <b>①anything：</b> Is there anything <span class="tag-that vw" onclick="showVwPop(this,event)" data-w="that" data-pos="万能型" data-mean="人・物・動物すべてに使える関係代名詞（所有格なし）" data-kana="ザット" data-opts="[&quot;人・物・動物すべてOK&quot;, &quot;所有格なし&quot;, &quot;非制限用法なし&quot;, &quot;that必須の場合がある&quot;]">that</span> I can do for you? <button class="spk" data-t="Is there anything that I can do for you?" onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">私がお手伝いできることはありますか。（anything → that）</span>
+  </div>
+  <div class="ex">
+    <b>②人＋動物：</b> Look at the boy and the dog <span class="tag-that vw" onclick="showVwPop(this,event)" data-w="that" data-pos="万能型" data-mean="人・物・動物すべてに使える関係代名詞（所有格なし）" data-kana="ザット" data-opts="[&quot;人・物・動物すべてOK&quot;, &quot;所有格なし&quot;, &quot;非制限用法なし&quot;, &quot;that必須の場合がある&quot;]">that</span> are running over there. <button class="spk" data-t="Look at the boy and the dog that are running over there." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">向こうを走っている少年と犬を見なさい。（人＋動物 → that）</span>
+  </div>
+  <div class="ex">
+    <b>③疑問詞who（反語）</b>：「誰が～というのか ＝ いや、そんな人はいない」<br>
+    Who <span class="tag-that vw" onclick="showVwPop(this,event)" data-w="that" data-pos="万能型" data-mean="人・物・動物すべてに使える関係代名詞（所有格なし）" data-kana="ザット" data-opts="[&quot;人・物・動物すべてOK&quot;, &quot;所有格なし&quot;, &quot;非制限用法なし&quot;, &quot;that必須の場合がある&quot;]">that</span> knows him will believe his story? <button class="spk" data-t="Who that knows him will believe his story?" onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">彼を知っている誰が彼の話を信じるというのか。（いや、誰も信じない）</span>
+  </div>
+  <div class="ex">
+    <b>③反語の例文：</b> Who <span class="tag-that vw" onclick="showVwPop(this,event)" data-w="that" data-pos="万能型" data-mean="人・物・動物すべてに使える関係代名詞（所有格なし）" data-kana="ザット" data-opts="[&quot;人・物・動物すべてOK&quot;, &quot;所有格なし&quot;, &quot;非制限用法なし&quot;, &quot;that必須の場合がある&quot;]">that</span> has <span class="vw" onclick="showVwPop(this,event)" data-w="common sense" data-pos="名詞（慣用）" data-mean="常識・良識" data-kana="コモンセンス" data-opts="[&quot;常識&quot;, &quot;非常識&quot;, &quot;知識&quot;, &quot;感覚&quot;]">common sense</span> can <span class="vw" onclick="showVwPop(this,event)" data-w="commit" data-pos="動詞" data-mean="（罪・過ちを）犯す" data-kana="コミット" data-opts="[&quot;（罪を）犯す&quot;, &quot;防ぐ&quot;, &quot;許す&quot;, &quot;記念する&quot;]">commit</span> such a <span class="vw" onclick="showVwPop(this,event)" data-w="folly" data-pos="名詞" data-mean="愚かな行い・愚行" data-kana="フォリー" data-opts="[&quot;愚かな行い&quot;, &quot;賢い行い&quot;, &quot;善行&quot;, &quot;習慣&quot;]">folly</span>? <button class="spk" data-t="Who that has common sense can commit such a folly?" onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">常識を持っているだれがそんな愚かなことができようか。（いや、できない）</span>
+  </div>
+  <div class="ex">
+    <b>①first：</b> He was the first man <span class="tag-that vw" onclick="showVwPop(this,event)" data-w="that" data-pos="万能型" data-mean="人・物・動物すべてに使える関係代名詞（所有格なし）" data-kana="ザット" data-opts="[&quot;人・物・動物すべてOK&quot;, &quot;所有格なし&quot;, &quot;非制限用法なし&quot;, &quot;that必須の場合がある&quot;]">that</span> flew over the <span class="vw" onclick="showVwPop(this,event)" data-w="Atlantic" data-pos="固有名詞" data-mean="大西洋" data-kana="アトランティック" data-opts="[&quot;大西洋&quot;, &quot;太平洋&quot;, &quot;地中海&quot;, &quot;インド洋&quot;]">Atlantic</span>. <button class="spk" data-t="He was the first man that flew over the Atlantic." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">彼は初めて大西洋を飛行機で横断した人でした。（first → that）</span>
+  </div>
+</div>
+<div class="mini-quiz-wrap">
+  <div class="mini-quiz-title">📝 確認⑥ that が必須のケース</div>
+  <div id="iq3aq"></div>
+</div>
+
+<div class="card">
+  <div class="card-title">【the same ～ that / as】同一か同種かで使い分ける</div>
+  <div class="pt">
+    <b>the same ～ that …</b>：「…と同一の～」（まったく同じもの・同一の対象）<br>
+    <b>the same ～ as …</b>：「…と同じ種類の～」（似ている・同種のもの）<br><br>
+    この違いは意味に直結します。試験でよく問われますので確実に覚えましょう。
+  </div>
+  <div class="cmp2">
+    <div class="cbox bl">
+      <div class="cbox-ttl">the same ～ <span class="tag-that vw" onclick="showVwPop(this,event)" data-w="that" data-pos="万能型" data-mean="人・物・動物すべてに使える関係代名詞（所有格なし）" data-kana="ザット" data-opts="[&quot;人・物・動物すべてOK&quot;, &quot;所有格なし&quot;, &quot;非制限用法なし&quot;, &quot;that必須の場合がある&quot;]">that</span>（同一のもの）</div>
+      This is the same watch <b>that</b> I lost yesterday. <button class="spk" data-t="This is the same watch that I lost yesterday." onclick="sp(this.dataset.t)">▶</button><br>
+      <span style="font-size:12px;color:#555">これは私が昨日なくした（まさに同じ）時計です。<br>（なくした時計そのもの）</span>
+    </div>
+    <div class="cbox gn">
+      <div class="cbox-ttl">the same ～ <span class="tag-which">as</span>（同種のもの）</div>
+      I have the same watch <b>as</b> you have. <button class="spk" data-t="I have the same watch as you have." onclick="sp(this.dataset.t)">▶</button><br>
+      <span style="font-size:12px;color:#555">私はあなたと同じ（種類の）時計を持っています。<br>（同じ型・デザインの時計）</span>
+    </div>
+  </div>
+</div>
+<div class="mini-quiz-wrap">
+  <div class="mini-quiz-title">📝 確認⑦ the same ～ that / as の使い分け</div>
+  <div id="iq3bq"></div>
+</div>
+
+<div class="card">
+  <div class="card-title">【制限用法と非制限用法】コンマの有無で意味が変わる</div>
+  <div class="pt">
+    関係代名詞の使い方には2種類あります。<br><br>
+    <b>制限用法（限定用法）</b>：先行詞の直前にコンマなし。先行詞を「絞り込んで」修飾します。<br>
+    　→ 「どんな～か」を限定します。<br><br>
+    <b>非制限用法（継続用法）</b>：先行詞の直前に<b>コンマ（，）</b>あり。「いったん区切って」から説明を付け加えます。<br>
+    　→ 「そして・しかし・なぜなら」などの意味が加わります。<br>
+    　→ <b>that と what には非制限用法はありません。</b>
+  </div>
+  <div class="cmp2">
+    <div class="cbox bl">
+      <div class="cbox-ttl">制限用法（コンマなし）</div>
+      She had a brother <b>who</b> became a doctor. <button class="spk" data-t="She had a brother who became a doctor." onclick="sp(this.dataset.t)">▶</button><br>
+      <span style="font-size:12px;color:#555">彼女には<b>医者になった兄がいた</b>。<br>（兄が何人かいて、そのうち医者になった人）</span>
+    </div>
+    <div class="cbox gn">
+      <div class="cbox-ttl">非制限用法（コンマあり）</div>
+      She had a brother<b>, who</b> became a doctor. <button class="spk" data-t="She had a brother, who became a doctor." onclick="sp(this.dataset.t)">▶</button><br>
+      <span style="font-size:12px;color:#555">彼女には兄がいた。<b>そして彼は医者になった</b>。<br>（兄は1人。付け加えて説明）</span>
+    </div>
+  </div>
+  <div class="pt">
+    <b>特別な非制限用法：, which が文全体・前の節を先行詞とする場合</b><br>
+    コンマ ＋ which は前の文の内容全体を受けることができます。<br>
+    「そのこと・そのことが～」という意味になります。<br><br>
+    <b>📌 , which のポイント</b><br>
+    ・前の文全体が先行詞になります（that / what は不可）<br>
+    ・「, which ＝ and that（そして、そのことが）」と訳すと自然です
+  </div>
+  <div class="ex">
+    I <span class="vw" onclick="showVwPop(this,event)" data-w="remained" data-pos="動詞（remained）" data-mean="黙っていた・とどまった（remain の過去形）" data-kana="リメインド" data-opts="[&quot;黙っていた&quot;, &quot;離れた&quot;, &quot;始めた&quot;, &quot;終わった&quot;]">remained</span> <span class="vw" onclick="showVwPop(this,event)" data-w="silent" data-pos="形容詞" data-mean="黙っている・無言の・静かな" data-kana="サイレント" data-opts="[&quot;黙っている&quot;, &quot;大声の&quot;, &quot;忙しい&quot;, &quot;眠い&quot;]">silent</span>, <b>, which</b> made her <span class="vw" onclick="showVwPop(this,event)" data-w="angry" data-pos="形容詞" data-mean="怒った・腹を立てた" data-kana="アングリー" data-opts="[&quot;怒った&quot;, &quot;悲しい&quot;, &quot;嬉しい&quot;, &quot;驚いた&quot;]">angry</span>. <button class="spk" data-t="I remained silent, which made her angry." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">私はだまっていた。そのことが彼女を怒らせた。（, which = 「私がだまっていたこと」）</span>
+  </div>
+  <div class="ex">
+    He tried to <span class="vw" onclick="showVwPop(this,event)" data-w="solve" data-pos="動詞" data-mean="解く・解決する" data-kana="ソルブ" data-opts="[&quot;解く&quot;, &quot;見つける&quot;, &quot;作る&quot;, &quot;壊す&quot;]">solve</span> the <span class="vw" onclick="showVwPop(this,event)" data-w="problem" data-pos="名詞" data-mean="問題・課題" data-kana="プロブレム" data-opts="[&quot;問題&quot;, &quot;答え&quot;, &quot;宿題&quot;, &quot;試験&quot;]">problem</span>, <b>, which</b> he found <span class="vw" onclick="showVwPop(this,event)" data-w="difficult" data-pos="形容詞" data-mean="難しい・困難な" data-kana="ディフィカルト" data-opts="[&quot;難しい&quot;, &quot;易しい&quot;, &quot;楽しい&quot;, &quot;長い&quot;]">difficult</span>. <button class="spk" data-t="He tried to solve the problem, which he found difficult." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">彼はその問題を解こうとした。そのことは難しいとわかった。</span>
+  </div>
+  <div class="pt">
+    <b>非制限用法の as（文頭・文末どちらでも）</b><br>
+    , as や As ～ の形で、前の文の内容や節全体を受けることができます。<br>
+    <b>As is often the case with ～</b>「～にはよくあることだが」は頻出の慣用表現です。
+  </div>
+  <div class="ex">
+    <b>As</b> you know, Mt. Fuji is the highest mountain in Japan. <button class="spk" data-t="As you know, Mt. Fuji is the highest mountain in Japan." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">あなたも知っているように、富士山は日本の最高峰です。</span>
+  </div>
+  <div class="ex">
+    They married early, <b>as</b> was the <span class="vw" onclick="showVwPop(this,event)" data-w="custom" data-pos="名詞" data-mean="慣習・風習・しきたり" data-kana="カスタム" data-opts="[&quot;慣習&quot;, &quot;規則&quot;, &quot;法律&quot;, &quot;文化&quot;]">custom</span> those days. <button class="spk" data-t="They married early, as was the custom those days." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">彼らは早く結婚しました。当時はそういう慣習でした。（as が前の文全体を受ける）</span>
+  </div>
+  <div class="ex">
+    <b>As is often the case with</b> him, he was late for school. <button class="spk" data-t="As is often the case with him, he was late for school." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">彼にはよくあることだが、彼は学校に遅刻した。</span>
+  </div>
+</div>
+<div class="mini-quiz-wrap">
+  <div class="mini-quiz-title">📝 確認⑧ 制限用法・非制限用法（, which / as）</div>
+  <div id="iq3cq"></div>
+</div>
+</div><!-- /s3 -->
+
+<!-- 練習③ -->
+<div id="p3" class="sec">
+  <div class="sb"><span class="sn" id="p3sn">0 / 10</span><div class="pw"><div class="pf" id="p3pf" style="width:0%"></div></div>
+  <button onclick="resetP('p3')" style="border:none;background:#eee;border-radius:6px;padding:6px 12px;font-size:12px;cursor:pointer;font-family:inherit">リセット</button></div>
+  <div id="p3q"></div>
+</div>
+
+<!-- ===== ④ as / than / but / what ===== -->
+<div id="s4" class="sec">
+<div class="sh">④ 関係代名詞 as / than / but と関係代名詞 what</div>
+
+<div class="card">
+  <div class="card-title">【as】such ～ as / the same ～ as　— 関係代名詞の as —</div>
+  <div class="pt">
+    <b>as</b> は接続詞だけでなく、<b>関係代名詞</b>としても使われます。<br>
+    主に <b>such ～ as …</b>「…のような～」と <b>the same ～ as …</b>「…と同じ種類の～」の形で使います。<br><br>
+    また<b>文頭の As</b>は、文（節）全体を先行詞とすることがあります。
+  </div>
+  <table class="tbl">
+    <tr><th>表現</th><th>意味</th><th>例文</th></tr>
+    <tr>
+      <td><b>such ～ as …</b></td><td>…のような～</td>
+      <td>Choose such friends <b>as</b> will <span class="vw" onclick="showVwPop(this,event)" data-w="benefit" data-pos="動詞" data-mean="恩恵を与える・役に立つ" data-kana="ベネフィット" data-opts="[&quot;役に立つ&quot;, &quot;害を与える&quot;, &quot;感謝する&quot;, &quot;批判する&quot;]">benefit</span> you. <button class="spk" data-t="Choose such friends as will benefit you." onclick="sp(this.dataset.t)">▶</button><br><span class="ex-ja">あなたのためになるような友人を選びなさい。</span></td>
+    </tr>
+    <tr>
+      <td><b>the same ～ as …</b></td><td>…と同じ種類の～</td>
+      <td>This is the same way <b>as</b> he had taken. <button class="spk" data-t="This is the same way as he had taken." onclick="sp(this.dataset.t)">▶</button><br><span class="ex-ja">これが彼が取ったのと同じやり方です。</span></td>
+    </tr>
+    <tr>
+      <td><b>as much as …</b></td><td>…するだけの量だけ</td>
+      <td>You may eat as much <b>as</b> you like. <button class="spk" data-t="You may eat as much as you like." onclick="sp(this.dataset.t)">▶</button><br><span class="ex-ja">好きなだけ食べてよいです。</span></td>
+    </tr>
+    <tr>
+      <td><b>文頭の As</b></td><td>～のように（節全体を先行詞）</td>
+      <td><b>As</b> is <span class="vw" onclick="showVwPop(this,event)" data-w="evident" data-pos="形容詞" data-mean="明らかな・はっきりした" data-kana="エビデント" data-opts="[&quot;明らかな&quot;, &quot;怪しい&quot;, &quot;複雑な&quot;, &quot;不明な&quot;]">evident</span> from his <span class="vw" onclick="showVwPop(this,event)" data-w="accent" data-pos="名詞" data-mean="アクセント・なまり・強勢" data-kana="アクセント" data-opts="[&quot;アクセント&quot;, &quot;発音&quot;, &quot;文法&quot;, &quot;語彙&quot;]">accent</span>, he is a <span class="vw" onclick="showVwPop(this,event)" data-w="foreigner" data-pos="名詞" data-mean="外国人" data-kana="フォーリナー" data-opts="[&quot;外国人&quot;, &quot;観光客&quot;, &quot;日本人&quot;, &quot;旅行者&quot;]">foreigner</span>. <button class="spk" data-t="As is evident from his accent, he is a foreigner." onclick="sp(this.dataset.t)">▶</button><br><span class="ex-ja">彼のアクセントから明らかなように、彼は外国人です。</span></td>
+    </tr>
+  </table>
+</div>
+<div class="mini-quiz-wrap">
+  <div class="mini-quiz-title">📝 確認⑨ 関係代名詞 as の使い方</div>
+  <div id="iq4aq"></div>
+</div>
+
+<div class="card">
+  <div class="card-title">【than / but】比較・否定を使う関係代名詞</div>
+  <div class="pt">
+    <b>関係代名詞 than</b>：比較級とともに使います。「than is <span class="vw" onclick="showVwPop(this,event)" data-w="necessary" data-pos="形容詞" data-mean="必要な・不可欠な" data-kana="ネセサリー" data-opts="[&quot;必要な&quot;, &quot;不必要な&quot;, &quot;重要な&quot;, &quot;便利な&quot;]">necessary</span>（必要以上に）」など。<br><br>
+    <b>関係代名詞 but</b>：先行詞に <b>no</b> がついているとき、「～しないような」という否定の意味を加えます。<br>
+    no ＋ 名詞 ＋ but は二重否定になり「必ず～する」という強い意味になります。
+  </div>
+  <table class="tbl">
+    <tr><th>表現</th><th>意味</th><th>例文</th></tr>
+    <tr>
+      <td><b>more ～ than is …</b></td><td>～より多い・以上の</td>
+      <td>He wants more money <b>than</b> is necessary. <button class="spk" data-t="He wants more money than is necessary." onclick="sp(this.dataset.t)">▶</button><br><span class="ex-ja">彼は必要以上のお金を欲しがっている。</span></td>
+    </tr>
+    <tr>
+      <td><b>no ～ but</b></td><td>～しないような（人・物）はない<br>（必ず～する）</td>
+      <td>There is no <span class="vw" onclick="showVwPop(this,event)" data-w="rule" data-pos="名詞" data-mean="規則・ルール" data-kana="ルール" data-opts="[&quot;規則&quot;, &quot;例外&quot;, &quot;法律&quot;, &quot;慣習&quot;]">rule</span> <b>but</b> has <span class="vw" onclick="showVwPop(this,event)" data-w="exceptions" data-pos="名詞" data-mean="例外（複数形）" data-kana="イクセプションズ" data-opts="[&quot;例外（複数）&quot;, &quot;規則（複数）&quot;, &quot;例（複数）&quot;, &quot;原則（複数）&quot;]">exceptions</span>. <button class="spk" data-t="There is no rule but has exceptions." onclick="sp(this.dataset.t)">▶</button><br><span class="ex-ja">例外のない規則はない。（どんな規則にも例外がある）</span></td>
+    </tr>
+    <tr>
+      <td></td><td></td>
+      <td>There is no man <b>but</b> loves himself. <button class="spk" data-t="There is no man but loves himself." onclick="sp(this.dataset.t)">▶</button><br><span class="ex-ja">自分を愛さない人はいない。（誰でも自分を愛している）</span></td>
+    </tr>
+  </table>
+</div>
+
+<div class="card">
+  <div class="card-title">【what】先行詞を含む関係代名詞　— the thing which に相当 —</div>
+  <div class="pt">
+    <b>関係代名詞の what</b>は「～するところのもの・こと」という意味で、<br>
+    <b>what 自身の中に先行詞を含んでいます</b>（= the thing which）。<br><br>
+    <b>重要ポイント</b><br>
+    ・<b>what の前には先行詞を置きません</b>（❌ the thing what → ✅ what）<br>
+    ・what は名詞節を作り、文の<b>主語・目的語・補語</b>になります。<br><br>
+    <b>📌 what = the thing which で置き換えて理解しよう</b><br>
+    What he said is true.<br>
+    ＝ <b>The thing which</b> he said is true.<br>
+    （「彼が言ったこと＝that thing」がそのまま what の中に含まれている）
+  </div>
+  <div class="ex">
+    <span class="tag-what">What</span> he said is all true. <button class="spk" data-t="What he said is all true." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">彼が言ったことはすべて本当でした。（What = the thing which → 文の主語）</span>
+  </div>
+  <div class="ex">
+    I couldn't understand <span class="tag-what vw" onclick="showVwPop(this,event)" data-w="what" data-pos="先行詞含む" data-mean="〜するところのもの・こと（= the thing which）" data-kana="ワット" data-opts="[&quot;＝ the thing which&quot;, &quot;先行詞を含む&quot;, &quot;前に先行詞不要&quot;, &quot;名詞節を作る&quot;]">what</span> he said. <button class="spk" data-t="I could not understand what he said." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">私は彼の言うことが理解できなかった。（what = 文の目的語）</span>
+  </div>
+  <div class="ex">
+    My parents have made me <span class="tag-what vw" onclick="showVwPop(this,event)" data-w="what" data-pos="先行詞含む" data-mean="〜するところのもの・こと（= the thing which）" data-kana="ワット" data-opts="[&quot;＝ the thing which&quot;, &quot;先行詞を含む&quot;, &quot;前に先行詞不要&quot;, &quot;名詞節を作る&quot;]">what</span> I am. <button class="spk" data-t="My parents have made me what I am." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">両親が今の私にしてくれた。（what I am = 「今ある私」→ 補語）</span>
+  </div>
+  <div class="kb">
+    💡 <b>関係形容詞の what</b>：<b>what ＋ 名詞</b> で「～すべての」という意味になります。<br>
+    I will give you what help I can. <button class="spk" data-t="I will give you what help I can." onclick="sp(this.dataset.t)">▶</button><br>
+    <span style="font-size:12px;color:#555">私はできる限りの援助をします。（what help = all the help that）</span><br><br>
+    I bought a new car with what little money I had. <button class="spk" data-t="I bought a new car with what little money I had." onclick="sp(this.dataset.t)">▶</button><br>
+    <span style="font-size:12px;color:#555">私はなけなしのお金で新車を買いました。</span>
+  </div>
+</div>
+<div class="mini-quiz-wrap">
+  <div class="mini-quiz-title">📝 確認⑩ 関係代名詞 than / but / what</div>
+  <div id="iq4bq"></div>
+</div>
+</div><!-- /s4 -->
+
+<!-- 練習④ -->
+<div id="p4" class="sec">
+  <div class="sb"><span class="sn" id="p4sn">0 / 10</span><div class="pw"><div class="pf" id="p4pf" style="width:0%"></div></div>
+  <button onclick="resetP('p4')" style="border:none;background:#eee;border-radius:6px;padding:6px 12px;font-size:12px;cursor:pointer;font-family:inherit">リセット</button></div>
+  <div id="p4q"></div>
+</div>
+
+<!-- ===== ⑤ what の重要表現 ===== -->
+<div id="s5" class="sec">
+<div class="sh">⑤ what を使った重要表現</div>
+
+<div class="card">
+  <div class="card-title">what is called / what we call　— いわゆる —</div>
+  <div class="pt">
+    <b>what is called</b> または <b>what we call</b> は「<b>いわゆる</b>」という意味の慣用表現です。<br>
+    一般に「〇〇と呼ばれているもの」を紹介するときに使います。<br>
+    文の途中に挿入して使うことがほとんどです。
+  </div>
+  <div class="ex">
+    She is <span class="tag-what vw" onclick="showVwPop(this,event)" data-w="what" data-pos="先行詞含む" data-mean="〜するところのもの・こと（= the thing which）" data-kana="ワット" data-opts="[&quot;＝ the thing which&quot;, &quot;先行詞を含む&quot;, &quot;前に先行詞不要&quot;, &quot;名詞節を作る&quot;]">what</span> we call a <span class="vw" onclick="showVwPop(this,event)" data-w="superstar" data-pos="名詞" data-mean="スーパースター・大スター" data-kana="スーパースター" data-opts="[&quot;大スター&quot;, &quot;一般人&quot;, &quot;俳優&quot;, &quot;歌手&quot;]">superstar</span>. <button class="spk" data-t="She is what we call a superstar." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">彼女はいわゆるスーパースターです。</span>
+  </div>
+  <div class="ex">
+    He is <span class="tag-what vw" onclick="showVwPop(this,event)" data-w="what" data-pos="先行詞含む" data-mean="〜するところのもの・こと（= the thing which）" data-kana="ワット" data-opts="[&quot;＝ the thing which&quot;, &quot;先行詞を含む&quot;, &quot;前に先行詞不要&quot;, &quot;名詞節を作る&quot;]">what</span> is called a <span class="vw" onclick="showVwPop(this,event)" data-w="genius" data-pos="名詞" data-mean="天才" data-kana="ジーニアス" data-opts="[&quot;天才&quot;, &quot;凡人&quot;, &quot;専門家&quot;, &quot;初心者&quot;]">genius</span>. <button class="spk" data-t="He is what is called a genius." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">彼はいわゆる天才です。</span>
+  </div>
+  <div class="ex">
+    Tom is <span class="tag-what vw" onclick="showVwPop(this,event)" data-w="what" data-pos="先行詞含む" data-mean="〜するところのもの・こと（= the thing which）" data-kana="ワット" data-opts="[&quot;＝ the thing which&quot;, &quot;先行詞を含む&quot;, &quot;前に先行詞不要&quot;, &quot;名詞節を作る&quot;]">what</span> we call a walking <span class="vw" onclick="showVwPop(this,event)" data-w="dictionary" data-pos="名詞" data-mean="辞書・辞典" data-kana="ディクショナリー" data-opts="[&quot;辞書&quot;, &quot;教科書&quot;, &quot;参考書&quot;, &quot;単語帳&quot;]">dictionary</span>. <button class="spk" data-t="Tom is what we call a walking dictionary." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">トムはいわゆる歩く辞書です。</span>
+  </div>
+</div>
+<div class="mini-quiz-wrap">
+  <div class="mini-quiz-title">📝 確認⑪ what is called の使い方</div>
+  <div id="iq5aq"></div>
+</div>
+
+<div class="card">
+  <div class="card-title">what 人 is / what A used to be　— 今（昔）の状態を表す —</div>
+  <div class="pt">
+    <b>what 人 is</b>：「（今の）その人の状態・姿」＝「今ある〇〇」<br>
+    <b>what A used to be</b>：「以前の A の状態」＝「昔の〇〇」
+  </div>
+  <div class="ex">
+    His parents made him <span class="tag-what vw" onclick="showVwPop(this,event)" data-w="what" data-pos="先行詞含む" data-mean="〜するところのもの・こと（= the thing which）" data-kana="ワット" data-opts="[&quot;＝ the thing which&quot;, &quot;先行詞を含む&quot;, &quot;前に先行詞不要&quot;, &quot;名詞節を作る&quot;]">what</span> he is. <button class="spk" data-t="His parents made him what he is." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">彼の両親が今の彼にした（育て上げた）。</span>
+  </div>
+  <div class="ex">
+    Nancy is not <span class="tag-what vw" onclick="showVwPop(this,event)" data-w="what" data-pos="先行詞含む" data-mean="〜するところのもの・こと（= the thing which）" data-kana="ワット" data-opts="[&quot;＝ the thing which&quot;, &quot;先行詞を含む&quot;, &quot;前に先行詞不要&quot;, &quot;名詞節を作る&quot;]">what</span> she used to be. <button class="spk" data-t="Nancy is not what she used to be." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">ナンシーは以前の彼女ではない。</span>
+  </div>
+  <div class="ex">
+    My hometown is quite different from <span class="tag-what vw" onclick="showVwPop(this,event)" data-w="what" data-pos="先行詞含む" data-mean="〜するところのもの・こと（= the thing which）" data-kana="ワット" data-opts="[&quot;＝ the thing which&quot;, &quot;先行詞を含む&quot;, &quot;前に先行詞不要&quot;, &quot;名詞節を作る&quot;]">what</span> it was ten years ago. <button class="spk" data-t="My hometown is quite different from what it was ten years ago." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">私の故郷は10年前とはまったく違う。</span>
+  </div>
+</div>
+<div class="mini-quiz-wrap">
+  <div class="mini-quiz-title">📝 確認⑫ what 人 is / what A used to be</div>
+  <div id="iq5bq"></div>
+</div>
+
+<div class="card">
+  <div class="card-title">A is to B what C is to D　— 関係の比較 —</div>
+  <div class="pt">
+    <b>A is to B what C is to D</b>：「BにとってのAはDにとってのCのようだ」<br>
+    「A と B の関係は、C と D の関係と同じだ」という意味で、<b>2つの関係を比較</b>するときに使います。<br><br>
+    <div style="background:#f8f9ff;border:1.5px solid #dde3ee;border-radius:10px;padding:10px 14px;font-size:13px;line-height:2">
+      <b>📌 構造図</b><br>
+      <b>A（<span class="vw" onclick="showVwPop(this,event)" data-w="reading" data-pos="名詞" data-mean="読書・読み" data-kana="リーディング" data-opts="[&quot;読書&quot;, &quot;運動&quot;, &quot;音楽&quot;, &quot;睡眠&quot;]">reading</span>）</b>　is to　<b>B（the <span class="vw" onclick="showVwPop(this,event)" data-w="mind" data-pos="名詞" data-mean="精神・心・知性" data-kana="マインド" data-opts="[&quot;精神・心&quot;, &quot;体&quot;, &quot;魂&quot;, &quot;感情&quot;]">mind</span>）</b>　what　<b>C（<span class="vw" onclick="showVwPop(this,event)" data-w="exercise" data-pos="名詞/動詞" data-mean="運動・練習（する）" data-kana="エクササイズ" data-opts="[&quot;運動&quot;, &quot;食事&quot;, &quot;睡眠&quot;, &quot;勉強&quot;]">exercise</span>）</b>　is to　<b>D（the body）</b><br>
+      　↑Reading と the mind の関係　＝　exercise と the body の関係<br>
+      「運動が体に必要なように、読書は精神に必要」
+    </div>
+  </div>
+  <div class="ex">
+    Reading is to the mind <span class="tag-what vw" onclick="showVwPop(this,event)" data-w="what" data-pos="先行詞含む" data-mean="〜するところのもの・こと（= the thing which）" data-kana="ワット" data-opts="[&quot;＝ the thing which&quot;, &quot;先行詞を含む&quot;, &quot;前に先行詞不要&quot;, &quot;名詞節を作る&quot;]">what</span> exercise is to the body. <button class="spk" data-t="Reading is to the mind what exercise is to the body." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">読書と精神の関係は、運動と身体の関係に等しい。<br>（運動が体に必要なように、読書は精神に必要）</span>
+  </div>
+  <div class="ex">
+    Air is to us <span class="tag-what vw" onclick="showVwPop(this,event)" data-w="what" data-pos="先行詞含む" data-mean="〜するところのもの・こと（= the thing which）" data-kana="ワット" data-opts="[&quot;＝ the thing which&quot;, &quot;先行詞を含む&quot;, &quot;前に先行詞不要&quot;, &quot;名詞節を作る&quot;]">what</span> water is to fish. <button class="spk" data-t="Air is to us what water is to fish." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">空気と私たちの関係は、水と魚の関係に等しい。</span>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title">what is more / worse　/ what with ～　— よく出る慣用表現 —</div>
+  <div class="pt">
+    <b>what is more</b>：「さらに良いことには・おまけに」<br>
+    <b>what is worse</b>：「さらに悪いことには・おまけに」<br>
+    <b>what is the matter worse</b>：「さらに悪いことには」（= what is worse）<br>
+    <b>what with A and（what with）B</b>：「A やら B やらで」（原因を並べる）
+  </div>
+  <table class="tbl">
+    <tr><th>表現</th><th>意味</th><th>例文</th></tr>
+    <tr>
+      <td><b>what is more</b></td><td>さらに良いことには</td>
+      <td>He is young, and what is more, <span class="vw" onclick="showVwPop(this,event)" data-w="handsome" data-pos="形容詞" data-mean="ハンサムな・かっこいい" data-kana="ハンサム" data-opts="[&quot;ハンサムな&quot;, &quot;醜い&quot;, &quot;背が高い&quot;, &quot;賢い&quot;]">handsome</span>. <button class="spk" data-t="He is young, and what is more, handsome." onclick="sp(this.dataset.t)">▶</button><br><span class="ex-ja">彼は若くて、しかもハンサムです。</span></td>
+    </tr>
+    <tr>
+      <td><b>what is worse</b></td><td>さらに悪いことには</td>
+      <td>He was tired and, what is worse, <span class="vw" onclick="showVwPop(this,event)" data-w="sleepy" data-pos="形容詞" data-mean="眠い・眠そうな" data-kana="スリーピー" data-opts="[&quot;眠い&quot;, &quot;疲れた&quot;, &quot;悲しい&quot;, &quot;お腹がすいた&quot;]">sleepy</span>. <button class="spk" data-t="He was tired and what is worse, he was sleepy." onclick="sp(this.dataset.t)">▶</button><br><span class="ex-ja">彼は疲れていた。おまけに眠かった。</span></td>
+    </tr>
+    <tr>
+      <td><b>what with A and B</b></td><td>A やら B やらで</td>
+      <td>What with <span class="vw" onclick="showVwPop(this,event)" data-w="raining" data-pos="動詞" data-mean="雨が降る（rain の -ing形）" data-kana="レイニング" data-opts="[&quot;雨が降る&quot;, &quot;雪が降る&quot;, &quot;晴れる&quot;, &quot;曇る&quot;]">raining</span> and what with <span class="vw" onclick="showVwPop(this,event)" data-w="blowing" data-pos="動詞" data-mean="（風が）吹く（blow の -ing形）" data-kana="ブロウイング" data-opts="[&quot;（風が）吹く&quot;, &quot;降る&quot;, &quot;晴れる&quot;, &quot;曇る&quot;]">blowing</span>, the <span class="vw" onclick="showVwPop(this,event)" data-w="athletic" data-pos="形容詞" data-mean="運動の・スポーツの" data-kana="アスレティック" data-opts="[&quot;運動の&quot;, &quot;音楽の&quot;, &quot;美術の&quot;, &quot;学習の&quot;]">athletic</span> meeting was put off. <button class="spk" data-t="What with raining and what with blowing, the athletic meeting was put off." onclick="sp(this.dataset.t)">▶</button><br><span class="ex-ja">雨が降ったり風が吹いたりで、運動会は延期された。</span></td>
+    </tr>
+  </table>
+</div>
+<div class="mini-quiz-wrap">
+  <div class="mini-quiz-title">📝 確認⑬ what の重要表現（what is more / A is to B what C is to D）</div>
+  <div id="iq5cq"></div>
+</div>
+</div><!-- /s5 -->
+
+<!-- 練習⑤ -->
+<div id="p5" class="sec">
+  <div class="sb"><span class="sn" id="p5sn">0 / 14</span><div class="pw"><div class="pf" id="p5pf" style="width:0%"></div></div>
+  <button onclick="resetP('p5')" style="border:none;background:#eee;border-radius:6px;padding:6px 12px;font-size:12px;cursor:pointer;font-family:inherit">リセット</button></div>
+  <div id="p5q"></div>
+</div>
+
+<!-- 単語帳・モーダル -->
+<div class="vpop" id="vpop">
+  <div class="vpop-hd"><div><span class="vpop-word" id="vpop-word"></span><span class="vpop-pos" id="vpop-pos"></span></div><button class="vpop-close" onclick="closeVpop()">✕</button></div>
+  <div class="vpop-body"><div class="vpop-mean" id="vpop-mean"></div><div class="vpop-kana" id="vpop-kana"></div>
+    <div class="vpop-btns"><button class="vpop-spk" onclick="vpopSpeak()">🔊 発音を聞く</button><button class="vpop-save" id="vpop-save-btn" onclick="vpopSave()">📖 単語帳へ</button></div>
+    <div class="vpop-saved-lbl" id="vpop-saved-lbl">✓ 単語帳に保存しました</div></div>
+</div>
+<div class="mo" id="mvocab">
+  <div class="mb">
+    <div class="mh"><h2>📚 単語帳</h2><button class="mhc" onclick="closeM('mvocab')">✕</button></div>
+    <div class="mbody">
+      <div style="display:flex;gap:8px;margin-bottom:12px">
+        <button onclick="showVocabList()" style="flex:1;padding:9px;border-radius:8px;border:2px solid #1B3A6B;background:#1B3A6B;color:#fff;font-size:13px;font-family:inherit;cursor:pointer;font-weight:700">📋 単語一覧</button>
+        <button onclick="startVocabTest()" style="flex:1;padding:9px;border-radius:8px;border:2px solid #0097A7;background:#f0faff;color:#0097A7;font-size:13px;font-family:inherit;cursor:pointer;font-weight:700">✏️ 復習テスト</button>
+      </div>
+      <div id="vocab-list-area"></div>
+      <div id="vocab-test-area" style="display:none"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openM(id){document.getElementById(id).classList.add('open');document.body.style.overflow='hidden';}
+function closeM(id){document.getElementById(id).classList.remove('open');document.body.style.overflow='';}
+document.querySelectorAll('.mo').forEach(function(mo){mo.addEventListener('click',function(e){if(e.target===mo)closeM(mo.id);});});
+function confetti(){var cv=document.getElementById('cc');cv.width=window.innerWidth;cv.height=window.innerHeight;cv.style.display='block';var ctx=cv.getContext('2d');var cols=['#f9a825','#0097A7','#1B3A6B','#e53935','#2e7d32','#ff6f00','#7b1fa2','#ff4081'];var ps=[];for(var k=0;k<130;k++){ps.push({x:Math.random()*cv.width,y:-20-Math.random()*180,w:7+Math.random()*9,h:3+Math.random()*5,c:cols[Math.floor(Math.random()*cols.length)],s:2+Math.random()*4,a:Math.random()*360,sp:3-Math.random()*6,d:(Math.random()-.5)*2.5});}var fr=0;function draw(){ctx.clearRect(0,0,cv.width,cv.height);ps.forEach(function(p){ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.a*Math.PI/180);ctx.fillStyle=p.c;ctx.fillRect(-p.w/2,-p.h/2,p.w,p.h);ctx.restore();p.y+=p.s;p.x+=p.d;p.a+=p.sp;});fr++;if(fr<100)requestAnimationFrame(draw);else{ctx.clearRect(0,0,cv.width,cv.height);cv.style.display='none';}}draw();}
+function updS(mid,n,t){var sn=document.getElementById(mid+'sn');var pf=document.getElementById(mid+'pf');if(sn)sn.textContent=n+' / '+t;if(pf)pf.style.width=(n/t*100)+'%';if(n===t&&t>0)confetti();}
+function sp(t){if(!window.speechSynthesis)return;speechSynthesis.cancel();var u=new SpeechSynthesisUtterance(t);u.lang='en-US';u.rate=0.88;speechSynthesis.speak(u);}
+function ss(id,btn){document.querySelectorAll('.sec').forEach(function(s){s.classList.remove('active');});document.querySelectorAll('.nb,.pb').forEach(function(b){b.classList.remove('on');});document.querySelectorAll('.pair').forEach(function(p){p.classList.remove('active-pair');});document.getElementById(id).classList.add('active');btn.classList.add('on');if(btn.parentElement&&btn.parentElement.classList.contains('pair')){btn.parentElement.classList.add('active-pair');}}
+function sh(n){var c=n.replace(/'/g,'');return '<button class="spk" onclick="sp(this.dataset.t)" data-t="'+c+'">▶</button>';}
+function ub(u){return u?'<span class="ub">'+u+'</span>':'';}
+function iC(id){var data=window['c'+id],total=data.length,score=0,done=new Array(total).fill(false);updS(id,0,total);var c=document.getElementById(id+'q');c.innerHTML='';data.forEach(function(d,i){var div=document.createElement('div');div.className='q-box';div.innerHTML='<div class="q-hd"><span class="q-num">'+(i+1)+'</span><span class="q-txt"><b>'+d.q+'</b>'+ub(d.u)+sh(d.s)+'</span></div>'+(d.j?'<div style="font-size:13px;color:#555;margin-bottom:8px">'+d.j+'</div>':'')+(d.h?'<span class="hint">'+d.h+'</span>':'')+'<div id="'+id+'ch'+i+'"></div><div class="ep" id="'+id+'ep'+i+'">📝 解説：'+d.e+'</div>';c.appendChild(div);d.c.forEach(function(ch,ci){var btn=document.createElement('button');btn.className='cb';btn.textContent=ch;btn.onclick=function(){if(done[i])return;done[i]=true;div.querySelectorAll('.cb').forEach(function(b,bi){b.classList.add('dis');if(bi===d.a)b.classList.add('ca');else if(bi===ci&&ci!==d.a)b.classList.add('wa');});document.getElementById(id+'ep'+i).classList.add('show');if(ci===d.a){score++;updS(id,score,total);}};document.getElementById(id+'ch'+i).appendChild(btn);});});}
+function resetP(id){iC(id);}
+var vocabDB={},savedWords={},currentVword=null;
+function showVpop(el){var w=el.dataset.w,pos=el.dataset.pos,mean=el.dataset.mean,kana=el.dataset.kana,opts=JSON.parse(el.dataset.opts);vocabDB[w]={pos:pos,mean:mean,kana:kana,opts:opts};currentVword=w;document.getElementById('vpop-word').textContent=w;document.getElementById('vpop-pos').textContent=pos;document.getElementById('vpop-mean').textContent=mean;document.getElementById('vpop-kana').textContent='発音：'+kana;var saveBtn=document.getElementById('vpop-save-btn');if(savedWords[w]){saveBtn.textContent='✓ 保存済み';saveBtn.className='vpop-save saved';document.getElementById('vpop-saved-lbl').className='vpop-saved-lbl show';}else{saveBtn.textContent='📖 単語帳へ';saveBtn.className='vpop-save';document.getElementById('vpop-saved-lbl').className='vpop-saved-lbl';}var pop=document.getElementById('vpop');pop.className='vpop show';var rect=el.getBoundingClientRect();var top=rect.bottom+6,left=rect.left,pw=260;if(left+pw>window.innerWidth-8)left=window.innerWidth-pw-8;if(top+160>window.innerHeight)top=rect.top-170;pop.style.top=top+'px';pop.style.left=left+'px';}
+function closeVpop(){document.getElementById('vpop').className='vpop';currentVword=null;}
+document.addEventListener('click',function(e){var pop=document.getElementById('vpop');if(pop.classList.contains('show')&&!pop.contains(e.target))closeVpop();});
+function vpopSpeak(){if(currentVword)sp(currentVword);}
+function vpopSave(){if(!currentVword)return;var w=currentVword;if(!savedWords[w]){savedWords[w]=vocabDB[w];updateVocabBadge();document.getElementById('vpop-save-btn').textContent='✓ 保存済み';document.getElementById('vpop-save-btn').className='vpop-save saved';document.getElementById('vpop-saved-lbl').className='vpop-saved-lbl show';}}
+function updateVocabBadge(){var n=Object.keys(savedWords).length;var badge=document.getElementById('vocab-badge');badge.textContent=n;badge.className=n>0?'vocab-badge show':'vocab-badge';}
+var origOpenM=openM;openM=function(id){origOpenM(id);if(id==='mvocab')showVocabList();};
+function showVocabList(){document.getElementById('vocab-list-area').style.display='block';document.getElementById('vocab-test-area').style.display='none';renderVocabList();}
+function renderVocabList(){var area=document.getElementById('vocab-list-area');var words=Object.keys(savedWords);if(words.length===0){area.innerHTML='<div class="vbook-empty">📖 まだ単語が保存されていません。</div>';return;}var html='<div style="font-size:12px;color:#888;margin-bottom:8px">保存済み：'+words.length+'語</div>';words.forEach(function(w){var v=savedWords[w];html+='<div class="vcard"><span class="vcard-word">'+w+'</span><span class="vcard-mean">'+v.mean+'</span><button class="vcard-del" onclick="removeWord(\''+w+'\')">覚えた ✓</button></div>';});area.innerHTML=html;}
+function removeWord(w){delete savedWords[w];updateVocabBadge();renderVocabList();}
+var testQueue=[],testIdx=0,testScore=0;
+function startVocabTest(){document.getElementById('vocab-list-area').style.display='none';document.getElementById('vocab-test-area').style.display='block';renderVocabTest();}
+function renderVocabTest(){var area=document.getElementById('vocab-test-area');var words=Object.keys(savedWords);if(words.length<1){area.innerHTML='<div class="vbook-empty">単語が保存されていません。</div>';return;}testQueue=words.slice().sort(function(){return Math.random()-.5;});testIdx=0;testScore=0;renderTestQuestion(area);}
+function renderTestQuestion(area){if(testIdx>=testQueue.length){area.innerHTML='<div style="text-align:center;padding:24px"><div style="font-size:40px;margin-bottom:12px">🎉</div><div style="font-size:18px;font-weight:700;color:#1B3A6B;margin-bottom:8px">テスト完了！</div><div style="font-size:14px;color:#555;margin-bottom:16px">正解：'+testScore+' / '+testQueue.length+'問</div><div style="display:flex;gap:8px;justify-content:center"><button onclick="renderVocabTest()" style="padding:10px 20px;border-radius:8px;border:none;background:#1B3A6B;color:#fff;font-size:14px;font-family:inherit;cursor:pointer">もう一度</button><button onclick="showVocabList()" style="padding:10px 20px;border-radius:8px;border:1.5px solid #ccd;background:#fff;color:#555;font-size:14px;font-family:inherit;cursor:pointer">単語一覧へ</button></div></div>';return;}var w=testQueue[testIdx];var v=savedWords[w];if(!v){testIdx++;renderTestQuestion(area);return;}var opts=v.opts.slice().sort(function(){return Math.random()-.5;});var html='<div style="text-align:right;font-size:12px;color:#888;margin-bottom:8px">'+(testIdx+1)+' / '+testQueue.length+'</div><div class="vtest-q">'+w+'</div>';opts.forEach(function(opt){html+='<button class="vtest-opt" onclick="checkTestAns(this,\''+w+'\',\''+opt.replace(/'/g,'')+'\')">'+opt+'</button>';});html+='<div id="vtest-res"></div>';area.innerHTML=html;}
+function checkTestAns(btn,word,selected){var v=savedWords[word];if(!v)return;var correct=v.mean;var area=document.getElementById('vocab-test-area');area.querySelectorAll('.vtest-opt').forEach(function(b){b.classList.add('dis');if(b.textContent===correct)b.classList.add('ca');else if(b===btn&&selected!==correct)b.classList.add('wa');});var res=document.getElementById('vtest-res');if(selected===correct){testScore++;res.innerHTML='<div style="color:#2e7d32;font-weight:700;padding:8px">✓ 正解！</div>';}else{res.innerHTML='<div style="color:#e53935;font-weight:700;padding:8px">✗ 不正解　正解：'+correct+'</div>';}testIdx++;setTimeout(function(){renderTestQuestion(area);},1200);}
+
+/* ===== 確認問題データ ===== */
+window.ciq1a=[
+  {q:'関係代名詞の説明として正しいのはどれか？',s:'接続詞と代名詞の役割を兼ねる',j:'',a:1,c:['名詞と動詞の役割を兼ねる','接続詞と代名詞の役割を兼ねる','副詞と形容詞の役割を兼ねる','動詞と形容詞の役割を兼ねる'],h:'関係代名詞 = 接続詞 ＋ 代名詞の役割',e:'関係代名詞は<b>接続詞と代名詞</b>を兼ねた働きをします。修飾される語を「先行詞」といいます。'},
+  {q:'次の文の関係代名詞節は文中でどんな役割か？<br>I have a friend who lives in Tokyo.',s:'friend を修飾する形容詞節',j:'',a:2,c:['主語','副詞節','形容詞節（friend を修飾）','動詞'],h:'関係代名詞節 = 先行詞を修飾する形容詞節',e:'関係代名詞以下の節は先行詞（friend）を修飾する<b>形容詞節</b>の役割をします。'},
+  {q:'次の文の先行詞はどれか？<br>This is the bus which goes to the station.',s:'the bus',j:'',a:1,c:['This','the bus','which','the station'],h:'先行詞 = 関係代名詞の直前の名詞',e:'先行詞は関係代名詞の直前の名詞 → <b>the bus</b>'},
+];
+window.ciq1b=[
+  {q:'先行詞が「人」で主格のとき、関係代名詞は？',s:'who',j:'',a:0,c:['who','which','whose','whom'],h:'人・主格 → who',e:'先行詞が「人」で主格 → <b>who</b>（後ろに動詞が続く）'},
+  {q:'先行詞が「物・動物」で所有格のとき、関係代名詞は？',s:'whose',j:'',a:2,c:['which','who','whose','whom'],h:'物・動物の所有格 → whose または of which',e:'先行詞が物・動物で所有格 → <b>whose</b>（または of which）'},
+  {q:'先行詞が「人」で目的格のとき、関係代名詞は？',s:'whom',j:'',a:3,c:['who','which','whose','whom'],h:'人・目的格 → whom（省略可）',e:'先行詞が「人」で目的格 → <b>whom</b>（省略可、that に言い換え可）'},
+  {q:'次の文の（　）に入る関係代名詞の格は？<br>She is the girl ( ) I know well.',s:'whom',j:'I know her well. の her が（　）に対応',a:3,c:['who（主格）','which（主格）','whose（所有格）','whom（目的格）'],h:'後ろに S＋V → 目的格',e:'I know her well → her の位置 → 目的格 <b>whom</b>（I know well の後ろに空白→目的格）'},
+];
+window.ciq1c=[
+  {q:'He is a boy ( ) name is Tom.',s:'He is a boy whose name is Tom.',j:'彼はトムという名の少年です。（His name is Tom.）',a:2,c:['who','which','whose','whom'],h:'後ろに名詞（name）が続く → 所有格（whose）',e:'後ろに名詞（name）が続く → 所有格 <b>whose</b>（His → whose）'},
+  {q:'I have a friend ( ) lives in Tokyo.',s:'I have a friend who lives in Tokyo.',j:'私には東京に住んでいる友人がいます。',a:0,c:['who','which','whose','whom'],h:'先行詞が「人」で後ろに動詞 → 主格 who',e:'先行詞が「人（friend）」で後ろに動詞（lives）→ 主格 <b>who</b>'},
+  {q:'This is the letter ( ) she wrote yesterday.',s:'This is the letter which she wrote yesterday.',j:'これは彼女が昨日書いた手紙です。',a:1,c:['who','which','whose','whom'],h:'先行詞が「物」で後ろに S＋V → 目的格 which',e:'先行詞が「物（letter）」で後ろに she wrote（S＋V）→ 目的格 <b>which</b>'},
+  {q:'Mr. Lee, ( ) father is Chinese, visited Shanghai.',s:'Mr. Lee, whose father is Chinese, visited Shanghai.',j:'リーさんは、お父さんが中国人ですが…（non-restrictive）',a:2,c:['who','that','whose','whom'],h:'後ろに名詞（father）→ 所有格 whose',e:'後ろに名詞（father）→ 所有格 <b>whose</b>（His father is Chinese → whose）'},
+];
+window.ciq2a=[
+  {q:'This is the house ( ) he lives in.<br>（前置詞を文末に置く型）',s:'This is the house which he lives in.',j:'これは彼が住む家です。',a:1,c:['who','which','whose','in which'],h:'先行詞が物・前置詞型① → which + 前置詞を文末に',e:'先行詞が物（house）・前置詞型① → <b>which</b>（he lives <b>in</b>）'},
+  {q:'This is the house ( ) he lives.<br>（前置詞＋関係代名詞を一緒に出す型）',s:'This is the house in which he lives.',j:'これは彼が住む家です。',a:3,c:['which','in that','in who','in which'],h:'前置詞＋関係代名詞型② → in which（that は不可）',e:'前置詞＋関係代名詞型② → <b>in which</b>（❌ in that は不可）'},
+  {q:'Tom is the boy ( ) I gave the book to.<br>（前置詞を文末に置く型）',s:'Tom is the boy whom I gave the book to.',j:'トムは私がその本をあげた少年です。',a:1,c:['who','whom','whose','which'],h:'先行詞が人・前置詞型① → whom',e:'先行詞が人（boy）で前置詞型① → <b>whom</b>（I gave the book <b>to</b>）'},
+  {q:'That is the lady ( ) I was introduced yesterday.',s:'That is the lady to whom I was introduced yesterday.',j:'それは私が昨日紹介された女性です。',a:3,c:['to who','to whose','to that','to whom'],h:'前置詞＋関係代名詞型② → to whom',e:'前置詞＋関係代名詞型② → <b>to whom</b>（I was introduced <b>to her</b>）'},
+];
+window.ciq2b=[
+  {q:'I employed a man ( ) I thought was honest.',s:'I employed a man who I thought was honest.',j:'私は正直だと思った人を雇った。（I thought は挿入）',a:0,c:['who','whom','whose','which'],h:'連鎖関係代名詞：I thought は挿入 → was honest の主語 → 主格 who',e:'「I thought」は挿入句。「was honest」の主語が必要 → 主格 <b>who</b>'},
+  {q:'The boy ( ) I believed was honest deceived me.',s:'The boy who I believed was honest deceived me.',j:'正直だと信じていたその少年は私を欺いた。（I believed は挿入）',a:0,c:['who','whom','whose','which'],h:'連鎖関係代名詞：I believed は挿入 → was honest の主語 → 主格 who',e:'「I believed」は挿入句。「was honest」の主語 → 主格 <b>who</b>'},
+];
+window.ciq3a=[
+  {q:'This is the most beautiful picture ( ) I have ever seen.',s:'This is the most beautiful picture that I have ever seen.',j:'これは私が今まで見た中で最も美しい絵です。',a:2,c:['who','which','that','what'],h:'最上級 → 関係代名詞は that',e:'先行詞に最上級（the most beautiful）→ 関係代名詞は <b>that</b>'},
+  {q:'At last she found the very man ( ) she wanted.',s:'At last she found the very man that she wanted.',j:'ついに彼女は会いたかったまさにその男の人を見つけた。',a:2,c:['whom','who','that','what'],h:'very → 関係代名詞は that',e:'先行詞に very → 関係代名詞は <b>that</b>'},
+  {q:'Look at the boy and the dog ( ) are running over there.',s:'Look at the boy and the dog that are running over there.',j:'向こうを走っている少年と犬を見なさい。',a:2,c:['who','which','that','whom'],h:'人＋動物 → 関係代名詞は that',e:'先行詞が「人（boy）＋動物（dog）」→ 関係代名詞は <b>that</b>'},
+  {q:'He was the first man ( ) flew over the Atlantic.',s:'He was the first man that flew over the Atlantic.',j:'彼は初めて大西洋を飛行機で横断した人でした。',a:2,c:['which','who','that','what'],h:'first → 関係代名詞は that',e:'先行詞に first → 関係代名詞は <b>that</b>'},
+];
+window.ciq3b=[
+  {q:'This is the same watch ( ) I lost yesterday.（同一の時計）',s:'This is the same watch that I lost yesterday.',j:'これは私が昨日なくした（まさに同じ）時計です。',a:2,c:['which','as','that','what'],h:'the same ～ that：同一のもの',e:'the same ～ <b>that</b>「同一のもの」（なくした時計そのもの）'},
+  {q:'I have the same watch ( ) you have.（同じ種類の時計）',s:'I have the same watch as you have.',j:'私はあなたと同じ（種類の）時計を持っています。',a:1,c:['that','as','which','what'],h:'the same ～ as：同じ種類のもの',e:'the same ～ <b>as</b>「同じ種類のもの」（同型の時計）'},
+];
+window.ciq3c=[
+  {q:'I remained silent, ( ) made her angry.',s:'I remained silent, which made her angry.',j:'私はだまっていた。そのことが彼女を怒らせた。',a:1,c:['that','which','what','who'],h:'コンマ＋前の節全体を先行詞 → , which',e:'前の節全体（「だまっていたこと」）を先行詞 → <b>, which</b>（that / what は不可）'},
+  {q:'( ) is often the case with him, he was late.',s:'As is often the case with him, he was late.',j:'彼にはよくあることだが、彼は遅刻した。',a:3,c:['Which','That','What','As'],h:'As is often the case with ～「～にはよくあることだが」',e:'慣用表現 <b>As is often the case with ～</b>「～にはよくあることだが」'},
+  {q:'( ) you know, Mt. Fuji is the highest mountain in Japan.',s:'As you know, Mt. Fuji is the highest mountain in Japan.',j:'あなたも知っているように、富士山は日本の最高峰です。',a:2,c:['Which','That','As','What'],h:'文頭の As「～のように・～の通り」',e:'文頭の <b>As</b>「～の通りに・知っているように」（節全体を先行詞）'},
+];
+window.ciq4a=[
+  {q:'Choose such friends ( ) will benefit you.',s:'Choose such friends as will benefit you.',j:'あなたのためになるような友人を選びなさい。',a:2,c:['who','which','as','that'],h:'such ～ as「…のような～」',e:'<b>such ～ as</b>「…のような～」（as は関係代名詞）'},
+  {q:'Her team won the game, ( ) was better, she was elected best player.',s:'Her team won the game, what was better, she was elected best player.',j:'チームが勝った。さらに良いことには、彼女がベストプレーヤーに選ばれた。',a:2,c:['it','that','what','as'],h:'さらに良いことには = what is better / what is more',e:'「さらに良いことには」→ <b>what</b> is better（what is more と同じ）'},
+  {q:'He wants more money ( ) is necessary.',s:'He wants more money than is necessary.',j:'彼は必要以上のお金を欲しがっている。',a:3,c:['who','which','as','than'],h:'more ～ than is necessary「必要以上の」',e:'比較を伴う関係代名詞 <b>than</b>（more money than is necessary = 必要以上のお金）'},
+];
+window.ciq4b=[
+  {q:'There is no mother ( ) loves her own children.',s:'There is no mother but loves her own children.',j:'自分の子を愛さない母親はいない。',a:3,c:['which','that','as','but'],h:'no ～ but「～しない…はいない」（二重否定）',e:'<b>no ～ but</b>「～しない…はいない」（二重否定で「必ず～する」）'},
+  {q:'( ) he said is all true.',s:'What he said is all true.',j:'彼が言ったことはすべて本当でした。',a:2,c:['That','Which','What','As'],h:'先行詞を含む関係代名詞 what = the thing which',e:'先行詞を含む関係代名詞 <b>what</b>（= the thing which）'},
+  {q:'My hometown is quite different from ( ) it was ten years ago.',s:'My hometown is quite different from what it was ten years ago.',j:'私の故郷は10年前とはまったく違う。',a:2,c:['when','where','what','that'],h:'what it was = 10年前の状態（what = the thing that）',e:'<b>what</b> it was ten years ago「10年前の（状態の）もの」→ <b>what</b>'},
+  {q:'I will give you ( ) help I can.',s:'I will give you what help I can.',j:'私はできる限りの援助をします。（関係形容詞）',a:0,c:['what','that','which','whose'],h:'関係形容詞 what ＋ 名詞「すべての～」',e:'<b>関係形容詞 what ＋ 名詞</b>「すべての～・できるだけの～」'},
+];
+window.ciq5a=[
+  {q:'Tom is ( ) we call a walking dictionary.',s:'Tom is what we call a walking dictionary.',j:'トムはいわゆる歩く辞書です。',a:1,c:['that','what','who','which'],h:'いわゆる = what we call / what is called',e:'「いわゆる」→ <b>what we call</b>（= what is called）'},
+  {q:'She is ( ) is called a superstar.',s:'She is what is called a superstar.',j:'彼女はいわゆるスーパースターです。',a:2,c:['who','that','what','as'],h:'いわゆる = what is called',e:'「いわゆる」→ <b>what is called</b>（= what we call）'},
+];
+window.ciq5b=[
+  {q:'His parents made him ( ) he is.',s:'His parents made him what he is.',j:'彼の両親が今の彼にした（育て上げた）。',a:2,c:['that','which','what','as'],h:'what he is = 今の彼の状態',e:'<b>what 人 is</b>「今ある（人の）状態」→ <b>what</b> he is'},
+  {q:'Nancy is not ( ) she used to be.',s:'Nancy is not what she used to be.',j:'ナンシーは以前の彼女ではない。',a:2,c:['that','which','what','who'],h:'what A used to be = 昔の A の状態',e:'<b>what A used to be</b>「以前の A の状態」→ <b>what</b>'},
+];
+window.ciq5c=[
+  {q:'Reading is to the mind ( ) exercise is to the body.',s:'Reading is to the mind what exercise is to the body.',j:'読書と精神の関係は、運動と身体の関係に等しい。',a:2,c:['as','that','what','which'],h:'A is to B what C is to D',e:'<b>A is to B what C is to D</b>「BにとってのAはDにとってのCのよう」→ <b>what</b>'},
+  {q:'He is young, and ( ) is more, handsome.',s:'He is young, and what is more, handsome.',j:'彼は若くて、しかもハンサムです。',a:2,c:['it','that','what','which'],h:'さらに～なことには = what is more',e:'「さらに良いことには」→ <b>what is more</b>'},
+  {q:'It got darker and darker, and ( ) is worse, it began to snow.',s:'It got darker and darker, and what is worse, it began to snow.',j:'だんだん暗くなってきた。さらに悪いことには、雪が降り始めた。',a:2,c:['it','that','what','which'],h:'さらに悪いことには = what is worse',e:'「さらに悪いことには」→ <b>what is worse</b>'},
+];
+
+/* ===== 練習問題データ ===== */
+window.cp1=[
+  {q:'I have a friend ( ) lives in Tokyo.',s:'I have a friend who lives in Tokyo.',j:'私には東京に住んでいる友人がいます。',a:0,c:['who','which','whose','whom'],h:'人・主格 → who',e:'先行詞が「人」で後ろに動詞（lives）→ 主格 <b>who</b>'},
+  {q:'He is a boy ( ) name is Tom.',s:'He is a boy whose name is Tom.',j:'彼はトムという名の少年です。（His name is Tom.）',a:2,c:['who','which','whose','whom'],h:'後ろに名詞 → 所有格 whose',e:'後ろに名詞（name）→ 所有格 <b>whose</b>'},
+  {q:'She is a girl ( ) I know well.',s:'She is a girl whom I know well.',j:'彼女は私がよく知っている少女です。（I know her well.）',a:3,c:['who','which','whose','whom'],h:'人・後ろに S＋V → 目的格 whom',e:'先行詞が「人」で後ろに S＋V（I know）→ 目的格 <b>whom</b>'},
+  {q:'This is the bus ( ) goes to the station.',s:'This is the bus which goes to the station.',j:'これは駅に行くバスです。',a:1,c:['who','which','whose','whom'],h:'物・主格 → which',e:'先行詞が「物（bus）」で後ろに動詞（goes）→ 主格 <b>which</b>'},
+  {q:'Look at the house ( ) roof is red.',s:'Look at the house whose roof is red.',j:'屋根が赤い家を見なさい。（Its roof is red.）',a:2,c:['who','which','whose','of whom'],h:'物・後ろに名詞 → 所有格 whose',e:'先行詞が物（house）で後ろに名詞（roof）→ 所有格 <b>whose</b>'},
+  {q:'This is the letter ( ) she wrote yesterday.',s:'This is the letter which she wrote yesterday.',j:'これは彼女が昨日書いた手紙です。',a:1,c:['who','which','whose','whom'],h:'物・後ろに S＋V → 目的格 which',e:'先行詞が「物（letter）」で後ろに she wrote（S＋V）→ 目的格 <b>which</b>'},
+  {q:'Mr. Brown is a teacher ( ) everybody likes.',s:'Mr. Brown is a teacher whom everybody likes.',j:'ブラウン先生はだれからも好かれている先生です。',a:3,c:['who','whose','which','whom'],h:'人・後ろに S＋V（everybody likes）→ 目的格 whom',e:'everybody likes <b>him</b> → 目的格 <b>whom</b>'},
+  {q:'I have an American friend ( ) mother is a famous designer.',s:'I have an American friend whose mother is a famous designer.',j:'私にはお母さんが有名なデザイナーであるアメリカの友人がいる。',a:2,c:['who','that','whose','whom'],h:'後ろに名詞（mother）→ 所有格 whose',e:'後ろに名詞（mother）→ 所有格 <b>whose</b>'},
+  {q:'The actress ( ) picture is on the magazine is a girl from our prefecture.',s:'The actress whose picture is on the magazine is a girl from our prefecture.',j:'その雑誌にのっている写真の女優は私たちの県の出身です。',a:2,c:['who','whom','whose','which'],h:'後ろに名詞（picture）→ 所有格 whose',e:'後ろに名詞（picture）→ 所有格 <b>whose</b>（Her picture → whose）'},
+  {q:'The man ( ) you met yesterday is my uncle.',s:'The man whom you met yesterday is my uncle.',j:'昨日あなたが会った男の人は私のおじです。（長い主語）',a:3,c:['who','which','whose','whom'],h:'人・後ろに S＋V → 目的格 whom',e:'you met <b>him</b> → 目的格 <b>whom</b>（長い主語の一部）'},
+];
+window.cp2=[
+  {q:'This is the house ( ) he lives in.<br>（前置詞を文末に置く型①）',s:'This is the house which he lives in.',j:'これは彼が住む家です。',a:1,c:['who','which','in which','whose'],h:'物・前置詞型① → which（in を文末に）',e:'先行詞が物（house）で前置詞型① → <b>which</b>（he lives <b>in</b>）'},
+  {q:'This is the house ( ) he lives.<br>（前置詞＋関係代名詞型②）',s:'This is the house in which he lives.',j:'これは彼が住む家です。',a:2,c:['in that','which','in which','in who'],h:'前置詞＋関係代名詞型② → in which（that は不可）',e:'前置詞＋関係代名詞型② → <b>in which</b>（❌ in that）'},
+  {q:'Tom is the boy ( ) I gave the book to.',s:'Tom is the boy whom I gave the book to.',j:'トムは私がその本をあげた少年です。（前置詞型①）',a:1,c:['who','whom','whose','which'],h:'人・前置詞型① → whom（to を文末に）',e:'先行詞が人（boy）で前置詞型① → <b>whom</b>（I gave to <b>him</b>）'},
+  {q:'That is the lady ( ) I was introduced yesterday.',s:'That is the lady to whom I was introduced yesterday.',j:'それは私が昨日紹介された女性です。（前置詞＋関係代名詞型②）',a:3,c:['to who','to whose','to that','to whom'],h:'前置詞＋関係代名詞型② → to whom',e:'前置詞型② → <b>to whom</b>（I was introduced <b>to her</b>）'},
+  {q:'This is the city ( ) I was born.',s:'This is the city in which I was born.',j:'これは私が生まれた町です。（前置詞＋関係代名詞型②）',a:3,c:['which','in that','that','in which'],h:'前置詞型② → in which',e:'born <b>in</b> the city → 前置詞型② → <b>in which</b>'},
+  {q:'I employed a man ( ) I thought was honest.',s:'I employed a man who I thought was honest.',j:'私は正直だと思った人を雇った。（連鎖）',a:0,c:['who','whom','whose','which'],h:'連鎖関係代名詞：I thought は挿入 → was honest の主語 → 主格 who',e:'挿入句「I thought」を除くと was honest の主語が必要 → 主格 <b>who</b>'},
+  {q:'The boy ( ) I believed was honest deceived me.',s:'The boy who I believed was honest deceived me.',j:'正直だと信じていたその少年は私を欺いた。（連鎖）',a:0,c:['who','whom','whose','which'],h:'連鎖：I believed は挿入 → was honest の主語 → 主格 who',e:'挿入句「I believed」を除くと was honest の主語が必要 → 主格 <b>who</b>'},
+  {q:'This is the book ( ) I have been looking for.',s:'This is the book which I have been looking for.',j:'これは私が探していた本です。（群動詞 look for）',a:1,c:['that','which','in which','for which'],h:'群動詞 look for → 前置詞型① → which（for を文末に）',e:'look for it → 前置詞型① → <b>which</b>（looking <b>for</b>）'},
+  {q:'He is a man ( ) you can trust.',s:'He is a man whom you can trust.',j:'彼はあなたが信頼できる人です。',a:3,c:['who','which','whose','whom'],h:'人・後ろに S＋V（you can trust him）→ 目的格 whom',e:'you can trust <b>him</b> → 目的格 <b>whom</b>'},
+  {q:'This is the book ( ) I have been looking.<br>（前置詞＋関係代名詞型②）',s:'This is the book for which I have been looking.',j:'これは私が探していた本です。',a:3,c:['which','in which','that','for which'],h:'前置詞型② → for which',e:'looking <b>for</b> it → 前置詞型② → <b>for which</b>'},
+];
+window.cp3=[
+  {q:'This is the most beautiful picture ( ) I have ever seen.',s:'This is the most beautiful picture that I have ever seen.',j:'これは私が今まで見た中で最も美しい絵です。',a:2,c:['who','which','that','what'],h:'最上級 → that',e:'最上級（the most beautiful）→ <b>that</b>'},
+  {q:'He was the first man ( ) flew over the Atlantic.',s:'He was the first man that flew over the Atlantic.',j:'彼は初めて大西洋を飛行機で横断した人でした。',a:2,c:['which','who','that','as'],h:'first → that',e:'first → <b>that</b>'},
+  {q:'Look at the boy and the dog ( ) are running over there.',s:'Look at the boy and the dog that are running over there.',j:'向こうを走っている少年と犬を見なさい。',a:2,c:['who','which','that','whom'],h:'人＋動物 → that',e:'先行詞が「人＋動物」→ <b>that</b>'},
+  {q:'This is the same watch ( ) I lost yesterday.（同一の時計）',s:'This is the same watch that I lost yesterday.',j:'これは私が昨日なくした（まさに同じ）時計です。',a:2,c:['which','as','that','what'],h:'the same ～ that：同一のもの',e:'the same ～ <b>that</b>「同一のもの」'},
+  {q:'I have the same watch ( ) you have.（同じ種類）',s:'I have the same watch as you have.',j:'私はあなたと同じ（種類の）時計を持っています。',a:1,c:['that','as','which','what'],h:'the same ～ as：同じ種類のもの',e:'the same ～ <b>as</b>「同じ種類のもの」'},
+  {q:'I remained silent, ( ) made her angry.',s:'I remained silent, which made her angry.',j:'私はだまっていた。そのことが彼女を怒らせた。',a:1,c:['that','which','what','who'],h:'コンマ＋節全体を先行詞 → , which',e:'前の節全体を先行詞 → <b>, which</b>（that / what は不可）'},
+  {q:'Kenji was late for school, ( ) is often the case with him.',s:'Kenji was late for school, as is often the case with him.',j:'ケンジはいつものことであるが遅刻した。',a:3,c:['which','that','when','as'],h:'As is often the case with ～「～にはよくあることだが」',e:'慣用表現 <b>As is often the case with ～</b>'},
+  {q:'Who ( ) is honest can tell such a lie?（反語）',s:'Who that is honest can tell such a lie?',j:'正直な人の誰がそんな嘘をつくだろうか。（いや、つかない）',a:2,c:['as','whom','that','what'],h:'先行詞が疑問詞 who → that',e:'先行詞が疑問詞（who）→ <b>that</b>（反語表現）'},
+  {q:'Is there anything ( ) I can do for you?',s:'Is there anything that I can do for you?',j:'私がお手伝いできることはありますか。',a:2,c:['who','which','that','what'],h:'anything → that',e:'先行詞が anything（～thing）→ <b>that</b>'},
+  {q:'This is the very book ( ) I have wanted to read.',s:'This is the very book that I have wanted to read.',j:'これはまさに私が読みたかった本です。',a:2,c:['which','who','that','what'],h:'very → that',e:'先行詞に very → <b>that</b>'},
+];
+window.cp4=[
+  {q:'Choose such friends ( ) will benefit you.',s:'Choose such friends as will benefit you.',j:'あなたのためになるような友人を選びなさい。',a:2,c:['who','which','as','that'],h:'such ～ as「…のような～」',e:'<b>such ～ as</b>「…のような～」'},
+  {q:'There is no rule ( ) has exceptions.',s:'There is no rule but has exceptions.',j:'例外のない規則はない。',a:3,c:['which','that','as','but'],h:'no ～ but「～しないものはない」',e:'<b>no ～ but</b>「～しないものはない」（二重否定 = 必ず～する）'},
+  {q:'( ) he said is all true.',s:'What he said is all true.',j:'彼が言ったことはすべて本当でした。',a:2,c:['That','Which','What','As'],h:'what = the thing which（先行詞を含む）',e:'先行詞を含む関係代名詞 <b>What</b>（= the thing which）'},
+  {q:'I couldn\'t understand ( ) he said.',s:'I could not understand what he said.',j:'私は彼の言うことが理解できなかった。',a:2,c:['that','which','what','as'],h:'what（目的語節）= the thing which',e:'<b>what</b>（= the thing which）が目的語節'},
+  {q:'He wants more money ( ) is necessary.',s:'He wants more money than is necessary.',j:'彼は必要以上のお金を欲しがっている。',a:3,c:['who','which','as','than'],h:'more ～ than is necessary「必要以上の」',e:'比較を伴う関係代名詞 <b>than</b>'},
+  {q:'There is no man ( ) loves himself.',s:'There is no man but loves himself.',j:'自分を愛さない人はいない。',a:3,c:['which','that','as','but'],h:'no ～ but「～しない人はいない」',e:'<b>no ～ but</b>（二重否定「必ず～する」）'},
+  {q:'My hometown is quite different from ( ) it was ten years ago.',s:'My hometown is quite different from what it was ten years ago.',j:'私の故郷は10年前とはまったく違う。',a:2,c:['when','where','what','that'],h:'what it was = 10年前の（状態の）もの',e:'<b>what</b> it was ten years ago「10年前の（状態の）もの」'},
+  {q:'I will give you ( ) help I can.',s:'I will give you what help I can.',j:'私はできる限りの援助をします。（関係形容詞）',a:0,c:['what','that','which','whose'],h:'関係形容詞 what ＋ 名詞「すべての～」',e:'<b>関係形容詞 what</b>（= all the … that）'},
+  {q:'He said it, and ( ) is more surprising, he did it.',s:'He said it, and what is more surprising, he did it.',j:'彼はそう言った。さらに驚くことには、彼はそれを実行した。',a:2,c:['as','it','what','which'],h:'さらに～なことには = what is more',e:'「さらに～なことには」→ <b>what is more</b>'},
+  {q:'She lost ( ) little money she had.',s:'She lost what little money she had.',j:'彼女はなけなしのお金をなくした。',a:0,c:['what','that','which','whose'],h:'関係形容詞 what（= all the little money that）',e:'<b>関係形容詞 what</b>「すべての～」（what little money = なけなしのお金）'},
+];
+window.cp5=[
+  {q:'Tom is ( ) we call a walking dictionary.',s:'Tom is what we call a walking dictionary.',j:'トムはいわゆる歩く辞書です。',a:1,c:['that','what','who','which'],h:'いわゆる = what we call',e:'「いわゆる」→ <b>what we call</b>'},
+  {q:'His parents made him ( ) he is.',s:'His parents made him what he is.',j:'彼の両親が今の彼にした。',a:2,c:['that','which','what','as'],h:'what he is = 今の彼の状態',e:'<b>what 人 is</b>「今ある（人の）状態」'},
+  {q:'Nancy is not ( ) she used to be.',s:'Nancy is not what she used to be.',j:'ナンシーは以前の彼女ではない。',a:2,c:['that','which','what','who'],h:'what A used to be = 以前の A の状態',e:'<b>what A used to be</b>「以前の A の状態」'},
+  {q:'Reading is to the mind ( ) exercise is to the body.',s:'Reading is to the mind what exercise is to the body.',j:'読書と精神の関係は、運動と身体の関係に等しい。',a:2,c:['as','that','what','which'],h:'A is to B what C is to D',e:'<b>A is to B what C is to D</b>「AとBの関係はCとDの関係と同じ」'},
+  {q:'He is young, and ( ) is more, handsome.',s:'He is young, and what is more, handsome.',j:'彼は若くて、しかもハンサムです。',a:2,c:['it','that','what','which'],h:'さらに良いことには = what is more',e:'「さらに良いことには」→ <b>what is more</b>'},
+  {q:'He was tired and ( ) is worse, sleepy.',s:'He was tired and what is worse, sleepy.',j:'彼は疲れていた。おまけに眠かった。',a:2,c:['it','that','what','which'],h:'さらに悪いことには = what is worse',e:'「さらに悪いことには」→ <b>what is worse</b>'},
+  {q:'This is the house ( ) in which he lives.<br>（下線部の which の前の in を外すと？）<br>This is the house ( ) he lives in.',s:'This is the house which he lives in.',j:'',a:1,c:['who','which','in which','whose'],h:'前置詞型①：which ＋ in を文末',e:'前置詞型① → <b>which</b>（he lives <b>in</b>）'},
+  {q:'Mr. Lee, ( ) father is Chinese, visited Shanghai.',s:'Mr. Lee, whose father is Chinese, visited Shanghai.',j:'リーさん、お父さんが中国人ですが、上海を訪れました。（非制限用法）',a:2,c:['that','who','whose','whom'],h:'後ろに名詞（father）→ 所有格 whose（非制限用法）',e:'後ろに名詞（father）→ 所有格 <b>whose</b>（非制限用法）'},
+  {q:'She is ( ) is called a genius.',s:'She is what is called a genius.',j:'彼女はいわゆる天才です。',a:2,c:['who','that','what','as'],h:'いわゆる = what is called',e:'「いわゆる」→ <b>what is called</b>'},
+  {q:'I remained silent, ( ) made her angry.',s:'I remained silent, which made her angry.',j:'私はだまっていた。そのことが彼女を怒らせた。',a:1,c:['that','which','what','who'],h:'前の節全体を先行詞 → , which',e:'前の節全体を先行詞 → <b>, which</b>'},
+  {q:'Kenji was late, ( ) is often the case with him.',s:'Kenji was late, as is often the case with him.',j:'ケンジはいつものことであるが遅刻した。',a:3,c:['which','that','when','as'],h:'As is often the case with ～',e:'慣用表現 <b>As is often the case with ～</b>「～にはよくあることだが」'},
+  {q:'He wants more money ( ) is necessary.',s:'He wants more money than is necessary.',j:'彼は必要以上のお金を欲しがっている。',a:3,c:['who','which','as','than'],h:'more ～ than is necessary',e:'比較を伴う関係代名詞 <b>than</b>'},
+  {q:'Air is to us ( ) water is to fish.',s:'Air is to us what water is to fish.',j:'空気と私たちの関係は、水と魚の関係に等しい。',a:2,c:['as','that','what','which'],h:'A is to B what C is to D',e:'<b>A is to B what C is to D</b>'},
+  {q:'At last she found the very man ( ) she wanted.',s:'At last she found the very man that she wanted.',j:'ついに彼女は会いたかったまさにその男の人を見つけた。',a:2,c:['whom','who','that','what'],h:'very → that',e:'先行詞に very → <b>that</b>'},
+];
+
+/* ===== 重要語単語帳関数 ===== */
+function wv(word,pos,mean,kana,opts){
+  return '' + word + '';
+}
+function showVwPop(el,ev){
+  if(ev)ev.stopPropagation();
+  var w=el.dataset.w,pos=el.dataset.pos,mean=el.dataset.mean,kana=el.dataset.kana,opts=JSON.parse(el.dataset.opts);
+  vocabDB[w]={pos:pos,mean:mean,kana:kana,opts:opts};currentVword=w;
+  document.getElementById('vpop-word').textContent=w;
+  document.getElementById('vpop-pos').textContent=pos;
+  document.getElementById('vpop-mean').textContent=mean;
+  document.getElementById('vpop-kana').textContent='発音：'+kana;
+  var saveBtn=document.getElementById('vpop-save-btn');
+  if(savedWords[w]){saveBtn.textContent='✓ 保存済み';saveBtn.className='vpop-save saved';document.getElementById('vpop-saved-lbl').className='vpop-saved-lbl show';}
+  else{saveBtn.textContent='📖 単語帳へ';saveBtn.className='vpop-save';document.getElementById('vpop-saved-lbl').className='vpop-saved-lbl';}
+  var pop=document.getElementById('vpop');pop.className='vpop show';
+  var rect=el.getBoundingClientRect();
+  var top=rect.bottom+6,left=rect.left,pw=260;
+  if(left+pw>window.innerWidth-8)left=window.innerWidth-pw-8;
+  if(top+160>window.innerHeight)top=rect.top-170;
+  pop.style.top=top+'px';pop.style.left=left+'px';
+}
+
+/* ===== 初期化 ===== */
+iC('iq1a');iC('iq1b');iC('iq1c');
+iC('iq2a');iC('iq2b');
+iC('iq3a');iC('iq3b');iC('iq3c');
+iC('iq4a');iC('iq4b');
+iC('iq5a');iC('iq5b');iC('iq5c');
+iC('p1');iC('p2');iC('p3');iC('p4');iC('p5');
+</script>
+</body>
+</html>
