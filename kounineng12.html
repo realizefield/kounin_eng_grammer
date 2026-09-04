@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+<title>英検2級・高認英文法　Unit 12　接続詞</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'BIZ UDGothic','Hiragino Kaku Gothic Pro','Meiryo',sans-serif;background:#eef2f7;color:#1a1a2e;min-height:100vh;font-size:15px}
+.top-header{background:linear-gradient(135deg,#1B3A6B 0%,#0097A7 100%);color:#fff;padding:14px 16px 12px;text-align:center}
+.top-header h1{font-size:17px;font-weight:700;letter-spacing:.05em}
+.top-header p{font-size:12px;margin-top:3px;opacity:.85}
+.nav{background:#fff;border-bottom:3px solid #0097A7;padding:8px 10px;display:flex;overflow-x:auto;gap:4px;-webkit-overflow-scrolling:touch;align-items:stretch}
+.nav::-webkit-scrollbar{height:3px}
+.pair{display:flex;gap:0;flex-shrink:0;border-radius:22px;overflow:hidden;box-shadow:0 0 0 1.5px #ccd}
+.pair.active-pair{box-shadow:0 0 0 2.5px #1B3A6B}
+.nb{padding:8px 14px;border:none;background:#f5f7fa;color:#555;font-size:13px;font-family:inherit;cursor:pointer;white-space:nowrap;border-right:1px solid #dde;transition:.2s;font-weight:500;flex-shrink:0}
+.nb:hover{background:#e8eaf6;color:#1B3A6B}
+.nb.on{background:#1B3A6B;color:#fff}
+.pb{padding:8px 14px;border:none;background:#fff3e0;color:#c84500;font-size:13px;font-family:inherit;cursor:pointer;white-space:nowrap;font-weight:700;transition:.2s;flex-shrink:0}
+.pb:hover{background:#e65100;color:#fff}
+.nav-sep{width:6px;flex-shrink:0}
+.sec{display:none;padding:12px;max-width:820px;margin:0 auto;padding-bottom:60px}
+.sec.active{display:block}
+.card{background:#fff;border-radius:14px;border:1px solid #dde3ee;padding:14px 16px;margin-bottom:14px;box-shadow:0 1px 4px rgba(0,0,0,.05)}
+.card-title{font-size:15px;font-weight:700;color:#1B3A6B;margin-bottom:10px;padding-bottom:8px;border-bottom:2px solid #0097A7}
+.sh{background:linear-gradient(90deg,#1B3A6B,#1B5E8B);color:#fff;border-radius:10px;padding:9px 16px;font-size:15px;font-weight:700;margin-bottom:12px;margin-top:6px}
+.pt{background:#fffde7;border-left:5px solid #f9a825;border-radius:0 10px 10px 0;padding:10px 14px;margin:8px 0;font-size:14px;line-height:1.9}
+.kb{background:#f1f8e9;border-left:5px solid #2e7d32;border-radius:0 10px 10px 0;padding:10px 14px;margin:8px 0;font-size:14px;line-height:1.8}
+.wb{background:#fff3e0;border-left:5px solid #e65100;border-radius:0 10px 10px 0;padding:10px 14px;margin:8px 0;font-size:14px;line-height:1.8}
+.ex{background:#f0f8ff;border:1px solid #b3d9f7;border-radius:10px;padding:12px 14px;margin:8px 0;font-size:14px;line-height:1.9}
+.ex-ja{font-size:12px;color:#555;margin-top:3px}
+.spk{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:#e8f4ff;border:1.5px solid #0097A7;cursor:pointer;margin-left:5px;vertical-align:middle;flex-shrink:0;transition:.2s;font-size:14px;font-family:inherit;padding:0}
+.spk:hover{background:#0097A7;color:#fff}
+.q-box{background:#fff;border-radius:12px;border:1px solid #dde3ee;padding:14px;margin-bottom:14px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.q-hd{display:flex;align-items:flex-start;gap:8px;margin-bottom:10px}
+.q-num{flex-shrink:0;width:26px;height:26px;background:#1B3A6B;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700}
+.q-txt{flex:1;font-size:14px;line-height:1.7}
+.hint{font-size:12px;color:#0097A7;background:#f0faff;border-radius:6px;padding:3px 8px;display:inline-block;margin-bottom:8px}
+.ub{font-size:11px;background:#e3f2fd;color:#1565c0;padding:2px 8px;border-radius:10px;font-weight:700;margin-left:6px;vertical-align:middle}
+.cb{width:100%;text-align:left;padding:10px 14px;margin:4px 0;border-radius:8px;border:1.5px solid #dde;background:#fff;font-size:14px;font-family:inherit;cursor:pointer;transition:.15s;line-height:1.4}
+.cb:hover:not(.dis){border-color:#0097A7;background:#f0faff}
+.cb.ca{background:#e8f5e9;border-color:#2e7d32;color:#1b5e20;font-weight:700}
+.cb.wa{background:#ffebee;border-color:#e53935;color:#b71c1c}
+.cb.dis{pointer-events:none}
+.ep{background:#fff8e1;border:1.5px solid #ffc107;border-radius:10px;padding:12px 14px;margin-top:10px;font-size:13px;line-height:1.8;display:none}
+.ep.show{display:block}
+.sb{background:#fff;border-radius:10px;border:1px solid #dde;padding:10px 14px;margin-bottom:12px;display:flex;align-items:center;gap:12px}
+.sn{font-size:20px;font-weight:700;color:#1B3A6B;min-width:60px}
+.pw{flex:1;height:10px;background:#eee;border-radius:6px;overflow:hidden}
+.pf{height:100%;background:linear-gradient(90deg,#0097A7,#1B3A6B);border-radius:6px;transition:.5s}
+.tbl{width:100%;border-collapse:collapse;font-size:13px}
+.tbl th{background:#1B3A6B;color:#fff;padding:7px 8px;text-align:left}
+.tbl td{padding:7px 8px;border-bottom:1px solid #eef;vertical-align:top}
+.tbl tr:nth-child(even) td{background:#f7f9ff}
+.form-box{background:#e8f4ff;border:2px solid #0097A7;border-radius:12px;padding:14px;font-size:14px;font-weight:700;color:#1B3A6B;margin:10px 0;line-height:2.1}
+.mini-quiz-wrap{background:#f0faff;border:2px solid #0097A7;border-radius:12px;padding:14px;margin-top:12px;margin-bottom:4px}
+.mini-quiz-title{font-size:13px;font-weight:700;color:#0097A7;margin-bottom:10px}
+.cmp2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:10px 0}
+@media(max-width:500px){.cmp2{grid-template-columns:1fr}}
+.cbox{border-radius:10px;padding:12px 14px;font-size:13px;line-height:1.8}
+.cbox.bl{background:#e3f2fd;border:1.5px solid #90caf9}
+.cbox.gn{background:#f1f8e9;border:1.5px solid #a5d6a7}
+.cbox.rd{background:#ffebee;border:1.5px solid #ef9a9a}
+.cbox.yl{background:#fffde7;border:1.5px solid #f9a825}
+.cbox-ttl{font-weight:700;font-size:13px;margin-bottom:6px}
+.cbox.bl .cbox-ttl{color:#1565c0}
+.cbox.gn .cbox-ttl{color:#2e7d32}
+.cbox.rd .cbox-ttl{color:#c62828}
+.cbox.yl .cbox-ttl{color:#f57f17}
+/* 接続詞タグ */
+.tag-and{display:inline-block;background:#1B3A6B;color:#fff;border-radius:6px;padding:2px 10px;font-size:13px;font-weight:700;margin:2px}
+.tag-but{display:inline-block;background:#0097A7;color:#fff;border-radius:6px;padding:2px 10px;font-size:13px;font-weight:700;margin:2px}
+.tag-or{display:inline-block;background:#e65100;color:#fff;border-radius:6px;padding:2px 10px;font-size:13px;font-weight:700;margin:2px}
+.tag-so{display:inline-block;background:#7b1fa2;color:#fff;border-radius:6px;padding:2px 10px;font-size:13px;font-weight:700;margin:2px}
+.tag-for{display:inline-block;background:#c62828;color:#fff;border-radius:6px;padding:2px 10px;font-size:13px;font-weight:700;margin:2px}
+.tag-sub{display:inline-block;background:#2e7d32;color:#fff;border-radius:6px;padding:2px 10px;font-size:13px;font-weight:700;margin:2px}
+.tag-cor{display:inline-block;background:#f57f17;color:#fff;border-radius:6px;padding:2px 10px;font-size:13px;font-weight:700;margin:2px}
+/* 単語帳 */
+.vw{border-bottom:2px dashed #7b1fa2;cursor:pointer;font-weight:700}
+.vw:hover{background:#f3e5f5;border-radius:3px}
+.vpop{display:none;position:fixed;z-index:2000;background:#fff;border-radius:14px;box-shadow:0 6px 30px rgba(0,0,0,.22);width:260px;max-width:90vw}
+.vpop.show{display:block}
+.vpop-hd{background:linear-gradient(135deg,#1B3A6B,#0097A7);color:#fff;padding:12px 14px 10px;border-radius:14px 14px 0 0;display:flex;align-items:center;justify-content:space-between}
+.vpop-word{font-size:18px;font-weight:700}
+.vpop-pos{font-size:11px;background:rgba(255,255,255,.25);border-radius:8px;padding:2px 8px;margin-left:6px}
+.vpop-close{background:rgba(255,255,255,.2);border:none;color:#fff;width:26px;height:26px;border-radius:50%;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.vpop-body{padding:12px 14px}
+.vpop-mean{font-size:16px;font-weight:700;color:#1B3A6B;margin-bottom:4px}
+.vpop-kana{font-size:13px;color:#555;margin-bottom:10px}
+.vpop-btns{display:flex;gap:8px}
+.vpop-spk,.vpop-save{flex:1;padding:8px;border-radius:8px;font-size:13px;font-family:inherit;cursor:pointer;font-weight:700}
+.vpop-spk{border:1.5px solid #0097A7;background:#f0faff;color:#0097A7}
+.vpop-spk:hover{background:#0097A7;color:#fff}
+.vpop-save{border:1.5px solid #e65100;background:#fff3e0;color:#c84500}
+.vpop-save:hover{background:#e65100;color:#fff}
+.vpop-save.saved{background:#e8f5e9;border-color:#2e7d32;color:#2e7d32}
+.vpop-saved-lbl{font-size:11px;color:#2e7d32;text-align:center;margin-top:6px;display:none}
+.vpop-saved-lbl.show{display:block}
+.vocab-badge{display:none;position:absolute;top:-6px;right:-6px;background:#e53935;color:#fff;border-radius:50%;width:18px;height:18px;font-size:11px;font-weight:700;align-items:center;justify-content:center}
+.vocab-badge.show{display:flex}
+.mo{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:1500;align-items:flex-end;justify-content:center}
+.mo.open{display:flex}
+.mb{background:#fff;border-radius:18px 18px 0 0;width:100%;max-width:540px;max-height:85vh;display:flex;flex-direction:column}
+.mh{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid #eee}
+.mh h2{font-size:16px;font-weight:700;color:#1B3A6B}
+.mhc{background:none;border:none;font-size:22px;cursor:pointer;color:#888}
+.mbody{overflow-y:auto;padding:14px 16px;flex:1}
+.vbook-empty{text-align:center;color:#999;padding:24px;font-size:14px}
+.vcard{background:#f8faff;border-radius:10px;border:1px solid #dde;padding:10px 12px;margin-bottom:8px;display:flex;align-items:center;gap:10px}
+.vcard-word{font-size:15px;font-weight:700;color:#1B3A6B;flex:1}
+.vcard-mean{font-size:13px;color:#555;flex:1}
+.vcard-del{background:#fff;border:1.5px solid #dde;color:#aaa;border-radius:6px;padding:4px 10px;font-size:12px;cursor:pointer;font-family:inherit}
+.vcard-del:hover{border-color:#e53935;color:#e53935}
+.vtest-q{font-size:16px;font-weight:700;color:#1B3A6B;text-align:center;padding:16px;background:#e8f4ff;border-radius:10px;margin-bottom:12px}
+.vtest-opt{width:100%;text-align:left;padding:11px 14px;margin:5px 0;border-radius:8px;border:1.5px solid #dde;background:#fff;font-size:14px;font-family:inherit;cursor:pointer;transition:.15s}
+.vtest-opt:hover:not(.dis){border-color:#0097A7;background:#f0faff}
+.vtest-opt.ca{background:#e8f5e9;border-color:#2e7d32;color:#1b5e20;font-weight:700}
+.vtest-opt.wa{background:#ffebee;border-color:#e53935;color:#b71c1c}
+.vtest-opt.dis{pointer-events:none}
+canvas#cc{position:fixed;top:0;left:0;pointer-events:none;z-index:9999;display:none}
+</style>
+</head>
+<body>
+<canvas id="cc"></canvas>
+<div class="top-header">
+  <h1>🎓 英検2級・高認英文法　Unit 12　接続詞</h1>
+  <p>こうげんよびこう（江原予備校）　― スピーカーボタンで音声再生 ―</p>
+</div>
+<nav class="nav" id="nav">
+  <div class="pair active-pair">
+    <button class="nb on" onclick="ss('s1',this)">① 等位接続詞</button>
+    <button class="pb" onclick="ss('p1',this)">✏️ 練習①</button>
+  </div>
+  <div class="nav-sep"></div>
+  <div class="pair">
+    <button class="nb" onclick="ss('s2',this)">② 等位相関接続詞</button>
+    <button class="pb" onclick="ss('p2',this)">✏️ 練習②</button>
+  </div>
+  <div class="nav-sep"></div>
+  <div class="pair">
+    <button class="nb" onclick="ss('s3',this)">③ 名詞節・that / whether</button>
+    <button class="pb" onclick="ss('p3',this)">✏️ 練習③</button>
+  </div>
+  <div class="nav-sep"></div>
+  <div class="pair">
+    <button class="nb" onclick="ss('s4',this)">④ 副詞節①　時・逆接</button>
+    <button class="pb" onclick="ss('p4',this)">✏️ 練習④</button>
+  </div>
+  <div class="nav-sep"></div>
+  <div class="pair">
+    <button class="nb" onclick="ss('s5',this)">⑤ 副詞節②　目的・結果・条件</button>
+    <button class="pb" onclick="ss('p5',this)">✏️ 練習⑤実戦</button>
+  </div>
+  <div class="nav-sep" style="width:12px"></div>
+  <div style="flex-shrink:0;position:relative">
+    <button onclick="openM('mvocab')" style="padding:8px 16px;border-radius:22px;border:2px solid #7b1fa2;background:#f3e5f5;color:#7b1fa2;font-size:13px;font-family:inherit;cursor:pointer;font-weight:700;white-space:nowrap">📚 単語帳</button>
+    <span class="vocab-badge" id="vocab-badge">0</span>
+  </div>
+</nav>
+
+<!-- ===== ① 等位接続詞 ===== -->
+<div id="s1" class="sec active">
+<div class="sh">① 等位接続詞　— and / but / or / so / for / yet —</div>
+
+<div class="card">
+  <div class="card-title">【基礎】接続詞の2種類　— 等位接続詞と従属接続詞 —</div>
+  <div class="pt">
+    <b>接続詞</b>は「語と語」「句と句」「節と節」を結びつける言葉です。<br>
+    接続詞には大きく2種類があります。<br><br>
+    <b>等位接続詞</b>：対等な関係で結ぶ（and / but / or / so / for / yet / nor）<br>
+    <b>従属接続詞</b>：主節に対して従属節（名詞節・副詞節）を作る（when / because / that など）
+  </div>
+  <table class="tbl">
+    <tr><th>接続詞</th><th>意味</th><th>例文</th></tr>
+    <tr>
+      <td><span class="tag-and">and</span></td><td>そして・かつ</td>
+      <td>We sang <b>and</b> they danced. <button class="spk" data-t="We sang and they danced." onclick="sp(this.dataset.t)">▶</button><br><span class="ex-ja">私たちは歌い、そして彼らは踊った。</span></td>
+    </tr>
+    <tr>
+      <td><span class="tag-but">but</span></td><td>しかし・でも</td>
+      <td>He was <span class="vw" onclick="showVwPop(this,event)" data-w="poor" data-pos="形容詞" data-mean="貧しい・かわいそうな" data-kana="プアー" data-opts="[&quot;貧しい&quot;,&quot;豊かな&quot;,&quot;幸せな&quot;,&quot;賢い&quot;]">poor</span> <b>but</b> <span class="vw" onclick="showVwPop(this,event)" data-w="honest" data-pos="形容詞" data-mean="正直な・誠実な" data-kana="オネスト" data-opts="[&quot;正直な&quot;,&quot;不正直な&quot;,&quot;勤勉な&quot;,&quot;親切な&quot;]">honest</span>. <button class="spk" data-t="He was poor but honest." onclick="sp(this.dataset.t)">▶</button><br><span class="ex-ja">彼は貧しかったが、正直な男であった。</span></td>
+    </tr>
+    <tr>
+      <td><span class="tag-or">or</span></td><td>または・あるいは</td>
+      <td>She practices in the morning <b>or</b> in the afternoon. <button class="spk" data-t="She practices in the morning or in the afternoon." onclick="sp(this.dataset.t)">▶</button><br><span class="ex-ja">彼女は午前か午後にピアノを練習します。</span></td>
+    </tr>
+    <tr>
+      <td><span class="tag-so">so</span></td><td>それで・だから</td>
+      <td>I had a <span class="vw" onclick="showVwPop(this,event)" data-w="headache" data-pos="名詞" data-mean="頭痛" data-kana="ヘッドエイク" data-opts="[&quot;頭痛&quot;,&quot;腹痛&quot;,&quot;発熱&quot;,&quot;せき&quot;]">headache</span>, <b>so</b> I went to bed early. <button class="spk" data-t="I had a headache, so I went to bed early." onclick="sp(this.dataset.t)">▶</button><br><span class="ex-ja">私は頭が痛かった。それで早く寝ました。</span></td>
+    </tr>
+    <tr>
+      <td><span class="tag-for">for</span></td><td>というのも～だから</td>
+      <td>He felt no <span class="vw" onclick="showVwPop(this,event)" data-w="fear" data-pos="名詞" data-mean="恐れ・恐怖" data-kana="フィア" data-opts="[&quot;恐れ&quot;,&quot;勇気&quot;,&quot;喜び&quot;,&quot;怒り&quot;]">fear</span>, <b>for</b> he was a <span class="vw" onclick="showVwPop(this,event)" data-w="brave" data-pos="形容詞" data-mean="勇敢な・勇気のある" data-kana="ブレイブ" data-opts="[&quot;勇敢な&quot;,&quot;臆病な&quot;,&quot;親切な&quot;,&quot;賢い&quot;]">brave</span> man. <button class="spk" data-t="He felt no fear, for he was a brave man." onclick="sp(this.dataset.t)">▶</button><br><span class="ex-ja">彼は恐ろしいと感じなかった。というのも彼は勇敢な男だからだ。</span></td>
+    </tr>
+    <tr>
+      <td><span class="tag-but">yet</span></td><td>しかし・だが（= but）</td>
+      <td>It was raining, <b>yet</b> he went out. <button class="spk" data-t="It was raining, yet he went out." onclick="sp(this.dataset.t)">▶</button><br><span class="ex-ja">雨が降っていたが、彼は出かけた。</span></td>
+    </tr>
+  </table>
+  <div class="wb">
+    ⚠️ <b>for（接続詞）は文頭に置けません！</b><br>
+    for は「というのも～だから」という理由を表しますが、<b>節と節の間</b>にしか置けません。<br>
+    ❌ <s>For he was brave</s>, he felt no fear.（文頭は不可）<br>
+    ✅ He felt no fear, <b>for</b> he was brave.（節の間に置く）
+  </div>
+</div>
+<div class="mini-quiz-wrap">
+  <div class="mini-quiz-title">📝 確認① 等位接続詞の意味</div>
+  <div id="iq1aq"></div>
+</div>
+
+<div class="card">
+  <div class="card-title">【命令文 ＋ and / or】そうすれば / さもないと</div>
+  <div class="pt">
+    <b>命令文 ＋ and ～</b>「～しなさい。そうすれば～」<br>
+    <b>命令文 ＋ or ～</b>「～しなさい。さもないと～」<br><br>
+    これは <b>If 文</b>と書き換えられます。
+  </div>
+  <div class="cmp2">
+    <div class="cbox bl">
+      <div class="cbox-ttl">命令文 ＋ <span class="tag-and">and</span>（そうすれば）</div>
+      Work hard, <b>and</b> you will succeed. <button class="spk" data-t="Work hard, and you will succeed." onclick="sp(this.dataset.t)">▶</button><br>
+      ＝ <b>If</b> you work hard, you will succeed.<br>
+      <span style="font-size:12px;color:#555">一生懸命働きなさい。そうすれば成功するでしょう。</span><br><br>
+      Hurry up, <b>and</b> you'll be in time for school. <button class="spk" data-t="Hurry up, and you will be in time for school." onclick="sp(this.dataset.t)">▶</button><br>
+      <span style="font-size:12px;color:#555">急ぎなさい、そうすれば学校に間に合うでしょう。</span>
+    </div>
+    <div class="cbox rd">
+      <div class="cbox-ttl">命令文 ＋ <span class="tag-or">or</span>（さもないと）</div>
+      Hurry up, <b>or</b> you'll miss the train. <button class="spk" data-t="Hurry up, or you will miss the train." onclick="sp(this.dataset.t)">▶</button><br>
+      ＝ <b>If</b> you don't hurry up, you'll miss the train.<br>
+      <span style="font-size:12px;color:#555">急ぎなさい、さもないと列車に乗り遅れるよ。</span><br><br>
+      Hurry up, <b>or</b> you'll be late for school. <button class="spk" data-t="Hurry up, or you will be late for school." onclick="sp(this.dataset.t)">▶</button><br>
+      <span style="font-size:12px;color:#555">急ぎなさい、さもないと遅刻するぞ。</span>
+    </div>
+  </div>
+</div>
+<div class="mini-quiz-wrap">
+  <div class="mini-quiz-title">📝 確認② 命令文 ＋ and / or</div>
+  <div id="iq1bq"></div>
+</div>
+
+<div class="card">
+  <div class="card-title">【not A but B / not only A but also B】重要構文</div>
+  <div class="pt">
+    <b>not A but B</b>：「A ではなく B」<br>
+    <b>not only A but (also) B</b>：「A ばかりでなく B も」<br>
+    <b>It is true ～, but …</b> ＝ <b>Indeed ～, but …</b>：「確かに～だが、しかし…」
+  </div>
+  <div class="ex">
+    He is <b>not</b> a <span class="vw" onclick="showVwPop(this,event)" data-w="scholar" data-pos="名詞" data-mean="学者" data-kana="スカラー" data-opts="[&quot;学者&quot;,&quot;教師&quot;,&quot;医者&quot;,&quot;学生&quot;]">scholar</span> <b>but</b> a teacher. <button class="spk" data-t="He is not a scholar but a teacher." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">彼は学者ではなくて教師だ。</span>
+  </div>
+  <div class="ex">
+    He speaks <b>not only</b> English <b>but also</b> French. <button class="spk" data-t="He speaks not only English but also French." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">彼は英語ばかりでなくフランス語も話します。</span>
+  </div>
+  <div class="ex">
+    <b>It is true that</b> he is old, <b>but</b> he is still strong. <button class="spk" data-t="It is true that he is old, but he is still strong." onclick="sp(this.dataset.t)">▶</button><br>
+    ＝ <b>Indeed</b> he is old, <b>but</b> he is still strong. <button class="spk" data-t="Indeed he is old, but he is still strong." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">彼は確かに年老いているが、まだまだ元気だ。</span>
+  </div>
+  <div class="ex">
+    It is true that he is young, but he is <span class="vw" onclick="showVwPop(this,event)" data-w="prudent" data-pos="形容詞" data-mean="慎重な・思慮深い・分別のある" data-kana="プルーデント" data-opts="[&quot;慎重な&quot;,&quot;無謀な&quot;,&quot;勤勉な&quot;,&quot;正直な&quot;]">prudent</span>. <button class="spk" data-t="It is true that he is young, but he is prudent." onclick="sp(this.dataset.t)">▶</button><br>
+    ＝ <b>Indeed</b> he is young, but he is <span class="vw" onclick="showVwPop(this,event)" data-w="prudent" data-pos="形容詞" data-mean="慎重な・思慮深い・分別のある" data-kana="プルーデント" data-opts="[&quot;慎重な&quot;,&quot;無謀な&quot;,&quot;勤勉な&quot;,&quot;正直な&quot;]">prudent</span>. <button class="spk" data-t="Indeed he is young, but he is prudent." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">彼は確かに若いが、慎重（思慮深い）だ。<br><small style="color:#888">※ prudent（プルーデント）＝ 慎重な・思慮深い・分別のある</small></span>
+  </div>
+  <div class="ex">
+    He is <span class="vw" onclick="showVwPop(this,event)" data-w="respected" data-pos="動詞（受動）" data-mean="尊敬されている（respect の受動態）" data-kana="リスペクティッド" data-opts="[&quot;尊敬されている&quot;,&quot;嫌われている&quot;,&quot;好かれている&quot;,&quot;恐れられている&quot;]">respected</span> by everybody, <b>for</b> he is kind and honest. <button class="spk" data-t="He is respected by everybody, for he is kind and honest." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">彼はだれからも尊敬されている。というのも彼は親切で正直だからだ。</span>
+  </div>
+</div>
+<div class="mini-quiz-wrap">
+  <div class="mini-quiz-title">📝 確認③ not A but B / not only A but also B</div>
+  <div id="iq1cq"></div>
+</div>
+</div><!-- /s1 -->
+
+<!-- 練習① -->
+<div id="p1" class="sec">
+  <div class="sb"><span class="sn" id="p1sn">0 / 10</span><div class="pw"><div class="pf" id="p1pf" style="width:0%"></div></div>
+  <button onclick="resetP('p1')" style="border:none;background:#eee;border-radius:6px;padding:6px 12px;font-size:12px;cursor:pointer;font-family:inherit">リセット</button></div>
+  <div id="p1q"></div>
+</div>
+
+<!-- ===== ② 等位相関接続詞 ===== -->
+<div id="s2" class="sec">
+<div class="sh">② 等位相関接続詞　— 動詞の数の一致に注意！ —</div>
+
+<div class="card">
+  <div class="card-title">【等位相関接続詞】一覧と動詞の一致ルール</div>
+  <div class="pt">
+    <b>等位相関接続詞</b>は2つの語句をセットで結ぶ接続詞です。<br>
+    主語として使われるとき、<b>どの語に動詞を合わせるか</b>が重要なポイントです。
+  </div>
+  <table class="tbl">
+    <tr><th>表現</th><th>意味</th><th>動詞の一致</th><th>例文</th></tr>
+    <tr>
+      <td><span class="tag-cor">both A and B</span></td>
+      <td>A も B も両方</td>
+      <td><b>複数扱い</b><br>（are / were）</td>
+      <td>Both you and I <b>are</b> right. <button class="spk" data-t="Both you and I are right." onclick="sp(this.dataset.t)">▶</button><br><span class="ex-ja">あなたと私の両方とも正しい。</span></td>
+    </tr>
+    <tr>
+      <td><span class="tag-cor">either A or B</span></td>
+      <td>A か B のどちらか</td>
+      <td><b>B に一致</b></td>
+      <td>Either you or I <b>am</b> right. <button class="spk" data-t="Either you or I am right." onclick="sp(this.dataset.t)">▶</button><br><span class="ex-ja">あなたか私のどちらかが正しい。</span></td>
+    </tr>
+    <tr>
+      <td><span class="tag-cor">neither A nor B</span></td>
+      <td>A も B もどちらも～ない</td>
+      <td><b>B に一致</b></td>
+      <td>Neither you nor I <b>am</b> right. <button class="spk" data-t="Neither you nor I am right." onclick="sp(this.dataset.t)">▶</button><br><span class="ex-ja">あなたと私のどちらも正しくはない。</span></td>
+    </tr>
+    <tr>
+      <td><span class="tag-cor">not only A but also B</span></td>
+      <td>A ばかりでなく B も</td>
+      <td><b>B に一致</b></td>
+      <td>Not only you but also I <b>am</b> right. <button class="spk" data-t="Not only you but also I am right." onclick="sp(this.dataset.t)">▶</button><br><span class="ex-ja">あなたばかりでなく、私も正しい。</span></td>
+    </tr>
+    <tr>
+      <td><span class="tag-cor">B as well as A</span></td>
+      <td>A と同様 B も</td>
+      <td><b>B に一致</b><br>（A ではなく B！）</td>
+      <td>You as well as I <b>are</b> right. <button class="spk" data-t="You as well as I are right." onclick="sp(this.dataset.t)">▶</button><br><span class="ex-ja">あなたも私も正しい。（You が主語）</span></td>
+    </tr>
+  </table>
+  <div class="wb">
+    ⚠️ <b>as well as の動詞は B（前の語）に一致！</b><br>
+    「B as well as A」の形では <b>B が主語</b> として動詞を決めます。<br>
+    ✅ <b>You</b> as well as I <b>are</b> right.（You ＝ B に一致 → are）<br>
+    ✅ <b>She</b> as well as I <b>is</b> a student.（She ＝ B に一致 → is）
+  </div>
+  <div class="kb">
+    💡 <b>either / neither / not only は B に一致のルール</b><br>
+    Either <b>you</b> or <b>I</b> am right.（I ＝ B → am）<br>
+    Neither <b>he</b> nor <b>I</b> am wrong.（I ＝ B → am）<br>
+    Not only <b>you</b> but also <b>I</b> am right.（I ＝ B → am）<br><br>
+    ただし both A and B だけは <b>常に複数扱い（are）</b>です。
+  </div>
+</div>
+<div class="mini-quiz-wrap">
+  <div class="mini-quiz-title">📝 確認④ 等位相関接続詞の動詞の一致</div>
+  <div id="iq2aq"></div>
+</div>
+
+<div class="card">
+  <div class="card-title">【例文で確認】等位相関接続詞の使い方</div>
+  <div class="ex">
+    Either you or I <b>am</b> to <span class="vw" onclick="showVwPop(this,event)" data-w="blame" data-pos="動詞" data-mean="責める・非難する（be to blame ＝ 責任がある）" data-kana="ブレイム" data-opts="[&quot;責任がある&quot;,&quot;問題ない&quot;,&quot;正しい&quot;,&quot;間違っている&quot;]">blame</span>. <button class="spk" data-t="Either you or I am to blame." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">君か私のどちらかに責任がある。（be to blame ＝ 責任がある）</span>
+  </div>
+  <div class="ex">
+    He will <b>neither</b> eat <b>nor</b> drink. <button class="spk" data-t="He will neither eat nor drink." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">彼は食べることも飲むこともしないだろう。</span>
+  </div>
+  <div class="ex">
+    She is <b>not only</b> beautiful <b>but also</b> <span class="vw" onclick="showVwPop(this,event)" data-w="intelligent" data-pos="形容詞" data-mean="賢い・知性のある" data-kana="インテリジェント" data-opts="[&quot;賢い&quot;,&quot;愚かな&quot;,&quot;美しい&quot;,&quot;親切な&quot;]">intelligent</span>. <button class="spk" data-t="She is not only beautiful but also intelligent." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">彼女は美しいだけでなく聡明です。</span>
+  </div>
+  <div class="ex">
+    Both she and I <b>are</b> students in this school. <button class="spk" data-t="Both she and I are students in this school." onclick="sp(this.dataset.t)">▶</button><br>
+    ＝ She as well as I <b>is</b> a student in this school. <button class="spk" data-t="She as well as I is a student in this school." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">彼女も私もこの学校の生徒です。（as well as では She に一致 → is）</span>
+  </div>
+</div>
+<div class="mini-quiz-wrap">
+  <div class="mini-quiz-title">📝 確認⑤ 相関接続詞の実践</div>
+  <div id="iq2bq"></div>
+</div>
+</div><!-- /s2 -->
+
+<!-- 練習② -->
+<div id="p2" class="sec">
+  <div class="sb"><span class="sn" id="p2sn">0 / 10</span><div class="pw"><div class="pf" id="p2pf" style="width:0%"></div></div>
+  <button onclick="resetP('p2')" style="border:none;background:#eee;border-radius:6px;padding:6px 12px;font-size:12px;cursor:pointer;font-family:inherit">リセット</button></div>
+  <div id="p2q"></div>
+</div>
+
+<!-- ===== ③ 名詞節 that / whether ===== -->
+<div id="s3" class="sec">
+<div class="sh">③ 名詞節を導く従属接続詞　— that / whether / if —</div>
+
+<div class="card">
+  <div class="card-title">【that 節】主語・補語・目的語になる名詞節</div>
+  <div class="pt">
+    従属接続詞 <b>that</b> は「～ということ」という意味の名詞節を作ります。<br>
+    that 節は文の中で<b>主語・補語・目的語</b>の役割をします。<br><br>
+    <b>① 主語の that</b>（It is … that ～ の形が多い）<br>
+    <b>② 補語の that</b>（S ＋ V ＋ that ～ で V の後ろ）<br>
+    <b>③ 目的語の that</b>（believe / say / think などの後ろ）
+  </div>
+  <div class="ex">
+    <b>①主語：</b> It is true <b>that</b> Tom passed the <span class="vw" onclick="showVwPop(this,event)" data-w="entrance" data-pos="名詞" data-mean="入口・入学・入り口" data-kana="エントランス" data-opts="[&quot;入口・入学&quot;,&quot;出口&quot;,&quot;卒業&quot;,&quot;試験&quot;]">entrance</span> exam. <button class="spk" data-t="It is true that Tom passed the entrance exam." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">トムが入学試験に合格したことは事実だ。（It ＝ that 以下の内容）</span>
+  </div>
+  <div class="ex">
+    <b>②補語：</b> The fact is <b>that</b> the earth goes around the sun. <button class="spk" data-t="The fact is that the earth goes around the sun." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">地球が太陽のまわりを回っていることは事実だ。（that 節 ＝ 補語）</span>
+  </div>
+  <div class="ex">
+    <b>③目的語：</b> I can't believe <b>that</b> he tells a lie. <button class="spk" data-t="I can't believe that he tells a lie." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">私には彼が嘘を言うなんて信じられない。（that 節 ＝ believe の目的語）</span>
+  </div>
+  <div class="ex">
+    They say <b>that</b> he is a great <span class="vw" onclick="showVwPop(this,event)" data-w="scientist" data-pos="名詞" data-mean="科学者" data-kana="サイエンティスト" data-opts="[&quot;科学者&quot;,&quot;医者&quot;,&quot;学者&quot;,&quot;教師&quot;]">scientist</span>. <button class="spk" data-t="They say that he is a great scientist." onclick="sp(this.dataset.t)">▶</button><br>
+    ＝ It is said <b>that</b> he is a great scientist. <button class="spk" data-t="It is said that he is a great scientist." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">彼は偉大な科学者だと言われている。</span>
+  </div>
+</div>
+<div class="mini-quiz-wrap">
+  <div class="mini-quiz-title">📝 確認⑥ that 節の働き（主語・補語・目的語）</div>
+  <div id="iq3aq"></div>
+</div>
+
+<div class="card">
+  <div class="card-title">【whether / if】「～かどうか」— 使える位置に違いあり！ —</div>
+  <div class="pt">
+    <b>whether</b> と <b>if</b> はどちらも「～かどうか」という意味ですが、<br>
+    <b>if は目的語の節にしか使えません</b>。whether は主語・補語・目的語すべてに使えます。
+  </div>
+  <div style="background:#fff8e1;border-radius:12px;border:2px solid #ffc107;padding:14px;margin:10px 0;font-size:14px;line-height:2">
+    <b>whether</b>：主語・補語・目的語すべてで使える ✅<br>
+    <b>if</b>：<b>目的語だけ</b>で使える ⚠️（主語・補語では使えない）
+  </div>
+  <div class="ex">
+    <b>主語（if 不可）：</b> It is unknown <b>whether</b> there is life on the <span class="vw" onclick="showVwPop(this,event)" data-w="planet" data-pos="名詞" data-mean="惑星" data-kana="プラネット" data-opts="[&quot;惑星&quot;,&quot;星座&quot;,&quot;衛星&quot;,&quot;彗星&quot;]">planet</span>. <button class="spk" data-t="It is unknown whether there is life on the planet." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">その惑星に生命がいるかどうかは分かっていない。（主語 → if は使えない）</span>
+  </div>
+  <div class="ex">
+    <b>補語（if 不可）：</b> The question is <b>whether</b> we should go at once. <button class="spk" data-t="The question is whether we should go at once." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">問題は私たちがすぐ行くべきかどうかだ。（補語 → if は使えない）</span>
+  </div>
+  <div class="ex">
+    <b>目的語（if も可）：</b> She asked us <b>whether（if）</b> we wanted something cold. <button class="spk" data-t="She asked us whether we wanted something cold." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">彼女は私たちに何か冷たいものが欲しいかどうかを尋ねた。（目的語 → if も可）</span>
+  </div>
+</div>
+<div class="mini-quiz-wrap">
+  <div class="mini-quiz-title">📝 確認⑦ whether と if の使い分け</div>
+  <div id="iq3bq"></div>
+</div>
+</div><!-- /s3 -->
+
+<!-- 練習③ -->
+<div id="p3" class="sec">
+  <div class="sb"><span class="sn" id="p3sn">0 / 10</span><div class="pw"><div class="pf" id="p3pf" style="width:0%"></div></div>
+  <button onclick="resetP('p3')" style="border:none;background:#eee;border-radius:6px;padding:6px 12px;font-size:12px;cursor:pointer;font-family:inherit">リセット</button></div>
+  <div id="p3q"></div>
+</div>
+
+<!-- ===== ④ 副詞節① 時・逆接 ===== -->
+<div id="s4" class="sec">
+<div class="sh">④ 副詞節①　— 時を表す接続詞・逆接・「～するとすぐに」 —</div>
+
+<div class="card">
+  <div class="card-title">【時を表す接続詞】when / while / before / after / until / once / the moment</div>
+  <div class="pt">
+    時を表す副詞節を作る接続詞をまとめます。副詞節内では<b>未来のことでも現在形</b>を使います。
+  </div>
+  <table class="tbl">
+    <tr><th>接続詞</th><th>意味</th><th>例文</th></tr>
+    <tr>
+      <td><span class="tag-sub">when</span></td><td>～のとき</td>
+      <td>I used to swim <b>when</b> I was a child. <button class="spk" data-t="I used to swim when I was a child." onclick="sp(this.dataset.t)">▶</button><br><span class="ex-ja">子供のとき、よく泳ぎに行ったものだ。</span></td>
+    </tr>
+    <tr>
+      <td><span class="tag-sub">while</span></td><td>～している間<br>（一方で）</td>
+      <td>There was an earthquake <b>while</b> I was sleeping. <button class="spk" data-t="There was an earthquake while I was sleeping." onclick="sp(this.dataset.t)">▶</button><br><span class="ex-ja">私が寝ている間に地震があった。</span></td>
+    </tr>
+    <tr>
+      <td><span class="tag-sub">before</span></td><td>～する前に</td>
+      <td>Go home <b>before</b> it gets dark. <button class="spk" data-t="Go home before it gets dark." onclick="sp(this.dataset.t)">▶</button><br><span class="ex-ja">暗くなる前に家に帰りなさい。</span></td>
+    </tr>
+    <tr>
+      <td><span class="tag-sub">after</span></td><td>～した後に</td>
+      <td>You may play <b>after</b> you finish your homework. <button class="spk" data-t="You may play after you finish your homework." onclick="sp(this.dataset.t)">▶</button><br><span class="ex-ja">宿題をした後にゲームで遊んでいいよ。</span></td>
+    </tr>
+    <tr>
+      <td><span class="tag-sub">until / till</span></td><td>～するまで</td>
+      <td>Wait <b>until</b> he comes back. <button class="spk" data-t="Wait until he comes back." onclick="sp(this.dataset.t)">▶</button><br><span class="ex-ja">彼が戻ってくるまで待ちなさい。</span></td>
+    </tr>
+    <tr>
+      <td><span class="tag-sub">once</span></td><td>いったん～すると</td>
+      <td><b>Once</b> you begin, you'll enjoy it. <button class="spk" data-t="Once you begin, you will enjoy it." onclick="sp(this.dataset.t)">▶</button><br><span class="ex-ja">いったんやり始めると、楽しくなるでしょう。</span></td>
+    </tr>
+    <tr>
+      <td><span class="tag-sub">the moment</span></td><td>～した瞬間に</td>
+      <td><b>The moment</b> he arrived, the bus started. <button class="spk" data-t="The moment he arrived at the station, the bus started." onclick="sp(this.dataset.t)">▶</button><br><span class="ex-ja">彼が到着した瞬間にバスは出発した。</span></td>
+    </tr>
+  </table>
+</div>
+
+<div class="card">
+  <div class="card-title">【It is not until ～ that …】「～してはじめて…する」</div>
+  <div class="pt">
+    <b>It is not until ～ that …</b>「～してはじめて…する」<br>
+    「～するまでは…しない」→「～して初めて…する」という意味です。
+  </div>
+  <div class="ex">
+    <b>It was not until</b> I came home <b>that</b> I found I had lost my <span class="vw" onclick="showVwPop(this,event)" data-w="wallet" data-pos="名詞" data-mean="財布・札入れ" data-kana="ウォレット" data-opts="[&quot;財布&quot;,&quot;かばん&quot;,&quot;鍵&quot;,&quot;パスポート&quot;]">wallet</span>. <button class="spk" data-t="It was not until I came home that I found I had lost my wallet." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">家に帰ってはじめて財布を無くしたのに気付いた。</span>
+  </div>
+  <div class="ex">
+    It is not until we lose our health that we know the <span class="vw" onclick="showVwPop(this,event)" data-w="value" data-pos="名詞" data-mean="価値・重要性" data-kana="バリュー" data-opts="[&quot;価値&quot;,&quot;値段&quot;,&quot;量&quot;,&quot;重さ&quot;]">value</span> of it. <button class="spk" data-t="It is not until we lose our health that we know the value of it." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">健康を失ってはじめてその価値を知る。</span>
+  </div>
+  <div class="kb">
+    💡 <b>It will not be long before ～</b>「間もなく～だろう」<br>
+    It will not be long <b>before</b> she comes here. <button class="spk" data-t="It will not be long before she comes here." onclick="sp(this.dataset.t)">▶</button><br>
+    <span style="font-size:12px;color:#555">彼女は間もなくここに来るでしょう。</span>
+  </div>
+</div>
+<div class="mini-quiz-wrap">
+  <div class="mini-quiz-title">📝 確認⑧ 時を表す接続詞</div>
+  <div id="iq4aq"></div>
+</div>
+
+<div class="card">
+  <div class="card-title">【～するとすぐに】5つの表現　— No sooner の倒置に注意！ —</div>
+  <div class="pt">
+    「～するとすぐに」を表す5つの表現を覚えましょう。<br>
+    <b>No sooner / Hardly / Scarcely が文頭に来ると倒置</b>が起きます。
+  </div>
+  <div class="form-box">
+    As soon as ～ ／ On ～ing<br>
+    No sooner ～ than … （過去完了を使う）<br>
+    Hardly / Scarcely ～ when / before … （過去完了を使う）
+  </div>
+  <div class="ex">
+    <b>As soon as</b> he arrived at the station, it began to rain. <button class="spk" data-t="As soon as he arrived at the station, it began to rain." onclick="sp(this.dataset.t)">▶</button><br>
+    ＝ <b>On</b> arriving at the station, it began to rain.<br>
+    ＝ <b>No sooner had</b> he arrived at the station <b>than</b> it began to rain. <button class="spk" data-t="No sooner had he arrived at the station than it began to rain." onclick="sp(this.dataset.t)">▶</button><br>
+    ＝ <b>Hardly had</b> he arrived at the station <b>when</b> it began to rain. <button class="spk" data-t="Hardly had he arrived at the station when it began to rain." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">彼が駅に着くやいなや雨が降り始めた。</span>
+  </div>
+  <div class="wb">
+    ⚠️ <b>No sooner / Hardly が文頭 → 直後が疑問文の語順（倒置）</b><br>
+    No sooner <b>had he</b> arrived …（had ＋ S の順）<br>
+    Hardly <b>had he</b> arrived …（had ＋ S の順）<br>
+    ✅ No sooner <b>had he</b> arrived than …（過去完了 ＋ 倒置）
+  </div>
+  <div class="ex">
+    <b>Now that</b> you are eighteen, you should know better. <button class="spk" data-t="Now that you are eighteen, you should know better." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">もう君は18才だから、分別をもつべきだ。（Now that ＝ 今や～だから）</span>
+  </div>
+</div>
+<div class="mini-quiz-wrap">
+  <div class="mini-quiz-title">📝 確認⑨ 「～するとすぐに」の表現</div>
+  <div id="iq4bq"></div>
+</div>
+</div><!-- /s4 -->
+
+<!-- 練習④ -->
+<div id="p4" class="sec">
+  <div class="sb"><span class="sn" id="p4sn">0 / 10</span><div class="pw"><div class="pf" id="p4pf" style="width:0%"></div></div>
+  <button onclick="resetP('p4')" style="border:none;background:#eee;border-radius:6px;padding:6px 12px;font-size:12px;cursor:pointer;font-family:inherit">リセット</button></div>
+  <div id="p4q"></div>
+</div>
+
+<!-- ===== ⑤ 副詞節② 目的・結果・条件 ===== -->
+<div id="s5" class="sec">
+<div class="sh">⑤ 副詞節②　— so that / lest / in case / though / as far as —</div>
+
+<div class="card">
+  <div class="card-title">【so that / in order that】「～するように・～するために」</div>
+  <div class="pt">
+    <b>so that S can（may）～</b>「S が～できるように・するために」<br>
+    <b>in order that S can（may）～</b>「S が～できるように」（文語的）<br>
+    <b>, so that ～</b>（コンマあり）：「だから・それで」（結果）
+  </div>
+  <div class="cmp2">
+    <div class="cbox bl">
+      <div class="cbox-ttl">目的「～するように」</div>
+      He studied hard <b>so that</b> he could pass the exam. <button class="spk" data-t="He studied hard so that he could pass the exam." onclick="sp(this.dataset.t)">▶</button><br>
+      <span style="font-size:12px;color:#555">彼は試験に合格するように一生懸命勉強した。</span>
+    </div>
+    <div class="cbox gn">
+      <div class="cbox-ttl">結果「だから・そのために」（コンマあり）</div>
+      He studied hard<b>, so that</b> he passed the exam. <button class="spk" data-t="He studied hard, so that he passed the exam." onclick="sp(this.dataset.t)">▶</button><br>
+      <span style="font-size:12px;color:#555">彼は一生懸命勉強した。そのために試験に合格した。</span>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title">【so ～ that / such ～ that】「あまりに～なので…」</div>
+  <div class="pt">
+    <b>so ＋ 形容詞/副詞 ＋ that …</b>「あまりに～なので…」<br>
+    <b>such ＋ (a) ＋ 形容詞 ＋ 名詞 ＋ that …</b>「あまりに～なので…」<br><br>
+    ⚠️ so の後は<b>形容詞・副詞</b>　such の後は<b>名詞（a ＋ 形 ＋ 名）</b>
+  </div>
+  <div class="cmp2">
+    <div class="cbox bl">
+      <div class="cbox-ttl">so ＋ 形容詞 ＋ that</div>
+      He was <b>so</b> tired <b>that</b> he couldn't run. <button class="spk" data-t="He was so tired that he could not run." onclick="sp(this.dataset.t)">▶</button><br>
+      <span style="font-size:12px;color:#555">彼はあまりに疲れていたので走れなかった。</span><br><br>
+      The question was <b>so</b> difficult <b>that</b> students couldn't answer it. <button class="spk" data-t="The question was so difficult that the students could not answer it." onclick="sp(this.dataset.t)">▶</button><br>
+      <span style="font-size:12px;color:#555">問題はとても難しかったので答えられなかった。</span>
+    </div>
+    <div class="cbox gn">
+      <div class="cbox-ttl">such ＋ a ＋ 形 ＋ 名 ＋ that</div>
+      He is <b>such</b> a kind man <b>that</b> everyone likes him. <button class="spk" data-t="He is such a kind man that everyone likes him." onclick="sp(this.dataset.t)">▶</button><br>
+      <span style="font-size:12px;color:#555">彼はとても親切な男なので誰もが好きだ。</span><br><br>
+      He had <b>such</b> a high <span class="vw" onclick="showVwPop(this,event)" data-w="fever" data-pos="名詞" data-mean="熱・発熱" data-kana="フィーバー" data-opts="[&quot;熱&quot;,&quot;せき&quot;,&quot;頭痛&quot;,&quot;腹痛&quot;]">fever</span> <b>that</b> he nearly died. <button class="spk" data-t="He had such a high fever that he nearly died." onclick="sp(this.dataset.t)">▶</button><br>
+      <span style="font-size:12px;color:#555">彼はかなりの高熱だったのであやうく死ぬところだった。</span>
+    </div>
+  </div>
+  <div class="kb">
+    💡 <b>too ～ to … ＝ so ～ that S can't …</b><br>
+    This problem is <b>too</b> difficult for me <b>to</b> solve.<br>
+    ＝ This problem is <b>so</b> difficult <b>that</b> I <b>can't</b> solve <b>it</b>.<br>
+    <span style="font-size:12px;color:#555">この問題は私にとってあまりに難しいので解くことができない。</span>
+  </div>
+</div>
+<div class="mini-quiz-wrap">
+  <div class="mini-quiz-title">📝 確認⑩ so that / so ～ that / such ～ that</div>
+  <div id="iq5aq"></div>
+</div>
+
+<div class="card">
+  <div class="card-title">【lest / for fear that / in case】「～しないように・～するといけないので」</div>
+  <div class="pt">
+    <b>lest S should ～</b>「S が～しないように」<br>
+    <b>for fear that S should ～</b>「S が～しないように」<br>
+    <b>in case S ～</b>「S が～するといけないので・場合に備えて」
+  </div>
+  <div class="ex">
+    Study hard <b>lest</b> you <b>should</b> fail the exam. <button class="spk" data-t="Study hard lest you should fail the exam." onclick="sp(this.dataset.t)">▶</button><br>
+    ＝ Study hard <b>for fear that</b> you <b>should</b> fail the exam. <button class="spk" data-t="Study hard for fear that you should fail the exam." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">試験で失敗しないように一生懸命勉強しなさい。</span>
+  </div>
+  <div class="ex">
+    Take an <span class="vw" onclick="showVwPop(this,event)" data-w="umbrella" data-pos="名詞" data-mean="傘" data-kana="アンブレラ" data-opts="[&quot;傘&quot;,&quot;コート&quot;,&quot;手袋&quot;,&quot;帽子&quot;]">umbrella</span> <b>in case</b> it rains. <button class="spk" data-t="Take an umbrella in case it rains." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">雨が降るといけないので傘を持っていきなさい。</span>
+  </div>
+  <div class="ex">
+    I'll buy a <span class="vw" onclick="showVwPop(this,event)" data-w="flashlight" data-pos="名詞" data-mean="懐中電灯・フラッシュライト" data-kana="フラッシュライト" data-opts="[&quot;懐中電灯&quot;,&quot;ろうそく&quot;,&quot;マッチ&quot;,&quot;電池&quot;]">flashlight</span> <b>in case</b> there should be a power cut. <button class="spk" data-t="I will buy a flashlight in case there should be a power cut." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">停電になるといけないので、懐中電灯を買うつもりです。</span>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title">【though / even though / even if / whether A or B】逆接・譲歩</div>
+  <div class="pt">
+    <b>though / although</b>「～だけれども」（事実に基づく逆接）<br>
+    <b>even though</b>「～にもかかわらず」（実際に起きていることへの譲歩）<br>
+    <b>even if</b>「たとえ～であるとしても」（事実かどうか不明の仮定）<br>
+    <b>whether A or B</b>「A であろうと B であろうと」
+  </div>
+  <div class="cmp2">
+    <div class="cbox bl">
+      <div class="cbox-ttl">though / although（～だが）</div>
+      <b>Though</b> he is poor, he is happy. <button class="spk" data-t="Though he is poor, he is happy." onclick="sp(this.dataset.t)">▶</button><br>
+      <span style="font-size:12px;color:#555">彼は貧しいが幸せだ。（事実）</span>
+    </div>
+    <div class="cbox gn">
+      <div class="cbox-ttl">even though（～にもかかわらず）</div>
+      <b>Even though</b> it was raining, he went out. <button class="spk" data-t="Even though it was raining, he went out." onclick="sp(this.dataset.t)">▶</button><br>
+      <span style="font-size:12px;color:#555">雨が降っていたにもかかわらず出かけた。（実際に起きた）</span>
+    </div>
+    <div class="cbox yl">
+      <div class="cbox-ttl">even if（たとえ～でも）</div>
+      Never give up <b>even if</b> you make a mistake. <button class="spk" data-t="Never give up even if you make a mistake." onclick="sp(this.dataset.t)">▶</button><br>
+      <span style="font-size:12px;color:#555">たとえ間違いをしてもあきらめてはいけない。（仮定）</span>
+    </div>
+    <div class="cbox rd">
+      <div class="cbox-ttl">whether A or B（AであろうとBであろうと）</div>
+      <b>Whether</b> you like it <b>or not</b>, you must do it. <button class="spk" data-t="Whether you like it or not, you must do it." onclick="sp(this.dataset.t)">▶</button><br>
+      <span style="font-size:12px;color:#555">好きであろうとなかろうと、それをしなければならない。</span>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title">【as / as far as / as long as】「～のように・～する限り」</div>
+  <div class="pt">
+    <b>as</b>「～のように・～の通りに」<br>
+    <b>as far as</b>「（範囲）～する限り・～に関する限り」<br>
+    <b>as long as</b>「（条件・時間）～する限り・～しさえすれば」
+  </div>
+  <div class="ex">
+    Do <b>as</b> you like. <button class="spk" data-t="Do as you like." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">好きなようにしなさい。</span>
+  </div>
+  <div class="ex">
+    <b>As far as</b> I know, he is honest. <button class="spk" data-t="As far as I know, he is honest." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">私の知る限りでは、彼は正直だ。（知識の範囲）</span>
+  </div>
+  <div class="ex">
+    You can watch TV <b>as long as</b> you do your homework first. <button class="spk" data-t="You can watch TV as long as you do your homework first." onclick="sp(this.dataset.t)">▶</button><br>
+    <span class="ex-ja">宿題を早くするなら、テレビを見てよいよ。（条件）</span>
+  </div>
+</div>
+<div class="mini-quiz-wrap">
+  <div class="mini-quiz-title">📝 確認⑪ 目的・逆接・as far as / as long as</div>
+  <div id="iq5bq"></div>
+</div>
+</div><!-- /s5 -->
+
+<!-- 練習⑤ -->
+<div id="p5" class="sec">
+  <div class="sb"><span class="sn" id="p5sn">0 / 14</span><div class="pw"><div class="pf" id="p5pf" style="width:0%"></div></div>
+  <button onclick="resetP('p5')" style="border:none;background:#eee;border-radius:6px;padding:6px 12px;font-size:12px;cursor:pointer;font-family:inherit">リセット</button></div>
+  <div id="p5q"></div>
+</div>
+
+<!-- 単語帳 -->
+<div class="vpop" id="vpop">
+  <div class="vpop-hd"><div><span class="vpop-word" id="vpop-word"></span><span class="vpop-pos" id="vpop-pos"></span></div><button class="vpop-close" onclick="closeVpop()">✕</button></div>
+  <div class="vpop-body"><div class="vpop-mean" id="vpop-mean"></div><div class="vpop-kana" id="vpop-kana"></div>
+    <div class="vpop-btns"><button class="vpop-spk" onclick="vpopSpeak()">🔊 発音を聞く</button><button class="vpop-save" id="vpop-save-btn" onclick="vpopSave()">📖 単語帳へ</button></div>
+    <div class="vpop-saved-lbl" id="vpop-saved-lbl">✓ 単語帳に保存しました</div></div>
+</div>
+<div class="mo" id="mvocab">
+  <div class="mb">
+    <div class="mh"><h2>📚 単語帳</h2><button class="mhc" onclick="closeM('mvocab')">✕</button></div>
+    <div class="mbody">
+      <div style="display:flex;gap:8px;margin-bottom:12px">
+        <button onclick="showVocabList()" style="flex:1;padding:9px;border-radius:8px;border:2px solid #1B3A6B;background:#1B3A6B;color:#fff;font-size:13px;font-family:inherit;cursor:pointer;font-weight:700">📋 単語一覧</button>
+        <button onclick="startVocabTest()" style="flex:1;padding:9px;border-radius:8px;border:2px solid #0097A7;background:#f0faff;color:#0097A7;font-size:13px;font-family:inherit;cursor:pointer;font-weight:700">✏️ 復習テスト</button>
+      </div>
+      <div id="vocab-list-area"></div>
+      <div id="vocab-test-area" style="display:none"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openM(id){document.getElementById(id).classList.add('open');document.body.style.overflow='hidden';}
+function closeM(id){document.getElementById(id).classList.remove('open');document.body.style.overflow='';}
+document.querySelectorAll('.mo').forEach(function(mo){mo.addEventListener('click',function(e){if(e.target===mo)closeM(mo.id);});});
+function confetti(){var cv=document.getElementById('cc');cv.width=window.innerWidth;cv.height=window.innerHeight;cv.style.display='block';var ctx=cv.getContext('2d');var cols=['#f9a825','#0097A7','#1B3A6B','#e53935','#2e7d32','#ff6f00','#7b1fa2','#ff4081'];var ps=[];for(var k=0;k<130;k++){ps.push({x:Math.random()*cv.width,y:-20-Math.random()*180,w:7+Math.random()*9,h:3+Math.random()*5,c:cols[Math.floor(Math.random()*cols.length)],s:2+Math.random()*4,a:Math.random()*360,sp:3-Math.random()*6,d:(Math.random()-.5)*2.5});}var fr=0;function draw(){ctx.clearRect(0,0,cv.width,cv.height);ps.forEach(function(p){ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.a*Math.PI/180);ctx.fillStyle=p.c;ctx.fillRect(-p.w/2,-p.h/2,p.w,p.h);ctx.restore();p.y+=p.s;p.x+=p.d;p.a+=p.sp;});fr++;if(fr<100)requestAnimationFrame(draw);else{ctx.clearRect(0,0,cv.width,cv.height);cv.style.display='none';}}draw();}
+function updS(mid,n,t){var sn=document.getElementById(mid+'sn');var pf=document.getElementById(mid+'pf');if(sn)sn.textContent=n+' / '+t;if(pf)pf.style.width=(n/t*100)+'%';if(n===t&&t>0)confetti();}
+function sp(t){if(!window.speechSynthesis)return;speechSynthesis.cancel();var u=new SpeechSynthesisUtterance(t);u.lang='en-US';u.rate=0.88;speechSynthesis.speak(u);}
+function ss(id,btn){document.querySelectorAll('.sec').forEach(function(s){s.classList.remove('active');});document.querySelectorAll('.nb,.pb').forEach(function(b){b.classList.remove('on');});document.querySelectorAll('.pair').forEach(function(p){p.classList.remove('active-pair');});document.getElementById(id).classList.add('active');btn.classList.add('on');if(btn.parentElement&&btn.parentElement.classList.contains('pair')){btn.parentElement.classList.add('active-pair');}}
+function sh(n){return '<button class="spk" onclick="sp(this.dataset.t)" data-t="'+n.replace(/"/g,'&quot;')+'">▶</button>';}
+function ub(u){return u?'<span class="ub">'+u+'</span>':'';}
+function iC(id){var data=window['c'+id],total=data.length,score=0,done=new Array(total).fill(false);updS(id,0,total);var c=document.getElementById(id+'q');c.innerHTML='';data.forEach(function(d,i){var div=document.createElement('div');div.className='q-box';div.innerHTML='<div class="q-hd"><span class="q-num">'+(i+1)+'</span><span class="q-txt"><b>'+d.q+'</b>'+ub(d.u)+sh(d.s)+'</span></div>'+(d.j?'<div style="font-size:13px;color:#555;margin-bottom:8px">'+d.j+'</div>':'')+(d.h?'<span class="hint">'+d.h+'</span>':'')+'<div id="'+id+'ch'+i+'"></div><div class="ep" id="'+id+'ep'+i+'">📝 解説：'+d.e+'</div>';c.appendChild(div);d.c.forEach(function(ch,ci){var btn=document.createElement('button');btn.className='cb';btn.textContent=ch;btn.onclick=function(){if(done[i])return;done[i]=true;div.querySelectorAll('.cb').forEach(function(b,bi){b.classList.add('dis');if(bi===d.a)b.classList.add('ca');else if(bi===ci&&ci!==d.a)b.classList.add('wa');});document.getElementById(id+'ep'+i).classList.add('show');if(ci===d.a){score++;updS(id,score,total);}};document.getElementById(id+'ch'+i).appendChild(btn);});});}
+function resetP(id){iC(id);}
+var vocabDB={},savedWords={},currentVword=null;
+function showVwPop(el,ev){
+  if(ev)ev.stopPropagation();
+  var w=el.dataset.w,pos=el.dataset.pos,mean=el.dataset.mean,kana=el.dataset.kana,opts=JSON.parse(el.dataset.opts);
+  vocabDB[w]={pos:pos,mean:mean,kana:kana,opts:opts};currentVword=w;
+  document.getElementById('vpop-word').textContent=w;
+  document.getElementById('vpop-pos').textContent=pos;
+  document.getElementById('vpop-mean').textContent=mean;
+  document.getElementById('vpop-kana').textContent='発音：'+kana;
+  var saveBtn=document.getElementById('vpop-save-btn');
+  if(savedWords[w]){saveBtn.textContent='✓ 保存済み';saveBtn.className='vpop-save saved';document.getElementById('vpop-saved-lbl').className='vpop-saved-lbl show';}
+  else{saveBtn.textContent='📖 単語帳へ';saveBtn.className='vpop-save';document.getElementById('vpop-saved-lbl').className='vpop-saved-lbl';}
+  var pop=document.getElementById('vpop');pop.className='vpop show';
+  var rect=el.getBoundingClientRect();
+  var top=rect.bottom+6,left=rect.left,pw=260;
+  if(left+pw>window.innerWidth-8)left=window.innerWidth-pw-8;
+  if(top+160>window.innerHeight)top=rect.top-170;
+  pop.style.top=top+'px';pop.style.left=left+'px';
+}
+function closeVpop(){document.getElementById('vpop').className='vpop';currentVword=null;}
+document.addEventListener('click',function(e){var pop=document.getElementById('vpop');if(pop.classList.contains('show')&&!pop.contains(e.target))closeVpop();});
+function vpopSpeak(){if(currentVword)sp(currentVword);}
+function vpopSave(){if(!currentVword)return;var w=currentVword;if(!savedWords[w]){savedWords[w]=vocabDB[w];updateVocabBadge();document.getElementById('vpop-save-btn').textContent='✓ 保存済み';document.getElementById('vpop-save-btn').className='vpop-save saved';document.getElementById('vpop-saved-lbl').className='vpop-saved-lbl show';}}
+function updateVocabBadge(){var n=Object.keys(savedWords).length;var badge=document.getElementById('vocab-badge');badge.textContent=n;badge.className=n>0?'vocab-badge show':'vocab-badge';}
+var origOpenM=openM;openM=function(id){origOpenM(id);if(id==='mvocab')showVocabList();};
+function showVocabList(){document.getElementById('vocab-list-area').style.display='block';document.getElementById('vocab-test-area').style.display='none';renderVocabList();}
+function renderVocabList(){var area=document.getElementById('vocab-list-area');var words=Object.keys(savedWords);if(words.length===0){area.innerHTML='<div class="vbook-empty">📖 まだ単語が保存されていません。</div>';return;}var html='<div style="font-size:12px;color:#888;margin-bottom:8px">保存済み：'+words.length+'語</div>';words.forEach(function(w){var v=savedWords[w];html+='<div class="vcard"><span class="vcard-word">'+w+'</span><span class="vcard-mean">'+v.mean+'</span><button class="vcard-del" onclick="removeWord(\''+w+'\')">覚えた ✓</button></div>';});area.innerHTML=html;}
+function removeWord(w){delete savedWords[w];updateVocabBadge();renderVocabList();}
+var testQueue=[],testIdx=0,testScore=0;
+function startVocabTest(){document.getElementById('vocab-list-area').style.display='none';document.getElementById('vocab-test-area').style.display='block';renderVocabTest();}
+function renderVocabTest(){var area=document.getElementById('vocab-test-area');var words=Object.keys(savedWords);if(words.length<1){area.innerHTML='<div class="vbook-empty">単語が保存されていません。</div>';return;}testQueue=words.slice().sort(function(){return Math.random()-.5;});testIdx=0;testScore=0;renderTestQuestion(area);}
+function renderTestQuestion(area){if(testIdx>=testQueue.length){area.innerHTML='<div style="text-align:center;padding:24px"><div style="font-size:40px;margin-bottom:12px">🎉</div><div style="font-size:18px;font-weight:700;color:#1B3A6B;margin-bottom:8px">テスト完了！</div><div style="font-size:14px;color:#555;margin-bottom:16px">正解：'+testScore+' / '+testQueue.length+'問</div><div style="display:flex;gap:8px;justify-content:center"><button onclick="renderVocabTest()" style="padding:10px 20px;border-radius:8px;border:none;background:#1B3A6B;color:#fff;font-size:14px;font-family:inherit;cursor:pointer">もう一度</button><button onclick="showVocabList()" style="padding:10px 20px;border-radius:8px;border:1.5px solid #ccd;background:#fff;color:#555;font-size:14px;font-family:inherit;cursor:pointer">単語一覧へ</button></div></div>';return;}var w=testQueue[testIdx];var v=savedWords[w];if(!v){testIdx++;renderTestQuestion(area);return;}var opts=v.opts.slice().sort(function(){return Math.random()-.5;});var html='<div style="text-align:right;font-size:12px;color:#888;margin-bottom:8px">'+(testIdx+1)+' / '+testQueue.length+'</div><div class="vtest-q">'+w+'</div>';opts.forEach(function(opt){html+='<button class="vtest-opt" onclick="checkTestAns(this,\''+w+'\',\''+opt.replace(/'/g,'')+'\')">'+opt+'</button>';});html+='<div id="vtest-res"></div>';area.innerHTML=html;}
+function checkTestAns(btn,word,selected){var v=savedWords[word];if(!v)return;var correct=v.mean;var area=document.getElementById('vocab-test-area');area.querySelectorAll('.vtest-opt').forEach(function(b){b.classList.add('dis');if(b.textContent===correct)b.classList.add('ca');else if(b===btn&&selected!==correct)b.classList.add('wa');});var res=document.getElementById('vtest-res');if(selected===correct){testScore++;res.innerHTML='<div style="color:#2e7d32;font-weight:700;padding:8px">✓ 正解！</div>';}else{res.innerHTML='<div style="color:#e53935;font-weight:700;padding:8px">✗ 不正解　正解：'+correct+'</div>';}testIdx++;setTimeout(function(){renderTestQuestion(area);},1200);}
+
+/* ===== 確認問題データ ===== */
+window.ciq1a=[
+  {q:'「私は頭が痛かった。それで早く寝た。」の（　）に入る接続詞は？<br>I had a headache, ( ) I went to bed early.',s:'I had a headache, so I went to bed early.',j:'',a:2,c:['and','but','so','for'],h:'それで = so',e:'「それで・だから」→ <b>so</b>（等位接続詞）'},
+  {q:'「彼は恐ろしいと感じなかった。というのも勇敢な男だから。」<br>He felt no fear, ( ) he was a brave man.',s:'He felt no fear, for he was a brave man.',j:'',a:3,c:['and','but','so','for'],h:'というのも = for（文末・節間に置く）',e:'「というのも～だから」→ <b>for</b>（文頭に置けないことに注意）'},
+  {q:'「雨が降っていたが、彼は出かけた。」<br>It was raining, ( ) he went out.',s:'It was raining, yet he went out.',j:'',a:1,c:['so','yet','for','and'],h:'～だが = yet（= but）',e:'「しかし・だが」→ <b>yet</b>（＝ but の意味）'},
+];
+window.ciq1b=[
+  {q:'Work hard, ( ) you will succeed.',s:'Work hard, and you will succeed.',j:'一生懸命働きなさい。そうすれば成功するでしょう。',a:0,c:['and','or','but','so'],h:'命令文 ＋ and = そうすれば',e:'命令文 ＋ <b>and</b>「そうすれば」（＝ If you work hard, you will succeed.）'},
+  {q:'Hurry up, ( ) you\'ll miss the train.',s:'Hurry up, or you will miss the train.',j:'急ぎなさい、さもないと列車に乗り遅れるよ。',a:1,c:['and','or','but','so'],h:'命令文 ＋ or = さもないと',e:'命令文 ＋ <b>or</b>「さもないと」（＝ If you don\'t hurry, you\'ll miss the train.）'},
+  {q:'「急ぎなさい、さもないと遅刻するぞ。」の If 文への書き換えは？',s:'Unless you hurry up, you will be late for school.',j:'Hurry up, or you\'ll be late for school.',a:1,c:['If you hurry up, you will be late.','If you don\'t hurry up, you will be late.','Unless you hurry, you won\'t be late.','As long as you hurry, you will be late.'],h:'命令文 ＋ or → If S don\'t ～, S will …',e:'命令文 ＋ or ＝ <b>If you don\'t</b> hurry up, you will be late.'},
+];
+window.ciq1c=[
+  {q:'He is ( ) a scholar but a teacher.',s:'He is not a scholar but a teacher.',j:'彼は学者ではなくて教師だ。',a:3,c:['either','neither','both','not'],h:'A ではなく B = not A but B',e:'「A ではなく B」→ <b>not A but B</b>'},
+  {q:'He speaks ( ) only English but also French.',s:'He speaks not only English but also French.',j:'彼は英語ばかりでなくフランス語も話す。',a:2,c:['either','neither','both','not'],h:'A ばかりでなく B も = not only A but also B',e:'「A ばかりでなく B も」→ <b>not only A but also B</b>'},
+  {q:'「確かに彼は若いが、慎重だ。」の書き換えは？',s:'It is true that he is young, but he is prudent.',j:'Indeed he is young, but he is prudent.',a:2,c:['Although he is young, he is prudent.','Even though he is young, he is prudent.','It is true that he is young, but he is prudent.','However young he is, he is prudent.'],h:'Indeed ～, but … = It is true that ～, but …',e:'<b>It is true that ～, but …</b> ＝ Indeed ～, but …「確かに～だが…」'},
+];
+window.ciq2a=[
+  {q:'Both you and I ( ) right.',s:'Both you and I are right.',j:'あなたと私の両方とも正しい。',a:2,c:['am','is','are','were'],h:'both A and B → 複数扱い（are）',e:'<b>both A and B</b> → 常に複数扱い → <b>are</b>'},
+  {q:'Either you or I ( ) right.',s:'Either you or I am right.',j:'あなたか私のどちらかが正しい。',a:0,c:['am','is','are','were'],h:'either A or B → B（I）に一致 → am',e:'<b>either A or B</b> → B（I）に一致 → <b>am</b>'},
+  {q:'Neither he nor I ( ) wrong.',s:'Neither he nor I am wrong.',j:'彼も私も間違っていない。',a:0,c:['am','is','are','was'],h:'neither A nor B → B（I）に一致 → am',e:'<b>neither A nor B</b> → B（I）に一致 → <b>am</b>'},
+  {q:'Not only you but also I ( ) right.',s:'Not only you but also I am right.',j:'あなたばかりでなく、私も正しい。',a:0,c:['am','is','are','were'],h:'not only A but also B → B（I）に一致 → am',e:'<b>not only A but also B</b> → B（I）に一致 → <b>am</b>'},
+];
+window.ciq2b=[
+  {q:'She is not only beautiful but also ( ).',s:'She is not only beautiful but also intelligent.',j:'彼女は美しいだけでなく聡明です。',a:2,c:['intelligently','intelligence','intelligent','intellect'],h:'not only 形容詞 but also 形容詞',e:'not only <b>beautiful</b> but also → 同じ品詞（形容詞）→ <b>intelligent</b>'},
+  {q:'「彼女も私もこの学校の生徒です。」as well as を使った文は？<br>Both she and I are students in this school.',s:'She as well as I is a student in this school.',j:'',a:1,c:['She as well as I are a student.','She as well as I is a student.','I as well as she is a student.','She as well as me is a student.'],h:'B as well as A → B（She）に一致 → is',e:'<b>She as well as I</b>：動詞は She（B）に一致 → <b>is</b>'},
+  {q:'He will ( ) eat nor drink.',s:'He will neither eat nor drink.',j:'彼は食べることも飲むこともしないだろう。',a:1,c:['either','neither','both','not only'],h:'～も～もしない = neither A nor B',e:'「～も～もしない」→ <b>neither A nor B</b>'},
+];
+window.ciq3a=[
+  {q:'It is true ( ) Tom passed the entrance exam.',s:'It is true that Tom passed the entrance exam.',j:'トムが入学試験に合格したことは事実だ。',a:2,c:['which','what','that','whether'],h:'It is ～ that … の名詞節 → that',e:'It is true <b>that</b> ～（that 節が主語の働き）'},
+  {q:'The fact is ( ) the earth goes around the sun.',s:'The fact is that the earth goes around the sun.',j:'地球が太陽のまわりを回っていることは事実だ。',a:2,c:['which','what','that','whether'],h:'補語の that 節 → that',e:'The fact is <b>that</b> ～（that 節が補語）'},
+  {q:'I can\'t believe ( ) he tells a lie.',s:"I can't believe that he tells a lie.",j:'私には彼が嘘を言うなんて信じられない。',a:2,c:['which','what','that','whether'],h:'目的語の that 節 → that',e:'I can\'t believe <b>that</b> ～（that 節が目的語）'},
+];
+window.ciq3b=[
+  {q:'It is unknown ( ) there is life on the planet.（主語節）',s:'It is unknown whether there is life on the planet.',j:'その惑星に生命がいるかどうかは分かっていない。',a:1,c:['if','whether','that','what'],h:'主語節 → whether のみ可（if は不可）',e:'主語節 → <b>whether</b> のみ（if は目的語節のみ）'},
+  {q:'The question is ( ) we should go at once.（補語節）',s:'The question is whether we should go at once.',j:'問題は私たちがすぐ行くべきかどうかだ。',a:1,c:['if','whether','that','what'],h:'補語節 → whether のみ可（if は不可）',e:'補語節 → <b>whether</b> のみ（if は不可）'},
+  {q:'She asked us ( ) we wanted something cold.（目的語節）',s:'She asked us whether we wanted something cold.',j:'彼女は何か冷たいものが欲しいかどうかを尋ねた。',a:2,c:['that','whether only','whether（if も可）','what'],h:'目的語節 → whether も if も可',e:'目的語節 → <b>whether</b>（<b>if</b> も可）'},
+];
+window.ciq4a=[
+  {q:'I used to swim ( ) I was a child.',s:'I used to swim when I was a child.',j:'子供のとき、よく泳ぎに行ったものだ。',a:0,c:['when','while','before','until'],h:'～のとき = when',e:'「～のとき」→ <b>when</b>'},
+  {q:'You must come back ( ) it gets dark.',s:'You must come back before it gets dark.',j:'暗くなる前に帰ってきなさい。',a:2,c:['while','when','before','after'],h:'～する前に = before',e:'「～する前に」→ <b>before</b>'},
+  {q:'We must wait ( ) he comes back.',s:'We must wait until he comes back.',j:'彼が戻ってくるまで待たなければならない。',a:3,c:['when','while','before','until'],h:'～するまで = until（till）',e:'「～するまで」→ <b>until</b>（= till）'},
+  {q:'It was not ( ) I came home that I found I had lost my wallet.',s:'It was not until I came home that I found I had lost my wallet.',j:'家に帰ってはじめて財布を無くしたのに気付いた。',a:1,c:['before','until','when','while'],h:'It is not until ～ that … ＝ ～してはじめて',e:'<b>It is not until ～ that …</b>「～してはじめて…する」→ <b>until</b>'},
+];
+window.ciq4b=[
+  {q:'As soon as he arrived, it began to rain. → No sooner ～ の形は？',s:'No sooner had he arrived than it began to rain.',j:'',a:2,c:['No sooner he had arrived than','No sooner he arrived than','No sooner had he arrived than','No sooner did he arrive than'],h:'No sooner ～ than（文頭 → 倒置・過去完了）',e:'<b>No sooner had</b> S ＋ pp <b>than</b> …（倒置形・過去完了を使う）'},
+  {q:'( ) you begin, you\'ll enjoy it.',s:'Once you begin, you will enjoy it.',j:'いったんやり始めると、楽しくなるでしょう。',a:1,c:['When','Once','While','Until'],h:'いったん～すると = once',e:'「いったん～すると」→ <b>once</b>'},
+  {q:'( ) you are eighteen, you should know better.',s:'Now that you are eighteen, you should know better.',j:'もう18才だから、分別をもつべきだ。',a:2,c:['So that','Now that','After that','In order that'],h:'今や～だから = now that',e:'「今や～だから」→ <b>now that</b>'},
+];
+window.ciq5a=[
+  {q:'He studied hard so that he ( ) pass the exam.（目的）',s:'He studied hard so that he could pass the exam.',j:'彼は試験に合格するように一生懸命勉強した。',a:1,c:['will','could','would have','should have'],h:'so that S can / could（目的）',e:'目的の so that → so that S <b>could</b>（過去の文では could）'},
+  {q:'He was ( ) tired that he couldn\'t run.',s:'He was so tired that he could not run.',j:'彼はあまりに疲れていたので走れなかった。',a:1,c:['such','so','too','very'],h:'so ＋ 形容詞 ＋ that = あまりに～なので',e:'<b>so</b> ＋ 形容詞 ＋ <b>that</b>（such の後は名詞）'},
+  {q:'The girl got ( ) a shock that she dropped the dish.',s:'The girl got such a shock that she dropped the dish.',j:'その女の子はあまりショックを受けて皿を落としてしまった。',a:2,c:['so','that','such','so that'],h:'such ＋ a ＋ 名詞 ＋ that',e:'<b>such a</b> ＋ 名詞 ＋ <b>that</b>（shock は名詞）'},
+  {q:'This problem is too difficult for me to solve.<br>＝ This problem is ( ) difficult ( ) I can\'t solve ( ).',s:'This problem is so difficult that I cannot solve it.',j:'',a:0,c:['so / that / it','such / that / it','so / as / it','too / that / it'],h:'too ～ to … = so ～ that S can\'t …（最後に it を忘れずに）',e:'too ～ to … ＝ <b>so ～ that</b> S can\'t … <b>it</b>（it を忘れずに！）'},
+];
+window.ciq5b=[
+  {q:'Study hard ( ) you should fail the exam.',s:'Study hard lest you should fail the exam.',j:'試験で失敗しないように一生懸命勉強しなさい。',a:0,c:['lest','so that','in order that','although'],h:'～しないように = lest S should',e:'「～しないように」→ <b>lest S should</b>（＝ for fear that S should）'},
+  {q:'Take an umbrella ( ) it rains.',s:'Take an umbrella in case it rains.',j:'雨が降るといけないので傘を持っていきなさい。',a:1,c:['so that','in case','lest','unless'],h:'～するといけないので = in case',e:'「～するといけないので」→ <b>in case</b>'},
+  {q:'( ) he is poor, he is happy.',s:'Though he is poor, he is happy.',j:'彼は貧しいが幸せだ。',a:0,c:['Though','Even though','Even if','Whether'],h:'～だけれども（事実）= though / although',e:'「～だが」事実ベース → <b>Though</b>（= Although）'},
+  {q:'( ) it was raining, he went out.',s:'Even though it was raining, he went out.',j:'雨が降っていたにもかかわらず、彼は出かけた。',a:1,c:['Though','Even though','Even if','Whether'],h:'実際に起きていることへの譲歩 = even though',e:'実際に起きたことへの強い譲歩 → <b>Even though</b>'},
+];
+
+/* ===== 練習問題データ ===== */
+window.cp1=[
+  {q:'Work hard, ( ) you will succeed.',s:'Work hard, and you will succeed.',j:'一生懸命働きなさい。そうすれば成功するでしょう。',a:0,c:['and','or','but','so'],h:'命令文 ＋ and = そうすれば',e:'命令文 ＋ <b>and</b>「そうすれば」'},
+  {q:'Hurry up, ( ) you\'ll miss the train.',s:'Hurry up, or you will miss the train.',j:'急ぎなさい、さもないと列車に乗り遅れるよ。',a:1,c:['and','or','but','so'],h:'命令文 ＋ or = さもないと',e:'命令文 ＋ <b>or</b>「さもないと」'},
+  {q:'I had a headache, ( ) I went to bed early.',s:'I had a headache, so I went to bed early.',j:'頭が痛かった。それで早く寝た。',a:2,c:['and','but','so','for'],h:'それで = so',e:'「それで」→ <b>so</b>'},
+  {q:'He felt no fear, ( ) he was a brave man.',s:'He felt no fear, for he was a brave man.',j:'恐ろしいと感じなかった。というのも勇敢だから。',a:3,c:['and','but','so','for'],h:'というのも = for（節と節の間に）',e:'「というのも～だから」→ <b>for</b>（文頭不可）'},
+  {q:'It was raining, ( ) he went out.',s:'It was raining, yet he went out.',j:'雨が降っていたが、彼は出かけた。',a:1,c:['so','yet','for','and'],h:'～だが = yet（= but）',e:'「しかし・だが」→ <b>yet</b>'},
+  {q:'He is ( ) a scholar but a teacher.',s:'He is not a scholar but a teacher.',j:'彼は学者ではなくて教師だ。',a:3,c:['either','neither','both','not'],h:'A ではなく B = not A but B',e:'「A ではなく B」→ <b>not</b> A <b>but</b> B'},
+  {q:'It is true ( ) he is old, but he is still strong.',s:'It is true that he is old, but he is still strong.',j:'確かに彼は年老いているが、まだまだ元気だ。',a:2,c:['which','what','that','whether'],h:'It is true that ～, but …',e:'<b>It is true that ～, but …</b>「確かに～だが…」→ <b>that</b>'},
+  {q:'He speaks not only English ( ) also French.',s:'He speaks not only English but also French.',j:'英語ばかりでなくフランス語も話す。',a:3,c:['and','or','nor','but'],h:'not only A but also B',e:'<b>not only A but also B</b>「A ばかりでなく B も」→ <b>but</b>'},
+  {q:'He is ( ) by everybody, for he is kind and honest.',s:'He is respected by everybody, for he is kind and honest.',j:'彼はだれからも尊敬されている。というのも親切で正直だから。',a:1,c:['respected','respecting','respect','to respect'],h:'be respected（尊敬される）',e:'「尊敬されている」→ be <b>respected</b>（受動態）'},
+  {q:'Work hard, ( ) you\'ll fail the examination.',s:"Work hard, or you'll fail the examination.",j:'勉強しなさい。さもないと試験で失敗するよ。',a:1,c:['and','or','but','so'],h:'命令文 ＋ or = さもないと',e:'命令文 ＋ <b>or</b>「さもないと」'},
+];
+window.cp2=[
+  {q:'Both you and I ( ) right.',s:'Both you and I are right.',j:'あなたと私の両方とも正しい。',a:2,c:['am','is','are','was'],h:'both A and B → 複数（are）',e:'<b>both A and B</b> → 複数扱い → <b>are</b>'},
+  {q:'Either you or I ( ) right.',s:'Either you or I am right.',j:'あなたか私のどちらかが正しい。',a:0,c:['am','is','are','were'],h:'either A or B → B に一致',e:'<b>either A or B</b> → B（I）に一致 → <b>am</b>'},
+  {q:'Neither he nor I ( ) wrong.',s:'Neither he nor I am wrong.',j:'彼も私も間違っていない。',a:0,c:['am','is','are','was'],h:'neither A nor B → B に一致',e:'<b>neither A nor B</b> → B（I）に一致 → <b>am</b>'},
+  {q:'Not only you but also I ( ) right.',s:'Not only you but also I am right.',j:'あなたばかりでなく、私も正しい。',a:0,c:['am','is','are','were'],h:'not only A but also B → B に一致',e:'<b>not only A but also B</b> → B（I）に一致 → <b>am</b>'},
+  {q:'She ( ) not only beautiful but also intelligent.',s:'She is not only beautiful but also intelligent.',j:'彼女は美しいだけでなく聡明です。',a:1,c:['are','is','am','be'],h:'not only A but also B（She = B → is）',e:'B（She）に一致 → <b>is</b>'},
+  {q:'She as well as I ( ) a student.',s:'She as well as I is a student.',j:'彼女も私もこの学校の生徒です。',a:1,c:['are','is','am','were'],h:'B as well as A → B（She）に一致 → is',e:'<b>She as well as I</b>：B（She）に一致 → <b>is</b>'},
+  {q:'He will ( ) eat nor drink.',s:'He will neither eat nor drink.',j:'彼は食べることも飲むこともしないだろう。',a:1,c:['either','neither','both','not only'],h:'～も～もしない = neither A nor B',e:'「～も～もしない」→ <b>neither</b> A nor B'},
+  {q:'Either you or she ( ) to blame.',s:'Either you or she is to blame.',j:'あなたか彼女のどちらかに責任がある。',a:1,c:['am','is','are','were'],h:'either A or B → B（she）に一致 → is',e:'<b>either A or B</b> → B（she）に一致 → <b>is</b>'},
+  {q:'Tom was ( ) only handsome but also intelligent.',s:'Tom was not only handsome but also intelligent.',j:'トムはハンサムばかりではなく賢かった。',a:3,c:['either','neither','both','not'],h:'A ばかりでなく B も = not only A but also B',e:'<b>not only A but also B</b>「A ばかりでなく B も」→ <b>not</b>'},
+  {q:'Neither A nor B 構文：Neither you nor he ( ) right.',s:'Neither you nor he is right.',j:'あなたも彼も正しくない。',a:1,c:['am','is','are','were'],h:'neither A nor B → B（he）に一致 → is',e:'<b>neither A nor B</b> → B（he）に一致 → <b>is</b>'},
+];
+window.cp3=[
+  {q:'It is true ( ) Tom passed the entrance exam.',s:'It is true that Tom passed the entrance exam.',j:'トムが入学試験に合格したことは事実だ。',a:2,c:['which','what','that','whether'],h:'It is ～ that 節（名詞節・主語）',e:'It is true <b>that</b> ～（that 節が主語）'},
+  {q:'The fact is ( ) the earth goes around the sun.',s:'The fact is that the earth goes around the sun.',j:'地球が太陽のまわりを回っていることは事実だ。',a:2,c:['which','what','that','whether'],h:'S is that ～（補語の that 節）',e:'The fact is <b>that</b> ～（that 節が補語）'},
+  {q:'It is unknown ( ) there is life on the planet.',s:'It is unknown whether there is life on the planet.',j:'その惑星に生命がいるかどうかは分かっていない。（主語節）',a:1,c:['if','whether','that','what'],h:'主語節 → whether のみ（if 不可）',e:'主語節 → <b>whether</b>（if は主語節に使えない）'},
+  {q:'The question is ( ) we should go at once.',s:'The question is whether we should go at once.',j:'問題は私たちがすぐ行くべきかどうかだ。（補語節）',a:1,c:['if','whether','that','what'],h:'補語節 → whether のみ（if 不可）',e:'補語節 → <b>whether</b>（if は不可）'},
+  {q:'She asked us ( ) we wanted something cold.',s:'She asked us whether we wanted something cold.',j:'彼女は何か冷たいものが欲しいかどうかを尋ねた。（目的語節）',a:2,c:['that','if only','whether（if も可）','what'],h:'目的語節 → whether も if も可',e:'目的語節 → <b>whether</b>（<b>if</b> も可）'},
+  {q:'The trouble is ( ) I don\'t have enough time.',s:"The trouble is that I don't have enough time.",j:'困ったことに私には充分な時間がありません。',a:2,c:['which','what','that','whether'],h:'補語の that 節',e:'The trouble is <b>that</b> ～（補語）'},
+  {q:'I\'m not sure ( ) he will come late or not.',s:"I'm not sure if he will come late or not.",j:'彼が遅れてくるかどうかはわからない。',a:2,c:['what','whom','if','which'],h:'～かどうか（目的語節）= whether / if',e:'「～かどうか」目的語節 → <b>if</b>（whether も可）'},
+  {q:'It is ( ) that he is a great scientist.',s:'It is said that he is a great scientist.',j:'彼は偉大な科学者だと言われている。',a:1,c:['saying','said','say','to say'],h:'It is said that ～（受動態）',e:'「～と言われている」→ It is <b>said</b> that ～'},
+  {q:'( ) is often the case with scientists, he has no interest in clothes.',s:'As is often the case with scientists, he has no interest in clothes.',j:'科学者にはよくあることだが、彼は服装に興味がない。',a:0,c:['As','Which','If','That'],h:'As is often the case with ～「～にはよくあることだが」',e:'<b>As is often the case with ～</b>（関係代名詞 as の非制限用法）'},
+  {q:'It was ( ) that he loved her.',s:'It was certain that he loved her.',j:'彼が彼女を愛していることは明らかだった。',a:1,c:['true','certain','fact','problem'],h:'It is certain that ～「～なことは確かだ」',e:'It was <b>certain</b> that ～「～は確かだった」'},
+];
+window.cp4=[
+  {q:'I used to swim ( ) I was a child.',s:'I used to swim when I was a child.',j:'子供のとき、よく泳ぎに行ったものだ。',a:0,c:['when','while','before','until'],h:'～のとき = when',e:'「～のとき」→ <b>when</b>'},
+  {q:'There was an earthquake ( ) I was sleeping.',s:'There was an earthquake while I was sleeping.',j:'私が寝ている間に地震があった。',a:1,c:['when','while','before','after'],h:'～している間に = while',e:'「～している間に」→ <b>while</b>'},
+  {q:'You must go home ( ) it gets dark.',s:'You must go home before it gets dark.',j:'暗くなる前に家に帰りなさい。',a:2,c:['when','while','before','after'],h:'～する前に = before',e:'「～する前に」→ <b>before</b>'},
+  {q:'We must wait ( ) he comes back.',s:'We must wait until he comes back.',j:'彼が戻ってくるまで待たなければならない。',a:3,c:['when','while','before','until'],h:'～するまで = until（till）',e:'「～するまで」→ <b>until</b>'},
+  {q:'( ) you begin, you\'ll enjoy it.',s:'Once you begin, you will enjoy it.',j:'いったんやり始めると、楽しくなるでしょう。',a:0,c:['Once','When','While','Until'],h:'いったん～すると = once',e:'「いったん～すると」→ <b>once</b>'},
+  {q:'It will not be long ( ) she comes here.',s:'It will not be long before she comes here.',j:'彼女は間もなくここに来るでしょう。',a:3,c:['when','while','after','before'],h:'間もなく～だろう = It will not be long before',e:'<b>It will not be long before ～</b>「間もなく～だろう」→ <b>before</b>'},
+  {q:'I had ( ) reached the school when the bell rang.',s:'I had hardly reached the school when the bell rang.',j:'学校に着くか着かないうちにベルが鳴った。',a:0,c:['hardly','sooner','when','once'],h:'～するか～しないうちに = hardly ～ when',e:'「～するか～しないうちに」→ <b>hardly</b> ～ when（過去完了を使う）'},
+  {q:'No sooner had he arrived at the station ( ) it began to rain.',s:'No sooner had he arrived at the station than it began to rain.',j:'駅に着くやいなや雨が降り始めた。',a:3,c:['when','before','while','than'],h:'No sooner ～ than …（過去完了）',e:'<b>No sooner</b> ～ <b>than</b> …（than を使う。過去完了形）'},
+  {q:'( ) you are a high school student, you ought to know better.',s:'Now that you are a high school student, you ought to know better.',j:'今やあなたは高校生なので、分別があるべきだ。',a:1,c:['So that','Now that','After that','In order that'],h:'今や～だから = now that',e:'「今や～だから」→ <b>now that</b>'},
+  {q:'He studied fine arts ( ) he was in France.',s:'He studied fine arts while he was in France.',j:'彼はフランスにいる間に美術を勉強した。',a:3,c:['during','if','among','while'],h:'～している間に = while（節が続く）',e:'後ろに S＋V の節 → <b>while</b>（during は名詞の前）'},
+];
+window.cp5=[
+  {q:'He studied hard ( ) he could pass the exam.（目的）',s:'He studied hard so that he could pass the exam.',j:'試験に合格するように一生懸命勉強した。',a:1,c:['so as','so that','such that','in order'],h:'～するように（目的）= so that S can',e:'「目的」→ <b>so that</b> S could'},
+  {q:'The girl got ( ) a shock that she dropped the dish.',s:'The girl got such a shock that she dropped the dish.',j:'あまりショックを受けて皿を落としてしまった。',a:2,c:['so','that','such','so that'],h:'such ＋ a ＋ 名詞 ＋ that',e:'<b>such a</b> 名詞 <b>that</b>（shock は名詞）'},
+  {q:'He was so tired ( ) he couldn\'t run.',s:'He was so tired that he could not run.',j:'あまりに疲れていたので走れなかった。',a:1,c:['which','that','what','as'],h:'so ＋ 形容詞 ＋ that',e:'<b>so</b> ＋ 形容詞 ＋ <b>that</b>'},
+  {q:'Study hard ( ) you should fail the exam.',s:'Study hard lest you should fail the exam.',j:'失敗しないように一生懸命勉強しなさい。',a:0,c:['lest','so that','in order that','although'],h:'～しないように = lest S should',e:'「～しないように」→ <b>lest</b> S should'},
+  {q:'Take an umbrella ( ) it rains.',s:'Take an umbrella in case it rains.',j:'雨が降るといけないので傘を持っていきなさい。',a:1,c:['so that','in case','lest','unless'],h:'～するといけないので = in case',e:'「～するといけないので」→ <b>in case</b>'},
+  {q:'( ) he is poor, he is happy.',s:'Though he is poor, he is happy.',j:'彼は貧しいが幸せだ。',a:0,c:['Though','Even though','Even if','Whether'],h:'事実ベースの逆接 = though / although',e:'事実ベースの逆接 → <b>Though</b>（= Although）'},
+  {q:'( ) it was raining, he went out.',s:'Even though it was raining, he went out.',j:'雨が降っていたにもかかわらず、彼は出かけた。',a:1,c:['Though','Even though','Even if','Whether'],h:'実際に起きたことへの強い譲歩 = even though',e:'「実際のこと + 強い譲歩」→ <b>Even though</b>'},
+  {q:'( ) you like it or not, you must do it.',s:'Whether you like it or not, you must do it.',j:'好きであろうとなかろうと、しなければならない。',a:2,c:['Although','However','Whether','Even if'],h:'A であろうと B であろうと = whether A or B',e:'「A であろうと B であろうと」→ <b>Whether</b> A or B'},
+  {q:'As far as I ( ), he is honest.',s:'As far as I know, he is honest.',j:'私の知る限りでは、彼は正直だ。',a:1,c:['go','know','think','am concerned'],h:'As far as I know（知る限りでは）',e:'<b>As far as I know</b>「私の知る限りでは」→ <b>know</b>'},
+  {q:'You can stay here ( ) you are quiet.',s:'You can stay here so long as you are quiet.',j:'静かにしている限り、ここにいていいよ。',a:2,c:['so far as','so that','so long as','during'],h:'～する限り（条件）= as long as / so long as',e:'「条件・～しさえすれば」→ <b>so long as</b>（= as long as）'},
+  {q:'( ) you were not at the meeting, we made the decision without you.',s:'Since you were not at the meeting, we made the decision without you.',j:'あなたがミーティングにいなかったので、私たちはあなたなしで決定した。',a:1,c:['Unless','Since','If','For'],h:'～なので（理由）= since / because',e:'「あなたがいなかったので」→ <b>Since</b>（= because）'},
+  {q:'The school was finally closed, ( ) the number of children decreased dramatically.',s:'The school was finally closed, for the number of children decreased dramatically.',j:'その学校は廃校となった。というのは子供が劇的に減少したからだ。',a:0,c:['for','however','thus','even if'],h:'というのも = for（節と節の間）',e:'「というのも～だから」→ <b>for</b>（節の間に）'},
+  {q:'Please leave your chair ( ) it is.',s:'Please leave your chair as it is.',j:'いすをそのままにしておいてください。',a:0,c:['as','so','like','for'],h:'そのままで = as it is',e:'<b>as it is</b>「そのままで・現状のままで」→ <b>as</b>'},
+  {q:'Let\'s take an express train ( ) we can get there 10 minutes earlier.',s:"Let's take an express train so that we can get there 10 minutes earlier.",j:'10分早く着くように急行に乗りましょう。',a:1,c:['in order','so that','such as','while'],h:'～するように（目的）= so that',e:'目的「～するように」→ <b>so that</b>'},
+];
+
+/* ===== 初期化 ===== */
+iC('iq1a');iC('iq1b');iC('iq1c');
+iC('iq2a');iC('iq2b');
+iC('iq3a');iC('iq3b');
+iC('iq4a');iC('iq4b');
+iC('iq5a');iC('iq5b');
+iC('p1');iC('p2');iC('p3');iC('p4');iC('p5');
+</script>
+</body>
+</html>
